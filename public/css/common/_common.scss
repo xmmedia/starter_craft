@@ -1,0 +1,46 @@
+/* this file is for public and private/admin pages */
+@import "media";
+
+a, .button-link {
+    @apply text-blue-500 no-underline transition-default outline-none;
+    &:hover, &:active {
+        @apply underline text-blue-700;
+    }
+    &:focus {
+        @apply outline-none bg-gray-300 rounded-sm;
+    }
+    &:disabled {
+        @apply opacity-75;
+        &:hover {
+            @apply no-underline cursor-default;
+        }
+    }
+}
+
+b, strong {
+    @apply font-bold;
+}
+
+// re-add margin to p as it's reset in tailwind's normalize
+p {
+    @apply my-4;
+}
+
+// re-add list styles as tailwind removes them
+ul, ol {
+    @apply pl-10;
+}
+ul {
+    @apply list-disc;
+}
+ol {
+    @apply list-decimal;
+}
+
+address {
+    @apply not-italic;
+}
+
+td {
+    @apply align-top;
+}

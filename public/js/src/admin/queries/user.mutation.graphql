@@ -1,0 +1,29 @@
+mutation UserRecoverInitiate($email: String!) {
+    UserRecoverInitiate(email: $email) {
+        success
+    }
+}
+
+mutation UserRecoverReset($token: String!, $newPassword: String!) {
+    UserRecoverReset(token: $token, newPassword: $newPassword) {
+        success
+    }
+}
+
+mutation UserVerify($token: String!, $password: String!) {
+    UserVerify(token: $token, password: $password) {
+        success
+    }
+}
+
+mutation UserUpdateProfile($user: UserUpdateProfileInput!) {
+    UserUpdateProfile(user: $user) {
+        success
+    }
+}
+
+mutation ChangePassword($user: UserPasswordInput!) {
+    ChangePassword(user: $user) {
+        success
+    }
+}

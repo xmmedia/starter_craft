@@ -1,0 +1,46 @@
+/* purgecss start ignore */
+
+@tailwind base;
+@tailwind components;
+
+$header-height: 3.72rem;
+
+@import "common/common";
+
+// global styles on the most common elements
+html {
+    @apply font-light leading-normal text-gray-800;
+}
+
+// needed to ensure positioning works
+body {
+    @apply relative z-0 overflow-x-hidden;
+}
+
+.button-link {
+    @apply font-light;
+}
+
+// load common styles
+@import "common/forms",
+"common/alerts",
+"common/headings",
+"common/modal",
+"common/button_pair",
+"common/loading";
+
+// admin only styles
+@import "admin/content",
+"admin/headings",
+"admin/buttons",
+"admin/header",
+"admin/record_list",
+"admin/record_view",
+"admin/sidebar_nav",
+"admin/sidebar_nav_submenu",
+"admin/dashboard",
+"admin/password";
+
+/* purgecss end ignore */
+
+@tailwind utilities;

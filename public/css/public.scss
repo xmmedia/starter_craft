@@ -1,0 +1,32 @@
+/* purgecss start ignore */
+
+@tailwind base;
+@tailwind components;
+
+@import "common/common";
+
+// global styles on the most common elements
+html {
+    @apply font-sans leading-normal text-gray-800;
+}
+
+// common styles
+@import "common/alerts",
+"common/content_alignment",
+"common/headings",
+"common/forms",
+"common/modal",
+"common/loading";
+
+// public only styles
+@import "public/buttons",
+"public/content",
+"public/headings",
+"public/header";
+
+// page specific
+//@import ;
+
+/* purgecss end ignore */
+
+@tailwind utilities;

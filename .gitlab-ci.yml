@@ -1,0 +1,105 @@
+default:
+  image: xmmedia/php:7.3-cli
+  timeout: 15m
+
+stages:
+  - static
+  - deploy
+
+# Select what we should cache
+cache:
+  paths:
+    - vendor/
+    - node_modules/
+
+variables:
+  APP_ENV: prod
+  RELEASES: "$REMOTE_BASE/releases"
+  SHARED: "$REMOTE_BASE/shared"
+
+before_script:
+  # ensure everything up to date
+  - apt-get update -yqq
+  # install composer
+  - curl --silent --show-error https://getcomposer.org/installer | php
+
+static:
+  stage: static
+  allow_failure: false
+  interruptible: true
+  only:
+    - master
+  script:
+    - php -v
+    - php composer.phar --version
+    - node --version
+    - yarn --version
+    # install php dependencies
+    - php composer.phar install --classmap-authoritative --no-interaction --no-progress --no-scripts --no-plugins --ignore-platform-reqs --no-suggest
+    # check for security issues in PHP libs
+    - php bin/console security:check
+    - php bin/console cache:warmup --env=dev
+    - php bin/phpstan analyse --no-progress --memory-limit 1G src
+    # Install node/JS dependencies
+    - yarn install --non-interactive --frozen-lockfile
+    # check for JS security issues in libs
+    - yarn audit:moderate
+    - yarn lint:js
+    - yarn lint:css
+    # remove php cache, it will be for dev & cache should be generated on server
+    - rm -rf var/cache/*
+    # @todo artifacts
+
+deploy:
+  stage: deploy
+  when: manual
+  allow_failure: false
+  only:
+    - master
+  script:
+    - php -v
+    - php composer.phar --version
+    - node --version
+    - yarn --version
+    # setup vars for paths
+    - TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"
+    - echo "Paths:"; echo $REMOTE_BASE; echo $RELEASE; echo $SHARED
+    - echo "Remote:"; echo $REMOTE_USER@$REMOTE_SERVER:$REMOTE_PORT
+    # setup SSH & private key
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+    - ssh-keyscan -p $REMOTE_PORT $REMOTE_SERVER >> ~/.ssh/known_hosts
+    # the following line is optional (likely remove previous line)
+    #- echo "$SSH_SERVER_HOSTKEYS" > ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    # add .revision file
+    - git rev-parse --verify --short HEAD > .revision
+    # create partial .env file
+    - printf "APP_ENV=$APP_ENV\nREQUEST_CONTEXT_HOST=$REQUEST_CONTEXT_HOST\nREQUEST_CONTEXT_SCHEME=$REQUEST_CONTEXT_SCHEME\n" > .env.local && cat .env.local
+    # install php dependencies without dev
+    - php composer.phar install --no-dev --classmap-authoritative --no-interaction --no-progress --no-scripts --no-plugins --ignore-platform-reqs --no-suggest
+    - yarn build
+    # ensure based paths exist
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "mkdir -p $RELEASES $SHARED $SHARED/var $SHARED/public/uploads"
+    # sync files to release directory
+    - rsync --archive --stats --human-readable --no-perms --exclude ".git/" --exclude ".idea/" --exclude "node_modules/" --exclude "cypress/" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$RELEASE
+    # make bin files executable
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; chmod u+x bin/*"
+    # ensure platform has all requirements
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; php -v; php composer.phar check-platform-reqs"
+    # link shared folders
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/var; ln -s $SHARED/var $RELEASE/var; rm -rf $RELEASE/public/uploads; ln -s $SHARED/public/uploads $RELEASE/public/uploads"
+    # switch to new version
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "ln -sfn $RELEASE $REMOTE_BASE/current"
+    # copy env file into place; dump env
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cp -a $SHARED/.env.local $RELEASE/.env.local && cd $REMOTE_BASE/current && php composer.phar dump-env prod"
+    # run composer post update cmds on server
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && rm -rf var/cache/prod/* && php composer.phar run-script post-update-cmd"
+    # reload php-fpm (to reset cache)
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /sbin/service php73-php-fpm reload"
+    # run all projections (with 2GB memory)
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current; php -d memory_limit=2048M bin/console app:projection:run --run-all"
+    # remove >2 releases
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "ls -1d $RELEASES/* | sort -rg | tail -n +3 | xargs /bin/rm -rf"
+    # success message
+    - echo "Deployment completed successfully. Release at $RELEASE"
