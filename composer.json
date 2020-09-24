@@ -1,6 +1,7 @@
 {
   "require": {
     "craftcms/cms": "^3.5.10",
+    "craftcms/redactor": "^2.7",
     "vlucas/phpdotenv": "^3.4.0"
   },
   "require-dev": {
