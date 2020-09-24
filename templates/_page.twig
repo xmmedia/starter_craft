@@ -1,0 +1,10 @@
+{% extends '_layout' %}
+
+{% block page_title %}{{ entry.title }} | {% endblock %}
+
+{% block head %}
+    {% include '_includes/_meta.twig' with {
+        'description' : entry.metaDescription,
+        'title' : entry.title,
+    } only %}
+{% endblock head %}

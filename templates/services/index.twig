@@ -1,0 +1,9 @@
+{% extends "_page" %}
+
+{% block content %}
+    {% for service in craft.entries().section('services').all() %}
+        <a href="{{ service.url }}">{{ service.title }}</a>
+    {% endfor %}
+{% endblock %}
+
+

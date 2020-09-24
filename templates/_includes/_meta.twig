@@ -1,0 +1,52 @@
+{# @todo-craft update twitter username #}
+{#
+Usage:
+{% block head %}
+    {% include '_includes/_meta.twig' with {
+        'description' : 'Meta/OG/Twitter Description',
+        'title' : 'Page Title',
+        'url' : <relative/url>,
+        'image' : '/images/logo-og.png',
+        'image_alt': 'Image Alt',
+    } only %}
+{% endblock head %}
+#}
+
+{% if title is defined and title is not empty %}
+    {% set title = title ~ ' | ' ~ siteInformation.companyName %}
+{% else %}
+    {% set title = siteInformation.companyName %}
+{% endif %}
+
+{% if url is not defined %}
+    {% set url = craft.app.request.absoluteUrl %}
+{% endif %}
+
+{% if description %}
+    <meta name="description" content="{{ description|replace({"\n":' ', "\r":' '}) }}">
+{% endif %}
+
+<meta property="og:title" content="{{ title }}">
+<meta property="og:type"  content="website">
+<meta property="og:url"   content="{{ url }}">
+<meta property="og:site_name" content="{{ siteInformation.companyName }}">
+{% if image is defined %}
+    <meta property="og:image" content="{{ url(image) }}">
+    <meta property="og:image:alt" content="{{ image_alt }}">
+{% endif %}
+<meta property="og:image" content="{{ url('/images/logo-og.png') }}">
+<meta property="og:image:alt" content="{{ siteInformation.companyName }} Logo">
+{% if description %}
+    <meta property="og:description" content="{{ description|replace({"\n":' ', "\r":' '}) }}">
+{% endif %}
+
+<meta name="twitter:card"  content="summary_large_image">
+<meta name="twitter:site"  content="<twitter-username>">
+<meta name="twitter:title" content="{{ title }}">
+{% if description %}
+    <meta name="twitter:description" content="{{ description|replace({"\n":' ', "\r":' '}) }}">
+{% endif %}
+{% if image is defined %}
+    <meta name="twitter:image" content="{{ url(image) }}">
+{% endif %}
+<meta name="twitter:url"   content="{{ url }}">

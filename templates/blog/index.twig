@@ -1,11 +1,27 @@
 {% extends "_layout" %}
 
-{% set posts = craft.entries.section('blog').all() %}
+{% set posts = craft.entries.section('blog').limit(1) %}
+
+{% paginate posts as pageInfo, pageEntries %}
 
 {% block content %}
+    <h1 class="text-4xl text-black font-display my-4">Blog Posts</h1>
 
-  <h1 class="text-4xl text-black font-display my-4">Blog Posts</h1>
+    {% include "_includes/listing" with { posts: pageEntries } only %}
 
-  {% include "_includes/listing" with { posts: posts } only %}
+    <a href="{{ pageInfo.firstUrl }}">First Page</a>
+    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
 
+    {% for page, url in pageInfo.getPrevUrls(2) %}
+        <a href="{{ url }}">{{ page }}</a>
+    {% endfor %}
+
+    <span class="current">{{ pageInfo.currentPage }}</span>
+
+    {% for page, url in pageInfo.getNextUrls(2) %}
+        <a href="{{ url }}">{{ page }}</a>
+    {% endfor %}
+
+    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+    <a href="{{ pageInfo.lastUrl }}">Last Page</a>
 {% endblock %}

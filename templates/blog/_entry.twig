@@ -22,9 +22,6 @@
 
   {% include "_includes/post-blocks" with { blocks: entry.postContent.all() } only %}
 
-
-    <component :style="{ color: 'red' }"
-
   {% if entry.postCategories | length %}
     <div class="border-t py-2 mb-6">
       {% for category in entry.postCategories.all() %}
