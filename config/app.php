@@ -25,4 +25,20 @@ return [
         'my-module' => \modules\Module::class,
     ],
     //'bootstrap' => ['my-module'],
+    'components' => [
+        'session' => function () {
+            $savePath = Craft::getAlias('@storage').'/sessions/';
+
+            if (!is_dir($savePath)) {
+                mkdir($savePath, 0777, true);
+            }
+
+            // Get the default component config
+            $config = craft\helpers\App::sessionConfig();
+            $config['savePath'] = $savePath;
+
+            // Instantiate and return it
+            return Craft::createObject($config);
+        },
+    ],
 ];

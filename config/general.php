@@ -24,6 +24,9 @@ return [
 
         // The secure key Craft will use for hashing and encrypting data
         'securityKey' => App::env('SECURITY_KEY'),
+
+        // @todo-craft
+        'timezone' => 'America/Edmonton',
     ],
 
     // Dev environment settings
@@ -33,6 +36,8 @@ return [
 
         // Prevent crawlers from indexing pages and following links
         'disallowRobots' => true,
+
+        // 'allowAdminChanges' => false,
     ],
 
     // Staging environment settings
