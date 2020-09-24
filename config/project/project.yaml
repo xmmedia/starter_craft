@@ -1,0 +1,36 @@
+dateModified: 1600979763
+email:
+  fromEmail: $FROM_EMAIL
+  fromName: $FROM_EMAIL_NAME
+  replyToEmail: null
+  template: null
+  transportSettings:
+    encryptionMethod: tls
+    host: $SMTP_HOST_NAME
+    password: $POSTMARK_API_KEY
+    port: $SMTP_PORT
+    timeout: '10'
+    useAuthentication: '1'
+    username: $POSTMARK_API_KEY
+  transportType: craft\mail\transportadapters\Smtp
+plugins:
+  easymde-markdown-editor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  redactor:
+    edition: standard
+    enabled: true
+    schemaVersion: 2.3.0
+system:
+  edition: solo
+  live: true
+  name: 'XM Craft Starter'
+  schemaVersion: 3.5.13
+  timeZone: America/Edmonton
+users:
+  allowPublicRegistration: false
+  defaultGroup: null
+  photoSubpath: null
+  photoVolumeUid: null
+  requireEmailVerification: true

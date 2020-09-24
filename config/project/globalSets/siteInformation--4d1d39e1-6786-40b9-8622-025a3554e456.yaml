@@ -1,0 +1,18 @@
+fieldLayouts:
+  9e790d65-95f2-44bb-8135-327e7f77b6aa:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 24a6dfe5-17b5-4915-9ac4-0105ff18bf53
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Stuff
+        sortOrder: 1
+handle: siteInformation
+name: 'Site Information'

@@ -1,0 +1,20 @@
+contentColumnType: text
+fieldGroup: f4025d83-35bc-4c5c-a20d-72e6e2b45082
+handle: siteDescription
+instructions: ''
+name: 'Site Description'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  mode: plain
+  modeOverride: null
+  multiline: ''
+  placeholder: ''
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: Acoustep\CraftEasyMDE\Fields\CraftEasyMDEField

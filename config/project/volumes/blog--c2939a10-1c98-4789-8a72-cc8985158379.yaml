@@ -1,0 +1,38 @@
+fieldLayouts:
+  a68ab1ba-6a26-4ee1-8208-db2b6066f1db:
+    tabs:
+      -
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            disabled: false
+            id: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\TitleField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+handle: blog
+hasUrls: true
+name: Blog
+settings:
+  path: '@webroot/assets/blog'
+sortOrder: 1
+type: craft\volumes\Local
+url: '@web/assets/blog'
