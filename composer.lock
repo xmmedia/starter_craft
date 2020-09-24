@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2c745ef85b89f82b82bf5b9ac80169d2",
+    "content-hash": "0b858ceefe723c3b420835b40ed84483",
     "packages": [
+        {
+            "name": "acoustep/craft-easymde",
+            "version": "0.1.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/acoustep/craft-easymde.git",
+                "reference": "e0dce49f19d8bfa4f4dea10158fbeb96d1732ba2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/acoustep/craft-easymde/zipball/e0dce49f19d8bfa4f4dea10158fbeb96d1732ba2",
+                "reference": "e0dce49f19d8bfa4f4dea10158fbeb96d1732ba2",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.2.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "handle": "easymde-markdown-editor",
+                "name": "Craft CMS Easy MDE Markdown Editor",
+                "documentationUrl": "https://github.com/acoustep/craft-easymde/blob/master/README.md"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Acoustep\\CraftEasyMDE\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mitch Stanley",
+                    "homepage": "https://mitchstanley.co.uk"
+                }
+            ],
+            "description": "Markdown field that uses EasyMDE Editor",
+            "keywords": [
+                "craftcms3",
+                "easymde",
+                "markdown"
+            ],
+            "time": "2019-11-06T11:40:59+00:00"
+        },
         {
             "name": "cebe/markdown",
             "version": "1.2.1",
