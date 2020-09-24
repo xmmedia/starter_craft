@@ -2,9 +2,9 @@
 
 {% set featureImage = {
   mode: 'crop',
-  width: 900,
-  height: 600,
-  quality: 90
+  width: 200,
+  height: 200,
+  quality: 90,
 } %}
 
 {% block content %}
@@ -14,18 +14,22 @@
 
   {% if entry.featureImage | length %}
     {% for image in entry.featureImage.all() %}
-      <img src="{{ image.getUrl(featureImage) }}" alt="{{ image.title }}"/>
+      <img src="{{ image.getUrl(featureImage) }}" alt="{{ image.title }}">
     {% endfor %}
   {% endif %}
+
+    {{ entry.content | nl2br }}
 
   {% include "_includes/post-blocks" with { blocks: entry.postContent.all() } only %}
 
 
-  {% if entry.postCategories|length %}
+    <component :style="{ color: 'red' }"
+
+  {% if entry.postCategories | length %}
     <div class="border-t py-2 mb-6">
-      {% for category in entry.postCategories %}
+      {% for category in entry.postCategories.all() %}
         <a href="{{ category.url }}" class="inline-block border rounded px-2 py-1 text-sm">
-          {{ category.title }}
+          {{- category.title }}
         </a>
       {% endfor %}
     </div>
