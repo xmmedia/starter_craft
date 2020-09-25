@@ -1,4 +1,4 @@
-dateModified: 1601064987
+dateModified: 1601066911
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -14,6 +14,10 @@ email:
     username: $POSTMARK_API_KEY
   transportType: craft\mail\transportadapters\Smtp
 plugins:
+  assetrev:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   easymde-markdown-editor:
     edition: standard
     enabled: true

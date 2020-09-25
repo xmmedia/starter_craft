@@ -31,8 +31,7 @@ module.exports = function (Encore) {
         // don't output the runtime chunk as we only include 1 JS file per page
         .disableSingleRuntimeChunk()
 
-        // will output as build/admin.js and similar
-        .addEntry('admin', './public/js/src/admin.js')
+        // will output as build/public.js and similar
         .addEntry('public', './public/js/src/public.js')
 
         // uncomment to get integrity="..." attributes on your script & link tags
@@ -101,7 +100,7 @@ module.exports = function (Encore) {
         })
 
         .addPlugin(new Dotenv({
-            path: './.env.local',
+            path: './.env',
         }))
     ;
 

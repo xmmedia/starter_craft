@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/modules" isTestSource="false" packagePrefix="modules\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/acoustep/craft-easymde" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/markdown" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/clubstudioltd/craft-asset-rev" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/cms" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/oauth2-craftid" />
