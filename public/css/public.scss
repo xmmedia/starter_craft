@@ -12,16 +12,16 @@ html {
 
 // common styles
 @import "alerts",
-"content_alignment",
-"headings",
-"forms",
-"modal",
-"loading";
+    "content_alignment",
+    "headings",
+    "forms",
+    "modal",
+    "loading";
 
 // public only styles
 @import "buttons",
-"content",
-"header";
+    "content",
+    "header";
 
 // page specific
 //@import ;
