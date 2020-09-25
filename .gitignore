@@ -1,4 +1,3 @@
-# @todo cleanout
 Icon?
 .DS_Store
 .svn
@@ -12,6 +11,11 @@ sftp-config.json
 /composer.phar
 webpack-stats.json
 public/service-worker.js
+
+###> craft cms ###
+# @todo-craft remove setting up project
+config/license.key
+###< craft cms ###
 
 ###> symfony/framework-bundle ###
 /.env
