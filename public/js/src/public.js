@@ -33,10 +33,6 @@ window.App = new Vue({
     el: '#app',
     apolloProvider,
 
-    components: {
-        'contact-form': () => import(/* webpackChunkName: "public-contact" */ './public/contact/index'),
-    },
-
     data () {
         return {
             showMobileMenu: false,
