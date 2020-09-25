@@ -31,9 +31,11 @@ Usage:
 <meta property="og:url"   content="{{ url }}">
 <meta property="og:site_name" content="{{ siteInformation.companyName }}">
 {% if image is defined %}
+    {# should be 1200x630 #}
     <meta property="og:image" content="{{ url(image) }}">
     <meta property="og:image:alt" content="{{ image_alt }}">
 {% endif %}
+{# should be 1200x630 #}
 <meta property="og:image" content="{{ url('/images/logo-og.png') }}">
 <meta property="og:image:alt" content="{{ siteInformation.companyName }} Logo">
 {% if description %}
