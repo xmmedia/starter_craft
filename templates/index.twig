@@ -1,1 +1,7 @@
-{% extends "_layout" %}
+{% extends "_page" %}
+
+{% block page_title_wrap %}{{ siteInformation.companyName }} | {{ seo.pageTitle }}{% endblock %}
+
+{% block content %}
+    <h1>{{ siteName }}</h1>
+{% endblock %}

@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 24a6dfe5-17b5-4915-9ac4-0105ff18bf53
+            fieldUid: 64a1d559-0f30-491d-92c9-177cf340853c
             instructions: null
             label: null
             required: false
@@ -12,7 +12,7 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Stuff
+        name: Globals
         sortOrder: 1
 handle: siteInformation
 name: 'Site Information'

@@ -1,11 +1,18 @@
 {% extends '_layout' %}
 
-{% block page_title %}{{ entry.title }} | {% endblock %}
+{% set seo = entry.seo.one() %}
+
+{% block page_title %}{% if seo is not null %}{{ seo.pageTitle }} | {% endif %}{% endblock %}
 
 {% block head %}
     {{ parent() }}
-    {% include '_includes/_meta.twig' with {
-        'description' : entry.metaDescription,
-        'title' : entry.title,
-    } only %}
+
+    {% if seo is not null %}
+        {% include '_includes/_meta.twig' with {
+            'title' : seo.pageTitle,
+            'description' : seo.metaDescription,
+            'image' : seo.ogImage,
+            'image_alt' : seo.ogImageAlt,
+        } only %}
+    {% endif %}
 {% endblock head %}

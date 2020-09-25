@@ -1,5 +1,5 @@
 fieldLayouts:
-  a286551f-1887-47ca-b854-5d31925a390f:
+  0869fb07-c400-4392-9f2a-65596117e2e8:
     tabs:
       -
         elements:
@@ -10,8 +10,8 @@ fieldLayouts:
             class: null
             disabled: false
             id: null
-            instructions: ''
-            label: __blank__
+            instructions: null
+            label: null
             max: null
             min: null
             name: null
@@ -26,24 +26,6 @@ fieldLayouts:
             type: craft\fieldlayoutelements\EntryTitleField
             warning: null
             width: 100
-          -
-            fieldUid: ca24a1c1-6c04-473b-a43e-f9d930385cca
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
-          -
-            fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            warning: null
-            width: 50
         name: Content
         sortOrder: 1
       -
@@ -59,11 +41,11 @@ fieldLayouts:
             width: 100
         name: SEO
         sortOrder: 2
-handle: about
+handle: homepage
 hasTitleField: true
-name: About
-section: d9b45246-8d18-46e0-9a98-ac7b65120828
+name: Homepage
+section: 49523c85-f034-4218-a653-a10e294faac5
 sortOrder: 1
-titleFormat: null
+titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

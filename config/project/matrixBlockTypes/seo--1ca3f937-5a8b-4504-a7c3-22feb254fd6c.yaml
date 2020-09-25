@@ -1,0 +1,137 @@
+field: e9250cf7-3f95-4113-85e5-0140eb887bfe
+fieldLayouts:
+  bf60907b-7f8e-415c-9dd6-36f9697f1a25:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 414f0663-ff97-44ab-b402-98890d76f713
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+          -
+            fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 50
+        name: Content
+        sortOrder: 1
+fields:
+  3782b2bb-7c19-4392-a96c-6ee2ed24a4cd:
+    contentColumnType: string
+    fieldGroup: null
+    handle: ogImage
+    instructions: 'Recommended size is 1200x630 pixels. The minimum is 600x315 pixels.'
+    name: 'Sharing Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10'
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: true
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10'
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: true
+      validateRelatedElements: true
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  414f0663-ff97-44ab-b402-98890d76f713:
+    contentColumnType: string(200)
+    fieldGroup: null
+    handle: pageTitle
+    instructions: 'Displayed on Google search results and the browser tab. On most pages, this will appear before the company/org like "About Us | Company". On the homepage it will show after like "Company | Services".'
+    name: 'Page Title'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 50
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  84d2deef-d6fe-4a07-b967-b71469d68219:
+    contentColumnType: string(600)
+    fieldGroup: null
+    handle: ogImageAlt
+    instructions: 'Shown or read to the user when they can''t see the sharing image.'
+    name: 'Sharing Image Alt'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 150
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  a9d87289-cfe2-4244-bc61-fcf804f19e75:
+    contentColumnType: string(680)
+    fieldGroup: null
+    handle: metaDescription
+    instructions: 'Search engines may show this below the page title. Will also be used when sharing on social media.'
+    name: 'Meta Description'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: 170
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: seo
+name: SEO
+sortOrder: 1

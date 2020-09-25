@@ -1,20 +1,18 @@
-contentColumnType: text
+contentColumnType: string
 fieldGroup: f4025d83-35bc-4c5c-a20d-72e6e2b45082
-handle: siteDescription
-instructions: ''
-name: 'Site Description'
+handle: companyName
+instructions: 'Shown in the footer as the copyright holder.'
+name: 'Company Name'
 searchable: false
 settings:
   byteLimit: null
-  charLimit: null
+  charLimit: 50
   code: ''
-  columnType: null
+  columnType: string
   initialRows: '4'
-  mode: plain
-  modeOverride: null
   multiline: ''
   placeholder: ''
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none
-type: Acoustep\CraftEasyMDE\Fields\CraftEasyMDEField
+type: craft\fields\PlainText

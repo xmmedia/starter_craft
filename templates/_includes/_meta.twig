@@ -3,8 +3,8 @@ Usage:
 {% block head %}
     {{ parent() }}
     {% include '_includes/_meta.twig' with {
-        'description' : 'Meta/OG/Twitter Description',
         'title' : 'Page Title',
+        'description' : 'Meta/OG/Twitter Description',
         'url' : <relative/url>,
         'image' : '/images/logo-og.png',
         'image_alt': 'Image Alt',
@@ -23,23 +23,29 @@ Usage:
 {% endif %}
 
 {% if description %}
-    <meta name="description" content="{{ description|replace({"\n":' ', "\r":' '}) }}">
+    {% set description = description|replace({"\n":' ', "\r":' '}) %}
+{% endif %}
+
+{% if description %}
+    <meta name="description" content="{{ description }}">
 {% endif %}
 
 <meta property="og:title" content="{{ title }}">
 <meta property="og:type"  content="website">
 <meta property="og:url"   content="{{ url }}">
 <meta property="og:site_name" content="{{ siteInformation.companyName }}">
-{% if image is defined %}
+{% if image is defined and image|length %}
     {# should be 1200x630 #}
-    <meta property="og:image" content="{{ url(image) }}">
-    <meta property="og:image:alt" content="{{ image_alt }}">
+    <meta property="og:image" content="{{ image.one().getUrl({ width: 1200, height: 600}) }}">
+    {% if image_alt %}
+        <meta property="og:image:alt" content="{{ image_alt }}">
+    {% endif %}
 {% endif %}
 {# should be 1200x630 #}
-<meta property="og:image" content="{{ url('/images/logo-og.png') }}">
+<meta property="og:image" content="{{ siteUrl('/images/logo-og.png') }}">
 <meta property="og:image:alt" content="{{ siteInformation.companyName }} Logo">
 {% if description %}
-    <meta property="og:description" content="{{ description|replace({"\n":' ', "\r":' '}) }}">
+    <meta property="og:description" content="{{ description }}">
 {% endif %}
 
 <meta name="twitter:card"  content="summary_large_image">
@@ -47,9 +53,15 @@ Usage:
 <meta name="twitter:site"  content="<twitter-username>">
 <meta name="twitter:title" content="{{ title }}">
 {% if description %}
-    <meta name="twitter:description" content="{{ description|replace({"\n":' ', "\r":' '}) }}">
+    <meta name="twitter:description" content="{{ description }}">
 {% endif %}
-{% if image is defined %}
-    <meta name="twitter:image" content="{{ url(image) }}">
+{% if image is defined and image|length %}
+    <meta name="twitter:image" content="{{ image.one().getUrl({ width: 1200, height: 600}) }}">
+    {% if image_alt %}
+        <meta property="twitter:image:alt" content="{{ image_alt }}">
+    {% endif %}
+{% else %}
+    <meta name="twitter:image" content="{{ siteUrl('/images/logo-og.png') }}">
+    <meta property="twitter:image:alt" content="{{ siteInformation.companyName }} Logo">
 {% endif %}
 <meta name="twitter:url"   content="{{ url }}">
