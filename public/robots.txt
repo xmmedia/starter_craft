@@ -1,5 +1,5 @@
 # https://www.robotstxt.org/
 User-agent: *
 
-# @todo-symfony
+# @todo-craft
 Sitemap: https://www.example.com/sitemap.xml

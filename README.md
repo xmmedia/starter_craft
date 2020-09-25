@@ -32,7 +32,7 @@ Used to create new projects using [Symfony 4](http://symfony.com/) at [XM Media]
 6. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
 7. Composer install & update (locally): `composer install && composer update` (or without memory limit: `php -d memory_limit=-1 /usr/local/bin/composer update`)
 8. Run `yarn && yarn upgrade` locally.
-9. Find and make changes near `@todo-symfony` comments throughout the site.
+9. Find and make changes near `@todo-craft` comments throughout the site.
 10. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
 11. *Optional:* Run `composer test` – will install PHPUnit & run PHP tests
 12. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)

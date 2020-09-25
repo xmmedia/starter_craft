@@ -18,7 +18,7 @@ if (!Encore.isDevServer()) {
         // though this could be useful if you want more than 1 service worker
         swDest: path.join(__dirname, 'public/service-worker.js'),
         importWorkboxFrom: 'local',
-        // @todo-symfony customize these lists depending on if the sw is for admins only or for public and admin; these are used to determine what's put in the precache manifest; by default, NOTHING IS PRECACHED; see: https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin#full_injectmanifest_config
+        // @todo-craft customize these lists depending on if the sw is for admins only or for public and admin; these are used to determine what's put in the precache manifest; by default, NOTHING IS PRECACHED; see: https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin#full_injectmanifest_config
         // by default, we only cache the icon files, favicon, and manifest
         chunks: [''],
         // excludeChunks: [],
