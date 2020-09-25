@@ -1,6 +1,7 @@
 {#
 Usage:
 {% block head %}
+    {{ parent() }}
     {% include '_includes/_meta.twig' with {
         'description' : 'Meta/OG/Twitter Description',
         'title' : 'Page Title',
