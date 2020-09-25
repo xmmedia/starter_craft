@@ -3,7 +3,7 @@
 @tailwind base;
 @tailwind components;
 
-@import "common/common";
+@import "common";
 
 // global styles on the most common elements
 html {
@@ -11,18 +11,17 @@ html {
 }
 
 // common styles
-@import "common/alerts",
-"common/content_alignment",
-"common/headings",
-"common/forms",
-"common/modal",
-"common/loading";
+@import "alerts",
+"content_alignment",
+"headings",
+"forms",
+"modal",
+"loading";
 
 // public only styles
-@import "public/buttons",
-"public/content",
-"public/headings",
-"public/header";
+@import "buttons",
+"content",
+"header";
 
 // page specific
 //@import ;

@@ -4,22 +4,38 @@ h1, h2, h3, h4, h5, h6 {
 
 // reset margins on headings as tailwind removes them
 h1 {
+    @apply text-4xl;
     margin: 0.67rem 0;
+    @screen lg {
+        @apply text-5xl;
+    }
 }
 h2 {
+    @apply text-3xl;
     margin: 0.83rem 0;
+    @screen lg {
+        @apply text-4xl;
+    }
 }
 h3 {
-    @apply mt-4 mb-2;
+    @apply mt-4 mb-2 text-2xl;
+    @screen lg {
+        @apply text-3xl;
+    }
 }
 h4 {
+    @apply text-lg;
     margin: 1.33rem 0 0.5rem;
+    @screen lg {
+        @apply text-xl;
+    }
 }
 h5 {
     margin: 1.67rem 0;
+    // uses base font size
 }
 h6 {
-    @apply mt-6 mb-2;
+    @apply mt-6 mb-2 text-sm;
 }
 
 // reduce margin between headings and paragraphs
