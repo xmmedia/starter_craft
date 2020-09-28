@@ -1,5 +1,10 @@
 {
+    "name": "xm/starter_craft_3",
+    "license": "MIT",
+    "type": "project",
+    "description": "Starter for creating Craft 3 sites at XM Media",
     "require": {
+        "php": "7.3.*",
         "acoustep/craft-easymde": "^0.1.7",
         "clubstudioltd/craft-asset-rev": "^6.0",
         "craftcms/cms": "^3.5.10",
@@ -21,7 +26,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "platform": {
-            "php": "7.0"
+            "php": "7.3"
         }
     }
 }
