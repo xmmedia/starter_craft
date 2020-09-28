@@ -95,6 +95,8 @@ deploy:
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cp -a $SHARED/.env.local $RELEASE/.env.local && cd $REMOTE_BASE/current && php composer.phar dump-env prod"
     # run composer post update cmds on server
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && rm -rf var/cache/prod/* && php composer.phar run-script post-update-cmd"
+    # apply changes to craft config, migrations
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && php craft migrate/all && php craft project-config/apply"
     # reload php-fpm (to reset cache)
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /sbin/service php73-php-fpm reload"
     # run all projections (with 2GB memory)
