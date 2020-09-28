@@ -1,4 +1,4 @@
-dateModified: 1601066911
+dateModified: 1601328116
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -18,6 +18,42 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  contact-form:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      allowAttachments: ''
+      prependSender: ''
+      prependSubject: 'Message from XM Craft Starter website'
+      successFlashMessage: 'Your message has been sent.'
+      toEmail: $FROM_EMAIL
+  contact-form-extensions:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
+    settings:
+      confirmationSubject: ''
+      confirmationTemplate: ''
+      enableConfirmationEmail: ''
+      enableDatabase: '1'
+      enableTemplateOverwrite: ''
+      notificationTemplate: ''
+      recaptcha: ''
+      recaptchaDataBadge: bottomright
+      recaptchaDebug: ''
+      recaptchaHideBadge: ''
+      recaptchaSecretKey: ''
+      recaptchaSiteKey: ''
+      recaptchaThreshold: '0.5'
+      recaptchaTimeout: '5'
+      recaptchaVersion: ''
+  contact-form-honeypot:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      honeypotParam: repeatEmail
   easymde-markdown-editor:
     edition: standard
     enabled: true

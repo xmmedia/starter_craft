@@ -5,10 +5,13 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/modules" isTestSource="false" packagePrefix="modules\" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/acoustep/craft-easymde" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/albertcht/invisible-recaptcha" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/markdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/clubstudioltd/craft-asset-rev" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/cms" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/contact-form" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/contact-form-honeypot" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/oauth2-craftid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/plugin-installer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/redactor" />
@@ -16,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/creocoder/yii2-nested-sets" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/defuse/php-encryption" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/inflector" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elvanto/litemoji" />
@@ -24,8 +28,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/promises" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/hybridinteractive/craft-contact-form-extensions" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/intervention/httpauth" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kylekatarnls/update-helper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-escaper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-feed" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laminas/laminas-stdlib" />
@@ -38,6 +46,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/jsmin-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/minify" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mrclay/props-dic" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/opis/closure" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
@@ -50,6 +59,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/container" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/simple-cache" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ralouphie/getallheaders" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/diff" />
@@ -70,6 +80,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php70" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/true/punycode" />

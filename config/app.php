@@ -22,9 +22,9 @@ use craft\helpers\App;
 return [
     'id' => App::env('APP_ID') ?: 'CraftCMS',
     'modules' => [
-        'my-module' => \modules\Module::class,
+        'contact-form' => \modules\ContactFormModule::class,
     ],
-    //'bootstrap' => ['my-module'],
+    'bootstrap' => ['contact-form'],
     'components' => [
         'session' => function () {
             $savePath = Craft::getAlias('@storage').'/sessions/';

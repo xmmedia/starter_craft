@@ -91,6 +91,17 @@
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
       <path value="$PROJECT_DIR$/vendor/acoustep/craft-easymde" />
       <path value="$PROJECT_DIR$/vendor/clubstudioltd/craft-asset-rev" />
+      <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
+      <path value="$PROJECT_DIR$/vendor/hybridinteractive/craft-contact-form-extensions" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/albertcht/invisible-recaptcha" />
+      <path value="$PROJECT_DIR$/vendor/craftcms/contact-form-honeypot" />
+      <path value="$PROJECT_DIR$/vendor/craftcms/contact-form" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/support" />
+      <path value="$PROJECT_DIR$/vendor/illuminate/contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

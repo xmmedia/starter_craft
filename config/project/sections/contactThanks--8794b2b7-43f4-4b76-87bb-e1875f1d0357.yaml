@@ -1,0 +1,11 @@
+enableVersioning: true
+handle: contactThanks
+name: 'Contact Thanks'
+propagationMethod: all
+siteSettings:
+  42773db2-f2e9-40a9-ab5e-e3406f1a6a25:
+    enabledByDefault: true
+    hasUrls: true
+    template: _singles/contact_thanks
+    uriFormat: contact/thanks
+type: single
