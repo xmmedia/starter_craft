@@ -1,6 +1,10 @@
 {% extends '_layout' %}
 
-{% set seo = entry.seo.one() %}
+{% if entry is defined and entry.seo is defined %}
+    {% set seo = entry.seo.one() %}
+{% else %}
+    {% set seo = null %}
+{% endif %}
 
 {% block page_title %}{% if seo is not null %}{{ seo.pageTitle }} | {% endif %}{% endblock %}
 
