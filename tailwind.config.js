@@ -24,7 +24,7 @@ module.exports = {
     purge: {
         preserveHtmlElements: true,
         content: [
-            './templates/**/*.html.twig',
+            './templates/**/*.twig',
             './public/js/src/**/*.vue',
             './public/js/src/**/*.js',
         ],
