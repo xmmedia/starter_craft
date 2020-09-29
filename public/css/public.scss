@@ -10,16 +10,13 @@ html {
     @apply font-sans leading-normal text-gray-800;
 }
 
-// common styles
 @import "alerts",
     "content_alignment",
     "headings",
     "forms",
     "modal",
-    "loading";
-
-// public only styles
-@import "buttons",
+    "loading",
+    "buttons",
     "content",
     "header";
 
