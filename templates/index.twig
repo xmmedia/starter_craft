@@ -1,6 +1,6 @@
 {% extends "_page" %}
 
-{% block page_title_wrap %}{{ siteInformation.companyName }} | {{ seo.pageTitle }}{% endblock %}
+{% block page_title_wrap %}{{ siteInformation.companyName }}{% if seo %} | {{ seo.pageTitle }}{% endif %}{% endblock %}
 
 {% block content %}
     <h1>{{ siteName }}</h1>
