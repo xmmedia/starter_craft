@@ -1,11 +1,9 @@
 import 'es6-promise/auto';
 
 import Vue from 'vue';
-import VueApollo from 'vue-apollo';
 import Vuelidate from 'vuelidate';
 import PortalVue from 'portal-vue';
 
-import apolloProvider from './common/apollo';
 // import * as filters from './common/filters';
 
 import formError from './common/form_error';
@@ -21,7 +19,6 @@ import '@/../../images/icons-public.svg';
 // disable the warning about dev/prod
 Vue.config.productionTip = false;
 
-Vue.use(VueApollo);
 Vue.use(Vuelidate);
 Vue.use(PortalVue);
 
@@ -31,7 +28,6 @@ Vue.component('field-error', fieldError);
 
 window.App = new Vue({
     el: '#app',
-    apolloProvider,
 
     data () {
         return {
