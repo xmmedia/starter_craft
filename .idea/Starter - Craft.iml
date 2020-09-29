@@ -23,6 +23,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/doctrine/lexer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/egulias/email-validator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/elvanto/litemoji" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/embed/embed" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/enshrined/svg-sanitize" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ezyang/htmlpurifier" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/guzzlehttp/guzzle" />
@@ -101,6 +102,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/voku/urlify" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/webonyx/graphql-php" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/wrav/oembed" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yii2tech/ar-softdelete" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />

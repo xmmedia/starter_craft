@@ -1,4 +1,4 @@
-dateModified: 1601328116
+dateModified: 1601400290
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -58,6 +58,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  oembed:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.1
   redactor:
     edition: standard
     enabled: true
