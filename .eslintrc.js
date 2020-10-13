@@ -7,9 +7,8 @@ module.exports = {
     },
     extends: ['plugin:vue/recommended', 'eslint:recommended'],
     rules: {
-        // @todo will these error out
-        "no-console": process.env.NODE_ENV === "production" ? "error" : "off",
-        "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
+        "no-console": "error",
+        "no-debugger": "error",
         "max-len": ["error", {
             "code": 120, // so we have a bit of grace
             "ignoreComments": true,
@@ -48,6 +47,7 @@ module.exports = {
         }],
         "vue/multiline-html-element-content-newline": "off",
         "vue/singleline-html-element-content-newline": "off",
+        "vue/component-definition-name-casing": ["error", "kebab-case"],
     },
     reportUnusedDisableDirectives: true,
     parserOptions: {

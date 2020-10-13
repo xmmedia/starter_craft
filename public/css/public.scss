@@ -1,5 +1,3 @@
-/* purgecss start ignore */
-
 @tailwind base;
 @tailwind components;
 
@@ -10,19 +8,17 @@ html {
     @apply font-sans leading-normal text-gray-800;
 }
 
+// common styles
 @import "alerts",
     "content_alignment",
     "headings",
     "forms",
-    "modal",
-    "loading",
+    "embed",
     "buttons",
     "content",
     "header";
 
 // page specific
 //@import ;
-
-/* purgecss end ignore */
 
 @tailwind utilities;
