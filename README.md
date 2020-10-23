@@ -18,7 +18,7 @@ Used to create new projects using [Symfony 4](http://symfony.com/) at [XM Media]
    4. Add `.env.local` (copy `.env` and update). Generate this using 1Password (no need to store it) or similar at about 32 characters containing letters, numbers and symbols.
    6. Run `. ./node_setup.sh` (this will setup node & install the JS packages – requires yarn to be installed).
    7. Run `yarn dev` or `yarn build` (for production) to compile JS & CSS files.
-   8. Give executable perms to bin dir: `chmod u+x bin/*`
+   8. Give executable perms to bin dir: `chmod u+x craft`
    9. Create event streams & projections tables from `db_create.sql`. Set database collation to `utf8mb4_bin`.
    10. Create one or more event streams with the command `bin/console event-store:event-stream:create user && bin/console event-store:event-stream:create auth && bin/console event-store:event-stream:create enquiry` (remove enquiry if not using the enquiry form).
    11. Run all projections once: `bin/console event-store:projection:run user_projection -o && bin/console event-store:projection:run user_token_projection -o && bin/console event-store:projection:run enquiry_projection -o` 
