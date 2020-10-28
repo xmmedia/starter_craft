@@ -50,6 +50,9 @@ class ContactFormModule extends \yii\base\Module
                 // set the from to the default mailer from
                 // this is instead of "<prefix> <fromName>" which is confusing
                 $e->message->setFrom(Craft::$app->getMailer()->from);
+                $e->message->setSubject(
+                    'Website form submission from '.$e->submission->fromName
+                );
             }
         );
 
