@@ -19,6 +19,9 @@ return [
         // Whether generated URLs should omit "index.php"
         'omitScriptNameInUrls' => true,
 
+        // Disable GraphQL
+        'enableGql' => false,
+
         // Control panel trigger word
         'cpTrigger' => 'admin',
 
