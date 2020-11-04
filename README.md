@@ -10,9 +10,9 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
     ```sh
     composer create-project xm/starter_craft project-name --stability=dev --no-install --remove-vcs
     ```
-5. Update `composer.json`: `name`, `license` (likely `private`) and `description`
-6. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
-2. Setup dev server:
+2. Update `composer.json`: `name`, `license` (likely `private`) and `description`
+3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
+4. Setup dev server:
    1. If using InterWorx, upload `setup_dev.sh` and run: `sh ./setup_dev.sh` 
    2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env.local` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
    3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
@@ -22,13 +22,13 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
    7. Run `yarn dev` or `yarn build` (for production) to compile JS & CSS files.
    8. Give executable perms to bin dir: `chmod u+x craft`
    9. Install craft: `./craft install/craft`
-3. Remove or update the `LICENSE` file.
-4. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
+5. Remove or update the `LICENSE` file.
+6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
 7. Composer install & update (locally): `composer install && composer update`
 8. Run `yarn && yarn upgrade` locally.
-10. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. ./node_setup.sh` again.
-9. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
-10. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
+9. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. ./node_setup.sh` again.
+10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
+11. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
 12. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 
 **Dev site can be accessed at https://[domain]/**  
