@@ -1,7 +1,5 @@
 # Craft CMS Starter
 
-# @todo update babel & figure out the proper config
-
 Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Media](https://www.xmmedia.com/).
 
 ## Setting Up a New Site
