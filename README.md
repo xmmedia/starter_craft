@@ -2,44 +2,37 @@
 
 # @todo update babel & figure out the proper config
 
-Used to create new projects using [Symfony 4](http://symfony.com/) at [XM Media](https://www.xmmedia.com/).
+Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Media](https://www.xmmedia.com/).
 
 ## Setting Up a New Site
 
 1. Create a new project:
     ```sh
-    composer create-project xm/starter_symfony_4 project-name --stability=dev --no-install --remove-vcs
+    composer create-project xm/starter_craft project-name --stability=dev --no-install --remove-vcs
     ```
+5. Update `composer.json`: `name`, `license` (likely `private`) and `description`
+6. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
 2. Setup dev server:
    1. If using InterWorx, upload `setup_dev.sh` and run: `sh ./setup_dev.sh` 
-   1. Upload the files (exclude files that are OS dependent like `node_modules` & `.env.local` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
-   2. [Install Composer](https://getcomposer.org/download/) (if not already installed)
-   3. Install PHP packages/vendors: `php composer.phar install`
-   4. Add `.env.local` (copy `.env` and update). Generate this using 1Password (no need to store it) or similar at about 32 characters containing letters, numbers and symbols.
+   2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env.local` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
+   3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
+   4. Install PHP packages/vendors: `php composer.phar install`
+   5. Add `.env` (copy `.env.example` and update).
    6. Run `. ./node_setup.sh` (this will setup node & install the JS packages – requires yarn to be installed).
    7. Run `yarn dev` or `yarn build` (for production) to compile JS & CSS files.
    8. Give executable perms to bin dir: `chmod u+x craft`
-   9. Create event streams & projections tables from `db_create.sql`. Set database collation to `utf8mb4_bin`.
-   10. Create one or more event streams with the command `bin/console event-store:event-stream:create user && bin/console event-store:event-stream:create auth && bin/console event-store:event-stream:create enquiry` (remove enquiry if not using the enquiry form).
-   11. Run all projections once: `bin/console event-store:projection:run user_projection -o && bin/console event-store:projection:run user_token_projection -o && bin/console event-store:projection:run enquiry_projection -o` 
-   12. Create a user `bin/console app:user:add` (select role `ROLE_SUPER_ADMIN`).
-   13. Setup mail spool: add cron task similar to: `*/15 * * * * cd /home/user/example.com/current && bin/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> var/log/mailer.log 2>&1` (this only sends error emails, runs every 15 minutes)
-       1. As one command: `crontab -l > mycron; echo "*/15 * * * * cd ${BASE}/current && bin/console swiftmailer:spool:send --message-limit=10 --time-limit=45 >> var/log/mailer.log 2>&1" >> mycron; crontab mycron; rm mycron`
-   14. Add logrotate cron (only needed on production): `30 4 * * 1 cd /home/user/example.com/current && logrotate app/config/packages/logrotate.conf --state var/logrotate-state` (runs Mondays at 04:30 UTC)
+   9. Install craft: `./craft install/craft`
 3. Remove or update the `LICENSE` file.
-4. [Install Composer](https://getcomposer.org/download/) locally.
-5. Update `composer.json`: `name`, `license` (likely `private`) and `description`
-6. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
-7. Composer install & update (locally): `composer install && composer update` (or without memory limit: `php -d memory_limit=-1 /usr/local/bin/composer update`)
+4. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
+7. Composer install & update (locally): `composer install && composer update`
 8. Run `yarn && yarn upgrade` locally.
-9. Find and make changes near `@todo-craft` comments throughout the site.
+10. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. ./node_setup.sh` again.
+9. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 10. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
-11. *Optional:* Run `composer test` – will install PHPUnit & run PHP tests
 12. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
-13. Copy (use "Push to another server") or recreate the templates in Postmark. The templates are referenced by the aliases.
-14. *Optional:* Run `bin/console app:graphql:dump-schema <username>` to update the GraphQL schema file where `username` is the email of an admin user.
 
-**Dev site can be accessed at https://[domain]/**
+**Dev site can be accessed at https://[domain]/**  
+Craft admin is located at `/admin`
 
 ## System Requirements
 
