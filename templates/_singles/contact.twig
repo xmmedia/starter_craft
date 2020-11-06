@@ -20,6 +20,7 @@
 
         {{ csrfInput() }}
         <input type="hidden" name="action" value="contact-form/send">
+        <input type="hidden" name="message[formName]" value="Contact">
         {{ redirectInput('contact/thanks#form') }}
 
         <div class="field-wrap">
