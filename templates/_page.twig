@@ -1,12 +1,20 @@
 {% extends '_layout' %}
 
-{% if entry is defined and entry.seo is defined %}
-    {% set seo = entry.seo.one() %}
-{% else %}
-    {% set seo = null %}
+{% set seo = null %}
+{% set pageTitle = null %}
+
+{% if entry is defined %}
+    {% set pageTitle = entry.title %}
 {% endif %}
 
-{% block page_title %}{% if seo is not null %}{{ seo.pageTitle }} | {% endif %}{% endblock %}
+{% if entry is defined and entry.seo is defined %}
+    {% set seo = entry.seo.one() %}
+    {% if seo.pageTitle %}
+        {% set pageTitle = seo.pageTitle %}
+    {% endif %}
+{% endif %}
+
+{% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% endblock %}
 
 {% block head %}
     {{ parent() }}
