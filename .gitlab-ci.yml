@@ -86,7 +86,7 @@ deploy:
     # copy env file into place; dump env
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cp -a $SHARED/.env $RELEASE/.env"
     # apply changes to craft config, migrations
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && php craft migrate/all && php craft project-config/apply"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && php craft migrate/all && php craft project-config/apply && php craft clear-caches/all"
     # reload php-fpm (to reset cache)
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /sbin/service php73-php-fpm reload"
     # remove >2 releases
