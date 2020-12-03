@@ -79,6 +79,8 @@ deploy:
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; chmod u+x craft"
     # ensure platform has all requirements & install packages on the server
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; php -v; php composer.phar check-platform-reqs; php composer.phar install --no-dev --classmap-authoritative --no-interaction --no-progress --no-suggest"
+    # move craft rebrand logos into place
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $SHARED/storage/rebrand && cp -ar $RELEASE/storage/rebrand $SHARED/storage"
     # link shared folders
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/storage; ln -s $SHARED/storage $RELEASE/storage; rm -rf $RELEASE/public/assets; ln -s $SHARED/public/assets $RELEASE/public/assets"
     # switch to new version
