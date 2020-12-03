@@ -28,7 +28,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
 12. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
-13. Add icons as SVGs in `/storage/rebrand/icon/` and `/storage/rebrand/logo/`. (SVGs are best.)
+13. Add icon/logo as SVGs in `/storage/rebrand/icon/` and `/storage/rebrand/logo/`. (SVGs are best.)
 
 **Dev site can be accessed at https://[domain]/**  
 Craft admin is located at `/admin`
