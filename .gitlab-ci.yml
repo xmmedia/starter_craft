@@ -90,7 +90,7 @@ deploy:
     # apply changes to craft config, migrations
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && php craft migrate/all && php craft project-config/apply && php craft clear-caches/all"
     # reload php-fpm (to reset cache)
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /sbin/service php73-php-fpm reload"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /sbin/service php74-php-fpm reload"
     # remove >2 releases
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "ls -1d $RELEASES/* | sort -rg | tail -n +3 | xargs /bin/rm -rf"
     # success message
