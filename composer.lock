@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f2281aaf66efacc4b4d010a25b0a1d03",
+    "content-hash": "234d11f4b70a5063ff33aedbec2a6a7e",
     "packages": [
         {
             "name": "acoustep/craft-easymde",
@@ -6898,11 +6898,8 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "7.3.*"
+        "php": "7.4.*"
     },
     "platform-dev": [],
-    "platform-overrides": {
-        "php": "7.3"
-    },
     "plugin-api-version": "1.1.0"
 }

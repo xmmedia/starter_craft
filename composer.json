@@ -4,7 +4,7 @@
     "type": "project",
     "description": "Starter for creating Craft 3 sites at XM Media",
     "require": {
-        "php": "7.3.*",
+        "php": "7.4.*",
         "acoustep/craft-easymde": "^0.1",
         "clubstudioltd/craft-asset-rev": "^6.0",
         "craftcms/cms": "^3.5",
@@ -25,9 +25,6 @@
     },
     "config": {
         "sort-packages": true,
-        "optimize-autoloader": true,
-        "platform": {
-            "php": "7.3"
-        }
+        "optimize-autoloader": true
     }
 }
