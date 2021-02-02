@@ -8,6 +8,8 @@ stages:
 
 # Select what we should cache
 cache:
+  # cache per stage & branch
+  key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
   paths:
     - vendor/
     - node_modules/
@@ -27,8 +29,6 @@ static:
   stage: static
   allow_failure: false
   interruptible: true
-  only:
-    - master
   script:
     - php -v
     - php composer.phar --version
@@ -90,7 +90,7 @@ deploy:
     # apply changes to craft config, migrations
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && php craft migrate/all && php craft project-config/apply && php craft clear-caches/all"
     # reload php-fpm (to reset cache)
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /sbin/service php74-php-fpm reload"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "sudo /bin/systemctl reload php74-php-fpm"
     # remove >2 releases
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "ls -1d $RELEASES/* | sort -rg | tail -n +3 | xargs /bin/rm -rf"
     # success message
