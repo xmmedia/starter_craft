@@ -89,10 +89,10 @@ deploy:
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $SHARED/storage/rebrand && cp -ar $RELEASE/storage/rebrand $SHARED/storage"
     # link shared folders
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/storage; ln -s $SHARED/storage $RELEASE/storage; rm -rf $RELEASE/public/assets; ln -s $SHARED/public/assets $RELEASE/public/assets"
-    # switch to new version
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "ln -sfn $RELEASE $REMOTE_BASE/current"
     # copy env file into place; dump env
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cp -a $SHARED/.env $RELEASE/.env"
+    # switch to new version
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "ln -sfn $RELEASE $REMOTE_BASE/current"
     # apply changes to craft config, migrations
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $REMOTE_BASE/current && $SERVER_PHP_PATH craft migrate/all && $SERVER_PHP_PATH craft project-config/apply && $SERVER_PHP_PATH craft clear-caches/all"
     # reload php-fpm (to reset cache)
