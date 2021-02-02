@@ -81,7 +81,7 @@ deploy:
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "mkdir -p $RELEASES $SHARED $SHARED/storage $SHARED/public/assets"
     # sync files to release directory
     - rsync --archive --stats --human-readable --no-perms --exclude ".git/" --exclude ".idea/" --exclude "node_modules/" --exclude "vendor/" --exclude "cypress/" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$RELEASE
-    # make bin files executable
+    # make craft console file is executable
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; chmod u+x craft"
     # ensure platform has all requirements & install packages on the server
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; $SERVER_PHP_PATH -v; echo "\n\n"; $SERVER_PHP_PATH composer.phar check-platform-reqs; $SERVER_PHP_PATH composer.phar install --no-dev --classmap-authoritative --no-interaction --no-progress --no-suggest"
