@@ -71,8 +71,6 @@ deploy:
     - git rev-parse --verify --short HEAD > .revision
     # create partial .env file (empty as yarn doesn't need anything)
     - touch .env
-    # install php dependencies without dev
-    - php composer.phar install --no-dev --classmap-authoritative --no-interaction --no-progress --no-scripts --ignore-platform-reqs --no-suggest
     - yarn install --non-interactive --frozen-lockfile
     - yarn build
     # remove temp .env file just incase
