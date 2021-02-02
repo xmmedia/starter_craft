@@ -1,4 +1,4 @@
-dateModified: 1601400290
+dateModified: 1612235544
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -71,7 +71,7 @@ system:
   live: true
   name: 'XM Craft Starter'
   retryDuration: null
-  schemaVersion: 3.5.13
+  schemaVersion: 3.6.1
   timeZone: America/Edmonton
 users:
   allowPublicRegistration: false
