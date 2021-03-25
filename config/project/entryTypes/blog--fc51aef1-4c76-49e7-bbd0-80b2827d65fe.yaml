@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3
+            fieldUid: c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3 # Featured Image
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 787e1739-73f9-4cc5-876c-48a53d41a987
+            fieldUid: 787e1739-73f9-4cc5-876c-48a53d41a987 # Post Categories
             instructions: null
             label: null
             required: false
@@ -45,7 +45,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452
+            fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452 # Summary
             instructions: null
             label: null
             required: false
@@ -54,7 +54,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66
+            fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66 # Post Content
             instructions: ''
             label: ''
             required: '1'
@@ -67,7 +67,7 @@ fieldLayouts:
 handle: blog
 hasTitleField: true
 name: Blog
-section: 2b537640-9acd-4e53-a1b4-f497d2e79cd0
+section: 2b537640-9acd-4e53-a1b4-f497d2e79cd0 # Blog
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

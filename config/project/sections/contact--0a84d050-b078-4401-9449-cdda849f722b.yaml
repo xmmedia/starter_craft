@@ -3,7 +3,7 @@ handle: contact
 name: Contact
 propagationMethod: all
 siteSettings:
-  42773db2-f2e9-40a9-ab5e-e3406f1a6a25:
+  42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter
     enabledByDefault: true
     hasUrls: true
     template: _singles/contact

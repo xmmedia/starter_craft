@@ -31,7 +31,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe
+            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             instructions: null
             label: null
             required: false
@@ -44,7 +44,7 @@ fieldLayouts:
 handle: homepage
 hasTitleField: true
 name: Homepage
-section: 49523c85-f034-4218-a653-a10e294faac5
+section: 49523c85-f034-4218-a653-a10e294faac5 # Homepage
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

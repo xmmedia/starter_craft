@@ -34,5 +34,7 @@ name: Blog
 settings:
   path: '@webroot/assets/blog'
 sortOrder: 1
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
 type: craft\volumes\Local
 url: '@web/assets/blog'

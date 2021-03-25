@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60
+fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60 # Blog Post Fields
 handle: postContent
 instructions: ''
 name: 'Post Content'

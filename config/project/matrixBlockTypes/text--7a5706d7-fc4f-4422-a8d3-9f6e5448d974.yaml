@@ -1,11 +1,11 @@
-field: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66
+field: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66 # Post Content
 fieldLayouts:
   a08ba3a0-f7aa-4e5d-a98f-afadac18e574:
     tabs:
       -
         elements:
           -
-            fieldUid: d9009def-1bb9-482d-8539-be1829106860
+            fieldUid: d9009def-1bb9-482d-8539-be1829106860 # Text
             instructions: null
             label: null
             required: true
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  d9009def-1bb9-482d-8539-be1829106860:
+  d9009def-1bb9-482d-8539-be1829106860: # Text
     contentColumnType: text
     fieldGroup: null
     handle: text

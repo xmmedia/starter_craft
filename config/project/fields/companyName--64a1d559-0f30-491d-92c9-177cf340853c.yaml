@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: f4025d83-35bc-4c5c-a20d-72e6e2b45082
+fieldGroup: f4025d83-35bc-4c5c-a20d-72e6e2b45082 # Global Fields
 handle: companyName
 instructions: 'Shown in the footer as the copyright holder.'
 name: 'Company Name'
@@ -11,7 +11,7 @@ settings:
   columnType: string
   initialRows: '4'
   multiline: ''
-  placeholder: ''
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

@@ -5,5 +5,5 @@ hasUrls: true
 language: en-CA
 name: 'XM Craft Starter'
 primary: true
-siteGroup: 23405c96-1469-4872-a55a-6488791f767a
+siteGroup: 23405c96-1469-4872-a55a-6488791f767a # Default
 sortOrder: 1

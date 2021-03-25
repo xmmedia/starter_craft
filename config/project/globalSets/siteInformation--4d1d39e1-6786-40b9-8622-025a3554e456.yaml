@@ -4,7 +4,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: 64a1d559-0f30-491d-92c9-177cf340853c
+            fieldUid: 64a1d559-0f30-491d-92c9-177cf340853c # Company Name
             instructions: null
             label: null
             required: false

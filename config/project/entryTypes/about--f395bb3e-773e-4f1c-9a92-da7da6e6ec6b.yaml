@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: ca24a1c1-6c04-473b-a43e-f9d930385cca
+            fieldUid: ca24a1c1-6c04-473b-a43e-f9d930385cca # About Image
             instructions: null
             label: null
             required: false
@@ -36,7 +36,7 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66
+            fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66 # Post Content
             instructions: null
             label: null
             required: false
@@ -49,7 +49,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe
+            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             instructions: null
             label: null
             required: false
@@ -62,7 +62,7 @@ fieldLayouts:
 handle: about
 hasTitleField: true
 name: About
-section: d9b45246-8d18-46e0-9a98-ac7b65120828
+section: d9b45246-8d18-46e0-9a98-ac7b65120828 # About
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -1,11 +1,11 @@
-field: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66
+field: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66 # Post Content
 fieldLayouts:
   bc20d52e-2493-47df-89e3-b63139731a31:
     tabs:
       -
         elements:
           -
-            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9
+            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Image
             instructions: null
             label: null
             required: false
@@ -16,7 +16,7 @@ fieldLayouts:
         name: Content
         sortOrder: 1
 fields:
-  64ec34a3-ecdf-4518-b59f-faaa5d33b8a9:
+  64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: # Image
     contentColumnType: string
     fieldGroup: null
     handle: image
@@ -25,9 +25,10 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowUploads: true
       allowedKinds:
         - image
-      defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379'
+      defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
       defaultUploadLocationSubpath: ''
       limit: ''
       localizeRelations: false
@@ -37,7 +38,7 @@ fields:
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379'
+      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
       singleUploadLocationSubpath: ''
       source: null
       sources: '*'

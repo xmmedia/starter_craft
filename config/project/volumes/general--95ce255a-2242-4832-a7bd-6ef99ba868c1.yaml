@@ -34,5 +34,7 @@ name: General
 settings:
   path: '@webroot/assets/general'
 sortOrder: 2
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
 type: craft\volumes\Local
 url: '@web/assets/general'

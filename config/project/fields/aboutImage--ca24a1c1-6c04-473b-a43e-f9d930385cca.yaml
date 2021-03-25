@@ -1,14 +1,15 @@
 contentColumnType: string
-fieldGroup: ab74bc93-83f6-4d36-a227-7a3150daec15
+fieldGroup: ab74bc93-83f6-4d36-a227-7a3150daec15 # Singles Fields
 handle: aboutImage
 instructions: ''
 name: 'About Image'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
-  defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1'
+  defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
   defaultUploadLocationSubpath: ''
   limit: ''
   localizeRelations: false
@@ -18,7 +19,7 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1'
+  singleUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'

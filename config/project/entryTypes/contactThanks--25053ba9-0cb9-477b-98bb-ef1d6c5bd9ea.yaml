@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: 48b81495-c226-4048-afdd-066e97f6a4a5
+            fieldUid: 48b81495-c226-4048-afdd-066e97f6a4a5 # Contact Form Thank You
             instructions: null
             label: null
             required: false
@@ -40,7 +40,7 @@ fieldLayouts:
       -
         elements:
           -
-            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe
+            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             instructions: null
             label: null
             required: false
@@ -53,7 +53,7 @@ fieldLayouts:
 handle: contactThanks
 hasTitleField: false
 name: 'Contact Thanks'
-section: 8794b2b7-43f4-4b76-87bb-e1875f1d0357
+section: 8794b2b7-43f4-4b76-87bb-e1875f1d0357 # Contact Thanks
 sortOrder: 1
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null

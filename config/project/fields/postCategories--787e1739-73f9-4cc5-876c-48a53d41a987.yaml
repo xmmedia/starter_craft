@@ -1,5 +1,5 @@
 contentColumnType: string
-fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60
+fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60 # Blog Post Fields
 handle: postCategories
 instructions: ''
 name: 'Post Categories'
@@ -13,7 +13,7 @@ settings:
   localizeRelations: false
   selectionLabel: ''
   showSiteMenu: true
-  source: 'group:48ab6525-2753-4564-a94c-19b9a23de6df'
+  source: 'group:48ab6525-2753-4564-a94c-19b9a23de6df' # Blog Categories
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false

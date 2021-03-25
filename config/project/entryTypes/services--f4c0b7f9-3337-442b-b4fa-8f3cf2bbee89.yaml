@@ -27,7 +27,7 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452
+            fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452 # Summary
             instructions: null
             label: null
             required: false
@@ -40,7 +40,7 @@ fieldLayouts:
 handle: services
 hasTitleField: true
 name: Services
-section: 941223b2-225a-4a1c-8095-3ef96f00d2f5
+section: 941223b2-225a-4a1c-8095-3ef96f00d2f5 # Services
 sortOrder: 1
 titleFormat: null
 titleTranslationKeyFormat: null

@@ -1,14 +1,15 @@
 contentColumnType: string
-fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60
+fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60 # Blog Post Fields
 handle: featureImage
 instructions: ''
 name: 'Featured Image'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowUploads: true
   allowedKinds:
     - image
-  defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379'
+  defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
   defaultUploadLocationSubpath: ''
   limit: '1'
   localizeRelations: false
@@ -18,7 +19,7 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379'
+  singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
   singleUploadLocationSubpath: ''
   source: null
   sources: '*'
