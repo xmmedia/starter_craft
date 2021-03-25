@@ -16,7 +16,6 @@ cache:
 
 variables:
   SERVER_PHP_PATH: php74
-  APP_ENV: prod
   RELEASES: "$REMOTE_BASE/releases"
   SHARED: "$REMOTE_BASE/shared"
 
@@ -26,24 +25,32 @@ before_script:
   # install composer
   - wget --no-verbose -O composer.phar https://getcomposer.org/composer-1.phar
 
+.versions-script: &versions-script
+  - php -v
+  - php composer.phar --version
+  - node --version
+  - yarn --version
+
+.security-checks: &security-checks
+  # check for security issues in PHP libs
+  - /root/.symfony/bin/symfony security:check
+  # check for JS security issues in libs
+  - yarn audit:moderate
+
 static:
   stage: static
   allow_failure: false
   interruptible: true
   script:
-    - php -v
-    - php composer.phar --version
-    - node --version
-    - yarn --version
+    - *versions-script
     # install php dependencies
     - php composer.phar install --classmap-authoritative --no-interaction --no-progress --no-scripts --ignore-platform-reqs --no-suggest
     # Install node/JS dependencies
     - yarn install --non-interactive --frozen-lockfile
+    - *security-checks
     # check for JS security issues in libs
-    - yarn audit:moderate
     - yarn lint:js
     - yarn lint:css
-    # @todo artifacts
 
 deploy:
   stage: deploy
@@ -52,10 +59,7 @@ deploy:
   only:
     - master
   script:
-    - php -v
-    - php composer.phar --version
-    - node --version
-    - yarn --version
+    - *versions-script
     # setup vars for paths
     - TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"
     - echo "Paths:"; echo $REMOTE_BASE; echo $RELEASE; echo $SHARED
@@ -72,6 +76,7 @@ deploy:
     # create partial .env file (empty as yarn doesn't need anything)
     - touch .env
     - yarn install --non-interactive --frozen-lockfile
+    - *security-checks
     - yarn build
     # remove temp .env file just incase
     - rm .env
@@ -86,7 +91,7 @@ deploy:
     # move craft rebrand logos into place
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $SHARED/storage/rebrand && cp -ar $RELEASE/storage/rebrand $SHARED/storage"
     # link shared folders
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/storage; ln -s $SHARED/storage $RELEASE/storage; rm -rf $RELEASE/public/assets; ln -s $SHARED/public/assets $RELEASE/public/assets"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $RELEASE/storage || true; ln -s $SHARED/storage $RELEASE/storage; rm -rf $RELEASE/public/assets || true; ln -s $SHARED/public/assets $RELEASE/public/assets"
     # copy env file into place; dump env
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cp -a $SHARED/.env $RELEASE/.env"
     # switch to new version
