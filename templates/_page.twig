@@ -9,7 +9,7 @@
 
 {% if entry is defined and entry.seo is defined %}
     {% set seo = entry.seo.one() %}
-    {% if seo.pageTitle %}
+    {% if seo and seo.pageTitle %}
         {% set pageTitle = seo.pageTitle %}
     {% endif %}
 {% endif %}
