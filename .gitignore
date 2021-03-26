@@ -13,7 +13,7 @@ webpack-stats.json
 public/service-worker.js
 
 ###> craft cms ###
-# @todo-craft remove setting up project
+# @todo-craft remove after setting up project
 config/license.key
 ###< craft cms ###
 
