@@ -34,6 +34,10 @@ return [
         'ga_tracking_id' => App::env('GA_TRACKING_ID'),
 
         'sendPoweredByHeader' => false,
+
+        'aliases' => [
+            '@webroot' => dirname(__DIR__) . '/public',
+        ],
     ],
 
     // Dev environment settings
