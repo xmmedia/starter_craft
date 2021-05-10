@@ -59,7 +59,6 @@
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
       <path value="$PROJECT_DIR$/vendor/seld/cli-prompt" />
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
-      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
       <path value="$PROJECT_DIR$/vendor/craftcms/oauth2-craftid" />
       <path value="$PROJECT_DIR$/vendor/craftcms/redactor" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
