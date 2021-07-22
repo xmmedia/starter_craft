@@ -23,7 +23,7 @@ before_script:
   # ensure everything up to date
   - apt-get update -yqq
   # install composer
-  - wget --no-verbose -O composer.phar https://getcomposer.org/composer-1.phar
+  - wget --no-verbose -O composer.phar https://getcomposer.org/composer-2.phar
 
 .versions-script: &versions-script
   - php -v
@@ -44,7 +44,7 @@ static:
   script:
     - *versions-script
     # install php dependencies
-    - php composer.phar install --classmap-authoritative --no-interaction --no-progress --no-scripts --ignore-platform-reqs --no-suggest
+    - php composer.phar install --no-interaction --no-progress --no-scripts --ignore-platform-reqs
     # Install node/JS dependencies
     - yarn install --non-interactive --frozen-lockfile
     - *security-checks
@@ -78,7 +78,7 @@ deploy:
     - yarn install --non-interactive --frozen-lockfile
     - *security-checks
     - yarn build
-    # remove temp .env file just incase
+    # remove temp .env file just in case
     - rm .env
     # ensure based paths exist
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "mkdir -p $RELEASES $SHARED $SHARED/storage $SHARED/public/assets"
@@ -87,7 +87,7 @@ deploy:
     # make craft console file is executable
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; chmod u+x craft"
     # ensure platform has all requirements & install packages on the server
-    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; $SERVER_PHP_PATH -v; echo "\n\n"; $SERVER_PHP_PATH composer.phar check-platform-reqs; $SERVER_PHP_PATH composer.phar install --no-dev --classmap-authoritative --no-interaction --no-progress --no-suggest"
+    - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "cd $RELEASE; $SERVER_PHP_PATH -v; echo "\n\n"; $SERVER_PHP_PATH composer.phar check-platform-reqs; $SERVER_PHP_PATH composer.phar install --no-dev --no-interaction --no-progress"
     # move craft rebrand logos into place
     - ssh -p $REMOTE_PORT $REMOTE_USER@$REMOTE_SERVER "rm -rf $SHARED/storage/rebrand && cp -ar $RELEASE/storage/rebrand $SHARED/storage"
     # link shared folders
