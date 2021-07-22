@@ -44,7 +44,7 @@ static:
   script:
     - *versions-script
     # install php dependencies
-    - php composer.phar install --no-interaction --no-progress --no-scripts --ignore-platform-reqs
+    - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs
     # Install node/JS dependencies
     - yarn install --non-interactive --frozen-lockfile
     - *security-checks
