@@ -12,6 +12,7 @@
         "craftcms/contact-form-honeypot": "^1.0",
         "craftcms/redactor": "^2.7",
         "hybridinteractive/craft-contact-form-extensions": "^1.2",
+        "roave/security-advisories": "dev-master",
         "vlucas/phpdotenv": "^3.4",
         "wrav/oembed": "^1.3"
     },
