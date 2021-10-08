@@ -12,7 +12,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
 4. Setup dev server:
    1. If using InterWorx, upload `setup_dev.sh` and run: `sh ./setup_dev.sh` 
-   2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env.local` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
+   2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
    3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
    4. Install PHP packages/vendors: `php composer.phar install`
    5. Add `.env` (copy `.env.example` and update).
