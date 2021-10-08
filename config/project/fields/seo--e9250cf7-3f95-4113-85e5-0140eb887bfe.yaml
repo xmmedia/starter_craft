@@ -1,3 +1,4 @@
+columnSuffix: null
 contentColumnType: string
 fieldGroup: 2cabf0a4-e1b0-4c44-a840-7c9bd36e75b7 # SEO
 handle: seo
@@ -8,6 +9,7 @@ settings:
   contentTable: '{{%matrixcontent_seo}}'
   maxBlocks: '1'
   minBlocks: '1'
+  propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null
 translationMethod: site

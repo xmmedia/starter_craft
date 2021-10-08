@@ -1,4 +1,4 @@
-dateModified: 1612235544
+dateModified: 1633660562
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -13,6 +13,50 @@ email:
     useAuthentication: '1'
     username: $POSTMARK_API_KEY
   transportType: craft\mail\transportadapters\Smtp
+meta:
+  __names__:
+    0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
+    1ca3f937-5a8b-4504-a7c3-22feb254fd6c: SEO # SEO
+    1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
+    2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
+    2cabf0a4-e1b0-4c44-a840-7c9bd36e75b7: SEO # SEO
+    4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
+    6bb2ec19-c175-4464-9ef8-16a717bf25d0: Homepage # Homepage
+    7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
+    48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
+    48b81495-c226-4048-afdd-066e97f6a4a5: 'Contact Form Thank You' # Contact Form Thank You
+    64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
+    64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: Image # Image
+    84d2deef-d6fe-4a07-b967-b71469d68219: 'Sharing Image Alt' # Sharing Image Alt
+    95ce255a-2242-4832-a7bd-6ef99ba868c1: General # General
+    414f0663-ff97-44ab-b402-98890d76f713: 'Page Title' # Page Title
+    683dcf54-f292-4177-bc23-e0af464cc90e: 'Public Schema' # Public Schema
+    733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
+    787e1739-73f9-4cc5-876c-48a53d41a987: 'Post Categories' # Post Categories
+    3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'Sharing Image' # Sharing Image
+    8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
+    8874e7aa-6b15-43b9-a582-4df720853d60: 'Blog Post Fields' # Blog Post Fields
+    23405c96-1469-4872-a55a-6488791f767a: Default # Default
+    25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea: 'Contact Thanks' # Contact Thanks
+    42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter
+    49523c85-f034-4218-a653-a10e294faac5: Homepage # Homepage
+    941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
+    a9d87289-cfe2-4244-bc61-fcf804f19e75: 'Meta Description' # Meta Description
+    ab74bc93-83f6-4d36-a227-7a3150daec15: 'Singles Fields' # Singles Fields
+    b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
+    c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3: 'Featured Image' # Featured Image
+    c763c881-9bb8-49e1-8297-dc71ed74d29a: Common # Common
+    c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
+    ca24a1c1-6c04-473b-a43e-f9d930385cca: 'About Image' # About Image
+    d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
+    d9009def-1bb9-482d-8539-be1829106860: Text # Text
+    e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
+    f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
+    f395bb3e-773e-4f1c-9a92-da7da6e6ec6b: About # About
+    f4025d83-35bc-4c5c-a20d-72e6e2b45082: 'Global Fields' # Global Fields
+    fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
+    fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
+    ffc736cb-53c0-4f0c-9682-b810b51e72b2: Contact # Contact
 plugins:
   assetrev:
     edition: standard
@@ -71,7 +115,7 @@ system:
   live: true
   name: 'XM Craft Starter'
   retryDuration: null
-  schemaVersion: 3.6.1
+  schemaVersion: 3.7.8
   timeZone: America/Edmonton
 users:
   allowPublicRegistration: false
