@@ -6,9 +6,9 @@ import PortalVue from 'portal-vue';
 
 // import * as filters from './common/filters';
 
-import formError from './common/form_error';
-import fieldErrors from './common/field_errors';
-import fieldError from './common/field_error';
+// import formError from './common/form_error';
+// import fieldErrors from './common/field_errors';
+// import fieldError from './common/field_error';
 
 // SASS/CSS
 import '../../css/public.scss';
@@ -22,9 +22,9 @@ Vue.config.productionTip = false;
 Vue.use(Vuelidate);
 Vue.use(PortalVue);
 
-Vue.component('form-error', formError);
-Vue.component('field-errors', fieldErrors);
-Vue.component('field-error', fieldError);
+// Vue.component('form-error', formError);
+// Vue.component('field-errors', fieldErrors);
+// Vue.component('field-error', fieldError);
 
 window.App = new Vue({
     el: '#app',
