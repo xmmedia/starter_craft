@@ -41,7 +41,7 @@ module.exports = function (Encore) {
         .enableSassLoader(function () {}, {
             // tell sass where to find url() paths/files
             resolveUrlLoaderOptions: {
-                root: path.join(__dirname, 'public'),
+                root: resolve('public'),
             },
         })
         .enablePostCssLoader()
