@@ -87,10 +87,6 @@
 
 {% block javascripts %}
     <script src="{{ rev('build/public.js') }}"></script>
-
-    {# @todo-craft remove is no IE support is needed #}
-    {# make svg's with use referencing an external image work in IE #}
-    <script defer src="{{ rev('build/svgxuse.min.js') }}"></script>
 {% endblock %}
 </body>
 </html>
