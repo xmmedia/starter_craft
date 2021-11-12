@@ -1,6 +1,5 @@
 'use strict';
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 function resolve (dir) {
@@ -23,7 +22,7 @@ module.exports = function (Encore) {
         .setPublicPath('/build')
 
         // always create hashed filenames (e.g. public.a1b2c3.css)
-        .enableVersioning(true)
+        .enableVersioning(!Encore.isDevServer())
 
         // empty the outputPath dir before each build
         .cleanupOutputBeforeBuild()
@@ -40,8 +39,10 @@ module.exports = function (Encore) {
 
         // allow sass/scss files to be processed
         .enableSassLoader(function () {}, {
-            // see: http://symfony.com/doc/current/frontend/encore/bootstrap.html#importing-bootstrap-sass
-            resolveUrlLoader: false,
+            // tell sass where to find url() paths/files
+            resolveUrlLoaderOptions: {
+                root: path.join(__dirname, 'public'),
+            },
         })
         .enablePostCssLoader()
         // allow .vue files to be processed
@@ -86,16 +87,11 @@ module.exports = function (Encore) {
             'vue$': 'vue/dist/vue.esm.js',
         })
 
-        .addPlugin(new Dotenv())
-
-        // this is to resolve the issues with the manifest
-        // where the file path keys have the hashed version
-        .configureUrlLoader({
-            images: {
-                limit: 0, // Avoids files from being inlined
-                esModule: false,
-            },
-        })
+        // enable as needed
+        // .configureDefinePlugin((options) => {
+        //     const env = require('dotenv').config();
+        //     options['process.env'].DB_DATABASE = '"'+env.parsed.DB_DATABASE+'"';
+        // })
     ;
 
     if (Encore.isProduction()) {

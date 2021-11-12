@@ -10,9 +10,8 @@ encoreConfigure(Encore);
 
 // Tweak the default webpack config a bit for the dev-server
 Encore
-    // @todo-craft
-    .setPublicPath('https://dev.example.com/dev-server')
-    .setManifestKeyPrefix('build/')
-    .enableVersioning(false);
+    .configureDevServerOptions(options => {
+        options.allowedHosts = 'all';
+    });
 
 module.exports = merge(Encore.getWebpackConfig(), require('./webpack.customize'));
