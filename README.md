@@ -59,22 +59,6 @@ Craft admin is located at `/admin`
     - Dry run: `composer cs`
     - Fix: `composer cs:fix`
   - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `composer static`
-  - Projections:
-    - All commands: `bin/console event-store:projection`
-    - Run once: `bin/console event-store:projection:run user_projection -o`
-
-### Apache Config
-
-The following is needed in the Apache VirtualHost for the Webpack Dev Server/HMR to work:
-
-```
-ProxyPassMatch ^(\/dev-server\/.+$)|(sockjs-node) http://localhost:<port>
-ProxyPassReverse / http://localhost:<port>
-```
-
-You'll probably want to customize the port number in the Apache ProxyPass config
-and in `package.json` (`script.dev-server`) to be unique to each project if
-running multiple sites on one server.
 
 ## Incorporated Libraries & Tools
 @todo update/review
@@ -97,7 +81,7 @@ running multiple sites on one server.
       - [Purge CSS](https://github.com/FullHuman/purgecss) – removes unused CSS during the deployment process (not run in dev)
       - [SVGO](https://github.com/svg/svgo) – optimizes SVG files
       - [Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) – displays sizes/stats on the JS bundle size
-    - [Tailwind](https://tailwindcss.com/docs/what-is-tailwind/) – utility first styling framework
+    - [Tailwind](https://tailwindcss.com/) – utility first styling framework
     - [Jest](https://jestjs.io/) – JS unit testing
     - [Cypress](https://www.cypress.io/) – end-to-end (e2e) testing
     - [Lodash](https://lodash.com/) – helper functions for JS
@@ -112,8 +96,6 @@ running multiple sites on one server.
     - [GraphQLBundle](https://github.com/overblog/GraphQLBundle) – provides GraphQL in PHP using [graphql-php](https://github.com/webonyx/graphql-php)
       - [GraphQiL](https://github.com/graphql/graphiql) is available at `/graphiql` (on dev only)
     - [Twig](https://twig.symfony.com/) – server side templating language (limited use)
-    - [Prooph PDO Event Store](https://github.com/prooph/pdo-event-store) & Bridge/Bundle – for doing Event Sourcing
-    - [Doctrine](https://www.doctrine-project.org/) – for reading from read models
     - [PhpUnit](https://phpunit.de/) – for running PHP tests
     - [PHP CS](https://cs.sensiolabs.org/) – PHP coding standards analyzer & fixer
     - [PHPStan](https://github.com/phpstan/phpstan) – static analysis of PHP
