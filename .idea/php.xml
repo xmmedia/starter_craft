@@ -20,7 +20,6 @@
       <path value="$PROJECT_DIR$/vendor/pixelandtonic/imagine" />
       <path value="$PROJECT_DIR$/vendor/voku/urlify" />
       <path value="$PROJECT_DIR$/vendor/creocoder/yii2-nested-sets" />
-      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/voku/email-check" />
       <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
       <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
@@ -29,7 +28,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/vendor/symfony/finder" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
       <path value="$PROJECT_DIR$/vendor/symfony/process" />
       <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
@@ -41,7 +39,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/yaml" />
       <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
-      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
       <path value="$PROJECT_DIR$/vendor/psr/log" />
@@ -67,7 +64,6 @@
       <path value="$PROJECT_DIR$/vendor/craftcms/server-check" />
       <path value="$PROJECT_DIR$/vendor/league/oauth2-client" />
       <path value="$PROJECT_DIR$/vendor/enshrined/svg-sanitize" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-shell" />
       <path value="$PROJECT_DIR$/vendor/webonyx/graphql-php" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
