@@ -86,9 +86,7 @@ module.exports = function (Encore) {
             'vue$': 'vue/dist/vue.esm.js',
         })
 
-        .addPlugin(new Dotenv({
-            path: './.env',
-        }))
+        .addPlugin(new Dotenv())
 
         // this is to resolve the issues with the manifest
         // where the file path keys have the hashed version
