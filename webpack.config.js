@@ -3,7 +3,6 @@
 const Encore = require('@symfony/webpack-encore');
 const encoreConfigure = require('./webpack.base.config');
 const merge = require('webpack-merge');
-const path = require('path');
 
 process.env.NODE_ENV = process.env.NODE_ENV || (Encore.isProduction() ? 'production' : 'development');
 
