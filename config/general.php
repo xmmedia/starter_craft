@@ -44,6 +44,7 @@ return [
             ['link', ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => '/favicon-32x32.png']],
             ['link', ['rel' => 'icon', 'type' => 'image/png','sizes' => '16x16', 'href' => '/favicon-16x16.png']],
             ['link', ['rel' => 'manifest', 'href' => '/site.webmanifest']],
+            // @todo-craft update the next two based on colours for the favicon
             ['link', ['rel' => 'mask-icon', 'href' => '/safari-pinned-tab.svg', 'color' => '#603cba']],
             ['meta', ['name' => 'msapplication-TileColor', 'content' => '#603cba']],
             ['meta', ['name' => 'theme-color', 'content' => '#ffffff']],
