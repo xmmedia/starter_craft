@@ -57,6 +57,7 @@ deploy:
   when: manual
   allow_failure: false
   only:
+    # @todo-craft update to match main branch name
     - master
   script:
     - *versions-script
