@@ -102,4 +102,14 @@ module.exports = function (Encore) {
             }))
         ;
     }
+
+    if (Encore.isDev()) {
+        Encore
+            .copyFiles({
+                from: './node_modules/svgxuse',
+                to: '[name].[hash:8].[ext]',
+                pattern: /\.js$/,
+            })
+        ;
+    }
 };

@@ -87,6 +87,10 @@
 
 {% block javascripts %}
     <script src="{{ rev('build/public.js') }}"></script>
+
+    {% if craft.app.config.general.devMode %}
+        <script src="{{ rev('build/svgxuse.min.js') }}"></script>
+    {% endif %}
 {% endblock %}
 </body>
 </html>
