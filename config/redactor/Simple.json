@@ -1,4 +1,6 @@
 {
-  "buttons": ["bold", "italic"],
-  "toolbarFixed": true
+  "buttons": ["bold", "italic", "link", "sup", "sub", "html"],
+  "plugins": ["properties"],
+  "toolbarFixed": true,
+  "source": true
 }
