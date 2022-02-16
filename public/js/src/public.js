@@ -1,5 +1,3 @@
-import 'es6-promise/auto';
-
 import Vue from 'vue';
 import Vuelidate from 'vuelidate';
 import PortalVue from 'portal-vue';

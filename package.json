@@ -29,7 +29,6 @@
     "core-js": "^3.4.3",
     "cuid": "^2.1.6",
     "date-fns": "^2.2.1",
-    "es6-promise": "^4.2.8",
     "js-cookie": "^3.0.0",
     "libphonenumber-js": "^1.7.22",
     "lodash": "^4.17.11",
