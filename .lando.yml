@@ -1,0 +1,16 @@
+# @todo-craft update
+name: craftstarter
+recipe: symfony
+config:
+  php: '8.0'
+  webroot: public
+  xdebug: true
+services:
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+proxy:
+  appserver:
+    # @todo-craft update
+    - craftstarter.lndo.site
