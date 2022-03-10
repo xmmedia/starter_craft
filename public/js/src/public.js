@@ -1,6 +1,6 @@
 import Vue from 'vue';
-import Vuelidate from 'vuelidate';
-import PortalVue from 'portal-vue';
+// import Vuelidate from 'vuelidate';
+// import PortalVue from 'portal-vue';
 
 // import * as filters from './common/filters';
 
@@ -17,8 +17,8 @@ import '@/../../images/icons-public.svg';
 // disable the warning about dev/prod
 Vue.config.productionTip = false;
 
-Vue.use(Vuelidate);
-Vue.use(PortalVue);
+// Vue.use(Vuelidate);
+// Vue.use(PortalVue);
 
 // Vue.component('form-error', formError);
 // Vue.component('field-errors', fieldErrors);
