@@ -3,6 +3,7 @@
   "plugins": ["fontsize", "fullscreen", "video", "properties"],
   "linkNewTab": true,
   "imagePosition": true,
+  "imageResizable": true,
   "toolbarFixed": true,
   "structure": true,
   "source": true
