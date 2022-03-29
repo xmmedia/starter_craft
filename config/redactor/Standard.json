@@ -1,6 +1,6 @@
 {
-  "buttons": ["formatting", "bold", "italic", "unorderedlist", "orderedlist", "link", "image", "video", "html"],
-  "plugins": ["fontsize", "fullscreen", "video", "properties"],
+  "buttons": ["formatting", "bold", "italic", "alignment", "unorderedlist", "orderedlist", "link", "image", "video", "html"],
+  "plugins": ["fontsize", "fullscreen", "video", "properties", "alignment"],
   "linkNewTab": true,
   "imagePosition": true,
   "imageResizable": true,
