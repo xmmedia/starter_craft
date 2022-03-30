@@ -109,6 +109,10 @@
       <excludeFolder url="file://$MODULE_DIR$/public/cpresources" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/html-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/conditionable" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-shell" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
