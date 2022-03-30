@@ -1,3 +1,8 @@
+# DB_SERVER: database
+# DB_PORT: 3306
+# DB_DATABASE: symfony
+# DB_USER: symfony
+# DB_PASSWORD: symfony
 # @todo-craft update
 name: craftstarter
 recipe: symfony
