@@ -17,7 +17,7 @@
         {% endif %}
 
         {{ csrfInput() }}
-        <input type="hidden" name="action" value="contact-form/send">
+        {{ actionInput('contact-form/send') }}
         {{ redirectInput('contact/thanks') }}
 
         <div class="field-wrap">
