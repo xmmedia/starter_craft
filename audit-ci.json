@@ -1,4 +1,12 @@
 {
-    "//": "Numbers come from https://npmjs.com/advisories/1234",
-    "allowlist": [1006947, 1006948, 1006952]
+    "//": "Numbers come from https://github.com/advisories/1234",
+    "allowlist": [
+        "GHSA-ww39-953v-wcq6",
+        "GHSA-x4jg-mjrx-434g",
+        "GHSA-cfm4-qjh2-4765",
+        "GHSA-35jh-r3h4-6jhm",
+        "GHSA-p6mc-m468-83gw",
+        "GHSA-xvch-5gv4-984h",
+        "GHSA-hgjh-723h-mx2j"
+    ]
 }
