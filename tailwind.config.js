@@ -4,8 +4,8 @@ module.exports = {
     mode: 'jit',
     content: [
         './templates/**/*.twig',
-        './public/js/src/**/*.vue',
-        './public/js/src/**/*.js',
+        './public/js/src/**/*.{vue,js}',
+        './config/redactor/**/*.json',
     ],
     safelist: [
         // vue transition classes: https://vuejs.org/v2/guide/transitions.html#Transition-Classes
