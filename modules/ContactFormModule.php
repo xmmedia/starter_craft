@@ -67,7 +67,7 @@ class ContactFormModule extends \yii\base\Module
                 /** @var Submission $submission */
                 $submission = $e->sender;
 
-                if (empty($submission->fromName) || empty(trim($submission->fromName))) {
+                if (empty(trim($submission->fromName))) {
                     $submission->clearErrors('fromName');
                     $submission->addError(
                         'fromName',
@@ -75,7 +75,7 @@ class ContactFormModule extends \yii\base\Module
                     );
                 }
 
-                if (empty($submission->fromEmail) || empty(trim($submission->fromEmail))) {
+                if (empty(trim($submission->fromEmail))) {
                     $submission->clearErrors('fromEmail');
                     $submission->addError(
                         'fromEmail',
