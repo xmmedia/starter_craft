@@ -1,6 +1,6 @@
 {
-  "buttons": ["bold", "italic", "link", "sup", "sub", "html"],
-  "plugins": ["properties"],
+  "buttons": ["redo", "undo", "bold", "italic", "link", "sup", "sub", "html"],
+  "plugins": ["properties", "clear", "style"],
   "toolbarFixed": true,
   "source": true
 }

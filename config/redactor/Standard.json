@@ -1,10 +1,22 @@
 {
-  "buttons": ["formatting", "bold", "italic", "alignment", "unorderedlist", "orderedlist", "link", "image", "video", "html"],
-  "plugins": ["fontsize", "fullscreen", "video", "properties", "alignment"],
+  "buttons": ["redo", "undo", "formatting", "bold", "italic", "alignment", "unorderedlist", "orderedlist", "link", "image", "video", "html"],
+  "plugins": ["fontsize", "alignment", "fullscreen", "video", "fontcolor", "properties", "clear", "style"],
+  "fontcolors": ["#42a347", "#82bf37"],
   "linkNewTab": true,
   "imagePosition": true,
   "imageResizable": true,
   "toolbarFixed": true,
   "structure": true,
-  "source": true
+  "source": true,
+  "//formattingAdd": {
+    "large-green": {
+      "title": "Large Green",
+      "api": "module.block.format",
+      "args": {
+        "class": "text-green-500 text-7xl font-bold",
+        "type": "toggle"
+      }
+    }
+  },
+  "formattingHide": ["pre"]
 }
