@@ -323,7 +323,8 @@ Options -MultiViews
 
 <IfModule mod_headers.c>
 
-    Header set X-Frame-Options "DENY"
+    # same origin so craft preview works
+    Header set X-Frame-Options "SAMEORIGIN"
 
     # `mod_headers` cannot match based on the content-type, however,
     # the `X-Frame-Options` response header should be send only for
