@@ -7,6 +7,8 @@
 name: craftstarter
 recipe: symfony
 config:
+  config:
+    php: lando_php.ini
   php: '8.0'
   webroot: public
   xdebug: true
