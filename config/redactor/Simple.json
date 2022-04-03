@@ -2,5 +2,6 @@
   "buttons": ["redo", "undo", "bold", "italic", "link", "sup", "sub", "html"],
   "plugins": ["properties", "clear", "style"],
   "toolbarFixed": true,
-  "source": true
+  "source": true,
+  "imagePosition": true
 }
