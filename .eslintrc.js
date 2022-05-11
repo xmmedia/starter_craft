@@ -22,8 +22,9 @@ module.exports = {
             "exports": "never",
             "functions": "only-multiline",
         }],
+        "space-before-function-paren": ["error", "always"],
         "vue/max-attributes-per-line": ["error", {
-            "singleline": 3,
+            "singleline": 5,
             "multiline": {
                 "max": 1,
                 "allowFirstLine": true,
@@ -43,7 +44,7 @@ module.exports = {
         ],
         "vue/html-closing-bracket-newline": ["error", {
             "singleline": "never",
-            "multiline": "never"
+            "multiline": "never",
         }],
         "vue/multiline-html-element-content-newline": "off",
         "vue/singleline-html-element-content-newline": "off",

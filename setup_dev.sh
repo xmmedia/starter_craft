@@ -37,11 +37,17 @@ if [[ ! $REPLY =~ ^[Y]$ ]]; then
 fi
 printf "\n\n"
 
-cd $BASE
+cd $BASE || exit
 echo "Working in: $PWD"
 printf "\n\n"
 
-echo "Install oh-my-zsh"
+echo "Creating ssh key dir/files"
+mkdir ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+
+echo "Install oh-my-zsh & add nvm vars"
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 printf "\nDISABLE_AUTO_TITLE=\"true\"" >> ~/.zshrc
 printf "\n\nexport NVM_DIR=\"\$HOME/.nvm\"" >> ~/.zshrc
@@ -50,7 +56,7 @@ printf "\n[ -s \"\$NVM_DIR/bash_completion\" ] && \. \"\$NVM_DIR/bash_completion
 printf "\n\n"
 
 echo "Install nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 printf "\n\n"
 
 if [ $(echo "$PHP_VERSION >= $PHP_MINIMUM_VERSION" | bc) -eq 0 ]; then
@@ -62,7 +68,7 @@ if [ $(echo "$PHP_VERSION >= $PHP_MINIMUM_VERSION" | bc) -eq 0 ]; then
 fi
 
 echo "Creating dirs in ${BASE}"
-cd $BASE
+cd $BASE || exit
 mkdir -p $RELEASE
 mkdir -p $RELEASE/public
 mkdir -p $SHARED/public/assets
@@ -70,11 +76,12 @@ ln -s $RELEASE current
 rm -rf html
 ln -s current/public html
 mkdir -p $SHARED/storage
+mkdir -p $SHARED/storage/rebrand
 ln -s $SHARED/storage $RELEASE/storage
 ln -s $SHARED/public/assets $RELEASE/public/assets
 printf "\n\n"
 
-cd $RELEASE
+cd $RELEASE || exit
 
 echo "Install Composer"
 wget --no-verbose -O composer.phar https://getcomposer.org/composer-2.phar

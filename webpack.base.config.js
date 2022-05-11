@@ -33,7 +33,7 @@ module.exports = function (Encore) {
         // will output as build/public.js and similar
         .addEntry('public', './public/js/src/public.js')
 
-        // uncomment to get integrity="..." attributes on your script & link tags
+        // adds integrity="..." attributes on your script & link tags
         // requires WebpackEncoreBundle 1.4 or higher
         .enableIntegrityHashes(Encore.isProduction())
 
@@ -56,10 +56,7 @@ module.exports = function (Encore) {
             };
         }, { runtimeCompilerBuild: true })
 
-        // generate source maps when "source-maps" argument exists
-        .enableSourceMaps(
-            process.argv.splice(2).includes('--source-maps')
-        )
+        .enableSourceMaps(Encore.isDev() || Encore.isDevServer())
 
         .configureBabel(null, {
             includeNodeModules: [
@@ -87,11 +84,11 @@ module.exports = function (Encore) {
             'vue$': 'vue/dist/vue.esm.js',
         })
 
-        // enable as needed
-        // .configureDefinePlugin((options) => {
-        //     const env = require('dotenv').config();
-        //     options['process.env'].DB_DATABASE = '"'+env.parsed.DB_DATABASE+'"';
-        // })
+        /* eslint-disable no-unused-vars */
+        .configureDefinePlugin((options) => {
+            const env = require('dotenv').config({ path: '.env' });
+        })
+        /* eslint-enable no-unused-vars */
     ;
 
     if (Encore.isProduction()) {
