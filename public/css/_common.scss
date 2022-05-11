@@ -2,12 +2,12 @@
 @import "media";
 
 a, .button-link {
-    @apply text-blue-500 no-underline transition-default;
+    @apply text-blue-500 no-underline transition-default outline-none rounded;
     &:hover, &:active {
         @apply underline text-blue-700;
     }
     &:focus {
-        @apply -m-1 p-1 underline bg-gray-300;
+        @apply ring-2 bg-zinc-200;
     }
     &:disabled {
         @apply opacity-75;
@@ -18,7 +18,7 @@ a, .button-link {
 }
 
 a[href^=tel], a[href^=mailto] {
-    @apply whitespace-nowrap;
+    @apply whitespace-normal md:whitespace-nowrap;
 }
 
 b, strong {
@@ -32,7 +32,7 @@ p {
 
 // re-add list styles as tailwind removes them
 ul, ol {
-    @apply pl-10;
+    @apply pl-10 text-left;
 }
 ul {
     @apply list-disc;

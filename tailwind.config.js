@@ -39,6 +39,9 @@ module.exports = {
                 '3/5': '60%',
                 '11/12': '91%',
             },
+            height: {
+                '120': '30rem',
+            },
             fontFamily: {
                 'headings': [
                     '"Helvetica Neue"',
