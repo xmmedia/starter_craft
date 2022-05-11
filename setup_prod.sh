@@ -73,6 +73,7 @@ ln -s $RELEASE current
 rm -rf html
 ln -s current/public html
 mkdir -p $SHARED/storage
+mkdir -p $SHARED/storage/rebrand
 ln -s $SHARED/storage $RELEASE/storage
 ln -s $SHARED/public/assets $RELEASE/public/assets
 printf "\n\n"
