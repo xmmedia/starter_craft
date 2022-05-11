@@ -1,12 +1,11 @@
 const plugin = require('tailwindcss/plugin');
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    mode: 'jit',
     content: [
         './templates/**/*.twig',
         './public/js/src/**/*.{vue,js}',
-        './config/redactor/**/*.json',
+        './config/redactor/**/*.{json,js}',
     ],
     safelist: [
         // vue transition classes: https://vuejs.org/v2/guide/transitions.html#Transition-Classes
@@ -14,6 +13,10 @@ module.exports = {
         '.md-leave-active',
         '.md-enter',
         '.md-leave-active',
+        // {
+        //     pattern: /^(m|p)(t|b|r|l|x|y)?-(0|1|2|3|4|6|8|10|12|16|24)$/,
+        //     variants: ['md', 'lg'],
+        // },
     ],
     theme: {
         screens: {
@@ -24,6 +27,9 @@ module.exports = {
         },
         extend: {
             colors: {
+                'black-transparent' : 'rgba(0,0,0,0.4)',
+                'white-transparent' : 'rgba(255,255,255,0.6)',
+                'white-transparent-dark' : 'rgba(255,255,255,0.8)',
             },
             borderWidth: {
                 '10': '10px',
@@ -46,6 +52,7 @@ module.exports = {
             },
         },
     },
+
     plugins: [
         require('@tailwindcss/typography'),
         plugin(({ addBase, theme }) => {

@@ -38,7 +38,9 @@ module.exports = function (Encore) {
         .enableIntegrityHashes(Encore.isProduction())
 
         // allow sass/scss files to be processed
-        .enableSassLoader(function () {}, {
+        .enableSassLoader(function (options) {
+            options.additionalData = "$env: " + process.env.NODE_ENV + ";";
+        }, {
             // tell sass where to find url() paths/files
             resolveUrlLoaderOptions: {
                 root: resolve('public'),
