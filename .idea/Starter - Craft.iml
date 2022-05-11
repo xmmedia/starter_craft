@@ -40,7 +40,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/league/oauth2-client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mikehaertl/php-shellcommand" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/opis/closure" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-common" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpdocumentor/reflection-docblock" />
@@ -109,10 +108,12 @@
       <excludeFolder url="file://$MODULE_DIR$/public/cpresources" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/html-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/conditionable" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-shell" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/field-manager" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/verbb/base" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-shell" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
