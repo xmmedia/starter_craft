@@ -18,6 +18,13 @@
     @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 gap-y-8 justify-center lg:justify-start
     max-w-6xl mx-auto px-8 pt-4 pb-12 lg:px-12 lg:pt-5 lg:pb-12;
 }
+.neocolumn, .text-block-wrap {
+    p, h1, h2, h3, h4, ul, ol {
+        &:first-child {
+            @apply mt-0;
+        }
+    }
+}
 
 .col-100 {
     @apply sm:col-span-12;
@@ -43,13 +50,6 @@
 }
 .col-100 .text-block-wrap {
     @apply lg:mx-auto;
-}
-.neocolumn, .text-block-wrap {
-    p, h1, h2, h3, h4, ul, ol {
-        &:first-child {
-            @apply mt-0;
-        }
-    }
 }
 
 .neocolumn-image_wrap {
