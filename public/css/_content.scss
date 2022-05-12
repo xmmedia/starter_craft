@@ -2,16 +2,20 @@
     @apply max-w-11/12 mx-auto;
 }
 .w-content {
-    @apply max-w-11/12 xl:max-w-6xl mx-auto;
+    @apply xl:max-w-6xl;
 }
 .w-content-narrow {
-    @apply max-w-11/12 md:max-w-md lg:max-w-lg xl:max-w-3xl mx-auto;
+    @include mq(844px) {
+        @apply max-w-3xl;
+    }
 }
 .w-content-copy {
-    @apply max-w-11/12 sm:max-w-lg xl:max-w-xl mx-auto;
+    @apply sm:max-w-xl;
 }
 .w-content-wide {
-    @apply max-w-11/12 xl:max-w-7xl mx-auto;
+    @include mq(1405px) {
+        @apply max-w-7xl;
+    }
 }
 
 .neocolumns-wrap {
