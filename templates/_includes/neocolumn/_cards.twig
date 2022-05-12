@@ -1,0 +1,9 @@
+<section class="cards-wrap">
+    {% for block in subContent.children.all() %}
+        {% if block.type == "card" %}
+            <div class="card">
+                {{ block.textBlock }}
+            </div>
+        {% endif %}
+    {% endfor %}
+</section>

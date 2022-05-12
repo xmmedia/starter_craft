@@ -1,0 +1,8 @@
+{% if entry.neoBlocks %}
+    {% for block in entry.neoBlocks.level(1).all() %}
+        {% switch block.type.handle %}
+            {% case 'columns' %}
+                {% include '_includes/neocolumn/_columns.twig' %}
+        {% endswitch %}
+    {% endfor %}
+{% endif %}

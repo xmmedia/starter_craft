@@ -1,0 +1,22 @@
+{% set herobar = entry.herobar.one() %}
+{% if herobar and herobar.herobarImage|length > 0 %}
+    {% set heading = null %}
+    {% if herobar.heading %}
+        {% set heading = herobar.heading %}
+    {% endif %}
+
+    <section class="herobar"
+         style="background-image: url('{{ herobar.herobarImage.one().setTransform('herobar').getUrl() }}');">
+        {% if hero_content is not defined %}
+            <div class="flex justify-center items-center w-full h-full">
+                <div class="w-content text-center">
+                    {% if heading %}
+                        <h1>{{ heading }}</h1>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            {{ hero_content|raw }}
+        {% endif %}
+    </section>
+{% endif %}
