@@ -14,7 +14,7 @@
     {% endif %}
 {% endif %}
 
-{% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% endblock %}
+{% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif %}{% endblock %}
 
 {% block head %}
     {{ parent() }}
