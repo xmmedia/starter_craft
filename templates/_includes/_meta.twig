@@ -34,7 +34,7 @@ Usage:
 <meta property="og:type"  content="website">
 <meta property="og:url"   content="{{ url }}">
 <meta property="og:site_name" content="{{ siteInformation.companyName }}">
-{% if image is defined and image|length %}
+{% if image is defined and image|length > 0 %}
     {# should be 1200x630 #}
     <meta property="og:image" content="{{ image.one().getUrl({ width: 1200, height: 600}) }}">
     {% if image_alt %}
@@ -55,7 +55,7 @@ Usage:
 {% if description %}
     <meta name="twitter:description" content="{{ description }}">
 {% endif %}
-{% if image is defined and image|length %}
+{% if image is defined and image|length > 0 %}
     <meta name="twitter:image" content="{{ image.one().getUrl({ width: 1200, height: 600}) }}">
     {% if image_alt %}
         <meta property="twitter:image:alt" content="{{ image_alt }}">
