@@ -2,9 +2,9 @@
 # URLs: https://craftstarter.lndo.site/ or __________
 # DB_SERVER: database
 # DB_PORT: 3306
-# DB_DATABASE: symfony
-# DB_USER: symfony
-# DB_PASSWORD: symfony
+# DB_DATABASE: craft
+# DB_USER: craft
+# DB_PASSWORD: craft
 # @todo-craft update
 name: craftstarter
 recipe: symfony
@@ -15,6 +15,11 @@ config:
   webroot: public
   xdebug: true
 services:
+  database:
+    creds:
+      user:     craft
+      password: craft
+      database: craft
   phpmyadmin:
     type: phpmyadmin
     hosts:
