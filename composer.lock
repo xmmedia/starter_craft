@@ -4,60 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0ad1c089146a26018d695e4925faca7",
+    "content-hash": "f7f29e00009a03ac96bef00e9a86c0b2",
     "packages": [
-        {
-            "name": "acoustep/craft-easymde",
-            "version": "3.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/acoustep/craft-easymde.git",
-                "reference": "ce869cb4f447576ed295584f984881d71c6c01b4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/acoustep/craft-easymde/zipball/ce869cb4f447576ed295584f984881d71c6c01b4",
-                "reference": "ce869cb4f447576ed295584f984881d71c6c01b4",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^3.2.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "easymde-markdown-editor",
-                "name": "Craft CMS Easy MDE Markdown Editor",
-                "documentationUrl": "https://github.com/acoustep/craft-easymde/blob/master/README.md"
-            },
-            "autoload": {
-                "psr-4": {
-                    "Acoustep\\CraftEasyMDE\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mitch Stanley",
-                    "homepage": "https://mitchstanley.co.uk"
-                }
-            ],
-            "description": "Markdown field that uses EasyMDE Editor",
-            "keywords": [
-                "craftcms3",
-                "easymde",
-                "markdown"
-            ],
-            "support": {
-                "docs": "https://github.com/acoustep/craft-easymde/blob/master/README.md",
-                "email": "hello@mitchartemis.dev",
-                "issues": "https://github.com/acoustep/craft-easymde/issues?state=open",
-                "source": "https://github.com/acoustep/craft-easymde"
-            },
-            "time": "2022-05-09T11:48:42+00:00"
-        },
         {
             "name": "albertcht/invisible-recaptcha",
             "version": "v1.9.7",
@@ -8355,5 +8303,5 @@
         "php": "8.0.*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

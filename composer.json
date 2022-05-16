@@ -5,7 +5,6 @@
     "description": "Starter for creating Craft 3 sites at XM Media",
     "require": {
         "php": "8.0.*",
-        "acoustep/craft-easymde": "3.0.0",
         "clubstudioltd/craft-asset-rev": "^6.0",
         "craftcms/cms": "3.7.42",
         "craftcms/contact-form": "2.5.1",
