@@ -1,21 +1,25 @@
 <div class="w-content-copy">
-    <details class="my-6">
-        <summary class="flex justify-between w-full z-50 pt-2">
-            <span class="flex gap-2">
-                {% set icon = subContent.accordionIcon.one() %}
-                {% if icon %}
-                    {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
-                {% endif %}
+    {% for block in subContent.accordion.all() %}
+        {% if block.type == "accordion" %}
+            <details class="my-6">
+                <summary class="flex justify-between w-full z-50 pt-2">
+                    <span class="flex gap-2">
+                        {% set icon = block.accordionIcon.one() %}
+                        {% if icon %}
+                            {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
+                        {% endif %}
 
-                <span class="mr-4">{{ subContent.accordionHeading }}</span>
-            </span>
-            <svg class="details-plus fill-current w-4 h-4">
-                <use xlink:href="{{ rev('build/images/icons-public.svg') }}#plus"></use>
-            </svg>
-            <svg class="details-minus fill-current w-4 h-4">
-                <use xlink:href="{{ rev('build/images/icons-public.svg') }}#minus"></use>
-            </svg>
-        </summary>
-        <div class="pl-12">{{ subContent.accordionContent }}</div>
-    </details>
+                        <span class="mr-4">{{ block.accordionHeading }}</span>
+                    </span>
+                    <svg class="details-plus fill-current w-4 h-4">
+                        <use xlink:href="{{ rev('build/images/icons-public.svg') }}#plus"></use>
+                    </svg>
+                    <svg class="details-minus fill-current w-4 h-4">
+                        <use xlink:href="{{ rev('build/images/icons-public.svg') }}#minus"></use>
+                    </svg>
+                </summary>
+                <div class="pl-12">{{ block.accordionContent }}</div>
+            </details>
+        {% endif %}
+    {% endfor %}
 </div>
