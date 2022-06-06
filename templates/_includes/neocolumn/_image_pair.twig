@@ -1,7 +1,7 @@
 <div class="flex justify-center lg:justify-start w-full">
     {% for block in subContent.imagePair.all() %}
-        {% if block.type == "imageOne" %}
-            {% set imageOne = block.imageOne.one() %}
+        {% if block.type == "image" %}
+            {% set image = block.image.one() %}
             {% switch block.imageSize %}
                 {% case 'large' %}
                     {% set imageTransform = 'neocolumnimagelarge' %}
@@ -13,35 +13,14 @@
                     {% set imageTransform = 'neocolumnimagesmall' %}
             {% endswitch %}
             {% if block.imageLink %}
-                 <a href="{{ block.imageLink }}" class="mr-6 no-external">
-             {% else %}
-                 <div class="mr-6">
-            {% endif %}
-                    {{ image(imageOne, imageTransform) }}
-            {% if block.imageLink %}
-                 </a>
-            {% else %}
-                 </div>
-            {% endif %}
-        {% elseif block.type == "imageTwo" %}
-            {% set imageTwo = block.imageTwo.one() %}
-            {% switch block.imageSize %}
-                {% case 'large' %}
-                    {% set imageTransform = 'neocolumnimagelarge' %}
-                {% case 'medium' %}
-                    {% set imageTransform = 'neocolumnimagemedium' %}
-                {% case 'extraSmall' %}
-                    {% set imageTransform = 'neocolumnimagexsmall' %}
-                {% default %}
-                    {% set imageTransform = 'neocolumnimagesmall' %}
-            {% endswitch %}
-            {% if block.imageLink %}
-                <a href="{{ block.imageLink }}" class="no-external">
-            {% else %}
-                <div>
-            {% endif %}
-                    {{ image(imageTwo, imageTransform) }}
-            {% if block.imageLink %}
+                <a href="{{ block.imageLink }}" class="mr-6 no-external">
+                    {% else %}
+                    <div class="mr-6">
+                        {% endif %}
+                        {{ image(image, imageTransform, {
+                            class: subContent.imageRounded ? 'rounded-lg' : null,
+                        }) }}
+                        {% if block.imageLink %}
                 </a>
             {% else %}
                 </div>
