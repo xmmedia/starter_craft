@@ -40,14 +40,14 @@ return [
         ],
 
         'cpHeadTags' => [
-            ['link', ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => '/apple-touch-icon.png']],
-            ['link', ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => '/favicon-32x32.png']],
-            ['link', ['rel' => 'icon', 'type' => 'image/png','sizes' => '16x16', 'href' => '/favicon-16x16.png']],
-            ['link', ['rel' => 'manifest', 'href' => '/site.webmanifest']],
-            // @todo-craft update the next two based on colours for the favicon
-            ['link', ['rel' => 'mask-icon', 'href' => '/safari-pinned-tab.svg', 'color' => '#603cba']],
-            ['meta', ['name' => 'msapplication-TileColor', 'content' => '#603cba']],
-            ['meta', ['name' => 'theme-color', 'content' => '#ffffff']],
+            // Traditional favicon
+            ['link', ['rel' => 'icon', 'href' => '/icons/favicon.ico']],
+            // Scalable favicon for browsers that support them
+            ['link', ['rel' => 'icon', 'type' => 'image/svg+xml', 'sizes' => 'any', 'href' => '/icons/favicon.svg']],
+            // Touch icon for mobile devices
+            ['link', ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => '/icons/touch-icon.svg']],
+            // Pinned tab icon for Safari
+            ['link', ['rel' => 'mask-icon', 'href' => '/icons/mask-icon.svg', 'color' => '#663399']],
         ],
     ],
 

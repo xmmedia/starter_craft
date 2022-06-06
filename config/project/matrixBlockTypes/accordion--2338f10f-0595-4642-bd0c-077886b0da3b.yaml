@@ -1,0 +1,121 @@
+field: ec34d844-46a7-4389-965e-a1a4048a0798 # Accordion
+fieldLayouts:
+  5c9f770e-3ac8-40bf-93b6-b98cd735c56f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: d438c1a3-baf2-4366-9942-1dfcd9b7454a # Accordion Icon
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: fbf76707-952f-4a1e-940a-41822a3a51bf # Accordion Heading
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 1d9f0b31-c87e-4291-8103-fcfb462b5e21 # Accordion Content
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  1d9f0b31-c87e-4291-8103-fcfb462b5e21: # Accordion Content
+    columnSuffix: ovdugtuh
+    contentColumnType: text
+    fieldGroup: null
+    handle: accordionContent
+    instructions: ''
+    name: 'Accordion Content'
+    searchable: false
+    settings:
+      availableTransforms: '*'
+      availableVolumes: '*'
+      columnType: text
+      configSelectionMode: choose
+      defaultTransform: ''
+      manualConfig: ''
+      purifierConfig: ''
+      purifyHtml: '1'
+      redactorConfig: Standard.json
+      removeEmptyTags: '1'
+      removeInlineStyles: '1'
+      removeNbsp: '1'
+      showHtmlButtonForNonAdmins: ''
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      uiMode: enlarged
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\redactor\Field
+  d438c1a3-baf2-4366-9942-1dfcd9b7454a: # Accordion Icon
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: accordionIcon
+    instructions: ''
+    name: 'Accordion Icon'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
+      defaultUploadLocationSubpath: ''
+      limit: ''
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  fbf76707-952f-4a1e-940a-41822a3a51bf: # Accordion Heading
+    columnSuffix: iqtptnht
+    contentColumnType: text
+    fieldGroup: null
+    handle: accordionHeading
+    instructions: ''
+    name: 'Accordion Heading'
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: accordion
+name: Accordion
+sortOrder: 1

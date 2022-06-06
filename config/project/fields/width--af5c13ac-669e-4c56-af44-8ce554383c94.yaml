@@ -1,0 +1,79 @@
+columnSuffix: xtiyqphm
+contentColumnType: string
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: width
+instructions: ''
+name: Width
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 25%
+        -
+          - value
+          - '25'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 33%
+        -
+          - value
+          - '33'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 50%
+        -
+          - value
+          - '50'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 66%
+        -
+          - value
+          - '66'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 75%
+        -
+          - value
+          - '75'
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 100%
+        -
+          - value
+          - '100'
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

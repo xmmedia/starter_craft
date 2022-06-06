@@ -1,0 +1,19 @@
+columnSuffix: utwdigcd
+contentColumnType: text
+fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
+handle: imageCaption
+instructions: ''
+name: 'Image Caption'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: ''
+  columnType: null
+  initialRows: '4'
+  multiline: ''
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

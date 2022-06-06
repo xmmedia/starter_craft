@@ -1,0 +1,26 @@
+childBlocks: null
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  66744925-cf13-4770-a0be-69586080c2cf:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 7b6416c2-1b79-40c4-afad-8d1678b85a34 # Button
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+group: null
+handle: button
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Button
+sortOrder: 4
+topLevel: false

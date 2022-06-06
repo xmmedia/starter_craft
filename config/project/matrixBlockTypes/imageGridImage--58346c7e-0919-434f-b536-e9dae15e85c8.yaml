@@ -1,0 +1,55 @@
+field: 75818205-6564-4823-af02-9b438b462929 # Image Grid
+fieldLayouts:
+  a223b180-fbed-4533-9e31-398def54e4b5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: b1190d25-29c7-4660-bc9e-6e6f9f290909 # Image
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  b1190d25-29c7-4660-bc9e-6e6f9f290909: # Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: image
+    instructions: ''
+    name: Image
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+handle: imageGridImage
+name: 'Image Grid Image'
+sortOrder: 1

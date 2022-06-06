@@ -1,0 +1,66 @@
+childBlocks: null
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  17586dd0-e809-4c71-a00f-37602b346889:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 486e0db8-6cbd-4cd7-85af-77040ab2b43c # Image
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc # Image Caption
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 55db9051-b419-4237-b226-acfb99d40498 # Image Link
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+      -
+        elements:
+          -
+            fieldUid: 6eedec95-8e5a-49e4-8206-33ff056d1664 # Image Size
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 78f2dee3-a665-47f0-a7f2-c479a0032003 # Image Vertical Alignment
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Styles
+        sortOrder: 2
+group: null
+handle: image
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Image
+sortOrder: 7
+topLevel: false

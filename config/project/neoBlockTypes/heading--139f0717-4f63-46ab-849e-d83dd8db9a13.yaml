@@ -1,0 +1,26 @@
+childBlocks: null
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  b1b3fcfe-3fc2-4993-84b4-dcfc9ab91008:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+group: null
+handle: heading
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Heading
+sortOrder: 6
+topLevel: false

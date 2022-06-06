@@ -1,0 +1,26 @@
+childBlocks: null
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  99d6e052-583d-4334-acf2-0633fb8b7d1f:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 8918d4f4-0186-49a9-96b8-c77845095068 # Image Pair
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+group: null
+handle: imagePair
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Image Pair'
+sortOrder: 9
+topLevel: false

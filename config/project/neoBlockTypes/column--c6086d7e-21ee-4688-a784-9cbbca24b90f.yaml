@@ -1,0 +1,26 @@
+childBlocks: null
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  5aff4779-f01c-44cc-a22b-03703924570a:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: af5c13ac-669e-4c56-af44-8ce554383c94 # Width
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Styles
+        sortOrder: 1
+group: null
+handle: column
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: Column
+sortOrder: 2
+topLevel: false

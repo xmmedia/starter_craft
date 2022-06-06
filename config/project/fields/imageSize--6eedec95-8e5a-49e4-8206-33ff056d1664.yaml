@@ -1,0 +1,46 @@
+columnSuffix: adknstvl
+contentColumnType: string
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: imageSize
+instructions: ''
+name: 'Image Size'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Small
+        -
+          - value
+          - small
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Medium
+        -
+          - value
+          - medium
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Large
+        -
+          - value
+          - large
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

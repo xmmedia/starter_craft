@@ -1,0 +1,46 @@
+columnSuffix: cywieaob
+contentColumnType: string
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: imageVerticalAlignment
+instructions: ''
+name: 'Image Vertical Alignment'
+searchable: false
+settings:
+  optgroups: true
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - Center
+        -
+          - value
+          - center
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Top
+        -
+          - value
+          - top
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Bottom
+        -
+          - value
+          - end
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

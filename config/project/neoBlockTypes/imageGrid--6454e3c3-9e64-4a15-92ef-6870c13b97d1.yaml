@@ -1,0 +1,26 @@
+childBlocks: null
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  bbae270c-3227-4ebd-b9b1-a8bc038689d0:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 75818205-6564-4823-af02-9b438b462929 # Image Grid
+            instructions: ''
+            label: ''
+            required: '1'
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+group: null
+handle: imageGrid
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+name: 'Image Grid'
+sortOrder: 8
+topLevel: false
