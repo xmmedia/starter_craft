@@ -2,4 +2,5 @@ backups
 composer-backups
 config-backups
 logs
+sessions
 runtime
