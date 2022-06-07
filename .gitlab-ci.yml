@@ -11,7 +11,6 @@ cache:
   # cache per stage & branch
   key: "$CI_JOB_STAGE-$CI_COMMIT_REF_SLUG"
   paths:
-    - vendor/
     - node_modules/
 
 variables:
