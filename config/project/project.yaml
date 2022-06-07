@@ -141,10 +141,6 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: repeatEmail
-  easymde-markdown-editor:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.0
   neo:
     edition: standard
     enabled: true
@@ -157,11 +153,7 @@ plugins:
   redactor:
     edition: standard
     enabled: true
-    schemaVersion: 2.3.0
-  redirect:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.0.5
+    schemaVersion: 2.3.0c
 system:
   edition: solo
   live: true
