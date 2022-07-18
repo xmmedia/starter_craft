@@ -1,4 +1,4 @@
-dateModified: 1654541255
+dateModified: 1658181862
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -21,6 +21,7 @@ meta:
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2cabf0a4-e1b0-4c44-a840-7c9bd36e75b7: SEO # SEO
+    3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Neo Column Image - Small' # Neo Column Image - Small
     4c25b3bd-91d8-40bf-88d2-394da12d5156: Image # Image
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
     6bb2ec19-c175-4464-9ef8-16a717bf25d0: Homepage # Homepage
@@ -28,6 +29,7 @@ meta:
     6f98dd4b-4ea1-4545-a03a-117438f31ccd: Image # Image
     7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7b6416c2-1b79-40c4-afad-8d1678b85a34: Button # Button
+    14b6e20f-f619-4fbc-9b76-72460ba1423b: 'Neo Column Image - Extra Small' # Neo Column Image - Extra Small
     17ed004b-264f-4318-be4a-407867219887: 'Image Align' # Image Align
     48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
     48b81495-c226-4048-afdd-066e97f6a4a5: 'Contact Form Thank You' # Contact Form Thank You
@@ -55,6 +57,7 @@ meta:
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'Sharing Image' # Sharing Image
+    4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Neo Column Image - Large' # Neo Column Image - Large
     4836d78e-7c92-402d-a379-8e252c394c74: Video # Video
     6454e3c3-9e64-4a15-92ef-6870c13b97d1: 'Image Grid' # Image Grid
     8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
@@ -65,6 +68,7 @@ meta:
     42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter
     49523c85-f034-4218-a653-a10e294faac5: Homepage # Homepage
     58346c7e-0919-434f-b536-e9dae15e85c8: 'Image Grid Image' # Image Grid Image
+    144007f7-7bab-40c2-9327-b324abf12787: 'Neo Column Image - Medium' # Neo Column Image - Medium
     941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
     75818205-6564-4823-af02-9b438b462929: 'Image Grid' # Image Grid
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'Meta Description' # Meta Description
@@ -72,6 +76,7 @@ meta:
     ac0f340b-6402-49c7-a60c-5c429a966ec4: 'Text Block' # Text Block
     acccbddd-ec15-4841-82bc-e2600ccf8180: 'Image Link' # Image Link
     af5c13ac-669e-4c56-af44-8ce554383c94: Width # Width
+    b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
     b1190d25-29c7-4660-bc9e-6e6f9f290909: Image # Image
     bd029f0a-2bd1-4198-9eeb-9ef8f36efeff: Button # Button
@@ -141,6 +146,10 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: repeatEmail
+  easymde-markdown-editor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   neo:
     edition: standard
     enabled: true
@@ -153,7 +162,11 @@ plugins:
   redactor:
     edition: standard
     enabled: true
-    schemaVersion: 2.3.0c
+    schemaVersion: 2.3.0
+  redirect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.5
 system:
   edition: solo
   live: true
