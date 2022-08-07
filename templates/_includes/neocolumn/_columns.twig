@@ -1,6 +1,5 @@
 <section class="neocolumns-wrap">
     {% for content in block.children.all() %}
-
         {% switch content.width %}
             {% case '25' %}
                 <!-- col: 25% -->
@@ -60,8 +59,6 @@
                             </div>
                         </div>
 
-                    {% case 'herobar' %}
-                        {% include '_includes/_herobar.twig' %}
                 {% endswitch %}
             {% endfor %}
         </div>

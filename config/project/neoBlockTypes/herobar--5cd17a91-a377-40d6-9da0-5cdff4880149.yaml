@@ -23,4 +23,4 @@ maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: Herobar
 sortOrder: 2
-topLevel: false
+topLevel: true

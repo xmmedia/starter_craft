@@ -3,6 +3,8 @@
         {% switch block.type.handle %}
             {% case 'columns' %}
                 {% include '_includes/neocolumn/_columns.twig' %}
+            {% case 'herobar' %}
+                {% include '_includes/_herobar.twig' %}
         {% endswitch %}
     {% endfor %}
 {% endif %}
