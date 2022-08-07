@@ -1,21 +1,12 @@
-childBlocks:
-  - accordion
-  - button
-  - cards
-  - heading
-  - image
-  - imageGrid
-  - imagePair
-  - textBlock
-  - video
+childBlocks: null
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 fieldLayouts:
-  5aff4779-f01c-44cc-a22b-03703924570a:
+  3312b0b9-eb19-4181-bef3-79be2a3b1916:
     tabs:
       -
         elements:
           -
-            fieldUid: af5c13ac-669e-4c56-af44-8ce554383c94 # Width
+            fieldUid: 8657041f-bf73-4ed2-a11e-fce4a4195788 # Herobar
             instructions: null
             label: null
             required: false
@@ -23,13 +14,13 @@ fieldLayouts:
             type: craft\fieldlayoutelements\CustomField
             warning: null
             width: 100
-        name: Styles
+        name: Content
         sortOrder: 1
 group: null
-handle: column
+handle: herobar
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
-name: Column
-sortOrder: 3
+name: Herobar
+sortOrder: 2
 topLevel: false

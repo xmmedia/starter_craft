@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
+handle: herobar
+instructions: ''
+name: Herobar
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_herobar}}'
+  maxBlocks: '1'
+  minBlocks: ''
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

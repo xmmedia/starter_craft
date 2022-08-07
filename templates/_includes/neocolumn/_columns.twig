@@ -59,6 +59,9 @@
                                 }) }}
                             </div>
                         </div>
+
+                    {% case 'herobar' %}
+                        {% include '_includes/_herobar.twig' %}
                 {% endswitch %}
             {% endfor %}
         </div>

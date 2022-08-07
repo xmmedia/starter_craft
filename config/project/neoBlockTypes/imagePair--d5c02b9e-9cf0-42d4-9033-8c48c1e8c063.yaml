@@ -22,5 +22,5 @@ maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
 name: 'Image Pair'
-sortOrder: 9
+sortOrder: 10
 topLevel: false

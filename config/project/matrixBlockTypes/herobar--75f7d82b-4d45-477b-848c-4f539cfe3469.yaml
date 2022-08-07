@@ -1,0 +1,113 @@
+field: 8657041f-bf73-4ed2-a11e-fce4a4195788 # Herobar
+fieldLayouts:
+  0ea174a2-617c-4d21-b4e7-3773d97a87b5:
+    tabs:
+      -
+        elements:
+          -
+            fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb # Herobar Image
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 2062b2bd-5662-4e7c-a7cf-0f05a4b4da60 # Heading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+          -
+            fieldUid: 08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863 # Subheading
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            warning: null
+            width: 100
+        name: Content
+        sortOrder: 1
+fields:
+  08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: # Subheading
+    columnSuffix: mybfonzf
+    contentColumnType: text
+    fieldGroup: null
+    handle: subheading
+    instructions: ''
+    name: Subheading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+  68c02e53-bd4b-45e6-8721-dfa278498dbb: # Herobar Image
+    columnSuffix: null
+    contentColumnType: string
+    fieldGroup: null
+    handle: herobarImage
+    instructions: 'Image should be 1290x538px or larger and the same proportions'
+    name: 'Herobar Image'
+    searchable: false
+    settings:
+      allowSelfRelations: false
+      allowUploads: true
+      allowedKinds:
+        - image
+      defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
+      defaultUploadLocationSubpath: ''
+      limit: '1'
+      localizeRelations: false
+      previewMode: full
+      restrictFiles: '1'
+      selectionLabel: ''
+      showSiteMenu: false
+      showUnpermittedFiles: false
+      showUnpermittedVolumes: false
+      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+      singleUploadLocationSubpath: ''
+      source: null
+      sources: '*'
+      targetSiteId: null
+      useSingleFolder: false
+      validateRelatedElements: false
+      viewMode: list
+    translationKeyFormat: null
+    translationMethod: site
+    type: craft\fields\Assets
+  2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: # Heading
+    columnSuffix: yhwabiuo
+    contentColumnType: text
+    fieldGroup: null
+    handle: heading
+    instructions: ''
+    name: Heading
+    searchable: false
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: null
+      uiMode: normal
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
+handle: herobar
+name: Herobar
+sortOrder: 1
