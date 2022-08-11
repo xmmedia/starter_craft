@@ -89,6 +89,9 @@ module.exports = function (Encore) {
         /* eslint-disable no-unused-vars */
         .configureDefinePlugin((options) => {
             const env = require('dotenv').config({ path: '.env' });
+
+            // options['process.env.VERSION'] = JSON.stringify('1.2.3');
+            // options['process.env.WP_ENV'] = JSON.stringify(env.parsed.WP_ENV);
         })
         /* eslint-enable no-unused-vars */
     ;
