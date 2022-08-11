@@ -105,6 +105,13 @@
       <path value="$PROJECT_DIR$/vendor/illuminate/conditionable" />
       <path value="$PROJECT_DIR$/vendor/verbb/field-manager" />
       <path value="$PROJECT_DIR$/vendor/verbb/base" />
+      <path value="$PROJECT_DIR$/vendor/spicyweb/craft-neo" />
+      <path value="$PROJECT_DIR$/vendor/ether/seo" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-servicemanager" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-shell" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
