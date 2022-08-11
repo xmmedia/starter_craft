@@ -1,7 +1,2 @@
-backups
-composer-backups
-config-backups
-config-deltas
-logs
-sessions
-runtime
+*
+!rebrand
