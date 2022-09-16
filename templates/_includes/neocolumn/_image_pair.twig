@@ -17,9 +17,7 @@
                     {% else %}
                     <div class="mr-6">
                         {% endif %}
-                        {{ image(image, imageTransform, {
-                            class: subContent.imageRounded ? 'rounded-lg' : null,
-                        }) }}
+                        {{ image(image, imageTransform) }}
                         {% if block.imageLink %}
                 </a>
             {% else %}
