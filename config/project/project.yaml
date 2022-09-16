@@ -1,4 +1,4 @@
-dateModified: 1663358198
+dateModified: 1663362581
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -158,6 +158,10 @@ plugins:
     settings:
       honeypotParam: repeatEmail
   easymde-markdown-editor:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  field-manager:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0

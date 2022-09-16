@@ -35,6 +35,6 @@ settings:
   path: '@webroot/assets/pdfs'
 sortOrder: 4
 titleTranslationKeyFormat: null
-titleTranslationMethod: null
+titleTranslationMethod: site
 type: craft\volumes\Local
 url: '@web/assets/pdfs'
