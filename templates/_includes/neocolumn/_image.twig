@@ -21,22 +21,19 @@
 {# tw: items-start, items-end, items-center #}
 {% set flexItems = subContent.imageVerticalAlign|default('center') %}
 
-<div class="column-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }}">
-    {# extra div fixes issues when flex align items are set to center #}
-    <div>
-        <figure>
-            {% if subContent.imageLink %}
-            <a href="{{ subContent.imageLink }}" class="img-link">
-                {% endif %}
-                {{ image(image, imageTransform) }}
-                {% if subContent.imageLink %}
-            </a>
-            {% endif %}
-            {% if subContent.imageCaption|length > 0 %}
-                <figcaption class="w-full mt-2 italic">
-                    {{ subContent.imageCaption }}
-                </figcaption>
-            {% endif %}
-        </figure>
-    </div>
+<div class="neocolumn-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }}">
+    <figure>
+        {% if subContent.imageLink %}
+        <a href="{{ subContent.imageLink }}">
+        {% endif %}
+            {{ image(image, imageTransform) }}
+        {% if subContent.imageLink %}
+        </a>
+        {% endif %}
+        {% if subContent.imageCaption|length > 0 %}
+            <figcaption class="w-full mt-2">
+                {{ subContent.imageCaption }}
+            </figcaption>
+        {% endif %}
+    </figure>
 </div>
