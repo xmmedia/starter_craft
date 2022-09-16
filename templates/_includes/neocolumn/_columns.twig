@@ -36,7 +36,8 @@
                         {% include '_includes/neocolumn/_cards.twig' %}
 
                     {% case 'textBlock' %}
-                        <div class="text-block-wrap{% if subContent.centerBlock == 'center' %} mx-auto{% endif %}">
+                        <div class="text-block-wrap
+                                {% if subContent.textAlignCenter == true %}} text-center{% endif %} lg:text-left">
                             {{ subContent.textBlock }}
                         </div>
 
