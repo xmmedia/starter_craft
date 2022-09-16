@@ -1,7 +1,7 @@
 columnSuffix: cywieaob
 contentColumnType: string
 fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
-handle: imageVerticalAlignment
+handle: imageVerticalAlign
 instructions: ''
 name: 'Image Vertical Alignment'
 searchable: false

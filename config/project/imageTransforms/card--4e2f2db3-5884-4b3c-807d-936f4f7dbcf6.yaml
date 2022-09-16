@@ -1,0 +1,9 @@
+format: null
+handle: card
+height: 640
+interlace: none
+mode: crop
+name: Card
+position: center-center
+quality: null
+width: 640

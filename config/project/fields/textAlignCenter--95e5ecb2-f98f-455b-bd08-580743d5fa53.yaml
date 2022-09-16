@@ -1,0 +1,14 @@
+columnSuffix: eqxpofhf
+contentColumnType: boolean
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: textAlignCenter
+instructions: 'Turning this field on will align text center on mobile sized screens.'
+name: 'Text Align Center (Mobile)'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Text Align Left (On Mobile)'
+  onLabel: 'Text Align Center (On Mobile)'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
