@@ -23,7 +23,8 @@
     },
     "autoload": {
         "psr-4": {
-            "modules\\": "modules/"
+            "modules\\": "modules/",
+            "modules\\imagemodule\\": "modules/imagemodule/src/"
         }
     },
     "config": {
