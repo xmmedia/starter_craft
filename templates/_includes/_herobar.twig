@@ -1,4 +1,4 @@
-{% set herobar = entry.herobar.one() %}
+{% set herobar = block.herobar.one() %}
 {% if herobar and herobar.herobarImage|length > 0 %}
     {% set heading = null %}
     {% if herobar.heading %}
