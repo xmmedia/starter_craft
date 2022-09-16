@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "@babel/core": "^7.0.0",
-    "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@cypress/webpack-preprocessor": "^5.1.2",
     "@faker-js/faker": "^7.3.0",
