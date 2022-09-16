@@ -23,8 +23,11 @@ return [
     'id' => App::env('APP_ID') ?: 'CraftCMS',
     'modules' => [
         'contact-form' => \modules\ContactFormModule::class,
+        'image-module' => [
+            'class' => \modules\imagemodule\ImageModule::class,
+        ],
     ],
-    'bootstrap' => ['contact-form'],
+    'bootstrap' => ['contact-form', 'image-module'],
     'components' => [
         'session' => function () {
             $savePath = Craft::getAlias('@storage').'/sessions/';
