@@ -1,4 +1,4 @@
-dateModified: 1663362581
+dateModified: 1663386203
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -13,6 +13,35 @@ email:
     useAuthentication: '1'
     username: $POSTMARK_API_KEY
   transportType: craft\mail\transportadapters\Smtp
+fs:
+  assets:
+    hasUrls: true
+    name: Assets
+    settings:
+      path: '@webroot/assets/pdfs'
+    type: craft\fs\Local
+    url: '@web/assets/pdfs'
+  blog:
+    hasUrls: true
+    name: Blog
+    settings:
+      path: '@webroot/assets/blog'
+    type: craft\fs\Local
+    url: '@web/assets/blog'
+  general:
+    hasUrls: true
+    name: General
+    settings:
+      path: '@webroot/assets/general'
+    type: craft\fs\Local
+    url: '@web/assets/general'
+  ogImages:
+    hasUrls: true
+    name: 'Sharing Images'
+    settings:
+      path: '@webroot/assets/og'
+    type: craft\fs\Local
+    url: '@web/assets/og'
 meta:
   __names__:
     0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
@@ -169,7 +198,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: ILLFS4MBLDVQ42F5BK9KBJIN
-    schemaVersion: 2.13.0
+    schemaVersion: 3.3.0
   oembed:
     edition: standard
     enabled: true
@@ -187,10 +216,11 @@ system:
   live: true
   name: 'XM Craft Starter'
   retryDuration: null
-  schemaVersion: 3.7.33
+  schemaVersion: 4.0.0.9
   timeZone: America/Edmonton
 users:
   allowPublicRegistration: false
+  deactivateByDefault: false
   defaultGroup: null
   photoSubpath: null
   photoVolumeUid: null
