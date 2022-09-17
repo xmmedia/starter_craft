@@ -15,14 +15,14 @@
     {% endblock %}
 
     {% block analytics %}
-        {% if craft.app.config.general.ga_tracking_id %}
-            <script async src="https://www.googletagmanager.com/gtag/js?id={{ craft.app.config.general.ga_tracking_id }}"></script>
+        {% if craft.app.config.custom.gaTrackingId %}
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ craft.app.config.custom.gaTrackingId }}"></script>
             <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
-                gtag('config', '{{ craft.app.config.general.ga_tracking_id }}');
+                gtag('config', '{{ craft.app.config.custom.gaTrackingId }}');
             </script>
         {% endif %}
     {% endblock %}
