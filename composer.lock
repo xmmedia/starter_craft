@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d01770f05102d05078764392dd6a2f1b",
+    "content-hash": "dcb875fa292223fd89450228b5980cee",
     "packages": [
         {
             "name": "albertcht/invisible-recaptcha",
@@ -6819,16 +6819,16 @@
         },
         {
             "name": "verbb/field-manager",
-            "version": "2.2.4",
+            "version": "2.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/field-manager.git",
-                "reference": "1e1085f4dd9cc8c244ff6b410584444a387d3b7e"
+                "reference": "172ca273e79035387ffce0c772e03bc200b57064"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/1e1085f4dd9cc8c244ff6b410584444a387d3b7e",
-                "reference": "1e1085f4dd9cc8c244ff6b410584444a387d3b7e",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/172ca273e79035387ffce0c772e03bc200b57064",
+                "reference": "172ca273e79035387ffce0c772e03bc200b57064",
                 "shasum": ""
             },
             "require": {
@@ -6878,7 +6878,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-06-30T07:14:03+00:00"
+            "time": "2022-07-10T02:59:45+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
