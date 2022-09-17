@@ -31,8 +31,6 @@ return [
         // @todo-craft
         'timezone' => 'America/Edmonton',
 
-        'ga_tracking_id' => App::env('GA_TRACKING_ID'),
-
         'sendPoweredByHeader' => false,
 
         'aliases' => [
