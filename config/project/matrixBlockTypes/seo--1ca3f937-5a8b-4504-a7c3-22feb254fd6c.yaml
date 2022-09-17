@@ -3,45 +3,59 @@ fieldLayouts:
   bf60907b-7f8e-415c-9dd6-36f9697f1a25:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 414f0663-ff97-44ab-b402-98890d76f713 # Page Title
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 52d99dba-02cd-4ba6-bd5b-46a5d24b7428
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75 # Meta Description
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 60dc3dd9-9b34-4a25-a0ce-20b0f15c782d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd # Sharing Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 2e661181-5577-4853-8b8a-3d254e7c8a00
+            userCondition: null
             warning: null
             width: 50
           -
+            elementCondition: null
             fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219 # Sharing Image Alt
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 220052cd-ae6f-4609-83e2-da08437bdbbc
+            userCondition: null
             warning: null
             width: 50
         name: Content
-        sortOrder: 1
+        uid: 5aaa65d8-405a-4ce3-99bc-77caabd8f744
+        userCondition: null
 fields:
   84d2deef-d6fe-4a07-b967-b71469d68219: # Sharing Image Alt
     columnSuffix: null
@@ -54,10 +68,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 150
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -74,10 +88,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 50
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -93,25 +107,28 @@ fields:
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
-      selectionLabel: ''
+      restrictFiles: true
+      restrictLocation: true
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
+      restrictedLocationSubpath: null
+      selectionLabel: null
       showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
-      singleUploadLocationSubpath: ''
       source: null
       sources: '*'
       targetSiteId: null
-      useSingleFolder: true
       validateRelatedElements: true
       viewMode: list
     translationKeyFormat: null
@@ -128,10 +145,10 @@ fields:
     settings:
       byteLimit: null
       charLimit: 170
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null

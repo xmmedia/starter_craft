@@ -1,26 +1,36 @@
 childBlocks: null
+description: null
+enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 fieldLayouts:
   3312b0b9-eb19-4181-bef3-79be2a3b1916:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: 8657041f-bf73-4ed2-a11e-fce4a4195788 # Herobar
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: ca08d00b-da21-4ade-be0e-f6761dc451f8
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 934ff953-5bf5-403e-90af-972259015c5e
+        userCondition: null
 group: null
 handle: herobar
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Herobar
 sortOrder: 2
 topLevel: true

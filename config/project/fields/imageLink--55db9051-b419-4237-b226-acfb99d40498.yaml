@@ -2,12 +2,11 @@ columnSuffix: tjuuaior
 contentColumnType: string(255)
 fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: imageLink
-instructions: ''
+instructions: null
 name: 'Image Link'
 searchable: false
 settings:
-  maxLength: '255'
-  placeholder: null
+  maxLength: 255
   types:
     - url
     - tel

@@ -2,30 +2,33 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60 # Blog Post Fields
 handle: featureImage
-instructions: ''
+instructions: null
 name: 'Featured Image'
 searchable: false
 settings:
   allowSelfRelations: false
+  allowSubfolders: false
   allowUploads: true
   allowedKinds:
     - image
   defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
-  defaultUploadLocationSubpath: ''
-  limit: '1'
+  defaultUploadLocationSubpath: null
   localizeRelations: false
+  maxRelations: 1
+  minRelations: null
   previewMode: full
-  restrictFiles: '1'
-  selectionLabel: ''
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+  restrictedLocationSubpath: null
+  selectionLabel: null
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
-  singleUploadLocationSubpath: ''
   source: null
   sources: '*'
   targetSiteId: null
-  useSingleFolder: true
   validateRelatedElements: false
   viewMode: list
 translationKeyFormat: null

@@ -2,11 +2,10 @@ columnSuffix: xtiyqphm
 contentColumnType: string
 fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
 handle: width
-instructions: ''
+instructions: null
 name: Width
 searchable: false
 settings:
-  optgroups: true
   options:
     -
       __assoc__:

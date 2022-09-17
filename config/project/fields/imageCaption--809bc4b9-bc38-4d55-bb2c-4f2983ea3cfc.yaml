@@ -2,16 +2,16 @@ columnSuffix: utwdigcd
 contentColumnType: text
 fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: imageCaption
-instructions: ''
+instructions: null
 name: 'Image Caption'
 searchable: false
 settings:
   byteLimit: null
   charLimit: null
-  code: ''
+  code: false
   columnType: null
-  initialRows: '4'
-  multiline: ''
+  initialRows: 4
+  multiline: false
   placeholder: null
   uiMode: normal
 translationKeyFormat: null

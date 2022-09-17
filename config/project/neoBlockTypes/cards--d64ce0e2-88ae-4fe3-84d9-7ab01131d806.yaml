@@ -1,11 +1,16 @@
 childBlocks:
   - card
+description: null
+enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 group: null
 handle: cards
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
 name: Cards
 sortOrder: 6
 topLevel: false

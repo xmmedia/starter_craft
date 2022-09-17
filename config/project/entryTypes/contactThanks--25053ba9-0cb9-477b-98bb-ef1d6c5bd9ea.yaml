@@ -2,6 +2,7 @@ fieldLayouts:
   a70ef132-178a-45e2-9278-8f092c4c3325:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -24,32 +26,43 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f64940f5-0c91-48df-803d-25c18827c20a
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 48b81495-c226-4048-afdd-066e97f6a4a5 # Contact Form Thank You
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 4edc3d3e-e522-4f8e-8a04-941c61a3dbb8
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: fbc6babb-8a67-4aac-9a2b-ca33e3e7971a
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: a04d4a85-7091-476c-a5bf-d3c8eaa880d6
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: f1ef4fe5-bc19-4d04-8a0a-16b80c76c179
+        userCondition: null
 handle: contactThanks
 hasTitleField: false
 name: 'Contact Thanks'

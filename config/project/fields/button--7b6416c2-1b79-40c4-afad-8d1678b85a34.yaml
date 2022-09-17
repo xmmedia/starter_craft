@@ -2,13 +2,13 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: button
-instructions: ''
+instructions: null
 name: Button
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_button}}'
-  maxBlocks: ''
-  minBlocks: ''
+  maxBlocks: null
+  minBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

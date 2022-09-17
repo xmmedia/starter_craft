@@ -2,6 +2,7 @@ fieldLayouts:
   909090e1-10e8-4a45-a3a7-fdb5e1d8b661:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,8 +10,9 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
-            instructions: ''
+            instructions: null
             label: Headline
             max: null
             min: null
@@ -24,46 +26,61 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 34b0cb94-a3d4-471f-bd67-070c302d01a7
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3 # Featured Image
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: d6b92803-5705-4eff-af5d-9fd386bab6a4
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 787e1739-73f9-4cc5-876c-48a53d41a987 # Post Categories
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0ab016bf-47ec-422f-a6b2-ad590e2dfe55
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452 # Summary
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 8cd86c2b-561f-41c7-bc6c-483f087f8e1d
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66 # Post Content
-            instructions: ''
-            label: ''
-            required: '1'
+            instructions: null
+            label: null
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6b5ec663-6c3d-4dc4-91cf-0285dab9f899
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: d4b4c282-68dc-4994-82bd-5eb3d4cfac9b
+        userCondition: null
 handle: blog
 hasTitleField: true
 name: Blog

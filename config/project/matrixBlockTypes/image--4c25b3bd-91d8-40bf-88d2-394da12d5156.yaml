@@ -3,47 +3,57 @@ fieldLayouts:
   d7852aa6-9c8b-4fb3-bb70-daa6af1bfa08:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: d60c9491-686c-43bc-ba25-b47ebe3a64ea # Image
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 6ebe7530-d995-44ba-ac26-b25c0bc0d31e
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: 79e7b6ff-336d-4ef9-b848-4fce95312631 # Image Size
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 3695c363-b8a4-4fb2-995d-063e9a81f149
+            userCondition: null
             warning: null
             width: 100
           -
+            elementCondition: null
             fieldUid: acccbddd-ec15-4841-82bc-e2600ccf8180 # Image Link
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 86f7dae1-290b-4eba-bcf3-3f0dcf49d90e
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: c9773d7e-7164-4425-a0bd-66f0d1b46164
+        userCondition: null
 fields:
   79e7b6ff-336d-4ef9-b848-4fce95312631: # Image Size
     columnSuffix: zpxradqs
     contentColumnType: string
     fieldGroup: null
     handle: imageSize
-    instructions: ''
+    instructions: null
     name: 'Image Size'
     searchable: false
     settings:
-      optgroups: true
       options:
         -
           __assoc__:
@@ -97,16 +107,16 @@ fields:
     contentColumnType: text
     fieldGroup: null
     handle: imageLink
-    instructions: ''
+    instructions: null
     name: 'Image Link'
     searchable: false
     settings:
       byteLimit: null
       charLimit: null
-      code: ''
+      code: false
       columnType: null
-      initialRows: '4'
-      multiline: ''
+      initialRows: 4
+      multiline: false
       placeholder: null
       uiMode: normal
     translationKeyFormat: null
@@ -117,30 +127,33 @@ fields:
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: ''
+    instructions: null
     name: Image
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
-      selectionLabel: ''
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+      restrictedLocationSubpath: null
+      selectionLabel: null
       showSiteMenu: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
-      singleUploadLocationSubpath: ''
       source: null
       sources: '*'
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null

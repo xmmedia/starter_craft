@@ -2,13 +2,13 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: imagePair
-instructions: ''
+instructions: null
 name: 'Image Pair'
 searchable: false
 settings:
   contentTable: '{{%matrixcontent_imagepair}}'
-  maxBlocks: '2'
-  minBlocks: '2'
+  maxBlocks: 2
+  minBlocks: 2
   propagationKeyFormat: null
   propagationMethod: all
 translationKeyFormat: null

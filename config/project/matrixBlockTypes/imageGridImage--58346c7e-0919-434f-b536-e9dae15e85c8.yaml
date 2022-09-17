@@ -3,48 +3,56 @@ fieldLayouts:
   a223b180-fbed-4533-9e31-398def54e4b5:
     tabs:
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: b1190d25-29c7-4660-bc9e-6e6f9f290909 # Image
             instructions: null
             label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: 0fb83146-1f4d-4ca3-9407-17af429f6e29
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: cfb577e6-4b75-481d-90c0-8b7bb33b1847
+        userCondition: null
 fields:
   b1190d25-29c7-4660-bc9e-6e6f9f290909: # Image
     columnSuffix: null
     contentColumnType: string
     fieldGroup: null
     handle: image
-    instructions: ''
+    instructions: null
     name: Image
     searchable: false
     settings:
       allowSelfRelations: false
+      allowSubfolders: false
       allowUploads: true
       allowedKinds:
         - image
       defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
-      defaultUploadLocationSubpath: ''
-      limit: '1'
+      defaultUploadLocationSubpath: null
       localizeRelations: false
+      maxRelations: 1
+      minRelations: null
       previewMode: full
-      restrictFiles: '1'
-      selectionLabel: ''
+      restrictFiles: true
+      restrictLocation: false
+      restrictedDefaultUploadSubpath: null
+      restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+      restrictedLocationSubpath: null
+      selectionLabel: null
       showSiteMenu: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      singleUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
-      singleUploadLocationSubpath: ''
       source: null
       sources: '*'
       targetSiteId: null
-      useSingleFolder: false
       validateRelatedElements: false
       viewMode: list
     translationKeyFormat: null

@@ -2,6 +2,7 @@ fieldLayouts:
   d910d7c9-61c6-4d42-8467-3bcc0e5cfb93:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -24,23 +26,31 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 3fe952c0-41c3-4239-9e40-c1dbefe087d0
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 01793eb7-0d02-455a-9717-7dbcd4d69875
+        userCondition: null
       -
+        elementCondition: null
         elements:
           -
+            elementCondition: null
             fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
+            uid: fc153ce6-7fcc-4230-940b-366bce61abb2
+            userCondition: null
             warning: null
             width: 100
         name: SEO
-        sortOrder: 2
+        uid: a4264485-7733-4b62-9911-089231fbf443
+        userCondition: null
 handle: contact
 hasTitleField: false
 name: Contact

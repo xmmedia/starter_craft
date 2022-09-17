@@ -2,6 +2,7 @@ fieldLayouts:
   9850a42a-5da4-470b-a875-22d0800c0a2a:
     tabs:
       -
+        elementCondition: null
         elements:
           -
             autocapitalize: true
@@ -9,6 +10,7 @@ fieldLayouts:
             autocorrect: true
             class: null
             disabled: false
+            elementCondition: null
             id: null
             instructions: null
             label: null
@@ -24,15 +26,18 @@ fieldLayouts:
             tip: null
             title: null
             type: craft\fieldlayoutelements\assets\AssetTitleField
+            uid: 9e1f1a7f-32b7-4d51-908a-cf2249f3d0a4
+            userCondition: null
             warning: null
             width: 100
         name: Content
-        sortOrder: 1
+        uid: 474fd4dc-4823-40e8-ae51-ef2e3527eb51
+        userCondition: null
 fs: ogImages
 handle: ogImages
-hasUrls: true
 name: 'Sharing Images'
 sortOrder: 3
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-url: '@web/assets/og'
+transformFs: null
+transformSubpath: ''

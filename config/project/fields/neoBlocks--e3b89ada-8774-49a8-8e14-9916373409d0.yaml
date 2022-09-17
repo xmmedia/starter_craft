@@ -2,17 +2,18 @@ columnSuffix: null
 contentColumnType: string
 fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: neoBlocks
-instructions: ''
+instructions: null
 name: Blocks
 searchable: false
 settings:
-  maxBlocks: ''
-  maxLevels: ''
-  maxTopBlocks: ''
-  minBlocks: ''
+  maxBlocks: null
+  maxLevels: null
+  maxTopBlocks: null
+  minBlocks: null
+  minLevels: null
+  minTopBlocks: null
   propagationKeyFormat: null
   propagationMethod: all
-  wasModified: false
 translationKeyFormat: null
 translationMethod: site
 type: benf\neo\Field
