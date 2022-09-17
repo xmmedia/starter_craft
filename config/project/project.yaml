@@ -1,4 +1,4 @@
-dateModified: 1663386203
+dateModified: 1663388714
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -211,6 +211,10 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.5
+  seo:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.2.0
 system:
   edition: solo
   live: true
