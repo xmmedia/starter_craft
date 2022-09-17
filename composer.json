@@ -15,7 +15,7 @@
         "roave/security-advisories": "dev-master",
         "spicyweb/craft-neo": "^3.3",
         "verbb/field-manager": "^3.0",
-        "vlucas/phpdotenv": "^3.4",
+        "vlucas/phpdotenv": "^5.4",
         "wrav/oembed": "^2.2"
     },
     "require-dev": {
