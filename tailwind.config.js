@@ -46,11 +46,8 @@ module.exports = {
                 'headings': [
                     '"Helvetica Neue"',
                     'Arial',
-                    'sans-serif',
-                    '"Apple Color Emoji"',
-                    '"Segoe UI Emoji"',
-                    '"Segoe UI Symbol"',
-                    '"Noto Color Emoji"',
+                    // see https://tailwindcss.com/docs/font-family for list
+                    ...defaultTheme.fontFamily.sans,
                 ],
             },
         },
