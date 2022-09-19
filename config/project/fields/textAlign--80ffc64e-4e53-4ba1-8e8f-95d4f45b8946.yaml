@@ -1,0 +1,34 @@
+columnSuffix: wuxruxqa
+contentColumnType: string
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: textAlign
+instructions: null
+name: 'Text Align'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Center'
+        -
+          - value
+          - textCenter
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - 'Text Left'
+        -
+          - value
+          - textLeft
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Dropdown

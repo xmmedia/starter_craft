@@ -1,0 +1,14 @@
+columnSuffix: ozsdthxd
+contentColumnType: boolean
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: uppercase
+instructions: null
+name: Uppercase
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

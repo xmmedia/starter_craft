@@ -1,5 +1,5 @@
 childBlocks: null
-description: null
+description: ''
 enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 fieldLayouts:
@@ -32,5 +32,5 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: Button
-sortOrder: 4
+sortOrder: 5
 topLevel: false

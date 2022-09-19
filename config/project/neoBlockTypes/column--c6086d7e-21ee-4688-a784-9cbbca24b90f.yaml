@@ -6,9 +6,9 @@ childBlocks:
   - image
   - imageGrid
   - imagePair
-  - textBlock
   - video
-description: null
+  - textBlock
+description: ''
 enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 fieldLayouts:
