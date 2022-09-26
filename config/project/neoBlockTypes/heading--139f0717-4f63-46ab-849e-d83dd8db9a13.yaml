@@ -37,7 +37,7 @@ fieldLayouts:
             uid: d3fe3d83-869c-4593-8c2d-9ed62c75e788
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             elementCondition: null
             fieldUid: e16fd2de-54c9-4363-a6bd-d3a6756c0720 # Uppercase
@@ -49,7 +49,7 @@ fieldLayouts:
             uid: ef440c86-9102-4d26-a415-bcc7fe1cdcb2
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Styles
         uid: 7fe853be-1342-4a2e-b8f0-29f315839282
         userCondition: null
