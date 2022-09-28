@@ -72,7 +72,7 @@ settings:
           - '100'
         -
           - default
-          - ''
+          - '1'
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Dropdown
