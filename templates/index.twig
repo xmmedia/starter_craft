@@ -1,7 +1,10 @@
-{% extends "_page" %}
+{% extends "_default" %}
 
 {% block page_title_wrap %}{{ siteInformation.companyName }}{% if seo %} | {{ seo.pageTitle }}{% endif %}{% endblock %}
 
+{# @todo-craft remove if only using Neo blocks on the homepage #}
 {% block content %}
     <h1>{{ siteName }}</h1>
+
+    {% include '_includes/_neo.twig' %}
 {% endblock %}
