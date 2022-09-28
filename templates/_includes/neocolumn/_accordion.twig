@@ -1,20 +1,18 @@
 <div class="w-content-copy">
     {% for block in subContent.accordion.all() %}
-        {% if block.type == "accordion" %}
-            <details class="my-6">
-                <summary class="flex justify-between w-full z-50 pt-2">
-                    <span class="flex gap-2">
-                        {% set icon = block.accordionIcon.one() %}
-                        {% if icon %}
-                            {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
-                        {% endif %}
-                        <span class="mr-4">{{ block.accordionHeading }}</span>
-                    </span>
-                    <span class="details-plus">+</span>
-                    <span class="details-minus">−</span>
-                </summary>
-                <div class="pl-12">{{ block.accordionContent }}</div>
-            </details>
-        {% endif %}
+        <details class="my-6">
+            <summary class="flex justify-between w-full z-50 pt-2">
+                <span class="flex gap-2">
+                    {% set icon = block.accordionIcon.one() %}
+                    {% if icon %}
+                        {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
+                    {% endif %}
+                    <span class="mr-4">{{ block.accordionHeading }}</span>
+                </span>
+                <span class="details-plus">+</span>
+                <span class="details-minus">−</span>
+            </summary>
+            <div class="pl-12">{{ block.accordionContent }}</div>
+        </details>
     {% endfor %}
 </div>
