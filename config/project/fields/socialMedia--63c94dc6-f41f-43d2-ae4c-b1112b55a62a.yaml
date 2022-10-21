@@ -1,0 +1,16 @@
+columnSuffix: null
+contentColumnType: string
+fieldGroup: f4025d83-35bc-4c5c-a20d-72e6e2b45082 # Global Fields
+handle: socialMedia
+instructions: 'Set the links to social media platforms. These will be used throughout the site where they are linked to within the design. It won''t update links entered within content blocks.'
+name: 'Social Media'
+searchable: false
+settings:
+  contentTable: '{{%matrixcontent_socialmedia}}'
+  maxBlocks: null
+  minBlocks: null
+  propagationKeyFormat: null
+  propagationMethod: all
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

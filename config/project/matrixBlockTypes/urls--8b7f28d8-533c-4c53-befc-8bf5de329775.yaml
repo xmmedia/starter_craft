@@ -1,0 +1,41 @@
+field: 63c94dc6-f41f-43d2-ae4c-b1112b55a62a # Social Media
+fieldLayouts:
+  178d2b2c-d5d8-4e43-8924-582180b94c86:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 053794be-63d9-4bcb-bdce-8452a3bf84b3 # Facebook
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ea33e848-e337-43bd-b951-64f48c541a9e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: ffb9b9ad-9374-470c-9e4a-cbed5212d7e6
+        userCondition: null
+fields:
+  053794be-63d9-4bcb-bdce-8452a3bf84b3: # Facebook
+    columnSuffix: kgnvbevz
+    contentColumnType: string(255)
+    fieldGroup: null
+    handle: facebookUrl
+    instructions: null
+    name: Facebook
+    searchable: false
+    settings:
+      maxLength: 255
+      types:
+        - url
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\Url
+handle: urls
+name: URLs
+sortOrder: 1

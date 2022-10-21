@@ -8,7 +8,7 @@ childBlocks:
   - imagePair
   - video
   - textBlock
-description: ''
+description: null
 enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 fieldLayouts:

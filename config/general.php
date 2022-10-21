@@ -27,8 +27,11 @@ return GeneralConfig::create()
     // @todo-craft
     ->timezone('America/Edmonton')
     ->aliases([
-        '@webroot' => dirname(__DIR__) . '/public',
+        '@web'     => App::env('PRIMARY_SITE_URL'),
+        '@webroot' => dirname(__DIR__).'/public',
     ])
+    ->convertFilenamesToAscii()
+    ->maxUploadFileSize('50M')
     ->cpHeadTags([
         // Traditional favicon
         ['link', ['rel' => 'icon', 'href' => '/icons/favicon.ico']],

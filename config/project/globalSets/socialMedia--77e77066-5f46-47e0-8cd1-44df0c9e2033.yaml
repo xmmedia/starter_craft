@@ -1,0 +1,24 @@
+fieldLayouts:
+  0ff68ca1-69a6-441e-b612-244774f99bc7:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            fieldUid: 63c94dc6-f41f-43d2-ae4c-b1112b55a62a # Social Media
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8a96f8a5-78cf-44cd-bea2-13e11a8fd303
+            userCondition: null
+            warning: null
+            width: 100
+        name: 'Social Media'
+        uid: 9a2d2388-7f04-436b-98e7-4d41ce189a84
+        userCondition: null
+handle: socialMedia
+name: 'Social Media'
+sortOrder: 3

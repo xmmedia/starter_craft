@@ -23,6 +23,9 @@ return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
     'modules' => [
         'contact-form' => \modules\ContactFormModule::class,
+        'filename-cleaner-module' => [
+            'class' => \modules\filenamecleanermodule\FilenameCleanerModule::class,
+        ],
         'image-module' => [
             'class' => \modules\imagemodule\ImageModule::class,
         ],
