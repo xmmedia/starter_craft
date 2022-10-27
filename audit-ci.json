@@ -1,5 +1,5 @@
 {
-    "//": "Numbers come from https://github.com/advisories/1234",
+    "//": "Numbers come from https://github.com/advisories/XXXX",
     "allowlist": [
         "GHSA-x4jg-mjrx-434g",
         "GHSA-ww39-953v-wcq6",
