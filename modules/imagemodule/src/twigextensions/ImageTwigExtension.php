@@ -66,7 +66,7 @@ class ImageTwigExtension extends AbstractExtension
             return new Markup('', Craft::$app->charset);
         }
 
-        if (array_key_exists('alt', $attributes)) {
+        if (!array_key_exists('alt', $attributes)) {
             $attributes['alt'] = $image->title;
         }
 
