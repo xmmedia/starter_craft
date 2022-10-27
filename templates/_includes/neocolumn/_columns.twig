@@ -1,27 +1,28 @@
 <section class="neocolumns-wrap">
     {% for content in block.children.all() %}
+        {% set columnClasses = ['neocolumn'] %}
         {% switch content.width %}
             {% case '25' %}
                 <!-- col: 25% -->
-                {% set gridSpanClass = 'col-25' %}
+                {% set columnClasses = columnClasses|merge([]) %}
             {% case '33' %}
                 <!-- col: 33% -->
-                {% set gridSpanClass = 'col-33' %}
+                {% set columnClasses = columnClasses|merge(['col-33']) %}
             {% case '50' %}
                 <!-- col: 50% -->
-                {% set gridSpanClass = 'col-50' %}
+                {% set columnClasses = columnClasses|merge(['col-50']) %}
             {% case '66' %}
                 <!-- col: 66% -->
-                {% set gridSpanClass = 'col-66' %}
+                {% set columnClasses = columnClasses|merge(['col-66']) %}
             {% case '75' %}
                 <!-- col: 75% -->
-                {% set gridSpanClass = 'col-75' %}
+                {% set columnClasses = columnClasses|merge(['col-75']) %}
             {% case '100' %}
                 <!-- col: 100% -->
-                {% set gridSpanClass = 'col-100' %}
+                {% set columnClasses = columnClasses|merge(['col-100']) %}
         {% endswitch %}
 
-        <div class="neocolumn {{ gridSpanClass|default }}">
+        {% tag 'div' with { class: columnClasses } %}
             {% for subContent in content.children.all() %}
                 {% switch subContent.type %}
                     {% case 'heading' %}
@@ -64,6 +65,6 @@
 
                 {% endswitch %}
             {% endfor %}
-        </div>
+        {% endtag %}
     {% endfor %}
 </section>
