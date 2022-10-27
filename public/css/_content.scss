@@ -57,7 +57,7 @@
 }
 
 .neocolumn-image_wrap {
-    @apply flex flex-wrap justify-center h-full;
+    @apply flex flex-wrap justify-center;
 }
 .col-25 .neocolumn-image_wrap {
     @apply h-auto mb-3;
