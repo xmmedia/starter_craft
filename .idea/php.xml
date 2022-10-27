@@ -5,7 +5,6 @@
       <path value="$PROJECT_DIR$/vendor/craftcms/cms" />
       <path value="$PROJECT_DIR$/vendor/composer" />
       <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/vendor/true/punycode" />
       <path value="$PROJECT_DIR$/vendor/twig/twig" />
       <path value="$PROJECT_DIR$/vendor/symfony/console" />
       <path value="$PROJECT_DIR$/vendor/voku/stop-words" />
@@ -101,9 +100,6 @@
       <path value="$PROJECT_DIR$/vendor/spicyweb/craft-neo" />
       <path value="$PROJECT_DIR$/vendor/ether/seo" />
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-shell" />
-      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/samdark/yii2-psr-log-target" />
       <path value="$PROJECT_DIR$/vendor/moneyphp/money" />
       <path value="$PROJECT_DIR$/vendor/symfony/http-client-contracts" />
@@ -120,6 +116,9 @@
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/commerceguys/addressing" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-shell" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

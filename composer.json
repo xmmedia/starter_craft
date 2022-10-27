@@ -6,15 +6,15 @@
     "require": {
         "php": "8.0.*",
         "clubstudioltd/craft-asset-rev": "^7.0",
-        "craftcms/cms": "^4.0",
+        "craftcms/cms": "4.3.1",
         "craftcms/contact-form": "^3.0",
         "craftcms/contact-form-honeypot": "^2.0",
         "craftcms/redactor": "^3.0.2",
         "ether/seo": "^4.0",
         "hybridinteractive/craft-contact-form-extensions": "^4.2",
         "roave/security-advisories": "dev-master",
-        "spicyweb/craft-neo": "^3.3",
-        "verbb/field-manager": "^3.0",
+        "spicyweb/craft-neo": "3.4.0",
+        "verbb/field-manager": "3.0.4",
         "vlucas/phpdotenv": "^5.4",
         "wrav/oembed": "^2.2"
     },
