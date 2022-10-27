@@ -4,7 +4,7 @@ Image module
 
 ## Requirements
 
-This module requires Craft CMS 3.0.0-RC1 or later.
+This module requires Craft CMS v4 or later.
 
 ## Installation
 
