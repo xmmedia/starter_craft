@@ -78,10 +78,11 @@ class ImageTwigExtension extends AbstractExtension
                 'img',
                 '',
                 array_merge([
-                    'src'     => $image->getUrl(),
-                    'width'   => $image->getWidth($transform),
-                    'height'  => $image->getHeight($transform),
-                    'loading' => 'lazy',
+                    'src'      => $image->getUrl(),
+                    'width'    => $image->getWidth($transform),
+                    'height'   => $image->getHeight($transform),
+                    'loading'  => 'lazy',
+                    'decoding' => 'async',
                 ], $attributes),
             );
         } else {
@@ -89,11 +90,12 @@ class ImageTwigExtension extends AbstractExtension
                 'img',
                 '',
                 array_merge([
-                    'src'     => $image->getUrl($transform),
-                    'srcset'  => $image->getSrcset(['1.5x', '2x', '3x'], $transform),
-                    'width'   => $image->getWidth($transform),
-                    'height'  => $image->getHeight($transform),
-                    'loading' => 'lazy',
+                    'src'      => $image->getUrl($transform),
+                    'srcset'   => $image->getSrcset(['1.5x', '2x', '3x'], $transform),
+                    'width'    => $image->getWidth($transform),
+                    'height'   => $image->getHeight($transform),
+                    'loading'  => 'lazy',
+                    'decoding' => 'async',
                 ], $attributes),
             );
         }
