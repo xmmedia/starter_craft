@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "core-js": "^3.4.3",
-    "cuid": "^2.1.6",
+    "cuid": "^3.0.0",
     "date-fns": "^2.2.1",
     "lodash": "^4.17.11",
     "pluralize": "^8.0.0",
