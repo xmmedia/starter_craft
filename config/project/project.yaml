@@ -1,4 +1,4 @@
-dateModified: 1677901959
+dateModified: 1677902327
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -60,6 +60,7 @@ meta:
     6f98dd4b-4ea1-4545-a03a-117438f31ccd: Image # Image
     7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7b6416c2-1b79-40c4-afad-8d1678b85a34: Button # Button
+    7f53f1b0-5407-459f-9efc-864c752e3892: Section # Section
     8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
     08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: Subheading # Subheading
     14b6e20f-f619-4fbc-9b76-72460ba1423b: 'Neo Column Image - Extra Small' # Neo Column Image - Extra Small
@@ -72,6 +73,7 @@ meta:
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
     55c62e14-e98e-4d1a-a181-845f6ebf20e4: Heading # Heading
     55db9051-b419-4237-b226-acfb99d40498: 'Image Link' # Image Link
+    57c091c1-f144-47d4-aa2f-67efcd1417d4: Section # Section
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
     64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: Image # Image
@@ -101,6 +103,7 @@ meta:
     4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Neo Column Image - Large' # Neo Column Image - Large
     4836d78e-7c92-402d-a379-8e252c394c74: Video # Video
     6454e3c3-9e64-4a15-92ef-6870c13b97d1: 'Image Grid' # Image Grid
+    7514e284-6c02-4e69-bd4a-854ee30d0c5e: 'Section Padding' # Section Padding
     8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
     8874e7aa-6b15-43b9-a582-4df720853d60: 'Blog Post Fields' # Blog Post Fields
     8918d4f4-0186-49a9-96b8-c77845095068: 'Image Pair' # Image Pair

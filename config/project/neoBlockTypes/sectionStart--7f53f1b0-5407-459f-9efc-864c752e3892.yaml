@@ -1,0 +1,31 @@
+childBlocks: null
+description: null
+enabled: true
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  204feae1-f289-44d0-9131-b2647a34ab2a:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'Used grouping content for search engines and accessibility. Adds a semantic HTML <section> tag.'
+            type: craft\fieldlayoutelements\Tip
+            uid: ba0603c2-9661-4e72-b75b-b9fd66853137
+            userCondition: null
+        name: Settings
+        uid: a0964d4b-a5ef-4c2a-8d80-65b08e2d32fb
+        userCondition: null
+group: null
+handle: sectionStart
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: Section
+sortOrder: 3
+topLevel: true

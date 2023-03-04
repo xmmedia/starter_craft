@@ -1,0 +1,45 @@
+columnSuffix: bcsosdei
+contentColumnType: string
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: sectionPadding
+instructions: null
+name: 'Section Padding'
+searchable: false
+settings:
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - 'Normal (py-12)'
+        -
+          - value
+          - py-12
+        -
+          - default
+          - 1
+    -
+      __assoc__:
+        -
+          - label
+          - 'Large (py-16)'
+        -
+          - value
+          - py-16
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'Extra Large (py-24)'
+        -
+          - value
+          - py-24
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons
