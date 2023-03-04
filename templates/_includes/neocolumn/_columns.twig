@@ -1,3 +1,5 @@
+{# @todo add element ID to column wrap (field & html) #}
+
 <section class="neocolumns-wrap">
     {% for content in block.children.all() %}
         {% set columnClasses = ['neocolumn'] %}
@@ -34,7 +36,7 @@
                     {% case 'imagePair' %}
                         {% include '_includes/neocolumn/_image_pair.twig' %}
                     {% case 'imageGrid' %}
-                        {% include '_includes/neocolumn/_img_grid.twig' %}
+                        {% include '_includes/neocolumn/_image_grid.twig' %}
                     {% case 'cards' %}
                         {% include '_includes/neocolumn/_cards.twig' %}
 
