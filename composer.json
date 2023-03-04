@@ -2,9 +2,9 @@
     "name": "xm/starter_craft_3",
     "license": "MIT",
     "type": "project",
-    "description": "Starter for creating Craft 3 sites at XM Media",
+    "description": "Starter for creating Craft 4 sites at XM Media",
     "require": {
-        "php": "8.0.*",
+        "php": "8.1.*",
         "clubstudioltd/craft-asset-rev": "^7.0",
         "craftcms/cms": "4.3.10",
         "craftcms/contact-form": "^3.0",
