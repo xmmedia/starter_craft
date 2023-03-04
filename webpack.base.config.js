@@ -38,9 +38,7 @@ module.exports = function (Encore) {
         .enableIntegrityHashes(Encore.isProduction())
 
         // allow sass/scss files to be processed
-        .enableSassLoader(function (options) {
-            options.additionalData = "$env: " + process.env.NODE_ENV + ";";
-        }, {
+        .enableSassLoader(function () {}, {
             // tell sass where to find url() paths/files
             resolveUrlLoaderOptions: {
                 root: resolve('public'),
@@ -90,8 +88,11 @@ module.exports = function (Encore) {
         .configureDefinePlugin((options) => {
             const env = require('dotenv').config({ path: '.env' });
 
-            // options['process.env.VERSION'] = JSON.stringify('1.2.3');
-            // options['process.env.WP_ENV'] = JSON.stringify(env.parsed.WP_ENV);
+            if (env.error) {
+                throw env.error;
+            }
+
+            // options['process.env.STRIPE_PUBLISHABLE_KEY'] = JSON.stringify(env.parsed.STRIPE_PUBLISHABLE_KEY);
         })
         /* eslint-enable no-unused-vars */
     ;
