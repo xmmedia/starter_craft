@@ -4,7 +4,7 @@
     {% if herobar.heading %}
         {% set heading = herobar.heading %}
     {% endif %}
-
+{# @todo rename everything to hero #}
     <section class="herobar"
          style="background-image: url('{{ herobar.herobarImage.one().setTransform('herobar').getUrl() }}');">
         {% if hero_content is not defined %}
