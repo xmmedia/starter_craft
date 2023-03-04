@@ -32,28 +32,16 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: ca24a1c1-6c04-473b-a43e-f9d930385cca # About Image
+            fieldUid: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 31c6d742-6c93-4268-aa31-fc66f775dbd0
+            uid: 9f5b97fd-8f12-4f4e-9ab4-f9db01767842
             userCondition: null
             warning: null
-            width: 50
-          -
-            elementCondition: null
-            fieldUid: 733fd8a3-3ba2-49a2-bb77-c60b52b6bc66 # Post Content
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8d3eb0d6-f427-4f12-861e-e69fe7b7672c
-            userCondition: null
-            warning: null
-            width: 50
+            width: 100
         name: Content
         uid: a53bb2c9-fbc4-47b0-a411-0f19c9f82f5b
         userCondition: null
