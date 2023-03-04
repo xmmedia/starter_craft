@@ -1,5 +1,4 @@
 <script>
-import fetch from 'unfetch';
 import { logError } from '@/common/lib';
 
 export default {
