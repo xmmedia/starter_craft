@@ -34,6 +34,8 @@ return GeneralConfig::create()
     ])
     ->convertFilenamesToAscii()
     ->maxUploadFileSize('50M')
+    // don't run the queue automatically, instead use cron job (every minute)
+    ->runQueueAutomatically(false)
     ->cpHeadTags([
         // Traditional favicon
         ['link', ['rel' => 'icon', 'href' => '/icons/favicon.ico']],
