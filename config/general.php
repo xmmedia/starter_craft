@@ -24,6 +24,8 @@ return GeneralConfig::create()
     ->disallowRobots(App::env('DISALLOW_ROBOTS') ?? false)
     // disable the "X-Powered-By: Craft" header
     ->sendPoweredByHeader(false)
+    // disable graphql
+    ->enableGql(false)
     // @todo-craft
     ->timezone('America/Edmonton')
     ->aliases([
