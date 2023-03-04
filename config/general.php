@@ -37,13 +37,12 @@ return GeneralConfig::create()
     // don't run the queue automatically, instead use cron job (every minute)
     ->runQueueAutomatically(false)
     ->cpHeadTags([
-        // Traditional favicon
-        ['link', ['rel' => 'icon', 'href' => '/icons/favicon.ico']],
-        // Scalable favicon for browsers that support them
-        ['link', ['rel' => 'icon', 'type' => 'image/svg+xml', 'sizes' => 'any', 'href' => '/icons/favicon.svg']],
-        // Touch icon for mobile devices
-        ['link', ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href' => '/icons/touch-icon.svg']],
-        // Pinned tab icon for Safari
-        ['link', ['rel' => 'mask-icon', 'href' => '/icons/mask-icon.svg', 'color' => '#663399']],
+        ['link', ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href', '/apple-touch-icon.png']],
+        ['link', ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => '/favicon-32x32.png']],
+        ['link', ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '16x16', 'href' => '/favicon-16x16.png']],
+        ['link', ['rel' => 'manifest', 'href' => '/site.webmanifest']],
+        ['link', ['rel' => 'mask-icon', 'href' => '/safari-pinned-tab.svg', 'color' => '#5bbad5']],
+        ['meta', ['name' => 'msapplication-TileColor', 'content' => '#ffffff']],
+        ['meta', ['name' => 'theme-color', 'content' => '#ffffff']],
     ])
 ;
