@@ -83,12 +83,7 @@ printf "\n\n"
 
 cd $RELEASE || exit
 
-echo "Install Composer"
-wget --no-verbose -O composer.phar https://getcomposer.org/composer-2.phar
-php composer.phar selfupdate
-printf "\n\n"
-
-echo "Ready! You can start uploading files to: ${$BASE}/current"
+echo "Ready! You can attempt a deploy."
 echo
 
 echo 'To change the shell, run:'
