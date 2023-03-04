@@ -1,0 +1,31 @@
+childBlocks: null
+description: null
+enabled: true
+field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
+fieldLayouts:
+  f2348070-ce1d-418b-a311-f55a61ddad7b:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            elementCondition: null
+            style: tip
+            tip: 'Displays the default contact form.'
+            type: craft\fieldlayoutelements\Tip
+            uid: ab6d0353-edbd-4857-a0ac-cf030914100e
+            userCondition: null
+        name: Content
+        uid: e9d775e3-cdbd-40f5-a314-bb2eae65eadc
+        userCondition: null
+group: null
+handle: contactForm
+maxBlocks: 0
+maxChildBlocks: 0
+maxSiblingBlocks: 0
+minBlocks: 0
+minChildBlocks: 0
+minSiblingBlocks: 0
+name: 'Contact Form'
+sortOrder: 8
+topLevel: false

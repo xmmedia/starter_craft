@@ -1,4 +1,4 @@
-dateModified: 1677902327
+dateModified: 1677903190
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -73,6 +73,7 @@ meta:
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
     55c62e14-e98e-4d1a-a181-845f6ebf20e4: Heading # Heading
     55db9051-b419-4237-b226-acfb99d40498: 'Image Link' # Image Link
+    56ca239a-e6d7-4fa6-ab48-b228fb6b8510: 'Contact Form' # Contact Form
     57c091c1-f144-47d4-aa2f-67efcd1417d4: Section # Section
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name

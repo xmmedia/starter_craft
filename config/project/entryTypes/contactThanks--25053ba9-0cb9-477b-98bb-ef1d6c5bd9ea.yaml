@@ -32,13 +32,13 @@ fieldLayouts:
             width: 100
           -
             elementCondition: null
-            fieldUid: 48b81495-c226-4048-afdd-066e97f6a4a5 # Contact Form Thank You
+            fieldUid: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 4edc3d3e-e522-4f8e-8a04-941c61a3dbb8
+            uid: a244c77b-941c-4630-8158-794f2a480bb5
             userCondition: null
             warning: null
             width: 100

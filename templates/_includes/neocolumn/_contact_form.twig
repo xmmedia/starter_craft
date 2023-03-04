@@ -1,0 +1,70 @@
+{% macro errorList(errors) %}
+    {% if errors %}
+        {% for error in errors %}
+            <div class="alert alert-danger">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+{% endmacro %}
+
+{% set submission = submission ?? null %}
+<form id="form" method="post" action="#form" accept-charset="utf-8" class="form-wrap">
+    {% if submission %}
+        <div class="alert alert-danger">Looks like something isn't quite right. Please see the messages below.</div>
+    {% endif %}
+
+    {{ csrfInput() }}
+    {{ actionInput('contact-form/send') }}
+    {{ redirectInput('contact/thanks') }}
+
+    <div class="field-wrap">
+        <label for="from-name">Name</label>
+        {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
+        {{ input('text', 'fromName', submission.fromName ?? null, {
+            id: 'from-name',
+            autocomplete: 'name',
+            maxlength: 100,
+            required: true,
+        }) }}
+    </div>
+
+    <div class="field-wrap">
+        <label for="from-email">Email</label>
+        {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
+        {{ input('text', 'fromEmail', submission.fromEmail ?? null, {
+            id: 'from-email',
+            autocomplete: 'email',
+            maxlength: 100,
+            required: true,
+            placeholder: 'Required – you@example.com',
+        }) }}
+    </div>
+
+    <div class="field-wrap hidden">
+        <label for="repeat-email">Repeat your email</label>
+        {{ input('email', 'repeatEmail', null, {
+            id: 'repeat-email',
+            autocomplete: 'email',
+            maxlength: 100,
+        }) }}
+    </div>
+
+    <div class="field-wrap">
+        <label for="phone">Phone</label>
+        {{ input('tel', 'message[Phone]', submission.message.Phone ?? null, {
+            id: 'phone',
+            autocomplete: 'tel',
+            maxlength: 15,
+            placeholder: 'Optional – 780-222-3333',
+        }) }}
+    </div>
+
+    <div class="field-wrap field-wrap-textarea">
+        <label for="message">Message</label>
+        {{ submission ? _self.errorList(submission.getErrors('message.body')) }}
+        <textarea id="message" name="message[body]" required maxlength="10000" class="h-48">{{ submission.message.body ?? null }}</textarea>
+    </div>
+
+    <input type="hidden" name="message[formName]" value="Contact">
+
+    <button class="button" type="submit">Send</button>
+</form>
