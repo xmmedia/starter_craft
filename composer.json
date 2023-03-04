@@ -12,6 +12,7 @@
         "craftcms/redactor": "^3.0.2",
         "ether/seo": "^4.0",
         "hybridinteractive/craft-contact-form-extensions": "^4.2",
+        "mmikkel/cp-field-inspect": "^1.4",
         "roave/security-advisories": "dev-master",
         "spicyweb/craft-neo": "3.4.0",
         "verbb/field-manager": "3.0.4",

@@ -1,4 +1,4 @@
-dateModified: 1666386351
+dateModified: 1677900903
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -192,6 +192,10 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: repeatEmail
+  cp-field-inspect:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   field-manager:
     edition: standard
     enabled: true
