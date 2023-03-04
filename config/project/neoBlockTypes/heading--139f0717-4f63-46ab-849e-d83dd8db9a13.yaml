@@ -37,7 +37,7 @@ fieldLayouts:
             uid: d3fe3d83-869c-4593-8c2d-9ed62c75e788
             userCondition: null
             warning: null
-            width: 100
+            width: 25
           -
             elementCondition: null
             fieldUid: e16fd2de-54c9-4363-a6bd-d3a6756c0720 # Uppercase
@@ -49,7 +49,19 @@ fieldLayouts:
             uid: ef440c86-9102-4d26-a415-bcc7fe1cdcb2
             userCondition: null
             warning: null
-            width: 100
+            width: 25
+          -
+            elementCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6b3b92e1-639f-41f7-8186-4cefa62703d0
+            userCondition: null
+            warning: null
+            width: 25
         name: Styles
         uid: 7fe853be-1342-4a2e-b8f0-29f315839282
         userCondition: null

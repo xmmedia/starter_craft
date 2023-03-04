@@ -9,6 +9,9 @@
 {% else %}
     {% set classes = classes|merge(['text-center lg:text-left']) %}
 {% endif %}
+{% if subContent.classes %}
+    {% set classes = classes|merge(subContent.classes|explodeClass) %}
+{% endif %}
 
 {{ tag('h2', {
     html: subContent.heading|striptags('<strong><em><br><a><sup>')|raw,

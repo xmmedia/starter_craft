@@ -1,4 +1,4 @@
-dateModified: 1677900903
+dateModified: 1677901959
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -131,6 +131,7 @@ meta:
     c6086d7e-21ee-4688-a784-9cbbca24b90f: Column # Column
     ca24a1c1-6c04-473b-a43e-f9d930385cca: 'About Image' # About Image
     d5c02b9e-9cf0-42d4-9033-8c48c1e8c063: 'Image Pair' # Image Pair
+    d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
     d60c9491-686c-43bc-ba25-b47ebe3a64ea: Image # Image
     d64ce0e2-88ae-4fe3-84d9-7ab01131d806: Cards # Cards
