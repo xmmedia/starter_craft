@@ -1,4 +1,5 @@
 childBlocks: null
+conditions: null
 description: null
 enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
@@ -24,7 +25,10 @@ fieldLayouts:
         uid: 6a735268-0b83-4c78-be1d-a9bb1b083ca5
         userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: accordion
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0

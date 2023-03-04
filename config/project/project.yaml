@@ -1,4 +1,4 @@
-dateModified: 1677903307
+dateModified: 1677903718
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -209,7 +209,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: ILLFS4MBLDVQ42F5BK9KBJIN
-    schemaVersion: 3.3.0
+    schemaVersion: 3.6.2
   oembed:
     edition: standard
     enabled: true

@@ -6,18 +6,18 @@
     "require": {
         "php": "8.0.*",
         "clubstudioltd/craft-asset-rev": "^7.0",
-        "craftcms/cms": "4.3.1",
+        "craftcms/cms": "4.3.10",
         "craftcms/contact-form": "^3.0",
         "craftcms/contact-form-honeypot": "^2.0",
-        "craftcms/redactor": "^3.0.2",
+        "craftcms/redactor": "3.0.3",
         "ether/seo": "^4.0",
-        "hybridinteractive/craft-contact-form-extensions": "^4.2",
+        "hybridinteractive/craft-contact-form-extensions": "4.2.2",
         "mmikkel/cp-field-inspect": "^1.4",
         "roave/security-advisories": "dev-master",
-        "spicyweb/craft-neo": "3.4.0",
-        "verbb/field-manager": "3.0.4",
+        "spicyweb/craft-neo": "3.7.0",
+        "verbb/field-manager": "3.0.5",
         "vlucas/phpdotenv": "^5.4",
-        "wrav/oembed": "^2.2"
+        "wrav/oembed": "2.3.0"
     },
     "require-dev": {
         "yiisoft/yii2-shell": "^2.0.3"

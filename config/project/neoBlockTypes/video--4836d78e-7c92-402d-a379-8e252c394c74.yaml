@@ -1,4 +1,5 @@
 childBlocks: null
+conditions: null
 description: null
 enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
@@ -24,7 +25,10 @@ fieldLayouts:
         uid: 5236179c-e4bc-466b-bd36-180d599f2bd2
         userCondition: null
 group: null
+groupChildBlockTypes: true
 handle: video
+icon: null
+ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
 maxSiblingBlocks: 0
