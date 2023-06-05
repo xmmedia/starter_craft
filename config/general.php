@@ -34,8 +34,8 @@ return GeneralConfig::create()
     ])
     ->convertFilenamesToAscii()
     ->maxUploadFileSize('50M')
-    // don't run the queue automatically, instead use cron job (every minute)
-    ->runQueueAutomatically(false)
+    // in prod/staging, don't run the queue automatically, instead use cron job (every minute)
+    ->runQueueAutomatically(App::env('DEV_MODE') ?? false)
     ->cpHeadTags([
         ['link', ['rel' => 'apple-touch-icon', 'sizes' => '180x180', 'href', '/apple-touch-icon.png']],
         ['link', ['rel' => 'icon', 'type' => 'image/png', 'sizes' => '32x32', 'href' => '/favicon-32x32.png']],
