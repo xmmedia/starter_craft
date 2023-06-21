@@ -1,4 +1,10 @@
 {% set classes = [] %}
+
+{% set elementId = null %}
+{% if subContent.elementId %}
+    {% set elementId = subContent.elementId %}
+{% endif %}
+
 {% if subContent.uppercase %}
     {% set classes = classes|merge(['uppercase']) %}
 {% endif %}
@@ -14,6 +20,6 @@
 {% endif %}
 
 {{ tag('h2', {
-    html: subContent.heading|striptags('<strong><em><br><a><sup>')|raw,
+    html: subContent.heading|striptags('<strong><em><br><a><sup>')|raw, id: elementId,
     class: classes,
 }) }}

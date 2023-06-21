@@ -1,6 +1,13 @@
 {# @todo add element ID to column wrap (field & html) #}
 
-<section class="neocolumns-wrap">
+
+{% set elementId = null %}
+{% if block.elementId %}
+    {% set elementId = block.elementId %}
+{% endif %}
+
+
+{% tag 'section' with { class: ['neocolumns-wrap'], id: elementId } %}
     {% for content in block.children.all() %}
         {% set columnClasses = ['neocolumn'] %}
         {% switch content.width %}
@@ -71,4 +78,5 @@
             {% endfor %}
         {% endtag %}
     {% endfor %}
+{% endtag %}
 </section>

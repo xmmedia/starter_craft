@@ -1,0 +1,19 @@
+columnSuffix: zezbhvxw
+contentColumnType: string(100)
+fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
+handle: elementId
+instructions: null
+name: 'Element Id'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 25
+  code: false
+  columnType: null
+  initialRows: 4
+  multiline: false
+  placeholder: 'Used for referencing the section in the address bar so the page scrolls to that section.'
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
