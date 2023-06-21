@@ -5,6 +5,7 @@
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/modules" isTestSource="false" packagePrefix="modules\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/imagemodule/src" isTestSource="false" packagePrefix="modules\imagemodule\" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/albertcht/invisible-recaptcha" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/markdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/clubstudioltd/craft-asset-rev" />
@@ -12,7 +13,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/cms" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/contact-form" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/contact-form-honeypot" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/oauth2-craftid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/plugin-installer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/redactor" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/server-check" />
@@ -32,7 +32,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/illuminate/support" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/justinrainbow/json-schema" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/league/oauth2-client" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mikehaertl/php-shellcommand" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nesbot/carbon" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/paragonie/random_compat" />
@@ -123,6 +122,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psy/psysh" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-shell" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mmikkel/cp-field-inspect" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpdoc-parser" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

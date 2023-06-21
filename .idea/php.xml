@@ -58,13 +58,11 @@
       <path value="$PROJECT_DIR$/vendor/mikehaertl/php-shellcommand" />
       <path value="$PROJECT_DIR$/vendor/seld/phar-utils" />
       <path value="$PROJECT_DIR$/vendor/seld/cli-prompt" />
-      <path value="$PROJECT_DIR$/vendor/craftcms/oauth2-craftid" />
       <path value="$PROJECT_DIR$/vendor/craftcms/redactor" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/craftcms/plugin-installer" />
       <path value="$PROJECT_DIR$/vendor/craftcms/server-check" />
-      <path value="$PROJECT_DIR$/vendor/league/oauth2-client" />
       <path value="$PROJECT_DIR$/vendor/enshrined/svg-sanitize" />
       <path value="$PROJECT_DIR$/vendor/webonyx/graphql-php" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-composer" />
@@ -126,15 +124,31 @@
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/commerceguys/addressing" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
-      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
-      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
-      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-shell" />
       <path value="$PROJECT_DIR$/vendor/mmikkel/cp-field-inspect" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/intervention/httpauth" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/tubalmartin/cssmin" />
+      <path value="$PROJECT_DIR$/vendor/marcusschwarz/lesserphp" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/minify" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/jsmin-php" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/props-dic" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-shell" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpUnit">
+    <phpunit_settings>
+      <PhpUnitSettings custom_loader_path="$PROJECT_DIR$/vendor/autoload.php" />
+    </phpunit_settings>
   </component>
   <component name="PsalmOptionsConfiguration">
     <option name="transferred" value="true" />
