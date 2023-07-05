@@ -43,5 +43,11 @@ return [
             // Instantiate and return it
             return Craft::createObject($config);
         },
+        'log' => [
+            'monologTargetConfig' => [
+                // increase the number of log files kept
+                'maxFiles' => 90,
+            ],
+        ],
     ],
 ];
