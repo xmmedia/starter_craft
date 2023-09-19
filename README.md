@@ -29,6 +29,10 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Add icon/logo as SVGs in `/storage/rebrand/icon/` and `/storage/rebrand/logo/` as `logo.svg`. (SVGs are best.) Only works with paid version of Craft.
 13. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
+14. Update site name:
+    - In Settings -=> General
+    - In Settings -> Sites
+    - Globals -> Site Information
 
 **Dev site can be accessed at https://[domain]/**  
 Craft admin is located at `/admin`
