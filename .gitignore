@@ -17,6 +17,7 @@ public/service-worker.js
 ###> craft cms ###
 public/assets
 public/cpresources
+storage
 # @todo-craft remove after setting up project
 config/license.key
 ###< craft cms ###
