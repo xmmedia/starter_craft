@@ -209,7 +209,7 @@ plugins:
   neo:
     edition: standard
     enabled: true
-    licenseKey: ILLFS4MBLDVQ42F5BK9KBJIN
+    licenseKey:
     schemaVersion: 3.6.2
   oembed:
     edition: standard
