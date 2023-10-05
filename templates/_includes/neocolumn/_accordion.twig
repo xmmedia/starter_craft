@@ -1,6 +1,6 @@
 <div class="w-content-copy">
     {% for block in subContent.accordion.all() %}
-        <details class="my-6">
+        <details class="relative my-6">
             <summary class="flex justify-between w-full z-50 pt-2">
                 <span class="flex gap-2">
                     {% set icon = block.accordionIcon.one() %}
