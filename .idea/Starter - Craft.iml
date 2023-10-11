@@ -2,10 +2,6 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/modules" isTestSource="false" packagePrefix="modules\" />
-      <sourceFolder url="file://$MODULE_DIR$/modules/imagemodule/src" isTestSource="false" packagePrefix="modules\imagemodule\" />
-      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/albertcht/invisible-recaptcha" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/markdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/clubstudioltd/craft-asset-rev" />
@@ -123,6 +119,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-shell" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/mmikkel/cp-field-inspect" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpstan/phpdoc-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/seld/signal-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php81" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
