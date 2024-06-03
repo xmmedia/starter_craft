@@ -6,17 +6,15 @@ instructions: null
 name: 'Post Categories'
 searchable: false
 settings:
-  allowLimit: false
-  allowMultipleSources: false
   allowSelfRelations: false
   branchLimit: null
   localizeRelations: false
+  maintainHierarchy: true
   maxRelations: null
   minRelations: null
   selectionLabel: null
   showSiteMenu: true
   source: 'group:48ab6525-2753-4564-a94c-19b9a23de6df' # Blog Categories
-  sources: '*'
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null

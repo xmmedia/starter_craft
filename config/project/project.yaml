@@ -1,4 +1,4 @@
-dateModified: 1697058670
+dateModified: 1717451410
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -210,7 +210,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: Z06UU8T1NEF1DX23V6CTKVYM
-    schemaVersion: 3.6.2
+    schemaVersion: 4.0.0
   oembed:
     edition: standard
     enabled: true

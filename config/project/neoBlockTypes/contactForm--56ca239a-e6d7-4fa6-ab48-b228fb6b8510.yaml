@@ -1,6 +1,6 @@
 childBlocks: null
 conditions: null
-description: null
+description: ''
 enabled: true
 field: e3b89ada-8774-49a8-8e14-9916373409d0 # Blocks
 fieldLayouts:
@@ -10,6 +10,7 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dismissible: false
             elementCondition: null
             style: tip
             tip: 'Displays the default contact form.'
@@ -23,6 +24,7 @@ group: null
 groupChildBlockTypes: true
 handle: contactForm
 icon: null
+iconFilename: ''
 ignorePermissions: true
 maxBlocks: 0
 maxChildBlocks: 0
@@ -31,5 +33,4 @@ minBlocks: 0
 minChildBlocks: 0
 minSiblingBlocks: 0
 name: 'Contact Form'
-sortOrder: 8
 topLevel: false

@@ -6,6 +6,7 @@ instructions: null
 name: 'Image Vertical Alignment'
 searchable: false
 settings:
+  columnType: string
   options:
     -
       __assoc__:

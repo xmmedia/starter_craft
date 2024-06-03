@@ -11,9 +11,11 @@ settings:
   allowUploads: true
   allowedKinds:
     - pdf
+  branchLimit: null
   defaultUploadLocationSource: 'volume:e797d026-fc3a-408a-a1c8-c17aa4f57f3d' # Assets
   defaultUploadLocationSubpath: null
   localizeRelations: false
+  maintainHierarchy: false
   maxRelations: 1
   minRelations: null
   previewMode: full
@@ -26,7 +28,6 @@ settings:
   showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
-  source: null
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false
