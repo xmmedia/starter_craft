@@ -122,6 +122,9 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/psr/clock" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/seld/signal-handler" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php81" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ml/iri" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/ml/json-ld" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/oscarotero/html-parser" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
