@@ -1,4 +1,4 @@
-dateModified: 1722356590
+dateModified: 1722359274
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -51,6 +51,7 @@ meta:
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2cabf0a4-e1b0-4c44-a840-7c9bd36e75b7: SEO # SEO
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Neo Column Image - Small' # Neo Column Image - Small
+    3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
     4c25b3bd-91d8-40bf-88d2-394da12d5156: Image # Image
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card

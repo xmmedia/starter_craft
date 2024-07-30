@@ -5,23 +5,28 @@ headingLevels:
   - 4
   - 5
   - 6
-name: Simple
+name: Standard
 options:
-  fontSize:
+  alignment:
     options:
-      - tiny
-      - small
-      - big
-      - huge
+      - left
+      - right
+      - center
 toolbar:
   - undo
   - redo
+  - heading
   - '|'
   - bold
   - italic
   - link
   - superscript
   - subscript
+  - '|'
+  - alignment
+  - bulletedList
+  - numberedList
   - fontColor
-  - fontSize
+  - '|'
+  - insertImage
   - code
