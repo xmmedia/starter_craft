@@ -5,10 +5,10 @@
         {% set heading = herobar.heading %}
     {% endif %}
 {# @todo rename everything to hero #}
-    <section class="herobar"
+    <section class="hero"
          style="background-image: url('{{ herobar.herobarImage.one().setTransform('herobar').getUrl() }}');">
         {% if hero_content is not defined %}
-            <div class="flex justify-center items-center w-full h-full">
+            <div class="flex justify-center items-center w-full h-full bg-white-transparent">
                 <div class="w-content text-center">
                     {% if heading %}
                         <h1>{{ heading }}</h1>
