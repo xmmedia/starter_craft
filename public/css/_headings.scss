@@ -5,6 +5,10 @@ h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
 
+h1, h2 {
+    @apply hyphens-auto sm:hyphens-none;
+}
+
 // reset margins on headings as tailwind removes them
 h1 {
     @apply text-4xl;
