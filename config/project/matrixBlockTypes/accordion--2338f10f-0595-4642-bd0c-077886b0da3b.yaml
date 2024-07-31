@@ -56,23 +56,19 @@ fields:
     settings:
       availableTransforms: '*'
       availableVolumes: '*'
+      ckeConfig: 3ccf3102-3b57-4a41-8571-700d76e6afca # Standard
       columnType: text
-      configSelectionMode: choose
-      defaultTransform: ''
-      manualConfig: ''
+      defaultTransform: null
+      enableSourceEditingForNonAdmins: false
       purifierConfig: null
       purifyHtml: true
-      redactorConfig: Standard.json
-      removeEmptyTags: true
-      removeInlineStyles: true
-      removeNbsp: true
-      showHtmlButtonForNonAdmins: false
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
-      uiMode: enlarged
+      showWordCount: false
+      wordLimit: null
     translationKeyFormat: null
     translationMethod: none
-    type: craft\redactor\Field
+    type: craft\ckeditor\Field
   d438c1a3-baf2-4366-9942-1dfcd9b7454a: # Accordion Icon
     columnSuffix: null
     contentColumnType: string
@@ -101,7 +97,7 @@ fields:
       restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
       restrictedLocationSubpath: null
       selectionLabel: null
-      showSiteMenu: false
+      showSiteMenu: true
       showUnpermittedFiles: false
       showUnpermittedVolumes: false
       sources: '*'
