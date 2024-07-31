@@ -24,4 +24,7 @@ toolbar:
   - subscript
   - fontColor
   - fontSize
-  - code
+  - '|'
+  - anchor
+  - removeFormat
+  - sourceEditing

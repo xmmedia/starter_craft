@@ -32,6 +32,7 @@ module.exports = function (Encore) {
 
         // will output as build/public.js and similar
         .addEntry('public', './public/js/src/public.js')
+        .addEntry('editor', './public/js/src/editor.js')
 
         // adds integrity="..." attributes on your script & link tags
         // requires WebpackEncoreBundle 1.4 or higher

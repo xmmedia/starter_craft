@@ -10,6 +10,7 @@ import Vue from 'vue';
 
 // SASS/CSS
 import '../../css/public.scss';
+import '../../css/editor.scss';
 
 // images
 import '@/../../images/icons-public.svg';

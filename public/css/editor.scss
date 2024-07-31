@@ -1,0 +1,15 @@
+.ck-editor {
+    @tailwind base;
+    @tailwind components;
+    // mq() is imported globally, so we need to import it within .ck-editor
+    @import "media";
+
+    @import "common", "html";
+
+    // common styles
+    @import
+    "headings",
+    "content";
+}
+
+@tailwind utilities;

@@ -5,7 +5,7 @@ module.exports = {
     content: [
         './templates/**/*.twig',
         './public/js/src/**/*.{vue,js}',
-        './config/redactor/**/*.{json,js}',
+        './config/project/ckeditor/**/*.yaml',
     ],
     safelist: [
         // vue transition classes: https://vuejs.org/v2/guide/transitions.html#Transition-Classes

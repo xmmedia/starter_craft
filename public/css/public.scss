@@ -5,7 +5,7 @@
 
 // global styles on the most common elements
 html {
-    @apply font-sans leading-normal text-gray-800;
+    @import "html";
 }
 
 // common styles
