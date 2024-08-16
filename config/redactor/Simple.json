@@ -1,9 +1,0 @@
-{
-  "buttons": ["redo", "undo", "bold", "italic", "link", "sup", "sub", "html"],
-  "plugins": ["fontsize", "properties", "fontcolor", "clear"],
-  "//fontcolors": ["#ffffff", "#000000"],
-  "//font-size" : ["40px"],
-  "toolbarFixed": true,
-  "source": true,
-  "imagePosition": true
-}
