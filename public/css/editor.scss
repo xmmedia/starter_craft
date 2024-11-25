@@ -1,15 +1,16 @@
+@use "sass:meta";
 .ck-editor {
     @tailwind base;
     @tailwind components;
     // mq() is imported globally, so we need to import it within .ck-editor
-    @import "media";
+    @include meta.load-css("media");
 
-    @import "common", "html";
+    @include meta.load-css("common");
+    @include meta.load-css("html");
 
     // common styles
-    @import
-    "headings",
-    "content";
+    @include meta.load-css("headings");
+    @include meta.load-css("content");
 }
 
 @tailwind utilities;

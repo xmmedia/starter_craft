@@ -1,3 +1,5 @@
+@use "media";
+
 .w-content, .w-content-narrow, .w-content-copy, .w-content-wide {
     @apply max-w-11/12 mx-auto;
 }
@@ -5,7 +7,7 @@
     @apply xl:max-w-6xl;
 }
 .w-content-narrow {
-    @include mq(844px) {
+    @include media.mq(844px) {
         @apply max-w-3xl;
     }
 }
@@ -13,7 +15,7 @@
     @apply sm:max-w-xl;
 }
 .w-content-wide {
-    @include mq(1405px) {
+    @include media.mq(1405px) {
         @apply max-w-7xl;
     }
 }
