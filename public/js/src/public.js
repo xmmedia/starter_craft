@@ -1,4 +1,5 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
+import Menu from './component/menu.vue';
 // import Vuelidate from 'vuelidate';
 // import PortalVue from 'portal-vue';
 
@@ -16,7 +17,7 @@ import '../../css/editor.scss';
 import '@/../../images/icons-public.svg';
 
 // disable the warning about dev/prod
-Vue.config.productionTip = false;
+// Vue.config.productionTip = false;
 
 // Vue.use(Vuelidate);
 // Vue.use(PortalVue);
@@ -25,24 +26,4 @@ Vue.config.productionTip = false;
 // Vue.component('field-errors', fieldErrors);
 // Vue.component('field-error', fieldError);
 
-window.App = new Vue({
-    el: '#app',
-
-    data () {
-        return {
-            showMobileMenu: false,
-        };
-    },
-
-    mounted () {
-        this.$nextTick(() => {
-            window.addEventListener('resize', () => { this.showMobileMenu = false });
-        });
-    },
-
-    methods: {
-        toggleMobileMenu () {
-            this.showMobileMenu = !this.showMobileMenu;
-        },
-    },
-});
+const appMenu = createApp(Menu).mount('#menu');

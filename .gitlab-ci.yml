@@ -1,5 +1,5 @@
 default:
-  image: xmmedia/php:8.1-cli
+  image: xmmedia/php:8.2-cli
   timeout: 15m
 
 stages:
@@ -45,7 +45,7 @@ static:
     # install php dependencies
     - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs
     # Install node/JS dependencies
-    - yarn install --non-interactive --frozen-lockfile
+    - yarn install --immutable
     - *security-checks
     # lint JS & CSS
     - yarn lint:js
@@ -74,7 +74,7 @@ static:
     - git rev-parse --verify --short HEAD > .revision
     # create partial .env file (empty as yarn doesn't need anything)
     - touch .env
-    - yarn install --non-interactive --frozen-lockfile
+    - yarn install --immutable
     - *security-checks
     - yarn build
     # remove temp .env file just in case
