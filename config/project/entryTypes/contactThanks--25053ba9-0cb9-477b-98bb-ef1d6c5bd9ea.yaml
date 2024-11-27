@@ -67,7 +67,6 @@ fieldLayouts:
 handle: contactThanks
 hasTitleField: false
 name: 'Contact Thanks'
-section: 8794b2b7-43f4-4b76-87bb-e1875f1d0357 # Contact Thanks
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

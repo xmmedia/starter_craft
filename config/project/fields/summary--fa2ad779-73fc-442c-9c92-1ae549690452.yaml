@@ -1,6 +1,5 @@
 columnSuffix: null
 contentColumnType: text
-fieldGroup: 8874e7aa-6b15-43b9-a582-4df720853d60 # Blog Post Fields
 handle: summary
 instructions: 'Enter a brief, one or two sentence post summary.'
 name: Summary

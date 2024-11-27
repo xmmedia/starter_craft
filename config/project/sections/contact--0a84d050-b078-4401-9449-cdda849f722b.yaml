@@ -1,7 +1,19 @@
 defaultPlacement: end
 enableVersioning: true
+entryTypes:
+  - ffc736cb-53c0-4f0c-9682-b810b51e72b2 # Contact
 handle: contact
+maxAuthors: 1
 name: Contact
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter

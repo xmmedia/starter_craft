@@ -1,16 +1,17 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: f4025d83-35bc-4c5c-a20d-72e6e2b45082 # Global Fields
 handle: socialMedia
 instructions: 'Set the links to social media platforms. These will be used throughout the site where they are linked to within the design. It won''t update links entered within content blocks.'
 name: 'Social Media'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_socialmedia}}'
-  maxBlocks: null
-  minBlocks: null
+  entryTypes:
+    - 8b7f28d8-533c-4c53-befc-8bf5de329775
+  maxEntries: null
+  minEntries: null
   propagationKeyFormat: null
   propagationMethod: all
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

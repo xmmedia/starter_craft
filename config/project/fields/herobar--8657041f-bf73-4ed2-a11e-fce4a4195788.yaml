@@ -1,16 +1,17 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: herobar
 instructions: null
 name: Herobar
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_herobar}}'
-  maxBlocks: 1
-  minBlocks: null
+  entryTypes:
+    - 75f7d82b-4d45-477b-848c-4f539cfe3469
+  maxEntries: 1
+  minEntries: null
   propagationKeyFormat: null
   propagationMethod: all
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

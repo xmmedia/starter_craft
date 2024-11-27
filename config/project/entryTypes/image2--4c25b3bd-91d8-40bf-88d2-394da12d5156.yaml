@@ -1,0 +1,69 @@
+color: null
+fieldLayouts:
+  d7852aa6-9c8b-4fb3-bb70-daa6af1bfa08:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            elementCondition: null
+            fieldUid: d60c9491-686c-43bc-ba25-b47ebe3a64ea
+            handle: image
+            includeInCards: false
+            instructions: null
+            label: Image
+            providesThumbs: true
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6ebe7530-d995-44ba-ac26-b25c0bc0d31e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            elementCondition: null
+            fieldUid: 79e7b6ff-336d-4ef9-b848-4fce95312631
+            handle: imageSize
+            includeInCards: true
+            instructions: null
+            label: 'Image Size'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3695c363-b8a4-4fb2-995d-063e9a81f149
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            elementCondition: null
+            fieldUid: acccbddd-ec15-4841-82bc-e2600ccf8180
+            handle: imageLink
+            includeInCards: false
+            instructions: null
+            label: 'Image Link'
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 86f7dae1-290b-4eba-bcf3-3f0dcf49d90e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: c9773d7e-7164-4425-a0bd-66f0d1b46164
+        userCondition: null
+handle: image2
+hasTitleField: false
+icon: null
+name: 'Image 2'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

@@ -1,16 +1,17 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: accordion
 instructions: null
 name: Accordion
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_accordion}}'
-  maxBlocks: null
-  minBlocks: null
+  entryTypes:
+    - 2338f10f-0595-4642-bd0c-077886b0da3b
+  maxEntries: null
+  minEntries: null
   propagationKeyFormat: null
   propagationMethod: all
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

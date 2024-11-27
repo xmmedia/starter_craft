@@ -1,4 +1,4 @@
-dateModified: 1722449250
+dateModified: 1732646872
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -45,121 +45,72 @@ fs:
 meta:
   __names__:
     0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
-    1ca3f937-5a8b-4504-a7c3-22feb254fd6c: SEO # SEO
-    1d9f0b31-c87e-4291-8103-fcfb462b5e21: 'Accordion Content' # Accordion Content
-    1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
-    2cabf0a4-e1b0-4c44-a840-7c9bd36e75b7: SEO # SEO
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Neo Column Image - Small' # Neo Column Image - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
-    4c25b3bd-91d8-40bf-88d2-394da12d5156: Image # Image
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
-    5cd17a91-a377-40d6-9da0-5cdff4880149: Herobar # Herobar
     6bb2ec19-c175-4464-9ef8-16a717bf25d0: Homepage # Homepage
     6eedec95-8e5a-49e4-8206-33ff056d1664: 'Image Size' # Image Size
-    6f98dd4b-4ea1-4545-a03a-117438f31ccd: Image # Image
-    7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7b6416c2-1b79-40c4-afad-8d1678b85a34: Button # Button
-    7f53f1b0-5407-459f-9efc-864c752e3892: Section # Section
-    8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
-    08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: Subheading # Subheading
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element Id' # Element Id
     9cf43e1b-e9c6-4233-9ac8-ef908559899b: Simple # Simple
     14b6e20f-f619-4fbc-9b76-72460ba1423b: 'Neo Column Image - Extra Small' # Neo Column Image - Extra Small
     17ed004b-264f-4318-be4a-407867219887: 'Image Align' # Image Align
     48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
     48b81495-c226-4048-afdd-066e97f6a4a5: 'Contact Form Thank You' # Contact Form Thank You
-    49a23caf-c4e8-450b-a4d5-7acbe7d2ef69: 'Button Text' # Button Text
     49c7c1d7-292b-450a-bf9e-c53ee0c295f8: 'Accordion Icon' # Accordion Icon
     50ce781f-8f6e-4eeb-b0b7-faa9e9821913: 'Text Block' # Text Block
-    52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
     55c62e14-e98e-4d1a-a181-845f6ebf20e4: Heading # Heading
     55db9051-b419-4237-b226-acfb99d40498: 'Image Link' # Image Link
-    56ca239a-e6d7-4fa6-ab48-b228fb6b8510: 'Contact Form' # Contact Form
     57c091c1-f144-47d4-aa2f-67efcd1417d4: Section # Section
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
-    64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: Image # Image
-    68c02e53-bd4b-45e6-8721-dfa278498dbb: 'Herobar Image' # Herobar Image
-    75f7d82b-4d45-477b-848c-4f539cfe3469: Herobar # Herobar
     77e77066-5f46-47e0-8cd1-44df0c9e2033: 'Social Media' # Social Media
     78f2dee3-a665-47f0-a7f2-c479a0032003: 'Image Vertical Alignment' # Image Vertical Alignment
-    79e7b6ff-336d-4ef9-b848-4fce95312631: 'Image Size' # Image Size
     80ffc64e-4e53-4ba1-8e8f-95d4f45b8946: 'Text Align' # Text Align
-    84d2deef-d6fe-4a07-b967-b71469d68219: 'Sharing Image Alt' # Sharing Image Alt
-    87dc3346-c36e-456d-8702-9fc264d5e7dc: Columns # Columns
     91f4ab67-2475-4a48-8d83-67f32c7d6fd7: 'Test Page' # Test Page
     95ce255a-2242-4832-a7bd-6ef99ba868c1: General # General
     95e5ecb2-f98f-455b-bd08-580743d5fa53: 'Text Align Center (Mobile)' # Text Align Center (Mobile)
-    139f0717-4f63-46ab-849e-d83dd8db9a13: Heading # Heading
-    414f0663-ff97-44ab-b402-98890d76f713: 'Page Title' # Page Title
     486e0db8-6cbd-4cd7-85af-77040ab2b43c: Image # Image
     511f52f1-d8bb-4d5e-820d-d3f65afcfdc9: 'Text Block Simple' # Text Block Simple
-    542b6e5b-f553-4be6-8520-672fcf3db4f0: Styles # Styles
     683dcf54-f292-4177-bc23-e0af464cc90e: 'Public Schema' # Public Schema
     733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
     739cf531-c727-4f02-9f30-bd25f3817bd3: PDF # PDF
     787e1739-73f9-4cc5-876c-48a53d41a987: 'Post Categories' # Post Categories
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
-    2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: Heading # Heading
-    2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
-    3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'Sharing Image' # Sharing Image
     4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Neo Column Image - Large' # Neo Column Image - Large
-    4836d78e-7c92-402d-a379-8e252c394c74: Video # Video
-    6454e3c3-9e64-4a15-92ef-6870c13b97d1: 'Image Grid' # Image Grid
     7514e284-6c02-4e69-bd4a-854ee30d0c5e: 'Section Padding' # Section Padding
     8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
-    8874e7aa-6b15-43b9-a582-4df720853d60: 'Blog Post Fields' # Blog Post Fields
     8918d4f4-0186-49a9-96b8-c77845095068: 'Image Pair' # Image Pair
     23405c96-1469-4872-a55a-6488791f767a: Default # Default
     25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea: 'Contact Thanks' # Contact Thanks
     42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter
     49523c85-f034-4218-a653-a10e294faac5: Homepage # Homepage
-    053794be-63d9-4bcb-bdce-8452a3bf84b3: Facebook # Facebook
-    58346c7e-0919-434f-b536-e9dae15e85c8: 'Image Grid Image' # Image Grid Image
     144007f7-7bab-40c2-9327-b324abf12787: 'Neo Column Image - Medium' # Neo Column Image - Medium
     941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
     8657041f-bf73-4ed2-a11e-fce4a4195788: Herobar # Herobar
     75818205-6564-4823-af02-9b438b462929: 'Image Grid' # Image Grid
-    87906703-c961-4f16-b1cd-8c684370e6c7: Card # Card
-    a9d87289-cfe2-4244-bc61-fcf804f19e75: 'Meta Description' # Meta Description
-    ab74bc93-83f6-4d36-a227-7a3150daec15: 'Singles Fields' # Singles Fields
-    ac0f340b-6402-49c7-a60c-5c429a966ec4: 'Text Block' # Text Block
-    acccbddd-ec15-4841-82bc-e2600ccf8180: 'Image Link' # Image Link
     af5c13ac-669e-4c56-af44-8ce554383c94: Width # Width
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Herobar # Herobar
     b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
-    b1190d25-29c7-4660-bc9e-6e6f9f290909: Image # Image
-    bd029f0a-2bd1-4198-9eeb-9ef8f36efeff: Button # Button
     c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3: 'Featured Image' # Featured Image
-    c763c881-9bb8-49e1-8297-dc71ed74d29a: Common # Common
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
-    c6086d7e-21ee-4688-a784-9cbbca24b90f: Column # Column
     ca24a1c1-6c04-473b-a43e-f9d930385cca: 'About Image' # About Image
     cd8c67c3-eb57-4f2f-bdbc-6bee54a5a095: 'Test Page' # Test Page
-    d5c02b9e-9cf0-42d4-9033-8c48c1e8c063: 'Image Pair' # Image Pair
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
-    d60c9491-686c-43bc-ba25-b47ebe3a64ea: Image # Image
-    d64ce0e2-88ae-4fe3-84d9-7ab01131d806: Cards # Cards
-    d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
-    d9009def-1bb9-482d-8539-be1829106860: Text # Text
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
     e3b89ada-8774-49a8-8e14-9916373409d0: Blocks # Blocks
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
     e797d026-fc3a-408a-a1c8-c17aa4f57f3d: Assets # Assets
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
-    e416510f-2db0-4ed8-a213-94dcbd1d557b: Accordion # Accordion
     ec34d844-46a7-4389-965e-a1a4048a0798: Accordion # Accordion
     f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
     f395bb3e-773e-4f1c-9a92-da7da6e6ec6b: About # About
-    f4025d83-35bc-4c5c-a20d-72e6e2b45082: 'Global Fields' # Global Fields
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
-    fbf76707-952f-4a1e-940a-41822a3a51bf: 'Accordion Heading' # Accordion Heading
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
-    fde5281f-1a78-4749-abcc-3c136ffc0258: 'Button Link' # Button Link
     ffc736cb-53c0-4f0c-9682-b810b51e72b2: Contact # Contact
 plugins:
   assetrev:
@@ -218,7 +169,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: Z06UU8T1NEF1DX23V6CTKVYM
-    schemaVersion: 4.0.0
+    schemaVersion: 5.1.0.1
   oembed:
     edition: standard
     enabled: true
@@ -227,12 +178,16 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.2.0
+  vite:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
 system:
   edition: solo
   live: true
   name: 'XM Craft Starter'
   retryDuration: null
-  schemaVersion: 4.5.3.0
+  schemaVersion: 5.5.0.0
   timeZone: America/Edmonton
 users:
   allowPublicRegistration: false

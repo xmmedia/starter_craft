@@ -1,0 +1,35 @@
+columnSuffix: null
+handle: ogImage
+instructions: 'Recommended size is 1200x630 pixels. The minimum is 600x315 pixels.'
+name: 'SEO - SEO - Sharing Image'
+searchable: false
+settings:
+  allowSelfRelations: false
+  allowSubfolders: false
+  allowUploads: true
+  allowedKinds:
+    - image
+  branchLimit: null
+  defaultUploadLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
+  defaultUploadLocationSubpath: null
+  maintainHierarchy: false
+  maxRelations: 1
+  minRelations: null
+  previewMode: full
+  restrictFiles: true
+  restrictLocation: true
+  restrictedDefaultUploadSubpath: null
+  restrictedLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
+  restrictedLocationSubpath: null
+  selectionLabel: null
+  showCardsInGrid: false
+  showSiteMenu: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  sources: '*'
+  targetSiteId: null
+  validateRelatedElements: true
+  viewMode: list
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Assets

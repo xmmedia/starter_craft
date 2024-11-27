@@ -1,6 +1,5 @@
 columnSuffix: mphjzkyx
 contentColumnType: string(600)
-fieldGroup: 542b6e5b-f553-4be6-8520-672fcf3db4f0 # Styles
 handle: classes
 instructions: 'CSS classes to apply to the wrapper element.'
 name: Classes

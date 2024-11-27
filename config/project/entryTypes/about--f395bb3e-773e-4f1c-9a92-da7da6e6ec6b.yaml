@@ -67,7 +67,6 @@ fieldLayouts:
 handle: about
 hasTitleField: true
 name: About
-section: d9b45246-8d18-46e0-9a98-ac7b65120828 # About
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

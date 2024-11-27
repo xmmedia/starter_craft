@@ -1,7 +1,19 @@
 defaultPlacement: end
 enableVersioning: true
+entryTypes:
+  - cd8c67c3-eb57-4f2f-bdbc-6bee54a5a095 # Test Page
 handle: testPage
+maxAuthors: 1
 name: 'Test Page'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter

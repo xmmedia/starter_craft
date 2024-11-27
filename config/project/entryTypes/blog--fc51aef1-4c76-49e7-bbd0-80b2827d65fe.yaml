@@ -85,7 +85,6 @@ fieldLayouts:
 handle: blog
 hasTitleField: true
 name: Blog
-section: 2b537640-9acd-4e53-a1b4-f497d2e79cd0 # Blog
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

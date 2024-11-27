@@ -1,7 +1,19 @@
 defaultPlacement: end
 enableVersioning: true
+entryTypes:
+  - 6bb2ec19-c175-4464-9ef8-16a717bf25d0 # Homepage
 handle: homepage
+maxAuthors: 1
 name: Homepage
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter

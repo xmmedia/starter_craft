@@ -1,7 +1,19 @@
 defaultPlacement: end
 enableVersioning: true
+entryTypes:
+  - 25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea # Contact Thanks
 handle: contactThanks
+maxAuthors: 1
 name: 'Contact Thanks'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
 propagationMethod: all
 siteSettings:
   42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter

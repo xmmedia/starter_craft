@@ -1,16 +1,17 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: 2cabf0a4-e1b0-4c44-a840-7c9bd36e75b7 # SEO
 handle: seo
 instructions: null
 name: SEO
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_seo}}'
-  maxBlocks: 1
-  minBlocks: 1
+  entryTypes:
+    - 1ca3f937-5a8b-4504-a7c3-22feb254fd6c
+  maxEntries: 1
+  minEntries: 1
   propagationKeyFormat: null
   propagationMethod: all
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

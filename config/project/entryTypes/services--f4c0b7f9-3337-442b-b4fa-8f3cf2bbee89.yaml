@@ -49,7 +49,6 @@ fieldLayouts:
 handle: services
 hasTitleField: true
 name: Services
-section: 941223b2-225a-4a1c-8095-3ef96f00d2f5 # Services
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

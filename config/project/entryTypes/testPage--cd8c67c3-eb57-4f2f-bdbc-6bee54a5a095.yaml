@@ -67,7 +67,6 @@ fieldLayouts:
 handle: testPage
 hasTitleField: true
 name: 'Test Page'
-section: 91f4ab67-2475-4a48-8d83-67f32c7d6fd7 # Test Page
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

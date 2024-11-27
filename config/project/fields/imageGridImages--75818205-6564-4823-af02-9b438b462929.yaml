@@ -1,16 +1,17 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: imageGridImages
 instructions: null
 name: 'Image Grid'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_imagegridimages}}'
-  maxBlocks: null
-  minBlocks: null
+  entryTypes:
+    - 58346c7e-0919-434f-b536-e9dae15e85c8
+  maxEntries: null
+  minEntries: null
   propagationKeyFormat: null
   propagationMethod: all
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: ogImageAlt
+instructions: 'Shown or read to the user when they can''t see the sharing image.'
+name: 'SEO - SEO - Sharing Image Alt'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 150
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

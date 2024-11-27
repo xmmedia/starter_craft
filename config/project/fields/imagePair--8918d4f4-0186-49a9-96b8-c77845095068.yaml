@@ -1,16 +1,17 @@
 columnSuffix: null
 contentColumnType: string
-fieldGroup: c763c881-9bb8-49e1-8297-dc71ed74d29a # Common
 handle: imagePair
 instructions: null
 name: 'Image Pair'
 searchable: false
 settings:
-  contentTable: '{{%matrixcontent_imagepair}}'
-  maxBlocks: 2
-  minBlocks: 2
+  entryTypes:
+    - 4c25b3bd-91d8-40bf-88d2-394da12d5156
+  maxEntries: 2
+  minEntries: 2
   propagationKeyFormat: null
   propagationMethod: all
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: metaDescription
+instructions: 'Search engines may show this below the page title. Will also be used when sharing on social media.'
+name: 'SEO - SEO - Meta Description'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: 170
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

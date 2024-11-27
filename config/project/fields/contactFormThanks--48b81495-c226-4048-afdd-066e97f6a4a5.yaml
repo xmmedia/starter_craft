@@ -1,6 +1,5 @@
 columnSuffix: null
 contentColumnType: text
-fieldGroup: ab74bc93-83f6-4d36-a227-7a3150daec15 # Singles Fields
 handle: contactFormThanks
 instructions: 'Displayed after submitting the contact form. Can be left blank and a default message will display.'
 name: 'Contact Form Thank You'

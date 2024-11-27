@@ -1,0 +1,37 @@
+color: null
+fieldLayouts:
+  a223b180-fbed-4533-9e31-398def54e4b5:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            elementCondition: null
+            fieldUid: b1190d25-29c7-4660-bc9e-6e6f9f290909
+            handle: image
+            includeInCards: true
+            instructions: null
+            label: Image
+            providesThumbs: true
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0fb83146-1f4d-4ca3-9407-17af429f6e29
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: cfb577e6-4b75-481d-90c0-8b7bb33b1847
+        userCondition: null
+handle: imageGridImage
+hasTitleField: false
+icon: null
+name: 'Image Grid Image'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

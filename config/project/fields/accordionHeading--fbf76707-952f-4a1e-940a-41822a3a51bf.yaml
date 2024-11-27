@@ -1,0 +1,16 @@
+columnSuffix: iqtptnht
+handle: accordionHeading
+instructions: null
+name: 'Accordion - Accordion - Accordion Heading'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: null
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
