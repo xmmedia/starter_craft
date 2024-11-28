@@ -13,7 +13,7 @@
         "ether/seo": "5.0.0",
         "hybridinteractive/craft-contact-form-extensions": "5.0.0",
         "mmikkel/cp-field-inspect": "^2.0.2",
-        "nystudio107/craft-vite": "5.0.1",
+        "nystudio107/craft-vite": "^5.0",
         "roave/security-advisories": "dev-master",
         "spicyweb/craft-neo": "5.2.17",
         "verbb/field-manager": "4.0.3",
