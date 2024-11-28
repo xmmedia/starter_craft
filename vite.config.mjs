@@ -1,9 +1,7 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
-import mkcert from'vite-plugin-mkcert';
+import mkcert from 'vite-plugin-mkcert';
 import vuePlugin from '@vitejs/plugin-vue';
-import manifestSRIPlugin from 'vite-plugin-manifest-sri';
-import symfonyPlugin from 'vite-plugin-symfony';
 import dns from 'dns';
 
 dns.setDefaultResultOrder('verbatim');
@@ -12,28 +10,23 @@ export default defineConfig({
     plugins: [
         mkcert(),
         vuePlugin(),
-        manifestSRIPlugin(),
-        symfonyPlugin({
-            refresh: true,
-            sriAlgorithm: 'sha384',
-        }),
     ],
     build: {
-        outDir: 'public/build',
+        outDir: 'public/build', // Ensure the output directory is correct
         rollupOptions: {
             input: {
-                public: './public/js/src/public.js',
+                public: './public/js/src/public.js', // Your entry file
+                editor: './public/js/src/editor.js',
             },
         },
         sourcemap: true,
-        // don't inline assets
         assetsInlineLimit: 0,
+        manifest: true, // Enable manifest generation
     },
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./public/js/src', import.meta.url)),
         },
-        // the default plus .vue
         extensions: ['.vue', '.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
     },
     css: {
@@ -41,13 +34,11 @@ export default defineConfig({
     },
     server: {
         host: true,
-        // @todo-craft change port number
         port: 9028,
         origin: 'https://localhost:9028',
         strictPort: true,
         https: true,
         watch: {
-            // this is in part needed because the symfony plugin ignores the public dir completely
             ignored: ['**/vendor/**', '**/var/**'],
         },
     },

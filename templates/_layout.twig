@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block page_title_wrap %}{% block page_title %}{% endblock %}{{ siteInformation.companyName }}{% endblock %}</title>
 
-    {% block head %}{% endblock %}
-
-    {% block stylesheets %}
-        <link rel="stylesheet" href="{{ rev('build/public.css') }}">
+    {% block head %}
+        {{ craft.vite.script("public/js/src/public.js", false, { 'defer' : true }) }}
     {% endblock %}
+
     {% block favicons %}
         {% include '_includes/_favicons.twig' %}
     {% endblock %}
@@ -60,10 +59,9 @@
 </div>
 
 {% block javascripts %}
-    <script src="{{ rev('build/public.js') }}"></script>
-
+{#    {% if craft.vite.devServerRunning() %}#}
     {% if craft.app.config.general.devMode %}
-        <script src="{{ rev('build/svgxuse.min.js') }}"></script>
+{#        <script src="{{ rev('assets/svgxuse.min.js') }}"></script>#}
     {% endif %}
 {% endblock %}
 </body>
