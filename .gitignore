@@ -74,3 +74,14 @@ cypress/integration/examples
 !.vscode/launch.json
 !.vscode/extensions.json
 ###< vscode ###
+
+###< yarn ###
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+yarn-error.log
+###< yarn ###
