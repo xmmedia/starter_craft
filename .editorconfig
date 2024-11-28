@@ -13,8 +13,5 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-[{package.json,.gitlab-ci.yml,config/*/*.json,.stylelintrc,.lando.yml}]
-indent_size = 2
-
-[*.yaml]
+[{package.json,.gitlab-ci.yml,.stylelintrc,.lando.yml}]
 indent_size = 2
