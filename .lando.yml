@@ -19,15 +19,32 @@ services:
     build_as_root:
       - a2enmod headers
   database:
+    type: mysql:8.0
     creds:
       user:     craft
       password: craft
       database: craft
   phpmyadmin:
     type: phpmyadmin
+    ssl: true
+    sslExpose: false
     hosts:
       - database
 proxy:
   appserver:
     # @todo-craft update
     - craftstarter.lndo.site
+  phpmyadmin:
+    # @todo-craft update
+    - pma.craftstarter.lndo.site
+tooling:
+  xdebug-on:
+    service: appserver
+    description: Enable xdebug for apache.
+    cmd: "docker-php-ext-enable xdebug && /etc/init.d/apache2 reload"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: Disable xdebug for apache.
+    cmd: "rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && /etc/init.d/apache2 reload"
+    user: root
