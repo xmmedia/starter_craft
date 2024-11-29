@@ -5,7 +5,6 @@
     "description": "Starter for creating Craft 5 sites at XM Media",
     "require": {
         "php": "8.2.*",
-        "clubstudioltd/craft-asset-rev": "^8.0",
         "craftcms/ckeditor": "^4.4.0",
         "craftcms/cms": "^5.0.0",
         "craftcms/contact-form": "3.1.0",
