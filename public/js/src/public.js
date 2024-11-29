@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import Menu from './component/menu.vue';
+import Menu from './common/menu.vue';
 // import Vuelidate from 'vuelidate';
 // import PortalVue from 'portal-vue';
 
