@@ -11,7 +11,7 @@ recipe: symfony
 config:
   config:
     php: lando_php.ini
-  php: '8.2'
+  php: '8.4'
   webroot: public
   xdebug: true
 services:
