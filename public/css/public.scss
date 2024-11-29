@@ -17,6 +17,7 @@ html {
 @include meta.load-css("embed");
 @include meta.load-css("buttons");
 @include meta.load-css("details");
+@include meta.load-css("social");
 @include meta.load-css("content");
 @include meta.load-css("header");
 @include meta.load-css("footer");

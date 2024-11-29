@@ -37,7 +37,9 @@
                     <a href="{{ siteUrl }}">
                         <img src="/images/logo.svg" width="150" height="154" alt="{{ siteInformation.companyName }}">
                     </a>
-
+                    <svg class="social-icon">
+                        <use xlink:href="{{ '/images/icons-public.svg' }}#social-instagram"></use>
+                    </svg>
 
                 </div>
             </header>
@@ -59,9 +61,8 @@
 </div>
 
 {% block javascripts %}
-{#    {% if craft.vite.devServerRunning() %}#}
-    {% if craft.app.config.general.devMode %}
-{#        <script src="{{ rev('assets/svgxuse.min.js') }}"></script>#}
+    {% if craft.vite.devServerRunning() %}
+        {{ craft.vite.asset("assets/svgxuse.min.js") }}
     {% endif %}
 {% endblock %}
 </body>
