@@ -64,12 +64,12 @@ fieldLayouts:
         userCondition: null
 handle: accordionWrapper
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Accordion Wrapper'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

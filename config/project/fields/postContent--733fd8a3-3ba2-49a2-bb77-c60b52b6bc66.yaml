@@ -1,17 +1,21 @@
 columnSuffix: null
-contentColumnType: string
 handle: postContent
 instructions: null
 name: 'Post Content'
 searchable: false
 settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
   entryTypes:
     - 1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5 # Image
-    - 7a5706d7-fc4f-4422-a8d3-9f6e5448d974
+    - 7a5706d7-fc4f-4422-a8d3-9f6e5448d974 # Text
+  includeTableView: false
   maxEntries: null
   minEntries: null
+  pageSize: null
   propagationKeyFormat: null
   propagationMethod: all
+  showCardsInGrid: false
   viewMode: blocks
 translationKeyFormat: null
 translationMethod: site

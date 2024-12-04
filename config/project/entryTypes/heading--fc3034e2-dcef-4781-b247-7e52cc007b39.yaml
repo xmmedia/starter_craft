@@ -59,6 +59,22 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2024-12-04T23:42:19+00:00'
+            elementCondition: null
+            fieldUid: e16fd2de-54c9-4363-a6bd-d3a6756c0720 # Uppercase
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6e8b4ce8-5b25-423c-8297-8129e0779bba
+            userCondition: null
+            warning: null
+            width: 100
         name: Styles
         uid: de238c42-1429-4948-9f49-ea8383fa7b24
         userCondition: null
@@ -102,12 +118,12 @@ fieldLayouts:
         userCondition: null
 handle: heading
 hasTitleField: false
-icon: ''
+icon: null
 name: Heading
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

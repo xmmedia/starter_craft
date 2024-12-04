@@ -8,7 +8,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: 053794be-63d9-4bcb-bdce-8452a3bf84b3
+            fieldUid: 053794be-63d9-4bcb-bdce-8452a3bf84b3 # Social Media - URLs - Facebook
             handle: null
             includeInCards: true
             instructions: null

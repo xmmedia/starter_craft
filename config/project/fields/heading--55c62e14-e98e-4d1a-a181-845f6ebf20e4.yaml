@@ -1,5 +1,4 @@
 columnSuffix: hqdymqov
-contentColumnType: text
 handle: heading
 instructions: null
 name: Heading
@@ -8,7 +7,7 @@ settings:
   availableTransforms: '*'
   availableVolumes: '*'
   ckeConfig: 9cf43e1b-e9c6-4233-9ac8-ef908559899b # Simple
-  columnType: text
+  createButtonLabel: null
   defaultTransform: null
   enableSourceEditingForNonAdmins: false
   purifierConfig: null

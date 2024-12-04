@@ -26,12 +26,12 @@ fieldLayouts:
         userCondition: null
 handle: accordionContent
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Accordion Content'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

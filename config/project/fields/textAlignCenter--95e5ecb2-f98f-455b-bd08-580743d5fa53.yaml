@@ -1,5 +1,4 @@
 columnSuffix: eqxpofhf
-contentColumnType: boolean
 handle: textAlignCenter
 instructions: 'Turning this field on will align text center on mobile sized screens.'
 name: 'Text Align Center (Mobile)'

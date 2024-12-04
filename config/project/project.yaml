@@ -1,4 +1,4 @@
-dateModified: 1733350767
+dateModified: 1733356730
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -45,6 +45,7 @@ fs:
 meta:
   __names__:
     0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
+    1ca3f937-5a8b-4504-a7c3-22feb254fd6c: SEO # SEO
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
@@ -55,7 +56,9 @@ meta:
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
     5f2efa0b-1e87-4d02-a636-f17256ef85d1: 'Block Width' # Block Width
     6eedec95-8e5a-49e4-8206-33ff056d1664: 'Image Size' # Image Size
+    7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Cards # Cards
+    8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
     08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: 'Herobar - Subheading' # Herobar - Subheading
     8f2af3e8-cdf5-4c6b-921e-814f25286901: 'Contact Form' # Contact Form
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element Id' # Element Id
@@ -73,17 +76,18 @@ meta:
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
     55c62e14-e98e-4d1a-a181-845f6ebf20e4: Heading # Heading
     55db9051-b419-4237-b226-acfb99d40498: 'Image Link' # Image Link
-    57c091c1-f144-47d4-aa2f-67efcd1417d4: Section # Section
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
+    64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: 'Post Content - Image - Image' # Post Content - Image - Image
     68c02e53-bd4b-45e6-8721-dfa278498dbb: 'Herobar Image' # Herobar Image
     72bf15bd-1c10-49b7-9d48-b1192343eea6: 'Accordion Heading' # Accordion Heading
     75f7d82b-4d45-477b-848c-4f539cfe3469: Hero # Hero
     77e77066-5f46-47e0-8cd1-44df0c9e2033: 'Social Media' # Social Media
-    78f2dee3-a665-47f0-a7f2-c479a0032003: 'Image Vertical Alignment' # Image Vertical Alignment
     80ffc64e-4e53-4ba1-8e8f-95d4f45b8946: 'Text Align' # Text Align
+    84d2deef-d6fe-4a07-b967-b71469d68219: 'SEO - SEO - Sharing Image Alt' # SEO - SEO - Sharing Image Alt
     95ce255a-2242-4832-a7bd-6ef99ba868c1: General # General
     95e5ecb2-f98f-455b-bd08-580743d5fa53: 'Text Align Center (Mobile)' # Text Align Center (Mobile)
+    414f0663-ff97-44ab-b402-98890d76f713: 'SEO - SEO - Page Title' # SEO - SEO - Page Title
     486e0db8-6cbd-4cd7-85af-77040ab2b43c: Image # Image
     511f52f1-d8bb-4d5e-820d-d3f65afcfdc9: 'Text Block Simple' # Text Block Simple
     554d5c17-904d-4637-9bfc-f85a9f70ba44: Blocks # Blocks
@@ -96,32 +100,33 @@ meta:
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
+    3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - SEO - Sharing Image' # SEO - SEO - Sharing Image
     4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Neo Column Image - Large' # Neo Column Image - Large
     5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
     7514e284-6c02-4e69-bd4a-854ee30d0c5e: 'Section Padding' # Section Padding
     8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
-    8918d4f4-0186-49a9-96b8-c77845095068: 'Image Pair' # Image Pair
     23405c96-1469-4872-a55a-6488791f767a: Default # Default
     25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea: 'Contact Thanks' # Contact Thanks
     42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter
     49523c85-f034-4218-a653-a10e294faac5: Homepage # Homepage
+    053794be-63d9-4bcb-bdce-8452a3bf84b3: 'Social Media - URLs - Facebook' # Social Media - URLs - Facebook
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
     144007f7-7bab-40c2-9327-b324abf12787: 'Neo Column Image - Medium' # Neo Column Image - Medium
     941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
-    8657041f-bf73-4ed2-a11e-fce4a4195788: Hero # Hero
-    75818205-6564-4823-af02-9b438b462929: 'Image Grid' # Image Grid
-    af5c13ac-669e-4c56-af44-8ce554383c94: Width # Width
+    a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - SEO - Meta Description' # SEO - SEO - Meta Description
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Herobar # Herobar
     b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid
     b7e52fb1-8f8c-42af-b4dd-89f7bff35de2: 'Accordion Wrapper' # Accordion Wrapper
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
     c0a4b738-d7e7-4400-9576-7e279127345f: 'Card Heading' # Card Heading
     c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3: 'Featured Image' # Featured Image
+    c3bdff5b-2014-42e0-87b1-372f17b8ec0e: 'Image Vertical Alignment' # Image Vertical Alignment
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
+    d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text - Text' # Post Content - Text - Text
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
     e797d026-fc3a-408a-a1c8-c17aa4f57f3d: Assets # Assets
@@ -212,10 +217,3 @@ system:
   retryDuration: null
   schemaVersion: 5.5.0.0
   timeZone: America/Edmonton
-users:
-  allowPublicRegistration: false
-  deactivateByDefault: false
-  defaultGroup: null
-  photoSubpath: null
-  photoVolumeUid: null
-  requireEmailVerification: true

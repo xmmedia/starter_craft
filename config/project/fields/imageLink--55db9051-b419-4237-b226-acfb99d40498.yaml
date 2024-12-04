@@ -1,15 +1,16 @@
 columnSuffix: tjuuaior
-contentColumnType: string(255)
 handle: imageLink
 instructions: null
 name: 'Image Link'
 searchable: false
 settings:
   maxLength: 255
+  showLabelField: false
+  showTargetField: false
   types:
     - url
     - tel
     - email
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Url
+type: craft\fields\Link

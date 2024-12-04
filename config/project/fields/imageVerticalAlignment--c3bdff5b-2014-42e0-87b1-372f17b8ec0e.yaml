@@ -1,20 +1,30 @@
-columnSuffix: gfgryzxg
-contentColumnType: string
-handle: categoryNavSection
+columnSuffix: null
+handle: imageVerticalAlignment
 instructions: null
-name: Section
+name: 'Image Vertical Alignment'
 searchable: false
 settings:
-  columnType: string
+  customOptions: false
   options:
     -
       __assoc__:
         -
           - label
-          - Furniture
+          - Center
         -
           - value
-          - officeFurnitureSubpages
+          - center
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Top
+        -
+          - value
+          - top
         -
           - default
           - ''
@@ -22,21 +32,10 @@ settings:
       __assoc__:
         -
           - label
-          - Telus
+          - Bottom
         -
           - value
-          - telusSubpages
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - Xerox
-        -
-          - value
-          - xeroxSubpages
+          - bottom
         -
           - default
           - ''

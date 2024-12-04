@@ -1,5 +1,4 @@
 columnSuffix: null
-contentColumnType: text
 handle: contactFormThanks
 instructions: 'Displayed after submitting the contact form. Can be left blank and a default message will display.'
 name: 'Contact Form Thank You'
@@ -8,7 +7,6 @@ settings:
   byteLimit: null
   charLimit: null
   code: false
-  columnType: null
   initialRows: 3
   multiline: true
   placeholder: null

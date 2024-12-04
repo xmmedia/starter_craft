@@ -26,12 +26,12 @@ fieldLayouts:
         userCondition: null
 handle: card
 hasTitleField: false
-icon: ''
+icon: null
 name: Card
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

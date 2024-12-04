@@ -1,7 +1,7 @@
 columnSuffix: efyscztz
 handle: buttonText
 instructions: null
-name: 'Button - Button - Button Text'
+name: 'Button Text'
 searchable: false
 settings:
   byteLimit: null

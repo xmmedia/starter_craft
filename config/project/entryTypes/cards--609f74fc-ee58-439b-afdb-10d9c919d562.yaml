@@ -64,12 +64,12 @@ fieldLayouts:
         userCondition: null
 handle: cards
 hasTitleField: false
-icon: ''
+icon: null
 name: Cards
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

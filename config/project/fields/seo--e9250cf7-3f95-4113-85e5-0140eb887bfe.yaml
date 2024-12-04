@@ -1,16 +1,20 @@
 columnSuffix: null
-contentColumnType: string
 handle: seo
 instructions: null
 name: SEO
 searchable: false
 settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
   entryTypes:
-    - 1ca3f937-5a8b-4504-a7c3-22feb254fd6c
+    - 1ca3f937-5a8b-4504-a7c3-22feb254fd6c # SEO
+  includeTableView: false
   maxEntries: 1
   minEntries: 1
+  pageSize: null
   propagationKeyFormat: null
   propagationMethod: all
+  showCardsInGrid: false
   viewMode: blocks
 translationKeyFormat: null
 translationMethod: site

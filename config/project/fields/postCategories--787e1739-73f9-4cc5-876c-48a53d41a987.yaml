@@ -1,5 +1,4 @@
 columnSuffix: null
-contentColumnType: string
 handle: postCategories
 instructions: null
 name: 'Post Categories'
@@ -7,16 +6,16 @@ searchable: false
 settings:
   allowSelfRelations: false
   branchLimit: null
-  localizeRelations: false
   maintainHierarchy: true
   maxRelations: null
   minRelations: null
   selectionLabel: null
+  showCardsInGrid: false
   showSiteMenu: true
   source: 'group:48ab6525-2753-4564-a94c-19b9a23de6df' # Blog Categories
   targetSiteId: null
   validateRelatedElements: false
   viewMode: null
 translationKeyFormat: null
-translationMethod: site
+translationMethod: none
 type: craft\fields\Categories

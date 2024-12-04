@@ -102,12 +102,12 @@ fieldLayouts:
         userCondition: null
 handle: textBlock
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Text Block'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

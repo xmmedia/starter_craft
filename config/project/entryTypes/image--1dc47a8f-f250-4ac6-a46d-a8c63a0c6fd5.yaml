@@ -10,7 +10,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9
+            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Post Content - Image - Image
             handle: image
             includeInCards: true
             instructions: null
@@ -93,6 +93,38 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            dateAdded: '2024-12-04T23:47:37+00:00'
+            elementCondition: null
+            fieldUid: 17ed004b-264f-4318-be4a-407867219887 # Image Align
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dde483de-2806-49e4-9549-56f0ebd741d0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-04T23:56:41+00:00'
+            elementCondition: null
+            fieldUid: c3bdff5b-2014-42e0-87b1-372f17b8ec0e # Image Vertical Alignment
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 21e42079-fbb9-46b6-b5f9-694ae79e8682
+            userCondition: null
+            warning: null
+            width: 100
         name: Style
         uid: 69894a45-d5c3-4e21-af38-4cc66ff77b54
         userCondition: null
@@ -136,12 +168,12 @@ fieldLayouts:
         userCondition: null
 handle: image
 hasTitleField: false
-icon: ''
+icon: null
 name: Image
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

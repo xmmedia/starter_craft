@@ -1,5 +1,4 @@
 columnSuffix: null
-contentColumnType: text
 handle: summary
 instructions: 'Enter a brief, one or two sentence post summary.'
 name: Summary
@@ -8,7 +7,6 @@ settings:
   byteLimit: null
   charLimit: null
   code: false
-  columnType: null
   initialRows: 1
   multiline: true
   placeholder: null

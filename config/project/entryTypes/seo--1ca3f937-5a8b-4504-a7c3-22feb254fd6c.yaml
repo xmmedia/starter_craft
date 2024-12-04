@@ -8,7 +8,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: 414f0663-ff97-44ab-b402-98890d76f713
+            fieldUid: 414f0663-ff97-44ab-b402-98890d76f713 # SEO - SEO - Page Title
             handle: null
             includeInCards: true
             instructions: null
@@ -24,7 +24,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75
+            fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75 # SEO - SEO - Meta Description
             handle: null
             includeInCards: false
             instructions: null
@@ -40,7 +40,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd
+            fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd # SEO - SEO - Sharing Image
             handle: null
             includeInCards: false
             instructions: null
@@ -56,7 +56,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219
+            fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219 # SEO - SEO - Sharing Image Alt
             handle: null
             includeInCards: false
             instructions: null

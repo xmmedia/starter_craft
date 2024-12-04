@@ -1,5 +1,4 @@
 columnSuffix: mazbglil
-contentColumnType: text
 handle: textBlock
 instructions: null
 name: 'Text Block'
@@ -8,7 +7,7 @@ settings:
   availableTransforms: '*'
   availableVolumes: '*'
   ckeConfig: 3ccf3102-3b57-4a41-8571-700d76e6afca # Standard
-  columnType: text
+  createButtonLabel: null
   defaultTransform: null
   enableSourceEditingForNonAdmins: false
   purifierConfig: null
