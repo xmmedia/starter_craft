@@ -1,4 +1,4 @@
-dateModified: 1733347048
+dateModified: 1733350767
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -45,7 +45,6 @@ fs:
 meta:
   __names__:
     0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
-    1d9f0b31-c87e-4291-8103-fcfb462b5e21: 'Accordion Content' # Accordion Content
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
@@ -56,13 +55,11 @@ meta:
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
     5f2efa0b-1e87-4d02-a636-f17256ef85d1: 'Block Width' # Block Width
     6eedec95-8e5a-49e4-8206-33ff056d1664: 'Image Size' # Image Size
-    7b6416c2-1b79-40c4-afad-8d1678b85a34: Button # Button
     7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Cards # Cards
     08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: 'Herobar - Subheading' # Herobar - Subheading
     8f2af3e8-cdf5-4c6b-921e-814f25286901: 'Contact Form' # Contact Form
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element Id' # Element Id
     9cf43e1b-e9c6-4233-9ac8-ef908559899b: Simple # Simple
-    9f389d2e-33e3-437d-b365-8bc6c6ccec9a: 'Card Text Block' # Card Text Block
     12bf30a3-ae66-402c-aa6a-1957b9eace70: Card # Card
     14b6e20f-f619-4fbc-9b76-72460ba1423b: 'Neo Column Image - Extra Small' # Neo Column Image - Extra Small
     17ed004b-264f-4318-be4a-407867219887: 'Image Align' # Image Align
@@ -70,6 +67,7 @@ meta:
     41e7d3e7-7f22-4eec-8732-1a4b2cc13182: 'Accordion Content' # Accordion Content
     48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
     48b81495-c226-4048-afdd-066e97f6a4a5: 'Contact Form Thank You' # Contact Form Thank You
+    49a23caf-c4e8-450b-a4d5-7acbe7d2ef69: 'Button Text' # Button Text
     49c7c1d7-292b-450a-bf9e-c53ee0c295f8: 'Accordion Icon' # Accordion Icon
     50ce781f-8f6e-4eeb-b0b7-faa9e9821913: 'Text Block' # Text Block
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
@@ -99,7 +97,7 @@ meta:
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
     4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Neo Column Image - Large' # Neo Column Image - Large
-    5090d915-0689-49a4-9eec-9ddb00d2f0c4: 'Card Heading' # Card Heading
+    5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
     7514e284-6c02-4e69-bd4a-854ee30d0c5e: 'Section Padding' # Section Padding
     8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
     8918d4f4-0186-49a9-96b8-c77845095068: 'Image Pair' # Image Pair
@@ -121,7 +119,6 @@ meta:
     c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3: 'Featured Image' # Featured Image
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
-    ca24a1c1-6c04-473b-a43e-f9d930385cca: 'About Image' # About Image
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
@@ -132,11 +129,10 @@ meta:
     ec34d844-46a7-4389-965e-a1a4048a0798: Accordion # Accordion
     f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
-    f395bb3e-773e-4f1c-9a92-da7da6e6ec6b: About # About
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
-    fbf76707-952f-4a1e-940a-41822a3a51bf: 'Accordion Heading' # Accordion Heading
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
+    fde5281f-1a78-4749-abcc-3c136ffc0258: 'Button Link' # Button Link
     fe9ab73f-86a5-45dd-8efd-91ea40ad88ac: 'Card Image' # Card Image
     ffc736cb-53c0-4f0c-9682-b810b51e72b2: Contact # Contact
 plugins:

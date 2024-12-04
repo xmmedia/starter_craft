@@ -1,17 +1,15 @@
 columnSuffix: zezbhvxw
-contentColumnType: string(100)
 handle: elementId
-instructions: null
+instructions: 'Used for referencing the section so the page scrolls to that section.'
 name: 'Element Id'
 searchable: false
 settings:
   byteLimit: null
   charLimit: 25
   code: false
-  columnType: null
   initialRows: 4
   multiline: false
-  placeholder: 'Used for referencing the section in the address bar so the page scrolls to that section.'
+  placeholder: null
   uiMode: normal
 translationKeyFormat: null
 translationMethod: none

@@ -62,6 +62,44 @@ fieldLayouts:
         name: Styles
         uid: de238c42-1429-4948-9f49-ea8383fa7b24
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-12-04T22:12:44+00:00'
+            elementCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c113e3ed-b6c6-4b1f-8620-dc72895742e9
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-04T22:12:44+00:00'
+            elementCondition: null
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 230252c5-1995-4299-9068-11b99fd35e7e
+            userCondition: null
+            warning: null
+            width: 100
+        name: Attributes
+        uid: 6e13ed9e-2bc2-44d3-bce2-e08823a1d0be
+        userCondition: null
 handle: heading
 hasTitleField: false
 icon: ''

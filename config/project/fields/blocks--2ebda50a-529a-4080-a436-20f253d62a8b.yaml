@@ -16,6 +16,7 @@ settings:
     - 4deb1488-ff4e-4359-91ed-22574db39b8e # Accordion Wrapper
     - 8f2af3e8-cdf5-4c6b-921e-814f25286901 # Contact Form
     - c88e53c0-b0e2-4f2e-8b79-69954becb0f7 # Video
+    - 5806aa3f-0845-4297-a1c8-edc07c16ef07 # Section Start
   includeTableView: false
   maxEntries: null
   minEntries: null

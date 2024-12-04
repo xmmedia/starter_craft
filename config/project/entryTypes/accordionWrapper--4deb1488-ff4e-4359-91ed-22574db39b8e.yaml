@@ -24,6 +24,44 @@ fieldLayouts:
         name: Content
         uid: b36bab74-7148-4a56-bc06-284e47e25ae1
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-12-04T22:01:42+00:00'
+            elementCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 723c8b59-4933-46eb-8588-7a048c56642e
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-04T22:01:42+00:00'
+            elementCondition: null
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: fa184649-7f61-4e3d-9a07-a68972d6ff45
+            userCondition: null
+            warning: null
+            width: 100
+        name: Style
+        uid: 8131fe72-8111-413a-b447-5f0c5487dd91
+        userCondition: null
 handle: accordionWrapper
 hasTitleField: false
 icon: ''
