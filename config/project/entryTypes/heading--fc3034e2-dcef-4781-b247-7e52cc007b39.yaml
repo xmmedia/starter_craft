@@ -1,69 +1,75 @@
 color: null
 fieldLayouts:
-  0ea174a2-617c-4d21-b4e7-3773d97a87b5:
+  8290f42c-be7d-495f-930d-62189f73dc3d:
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-11-26T18:45:15+00:00'
+            dateAdded: '2024-12-02T16:46:19+00:00'
             elementCondition: null
-            fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb
+            fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null
             includeInCards: false
             instructions: null
-            label: 'Herobar Image'
-            providesThumbs: true
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 137144ce-7c7c-4cef-95e8-c737b79a007d
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-11-26T18:45:15+00:00'
-            elementCondition: null
-            fieldUid: 2062b2bd-5662-4e7c-a7cf-0f05a4b4da60
-            handle: heading
-            includeInCards: true
-            instructions: null
-            label: Heading
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: bb7b634f-5780-4144-89f9-8228402711da
+            uid: 8368a790-29ed-4910-8fec-2b1ea60a3fe1
             userCondition: null
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-26T18:45:15+00:00'
+            dateAdded: '2024-11-30T00:13:57+00:00'
             elementCondition: null
-            fieldUid: 08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863
+            fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
             handle: null
             includeInCards: false
             instructions: null
-            label: Subheading
+            label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 39e84ed4-dda3-4286-9858-da5a0bdf8766
+            uid: 5e95a9e0-5571-4685-8d60-5a6ff21e9971
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: b2e948bb-ce8f-4b37-b9e8-8c59de235b8d
+        uid: 2803b717-6c7e-4532-9154-462c5c49f70b
         userCondition: null
-handle: herobar
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-12-02T16:50:32+00:00'
+            elementCondition: null
+            fieldUid: 80ffc64e-4e53-4ba1-8e8f-95d4f45b8946 # Text Align
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e8c6d865-95cf-4f22-9a2a-aa783bd59720
+            userCondition: null
+            warning: null
+            width: 100
+        name: Styles
+        uid: de238c42-1429-4948-9f49-ea8383fa7b24
+        userCondition: null
+handle: heading
 hasTitleField: false
-icon: null
-name: Herobar
-showSlugField: false
+icon: ''
+name: Heading
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

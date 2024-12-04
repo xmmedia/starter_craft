@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: herobarImage
+handle: heroImage
 instructions: 'Image should be 1290x538px or larger and the same proportions'
-name: 'Herobar - Herobar - Herobar Image'
+name: 'Herobar Image'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -23,7 +23,7 @@ settings:
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: false
-  showSiteMenu: false
+  showSiteMenu: true
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'

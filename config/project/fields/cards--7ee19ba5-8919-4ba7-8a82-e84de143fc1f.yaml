@@ -1,15 +1,13 @@
 columnSuffix: null
-handle: accordion
+handle: cards
 instructions: null
-name: Accordion
+name: Cards
 searchable: false
 settings:
   createButtonLabel: null
   defaultIndexViewMode: cards
   entryTypes:
-    - 72bf15bd-1c10-49b7-9d48-b1192343eea6 # Accordion Heading
-    - 41e7d3e7-7f22-4eec-8732-1a4b2cc13182 # Accordion Content
-    - 22bd92e8-fa46-4ac8-b91d-7b8a84bebccb # Accordion Icon
+    - f9c080c6-18df-4ea2-a482-b955a918cdc7 # Card
   includeTableView: false
   maxEntries: null
   minEntries: null

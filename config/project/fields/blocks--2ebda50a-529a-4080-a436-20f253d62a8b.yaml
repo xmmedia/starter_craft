@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: blocks
+instructions: null
+name: Blocks
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  entryTypes:
+    - 75f7d82b-4d45-477b-848c-4f539cfe3469 # Hero
+    - fc3034e2-dcef-4781-b247-7e52cc007b39 # Heading
+    - 88653b5e-8ca3-4e44-85c0-6f158c9eca99 # Text Block
+    - 1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5 # Image
+    - 52c2bd62-048d-4695-be78-f0110b0727de # Button
+    - 609f74fc-ee58-439b-afdb-10d9c919d562 # Cards
+    - 4deb1488-ff4e-4359-91ed-22574db39b8e # Accordion Wrapper
+    - 8f2af3e8-cdf5-4c6b-921e-814f25286901 # Contact Form
+    - c88e53c0-b0e2-4f2e-8b79-69954becb0f7 # Video
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

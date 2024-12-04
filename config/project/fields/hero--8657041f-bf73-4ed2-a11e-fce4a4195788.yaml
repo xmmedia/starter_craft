@@ -1,16 +1,20 @@
 columnSuffix: null
-contentColumnType: string
-handle: herobar
+handle: hero
 instructions: null
-name: Herobar
+name: Hero
 searchable: false
 settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
   entryTypes:
-    - 75f7d82b-4d45-477b-848c-4f539cfe3469
+    - 75f7d82b-4d45-477b-848c-4f539cfe3469 # Hero
+  includeTableView: false
   maxEntries: 1
   minEntries: null
+  pageSize: null
   propagationKeyFormat: null
   propagationMethod: all
+  showCardsInGrid: false
   viewMode: blocks
 translationKeyFormat: null
 translationMethod: site

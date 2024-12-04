@@ -1,0 +1,14 @@
+columnSuffix: null
+handle: blockWidth
+instructions: 'Select percentage width of block.'
+name: 'Block Width'
+searchable: false
+settings:
+  defaultValue: 100
+  max: 100
+  min: 25
+  step: 25
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Range

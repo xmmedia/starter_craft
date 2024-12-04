@@ -6,7 +6,7 @@ name: 'Post Content'
 searchable: false
 settings:
   entryTypes:
-    - 1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5
+    - 1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5 # Image
     - 7a5706d7-fc4f-4422-a8d3-9f6e5448d974
   maxEntries: null
   minEntries: null

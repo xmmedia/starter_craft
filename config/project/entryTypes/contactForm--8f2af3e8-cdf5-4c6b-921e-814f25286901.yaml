@@ -1,0 +1,46 @@
+color: null
+fieldLayouts:
+  4db74d0a-c8bb-4c05-9ba9-30e9c294e922:
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-12-02T21:17:13+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Adds Contact Form to page'
+            type: craft\fieldlayoutelements\Tip
+            uid: 18c9832d-7a56-4b47-b703-265b453bfb4c
+            userCondition: null
+          -
+            dateAdded: '2024-12-02T21:19:59+00:00'
+            elementCondition: null
+            fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: d75e2fff-fc6f-4a9e-ba27-0b926a9d78fb
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fce21a72-4053-422d-bf0a-23ebefb43091
+        userCondition: null
+handle: contactForm
+hasTitleField: false
+icon: ''
+name: 'Contact Form'
+showSlugField: true
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: ''
+titleTranslationKeyFormat: null
+titleTranslationMethod: site

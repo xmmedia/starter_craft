@@ -6,7 +6,7 @@ name: Button
 searchable: false
 settings:
   entryTypes:
-    - 52c2bd62-048d-4695-be78-f0110b0727de
+    - 52c2bd62-048d-4695-be78-f0110b0727de # Button
   maxEntries: null
   minEntries: null
   propagationKeyFormat: null

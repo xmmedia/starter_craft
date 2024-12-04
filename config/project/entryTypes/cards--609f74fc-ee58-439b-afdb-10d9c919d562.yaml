@@ -1,34 +1,34 @@
 color: null
 fieldLayouts:
-  5c9f770e-3ac8-40bf-93b6-b98cd735c56f:
+  a6fa0eb8-8bfb-4fa6-b2ed-cae575553c79:
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-12-02T18:31:17+00:00'
+            dateAdded: '2024-12-04T20:40:24+00:00'
             elementCondition: null
-            fieldUid: ec34d844-46a7-4389-965e-a1a4048a0798 # Accordion
+            fieldUid: 7ee19ba5-8919-4ba7-8a82-e84de143fc1f # Cards
             handle: null
             includeInCards: false
-            instructions: 'Only enter one of each'
+            instructions: null
             label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 414e6ea0-7af1-40e3-b9e7-f52ed35b632a
+            uid: 7f87729e-07ae-418c-ad4d-d73722ea51ee
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 7f345764-41de-4e41-b59d-3a31de0ae1ad
+        uid: 43097e6b-9127-42b7-9b31-a13f1a38ab46
         userCondition: null
-handle: accordion
+handle: cards
 hasTitleField: false
 icon: ''
-name: Accordion
-showSlugField: false
+name: Cards
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

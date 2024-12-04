@@ -1,7 +1,7 @@
-columnSuffix: ovdugtuh
-handle: accordionContent
+columnSuffix: null
+handle: cardTextBlock
 instructions: null
-name: 'Accordion Content'
+name: 'Card Text Block'
 searchable: false
 settings:
   availableTransforms: '*'

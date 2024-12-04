@@ -1,7 +1,7 @@
-columnSuffix: mybfonzf
-handle: subheading
+columnSuffix: null
+handle: cardHeading
 instructions: null
-name: 'Herobar - Herobar - Subheading'
+name: 'Card Heading'
 searchable: false
 settings:
   byteLimit: null

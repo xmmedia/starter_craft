@@ -1,34 +1,34 @@
 color: null
 fieldLayouts:
-  5c9f770e-3ac8-40bf-93b6-b98cd735c56f:
+  43191508-5d09-4f9f-a047-0f9150b12e1f:
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-12-02T18:31:17+00:00'
+            dateAdded: '2024-12-02T18:17:32+00:00'
             elementCondition: null
-            fieldUid: ec34d844-46a7-4389-965e-a1a4048a0798 # Accordion
+            fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
             handle: null
             includeInCards: false
-            instructions: 'Only enter one of each'
+            instructions: null
             label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 414e6ea0-7af1-40e3-b9e7-f52ed35b632a
+            uid: 20a35178-1ce6-4458-bd9a-4e05a152d0ea
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 7f345764-41de-4e41-b59d-3a31de0ae1ad
+        uid: 1021c69e-6d0e-48be-a6f7-729957c75b62
         userCondition: null
-handle: accordion
+handle: accordionHeading
 hasTitleField: false
 icon: ''
-name: Accordion
-showSlugField: false
+name: 'Accordion Heading'
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

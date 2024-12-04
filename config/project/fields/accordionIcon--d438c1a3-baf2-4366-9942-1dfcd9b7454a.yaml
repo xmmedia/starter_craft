@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: accordionIcon
 instructions: null
-name: 'Accordion - Accordion - Accordion Icon'
+name: 'Accordion Icon'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -13,8 +13,8 @@ settings:
   defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
-  maxRelations: null
-  minRelations: null
+  maxRelations: 1
+  minRelations: 0
   previewMode: full
   restrictFiles: true
   restrictLocation: false

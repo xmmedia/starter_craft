@@ -1,7 +1,7 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - f395bb3e-773e-4f1c-9a92-da7da6e6ec6b # About
+  - 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Blocks
 handle: about
 maxAuthors: 1
 name: About
@@ -14,6 +14,9 @@ previewTargets:
       -
         - urlFormat
         - '{url}'
+      -
+        - refresh
+        - '1'
 propagationMethod: all
 siteSettings:
   42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter
