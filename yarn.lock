@@ -1023,13 +1023,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@polka/url@npm:^1.0.0-next.24":
-  version: 1.0.0-next.28
-  resolution: "@polka/url@npm:1.0.0-next.28"
-  checksum: 7402aaf1de781d0eb0870d50cbcd394f949aee11b38a267a5c3b4e3cfee117e920693e6e93ce24c87ae2d477a59634f39d9edde8e86471cae756839b07c79af7
-  languageName: node
-  linkType: hard
-
 "@rollup/rollup-android-arm-eabi@npm:4.27.4":
   version: 4.27.4
   resolution: "@rollup/rollup-android-arm-eabi@npm:4.27.4"
@@ -2448,7 +2441,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.1, fast-glob@npm:^3.3.2":
+"fast-glob@npm:^3.2.9, fast-glob@npm:^3.3.2":
   version: 3.3.2
   resolution: "fast-glob@npm:3.3.2"
   dependencies:
@@ -3511,13 +3504,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mrmime@npm:^2.0.0":
-  version: 2.0.0
-  resolution: "mrmime@npm:2.0.0"
-  checksum: f6fe11ec667c3d96f1ce5fd41184ed491d5f0a5f4045e82446a471ccda5f84c7f7610dff61d378b73d964f73a320bd7f89788f9e6b9403e32cc4be28ba99f569
-  languageName: node
-  linkType: hard
-
 "ms@npm:^2.1.3":
   version: 2.1.3
   resolution: "ms@npm:2.1.3"
@@ -4295,17 +4281,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sirv@npm:^2.0.2":
-  version: 2.0.4
-  resolution: "sirv@npm:2.0.4"
-  dependencies:
-    "@polka/url": ^1.0.0-next.24
-    mrmime: ^2.0.0
-    totalist: ^3.0.0
-  checksum: 6853384a51d6ee9377dd657e2b257e0e98b29abbfbfa6333e105197f0f100c8c56a4520b47028b04ab1833cf2312526206f38fcd4f891c6df453f40da1a15a57
-  languageName: node
-  linkType: hard
-
 "slash@npm:^3.0.0":
   version: 3.0.0
   resolution: "slash@npm:3.0.0"
@@ -4715,13 +4690,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"totalist@npm:^3.0.0":
-  version: 3.0.1
-  resolution: "totalist@npm:3.0.1"
-  checksum: 5132d562cf88ff93fd710770a92f31dbe67cc19b5c6ccae2efc0da327f0954d211bbfd9456389655d726c624f284b4a23112f56d1da931ca7cfabbe1f45e778a
-  languageName: node
-  linkType: hard
-
 "tough-cookie@npm:^4.1.4":
   version: 4.1.4
   resolution: "tough-cookie@npm:4.1.4"
@@ -4853,13 +4821,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vite-plugin-manifest-sri@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "vite-plugin-manifest-sri@npm:0.2.0"
-  checksum: f76b8cd176ba58a6dc6ec90527bd64c2d31bfbe6d215f4f4ebb2fd85f28503398a54e5d6fc9c8cc098ab11b92f34b9cd07017e6d8ec051379c69833036eb4803
-  languageName: node
-  linkType: hard
-
 "vite-plugin-mkcert@npm:^1.16.0":
   version: 1.17.6
   resolution: "vite-plugin-mkcert@npm:1.17.6"
@@ -4871,19 +4832,6 @@ __metadata:
   peerDependencies:
     vite: ">=3"
   checksum: fe630de77c4b1c06ec0c71487eedf9849885653264207f3b3ecca1327ba011ecfd0cdcd975782f4523aab2487fb3d7aa0e1b34a0a66b81b254eb550a6c8854be
-  languageName: node
-  linkType: hard
-
-"vite-plugin-symfony@npm:6.2.0":
-  version: 6.2.0
-  resolution: "vite-plugin-symfony@npm:6.2.0"
-  dependencies:
-    fast-glob: ^3.3.1
-    picocolors: ^1.0.0
-    sirv: ^2.0.2
-  peerDependencies:
-    vite: ^3.0.0 || ^4.0.0 || ^5.0.0
-  checksum: 5809b7301d51c518f89649f896a5216e19faca32c4403edeca97473cb8e0376f36b368eda6ac540d229614752baa05cee59060f4a93b739f533489a28599b574
   languageName: node
   linkType: hard
 
@@ -5244,9 +5192,7 @@ __metadata:
     stylelint-scss: ^6.0.0
     tailwindcss: ^3.0
     vite: ^5.0
-    vite-plugin-manifest-sri: ^0.2.0
     vite-plugin-mkcert: ^1.16.0
-    vite-plugin-symfony: 6.2.0
     vitest: ^2.1.1
     vue: ^3.2.0
   languageName: unknown
