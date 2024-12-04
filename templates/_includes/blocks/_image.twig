@@ -1,5 +1,5 @@
-{% set image = subContent.image.one() %}
-{% switch subContent.imageSize %}
+{% set image = block.image.one() %}
+{% switch block.imageSize %}
     {% case 'large' %}
         {% set imageTransform = 'neocolumnimagelarge' %}
     {% case 'medium' %}
@@ -7,7 +7,7 @@
     {% default %}
         {% set imageTransform = 'neocolumnimagesmall' %}
 {% endswitch %}
-{% switch subContent.imageAlign %}
+{% switch block.imageAlign %}
     {% case 'left' %}
         {# tw: justify-start #}
         {% set flexJustify = 'start' %}
@@ -19,20 +19,21 @@
         {% set flexJustify = 'center' %}
 {% endswitch %}
 {# tw: items-start, items-end, items-center #}
-{% set flexItems = subContent.imageVerticalAlign|default('center') %}
+{% set flexItems = block.imageVerticalAlign|default('center') %}
+{% set width = block.blockWidth|default('100') %}
 
-<div class="neocolumn-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }}">
+<div class="block-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }} col-{{ width }}">
     <figure>
-        {% if subContent.imageLink %}
-        <a href="{{ subContent.imageLink }}">
+        {% if block.imageLink %}
+        <a href="{{ block.imageLink }}">
         {% endif %}
             {{ image(image, imageTransform) }}
-        {% if subContent.imageLink %}
+        {% if block.imageLink %}
         </a>
         {% endif %}
-        {% if subContent.imageCaption|length > 0 %}
+        {% if block.imageCaption|length > 0 %}
             <figcaption class="w-full mt-2">
-                {{ subContent.imageCaption }}
+                {{ block.imageCaption }}
             </figcaption>
         {% endif %}
     </figure>

@@ -1,0 +1,7 @@
+{% set width = block.blockWidth|default('100') %}
+
+<div class="lg:mt-8{% if block.textAlign == 'textCenter' %} text-center{% endif %} col-{{ width }}">
+    <a href="{{ block.buttonLink }}" class="button{% if block.textAlign == 'textCenter' %} mx-auto{% endif %}">
+        {{ block.buttonText }}
+    </a>
+</div>

@@ -1,0 +1,8 @@
+{% set width = block.blockWidth|default('100') %}
+
+<div class="text-block-wrap
+  {% if block.textAlignCenter == true %} text-center{% endif %}
+  lg:text-left col-{{ width }}
+  {% if width == '100' %} mx-auto{% endif %}">
+    {{ block.textBlock }}
+</div>

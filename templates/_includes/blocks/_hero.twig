@@ -1,0 +1,16 @@
+{% if block.heroImage|length > 0 %}
+    {% set heading = block.heading %}
+    {% set subheading = block.heroSubheading %}
+    <section class="hero col-100">
+        <div class="flex justify-center items-center w-full h-full bg-white-transparent">
+            <div class="w-content text-center">
+                {% if heading %}
+                    <h1>{{ heading }}</h1>
+                {% endif %}
+                {% if subheading %}
+                    <h2>{{ subheading }}</h2>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endif %}

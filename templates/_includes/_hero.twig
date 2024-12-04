@@ -1,16 +1,20 @@
-{% set herobar = block.herobar.one() %}
-{% if herobar and herobar.herobarImage|length > 0 %}
+{% if entry.heroImage|length > 0 %}
     {% set heading = null %}
-    {% if herobar.heading %}
-        {% set heading = herobar.heading %}
+    {% if entry.heading %}
+        {% set heading = entry.heading %}
     {% endif %}
-{# @todo rename everything to hero #}
-    <section class="hero">
+    {% if entry.heroSubheading %}
+        {% set subheading = entry.heroSubheading %}
+    {% endif %}
+    <section class="hero col-100">
         {% if hero_content is not defined %}
             <div class="flex justify-center items-center w-full h-full bg-white-transparent">
                 <div class="w-content text-center">
                     {% if heading %}
                         <h1>{{ heading }}</h1>
+                    {% endif %}
+                    {% if subheading %}
+                        <h2>{{ subheading }}</h2>
                     {% endif %}
                 </div>
             </div>

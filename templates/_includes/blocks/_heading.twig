@@ -1,0 +1,32 @@
+{% set classes = [] %}
+
+{% set elementId = null %}
+{% if block.elementId %}
+    {% set elementId = block.elementId %}
+{% endif %}
+
+{% if block.uppercase %}
+    {% set classes = classes|merge(['uppercase']) %}
+{% endif %}
+{% if block.textAlign == 'textCenter' %}
+    {% set classes = classes|merge(['text-center']) %}
+{% elseif block.textAlign == 'textRight' %}
+    {% set classes = classes|merge(['text-right']) %}
+{% else %}
+    {% set classes = classes|merge(['text-center lg:text-left']) %}
+{% endif %}
+{% if block.classes %}
+    {% set classes = classes|merge(block.classes|explodeClass) %}
+{% endif %}
+
+{% set width = block.blockWidth|default('100') %}
+{% set classes = classes|merge(['col-' ~ width]) %}
+
+{% if block.heading %}
+    {% set classes = classes|merge(['mb-8']) %}
+{% endif %}
+
+{{ tag('h2', {
+    html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: elementId,
+    class: classes,
+}) }}

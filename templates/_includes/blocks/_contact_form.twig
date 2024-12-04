@@ -6,8 +6,9 @@
     {% endif %}
 {% endmacro %}
 
+{% set width = block.blockWidth %}
 {% set submission = submission ?? null %}
-<form id="form" method="post" action="#form" accept-charset="utf-8" class="form-wrap">
+<form id="form" method="post" action="#form" accept-charset="utf-8" class="form-wrap col-{{ width }}">
     {% if submission %}
         <div class="alert alert-danger">Looks like something isn't quite right. Please see the messages below.</div>
     {% endif %}

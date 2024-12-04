@@ -1,0 +1,19 @@
+<section class="cards-wrap col-100">
+    {% for cardItem in block.cards.all() %}
+        <div class="card">
+            {% for item in cardItem.card.all() %}
+                {% switch(item.type.handle) %}
+                    {% case 'cardImage' %}
+                        {% set image = item.image[0] %}
+                        {% if image %}
+                            {{ image(image, 'card', { class: 'w-full' }) }}
+                        {% endif %}
+                    {% case 'cardHeading' %}
+                        <h3>{{ item.heading }}</h3>
+                    {% case 'cardTextBlock' %}
+                        {{ item.textBlock }}
+                {% endswitch %}
+        {% endfor %}
+        </div>
+    {% endfor %}
+</section>

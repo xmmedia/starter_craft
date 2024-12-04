@@ -1,0 +1,60 @@
+{% set sectionStarted = false %}
+
+{% if entry.blocks is not empty %}
+    <div class="blocks-wrap">
+    {% for block in entry.blocks.all() %}
+        {# Grab the block type’s handle for comparison: #}
+{#        {% set blockHandle =  %}#}
+
+        {# This is really the block handle #}
+        {% switch block.type.handle %}
+            {% case 'hero' %}
+                {% include '_includes/blocks/_hero.twig' %}
+            {% case 'heading' %}
+                {% include '_includes/blocks/_heading.twig' %}
+
+            {% case 'textBlock' %}
+                {% include '_includes/blocks/_text_block.twig' %}
+            {% case 'image' %}
+                {% set image = block.image.one() %}
+                {% if image %}
+                    {% include '_includes/blocks/_image.twig' %}
+                {% endif %}
+
+            {% case 'button' %}
+                {% include '_includes/blocks/_button.twig' %}
+
+            {% case 'cards' %}
+                {% include '_includes/blocks/_cards.twig' %}
+
+            {% case 'video' %}
+                {% include '_includes/blocks/_video.twig' %}
+
+            {% case 'accordionWrapper' %}
+                {% include '_includes/blocks/_accordion.twig'  %}
+
+            {% case 'contactForm' %}
+                {% include '_includes/blocks/_contact_form.twig' %}
+
+            {% case 'sectionStart' %}
+                {% if sectionStarted %}
+                    </section>
+                    <!-- section ended -->
+                {% endif %}
+                <!-- section start -->
+                <section class="contents">
+                {% set sectionStarted = true %}
+
+            {% default %}
+                <p>Block created without adding case to twig file.</p>
+        {% endswitch %}
+
+        {% endfor %}
+        {% if sectionStarted %}
+        </section>
+        <!-- section ended -->
+        {% endif %}
+{% else %}
+    <p>No blocks found.</p>
+    </div>
+{% endif %}
