@@ -1,8 +1,14 @@
 {% set width = block.blockWidth|default('100') %}
 
+{% set elementId = null %}
+{% if block.elementId %}
+    {% set elementId = block.elementId %}
+{% endif %}
+
 <div class="text-block-wrap
-  {% if block.textAlignCenter == true %} text-center{% endif %}
-  lg:text-left col-{{ width }}
-  {% if width == '100' %} mx-auto{% endif %}">
+     {% if block.textAlignCenter == true %} text-center{% endif %}
+     lg:text-left col-{{ width }}
+     {% if width == '100' %} mx-auto{% endif %}"
+     {% if elementId %} id="{{ elementId }}"{% endif %} >
     {{ block.textBlock }}
 </div>

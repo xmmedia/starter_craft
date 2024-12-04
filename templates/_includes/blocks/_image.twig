@@ -20,9 +20,17 @@
 {% endswitch %}
 {# tw: items-start, items-end, items-center #}
 {% set flexItems = block.imageVerticalAlign|default('center') %}
+
+{% set elementId = null %}
+{% if block.elementId %}
+    {% set elementId = block.elementId %}
+{% endif %}
+
+
 {% set width = block.blockWidth|default('100') %}
 
-<div class="block-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }} col-{{ width }}">
+<div class="block-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }} col-{{ width }}"
+    {% if elementId %} id="{{ elementId }}"{% endif %}>
     <figure>
         {% if block.imageLink %}
         <a href="{{ block.imageLink }}">

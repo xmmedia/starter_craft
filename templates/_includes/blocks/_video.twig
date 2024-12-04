@@ -1,7 +1,13 @@
 {% set width = block.blockWidth|default('100') %}
 
+{% set elementId = null %}
+{% if block.elementId %}
+    {% set elementId = block.elementId %}
+{% endif %}
+
+
 {#separate div wrapper so column doesn't mess with embed-wrap#}
-<div class="col-{{ width }}">
+<div class="col-{{ width }}" {% if elementId %} id="{{ elementId }}"{% endif %}>
     <div class="embed-wrap max-w-3xl">
         <div class="embed-container embed-container-16-9">
             {{ block.video.render({

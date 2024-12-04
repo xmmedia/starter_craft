@@ -1,4 +1,8 @@
-<div class="col-100">
+{% if block.elementId %}
+    {% set elementId = block.elementId %}
+{% endif %}
+
+<div class="col-100" {% if elementId %}id="{{ elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}
         {% set heading = null %}
         {% set textBlock = null %}

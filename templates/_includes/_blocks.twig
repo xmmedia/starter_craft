@@ -46,7 +46,8 @@
                 {% set sectionStarted = true %}
 
             {% default %}
-                <p>Block created without adding case to twig file.</p>
+{#                @todo-craft This shows if unknown block is selected - not sure if this is the right message#}
+                <p>A block has been created without adding case to twig file.</p>
         {% endswitch %}
 
         {% endfor %}
