@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: pageTitle
 instructions: 'Displayed on Google search results and the browser tab. On most pages, this will appear before the company/org like "About Us | Company". On the homepage it will show after like "Company | Services".'
-name: 'SEO - SEO - Page Title'
+name: 'SEO - Page Title'
 searchable: false
 settings:
   byteLimit: null

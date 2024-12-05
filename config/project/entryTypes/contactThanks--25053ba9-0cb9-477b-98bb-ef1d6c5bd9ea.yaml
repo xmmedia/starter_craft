@@ -6,32 +6,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-11-26T18:45:15+00:00'
-            disabled: false
+            dateAdded: '2024-12-05T00:04:28+00:00'
             elementCondition: null
-            id: null
+            fieldUid: 48b81495-c226-4048-afdd-066e97f6a4a5 # Contact Form Thank You
+            handle: null
             includeInCards: false
-            inputType: null
             instructions: null
             label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
             providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
+            required: false
             tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: f64940f5-0c91-48df-803d-25c18827c20a
+            type: craft\fieldlayoutelements\CustomField
+            uid: 7f94fdf9-e2d9-4959-a5de-f602d7bf0e75
             userCondition: null
             warning: null
             width: 100
@@ -62,7 +48,7 @@ fieldLayouts:
         userCondition: null
 handle: contactThanks
 hasTitleField: false
-icon: null
+icon: ''
 name: 'Contact Thanks'
 showSlugField: true
 showStatusField: true

@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: ogImage
 instructions: 'Recommended size is 1200x630 pixels. The minimum is 600x315 pixels.'
-name: 'SEO - SEO - Sharing Image'
+name: 'SEO - Sharing Image'
 searchable: false
 settings:
   allowSelfRelations: false

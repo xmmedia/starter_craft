@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: text
 instructions: null
-name: 'Post Content - Text - Text'
+name: 'Post Content - Text'
 searchable: false
 settings:
   availableTransforms: '*'

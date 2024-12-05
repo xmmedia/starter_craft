@@ -10,7 +10,7 @@ fieldLayouts:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
             elementCondition: null
-            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Post Content - Image - Image
+            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Post Content - Image
             handle: image
             includeInCards: true
             instructions: null

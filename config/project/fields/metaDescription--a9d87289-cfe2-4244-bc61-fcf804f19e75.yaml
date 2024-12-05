@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: metaDescription
 instructions: 'Search engines may show this below the page title. Will also be used when sharing on social media.'
-name: 'SEO - SEO - Meta Description'
+name: 'SEO - Meta Description'
 searchable: false
 settings:
   byteLimit: null

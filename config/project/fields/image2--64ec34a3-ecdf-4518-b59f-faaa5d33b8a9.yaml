@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: image2
 instructions: null
-name: 'Post Content - Image - Image'
+name: 'Post Content - Image'
 searchable: false
 settings:
   allowSelfRelations: false
