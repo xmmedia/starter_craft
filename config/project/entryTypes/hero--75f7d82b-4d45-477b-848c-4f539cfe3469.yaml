@@ -60,12 +60,12 @@ fieldLayouts:
         userCondition: null
 handle: hero
 hasTitleField: false
-icon: null
+icon: ''
 name: Hero
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{heading}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
