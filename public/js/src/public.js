@@ -12,7 +12,7 @@ import '../../css/public.scss';
 import '../../css/editor.scss';
 
 // images
-import '@/../../images/icons-public.svg';
+import '../../images/icons-public.svg';
 
 // createApp(formError).mount('#form-error');
 // createApp(fieldErrors).mount('#field-errors');

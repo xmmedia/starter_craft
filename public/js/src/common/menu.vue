@@ -1,14 +1,14 @@
 <template>
-    <nav class="w-full lg:w-auto" role="navigation" aria-label="Main">
+    <nav class="w-full lg:w-auto" :class="{ 'header-mobile-open': showMobileMenu }" role="navigation" aria-label="Main">
         <ul class="flex flex-nowrap list-none">
             <li class="header-nav_item">
-                <a href="{{ url('about') }}">About</a>
+                <a href="/about">About</a>
             </li>
             <li class="header-nav_item header-nav_item-products">
                 <a href="/">Products</a>
             </li>
             <li class="header-nav_item">
-                <a href="{{ url('contact') }}">Contact</a>
+                <a href="/contact">Contact</a>
             </li>
 
             <li v-if="!showMobileMenu" class="header-nav_item header-nav_item-toggle">
@@ -24,6 +24,7 @@
         </ul>
     </nav>
 </template>
+
 <script setup>
 import { ref } from 'vue';
 
@@ -34,5 +35,4 @@ const toggleMobileMenu = () => {
 };
 
 window.addEventListener('resize', () => { showMobileMenu.value = false });
-
 </script>

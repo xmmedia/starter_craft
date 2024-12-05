@@ -27,18 +27,19 @@
     {% endblock %}
 </head>
 <body{% if body_attributes is defined %}{{ body_attributes }}{% endif %}>
-{# #app is what Vue.js mounts to #}
-<div id="app">
+<div>
     {% block body %}
         {% block header %}
             <header>
-                <div class="flex flex-wrap justify-between items-center w-content"
-                     :class="{ 'header-mobile-open': showMobileMenu }">
+                <div class="flex flex-wrap justify-between items-center w-content">
                     <a href="{{ siteUrl }}">
                         <img src="/images/logo.svg" width="150" height="154" alt="{{ siteInformation.companyName }}">
                     </a>
+
+                    <div id="menu"></div>
+
                     <svg class="social-icon">
-                        <use xlink:href="{{ '/images/icons-public.svg' }}#social-instagram"></use>
+                        <use xlink:href="{{ craft.vite.asset("/images/icons-public.svg") }}#social-instagram"></use>
                     </svg>
 
                 </div>
@@ -62,8 +63,10 @@
 
 {% block javascripts %}
     {% if craft.vite.devServerRunning() %}
+        <script defer src="/js/svgxuse.min.js"></script>
 {#        {{ craft.vite.asset("assets/svgxuse.min.js") }}#}
     {% endif %}
 {% endblock %}
 </body>
 </html>
+
