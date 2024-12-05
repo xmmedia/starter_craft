@@ -1,8 +1,10 @@
 {% if block.heroImage|length > 0 %}
     {% set heading = block.heading %}
     {% set subheading = block.heroSubheading %}
+    {% set image = block.heroImage.one() %}
+    {% set imageTransform = 'hero' %}
 
-    <section class="hero col-100">
+    <section class="hero col-100" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
         <div class="flex justify-center items-center w-full h-full bg-white-transparent">
             <div class="w-content text-center">
                 {% if heading %}
