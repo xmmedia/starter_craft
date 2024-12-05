@@ -1,3 +1,4 @@
+{% include '_includes/blocks/_element_id.twig' %}
 {% set image = block.image.one() %}
 {% switch block.imageSize %}
     {% case 'large' %}
@@ -20,12 +21,6 @@
 {% endswitch %}
 {# tw: items-start, items-end, items-center #}
 {% set flexItems = block.imageVerticalAlignment|default('center') %}
-
-{% set elementId = null %}
-{% if block.elementId %}
-    {% set elementId = block.elementId %}
-{% endif %}
-
 
 {% set width = block.blockWidth|default('100') %}
 

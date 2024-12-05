@@ -1,10 +1,5 @@
+{% include '_includes/blocks/_element_id.twig' %}
 {% set width = block.blockWidth|default('100') %}
-
-{% set elementId = null %}
-{% if block.elementId %}
-    {% set elementId = block.elementId %}
-{% endif %}
-
 
 {#separate div wrapper so column doesn't mess with embed-wrap#}
 <div class="col-{{ width }}" {% if elementId %} id="{{ elementId }}"{% endif %}>
