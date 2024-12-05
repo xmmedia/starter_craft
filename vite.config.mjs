@@ -11,23 +11,24 @@ export default defineConfig({
         mkcert(),
         vuePlugin(),
     ],
+    base: '/build',
     build: {
-        outDir: 'public/build', // Ensure the output directory is correct
+        outDir: 'public/build',
         rollupOptions: {
             input: {
-                public: './public/js/src/public.js', // Your entry file
+                public: './public/js/src/public.js',
                 editor: './public/js/src/editor.js',
             },
         },
         sourcemap: true,
+        copyPublicDir: false,
         assetsInlineLimit: 0,
-        manifest: true, // Enable manifest generation
+        manifest: true,
     },
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./public/js/src', import.meta.url)),
         },
-        extensions: ['.vue', '.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json'],
     },
     css: {
         devSourcemap: true,
