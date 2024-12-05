@@ -48,12 +48,12 @@ fieldLayouts:
         userCondition: null
 handle: cardHeading
 hasTitleField: false
-icon: null
+icon: ''
 name: 'Card Heading'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{heading|striptags}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

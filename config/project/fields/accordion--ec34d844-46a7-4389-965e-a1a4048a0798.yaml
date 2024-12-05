@@ -11,7 +11,7 @@ settings:
     - 41e7d3e7-7f22-4eec-8732-1a4b2cc13182 # Accordion Content
     - 22bd92e8-fa46-4ac8-b91d-7b8a84bebccb # Accordion Icon
   includeTableView: false
-  maxEntries: null
+  maxEntries: 3
   minEntries: null
   pageSize: 50
   propagationKeyFormat: null

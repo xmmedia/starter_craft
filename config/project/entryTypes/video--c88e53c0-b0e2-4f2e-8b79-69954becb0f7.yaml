@@ -6,6 +6,36 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-05T00:37:23+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: ecc3052c-636d-4494-b08a-f61fc4ce3715
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-12-04T21:14:00+00:00'
             elementCondition: null
             fieldUid: dadbdcf6-f9f1-4d87-9c01-c567a77669ff # Video
@@ -63,13 +93,13 @@ fieldLayouts:
         uid: eb139aec-ccdf-4378-b378-ffcb602718fa
         userCondition: null
 handle: video
-hasTitleField: false
-icon: null
+hasTitleField: true
+icon: ''
 name: Video
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

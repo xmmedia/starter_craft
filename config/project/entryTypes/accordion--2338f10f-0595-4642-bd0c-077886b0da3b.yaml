@@ -6,6 +6,36 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-05T00:41:55+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: 'Use to give accordion a name in the CMS.'
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 69d89569-868c-4cd9-ba4d-11d29272128d
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-12-02T18:31:17+00:00'
             elementCondition: null
             fieldUid: ec34d844-46a7-4389-965e-a1a4048a0798 # Accordion
@@ -25,13 +55,13 @@ fieldLayouts:
         uid: 7f345764-41de-4e41-b59d-3a31de0ae1ad
         userCondition: null
 handle: accordion
-hasTitleField: false
-icon: null
+hasTitleField: true
+icon: ''
 name: Accordion
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

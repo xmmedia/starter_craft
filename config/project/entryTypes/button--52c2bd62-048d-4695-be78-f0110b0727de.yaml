@@ -120,12 +120,12 @@ fieldLayouts:
         userCondition: null
 handle: button
 hasTitleField: false
-icon: null
+icon: ''
 name: Button
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{buttonText}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
