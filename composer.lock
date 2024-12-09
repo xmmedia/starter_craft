@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d22349e45a27f053849650475a5c7562",
+    "content-hash": "74c6f987cebbafd48a7ecf73de86b3fa",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1116,11 +1116,11 @@
         },
         {
             "name": "doctrine/deprecations",
-            "version": "1.1.3",
+            "version": "1.1.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/dfbaa3c2d2e9a9df1118213f3b8b0c597bb99fab",
-                "reference": "dfbaa3c2d2e9a9df1118213f3b8b0c597bb99fab",
+                "url": "https://api.github.com/repos/doctrine/deprecations/zipball/31610dbb31faa98e6b5447b62340826f54fbc4e9",
+                "reference": "31610dbb31faa98e6b5447b62340826f54fbc4e9",
                 "shasum": ""
             },
             "require": {
@@ -1132,7 +1132,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Doctrine\\Deprecations\\": "lib/Doctrine/Deprecations"
+                    "Doctrine\\Deprecations\\": "src"
                 }
             },
             "license": [
@@ -1140,7 +1140,7 @@
             ],
             "description": "A small layer on top of trigger_error(E_USER_DEPRECATED) or PSR-3 logging with options to disable all deprecations or selectively for packages.",
             "homepage": "https://www.doctrine-project.org/",
-            "time": "2024-01-30T19:34:25+00:00"
+            "time": "2024-12-07T21:18:45+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1266,11 +1266,11 @@
         },
         {
             "name": "embed/embed",
-            "version": "v4.4.13",
+            "version": "v4.4.14",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/a1da3d425520bf68cefebc29e39c6122a69d7b18",
-                "reference": "a1da3d425520bf68cefebc29e39c6122a69d7b18",
+                "url": "https://api.github.com/repos/oscarotero/Embed/zipball/a66487b30b40c97fbec266789acf8684d93f0bee",
+                "reference": "a66487b30b40c97fbec266789acf8684d93f0bee",
                 "shasum": ""
             },
             "require": {
@@ -1318,7 +1318,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2024-11-21T20:13:38+00:00"
+            "time": "2024-12-04T20:11:03+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -2005,15 +2005,15 @@
         },
         {
             "name": "league/uri",
-            "version": "7.4.1",
+            "version": "7.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri/zipball/bedb6e55eff0c933668addaa7efa1e1f2c417cc4",
-                "reference": "bedb6e55eff0c933668addaa7efa1e1f2c417cc4",
+                "url": "https://api.github.com/repos/thephpleague/uri/zipball/81fb5145d2644324614cc532b28efd0215bda430",
+                "reference": "81fb5145d2644324614cc532b28efd0215bda430",
                 "shasum": ""
             },
             "require": {
-                "league/uri-interfaces": "^7.3",
+                "league/uri-interfaces": "^7.5",
                 "php": "^8.1"
             },
             "conflict": {
@@ -2073,15 +2073,15 @@
                 "url",
                 "ws"
             ],
-            "time": "2024-03-23T07:42:40+00:00"
+            "time": "2024-12-08T08:40:02+00:00"
         },
         {
             "name": "league/uri-interfaces",
-            "version": "7.4.1",
+            "version": "7.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/uri-interfaces/zipball/8d43ef5c841032c87e2de015972c06f3865ef718",
-                "reference": "8d43ef5c841032c87e2de015972c06f3865ef718",
+                "url": "https://api.github.com/repos/thephpleague/uri-interfaces/zipball/08cfc6c4f3d811584fb09c37e2849e6a7f9b0742",
+                "reference": "08cfc6c4f3d811584fb09c37e2849e6a7f9b0742",
                 "shasum": ""
             },
             "require": {
@@ -2139,7 +2139,7 @@
                 "url",
                 "ws"
             ],
-            "time": "2024-03-23T07:42:40+00:00"
+            "time": "2024-12-08T08:18:47+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -2367,11 +2367,11 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "3.8.0",
+            "version": "3.8.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/32e515fdc02cdafbe4593e30a9350d486b125b67",
-                "reference": "32e515fdc02cdafbe4593e30a9350d486b125b67",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
+                "reference": "aef6ee73a77a66e404dd6540934a9ef1b3c855b4",
                 "shasum": ""
             },
             "require": {
@@ -2425,7 +2425,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2024-11-12T13:57:08+00:00"
+            "time": "2024-12-05T17:15:07+00:00"
         },
         {
             "name": "nystudio107/craft-code-editor",
@@ -2732,11 +2732,11 @@
         },
         {
             "name": "phpdocumentor/reflection-docblock",
-            "version": "5.6.0",
+            "version": "5.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/f3558a4c23426d12bffeaab463f8a8d8b681193c",
-                "reference": "f3558a4c23426d12bffeaab463f8a8d8b681193c",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
+                "reference": "e5e784149a09bd69d9a5e3b01c5cbd2e2bd653d8",
                 "shasum": ""
             },
             "require": {
@@ -2773,7 +2773,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2024-11-12T11:25:25+00:00"
+            "time": "2024-12-07T09:39:29+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -3507,12 +3507,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5f2153c997f1ad01915f80dd7c81ebf2b3a75c03"
+                "reference": "7a60033d5e61698bf3ed203afb4f4a2323801990"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5f2153c997f1ad01915f80dd7c81ebf2b3a75c03",
-                "reference": "5f2153c997f1ad01915f80dd7c81ebf2b3a75c03",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/7a60033d5e61698bf3ed203afb4f4a2323801990",
+                "reference": "7a60033d5e61698bf3ed203afb4f4a2323801990",
                 "shasum": ""
             },
             "conflict": {
@@ -3653,7 +3653,7 @@
                 "dolibarr/dolibarr": "<19.0.2",
                 "dompdf/dompdf": "<2.0.4",
                 "doublethreedigital/guest-entries": "<3.1.2",
-                "drupal/core": ">=6,<6.38|>=7,<7.96|>=8,<10.2.9|>=10.3,<10.3.6|>=11,<11.0.5",
+                "drupal/core": ">=6,<6.38|>=7,<7.96|>=8,<10.2.10|>=10.3,<10.3.6|>=11,<11.0.5",
                 "drupal/core-recommended": ">=8,<10.2.9|>=10.3,<10.3.6|>=11,<11.0.5",
                 "drupal/drupal": ">=5,<5.11|>=6,<6.38|>=7,<7.80|>=8,<10.2.9|>=10.3,<10.3.6|>=11,<11.0.5",
                 "duncanmcclean/guest-entries": "<3.1.2",
@@ -3841,7 +3841,7 @@
                 "latte/latte": "<2.10.8",
                 "lavalite/cms": "<=9|==10.1",
                 "lcobucci/jwt": ">=3.4,<3.4.6|>=4,<4.0.4|>=4.1,<4.1.5",
-                "league/commonmark": "<0.18.3",
+                "league/commonmark": "<2.6",
                 "league/flysystem": "<1.1.4|>=2,<2.1.1",
                 "league/oauth2-server": ">=8.3.2,<8.4.2|>=8.5,<8.5.3",
                 "lexik/jwt-authentication-bundle": "<2.10.7|>=2.11,<2.11.3",
@@ -3871,6 +3871,7 @@
                 "mautic/core-lib": ">=1.0.0.0-beta,<4.4.13|>=5.0.0.0-alpha,<5.1.1",
                 "maximebf/debugbar": "<1.19",
                 "mdanter/ecc": "<2",
+                "mediawiki/abuse-filter": "<1.39.9|>=1.40,<1.41.3|>=1.42,<1.42.2",
                 "mediawiki/cargo": "<3.6.1",
                 "mediawiki/core": "<1.39.5|==1.40",
                 "mediawiki/matomo": "<2.4.3",
@@ -4046,6 +4047,7 @@
                 "s-cart/s-cart": "<6.9",
                 "sabberworm/php-css-parser": ">=1,<1.0.1|>=2,<2.0.1|>=3,<3.0.1|>=4,<4.0.1|>=5,<5.0.9|>=5.1,<5.1.3|>=5.2,<5.2.1|>=6,<6.0.2|>=7,<7.0.4|>=8,<8.0.1|>=8.1,<8.1.1|>=8.2,<8.2.1|>=8.3,<8.3.1",
                 "sabre/dav": ">=1.6,<1.7.11|>=1.8,<1.8.9",
+                "samwilson/unlinked-wikibase": "<1.39.6|>=1.40,<1.40.2|>=1.41,<1.41.1",
                 "scheb/two-factor-bundle": "<3.26|>=4,<4.11",
                 "sensiolabs/connect": "<4.2.3",
                 "serluck/phpwhois": "<=4.2.6",
@@ -4077,14 +4079,14 @@
                 "silverstripe/userforms": "<3|>=5,<5.4.2",
                 "silverstripe/versioned-admin": ">=1,<1.11.1",
                 "simple-updates/phpwhois": "<=1",
-                "simplesamlphp/saml2": "<4.6.14|>=5.0.0.0-alpha1,<5.0.0.0-alpha18",
+                "simplesamlphp/saml2": "<4.6.14|==5.0.0.0-alpha12",
                 "simplesamlphp/saml2-legacy": "<4.6.14",
                 "simplesamlphp/simplesamlphp": "<1.18.6",
                 "simplesamlphp/simplesamlphp-module-infocard": "<1.0.1",
                 "simplesamlphp/simplesamlphp-module-openid": "<1",
                 "simplesamlphp/simplesamlphp-module-openidprovider": "<0.9",
                 "simplesamlphp/xml-common": "<1.20",
-                "simplesamlphp/xml-security": "<1.10",
+                "simplesamlphp/xml-security": "==1.6.11",
                 "simplito/elliptic-php": "<1.0.6",
                 "sitegeist/fluid-components": "<3.5",
                 "sjbr/sr-freecap": "<2.4.6|>=2.5,<2.5.3",
@@ -4174,7 +4176,7 @@
                 "thelia/thelia": ">=2.1,<2.1.3",
                 "theonedemon/phpwhois": "<=4.2.5",
                 "thinkcmf/thinkcmf": "<6.0.8",
-                "thorsten/phpmyfaq": "<3.2.2",
+                "thorsten/phpmyfaq": "<4",
                 "tikiwiki/tiki-manager": "<=17.1",
                 "timber/timber": ">=0.16.6,<1.23.1|>=1.24,<1.24.1|>=2,<2.1",
                 "tinymce/tinymce": "<7.2",
@@ -4240,6 +4242,7 @@
                 "wikimedia/parsoid": "<0.12.2",
                 "willdurand/js-translation-bundle": "<2.1.1",
                 "winter/wn-backend-module": "<1.2.4",
+                "winter/wn-cms-module": "<1.0.476|>=1.1,<1.1.11|>=1.2,<1.2.7",
                 "winter/wn-dusk-plugin": "<2.1",
                 "winter/wn-system-module": "<1.2.4",
                 "wintercms/winter": "<=1.2.3",
@@ -4345,7 +4348,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-03T20:05:54+00:00"
+            "time": "2024-12-09T21:04:47+00:00"
         },
         {
             "name": "samdark/yii2-psr-log-target",
@@ -4548,59 +4551,6 @@
                 "unix"
             ],
             "time": "2023-09-03T09:24:00+00:00"
-        },
-        {
-            "name": "spicyweb/craft-neo",
-            "version": "5.2.18",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spicywebau/craft-neo/zipball/8379a8d729754ff32c96e27e42a05525ef9754a1",
-                "reference": "8379a8d729754ff32c96e27e42a05525ef9754a1",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^5.3.0",
-                "php": "^8.2"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "handle": "neo",
-                "name": "Neo",
-                "schemaVersion": "5.1.0.1",
-                "class": "benf\\neo\\Plugin",
-                "changelogUrl": "https://github.com/spicywebau/craft-neo/blob/5.x/CHANGELOG.md",
-                "downloadUrl": "https://github.com/spicywebau/craft-neo/archive/refs/tags/5.2.18.zip"
-            },
-            "autoload": {
-                "psr-4": {
-                    "benf\\neo\\": "src/"
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Spicy Web",
-                    "homepage": "https://github.com/spicywebau"
-                }
-            ],
-            "description": "A Matrix-like field type with block hierarchy",
-            "keywords": [
-                "cms",
-                "craftcms",
-                "field",
-                "matrix",
-                "neo",
-                "plugin"
-            ],
-            "support": {
-                "issues": "https://github.com/spicywebau/craft-neo/issues",
-                "source": "https://github.com/spicywebau/craft-neo",
-                "docs": "https://github.com/spicywebau/craft-neo/blob/5.2.18/README.md",
-                "rss": "https://github.com/spicywebau/craft-neo/commits/5.x.atom"
-            },
-            "time": "2024-11-27T05:03:13+00:00"
         },
         {
             "name": "spomky-labs/cbor-php",
@@ -7151,11 +7101,11 @@
         },
         {
             "name": "wrav/oembed",
-            "version": "3.1.1",
+            "version": "3.1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wrav/oembed/zipball/071fb5fd115668787e035c10306d138be8f508b9",
-                "reference": "071fb5fd115668787e035c10306d138be8f508b9",
+                "url": "https://api.github.com/repos/wrav/oembed/zipball/f98a284a9c541f5fef0788fe1ca9554f8bd07e54",
+                "reference": "f98a284a9c541f5fef0788fe1ca9554f8bd07e54",
                 "shasum": ""
             },
             "require": {
@@ -7210,7 +7160,7 @@
                 "docs": "https://github.com/wrav/oembed/blob/master/README.md",
                 "issues": "https://github.com/wrav/oembed/issues"
             },
-            "time": "2024-09-09T11:48:59+00:00"
+            "time": "2024-12-09T00:26:55+00:00"
         },
         {
             "name": "yiisoft/yii2",

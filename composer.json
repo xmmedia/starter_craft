@@ -14,10 +14,9 @@
         "mmikkel/cp-field-inspect": "^2.0.2",
         "nystudio107/craft-vite": "^5.0",
         "roave/security-advisories": "dev-master",
-        "spicyweb/craft-neo": "5.2.18",
         "verbb/field-manager": "4.0.3",
         "vlucas/phpdotenv": "^5.4",
-        "wrav/oembed": "3.1.1"
+        "wrav/oembed": "3.1.2"
     },
     "require-dev": {
         "yiisoft/yii2-shell": "^2.0.3"
