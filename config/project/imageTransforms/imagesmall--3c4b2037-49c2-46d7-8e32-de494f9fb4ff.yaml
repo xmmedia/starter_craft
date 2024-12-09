@@ -1,10 +1,10 @@
 fill: null
 format: null
-handle: neocolumnimagesmall
+handle: imagesmall
 height: 125
 interlace: none
 mode: fit
-name: 'Neo Column Image - Small'
+name: 'Image - Small'
 position: center-center
 quality: null
 upscale: true
