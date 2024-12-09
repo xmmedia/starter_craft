@@ -1,6 +1,4 @@
-{% include '_includes/blocks/_element_id.twig' %}
-
-<div class="col-100" {% if elementId %}id="{{ elementId }}"{% endif %}>
+<div class="col-100" {% if block.elementId %}id="{{ block.elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}
         {% set heading = null %}
         {% set textBlock = null %}

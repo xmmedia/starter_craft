@@ -6,8 +6,6 @@
     {% endif %}
 {% endmacro %}
 
-{% include '_includes/blocks/_element_id.twig' %}
-
 {% set width = block.blockWidth %}
 {% set submission = submission ?? null %}
 <form id="form"
@@ -15,7 +13,7 @@
       action="#form"
       accept-charset="utf-8"
       class="form-wrap col-{{ width }}"
-      {% if elementId %} id="{{ elementId }}"{% endif %}>
+      {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% if submission %}
         <div class="alert alert-danger">Looks like something isn't quite right. Please see the messages below.</div>
     {% endif %}

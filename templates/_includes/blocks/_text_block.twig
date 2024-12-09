@@ -1,10 +1,9 @@
-{% include '_includes/blocks/_element_id.twig' %}
 {% set width = block.blockWidth|default('100') %}
 
 <div class="text-block-wrap
      {% if block.textAlignCenter == true %} text-center{% endif %}
      lg:text-left col-{{ width }}
      {% if width == '100' %} mx-auto{% endif %}"
-     {% if elementId %} id="{{ elementId }}"{% endif %}>
+     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {{ block.textBlock }}
 </div>

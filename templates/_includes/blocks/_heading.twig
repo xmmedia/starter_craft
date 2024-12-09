@@ -1,4 +1,3 @@
-{% include '_includes/blocks/_element_id.twig' %}
 {% set classes = [] %}
 
 {% if block.uppercase %}
@@ -23,6 +22,6 @@
 {% endif %}
 
 {{ tag('h2', {
-    html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: elementId,
+    html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: block.elementId,
     class: classes,
 }) }}

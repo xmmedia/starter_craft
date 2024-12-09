@@ -1,8 +1,7 @@
-{% include '_includes/blocks/_element_id.twig' %}
 {% set width = block.blockWidth|default('100') %}
 
 {#separate div wrapper so column doesn't mess with embed-wrap#}
-<div class="col-{{ width }}" {% if elementId %} id="{{ elementId }}"{% endif %}>
+<div class="col-{{ width }}" {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div class="embed-wrap max-w-3xl">
         <div class="embed-container embed-container-16-9">
             {{ block.video.render({
