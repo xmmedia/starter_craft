@@ -1,10 +1,43 @@
 color: null
 fieldLayouts:
   a6fa0eb8-8bfb-4fa6-b2ed-cae575553c79:
+    cardView:
+      - 'layoutElement:d33fff37-7dd3-40ba-91c0-926dace95c47'
+      - 'layoutElement:4bde8a6a-e9be-4dfb-ad3e-8e2efd92a7f1'
     tabs:
       -
         elementCondition: null
         elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-09T23:20:14+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: 'Enter a title so cards are distinguishable in editor. This will not appear on the website.'
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: 42a08e37-5175-42de-a309-fb9a6a90e8ef
+            userCondition: null
+            warning: null
+            width: 100
           -
             dateAdded: '2024-12-04T20:40:24+00:00'
             elementCondition: null
@@ -32,7 +65,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -48,7 +81,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -63,13 +96,13 @@ fieldLayouts:
         uid: d743dacc-20a6-4198-a8e8-f4b444006822
         userCondition: null
 handle: cards
-hasTitleField: false
-icon: null
+hasTitleField: true
+icon: ''
 name: Cards
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

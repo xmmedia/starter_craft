@@ -96,7 +96,7 @@ handle: accordionWrapper
 hasTitleField: true
 icon: ''
 name: 'Accordion Wrapper'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

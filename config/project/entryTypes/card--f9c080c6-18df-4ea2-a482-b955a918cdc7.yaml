@@ -6,6 +6,36 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2024-12-09T23:32:08+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            includeInCards: false
+            inputType: null
+            instructions: 'Give the card a name to appear in the editor. This will not appear on the live site.'
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            providesThumbs: false
+            readonly: false
+            required: true
+            size: null
+            step: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: bae24353-bd67-496a-a48f-d3eed985233f
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-12-04T20:36:22+00:00'
             elementCondition: null
             fieldUid: 12bf30a3-ae66-402c-aa6a-1957b9eace70 # Card
@@ -25,13 +55,13 @@ fieldLayouts:
         uid: decee093-ad21-4ef2-a706-7c96b2acdcb7
         userCondition: null
 handle: card
-hasTitleField: false
-icon: null
+hasTitleField: true
+icon: ''
 name: Card
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

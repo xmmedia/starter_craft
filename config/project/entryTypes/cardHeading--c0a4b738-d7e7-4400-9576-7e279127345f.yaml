@@ -50,7 +50,7 @@ handle: cardHeading
 hasTitleField: false
 icon: ''
 name: 'Card Heading'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

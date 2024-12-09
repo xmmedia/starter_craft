@@ -1,6 +1,9 @@
 color: null
 fieldLayouts:
   599523b1-d5da-4db4-a3a7-d37a4369be1b:
+    cardView:
+      - 'layoutElement:b6197d04-75c0-47b8-8382-1b43266f61b2'
+      - 'layoutElement:de2d54f1-f3fd-4c6c-b89a-9bc805951b97'
     tabs:
       -
         elementCondition: null
@@ -58,11 +61,27 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2024-12-09T23:43:42+00:00'
+            elementCondition: null
+            fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
+            handle: null
+            includeInCards: true
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b6197d04-75c0-47b8-8382-1b43266f61b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2024-12-04T22:19:27+00:00'
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -96,7 +115,7 @@ handle: video
 hasTitleField: true
 icon: ''
 name: Video
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

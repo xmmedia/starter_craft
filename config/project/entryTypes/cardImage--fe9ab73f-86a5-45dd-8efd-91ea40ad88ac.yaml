@@ -1,6 +1,8 @@
 color: null
 fieldLayouts:
   6f14124a-258a-4029-a593-302738b750c3:
+    cardView:
+      - 'layoutElement:fbe75a3f-f881-4e9a-be0a-db420b916592'
     tabs:
       -
         elementCondition: null
@@ -10,7 +12,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 486e0db8-6cbd-4cd7-85af-77040ab2b43c # Image
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -26,12 +28,12 @@ fieldLayouts:
         userCondition: null
 handle: cardImage
 hasTitleField: false
-icon: null
+icon: ''
 name: 'Card Image'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

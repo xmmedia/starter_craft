@@ -1,6 +1,8 @@
 color: null
 fieldLayouts:
   a08ba3a0-f7aa-4e5d-a98f-afadac18e574:
+    cardView:
+      - 'layoutElement:28879f4e-e1b4-4d54-b569-3a437e42836a'
     tabs:
       -
         elementCondition: null
@@ -26,12 +28,12 @@ fieldLayouts:
         userCondition: null
 handle: text
 hasTitleField: false
-icon: null
+icon: ''
 name: Text
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{text]'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

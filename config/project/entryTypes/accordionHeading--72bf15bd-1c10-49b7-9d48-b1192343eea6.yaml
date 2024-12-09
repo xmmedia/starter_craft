@@ -28,7 +28,7 @@ handle: accordionHeading
 hasTitleField: false
 icon: ''
 name: 'Accordion Heading'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

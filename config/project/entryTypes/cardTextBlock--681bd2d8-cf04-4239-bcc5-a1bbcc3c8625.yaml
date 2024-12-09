@@ -26,12 +26,12 @@ fieldLayouts:
         userCondition: null
 handle: cardTextBlock
 hasTitleField: false
-icon: null
+icon: ''
 name: 'Card Text Block'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: '{textBlock|striptags|truncate(50, ''...'')}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

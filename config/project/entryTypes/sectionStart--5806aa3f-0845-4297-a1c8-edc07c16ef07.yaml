@@ -16,7 +16,7 @@ fieldLayouts:
             id: null
             includeInCards: false
             inputType: null
-            instructions: null
+            instructions: 'Add a title to the section'
             label: null
             max: null
             min: null
@@ -25,7 +25,7 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            required: false
+            required: true
             size: null
             step: null
             tip: null
@@ -87,12 +87,12 @@ fieldLayouts:
         userCondition: null
 handle: sectionStart
 hasTitleField: true
-icon: null
+icon: ''
 name: 'Section Start'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: null
+titleFormat: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
