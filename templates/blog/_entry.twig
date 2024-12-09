@@ -8,27 +8,27 @@
 } %}
 
 {% block content %}
-  <h1 class="text-4xl text-black font-display my-4">{{ entry.title }}</h1>
+    <div class="w-content">
+		<h1 class="text-4xl text-black font-display my-4">{{ entry.title }}</h1>
+		<time class="text-sm block pb-4" datetime="{{ entry.postDate | date('Y-m-d') }}">{{ entry.postDate | date('d M Y') }}</time>
+		{% if entry.featureImage | length %}
+			{% for image in entry.featureImage.all() %}
+			  <img src="{{ image.getUrl(featureImage) }}" alt="{{ image.title }}">
+			{% endfor %}
+		  {% endif %}
 
-  <time class="text-sm block pb-4" datetime="{{ entry.postDate | date('Y-m-d') }}">{{ entry.postDate | date('d M Y') }}</time>
+        <div class="w-content-copy">
+            {% include '_includes/_blocks.twig' %}
+        </div>
 
-  {% if entry.featureImage | length %}
-    {% for image in entry.featureImage.all() %}
-      <img src="{{ image.getUrl(featureImage) }}" alt="{{ image.title }}">
-    {% endfor %}
-  {% endif %}
-
-    {{ entry.content | nl2br }}
-
-  {% include "_includes/post-blocks" with { blocks: entry.postContent.all() } only %}
-
-  {% if entry.postCategories | length %}
-    <div class="border-t py-2 mb-6">
-      {% for category in entry.postCategories.all() %}
-        <a href="{{ category.url }}" class="inline-block border rounded px-2 py-1 text-sm">
-          {{- category.title }}
-        </a>
-      {% endfor %}
+		{% if entry.postCategories | length %}
+			<div class="w-content border-t py-2 mb-6">
+				{% for category in entry.postCategories.all() %}
+				<a href="{{ category.url }}" class="inline-block border rounded px-2 py-1 text-sm">
+				  {{- category.title }}
+				</a>
+				{% endfor %}
+			</div>
+      	{% endif %}
     </div>
-  {% endif %}
 {% endblock %}

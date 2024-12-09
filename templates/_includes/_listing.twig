@@ -1,0 +1,22 @@
+<div class="grid grid-cols-3 gap-8">
+{% for post in posts %}
+
+		<article class="p-6 border ">
+			{% if post.featureImage.one() %}
+				{% set image = post.featureImage.one() %}
+				<div class="thumbnail">
+					<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
+				</div>
+			{% endif %}
+
+			<h2>{{ post.title }}</h2>
+
+			<time datetime="{{ post.postDate | atom }}">{{ post.postDate | date }}</time>
+
+			{{ post.summary | md }}
+
+			<a href="{{ post.url }}">Continue Reading</a>
+		</article>
+
+{% endfor %}
+</div>

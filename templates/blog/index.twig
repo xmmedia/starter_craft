@@ -1,27 +1,32 @@
 {% extends "_layout" %}
 
-{% set posts = craft.entries.section('blog').limit(1) %}
+{% set posts = craft.entries.section('blog') %}
 
 {% paginate posts as pageInfo, pageEntries %}
 
 {% block content %}
-    <h1 class="text-4xl text-black font-display my-4">Blog Posts</h1>
+	<div class="w-content">
+		<h1 class="text-4xl text-black font-display my-4">Blog Posts</h1>
 
-    {% include "_includes/listing" with { posts: pageEntries } only %}
+		{% include '_includes/_listing.twig' %}
 
-    <a href="{{ pageInfo.firstUrl }}">First Page</a>
-    {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
 
-    {% for page, url in pageInfo.getPrevUrls(2) %}
-        <a href="{{ url }}">{{ page }}</a>
-    {% endfor %}
+		<div class="flex justify-center gap-4 mt-4">
+		<a href="{{ pageInfo.firstUrl }}">First Page</a>
+			{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
 
-    <span class="current">{{ pageInfo.currentPage }}</span>
+			{% for page, url in pageInfo.getPrevUrls(2) %}
+				<a href="{{ url }}">{{ page }}</a>
+			{% endfor %}
 
-    {% for page, url in pageInfo.getNextUrls(2) %}
-        <a href="{{ url }}">{{ page }}</a>
-    {% endfor %}
+			<span class="current">{{ pageInfo.currentPage }}</span>
 
-    {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
-    <a href="{{ pageInfo.lastUrl }}">Last Page</a>
+			{% for page, url in pageInfo.getNextUrls(2) %}
+				<a href="{{ url }}">{{ page }}</a>
+			{% endfor %}
+
+			{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+			<a href="{{ pageInfo.lastUrl }}">Last Page</a>
+		</div>
+	</div>
 {% endblock %}
