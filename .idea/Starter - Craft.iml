@@ -135,7 +135,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/web-auth/cose-lib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/web-auth/webauthn-lib" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ether/seo" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/spicyweb/craft-neo" />
       <excludeFolder url="file://$MODULE_DIR$/.yarn" />
       <excludeFolder url="file://$MODULE_DIR$/public/build" />
     </content>
