@@ -2,11 +2,11 @@
 {% set image = block.image.one() %}
 {% switch block.imageSize %}
     {% case 'large' %}
-        {% set imageTransform = 'neocolumnimagelarge' %}
+        {% set imageTransform = 'imagelarge' %}
     {% case 'medium' %}
-        {% set imageTransform = 'neocolumnimagemedium' %}
+        {% set imageTransform = 'imagemedium' %}
     {% default %}
-        {% set imageTransform = 'neocolumnimagesmall' %}
+        {% set imageTransform = 'imagesmall' %}
 {% endswitch %}
 {% switch block.imageAlign %}
     {% case 'left' %}

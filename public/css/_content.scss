@@ -24,7 +24,8 @@
     @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 gap-y-8 justify-center lg:justify-start
     w-full max-w-6xl mx-auto px-8 lg:px-0;
 }
-.neocolumn, .text-block-wrap {
+
+.blocks-wrap, .text-block-wrap {
     p, h1, h2, h3, h4, ul, ol {
         &:first-child {
             @apply mt-0;
@@ -58,9 +59,9 @@
     @apply lg:mx-auto;
 }
 
-.neocolumn-image_wrap {
+.block-image_wrap {
     @apply flex flex-wrap justify-center;
 }
-.col-25 .neocolumn-image_wrap {
+.col-25 .block-image_wrap {
     @apply h-auto mb-3;
 }

@@ -3,9 +3,6 @@
 {% if entry.blocks is not empty %}
     <div class="blocks-wrap">
     {% for block in entry.blocks.all() %}
-        {# Grab the block type’s handle for comparison: #}
-{#        {% set blockHandle =  %}#}
-
         {# This is really the block handle #}
         {% switch block.type.handle %}
             {% case 'hero' %}
