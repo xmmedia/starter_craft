@@ -143,9 +143,19 @@
       <path value="$PROJECT_DIR$/vendor/craftcms/contact-form" />
       <path value="$PROJECT_DIR$/vendor/craftcms/plugin-installer" />
       <path value="$PROJECT_DIR$/vendor/craftcms/html-field" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/intervention/httpauth" />
+      <path value="$PROJECT_DIR$/vendor/pimple/pimple" />
+      <path value="$PROJECT_DIR$/vendor/tubalmartin/cssmin" />
+      <path value="$PROJECT_DIR$/vendor/marcusschwarz/lesserphp" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/minify" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/jsmin-php" />
+      <path value="$PROJECT_DIR$/vendor/mrclay/props-dic" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
