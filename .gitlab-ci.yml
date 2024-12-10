@@ -19,10 +19,11 @@ variables:
   SHARED: "$REMOTE_BASE/shared"
 
 before_script:
-  # ensure everything up to date
-  - apt-get update -yqq
   # install composer
   - wget --no-verbose -O composer.phar https://getcomposer.org/composer-2.phar
+  # install node with nvm
+  - export NVM_DIR="$HOME/.nvm" && . "$NVM_DIR/nvm.sh" --no-use
+  - nvm install
 
 .versions-script: &versions-script
   - php -v
@@ -33,8 +34,9 @@ before_script:
 .security-checks: &security-checks
   # check for security issues in PHP libs
   - symfony security:check
+  - php composer.phar audit --abandoned=report
   # check for JS security issues in libs
-  - yarn audit:high
+  - npm run audit:high
 
 static:
   stage: static
@@ -42,11 +44,11 @@ static:
   interruptible: true
   script:
     - *versions-script
+    - *security-checks
     # install php dependencies
     - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs
     # Install node/JS dependencies
     - yarn install --immutable
-    - *security-checks
     # lint JS & CSS
     - yarn lint:js
     - yarn lint:css
@@ -59,6 +61,7 @@ static:
     - master
   script:
     - *versions-script
+    - *security-checks
     # setup vars for paths
     - TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"
     - echo "Paths:"; echo $REMOTE_BASE; echo $RELEASE; echo $SHARED
@@ -75,7 +78,6 @@ static:
     # create partial .env file (empty as yarn doesn't need anything)
     - touch .env
     - yarn install --immutable
-    - *security-checks
     - yarn build
     # remove temp .env file just in case
     - rm .env
