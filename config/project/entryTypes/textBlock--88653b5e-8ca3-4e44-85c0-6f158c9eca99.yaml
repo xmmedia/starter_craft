@@ -105,7 +105,7 @@ fieldLayouts:
         userCondition: null
 handle: textBlock
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Text Block'
 showSlugField: false
 showStatusField: true

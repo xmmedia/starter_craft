@@ -120,7 +120,7 @@ fieldLayouts:
         userCondition: null
 handle: button
 hasTitleField: false
-icon: ''
+icon: null
 name: Button
 showSlugField: false
 showStatusField: true

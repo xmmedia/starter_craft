@@ -94,7 +94,7 @@ fieldLayouts:
         userCondition: null
 handle: accordionWrapper
 hasTitleField: true
-icon: ''
+icon: null
 name: 'Accordion Wrapper'
 showSlugField: false
 showStatusField: true

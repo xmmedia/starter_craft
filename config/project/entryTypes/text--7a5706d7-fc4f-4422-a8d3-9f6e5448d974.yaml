@@ -28,7 +28,7 @@ fieldLayouts:
         userCondition: null
 handle: text
 hasTitleField: false
-icon: ''
+icon: null
 name: Text
 showSlugField: false
 showStatusField: true

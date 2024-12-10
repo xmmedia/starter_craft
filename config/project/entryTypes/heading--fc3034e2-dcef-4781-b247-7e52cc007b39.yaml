@@ -121,7 +121,7 @@ fieldLayouts:
         userCondition: null
 handle: heading
 hasTitleField: false
-icon: ''
+icon: null
 name: Heading
 showSlugField: true
 showStatusField: true

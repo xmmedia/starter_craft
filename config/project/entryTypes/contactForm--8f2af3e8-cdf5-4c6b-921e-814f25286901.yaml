@@ -35,12 +35,12 @@ fieldLayouts:
         userCondition: null
 handle: contactForm
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Contact Form'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

@@ -56,7 +56,7 @@ fieldLayouts:
         userCondition: null
 handle: card
 hasTitleField: true
-icon: ''
+icon: null
 name: Card
 showSlugField: false
 showStatusField: true

@@ -56,7 +56,7 @@ fieldLayouts:
         userCondition: null
 handle: accordion
 hasTitleField: true
-icon: ''
+icon: null
 name: Accordion
 showSlugField: false
 showStatusField: true

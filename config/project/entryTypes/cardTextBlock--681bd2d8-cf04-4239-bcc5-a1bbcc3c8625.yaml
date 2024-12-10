@@ -26,7 +26,7 @@ fieldLayouts:
         userCondition: null
 handle: cardTextBlock
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Card Text Block'
 showSlugField: false
 showStatusField: true

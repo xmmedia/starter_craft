@@ -48,7 +48,7 @@ fieldLayouts:
         userCondition: null
 handle: cardHeading
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Card Heading'
 showSlugField: false
 showStatusField: true

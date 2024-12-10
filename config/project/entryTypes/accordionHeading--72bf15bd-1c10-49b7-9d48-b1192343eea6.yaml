@@ -26,7 +26,7 @@ fieldLayouts:
         userCondition: null
 handle: accordionHeading
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Accordion Heading'
 showSlugField: false
 showStatusField: true

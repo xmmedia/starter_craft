@@ -48,7 +48,7 @@ fieldLayouts:
         userCondition: null
 handle: contactThanks
 hasTitleField: false
-icon: ''
+icon: null
 name: 'Contact Thanks'
 showSlugField: true
 showStatusField: true

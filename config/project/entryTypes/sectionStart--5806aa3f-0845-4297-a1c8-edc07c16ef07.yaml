@@ -87,12 +87,12 @@ fieldLayouts:
         userCondition: null
 handle: sectionStart
 hasTitleField: true
-icon: ''
+icon: null
 name: 'Section Start'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: ''
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

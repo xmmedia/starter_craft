@@ -113,7 +113,7 @@ fieldLayouts:
         userCondition: null
 handle: video
 hasTitleField: true
-icon: ''
+icon: null
 name: Video
 showSlugField: false
 showStatusField: true

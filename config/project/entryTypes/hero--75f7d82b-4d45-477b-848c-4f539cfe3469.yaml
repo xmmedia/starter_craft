@@ -60,7 +60,7 @@ fieldLayouts:
         userCondition: null
 handle: hero
 hasTitleField: false
-icon: ''
+icon: null
 name: Hero
 showSlugField: false
 showStatusField: true
