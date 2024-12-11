@@ -1,4 +1,4 @@
-dateModified: 1733849368
+dateModified: 1733939947
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -139,10 +139,6 @@ meta:
     fe9ab73f-86a5-45dd-8efd-91ea40ad88ac: 'Card Image' # Card Image
     ffc736cb-53c0-4f0c-9682-b810b51e72b2: Contact # Contact
 plugins:
-  assetrev:
-    edition: standard
-    enabled: false
-    schemaVersion: 1.0.0
   ckeditor:
     edition: standard
     enabled: true
@@ -191,11 +187,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  neo:
-    edition: standard
-    enabled: true
-    licenseKey: Z06UU8T1NEF1DX23V6CTKVYM
-    schemaVersion: 5.1.0.1
   oembed:
     edition: standard
     enabled: true
