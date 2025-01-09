@@ -8,7 +8,7 @@ settings:
   max: 100
   min: 25
   step: 25
-  suffix: null
+  suffix: '%'
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Range
