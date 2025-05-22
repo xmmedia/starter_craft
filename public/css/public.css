@@ -1,0 +1,34 @@
+
+@config "../../tailwind.config.js";
+
+@import "tailwindcss";
+
+/* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
+@import (layer base) "./partials/common.css";
+
+
+/* global styles on the most common elements */
+@import "./partials/html.css";
+
+/* common styles */
+@import "./partials/alerts.css";
+@import "./partials/content_alignment.css";
+@import "./partials/headings.css";
+@import "./partials/forms.css";
+@import "./partials/embed.css";
+@import "./partials/buttons.css";
+@import "./partials/details.css";
+@import "./partials/social.css";
+@import "./partials/content.css";
+@import "./partials/header.css";
+@import "./partials/footer.css";
+@import "./partials/hero.css";
+@import "./partials/cards.css";
+
+@utility font-headings {
+    font-family: var(--font-headings);
+}
+
+/* page specific */
+
+/* @import ; */

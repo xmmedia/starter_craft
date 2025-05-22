@@ -1,0 +1,5 @@
+.hero {
+  @apply w-full h-96 lg:h-120 max-w-6xl mx-auto bg-center bg-cover bg-no-repeat text-red-500
+}
+
+/*# sourceMappingURL=hero.css.map */

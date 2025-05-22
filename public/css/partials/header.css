@@ -1,0 +1,27 @@
+.header-nav_item {
+  @apply mx-4;
+}
+.header-nav_item:last-of-type {
+  @apply mr-0;
+}
+
+.header-nav_item-products {
+  @apply hidden;
+}
+@media (min-width: 640px) {
+  .header-nav_item-products {
+    @apply block;
+  }
+}
+
+.header-mobile-open .header-nav_item {
+  @apply block;
+}
+
+@media (min-width: 640px) {
+  .header-nav_item-toggle {
+    @apply hidden;
+  }
+}
+
+/*# sourceMappingURL=header.css.map */

@@ -1,0 +1,37 @@
+details summary {
+  @apply list-none cursor-pointer;
+}
+
+details summary::-webkit-details-marker {
+  @apply hidden;
+}
+
+details summary > * {
+  @apply inline;
+}
+
+.details-plus, .details-minus {
+  @apply absolute right-0 text-4xl;
+}
+
+.details-plus {
+  @apply top-1;
+}
+
+.details-minus {
+  @apply top-1;
+}
+
+details .details-minus {
+  @apply hidden;
+}
+
+details[open] .details-minus {
+  @apply inline-block;
+}
+
+details[open] .details-plus {
+  @apply hidden;
+}
+
+/*# sourceMappingURL=details.css.map */

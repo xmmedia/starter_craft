@@ -1,0 +1,70 @@
+
+/*stylelint-disable no-descending-specificity*/
+h1, h2, h3, h4, h5, h6 {
+  @apply font-headings font-bold;
+  text-wrap: balance;
+}
+
+h1, h2 {
+  @apply hyphens-auto sm:hyphens-none;
+}
+
+h1 {
+  @apply text-4xl;
+  margin: 0.67rem 0;
+}
+@screen lg {
+  h1 {
+    @apply text-5xl;
+  }
+}
+
+h2 {
+  @apply text-3xl;
+  margin: 0.83rem 0;
+}
+@screen lg {
+  h2 {
+    @apply text-4xl;
+  }
+}
+
+h3 {
+  @apply mt-4 mb-2 text-2xl;
+}
+@screen lg {
+  h3 {
+    @apply text-3xl;
+  }
+}
+
+h4 {
+  @apply text-lg;
+  margin: 1.33rem 0 0.5rem;
+}
+@screen lg {
+  h4 {
+    @apply text-xl;
+  }
+}
+
+h5 {
+  margin: 1.67rem 0;
+}
+
+h6 {
+  @apply mt-6 mb-2 text-sm;
+}
+
+h3 + p, h4 + p {
+  @apply mt-0;
+}
+
+h1 a, h2 a, h3 a, h4 a {
+  @apply no-underline text-inherit;
+}
+h1 a:hover, h1 a:active, h2 a:hover, h2 a:active, h3 a:hover, h3 a:active, h4 a:hover, h4 a:active {
+  @apply underline text-inherit;
+}
+
+/*# sourceMappingURL=headings.css.map */
