@@ -5,6 +5,7 @@ module.exports = {
     content: [
         './templates/**/*.twig',
         './public/js/src/**/*.{vue,js}',
+        './public/css/**/*.css',
         './config/project/ckeditor/**/*.yaml',
     ],
     safelist: [
@@ -44,6 +45,7 @@ module.exports = {
             },
             fontFamily: {
                 'headings': [
+                    '"Roboto"',
                     '"Helvetica Neue"',
                     'Arial',
                     // see https://tailwindcss.com/docs/font-family for list
@@ -55,12 +57,13 @@ module.exports = {
 
     plugins: [
         require('@tailwindcss/typography'),
-        plugin(({ addBase, theme }) => {
-            addBase({
-                // same as: transition-all duration-300 ease-in-out
+
+        plugin(({ addComponents, theme }) => {
+            addComponents({
+                /* goes into the `components` layer, so @apply can see it */
                 '.transition-default': {
-                    transitionProperty: theme('transitionProperty.all'),
-                    transitionDuration: theme('transitionDuration.300'),
+                    transitionProperty:   theme('transitionProperty.all'),
+                    transitionDuration:   theme('transitionDuration.300'),
                     transitionTimingFunction: theme('transitionTimingFunction.in-out'),
                 },
             });
