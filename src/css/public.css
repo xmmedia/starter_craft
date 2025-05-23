@@ -1,10 +1,5 @@
-
-@config "../../tailwind.config.js";
-
 @import "tailwindcss";
-
-/* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
-@import (layer base) "./partials/common.css";
+@import "./partials/common.css";
 
 
 /* global styles on the most common elements */
@@ -25,10 +20,14 @@
 @import "./partials/hero.css";
 @import "./partials/cards.css";
 
+/* page specific */
+
+/* @import ; */
+
+@config "../../tailwind.config.js";
+
 @utility font-headings {
     font-family: var(--font-headings);
 }
 
-/* page specific */
 
-/* @import ; */
