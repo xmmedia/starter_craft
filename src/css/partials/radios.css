@@ -55,5 +55,3 @@
 .radio-pill-red input:checked + label:after {
   @apply border-red-600;
 }
-
-/*# sourceMappingURL=radios.css.map */

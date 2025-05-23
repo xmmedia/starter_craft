@@ -1,4 +1,3 @@
-
 /*https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles*/
 
 @layer base {
@@ -58,4 +57,3 @@
         @apply align-top;
     }
 }
-    /*# sourceMappingURL=common.css.map */
