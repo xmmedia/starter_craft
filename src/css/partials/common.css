@@ -1,56 +1,61 @@
-/* this file is for public and private/admin pages */
-a, .button-link {
-    @apply text-blue-500 no-underline transition-all duration-300 ease-in-out outline-none rounded;
-}
 
-a:hover,
-a:active,
-.button-link:hover,
-.button-link:active {
-    @apply underline text-blue-700;
-}
+/*https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles*/
 
-a:focus, .button-link:focus {
-    @apply ring-2 bg-zinc-200;
-}
+@layer base {
+    /* this file is for public and private/admin pages */
+    a, .button-link {
+        @apply text-blue-500 no-underline transition-all duration-300 ease-in-out outline-none rounded;
+    }
 
-a:disabled, .button-link:disabled {
-    @apply opacity-75;
-}
+    a:hover,
+    a:active,
+    .button-link:hover,
+    .button-link:active {
+        @apply underline text-blue-700;
+    }
 
-a:disabled:hover, .button-link:disabled:hover {
-    @apply no-underline cursor-default;
-}
+    a:focus, .button-link:focus {
+        @apply ring-2 bg-zinc-200;
+    }
 
-a[href^="tel"], a[href^="mailto"] {
-    @apply whitespace-normal md:whitespace-nowrap;
-}
+    a:disabled, .button-link:disabled {
+        @apply opacity-75;
+    }
 
-b, strong {
-    @apply font-bold;
-}
+    a:disabled:hover, .button-link:disabled:hover {
+        @apply no-underline cursor-default;
+    }
 
-p {
-    @apply my-4;
-}
+    a[href^="tel"], a[href^="mailto"] {
+        @apply whitespace-normal md:whitespace-nowrap;
+    }
 
-ul, ol {
-    @apply pl-10 text-left;
-}
+    b, strong {
+        @apply font-bold;
+    }
 
-ul {
-    @apply list-disc;
-}
+    p {
+        @apply my-4;
+    }
 
-ol {
-    @apply list-decimal;
-}
+    ul, ol {
+        @apply pl-10 text-left;
+    }
 
-address {
-    @apply not-italic;
-}
+    ul {
+        @apply list-disc;
+    }
 
-td {
-    @apply align-top;
+    ol {
+        @apply list-decimal;
+    }
+
+    address {
+        @apply not-italic;
+    }
+
+    td {
+        @apply align-top;
+    }
 }
-/*# sourceMappingURL=common.css.map */
+    /*# sourceMappingURL=common.css.map */
