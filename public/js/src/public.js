@@ -8,7 +8,7 @@ import Menu from './common/menu.vue';
 // import fieldError from './common/field_error';
 
 // CSS
-import '../../css/public.css';
+import '/src/css/public.css';
 // import '../../css/editor.scss';
 
 // images

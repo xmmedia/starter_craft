@@ -5,7 +5,7 @@ module.exports = {
     content: [
         './templates/**/*.twig',
         './public/js/src/**/*.{vue,js}',
-        './public/css/**/*.css',
+        './src/css/**/*.css',
         './config/project/ckeditor/**/*.yaml',
     ],
     safelist: [
