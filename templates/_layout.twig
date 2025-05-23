@@ -7,6 +7,7 @@
 
     {% block head %}
         {{ craft.vite.script("public/js/src/public.js", false, { 'defer' : true }) }}
+        {{ craft.vite.css('src/styles.js') }}
     {% endblock %}
 
     {% block favicons %}

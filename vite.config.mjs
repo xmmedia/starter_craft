@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
 import mkcert from 'vite-plugin-mkcert';
 import vuePlugin from '@vitejs/plugin-vue';
+import tailwindcss from '@tailwindcss/vite';
 import dns from 'dns';
 
 dns.setDefaultResultOrder('verbatim');
@@ -10,6 +11,7 @@ export default defineConfig({
     plugins: [
         mkcert(),
         vuePlugin(),
+        tailwindcss(),
     ],
     base: '/build',
     build: {

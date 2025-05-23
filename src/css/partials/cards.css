@@ -1,0 +1,13 @@
+.cards-wrap {
+  @apply flex flex-wrap justify-center gap-8 mx-auto p-8;
+}
+.cards-wrap a {
+  @apply ring-offset-white;
+}
+
+.card {
+  @apply w-80 p-8 bg-zinc-300 hover:no-underline focus:ring-0;
+}
+.card p:first-child {
+  @apply mt-0;
+}
