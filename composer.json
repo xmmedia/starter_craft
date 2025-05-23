@@ -5,7 +5,7 @@
     "description": "Starter for creating Craft 5 sites at XM Media",
     "require": {
         "php": "8.4.*",
-        "craftcms/ckeditor": "4.8.0",
+        "craftcms/ckeditor": "4.9.0",
         "craftcms/cms": "5.7.7",
         "craftcms/contact-form": "3.1.0",
         "craftcms/contact-form-honeypot": "2.1.0",
@@ -16,7 +16,7 @@
         "roave/security-advisories": "dev-master",
         "verbb/field-manager": "4.0.3",
         "vlucas/phpdotenv": "^5.4",
-        "wrav/oembed": "3.1.4"
+        "wrav/oembed": "3.1.5"
     },
     "require-dev": {
         "yiisoft/yii2-shell": "^2.0.3"
