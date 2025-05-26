@@ -1,35 +1,36 @@
-/*stylelint-disable no-descending-specificity*/
-[type=text],
-[type=password],
-[type=date],
-[type=datetime],
-[type=datetime-local],
-[type=month],
-[type=week],
-[type=email],
-[type=number],
-[type=search],
-[type=tel],
-[type=time],
-[type=url],
-[type=color],
+/* stylelint-disable no-descending-specificity */
+[type="text"],
+[type="password"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="week"],
+[type="email"],
+[type="number"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="url"],
+[type="color"],
 textarea {
   @apply w-full px-2 py-1 text-gray-800 border border-gray-300 bg-gray-100 transition-all duration-300 ease-in-out;
 }
-[type=text]:focus,
-[type=password]:focus,
-[type=date]:focus,
-[type=datetime]:focus,
-[type=datetime-local]:focus,
-[type=month]:focus,
-[type=week]:focus,
-[type=email]:focus,
-[type=number]:focus,
-[type=search]:focus,
-[type=tel]:focus,
-[type=time]:focus,
-[type=url]:focus,
-[type=color]:focus,
+
+[type="text"]:focus,
+[type="password"]:focus,
+[type="date"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="week"]:focus,
+[type="email"]:focus,
+[type="number"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="color"]:focus,
 textarea:focus {
   @apply bg-gray-100;
 }
@@ -40,59 +41,61 @@ textarea {
 
 select {
   @apply w-full p-1 text-black border border-gray-300 bg-gray-100 transition-all duration-300 ease-in-out;
+
   height: 2.14rem;
 }
 
-[type=checkbox], [type=radio], [type=submit], [type=image], label, select {
+[type="checkbox"], [type="radio"], [type="submit"], [type="image"], label, select {
   @apply cursor-pointer;
 }
 
-[type=file] {
+[type="file"] {
   @apply w-full;
 }
 
-[type=text],
-[type=checkbox],
-[type=radio],
-[type=password],
-[type=date],
-[type=datetime],
-[type=datetime-local],
-[type=month],
-[type=week],
-[type=email],
-[type=number],
-[type=search],
-[type=tel],
-[type=time],
-[type=url],
-[type=color],
-[type=file],
-[type=image],
-[type=submit],
+[type="text"],
+[type="checkbox"],
+[type="radio"],
+[type="password"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="week"],
+[type="email"],
+[type="number"],
+[type="search"],
+[type="tel"],
+[type="time"],
+[type="url"],
+[type="color"],
+[type="file"],
+[type="image"],
+[type="submit"],
 textarea,
 select {
   @apply outline-none rounded-sm;
 }
-[type=text]:focus,
-[type=checkbox]:focus,
-[type=radio]:focus,
-[type=password]:focus,
-[type=date]:focus,
-[type=datetime]:focus,
-[type=datetime-local]:focus,
-[type=month]:focus,
-[type=week]:focus,
-[type=email]:focus,
-[type=number]:focus,
-[type=search]:focus,
-[type=tel]:focus,
-[type=time]:focus,
-[type=url]:focus,
-[type=color]:focus,
-[type=file]:focus,
-[type=image]:focus,
-[type=submit]:focus,
+
+[type="text"]:focus,
+[type="checkbox"]:focus,
+[type="radio"]:focus,
+[type="password"]:focus,
+[type="date"]:focus,
+[type="datetime"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="week"]:focus,
+[type="email"]:focus,
+[type="number"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="url"]:focus,
+[type="color"]:focus,
+[type="file"]:focus,
+[type="image"]:focus,
+[type="submit"]:focus,
 textarea:focus,
 select:focus {
   @apply outline-none ring-2;
@@ -105,6 +108,7 @@ select:focus {
 .field-wrap {
   @apply mb-4;
 }
+
 .field-wrap label {
   @apply block mb-1;
 }
@@ -112,10 +116,13 @@ select:focus {
 .field-wrap-radio, .field-wrap-checkbox {
   @apply flex flex-nowrap items-start;
 }
+
 .field-wrap-radio input, .field-wrap-checkbox input {
   @apply shrink;
+
   margin-top: 0.35em;
 }
+
 .field-wrap-radio label, .field-wrap-checkbox label {
   @apply grow mb-0 pl-2;
 }
@@ -123,9 +130,11 @@ select:focus {
 .field-wrap-radios, .field-wrap-checkboxes {
   @apply mb-4;
 }
+
 .field-wrap-radios legend, .field-wrap-checkboxes legend {
   @apply mb-1;
 }
+
 .field-wrap-radios .field-wrap-radio, .field-wrap-radios .field-wrap-checkbox, .field-wrap-checkboxes .field-wrap-radio, .field-wrap-checkboxes .field-wrap-checkbox {
   @apply mb-1 mr-4;
 }
@@ -133,6 +142,7 @@ select:focus {
 .field-errors {
   @apply mb-1 pl-0 list-none;
 }
+
 .field-errors li {
   @apply mb-1 p-2 bg-gray-200 border-l-10 border-red-700;
 }
@@ -140,17 +150,21 @@ select:focus {
 .field-wrap-readonly {
   @apply relative;
 }
-.field-wrap-readonly:after {
+
+.field-wrap-readonly::after {
   @apply absolute right-0 text-xs opacity-50;
+
   top: 0.5rem;
   content: "read-only";
 }
+
 .field-wrap-readonly input {
   @apply opacity-50;
 }
 
 .field-help {
   @apply w-full mt-px text-xs italic text-gray-600 leading-tight;
+
   padding-left: 0.1em;
 }
 

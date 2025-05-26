@@ -13,9 +13,13 @@
 
 .embed-container {
   @apply relative h-auto overflow-hidden;
+
     @nest &-21-9 { padding-top: 42.86%; }
+
     @nest &-18-9 { padding-top: 50%; }
+
     @nest &-16-9 { padding-top: 56.25%; }
+
     @nest &-4-3  { padding-top: 75%; }
 
     & iframe,

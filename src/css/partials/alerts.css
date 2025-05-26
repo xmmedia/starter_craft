@@ -1,6 +1,7 @@
 .alert {
   @apply flex justify-between max-w-2xl mt-0 mx-auto mb-1 p-2 bg-gray-100 border-l-10;
 }
+
 .form-wrap .alert {
   @apply w-full;
 }

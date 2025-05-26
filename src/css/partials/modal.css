@@ -6,5 +6,6 @@
 .md-enter,
 .md-leave-active {
   @apply opacity-0;
+
   transform: translateY(24px);
 }
