@@ -1,6 +1,6 @@
 color: null
 fieldLayouts:
-  d910d7c9-61c6-4d42-8467-3bcc0e5cfb93:
+  1d9367de-0360-4c64-83d5-f178efcccb49:
     tabs:
       -
         elementCondition: null
@@ -10,7 +10,7 @@ fieldLayouts:
             autocomplete: false
             autocorrect: true
             class: null
-            dateAdded: '2024-11-26T18:45:15+00:00'
+            dateAdded: '2025-05-26T20:22:10+00:00'
             disabled: false
             elementCondition: null
             id: null
@@ -25,26 +25,21 @@ fieldLayouts:
             placeholder: null
             providesThumbs: false
             readonly: false
-            required: true
+            required: false
             size: null
             step: null
             tip: null
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 3fe952c0-41c3-4239-9e40-c1dbefe087d0
+            uid: f19f751a-bcc3-4948-9ce9-893415d38ddc
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: 01793eb7-0d02-455a-9717-7dbcd4d69875
-        userCondition: null
-      -
-        elementCondition: null
-        elements:
           -
-            dateAdded: '2024-11-26T18:45:15+00:00'
+            dateAdded: '2025-05-26T20:23:48+00:00'
+            editCondition: null
             elementCondition: null
-            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
+            fieldUid: d9750188-899b-4d90-b854-a86818225807 # Image Block
             handle: null
             includeInCards: false
             instructions: null
@@ -53,21 +48,21 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fc153ce6-7fcc-4230-940b-366bce61abb2
+            uid: 7aebb4d7-37fe-44df-8adf-f3b98fb175f4
             userCondition: null
             warning: null
             width: 100
-        name: SEO
-        uid: a4264485-7733-4b62-9911-089231fbf443
+        name: Content
+        uid: fd8f9fcb-1043-4fb0-afd8-9c575dc73f97
         userCondition: null
-handle: contact
-hasTitleField: false
+handle: imageBlock
+hasTitleField: true
 icon: null
-name: Contact
+name: 'Image Block'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{section.name|raw}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

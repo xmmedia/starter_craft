@@ -1,7 +1,8 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89 # Services
+  -
+    uid: f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89 # Services
 handle: services
 maxAuthors: 1
 name: Services

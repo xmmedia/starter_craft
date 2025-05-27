@@ -40,6 +40,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T21:14:00+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: dadbdcf6-f9f1-4d87-9c01-c567a77669ff # Video
             handle: null
@@ -62,6 +63,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-09T23:43:42+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null
@@ -78,6 +80,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T22:19:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
@@ -94,6 +97,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T22:19:27+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
             handle: null

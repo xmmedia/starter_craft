@@ -1,7 +1,8 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - fc51aef1-4c76-49e7-bbd0-80b2827d65fe # Blog
+  -
+    uid: fc51aef1-4c76-49e7-bbd0-80b2827d65fe # Blog
 handle: blog
 maxAuthors: 1
 name: Blog

@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: accordionIcon
+handle: galleryImage
 instructions: null
-name: 'Accordion Icon'
+name: 'Gallery Image'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -11,20 +11,20 @@ settings:
     - image
   branchLimit: null
   defaultPlacement: end
-  defaultUploadLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
+  defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
   maxRelations: 1
-  minRelations: 0
+  minRelations: null
   previewMode: full
   restrictFiles: true
-  restrictLocation: false
+  restrictLocation: true
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+  restrictedLocationSource: 'volume:7424ebc8-4255-41f1-ab4c-0898425525e9' # Gallery
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: false
-  showSiteMenu: true
+  showSiteMenu: false
   showUnpermittedFiles: false
   showUnpermittedVolumes: false
   sources: '*'

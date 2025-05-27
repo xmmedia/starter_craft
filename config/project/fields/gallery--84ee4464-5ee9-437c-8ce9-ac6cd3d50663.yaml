@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: accordion
+handle: gallery
 instructions: null
-name: Accordion
+name: Gallery
 searchable: false
 settings:
   createButtonLabel: null
@@ -12,19 +12,9 @@ settings:
       __assoc__:
         -
           - uid
-          - 72bf15bd-1c10-49b7-9d48-b1192343eea6 # Accordion Heading
-    -
-      __assoc__:
-        -
-          - uid
-          - 41e7d3e7-7f22-4eec-8732-1a4b2cc13182 # Accordion Content
-    -
-      __assoc__:
-        -
-          - uid
-          - 22bd92e8-fa46-4ac8-b91d-7b8a84bebccb # Accordion Icon
+          - 70722bde-7efe-42d4-a06e-399a44b02435 # Gallery Image
   includeTableView: false
-  maxEntries: 3
+  maxEntries: null
   minEntries: null
   pageSize: 50
   propagationKeyFormat: null

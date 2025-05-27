@@ -6,6 +6,7 @@ searchable: false
 settings:
   allowSelfRelations: false
   branchLimit: null
+  defaultPlacement: end
   maintainHierarchy: true
   maxRelations: null
   minRelations: null

@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3 # Featured Image
             handle: null
@@ -53,6 +54,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452 # Summary
             handle: null
@@ -69,6 +71,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 787e1739-73f9-4cc5-876c-48a53d41a987 # Post Categories
             handle: null
@@ -85,6 +88,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-09T22:11:18+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 2ebda50a-529a-4080-a436-20f253d62a8b # Blocks
             handle: null

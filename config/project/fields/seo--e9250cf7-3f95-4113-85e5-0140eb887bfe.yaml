@@ -6,8 +6,13 @@ searchable: false
 settings:
   createButtonLabel: null
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 1ca3f937-5a8b-4504-a7c3-22feb254fd6c # SEO
+    -
+      __assoc__:
+        -
+          - uid
+          - 1ca3f937-5a8b-4504-a7c3-22feb254fd6c # SEO
   includeTableView: false
   maxEntries: 1
   minEntries: 1

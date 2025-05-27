@@ -1,7 +1,8 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea # Contact Thanks
+  -
+    uid: 25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea # Contact Thanks
 handle: contactThanks
 maxAuthors: 1
 name: 'Contact Thanks'

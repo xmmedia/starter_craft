@@ -9,6 +9,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 49a23caf-c4e8-450b-a4d5-7acbe7d2ef69 # Button Text
             handle: null
@@ -25,6 +26,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: fde5281f-1a78-4749-abcc-3c136ffc0258 # Button Link
             handle: null
@@ -47,6 +49,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-04T19:34:28+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null
@@ -63,6 +66,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-03T23:52:17+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 80ffc64e-4e53-4ba1-8e8f-95d4f45b8946 # Text Align
             handle: null
@@ -85,6 +89,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-04T22:07:50+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
@@ -101,6 +106,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T22:07:50+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
             handle: null

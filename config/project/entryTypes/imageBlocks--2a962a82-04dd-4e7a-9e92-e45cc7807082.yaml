@@ -1,37 +1,35 @@
 color: null
 fieldLayouts:
-  6f14124a-258a-4029-a593-302738b750c3:
-    cardView:
-      - 'layoutElement:fbe75a3f-f881-4e9a-be0a-db420b916592'
+  b6f4111d-fae4-4cc7-b336-9431bbc68d18:
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-12-04T20:09:44+00:00'
+            dateAdded: '2025-05-26T20:27:27+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 486e0db8-6cbd-4cd7-85af-77040ab2b43c # Image
+            fieldUid: 451ac180-f985-4b01-ba54-9b873058697b # Image Blocks
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fbe75a3f-f881-4e9a-be0a-db420b916592
+            uid: 184fc152-4306-4533-9ae0-0d109499e78e
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 662a3fce-1a20-478f-bc24-8c3a8278d790
+        uid: 2c8cff48-7b66-47b2-beaf-b0956d2a3612
         userCondition: null
-handle: cardImage
+handle: imageBlocks
 hasTitleField: false
 icon: null
-name: 'Card Image'
-showSlugField: false
+name: 'Image Blocks'
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

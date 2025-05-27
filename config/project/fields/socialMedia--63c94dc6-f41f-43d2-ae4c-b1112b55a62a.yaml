@@ -1,13 +1,18 @@
 columnSuffix: null
 handle: socialMedia
-instructions: 'Set the links to social media platforms. These will be used throughout the site where they are linked to within the design. It won''t update links entered within content blocks.'
+instructions: "Set the links to social media platforms. These will be used throughout the site where they are linked to within the design. It won't update links entered within content blocks."
 name: 'Social Media'
 searchable: false
 settings:
   createButtonLabel: null
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 8b7f28d8-533c-4c53-befc-8bf5de329775 # URLs
+    -
+      __assoc__:
+        -
+          - uid
+          - 8b7f28d8-533c-4c53-befc-8bf5de329775 # URLs
   includeTableView: false
   maxEntries: null
   minEntries: null

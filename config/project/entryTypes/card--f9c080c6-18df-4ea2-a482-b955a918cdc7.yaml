@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T20:36:22+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 12bf30a3-ae66-402c-aa6a-1957b9eace70 # Card
             handle: null

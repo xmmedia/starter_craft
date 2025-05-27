@@ -6,8 +6,13 @@ searchable: false
 settings:
   createButtonLabel: null
   defaultIndexViewMode: cards
+  enableVersioning: false
   entryTypes:
-    - 2338f10f-0595-4642-bd0c-077886b0da3b # Accordion
+    -
+      __assoc__:
+        -
+          - uid
+          - 2338f10f-0595-4642-bd0c-077886b0da3b # Accordion
   includeTableView: false
   maxEntries: null
   minEntries: 1

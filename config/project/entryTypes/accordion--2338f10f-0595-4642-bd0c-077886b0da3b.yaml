@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-02T18:31:17+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: ec34d844-46a7-4389-965e-a1a4048a0798 # Accordion
             handle: null

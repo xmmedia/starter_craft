@@ -1,0 +1,12 @@
+columnSuffix: null
+handle: verticalAlignCenter
+instructions: 'When activated aligns text or items vertically centered'
+name: 'Vertical Align Center'
+searchable: false
+settings:
+  default: false
+  offLabel: 'Vertical Align Top'
+  onLabel: 'Vertical Align Center'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: accordionIcon
-instructions: null
-name: 'Accordion Icon'
+handle: bannerImage
+instructions: 'Image should be 1290x538px or larger and the same proportions'
+name: 'Banner Image'
 searchable: false
 settings:
   allowSelfRelations: false
@@ -15,12 +15,12 @@ settings:
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
   maxRelations: 1
-  minRelations: 0
+  minRelations: null
   previewMode: full
   restrictFiles: true
-  restrictLocation: false
+  restrictLocation: true
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+  restrictedLocationSource: 'volume:7cbed487-b42f-4d26-8ca5-5a6e97aaefc8' # Banner Images
   restrictedLocationSubpath: null
   selectionLabel: null
   showCardsInGrid: false

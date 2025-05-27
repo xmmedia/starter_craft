@@ -37,6 +37,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: fa2ad779-73fc-442c-9c92-1ae549690452 # Summary
             handle: null

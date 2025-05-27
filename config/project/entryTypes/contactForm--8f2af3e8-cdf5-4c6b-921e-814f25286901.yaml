@@ -16,6 +16,7 @@ fieldLayouts:
             userCondition: null
           -
             dateAdded: '2024-12-02T21:19:59+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null

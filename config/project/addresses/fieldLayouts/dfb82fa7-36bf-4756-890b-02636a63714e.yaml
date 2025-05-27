@@ -7,7 +7,7 @@ tabs:
         autocomplete: false
         autocorrect: true
         class: null
-        dateAdded: '2024-12-10T09:48:28-07:00'
+        dateAdded: '2024-12-10T16:48:28+00:00'
         disabled: false
         elementCondition: null
         id: null
@@ -34,7 +34,7 @@ tabs:
         width: 100
       -
         attribute: countryCode
-        dateAdded: '2024-12-10T09:48:28-07:00'
+        dateAdded: '2024-12-10T16:48:28+00:00'
         elementCondition: null
         id: null
         includeInCards: false
@@ -50,7 +50,7 @@ tabs:
         warning: null
         width: 100
       -
-        dateAdded: '2024-12-10T09:48:28-07:00'
+        dateAdded: '2024-12-10T16:48:28+00:00'
         elementCondition: null
         includeInCards: true
         instructions: null

@@ -7,6 +7,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 414f0663-ff97-44ab-b402-98890d76f713 # SEO - Page Title
             handle: null
@@ -23,6 +24,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75 # SEO - Meta Description
             handle: null
@@ -39,6 +41,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd # SEO - Sharing Image
             handle: null
@@ -55,6 +58,7 @@ fieldLayouts:
             width: 50
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219 # SEO - Sharing Image Alt
             handle: null

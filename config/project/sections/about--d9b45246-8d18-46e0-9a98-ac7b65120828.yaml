@@ -1,7 +1,8 @@
 defaultPlacement: end
 enableVersioning: true
 entryTypes:
-  - 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Blocks
+  -
+    uid: 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Blocks
 handle: about
 maxAuthors: 1
 name: About

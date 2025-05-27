@@ -9,6 +9,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d9009def-1bb9-482d-8539-be1829106860 # Post Content - Text
             handle: null

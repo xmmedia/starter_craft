@@ -8,7 +8,17 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-05-26T20:21:06+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: "This block creates main banner image and content at the top of each page. \r\nThere should only be one hero block per page."
+            type: craft\fieldlayoutelements\Tip
+            uid: 0b2b4481-2515-431a-b991-c35c2834fcc4
+            userCondition: null
+          -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb # Herobar Image
             handle: null
@@ -25,6 +35,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 2062b2bd-5662-4e7c-a7cf-0f05a4b4da60 # Herobar - Heading
             handle: heading
@@ -41,6 +52,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863 # Herobar - Subheading
             handle: null

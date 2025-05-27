@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: accordion
+handle: imageBlock
 instructions: null
-name: Accordion
+name: 'Image Block'
 searchable: false
 settings:
   createButtonLabel: null
@@ -12,17 +12,17 @@ settings:
       __assoc__:
         -
           - uid
-          - 72bf15bd-1c10-49b7-9d48-b1192343eea6 # Accordion Heading
+          - fc3034e2-dcef-4781-b247-7e52cc007b39 # Heading
     -
       __assoc__:
         -
           - uid
-          - 41e7d3e7-7f22-4eec-8732-1a4b2cc13182 # Accordion Content
+          - 88653b5e-8ca3-4e44-85c0-6f158c9eca99 # Text Block
     -
       __assoc__:
         -
           - uid
-          - 22bd92e8-fa46-4ac8-b91d-7b8a84bebccb # Accordion Icon
+          - 1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5 # Image
   includeTableView: false
   maxEntries: 3
   minEntries: null

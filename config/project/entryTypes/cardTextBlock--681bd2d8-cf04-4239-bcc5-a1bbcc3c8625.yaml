@@ -7,6 +7,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-04T20:10:07+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
             handle: null
@@ -32,6 +33,6 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{textBlock|striptags|truncate(50, ''...'')}'
+titleFormat: "{textBlock|striptags|truncate(50, '...')}"
 titleTranslationKeyFormat: null
 titleTranslationMethod: site

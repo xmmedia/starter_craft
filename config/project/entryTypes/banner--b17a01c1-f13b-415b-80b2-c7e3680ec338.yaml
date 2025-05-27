@@ -1,15 +1,15 @@
 color: null
 fieldLayouts:
-  5777cba3-f043-4c9f-95c8-fb02e56120a4:
+  f84c98ad-7400-463b-a3c2-5fba6759b74e:
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-11-30T00:05:52+00:00'
+            dateAdded: '2025-05-26T20:10:16+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 2ebda50a-529a-4080-a436-20f253d62a8b # Blocks
+            fieldUid: 730c7dfd-2c56-4285-a09e-65cc6b0332f7 # Banner Image
             handle: null
             includeInCards: false
             instructions: null
@@ -18,71 +18,52 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: f1d0dfa4-6c7f-44e4-ae04-5a9e2f2ffa44
+            uid: c64b1776-2199-45fd-b05f-ecbaeada3fe0
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-26T20:10:16+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 58f3bb22-a6c5-437a-b836-612bf71f7c4d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-26T20:10:16+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 199fa21f-229a-421b-af7b-98cca8e99521
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 7b965790-f90a-4393-9af7-3423fb61da5f
+        uid: 98e3b46d-c478-47f5-a67a-5a222d93010e
         userCondition: null
-      -
-        elementCondition: null
-        elements:
-          -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2025-05-26T20:01:21+00:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: 9850e4f7-21cc-47b0-b4a2-f0d89bf8bbe9
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-12-04T21:17:28+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
-            handle: null
-            includeInCards: false
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: a9284590-8823-4f89-875b-13d3ea5eca41
-            userCondition: null
-            warning: null
-            width: 100
-        name: SEO
-        uid: f4b05aab-c90c-420f-8afc-c59caa06b4cc
-        userCondition: null
-handle: blocks
-hasTitleField: true
+handle: banner
+hasTitleField: false
 icon: null
-name: Blocks
-showSlugField: false
+name: Banner
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

@@ -1,17 +1,17 @@
 color: null
 fieldLayouts:
-  6f14124a-258a-4029-a593-302738b750c3:
+  5d6a8266-367b-4242-ae74-023f9ad6f4e6:
     cardView:
-      - 'layoutElement:fbe75a3f-f881-4e9a-be0a-db420b916592'
+      - 'layoutElement:dabfc40b-ff1f-429d-ac37-c2607342ae8f'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-12-04T20:09:44+00:00'
+            dateAdded: '2025-05-26T20:39:24+00:00'
             editCondition: null
             elementCondition: null
-            fieldUid: 486e0db8-6cbd-4cd7-85af-77040ab2b43c # Image
+            fieldUid: c4018390-9eaa-416b-a81c-bc7ddecf162c # Gallery Image
             handle: null
             includeInCards: true
             instructions: null
@@ -20,18 +20,18 @@ fieldLayouts:
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: fbe75a3f-f881-4e9a-be0a-db420b916592
+            uid: dabfc40b-ff1f-429d-ac37-c2607342ae8f
             userCondition: null
             warning: null
             width: 100
         name: Content
-        uid: 662a3fce-1a20-478f-bc24-8c3a8278d790
+        uid: b84c51fa-6760-42bd-8b0b-a5ec723e67c1
         userCondition: null
-handle: cardImage
+handle: galleryImage
 hasTitleField: false
 icon: null
-name: 'Card Image'
-showSlugField: false
+name: 'Gallery Image'
+showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site

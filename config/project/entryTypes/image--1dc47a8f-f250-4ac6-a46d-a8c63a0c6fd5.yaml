@@ -11,6 +11,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Post Content - Image
             handle: image
@@ -27,6 +28,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-02T16:21:50+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc # Image Caption
             handle: null
@@ -43,6 +45,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-02T16:21:50+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 55db9051-b419-4237-b226-acfb99d40498 # Image Link
             handle: null
@@ -65,6 +68,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-02T16:43:03+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null
@@ -81,6 +85,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-02T16:21:50+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 6eedec95-8e5a-49e4-8206-33ff056d1664 # Image Size
             handle: null
@@ -97,6 +102,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T23:47:37+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 17ed004b-264f-4318-be4a-407867219887 # Image Align
             handle: null
@@ -113,6 +119,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T23:56:41+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: c3bdff5b-2014-42e0-87b1-372f17b8ec0e # Image Vertical Alignment
             handle: null
@@ -135,6 +142,7 @@ fieldLayouts:
         elements:
           -
             dateAdded: '2024-12-04T22:13:59+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
@@ -151,6 +159,7 @@ fieldLayouts:
             width: 100
           -
             dateAdded: '2024-12-04T22:13:59+00:00'
+            editCondition: null
             elementCondition: null
             fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
             handle: null

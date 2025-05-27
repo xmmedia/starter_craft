@@ -10,6 +10,7 @@ settings:
   allowedKinds:
     - image
   branchLimit: null
+  defaultPlacement: end
   defaultUploadLocationSource: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
   defaultUploadLocationSubpath: null
   maintainHierarchy: false

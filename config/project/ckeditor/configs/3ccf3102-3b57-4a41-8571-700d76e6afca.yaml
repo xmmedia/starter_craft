@@ -1,4 +1,4 @@
-css: '@import url(''/editorcss.php'');'
+css: "@import url('/editorcss.php');"
 headingLevels:
   - 1
   - 2
