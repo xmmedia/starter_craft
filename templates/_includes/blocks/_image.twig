@@ -1,36 +1,40 @@
 {% set image = block.image.one() %}
-{% switch block.imageSize %}
-    {% case 'large' %}
-        {% set imageTransform = 'imagelarge' %}
-    {% case 'medium' %}
-        {% set imageTransform = 'imagemedium' %}
-    {% default %}
-        {% set imageTransform = 'imagesmall' %}
+{% set imageSize = block.imageSize|default('imagesmall') %}
+{% set imageAlign = block.imageAlign|default('center') %}
+{% set imageVerticalAlignment = verticalAlignCenter|default('center') %}
+
+{% switch imageSize %}
+{% case 'large' %}
+    {% set imageTransform = 'imagelarge' %}
+{% case 'medium' %}
+    {% set imageTransform = 'imagemedium' %}
+{% default %}
+    {% set imageTransform = 'imagesmall' %}
 {% endswitch %}
-{% switch block.imageAlign %}
-    {% case 'left' %}
-        {# tw: justify-start #}
-        {% set flexJustify = 'start' %}
-    {% case 'right' %}
-        {# tw: justify-end #}
-        {% set flexJustify = 'end' %}
-    {% default %}
-        {# tw: justify-center #}
-        {% set flexJustify = 'center' %}
+
+{% switch imageAlign %}
+{% case 'left' %}
+    {# tw: justify-start #}
+    {% set flexJustify = 'start' %}
+{% case 'right' %}
+    {# tw: justify-end #}
+    {% set flexJustify = 'end' %}
+{% default %}
+    {# tw: justify-center #}
+    {% set flexJustify = 'center' %}
 {% endswitch %}
 {# tw: items-start, items-end, items-center #}
-{% set flexItems = block.imageVerticalAlignment|default('center') %}
+{% set flexItems = imageVerticalAlignment %}
 
-{% set width = block.blockWidth|default('100') %}
-
-<div class="block-image_wrap lg:justify-{{ flexJustify }} items-{{ flexItems }} col-{{ width }}"
+<div class="block-image_wrap
+        justify-{{ flexJustify }} items-{{ flexItems }} col-span-12 md:col-span-{{ width }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <figure>
         {% if block.imageLink %}
         <a href="{{ block.imageLink }}">
-        {% endif %}
+            {% endif %}
             {{ image(image, imageTransform) }}
-        {% if block.imageLink %}
+            {% if block.imageLink %}
         </a>
         {% endif %}
         {% if block.imageCaption|length > 0 %}

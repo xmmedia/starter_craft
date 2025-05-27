@@ -1,0 +1,19 @@
+{% if block.bannerImage|length > 0 %}
+    {% set heading = block.heading|striptags %}
+    {% set textBlock = block.textBlock %}
+    {% set image = block.bannerImage.one() %}
+    {% set imageTransform = 'hero' %}
+<div class="relative banner col-100" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
+    <div class="h-full bg-black-transparent"></div>
+    {% if heading %}
+        <div class="relative">
+            {% if textBlock %}
+                <div class="relative flex flex-wrap w-content mb-12 z-40">
+                    <div class="md:w-1/2">
+                        <div class="tracking-wide text-lg">{{ textBlock }}</div>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% endif %}

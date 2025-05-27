@@ -7,9 +7,7 @@
     <section class="hero col-100" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
         <div class="flex justify-center items-center w-full h-full bg-white-transparent">
             <div class="w-content text-center">
-                {% if heading %}
-                    <h1>{{ heading }}</h1>
-                {% endif %}
+                <h1 class="banner-heading ml-0">{{ entry.title }}</h1>
                 {% if subheading %}
                     <h2>{{ subheading }}</h2>
                 {% endif %}

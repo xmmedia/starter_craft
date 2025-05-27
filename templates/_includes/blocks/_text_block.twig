@@ -1,9 +1,10 @@
-{% set width = block.blockWidth|default('100') %}
+{% set verticalAlignCenter = block.verticalAlignCenter %}
 
 <div class="text-block-wrap
      {% if block.textAlignCenter == true %} text-center{% endif %}
-     lg:text-left col-{{ width }}
-     {% if width == '100' %} mx-auto{% endif %}"
-     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    {{ block.textBlock }}
+     {% if verticalAlignCenter == true %} items-center{% endif %}
+      lg:text-left col-span-12 text-base lg:text-xl md:col-span-{{ width }}
+     {% if width == '12' %} mx-auto{% endif %}"
+    {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+    <div>{{ block.textBlock }}</div>
 </div>

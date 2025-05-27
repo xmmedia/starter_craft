@@ -1,0 +1,7 @@
+<div class="gallery-wrap">
+    {% for galleryImage in block.gallery.all() %}
+        {% if galleryImage %}
+            {{ image(galleryImage.galleryImage.one(), 'gallery') }}
+        {% endif %}
+    {% endfor %}
+</div>
