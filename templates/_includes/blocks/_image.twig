@@ -26,7 +26,7 @@
 {# tw: items-start, items-end, items-center #}
 {% set flexItems = imageVerticalAlignment %}
 
-<div class="block-image_wrap
+<div class="flex flex-wrap
         justify-{{ flexJustify }} items-{{ flexItems }} col-span-12 md:col-span-{{ width }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <figure>

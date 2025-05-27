@@ -45,11 +45,3 @@
 .col-span-12 .text-block-wrap {
   @apply lg:mx-auto;
 }
-
-.block-image_wrap {
-  @apply flex flex-wrap;
-}
-
-.col-span-3 .block-image_wrap {
-    @apply h-auto mb-3;
-}
