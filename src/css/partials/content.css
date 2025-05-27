@@ -34,30 +34,6 @@
   @apply mt-0;
 }
 
-.col-100 {
-  @apply sm:col-span-12;
-}
-
-.col-75 {
-  @apply sm:col-span-12 lg:col-span-9;
-}
-
-.col-66 {
-  @apply sm:col-span-12 lg:col-span-8;
-}
-
-.col-50 {
-  @apply sm:col-span-12 lg:col-span-6;
-}
-
-.col-33 {
-  @apply sm:col-span-12 lg:col-span-4;
-}
-
-.col-25 {
-  @apply sm:col-span-6 lg:col-span-3;
-}
-
 .text-block-wrap {
     @apply flex max-w-11/12 md:max-w-2xl xl:max-w-4xl mx-auto py-8;
 
@@ -66,7 +42,7 @@
     }
 }
 
-.col-100 .text-block-wrap {
+.col-span-12 .text-block-wrap {
   @apply lg:mx-auto;
 }
 

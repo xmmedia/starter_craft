@@ -4,7 +4,7 @@
     {% set image = block.heroImage.one() %}
     {% set imageTransform = 'hero' %}
 
-    <section class="hero col-100" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
+    <section class="hero col-span-12" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
         <div class="flex justify-center items-center w-full h-full bg-white-transparent">
             <div class="w-content text-center">
                 <h1 class="banner-heading ml-0">{{ entry.title }}</h1>
