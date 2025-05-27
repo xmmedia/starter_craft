@@ -3,11 +3,11 @@
 }
 
 .cards-wrap a {
-  @apply ring-offset-white;
+  @apply ring-offset-white text-black;
 }
 
 .card {
-  @apply w-80 p-8 bg-zinc-300 hover:no-underline focus:ring-0;
+  @apply w-80 p-8 bg-zinc-300 hover:no-underline hover:shadow-lg focus:ring-0;
 }
 
 .card p:first-child {
