@@ -14,7 +14,7 @@
     "build": "vite build",
     "lint:js": "eslint --ext .js,.vue public/js *.js",
     "lint:js:fix": "eslint --ext .js,.vue public/js *.js --fix",
-    "lint:css": "stylelint public/css/**/*.css",
+    "lint:css": "stylelint src/css/**/*.css",
     "lint:css:fix": "stylelint public/css/**/*.css --fix",
     "audit:moderate": "npx audit-ci@^7 --moderate --config .audit-ci.jsonc --report-type summary",
     "audit:high": "npx audit-ci@^7 --high --config .audit-ci.jsonc --report-type summary"
