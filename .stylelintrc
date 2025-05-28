@@ -1,6 +1,13 @@
 {
   "extends": ["stylelint-config-standard", "stylelint-config-tailwindcss"],
   "rules": {
+    "selector-class-pattern": [
+      "^[a-z0-9\\-_]+$",
+      {
+        "message": "Expected class selector to be kebab-case or BEM-style (lowercase, digits, hyphens, underscores)."
+      }
+    ],
+    "at-rule-no-deprecated": null,
     "at-rule-no-unknown": [
       true,
       {
