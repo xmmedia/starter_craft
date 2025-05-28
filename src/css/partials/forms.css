@@ -168,10 +168,6 @@ select:focus {
   padding-left: 0.1em;
 }
 
-.form-extra_actions {
-  @apply flex flex-col flex-wrap items-end justify-end list-none;
-}
-
 .form-action {
   @apply text-sm ml-4;
 }
