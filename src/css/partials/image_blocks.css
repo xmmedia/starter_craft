@@ -1,0 +1,29 @@
+.image_block-wrap:nth-of-type(even) {
+    .image_block-image {
+        @apply order-1;
+    }
+    .image_block-content {
+        @apply order-2;
+
+    }
+}
+
+.image_block-wrap:nth-of-type(odd) {
+    .image_block-image {
+        @apply order-2;
+    }
+    .image_block-content {
+        @apply order-1;
+    }
+}
+
+.image_block-image {
+    @apply w-full lg:w-1/2 lg:max-w-1/2;
+    img {
+        @apply mx-auto;
+    }
+}
+
+.image_block-content {
+    @apply flex items-center justify-center w-full lg:w-[600px] lg:max-h-[600px] lg:max-w-1/2 p-24 bg-white ;
+}
