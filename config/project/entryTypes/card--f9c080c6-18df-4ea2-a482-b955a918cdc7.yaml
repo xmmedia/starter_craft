@@ -16,7 +16,7 @@ fieldLayouts:
             id: null
             includeInCards: false
             inputType: null
-            instructions: 'Give the card a name to appear in the editor. This will not appear on the live site.'
+            instructions: null
             label: null
             max: null
             min: null
@@ -28,7 +28,7 @@ fieldLayouts:
             required: true
             size: null
             step: null
-            tip: null
+            tip: 'Only shown in admin'
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: bae24353-bd67-496a-a48f-d3eed985233f
@@ -49,6 +49,23 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 95f944c0-a0ab-4b73-835f-358132052e88
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2025-05-28T19:51:50+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 75b94bea-4929-4bc5-8103-72bd8820c8c8 # Card Link
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 84603530-b7f2-4bc2-836b-b2c01c9bbb1a
             userCondition: null
             warning: null
             width: 100

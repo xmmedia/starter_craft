@@ -1,4 +1,4 @@
-dateModified: 1748292248
+dateModified: 1748461910
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -100,6 +100,7 @@ meta:
     64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: 'Post Content - Image' # Post Content - Image
     68c02e53-bd4b-45e6-8721-dfa278498dbb: 'Herobar Image' # Herobar Image
     72bf15bd-1c10-49b7-9d48-b1192343eea6: 'Accordion Heading' # Accordion Heading
+    75b94bea-4929-4bc5-8103-72bd8820c8c8: 'Card Link' # Card Link
     75f7d82b-4d45-477b-848c-4f539cfe3469: Hero # Hero
     77e77066-5f46-47e0-8cd1-44df0c9e2033: 'Social Media' # Social Media
     80ffc64e-4e53-4ba1-8e8f-95d4f45b8946: 'Text Align' # Text Align

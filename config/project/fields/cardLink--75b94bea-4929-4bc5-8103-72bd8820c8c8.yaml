@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: cardLink
+instructions: null
+name: 'Card Link'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: false
+  placeholder: 'Enter Page Link '
+  uiMode: normal
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText
