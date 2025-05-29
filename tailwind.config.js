@@ -2,13 +2,6 @@ const plugin = require('tailwindcss/plugin');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    content: [
-        './templates/**/*.twig',
-        './public/js/src/**/*.{vue,js}',
-        './public/css/**/*.css',
-        './config/project/ckeditor/**/*.yaml',
-    ],
-
     theme: {
         screens: {
             'xs': '400px',
