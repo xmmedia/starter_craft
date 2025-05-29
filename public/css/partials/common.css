@@ -3,7 +3,7 @@
 @layer base {
     /* this file is for public and private/admin pages */
     a, .button-link {
-        @apply text-blue-500 no-underline transition-all duration-300 ease-in-out outline-none rounded;
+        @apply text-blue-500 no-underline transition-all duration-300 ease-in-out outline-hidden rounded-sm;
     }
 
     a:hover,
@@ -14,7 +14,7 @@
     }
 
     a:focus, .button-link:focus {
-        @apply ring-2 bg-zinc-200;
+        @apply ring-2 ring-zinc-200 bg-zinc-200;
     }
 
     a:disabled, .button-link:disabled {
