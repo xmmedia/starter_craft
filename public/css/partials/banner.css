@@ -3,7 +3,7 @@
 }
 
 .banner-heading {
-    @apply text-gray-400 text-3xl lg:text-6xl font-semibold uppercase w-full max-w-[60%] xl:ml-5 mb-8;
+    @apply text-gray-400 text-3xl lg:text-6xl font-semibold uppercase w-full xl:ml-5 mb-8;
 }
 
 .banner-text {
