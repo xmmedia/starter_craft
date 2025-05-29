@@ -7,7 +7,6 @@
 
     {% block head %}
         {{ craft.vite.script("public/js/src/public.js", false, { 'defer' : true }) }}
-        {{ craft.vite.css('src/styles.js') }}
     {% endblock %}
 
     {% block favicons %}
@@ -42,7 +41,6 @@
                     <svg class="social-icon">
                         <use xlink:href="{{ craft.vite.asset("/images/icons-public.svg") }}#social-instagram"></use>
                     </svg>
-
                 </div>
             </header>
         {% endblock header %}
