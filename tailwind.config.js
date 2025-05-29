@@ -8,17 +8,7 @@ module.exports = {
         './public/css/**/*.css',
         './config/project/ckeditor/**/*.yaml',
     ],
-    safelist: [
-        // vue transition classes: https://vuejs.org/v2/guide/transitions.html#Transition-Classes
-        'md-enter-active',
-        'md-leave-active',
-        'md-enter',
-        'md-leave-active',
-        // {
-        //     pattern: /^(m|p)(t|b|r|l|x|y)?-(0|1|2|3|4|6|8|10|12|16|24)$/,
-        //     variants: ['md', 'lg'],
-        // },
-    ],
+
     theme: {
         screens: {
             'xs': '400px',

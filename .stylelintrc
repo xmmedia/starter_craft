@@ -23,7 +23,8 @@
           "nest",
           "import",
           "reference",
-          "config"
+          "config",
+          "source"
         ]
       }
     ]
