@@ -2,9 +2,8 @@ color: null
 fieldLayouts:
   f9cb0c59-7cba-4b14-95b5-a97e840eb210:
     cardView:
+      - 'layoutElement:69e91706-6a35-43c5-aaa0-775077ee9a21'
       - type
-      - 'layoutElement:43a2eba1-aec5-4a29-a7d1-a5b1441597be'
-      - 'layoutElement:814e76fb-d534-4afe-9253-5d1c94d60693'
     tabs:
       -
         elementCondition: null
@@ -15,7 +14,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -38,7 +37,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
@@ -95,7 +94,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false

@@ -3,6 +3,7 @@ fieldLayouts:
   0ea174a2-617c-4d21-b4e7-3773d97a87b5:
     cardView:
       - 'layoutElement:bb7b634f-5780-4144-89f9-8228402711da'
+      - 'layoutElement:137144ce-7c7c-4cef-95e8-c737b79a007d'
     tabs:
       -
         elementCondition: null
@@ -22,7 +23,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb # Herobar Image
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: 'Herobar Image'
             providesThumbs: true

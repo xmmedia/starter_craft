@@ -28,7 +28,7 @@ fieldLayouts:
             required: false
             size: null
             step: null
-            tip: null
+            tip: 'Only visible in the admin.'
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 69d89569-868c-4cd9-ba4d-11d29272128d

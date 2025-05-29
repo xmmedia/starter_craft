@@ -1,6 +1,10 @@
 color: null
 fieldLayouts:
   f84c98ad-7400-463b-a3c2-5fba6759b74e:
+    cardView:
+      - 'layoutElement:c64b1776-2199-45fd-b05f-ecbaeada3fe0'
+      - type
+      - 'layoutElement:58f3bb22-a6c5-437a-b836-612bf71f7c4d'
     tabs:
       -
         elementCondition: null
@@ -11,7 +15,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 730c7dfd-2c56-4285-a09e-65cc6b0332f7 # Banner Image
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -28,7 +32,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false

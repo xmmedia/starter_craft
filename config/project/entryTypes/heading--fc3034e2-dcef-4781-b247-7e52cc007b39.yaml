@@ -2,36 +2,19 @@ color: null
 fieldLayouts:
   8290f42c-be7d-495f-930d-62189f73dc3d:
     cardView:
-      - 'layoutElement:8368a790-29ed-4910-8fec-2b1ea60a3fe1'
-      - 'layoutElement:c113e3ed-b6c6-4b1f-8620-dc72895742e9'
+      - 'layoutElement:5e95a9e0-5571-4685-8d60-5a6ff21e9971'
+      - type
     tabs:
       -
         elementCondition: null
         elements:
-          -
-            dateAdded: '2024-12-02T16:46:19+00:00'
-            editCondition: null
-            elementCondition: null
-            fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
-            handle: null
-            includeInCards: true
-            instructions: null
-            label: null
-            providesThumbs: false
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 8368a790-29ed-4910-8fec-2b1ea60a3fe1
-            userCondition: null
-            warning: null
-            width: 100
           -
             dateAdded: '2024-11-30T00:13:57+00:00'
             editCondition: null
             elementCondition: null
             fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -48,6 +31,23 @@ fieldLayouts:
       -
         elementCondition: null
         elements:
+          -
+            dateAdded: '2024-12-02T16:46:19+00:00'
+            editCondition: null
+            elementCondition: null
+            fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
+            handle: null
+            includeInCards: false
+            instructions: null
+            label: null
+            providesThumbs: false
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 8368a790-29ed-4910-8fec-2b1ea60a3fe1
+            userCondition: null
+            warning: null
+            width: 100
           -
             dateAdded: '2024-12-02T16:50:32+00:00'
             editCondition: null
@@ -94,7 +94,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
