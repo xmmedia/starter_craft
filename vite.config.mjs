@@ -7,44 +7,49 @@ import dns from 'dns';
 
 dns.setDefaultResultOrder('verbatim');
 
-export default defineConfig({
-    plugins: [
-        mkcert(),
-        vuePlugin(),
-        tailwindcss(),
-    ],
-    base: '/build',
-    build: {
-        outDir: 'public/build',
-        rollupOptions: {
-            input: {
-                public: './public/js/src/public.js',
-                editor: './public/js/src/editor.js',
+export default defineConfig(({ command }) => {
+    return {
+        appType: 'custom',
+        base: '/build',
+        build: {
+            outDir: 'public/build',
+            sourcemap: 'serve' === command,
+            rollupOptions: {
+                input: {
+                    public: './public/js/src/public.js',
+                    editor: './public/js/src/editor.js',
+                },
+            },
+            copyPublicDir: false,
+            assetsInlineLimit: 0,
+            manifest: true,
+        },
+        clearScreen: false,
+        css: {
+            devSourcemap: true,
+        },
+        plugins: [
+            mkcert(),
+            vuePlugin(),
+            tailwindcss(),
+        ],
+        resolve: {
+            alias: {
+                '@': fileURLToPath(new URL('./public/js/src', import.meta.url)),
             },
         },
-        sourcemap: true,
-        copyPublicDir: false,
-        assetsInlineLimit: 0,
-        manifest: true,
-    },
-    resolve: {
-        alias: {
-            '@': fileURLToPath(new URL('./public/js/src', import.meta.url)),
+        server: {
+            host: true,
+            port: 9028,
+            origin: 'https://localhost:9028',
+            cors: {
+                origin: 'https://craftstarter.lndo.site',
+            },
+            strictPort: true,
+            https: true,
+            watch: {
+                ignored: ['**/vendor/**', '**/var/**'],
+            },
         },
-    },
-    css: {
-        devSourcemap: true,
-    },
-    server: {
-        host: true,
-        port: 9028,
-        origin: 'https://localhost:9028',
-        strictPort: true,
-        https: true,
-        watch: {
-            ignored: ['**/vendor/**', '**/var/**'],
-        },
-    },
-    appType: 'custom',
-    clearScreen: false,
+    };
 });
