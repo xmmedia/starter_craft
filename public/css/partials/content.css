@@ -1,0 +1,60 @@
+.w-content,
+.w-content-narrow,
+.w-content-copy,
+.w-content-wide {
+    @apply max-w-11/12 mx-auto;
+}
+
+.w-content {
+    @apply xl:max-w-6xl;
+}
+.w-content-copy {
+    @apply sm:max-w-xl;
+}
+.w-content-narrow {
+    @apply md:max-w-3xl;
+}
+.w-content-wide {
+    @apply 2xl:max-w-7xl;
+}
+
+.blocks-wrap {
+    @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 gap-y-8 justify-center lg:justify-start
+    w-full max-w-11/12 xl:max-w-8xl mx-auto lg:px-8 2xl:px-0 py-8;
+
+    /* Remove top margin from first child text/content elements */
+    p:first-child,
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    ul:first-child,
+    ol:first-child {
+        @apply mt-0;
+    }
+}
+
+.text-block-wrap {
+    @apply flex max-w-11/12 md:max-w-2xl xl:max-w-4xl mx-auto py-8;
+
+    p:first-child,
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    ul:first-child,
+    ol:first-child {
+        @apply mt-0;
+    }
+
+    p:last-of-type {
+        @apply mb-0;
+    }
+}
+
+/* Ensure .text-block-wrap is centered when inside .col-span-12 */
+.col-span-12 {
+    .text-block-wrap {
+        @apply lg:mx-auto;
+    }
+}

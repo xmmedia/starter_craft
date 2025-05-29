@@ -13,11 +13,13 @@
 @import "./partials/embed.css";
 @import "./partials/buttons.css";
 @import "./partials/details.css";
+@import "./partials/gallery.css";
 @import "./partials/social.css";
 @import "./partials/content.css";
 @import "./partials/header.css";
 @import "./partials/footer.css";
 @import "./partials/hero.css";
+@import "./partials/banner.css";
 @import "./partials/cards.css";
 
 /* page specific */

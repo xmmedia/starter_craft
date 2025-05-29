@@ -5,7 +5,7 @@ module.exports = {
     content: [
         './templates/**/*.twig',
         './public/js/src/**/*.{vue,js}',
-        './src/css/**/*.css',
+        './public/css/**/*.css',
         './config/project/ckeditor/**/*.yaml',
     ],
     safelist: [
@@ -39,6 +39,7 @@ module.exports = {
                 '1/2': '50%',
                 '3/5': '60%',
                 '11/12': '91%',
+                '8xl' : '90rem',
             },
             height: {
                 '120': '30rem',

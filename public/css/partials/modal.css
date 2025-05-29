@@ -1,0 +1,9 @@
+.md-enter-active,
+.md-leave-active {
+    @apply transition-all duration-500;
+}
+
+.md-enter,
+.md-leave-active {
+    @apply opacity-0 translate-y-6;
+}

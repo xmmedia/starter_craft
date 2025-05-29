@@ -14,7 +14,7 @@
     "build": "vite build",
     "lint:js": "eslint --ext .js,.vue public/js *.js",
     "lint:js:fix": "eslint --ext .js,.vue public/js *.js --fix",
-    "lint:css": "stylelint src/css/**/*.css",
+    "lint:css": "stylelint public/css/**/*.css",
     "lint:css:fix": "stylelint public/css/**/*.css --fix",
     "audit:moderate": "npx audit-ci@^7 --moderate --config .audit-ci.jsonc --report-type summary",
     "audit:high": "npx audit-ci@^7 --high --config .audit-ci.jsonc --report-type summary"
@@ -26,6 +26,7 @@
   "devDependencies": {
     "@babel/core": "^7.0.0",
     "@faker-js/faker": "^9.0.1",
+    "@tailwindcss/postcss": "^4.1.8",
     "@tailwindcss/typography": "^0.5.0",
     "@tailwindcss/vite": "^4.1.7",
     "@vitejs/plugin-vue": "^5.0.0",
