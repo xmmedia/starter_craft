@@ -10,23 +10,9 @@
       }
     ],
     "at-rule-no-deprecated": null,
-    "at-rule-no-unknown": [
+    "no-invalid-position-at-import-rule": [
       true,
-      {
-        "ignoreAtRules": [
-          "tailwind",
-          "apply",
-          "layer",
-          "variants",
-          "responsive",
-          "screen",
-          "nest",
-          "import",
-          "reference",
-          "config",
-          "source"
-        ]
-      }
+      { "ignoreAtRules": ["config"] }
     ]
   }
 }
