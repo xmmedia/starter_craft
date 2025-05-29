@@ -1,7 +1,7 @@
 <div class="grid grid-cols-3 gap-8">
 {% for post in posts %}
 
-		<article class="p-6 border ">
+		<article class="p-6 border border-gray-400">
 			{% if post.featureImage.one() %}
 				{% set image = post.featureImage.one() %}
 				<div class="thumbnail">

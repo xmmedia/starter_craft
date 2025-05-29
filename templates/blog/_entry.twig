@@ -22,9 +22,9 @@
         </div>
 
 		{% if entry.postCategories | length %}
-			<div class="w-content border-t py-2 mb-6">
+			<div class="w-content border-t border-gray-400 py-2 mb-6">
 				{% for category in entry.postCategories.all() %}
-				<a href="{{ category.url }}" class="inline-block border rounded px-2 py-1 text-sm">
+				<a href="{{ category.url }}" class="inline-block border border-gray-400 rounded px-2 py-1 text-sm">
 				  {{- category.title }}
 				</a>
 				{% endfor %}
