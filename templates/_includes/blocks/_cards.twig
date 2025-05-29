@@ -1,7 +1,7 @@
 <div class="col-span-12" {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div class="cards-wrap pt-36 z-0">
         {% for cardItem in block.cards.all() %}
-            <a href="{{ card.cardLink }}" class="relative card">
+            <a href="{{ cardItem.cardLink }}" class="relative card">
                 {% for item in cardItem.card.all() %}
                     {% if item.type.handle == 'cardImage' %}
                         {% set image = item.image[0] %}
