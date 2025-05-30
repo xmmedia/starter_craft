@@ -1,4 +1,4 @@
-dateModified: 1748544679
+dateModified: 1748625005
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -64,6 +64,7 @@ meta:
     2a962a82-04dd-4e7a-9e92-e45cc7807082: 'Image Blocks' # Image Blocks
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
+    3b8ce3ab-45bc-4658-8990-47cab2d46d75: 'Pattern Library' # Pattern Library
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Image - Small' # Image - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information

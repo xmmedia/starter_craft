@@ -2,7 +2,6 @@ color: null
 fieldLayouts:
   8290f42c-be7d-495f-930d-62189f73dc3d:
     cardView:
-      - 'layoutElement:5e95a9e0-5571-4685-8d60-5a6ff21e9971'
       - type
     tabs:
       -
@@ -14,7 +13,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false

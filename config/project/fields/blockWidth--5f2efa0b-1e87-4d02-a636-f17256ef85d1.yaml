@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: blockWidth
-instructions: 'Select percentage width of block.'
+instructions: "Select a column width of block out of 12.\r\ni.e. 12/12 = 100% width. 6/12 = 50%"
 name: 'Block Width'
 searchable: false
 settings:
@@ -8,7 +8,7 @@ settings:
   max: 12
   min: 1
   step: 1
-  suffix: '%'
+  suffix: 'out of 12'
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Range

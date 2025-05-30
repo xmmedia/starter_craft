@@ -1,0 +1,28 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Blocks
+handle: patternLibrary
+maxAuthors: 5
+name: 'Pattern Library'
+previewTargets:
+  -
+    __assoc__:
+      -
+        - label
+        - 'Primary entry page'
+      -
+        - urlFormat
+        - '{url}'
+      -
+        - refresh
+        - '1'
+propagationMethod: all
+siteSettings:
+  42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter
+    enabledByDefault: true
+    hasUrls: true
+    template: _default.twig
+    uriFormat: pattern-library
+type: single
