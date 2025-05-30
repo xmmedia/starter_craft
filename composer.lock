@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "251ce9968a40b0c3a3217455f28114a8",
+    "content-hash": "f428744038c16237dacd0fb79b87802f",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -776,11 +776,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.7.8",
+            "version": "5.7.8.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/cms.git",
+                "reference": "6d580b459896e565598ed070276c385af838dad4"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/3fea28125abcf67e0f556da9f1ee8093d58e3641",
-                "reference": "3fea28125abcf67e0f556da9f1ee8093d58e3641",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/6d580b459896e565598ed070276c385af838dad4",
+                "reference": "6d580b459896e565598ed070276c385af838dad4",
                 "shasum": ""
             },
             "require": {
@@ -841,6 +846,22 @@
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "yii2tech/ar-softdelete": "1.0.4"
             },
+            "require-dev": {
+                "codeception/codeception": "^5.2.0",
+                "codeception/lib-innerbrowser": "4.0.1",
+                "codeception/module-asserts": "^3.0.0",
+                "codeception/module-datafactory": "^3.0.0",
+                "codeception/module-phpbrowser": "^3.0.0",
+                "codeception/module-rest": "^3.3.2",
+                "codeception/module-yii2": "^1.1.9",
+                "craftcms/ecs": "dev-main",
+                "fakerphp/faker": "^1.19.0",
+                "league/factory-muffin": "^3.3.0",
+                "phpstan/phpstan": "^1.10.56",
+                "rector/rector": "^1.2",
+                "vlucas/phpdotenv": "^5.4.1",
+                "yiisoft/yii2-redis": "^2.0"
+            },
             "suggest": {
                 "ext-exif": "Adds support for parsing image EXIF data.",
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
@@ -853,6 +874,7 @@
                     "yii2tech\\ar\\softdelete\\": "lib/ar-softdelete/src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -870,14 +892,14 @@
                 "yii2"
             ],
             "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
                 "docs": "https://craftcms.com/docs/5.x/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "rss": "https://github.com/craftcms/cms/releases.atom",
+                "source": "https://github.com/craftcms/cms"
             },
-            "time": "2025-05-28T18:48:09+00:00"
+            "time": "2025-05-30T16:30:35+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -4203,12 +4225,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "ee2528399ca30fe65a23165183190be42c0b109a"
+                "reference": "c6007a53027047b08044448c57571988ac9b6e93"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/ee2528399ca30fe65a23165183190be42c0b109a",
-                "reference": "ee2528399ca30fe65a23165183190be42c0b109a",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/c6007a53027047b08044448c57571988ac9b6e93",
+                "reference": "c6007a53027047b08044448c57571988ac9b6e93",
                 "shasum": ""
             },
             "conflict": {
@@ -4742,6 +4764,7 @@
                 "phpmyadmin/phpmyadmin": "<5.2.2",
                 "phpmyfaq/phpmyfaq": "<3.2.5|==3.2.5|>=3.2.10,<=4.0.1",
                 "phpoffice/common": "<0.2.9",
+                "phpoffice/math": "<=0.2",
                 "phpoffice/phpexcel": "<=1.8.2",
                 "phpoffice/phpspreadsheet": "<1.29.9|>=2,<2.1.8|>=2.2,<2.3.7|>=3,<3.9",
                 "phpseclib/phpseclib": "<2.0.47|>=3,<3.0.36",
@@ -5137,7 +5160,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-05-28T18:06:42+00:00"
+            "time": "2025-05-29T18:07:06+00:00"
         },
         {
             "name": "samdark/yii2-psr-log-target",
