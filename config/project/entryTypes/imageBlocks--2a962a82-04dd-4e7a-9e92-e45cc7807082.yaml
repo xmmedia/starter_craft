@@ -6,6 +6,15 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2025-05-30T19:52:50+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Creates an easy block that has an image and text side by side.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 01631e60-5783-4a40-9549-eb62723da60a
+            userCondition: null
+          -
             dateAdded: '2025-05-26T20:27:27+00:00'
             editCondition: null
             elementCondition: null
