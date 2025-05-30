@@ -2,9 +2,7 @@ color: null
 fieldLayouts:
   bc20d52e-2493-47df-89e3-b63139731a31:
     cardView:
-      - 'layoutElement:6397da29-9c20-4124-b59a-381c81cfe0cb'
-      - 'layoutElement:e3bf449f-7aa6-4bf0-b23a-a1933672a3d5'
-      - 'layoutElement:5ad0c4e0-5dc7-4122-84c4-fc2f504ea355'
+      - 'layoutElement:b761546f-8e73-45fd-8b4e-1dbdce3ccf94'
     tabs:
       -
         elementCondition: null
@@ -15,7 +13,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Post Content - Image
             handle: image
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: Image
             providesThumbs: true
@@ -32,7 +30,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc # Image Caption
             handle: null
-            includeInCards: false
+            includeInCards: true
             instructions: null
             label: null
             providesThumbs: false
@@ -72,7 +70,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false
@@ -146,7 +144,7 @@ fieldLayouts:
             elementCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
-            includeInCards: true
+            includeInCards: false
             instructions: null
             label: null
             providesThumbs: false

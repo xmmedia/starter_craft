@@ -1,0 +1,11 @@
+fill: null
+format: null
+handle: imageBlock
+height: 500
+interlace: none
+mode: crop
+name: 'Image Block'
+position: center-center
+quality: null
+upscale: true
+width: 500

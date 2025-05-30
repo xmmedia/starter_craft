@@ -1,4 +1,4 @@
-dateModified: 1748625005
+dateModified: 1748633383
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -158,6 +158,7 @@ meta:
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
     e797d026-fc3a-408a-a1c8-c17aa4f57f3d: Assets # Assets
+    e3499da5-5edf-46f5-95cc-7f24c8c8f862: 'Image Block' # Image Block
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
     ec34d844-46a7-4389-965e-a1a4048a0798: Accordion # Accordion
     f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
