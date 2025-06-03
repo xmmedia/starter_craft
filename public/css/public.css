@@ -12,6 +12,7 @@
 
 /* common styles */
 @import "./partials/alerts.css";
+@import "./partials/accordion.css";
 @import "./partials/content_alignment.css";
 @import "./partials/headings.css";
 @import "./partials/forms.css";
