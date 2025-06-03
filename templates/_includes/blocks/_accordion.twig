@@ -1,4 +1,4 @@
-<div class="col-span-12" {% if block.elementId %}id="{{ block.elementId }}"{% endif %}>
+<div class="col-span-{{ width }}" {% if block.elementId %}id="{{ block.elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}
         {% set heading = null %}
         {% set textBlock = null %}
@@ -15,8 +15,8 @@
             {% endswitch %}
         {% endfor %}
 
-        <details class="relative my-6">
-            <summary class="flex justify-between w-full z-50 pt-2">
+        <details class="relative max-w-3xl mx-auto my-6">
+            <summary class="accordion-summary">
                 <span class="flex items-center gap-2">
                     {% if icon %}
                         {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
@@ -26,7 +26,7 @@
                 <span class="details-plus">+</span>
                 <span class="details-minus">−</span>
             </summary>
-            <div class="pl-12">{{ textBlock }}</div>
+            <div class="bg-gray-200 py-12 pl-12">{{ textBlock }}</div>
         </details>
 {#        {{ dump(accordion.accordion.all()[2].accordionIcon ) }}#}
     {% endfor %}
