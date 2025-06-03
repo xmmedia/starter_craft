@@ -6,36 +6,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2024-12-09T23:32:08+00:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            includeInCards: false
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            providesThumbs: false
-            readonly: false
-            required: true
-            size: null
-            step: null
-            tip: 'Only shown in admin'
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: bae24353-bd67-496a-a48f-d3eed985233f
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-12-04T20:36:22+00:00'
             editCondition: null
             elementCondition: null
@@ -73,7 +43,7 @@ fieldLayouts:
         uid: decee093-ad21-4ef2-a706-7c96b2acdcb7
         userCondition: null
 handle: card
-hasTitleField: true
+hasTitleField: false
 icon: null
 name: Card
 showSlugField: false

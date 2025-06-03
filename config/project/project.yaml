@@ -1,4 +1,4 @@
-dateModified: 1748647182
+dateModified: 1748979904
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -114,6 +114,7 @@ meta:
     486e0db8-6cbd-4cd7-85af-77040ab2b43c: Image # Image
     511f52f1-d8bb-4d5e-820d-d3f65afcfdc9: 'Text Block Simple' # Text Block Simple
     554d5c17-904d-4637-9bfc-f85a9f70ba44: Blocks # Blocks
+    605efa4c-a424-4d47-b191-23b72038cc7b: 'Video Thumbnail' # Video Thumbnail
     609f74fc-ee58-439b-afdb-10d9c919d562: Cards # Cards
     681bd2d8-cf04-4239-bcc5-a1bbcc3c8625: 'Card Text Block' # Card Text Block
     683dcf54-f292-4177-bc23-e0af464cc90e: 'Public Schema' # Public Schema
