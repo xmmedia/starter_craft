@@ -40,9 +40,11 @@ export default defineConfig(({ command }) => {
         },
         server: {
             host: true,
+            // @todo-craft change port number 2x
             port: 9028,
             origin: 'https://localhost:9028',
             cors: {
+                // @todo-craft update to match your local dev URL
                 origin: 'https://craftstarter.lndo.site',
             },
             strictPort: true,
