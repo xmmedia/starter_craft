@@ -1,23 +1,23 @@
 .header-nav_item {
     @apply mx-4;
-}
 
-.header-nav_item:last-of-type {
-    @apply mr-0;
+    &:last-of-type {
+        @apply mr-0;
+    }
 }
 
 .header-nav_item-products {
     @apply hidden;
-}
 
-@media (width >= 640px) {
-    .header-nav_item-products {
+    @media (width >= 640px) {
         @apply block;
     }
 }
 
-.header-mobile-open .header-nav_item {
-    @apply block;
+.header-mobile-open {
+    .header-nav_item {
+        @apply block;
+    }
 }
 
 @media (width >= 640px) {
