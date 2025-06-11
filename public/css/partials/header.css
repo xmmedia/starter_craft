@@ -6,13 +6,14 @@
     }
 }
 
-.header-nav_item-products {
+/* Menu items need to be revealed at the desired screen size using mq
+ .header-nav_item-products {
     @apply hidden;
 
     @media (width >= 640px) {
         @apply block;
     }
-}
+/*} */
 
 .header-mobile-open {
     .header-nav_item {
