@@ -36,14 +36,14 @@
     "dotenv": "^17.0.0",
     "eslint": "^8.0.0",
     "eslint-plugin-vue": "^9.0.0",
-    "jsdom": "^24.0.0",
+    "jsdom": "^26.0.0",
     "stylelint": "^16.0.2",
     "stylelint-config-standard": "^38.0.0",
     "stylelint-config-tailwindcss": "^1.0.0",
     "tailwindcss": "^4.1.7",
     "vite": "^7.0.0",
     "vite-plugin-mkcert": "^1.16.0",
-    "vitest": "^2.1.1"
+    "vitest": "^3.0.0"
   },
   "packageManager": "yarn@4.9.1"
 }
