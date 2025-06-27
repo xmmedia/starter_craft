@@ -7,10 +7,10 @@
 
 @import "tailwindcss";
 
-@layer components {
-    /* base styles */
-    @import "./partials/base.css";
+/* base styles */
+@import "./partials/base.css";
 
+@layer components {
     /* common styles */
     @import "./partials/headings.css";
     @import "./partials/content.css";
