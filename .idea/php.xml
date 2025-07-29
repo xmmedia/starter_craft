@@ -57,7 +57,6 @@
       <path value="$PROJECT_DIR$/vendor/verbb/base" />
       <path value="$PROJECT_DIR$/vendor/verbb/field-manager" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
-      <path value="$PROJECT_DIR$/vendor/mmikkel/cp-field-inspect" />
       <path value="$PROJECT_DIR$/vendor/samdark/yii2-psr-log-target" />
       <path value="$PROJECT_DIR$/vendor/phpstan/phpdoc-parser" />
       <path value="$PROJECT_DIR$/vendor/dasprid/enum" />
