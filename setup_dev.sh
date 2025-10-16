@@ -61,9 +61,9 @@ printf "\n\n"
 
 if [ $(echo "$PHP_VERSION >= $PHP_MINIMUM_VERSION" | bc) -eq 0 ]; then
     echo "Switching PHP version to ${PHP_MINIMUM_VERSION}"
-    printf "\nsource /opt/remi/php81/enable" >> ~/.zshrc
-    printf "\nsource /opt/remi/php81/enable" >> ~/.bashrc
-    source /opt/remi/php81/enable
+    printf "\nsource /opt/remi/php84/enable" >> ~/.zshrc
+    printf "\nsource /opt/remi/php84/enable" >> ~/.bashrc
+    source /opt/remi/php84/enable
     php -v
 fi
 
