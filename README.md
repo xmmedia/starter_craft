@@ -103,3 +103,17 @@ Craft admin is located at `/admin`
   - [GitLab](https://gitlab.com/) – deployment
   - Dev Tools
     - [Vue Devtools](https://github.com/vuejs/vue-devtools)
+
+## Updating PHP version
+
+1. Change version in `composer.json`.
+1. Update the PHP version in the following files:
+    - `.lando.yml`
+    - `setup_dev.sh` – 4 places
+    - `setup_prod.sh` – 4 places
+    - `.gitlab-ci.yml` – 2 places
+    - `.php-cs-fixer.dist.php` – add the new version or update the `@PHP8#Migration` version to match the current version.
+1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
+1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
+1. Update version in `README.md`.
+
