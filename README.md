@@ -19,7 +19,8 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
    6. Run `. ./node_setup.sh` (this will setup node & install the JS packages – requires yarn to be installed).
    7. Run `yarn dev` or `yarn build` (for production) to compile JS & CSS files.
    8. Give executable perms to bin dir: `chmod u+x craft`
-   9. Install craft: `./craft install/craft`
+   9. Ensure you have lando running.
+   10. Within `lando ssh`, install craft: `./craft install/craft`
 5. Remove or update the `LICENSE` file.
 6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
 7. Composer install & update (locally): `composer install && composer update`
