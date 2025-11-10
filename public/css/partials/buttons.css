@@ -11,10 +11,10 @@
     }
 
     &:disabled {
-        @apply bg-gray-400 border-gray-400 cursor-default;
+        @apply bg-gray-400 border-gray-400 cursor-not-allowed;
 
         &:hover {
-            @apply bg-gray-400 border-gray-400 cursor-default;
+            @apply bg-gray-400 border-gray-400 cursor-not-allowed;
         }
     }
 }
