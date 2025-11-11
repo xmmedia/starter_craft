@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   8290f42c-be7d-495f-930d-62189f73dc3d:
+    cardThumbAlignment: end
     cardView:
       - type
     tabs:

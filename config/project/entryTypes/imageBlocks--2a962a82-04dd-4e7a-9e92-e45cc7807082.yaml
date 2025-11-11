@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   b6f4111d-fae4-4cc7-b336-9431bbc68d18:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null

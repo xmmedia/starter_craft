@@ -1,5 +1,6 @@
 fieldLayouts:
   0ff68ca1-69a6-441e-b612-244774f99bc7:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null

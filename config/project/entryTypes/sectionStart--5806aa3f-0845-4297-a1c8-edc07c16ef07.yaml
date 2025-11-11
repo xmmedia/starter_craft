@@ -1,6 +1,8 @@
 color: yellow
+description: null
 fieldLayouts:
   335cf2cd-41e8-4642-9df4-fc7a851807de:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null

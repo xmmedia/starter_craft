@@ -1,6 +1,8 @@
 color: null
+description: null
 fieldLayouts:
   6f14124a-258a-4029-a593-302738b750c3:
+    cardThumbAlignment: end
     cardView:
       - 'layoutElement:fbe75a3f-f881-4e9a-be0a-db420b916592'
     tabs:

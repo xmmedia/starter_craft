@@ -1,6 +1,7 @@
 defaultPlacement: end
 fieldLayouts:
   9238708f-ff7b-4ff4-9424-a8bfb9abbb25:
+    cardThumbAlignment: end
     tabs:
       -
         elementCondition: null
