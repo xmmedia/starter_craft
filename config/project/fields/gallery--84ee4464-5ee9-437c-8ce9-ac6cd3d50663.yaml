@@ -4,7 +4,7 @@ instructions: null
 name: Gallery
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'Add Image'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -13,9 +13,12 @@ settings:
         -
           - uid
           - 70722bde-7efe-42d4-a06e-399a44b02435 # Gallery Image
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
-  minEntries: null
+  minEntries: 1
   pageSize: 50
   propagationKeyFormat: null
   propagationMethod: all
