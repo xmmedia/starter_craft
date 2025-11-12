@@ -9,30 +9,28 @@ dns.setDefaultResultOrder('verbatim');
 
 export default defineConfig(({ command }) => {
     return {
-        appType: 'custom',
-        base: '/build',
+        plugins: [
+            mkcert(),
+            vuePlugin(),
+            tailwindcss(),
+        ],
         build: {
             outDir: 'public/build',
-            sourcemap: 'serve' === command,
             rollupOptions: {
                 input: {
                     public: './public/js/src/public.js',
                     editor: './public/js/src/editor.js',
                 },
             },
+            sourcemap: 'serve' === command,
+            // don't inline assets
             copyPublicDir: false,
             assetsInlineLimit: 0,
             manifest: true,
         },
-        clearScreen: false,
         css: {
             devSourcemap: true,
         },
-        plugins: [
-            mkcert(),
-            vuePlugin(),
-            tailwindcss(),
-        ],
         resolve: {
             alias: {
                 '@': fileURLToPath(new URL('./public/js/src', import.meta.url)),
@@ -53,5 +51,7 @@ export default defineConfig(({ command }) => {
                 ignored: ['**/vendor/**', '**/var/**'],
             },
         },
+        appType: 'custom',
+        clearScreen: false,
     };
 });
