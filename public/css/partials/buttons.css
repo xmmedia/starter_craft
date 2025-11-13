@@ -3,7 +3,7 @@
     leading-tight transition-all duration-300 ease-in-out outline-hidden rounded-sm;
 
     &:hover {
-        @apply text-white border-blue-800 bg-blue-800 no-underline;
+        @apply text-white border-blue-800 bg-blue-800 no-underline cursor-pointer;
     }
 
     &:focus {
