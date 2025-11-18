@@ -9,7 +9,6 @@ import Menu from './common/menu.vue';
 
 // CSS
 import '../../css/public.css';
-import '../../css/editor.css';
 
 // images
 import '../../images/icons-public.svg';
