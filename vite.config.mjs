@@ -23,8 +23,8 @@ export default defineConfig(({ command }) => {
                 },
             },
             sourcemap: 'serve' === command,
-            // don't inline assets
             copyPublicDir: false,
+            // don't inline assets
             assetsInlineLimit: 0,
             manifest: true,
         },
