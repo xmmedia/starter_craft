@@ -113,6 +113,7 @@ deploy to staging:
   environment:
     name: staging
     url: $STAGING_URL
+  when: manual
 
 deploy to prod:
   <<: *deploy
