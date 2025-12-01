@@ -8,7 +8,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
     ```sh
     composer create-project xm/starter_craft project-name --stability=dev --no-install --remove-vcs
     ```
-2. Update `composer.json`: `name`, `license` (likely `private`) and `description`
+2. Update `composer.json`: `name`, `license` (likely `proprietary`) and `description`
 3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
 4. Setup dev server:
    1. If using InterWorx, upload `setup_dev.sh` and run: `sh ./setup_dev.sh` 
@@ -118,3 +118,4 @@ Craft admin is located at `/admin`
 1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
 1. Update version in `README.md`.
 
+consider: https://plugins.craftcms.com/image-toolbox?craft4
