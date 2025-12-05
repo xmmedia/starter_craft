@@ -33,6 +33,9 @@ return GeneralConfig::create()
         '@webroot' => dirname(__DIR__).'/public',
     ])
     ->convertFilenamesToAscii()
+    // disable garbage collection for unsaved drafts and soft-deleted elements
+    ->purgeUnsavedDraftsDuration(0)
+    ->softDeleteDuration(0)
     ->maxUploadFileSize('50M')
     // in prod/staging, don't run the queue automatically, instead use cron job (every minute)
     ->runQueueAutomatically(App::env('DEV_MODE') ?? false)
