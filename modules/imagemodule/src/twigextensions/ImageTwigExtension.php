@@ -70,7 +70,11 @@ class ImageTwigExtension extends AbstractExtension
         }
 
         if (!array_key_exists('alt', $attributes)) {
-            $attributes['alt'] = $image->title;
+            if (!empty(trim((string) $image->alt))) {
+                $attributes['alt'] = $image->alt;
+            } else {
+                $attributes['alt'] = $image->title;
+            }
         }
 
         if ('svg' === $image->extension) {
