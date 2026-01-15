@@ -12,6 +12,7 @@ config:
   config:
     php: lando_php.ini
   php: '8.4'
+  database: mysql:8.0
   webroot: public
   xdebug: true
 services:
@@ -19,7 +20,6 @@ services:
     build_as_root:
       - a2enmod headers
   database:
-    type: mysql:8.0
     creds:
       user:     craft
       password: craft
