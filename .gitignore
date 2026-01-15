@@ -77,6 +77,10 @@ cypress/integration/examples
 !.vscode/extensions.json
 ###< vscode ###
 
+###> claude-code ###
+.claude/
+###< claude-code ###
+
 ###< yarn ###
 .pnp.*
 .yarn/*
