@@ -5,7 +5,6 @@
 
     {% for block in entry.blocks.all() %}
         {% if block.type.handle in ['heading', 'textBlock', 'image', 'button', 'accordionWrapper'] %}
-            {#        {% if block.type.handle == 'heading' or block.type.handle == 'textBlock' or block.type.handle == 'image' or block.type.handle == 'button' or block.type.handle == 'sectionAbout' %}#}
             {% if blockStarted == false %}
                 <div class="blocks-wrap">
                 {% set blockStarted = true %}
