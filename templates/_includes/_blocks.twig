@@ -44,24 +44,24 @@
             {% case 'heading' %}
                 {% include '_includes/blocks/_heading.twig'
                     with {
-                    textAlign: block.textAlign,
-                }
+                        textAlign: block.textAlign,
+                    }
                 %}
 
             {% case 'textBlock' %}
                 {% include '_includes/blocks/_text_block.twig'
                     with {
-                    width: block.blockWidth|default('12'),
-                }
+                        width: block.blockWidth|default('12'),
+                    }
                 %}
 
             {% case 'image' %}
                 {% include '_includes/blocks/_image.twig'
                     with {
-                    width: block.blockWidth|default('12'),
-                    imageSize: block.imageSize,
-                    imageAlign: block.imageAlign,
-                }
+                        width: block.blockWidth|default('12'),
+                        imageSize: block.imageSize,
+                        imageAlign: block.imageAlign,
+                    }
                 %}
 
             {% case 'gallery' %}
@@ -70,10 +70,10 @@
             {% case 'button' %}
                 {% include '_includes/blocks/_button.twig'
                     with {
-                    width: block.blockWidth|default('12'),
-                    textAlign: block.textAlign,
-                    verticalAlignCenter: block.verticalAlignCenter
-                }
+                        width: block.blockWidth|default('12'),
+                        textAlign: block.textAlign,
+                        verticalAlignCenter: block.verticalAlignCenter
+                    }
                 %}
 
             {% case 'imageBlocks' %}
@@ -88,8 +88,8 @@
             {% case 'accordionWrapper' %}
                 {% include '_includes/blocks/_accordion.twig'
                     with {
-                    width: block.blockWidth|default('12'),
-                }
+                        width: block.blockWidth|default('12'),
+                    }
                 %}
 
             {% case 'contactForm' %}
