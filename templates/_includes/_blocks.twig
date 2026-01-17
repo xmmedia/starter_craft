@@ -18,72 +18,72 @@
 
         {# This is really the block handle #}
         {% switch block.type.handle %}
-        {% case 'sectionStart' %}
-            {% include '_includes/blocks/_section_start.twig' %}
-            {% set sectionStarted = true %}
-        {% case 'hero' %}
-            {% include '_includes/blocks/_hero.twig' %}
+            {% case 'sectionStart' %}
+                {% include '_includes/blocks/_section_start.twig' %}
+                {% set sectionStarted = true %}
+            {% case 'hero' %}
+                {% include '_includes/blocks/_hero.twig' %}
 
-        {% case 'banner' %}
-            {% include '_includes/blocks/_banner.twig' %}
+            {% case 'banner' %}
+                {% include '_includes/blocks/_banner.twig' %}
 
-        {% case 'heading' %}
-            {% include '_includes/blocks/_heading.twig'
-                with {
-                textAlign: block.textAlign,
-            }
-            %}
+            {% case 'heading' %}
+                {% include '_includes/blocks/_heading.twig'
+                    with {
+                    textAlign: block.textAlign,
+                }
+                %}
 
-        {% case 'textBlock' %}
-            {% include '_includes/blocks/_text_block.twig'
-                with {
-                width: block.blockWidth|default('12'),
-            }
-            %}
+            {% case 'textBlock' %}
+                {% include '_includes/blocks/_text_block.twig'
+                    with {
+                    width: block.blockWidth|default('12'),
+                }
+                %}
 
-        {% case 'image' %}
-            {% include '_includes/blocks/_image.twig'
-                with {
-                width: block.blockWidth|default('12'),
-                imageSize: block.imageSize,
-                imageAlign: block.imageAlign,
-            }
-            %}
+            {% case 'image' %}
+                {% include '_includes/blocks/_image.twig'
+                    with {
+                    width: block.blockWidth|default('12'),
+                    imageSize: block.imageSize,
+                    imageAlign: block.imageAlign,
+                }
+                %}
 
-        {% case 'gallery' %}
-            {% include '_includes/blocks/_gallery.twig'  %}
+            {% case 'gallery' %}
+                {% include '_includes/blocks/_gallery.twig'  %}
 
-        {% case 'button' %}
-            {% include '_includes/blocks/_button.twig'
-                with {
-                width: block.blockWidth|default('12'),
-                textAlign: block.textAlign,
-                verticalAlignCenter: block.verticalAlignCenter
-            }
-            %}
+            {% case 'button' %}
+                {% include '_includes/blocks/_button.twig'
+                    with {
+                    width: block.blockWidth|default('12'),
+                    textAlign: block.textAlign,
+                    verticalAlignCenter: block.verticalAlignCenter
+                }
+                %}
 
-        {% case 'imageBlocks' %}
-            {% include '_includes/blocks/_image_blocks.twig' %}
+            {% case 'imageBlocks' %}
+                {% include '_includes/blocks/_image_blocks.twig' %}
 
-        {% case 'cards' %}
-            {% include '_includes/blocks/_cards.twig' %}
+            {% case 'cards' %}
+                {% include '_includes/blocks/_cards.twig' %}
 
-        {% case 'video' %}
-            {% include '_includes/blocks/_video.twig' %}
+            {% case 'video' %}
+                {% include '_includes/blocks/_video.twig' %}
 
-        {% case 'accordionWrapper' %}
-            {% include '_includes/blocks/_accordion.twig'
-                with {
-                width: block.blockWidth|default('12'),
-            }
-            %}
+            {% case 'accordionWrapper' %}
+                {% include '_includes/blocks/_accordion.twig'
+                    with {
+                    width: block.blockWidth|default('12'),
+                }
+                %}
 
-        {% case 'contactForm' %}
-            {% include '_includes/blocks/_contact_form.twig' %}
+            {% case 'contactForm' %}
+                {% include '_includes/blocks/_contact_form.twig' %}
 
 
-        {% default %}
-            <!-- A block has been created without adding case to block twig file -->
+            {% default %}
+                <!-- A block has been created without adding case to block twig file -->
         {% endswitch %}
 
     {% endfor %}
