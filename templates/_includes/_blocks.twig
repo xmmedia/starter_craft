@@ -1,5 +1,5 @@
-{% set blockStarted = false %}
-{% set sectionStarted = false %}
+{% set inBlock = false %}
+{% set inSection = false %}
 
 {# these fields exist within a .blocks-wrap so start a block if not already started #}
 {% set wrappedBlocks = ['heading', 'textBlock', 'image', 'button', 'accordionWrapper'] %}
@@ -11,29 +11,29 @@
 
     {% for block in entry.blocks.all() %}
         {% if block.type.handle in wrappedBlocks %}
-            {% if blockStarted == false %}
+            {% if inBlock == false %}
                 <div class="blocks-wrap">
-                {% set blockStarted = true %}
+                {% set inBlock = true %}
             {% endif %}
         {% else %}
-            {% if blockStarted %}
+            {% if inBlock %}
                 </div>
             {% endif %}
-            {% set blockStarted = false %}
+            {% set inBlock = false %}
         {% endif %}
 
-        {% if sectionStarted and block.type.handle in notWithinSection %}
+        {% if inSection and block.type.handle in notWithinSection %}
             </section>
             <!-- <<< section ended <<< -->
 
-            {% set sectionStarted = false %}
+            {% set inSection = false %}
         {% endif %}
 
         {# This is really the block handle #}
         {% switch block.type.handle %}
             {% case 'sectionStart' %}
                 {% include '_includes/blocks/_section_start.twig' %}
-                {% set sectionStarted = true %}
+                {% set inSection = true %}
 
             {% case 'hero' %}
                 {% include '_includes/blocks/_hero.twig' %}
@@ -101,12 +101,12 @@
 
     {% endfor %}
 
-    {% if sectionStarted %}
+    {% if inSection %}
         </section>
         <!-- <<< section ended <<< -->
     {% endif %}
 
-    {% if blockStarted %}
+    {% if inBlock %}
         </div>
     {% endif %}
 {% else %}
