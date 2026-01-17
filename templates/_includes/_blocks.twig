@@ -5,7 +5,7 @@
 {% set wrappedBlocks = ['heading', 'textBlock', 'image', 'button', 'accordionWrapper'] %}
 
 {# these blocks cannot be within a section, so end the section before #}
-{% set notWithinSection = ['section_start', 'banner'] %}
+{% set notWithinSection = ['sectionStart', 'banner'] %}
 
 {% if entry.blocks is not empty %}
 
