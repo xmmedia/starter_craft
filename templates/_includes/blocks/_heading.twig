@@ -24,7 +24,7 @@
     {% set classes = classes|merge(['my-0']) %}
 {% endif %}
 
-
+{# if adjusted, review other uses #}
 {{ tag('h2', {
  html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: block.elementId,
  class: classes,
