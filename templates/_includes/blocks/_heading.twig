@@ -1,20 +1,20 @@
 {% set classes = [] %}
 
-{% if block.uppercase %}
-    {% set classes = classes|merge(['uppercase']) %}
-{% endif %}
-
-{% if textAlign == 'textCenter' %}
+{% if block.textAlign == 'textCenter' %}
     {% set classes = classes|merge(['text-center']) %}
-{% elseif textAlign == 'textRight' %}
+{% elseif block.textAlign == 'textRight' %}
     {% set classes = classes|merge(['text-right']) %}
-{% elseif textAlign == 'textLeftMobile' %}
+{% elseif block.textAlign == 'textLeftMobile' %}
     {% set classes = classes|merge(['text-left']) %}
 {% else %}
     {% set classes = classes|merge(['text-center lg:text-left']) %}
 {% endif %}
 {% if block.classes %}
     {% set classes = classes|merge(block.classes|explodeClass) %}
+{% endif %}
+
+{% if block.uppercase %}
+    {% set classes = classes|merge(['uppercase']) %}
 {% endif %}
 
 {% set width = block.blockWidth|default('12') %}
@@ -26,6 +26,6 @@
 
 {# if adjusted, review other uses #}
 {{ tag('h2', {
- html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: block.elementId,
- class: classes,
+    html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: block.elementId,
+    class: classes,
 }) }}

@@ -42,11 +42,7 @@
                 {% include '_includes/blocks/_banner.twig' %}
 
             {% case 'heading' %}
-                {% include '_includes/blocks/_heading.twig'
-                    with {
-                        textAlign: block.textAlign,
-                    }
-                %}
+                {% include '_includes/blocks/_heading.twig' %}
 
             {% case 'textBlock' %}
                 {% include '_includes/blocks/_text_block.twig'
