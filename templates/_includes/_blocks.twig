@@ -1,10 +1,16 @@
 {% set blockStarted = false %}
 {% set sectionStarted = false %}
 
+{# these fields exist within a .blocks-wrap so start a block if not already started #}
+{% set wrappedBlocks = ['heading', 'textBlock', 'image', 'button', 'accordionWrapper'] %}
+
+{# these blocks cannot be within a section, so end the section before #}
+{% set notWithinSection = ['section_start', 'banner'] %}
+
 {% if entry.blocks is not empty %}
 
     {% for block in entry.blocks.all() %}
-        {% if block.type.handle in ['heading', 'textBlock', 'image', 'button', 'accordionWrapper'] %}
+        {% if block.type.handle in wrappedBlocks %}
             {% if blockStarted == false %}
                 <div class="blocks-wrap">
                 {% set blockStarted = true %}
@@ -16,11 +22,19 @@
             {% set blockStarted = false %}
         {% endif %}
 
+        {% if sectionStarted and block.type.handle in notWithinSection %}
+            </section>
+            <!-- <<< section ended <<< -->
+
+            {% set sectionStarted = false %}
+        {% endif %}
+
         {# This is really the block handle #}
         {% switch block.type.handle %}
             {% case 'sectionStart' %}
                 {% include '_includes/blocks/_section_start.twig' %}
                 {% set sectionStarted = true %}
+
             {% case 'hero' %}
                 {% include '_includes/blocks/_hero.twig' %}
 
@@ -81,9 +95,8 @@
             {% case 'contactForm' %}
                 {% include '_includes/blocks/_contact_form.twig' %}
 
-
             {% default %}
-                <!-- A block has been created without adding case to block twig file -->
+                <!-- !! A block has been created without adding case to block twig file !! -->
         {% endswitch %}
 
     {% endfor %}
