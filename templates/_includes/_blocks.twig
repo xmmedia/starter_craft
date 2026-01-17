@@ -101,12 +101,14 @@
 
     {% endfor %}
 
-    </div>
     {% if sectionStarted %}
         </section>
-        <!-- section ended -->
+        <!-- <<< section ended <<< -->
+    {% endif %}
+
+    {% if blockStarted %}
+        </div>
     {% endif %}
 {% else %}
     {% include '_includes/blocks/_hero_placeholder.twig' %}
-    </div>
 {% endif %}
