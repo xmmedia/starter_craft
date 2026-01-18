@@ -22,7 +22,7 @@
             {% set inBlock = false %}
         {% endif %}
 
-        {% if inSection and block.type.handle in notWithinSection %}
+        {% if inSection and (block.type.handle == 'sectionEnd' or block.type.handle in notWithinSection) %}
             </section>
             <!-- <<< section ended <<< -->
 

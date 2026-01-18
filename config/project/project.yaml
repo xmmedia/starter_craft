@@ -1,4 +1,4 @@
-dateModified: 1768717718
+dateModified: 1768718085
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -154,6 +154,7 @@ meta:
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
+    d2312b71-68b5-4869-b6ca-0d3d447abb38: 'Section End' # Section End
     d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text' # Post Content - Text
     d9750188-899b-4d90-b854-a86818225807: 'Image Block' # Image Block
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video

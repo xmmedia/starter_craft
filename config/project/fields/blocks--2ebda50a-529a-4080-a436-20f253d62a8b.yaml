@@ -112,6 +112,14 @@ settings:
         -
           - group
           - General
+    -
+      __assoc__:
+        -
+          - uid
+          - d2312b71-68b5-4869-b6ca-0d3d447abb38 # Section End
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: null

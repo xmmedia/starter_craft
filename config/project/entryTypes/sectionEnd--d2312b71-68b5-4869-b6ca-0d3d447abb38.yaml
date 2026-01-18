@@ -1,0 +1,32 @@
+color: yellow
+description: null
+fieldLayouts:
+  859db2de-a069-4b41-bbc8-0dace7003ed0:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-01-18T06:34:31+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Ends a section. Normally not required.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 963c7bcc-f6ec-4599-ac59-d258960b852e
+            userCondition: null
+        name: Content
+        uid: 5c3f99fb-f11b-45f5-9881-d4c561305278
+        userCondition: null
+handle: sectionEnd
+hasTitleField: false
+icon: null
+name: 'Section End'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
