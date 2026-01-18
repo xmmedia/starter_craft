@@ -6,8 +6,8 @@
     "require": {
         "php": "8.4.*",
         "ext-intl": "*",
-        "craftcms/ckeditor": "4.10.1",
-        "craftcms/cms": "5.8.21",
+        "craftcms/ckeditor": "4.11.0",
+        "craftcms/cms": "5.8.22",
         "craftcms/contact-form": "3.1.0",
         "craftcms/contact-form-honeypot": "2.1.0",
         "ether/seo": "5.0.0",
@@ -16,7 +16,7 @@
         "roave/security-advisories": "dev-master",
         "verbb/field-manager": "4.0.3",
         "vlucas/phpdotenv": "^5.4",
-        "wrav/oembed": "3.1.6"
+        "wrav/oembed": "3.2.0"
     },
     "require-dev": {
         "yiisoft/yii2-shell": "^2.0.3"
