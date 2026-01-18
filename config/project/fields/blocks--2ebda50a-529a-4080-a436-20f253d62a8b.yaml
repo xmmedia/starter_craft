@@ -4,7 +4,7 @@ instructions: null
 name: Blocks
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'Add block/element'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
