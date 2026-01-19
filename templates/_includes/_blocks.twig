@@ -29,6 +29,10 @@
             {% set inSection = false %}
         {% endif %}
 
+        {% if devMode %}
+            <!-- >>> block start: {{ block.type.handle }} >>> -->
+        {% endif %}
+
         {# This is really the block handle #}
         {% switch block.type.handle %}
             {% case 'sectionStart' %}
@@ -97,6 +101,10 @@
             {% default %}
                 <!-- !! A block has been created without adding case to block twig file: {{ block.type.handle }} !! -->
         {% endswitch %}
+
+        {% if devMode %}
+            <!-- <<< block ended: {{ block.type.handle }} <<< -->
+        {% endif %}
 
     {% endfor %}
 
