@@ -1,18 +1,17 @@
 {% if block.bannerImage|length > 0 %}
     {% set heading = block.heading|striptags('<strong><em><br><a><sup><sub>')|raw %}
     {% set textBlock = block.textBlock %}
-    {% set image = block.bannerImage.one() %}
-    {% set imageTransform = 'hero' %}
-<div class="banner" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
-    <div class="flex flex-col justify-center items-center  h-full bg-black-transparent text-center">
-        <div class="relative">
-            {% if heading %}
-                <h1 class="banner-heading">{{ heading }}</h1>
-            {% endif %}
-            {% if textBlock %}
-                <div class="banner-text">{{ textBlock }}</div>
-            {% endif %}
+
+    <div class="banner" style="background-image: url('{{ block.bannerImage.one().getUrl('hero') }}'); ">
+        <div class="flex flex-col justify-center items-center  h-full bg-black-transparent text-center">
+            <div class="relative">
+                {% if heading %}
+                    <h1 class="banner-heading">{{ heading }}</h1>
+                {% endif %}
+                {% if textBlock %}
+                    <div class="banner-text">{{ textBlock }}</div>
+                {% endif %}
+            </div>
         </div>
     </div>
-</div>
 {% endif %}
