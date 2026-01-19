@@ -26,6 +26,7 @@
 
 {# if adjusted, review other uses #}
 {{ tag('h2', {
-    html: block.heading|striptags('<strong><em><br><a><sup>')|raw, id: block.elementId,
+    html: block.heading|striptags('<strong><em><br><a><sup><sub>')|raw,
+    id: block.elementId,
     class: classes,
 }) }}
