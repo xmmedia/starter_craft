@@ -35,6 +35,9 @@
                 {% include '_includes/blocks/_section_start.twig' %}
                 {% set inSection = true %}
 
+            {% case 'sectionEnd' %}
+                {# nothing, dealt with above #}
+
             {% case 'hero' %}
                 {% include '_includes/blocks/_hero.twig' %}
 
