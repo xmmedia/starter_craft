@@ -48,7 +48,7 @@ export default defineConfig(({ command }) => {
             strictPort: true,
             https: true,
             watch: {
-                ignored: ['**/vendor/**', '**/var/**'],
+                ignored: ['**/vendor/**', '**/storage/**'],
             },
         },
         appType: 'custom',
