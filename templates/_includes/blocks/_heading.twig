@@ -17,7 +17,7 @@
     {% set classes = classes|merge(['uppercase']) %}
 {% endif %}
 
-{% set width = block.blockWidth|default('12') %}
+{% set width = block.blockWidth|default(12) %}
 {% set classes = classes|merge(['col-span-' ~ width]) %}
 
 {% if block.heading %}
