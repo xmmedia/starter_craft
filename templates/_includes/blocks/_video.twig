@@ -3,7 +3,7 @@
 {% set imageTransform = 'videoThumbnail' %}
 
 {#separate div wrapper so column doesn't mess with embed-wrap#}
-<div class="col-{{ width }}" {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="col-{{ width }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div class="embed-wrap" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
         {{ image(image, imageTransform) }}
     </div>

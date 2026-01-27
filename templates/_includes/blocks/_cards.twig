@@ -1,4 +1,4 @@
-<div class="col-span-12" {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="col-span-12"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div class="cards-wrap pt-36 z-0">
         {% for cardItem in block.cards.all() %}
             <a href="{{ cardItem.cardLink }}" class="relative card">
