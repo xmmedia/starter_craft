@@ -4,7 +4,7 @@ handle: imagelarge
 height: 425
 interlace: none
 mode: fit
-name: ' Image - Large'
+name: 'Image - Large'
 position: center-center
 quality: null
 upscale: true

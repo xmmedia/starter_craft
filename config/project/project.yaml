@@ -1,4 +1,4 @@
-dateModified: 1769572864
+dateModified: 1769618201
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -125,7 +125,7 @@ meta:
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - Sharing Image' # SEO - Sharing Image
-    4294d06d-5c1a-4afe-83cb-048be5c27d4a: ' Image - Large' #  Image - Large
+    4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Image - Large' # Image - Large
     5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
     7424ebc8-4255-41f1-ab4c-0898425525e9: Gallery # Gallery
     8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
