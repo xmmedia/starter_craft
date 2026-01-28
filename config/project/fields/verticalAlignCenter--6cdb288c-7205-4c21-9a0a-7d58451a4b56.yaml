@@ -7,6 +7,7 @@ settings:
   default: false
   offLabel: 'Vertical Align Top'
   onLabel: 'Vertical Align Center'
+  showLabelsInCards: false
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Lightswitch

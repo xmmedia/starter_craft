@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -40,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: 474fd4dc-4823-40e8-ae51-ef2e3527eb51
         userCondition: null
+    thumbFieldKey: null
 fs: ogImages
 handle: ogImages
 name: 'Sharing Images'

@@ -11,13 +11,12 @@ settings:
   maxRelations: null
   minRelations: null
   selectionLabel: null
-  showCardsInGrid: false
   showSearchInput: true
   showSiteMenu: true
   source: 'group:48ab6525-2753-4564-a94c-19b9a23de6df' # Blog Categories
   targetSiteId: null
   validateRelatedElements: false
-  viewMode: null
+  viewMode: list
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Categories

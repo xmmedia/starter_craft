@@ -23,7 +23,6 @@ settings:
   restrictedLocationSource: 'volume:7cbed487-b42f-4d26-8ca5-5a6e97aaefc8' # Banner Images
   restrictedLocationSubpath: null
   selectionLabel: null
-  showCardsInGrid: false
   showSearchInput: true
   showSiteMenu: true
   showUnpermittedFiles: false

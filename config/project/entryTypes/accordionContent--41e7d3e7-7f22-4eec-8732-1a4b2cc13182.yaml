@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,12 +12,11 @@ fieldLayouts:
             dateAdded: '2024-12-02T18:18:23+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -27,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: 2197f60e-6d94-41cf-898c-f106e21f643e
         userCondition: null
+    thumbFieldKey: null
 handle: accordionContent
 hasTitleField: false
 icon: null
@@ -38,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

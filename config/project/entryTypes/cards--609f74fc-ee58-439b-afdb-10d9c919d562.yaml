@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -19,7 +20,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: 'Enter a title so cards are distinguishable in editor. This will not appear on the website.'
             label: null
@@ -28,7 +28,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -44,12 +43,11 @@ fieldLayouts:
             dateAdded: '2024-12-04T20:40:24+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 7ee19ba5-8919-4ba7-8a82-e84de143fc1f # Cards
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -67,12 +65,11 @@ fieldLayouts:
             dateAdded: '2024-12-04T22:10:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -84,12 +81,11 @@ fieldLayouts:
             dateAdded: '2024-12-04T22:10:19+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -100,6 +96,7 @@ fieldLayouts:
         name: Attributes
         uid: d743dacc-20a6-4198-a8e8-f4b444006822
         userCondition: null
+    thumbFieldKey: null
 handle: cards
 hasTitleField: true
 icon: null
@@ -111,3 +108,4 @@ slugTranslationMethod: site
 titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

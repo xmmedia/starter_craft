@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -25,7 +26,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -34,7 +34,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -50,12 +49,11 @@ fieldLayouts:
             dateAdded: '2025-05-26T20:27:27+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 451ac180-f985-4b01-ba54-9b873058697b # Image Blocks
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -66,6 +64,7 @@ fieldLayouts:
         name: Content
         uid: 2c8cff48-7b66-47b2-beaf-b0956d2a3612
         userCondition: null
+    thumbFieldKey: null
 handle: imageBlocks
 hasTitleField: true
 icon: null
@@ -77,3 +76,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

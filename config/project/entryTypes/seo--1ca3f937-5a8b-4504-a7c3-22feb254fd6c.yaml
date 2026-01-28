@@ -1,8 +1,11 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
   bf60907b-7f8e-415c-9dd6-36f9697f1a25:
     cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:52d99dba-02cd-4ba6-bd5b-46a5d24b7428'
     tabs:
       -
         elementCondition: null
@@ -11,12 +14,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 414f0663-ff97-44ab-b402-98890d76f713 # SEO - Page Title
             handle: null
-            includeInCards: true
             instructions: null
             label: 'Page Title'
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -28,12 +30,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75 # SEO - Meta Description
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Meta Description'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -45,12 +46,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd # SEO - Sharing Image
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Sharing Image'
-            providesThumbs: true
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -62,12 +62,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219 # SEO - Sharing Image Alt
             handle: null
-            includeInCards: false
             instructions: null
             label: 'Sharing Image Alt'
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -78,6 +77,7 @@ fieldLayouts:
         name: Content
         uid: 5aaa65d8-405a-4ce3-99bc-77caabd8f744
         userCondition: null
+    thumbFieldKey: 'layoutElement:2e661181-5577-4853-8b8a-3d254e7c8a00'
 handle: seo
 hasTitleField: false
 icon: null
@@ -89,3 +89,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

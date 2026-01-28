@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,12 +12,11 @@ fieldLayouts:
             dateAdded: '2024-12-05T00:04:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 48b81495-c226-4048-afdd-066e97f6a4a5 # Contact Form Thank You
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -34,12 +34,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -50,6 +49,7 @@ fieldLayouts:
         name: SEO
         uid: f1ef4fe5-bc19-4d04-8a0a-16b80c76c179
         userCondition: null
+    thumbFieldKey: null
 handle: contactThanks
 hasTitleField: false
 icon: null
@@ -61,3 +61,4 @@ slugTranslationMethod: site
 titleFormat: '{section.name|raw}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,12 +12,11 @@ fieldLayouts:
             dateAdded: '2024-12-04T20:36:22+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 12bf30a3-ae66-402c-aa6a-1957b9eace70 # Card
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -28,12 +28,11 @@ fieldLayouts:
             dateAdded: '2025-05-28T19:51:50+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 75b94bea-4929-4bc5-8103-72bd8820c8c8 # Card Link
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -44,6 +43,7 @@ fieldLayouts:
         name: Content
         uid: decee093-ad21-4ef2-a706-7c96b2acdcb7
         userCondition: null
+    thumbFieldKey: null
 handle: card
 hasTitleField: false
 icon: null
@@ -55,3 +55,4 @@ slugTranslationMethod: site
 titleFormat: '{title}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

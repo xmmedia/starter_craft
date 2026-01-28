@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,12 +12,11 @@ fieldLayouts:
             dateAdded: '2024-12-04T20:10:07+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -27,6 +27,7 @@ fieldLayouts:
         name: Content
         uid: 84bef64e-9bc3-4b66-bf57-9783c17ea20f
         userCondition: null
+    thumbFieldKey: null
 handle: cardTextBlock
 hasTitleField: false
 icon: null
@@ -38,3 +39,4 @@ slugTranslationMethod: site
 titleFormat: "{textBlock|striptags|truncate(50, '...')}"
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

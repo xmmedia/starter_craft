@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -23,12 +24,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb # Herobar Image
             handle: null
-            includeInCards: true
             instructions: null
             label: 'Herobar Image'
-            providesThumbs: true
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -40,12 +40,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 2062b2bd-5662-4e7c-a7cf-0f05a4b4da60 # Herobar - Heading
             handle: heading
-            includeInCards: true
             instructions: null
             label: Heading
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -57,12 +56,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863 # Herobar - Subheading
             handle: null
-            includeInCards: false
             instructions: null
             label: Subheading
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -73,6 +71,7 @@ fieldLayouts:
         name: Content
         uid: b2e948bb-ce8f-4b37-b9e8-8c59de235b8d
         userCondition: null
+    thumbFieldKey: 'layoutElement:137144ce-7c7c-4cef-95e8-c737b79a007d'
 handle: hero
 hasTitleField: false
 icon: null
@@ -84,3 +83,4 @@ slugTranslationMethod: site
 titleFormat: '{heading}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

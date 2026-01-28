@@ -23,7 +23,6 @@ settings:
   restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
   restrictedLocationSubpath: null
   selectionLabel: null
-  showCardsInGrid: false
   showSearchInput: true
   showSiteMenu: false
   showUnpermittedFiles: false

@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -13,12 +14,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: d9009def-1bb9-482d-8539-be1829106860 # Post Content - Text
             handle: null
-            includeInCards: true
             instructions: null
             label: Text
-            providesThumbs: false
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -29,6 +29,7 @@ fieldLayouts:
         name: Content
         uid: 8b04d1a0-3a66-4f7e-9e9e-f51580e55630
         userCondition: null
+    thumbFieldKey: null
 handle: text
 hasTitleField: false
 icon: null
@@ -40,3 +41,4 @@ slugTranslationMethod: site
 titleFormat: '{text]'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

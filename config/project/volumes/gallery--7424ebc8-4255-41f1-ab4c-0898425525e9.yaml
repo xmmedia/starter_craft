@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -40,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: 229cf6fa-be56-4f84-a442-8fc6daf30f91
         userCondition: null
+    thumbFieldKey: null
 fs: gallery
 handle: gallery
 name: Gallery

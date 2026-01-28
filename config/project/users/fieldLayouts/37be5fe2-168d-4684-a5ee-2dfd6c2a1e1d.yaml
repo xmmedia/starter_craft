@@ -12,7 +12,6 @@ tabs:
         disabled: false
         elementCondition: null
         id: null
-        includeInCards: false
         inputType: null
         instructions: null
         label: null
@@ -21,7 +20,6 @@ tabs:
         name: null
         orientation: null
         placeholder: null
-        providesThumbs: false
         readonly: false
         requirable: false
         size: null
@@ -43,7 +41,6 @@ tabs:
         disabled: false
         elementCondition: null
         id: null
-        includeInCards: false
         inputType: null
         instructions: null
         label: null
@@ -52,7 +49,6 @@ tabs:
         name: null
         orientation: null
         placeholder: null
-        providesThumbs: false
         readonly: false
         requirable: true
         required: false
@@ -69,11 +65,9 @@ tabs:
         dateAdded: '2024-12-10T16:48:28+00:00'
         elementCondition: null
         id: null
-        includeInCards: false
         instructions: null
         label: null
         orientation: null
-        providesThumbs: false
         requirable: false
         tip: null
         type: craft\fieldlayoutelements\users\PhotoField
@@ -90,7 +84,6 @@ tabs:
         disabled: false
         elementCondition: null
         id: null
-        includeInCards: false
         inputType: null
         instructions: null
         label: null
@@ -99,7 +92,6 @@ tabs:
         name: null
         orientation: null
         placeholder: null
-        providesThumbs: false
         readonly: false
         requirable: false
         size: null
@@ -113,3 +105,4 @@ tabs:
     name: Content
     uid: ac831c01-a28d-4a00-bb20-6a7292db9f1b
     userCondition: null
+thumbFieldKey: null

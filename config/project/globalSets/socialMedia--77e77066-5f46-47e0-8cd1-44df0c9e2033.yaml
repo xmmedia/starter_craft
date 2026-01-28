@@ -9,12 +9,11 @@ fieldLayouts:
             dateAdded: '2024-11-26T18:45:15+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 63c94dc6-f41f-43d2-ae4c-b1112b55a62a # Social Media
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -25,6 +24,7 @@ fieldLayouts:
         name: 'Social Media'
         uid: 9a2d2388-7f04-436b-98e7-4d41ce189a84
         userCondition: null
+    thumbFieldKey: null
 handle: socialMedia
 name: 'Social Media'
 sortOrder: 3

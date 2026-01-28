@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -11,12 +12,11 @@ fieldLayouts:
             dateAdded: '2024-11-30T00:05:52+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 2ebda50a-529a-4080-a436-20f253d62a8b # Blocks
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -39,7 +39,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -48,7 +47,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             required: true
             size: null
@@ -64,12 +62,11 @@ fieldLayouts:
             dateAdded: '2024-12-04T21:17:28+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: e9250cf7-3f95-4113-85e5-0140eb887bfe # SEO
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -80,6 +77,7 @@ fieldLayouts:
         name: SEO
         uid: f4b05aab-c90c-420f-8afc-c59caa06b4cc
         userCondition: null
+    thumbFieldKey: null
 handle: blocks
 hasTitleField: true
 icon: null
@@ -91,3 +89,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

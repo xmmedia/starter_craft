@@ -1,3 +1,4 @@
+allowLineBreaksInTitles: false
 color: null
 description: null
 fieldLayouts:
@@ -15,12 +16,11 @@ fieldLayouts:
             dateAdded: '2025-05-26T20:10:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 730c7dfd-2c56-4285-a09e-65cc6b0332f7 # Banner Image
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -32,12 +32,11 @@ fieldLayouts:
             dateAdded: '2025-05-26T20:10:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
             handle: null
-            includeInCards: true
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -49,12 +48,11 @@ fieldLayouts:
             dateAdded: '2025-05-26T20:10:16+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
             fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
             handle: null
-            includeInCards: false
             instructions: null
             label: null
-            providesThumbs: false
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -65,6 +63,7 @@ fieldLayouts:
         name: Content
         uid: 98e3b46d-c478-47f5-a67a-5a222d93010e
         userCondition: null
+    thumbFieldKey: null
 handle: banner
 hasTitleField: false
 icon: null
@@ -76,3 +75,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
+uiLabelFormat: '{title}'

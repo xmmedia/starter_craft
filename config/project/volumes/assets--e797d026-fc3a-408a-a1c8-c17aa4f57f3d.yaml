@@ -16,7 +16,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -25,7 +24,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -40,6 +38,7 @@ fieldLayouts:
         name: Content
         uid: fa0c5ab2-50b4-4581-825a-a1461104f0e4
         userCondition: null
+    thumbFieldKey: null
 fs: assets
 handle: assets
 name: Assets

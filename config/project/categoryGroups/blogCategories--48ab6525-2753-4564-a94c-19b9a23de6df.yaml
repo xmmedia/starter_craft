@@ -15,7 +15,6 @@ fieldLayouts:
             disabled: false
             elementCondition: null
             id: null
-            includeInCards: false
             inputType: null
             instructions: null
             label: null
@@ -24,7 +23,6 @@ fieldLayouts:
             name: null
             orientation: null
             placeholder: null
-            providesThumbs: false
             readonly: false
             requirable: false
             size: null
@@ -39,6 +37,7 @@ fieldLayouts:
         name: Content
         uid: 4331830f-6842-4852-90bb-b353694546d9
         userCondition: null
+    thumbFieldKey: null
 handle: blogCategories
 name: 'Blog Categories'
 siteSettings:
