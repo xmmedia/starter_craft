@@ -13,6 +13,9 @@ options:
       - small
       - big
       - huge
+  replaceTags:
+    b: string
+    i: em
 toolbar:
   - undo
   - redo
@@ -25,6 +28,6 @@ toolbar:
   - fontColor
   - fontSize
   - '|'
-  - anchor
+  - bookmark
   - removeFormat
   - sourceEditing

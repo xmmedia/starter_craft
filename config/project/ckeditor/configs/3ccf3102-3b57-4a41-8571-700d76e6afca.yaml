@@ -6,7 +6,7 @@ headingLevels:
   - 4
   - 5
   - 6
-js: "return {\r\n  toolbar: {\r\n      shouldNotGroupWhenFull: true\r\n  },\r\n\r\n    htmlSupport: {\r\n      allow: [\r\n          {\r\n              name: /.*/,\r\n              attributes: true,\r\n              classes: true,\r\n              styles: true\r\n          }\r\n      ]\r\n    },\r\n\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'right',\r\n      'center',\r\n    ],\r\n  },\r\n  style: {\r\n    definitions: [\r\n      {\r\n        name: 'Red heading',\r\n        element: 'h2',\r\n        classes: [\r\n          'red-heading',\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n  fontSize: {\r\n    options: [\r\n      'tiny',\r\n      'small',\r\n      'big',\r\n      'huge',\r\n    ],\r\n  },\r\n}"
+js: "return {\r\n  toolbar: {\r\n      shouldNotGroupWhenFull: true\r\n  },\r\n\r\n  htmlSupport: {\r\n    allow: [\r\n        {\r\n            name: /.*/,\r\n            attributes: true,\r\n            classes: true,\r\n            styles: true\r\n        }\r\n    ]\r\n  },\r\n\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'right',\r\n      'center',\r\n    ],\r\n  },\r\n\r\n  style: {\r\n    definitions: [\r\n      {\r\n        name: 'Red heading',\r\n        element: 'h2',\r\n        classes: [\r\n          'red-heading',\r\n        ],\r\n      },\r\n    ],\r\n  },\r\n\r\n  fontSize: {\r\n    options: [\r\n      'tiny',\r\n      'small',\r\n      'big',\r\n      'huge',\r\n    ],\r\n  },\r\n  \r\n  replaceTags: {\r\n    b: 'strong',\r\n    i: 'em'\r\n  }\r\n}"
 name: Standard
 toolbar:
   - style
@@ -28,6 +28,6 @@ toolbar:
   - '|'
   - insertImage
   - mediaEmbed
-  - anchor
+  - bookmark
   - removeFormat
   - sourceEditing
