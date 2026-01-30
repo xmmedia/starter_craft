@@ -6,7 +6,7 @@ html {
 
 @layer base {
     button {
-        @apply cursor-pointer;
+        @apply cursor-pointer disabled:cursor-not-allowed;
     }
 
     /* this file is for public and private/admin pages */
