@@ -31,7 +31,7 @@
 .text-block-wrap {
     @apply flex max-w-11/12 md:max-w-2xl xl:max-w-3xl mx-auto py-8;
 
-    p:last-of-type {
+    p:last-child {
         @apply mb-0;
     }
 }
