@@ -5,6 +5,10 @@ html {
 /* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
 
 @layer base {
+    button {
+        @apply cursor-pointer;
+    }
+
     /* this file is for public and private/admin pages */
     a, .button-link {
         @apply text-blue-500 no-underline transition-all duration-300 ease-in-out outline-hidden rounded-sm;
