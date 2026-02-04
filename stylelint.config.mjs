@@ -16,5 +16,6 @@ export default {
             { "ignoreAtRules": [ "config", "source", "theme", "supports" ] },
         ],
         "custom-property-empty-line-before": null,
+        "comment-empty-line-before": null,
     },
 };
