@@ -1,6 +1,6 @@
 .button {
     @apply px-4 py-2 text-white text-center shadow-none border-2 border-blue-500 bg-blue-500
-    leading-tight transition-all duration-300 ease-in-out outline-hidden rounded-sm cursor-pointer;
+    leading-tight transition-default outline-hidden rounded-sm cursor-pointer;
 
     &:hover {
         @apply text-white border-blue-800 bg-blue-800 no-underline;
