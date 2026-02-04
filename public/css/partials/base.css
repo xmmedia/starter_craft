@@ -1,8 +1,22 @@
-html {
-    @apply font-sans leading-normal text-gray-800;
-}
+
+
+/* Safelist specific classes & pattern-based utilities
+   These classes are used/referenced in the the database/CMS,
+   but not used in the code so normally Tailwind would skip them */
+@source inline("md-enter-active md-leave-active md-enter md-leave-active");
+@source inline("{xs:,sm:,md:,lg:,xl:,}{m,p}{t,b,r,l,x,y}-{0,1,2,3,4,6,8,10,12,16,24}");
+@source inline("{sm:,md:,lg:,}{col-span}-{1,2,3,4,5,6,7,8,9,10,11,12}");
 
 /* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
+/* colour converter: https://lik.ai/tools/color-convertor/ */
+@theme {
+    --breakpoint-xs: 25rem;
+    --color-black-transparent: hsl(0deg 0% 0% / 0%);
+}
+
+body {
+    @apply font-sans leading-normal text-gray-800;
+}
 
 @layer base {
     button {
