@@ -24,6 +24,7 @@
     "autoload": {
         "psr-4": {
             "modules\\": "modules/",
+            "modules\\xmmodule\\": "modules/xmmodule/src/",
             "modules\\imagemodule\\": "modules/imagemodule/src/"
         }
     },

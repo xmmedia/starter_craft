@@ -1,5 +1,5 @@
 {% if block.bannerImage|length > 0 %}
-    {% set heading = block.heading|striptags('<strong><em><br><a><sup><sub>')|raw %}
+    {% set heading = block.heading|heading_striptags %}
     {% set textBlock = block.textBlock %}
 
     <div class="banner" style="background-image: url('{{ block.bannerImage.one().getUrl('hero') }}'); ">
