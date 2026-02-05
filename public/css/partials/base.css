@@ -53,7 +53,7 @@ body {
         @apply font-bold;
     }
 
-    p {
+    p, ul, ol {
         @apply my-4;
     }
 
@@ -67,6 +67,13 @@ body {
 
     ol {
         @apply list-decimal;
+    }
+
+    li {
+        @apply mb-2;
+        &:last-child {
+            @apply mb-0;
+        }
     }
 
     address {
