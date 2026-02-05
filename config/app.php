@@ -30,7 +30,7 @@ return [
             'class' => \modules\imagemodule\ImageModule::class,
         ],
     ],
-    'bootstrap' => ['contact-form', 'image-module'],
+    'bootstrap' => ['contact-form', 'xm-module', 'image-module'],
     'components' => [
         'session' => function () {
             $savePath = Craft::getAlias('@storage').'/sessions/';
