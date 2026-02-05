@@ -27,7 +27,7 @@
 
 .blocks-wrap {
     @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 gap-y-8 justify-center lg:justify-start
-    w-full max-w-11/12 xl:max-w-8xl mx-auto lg:px-8 2xl:px-0 py-8;
+    w-full max-w-11/12 xl:max-w-8xl mx-auto lg:px-8 2xl:px-0;
 }
 
 .text-block-wrap {
