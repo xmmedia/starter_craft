@@ -20,10 +20,6 @@
 {% set width = block.blockWidth|default(12) %}
 {% set classes = classes|merge(['col-span-' ~ width]) %}
 
-{% if block.heading %}
-    {% set classes = classes|merge(['my-0']) %}
-{% endif %}
-
 {# if adjusted, review other uses #}
 {{ tag('h2', {
     html: block.heading|heading_striptags,
