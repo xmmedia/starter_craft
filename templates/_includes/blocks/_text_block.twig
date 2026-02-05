@@ -1,17 +1,13 @@
 {% set verticalAlignCenter = block.verticalAlignCenter %}
 
-{% set classes = ['col-span-12', 'md:col-span-' ~ width, 'lg:text-left',  'text-base', 'lg:text-xl'] %}
-
-{% if width == '12' %}
-    {% set classes = classes | merge(['mx-auto']) %}
-{% endif %}
+{% set classes = ['col-span-12', 'md:col-span-' ~ width] %}
 
 {% if verticalAlignCenter == true %}
     {% set classes = classes | merge(['items-center']) %}
 {% endif %}
 
 {% if block.textAlignCenter == true %}
-    {% set classes = classes | merge(['text-center']) %}
+    {% set classes = classes | merge(['text-center', 'lg:text-left']) %}
 {% endif %}
 
 {% if block.fontWeight == '300' %}

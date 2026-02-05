@@ -1,3 +1,5 @@
+/* stylelint-disable selector-class-pattern */
+
 .w-content,
 .w-content-narrow,
 .w-content-copy,
@@ -29,16 +31,25 @@
 }
 
 .text-block-wrap {
-    @apply flex max-w-11/12 md:max-w-2xl xl:max-w-3xl mx-auto py-8;
+    @apply flex max-w-11/12 md:max-w-2xl xl:max-w-3xl;
 
-    p:last-child {
+    p:first-child,
+    h1:first-child,
+    h2:first-child,
+    h3:first-child,
+    h4:first-child,
+    ul:first-child,
+    ol:first-child {
+        @apply mt-0;
+    }
+
+    p:last-child,
+    ul:last-child,
+    ol:last-child {
         @apply mb-0;
     }
 }
-
-/* Ensure .text-block-wrap is centered when inside .col-span-12 */
-.col-span-12 {
-    .text-block-wrap {
-        @apply lg:mx-auto;
-    }
+/* Ensure .text-block-wrap is centered when also .col-span-12 */
+.text-block-wrap.md\:col-span-12 {
+    @apply lg:mx-auto;
 }
