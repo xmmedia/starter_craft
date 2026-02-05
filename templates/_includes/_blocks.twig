@@ -101,6 +101,9 @@
 
             {% default %}
                 <!-- !! A block has been created without adding case to block twig file: {{ block.type.handle }} !! -->
+                {% if devMode %}
+                    <div class="w-content py-4 text-center">Missing block template: {{ block.type.handle }}</div>
+                {% endif %}
         {% endswitch %}
 
         {% if devMode %}
