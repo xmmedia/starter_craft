@@ -1,8 +1,8 @@
 <?php
 /**
- * Iamge module for Craft CMS 3.x
+ * Image module for Craft CMS 3.x
  *
- * Iamge module
+ * Image module
  *
  * @link      https://www.xmmedia.com
  * @copyright Copyright (c) 2022 XM Media Inc.
