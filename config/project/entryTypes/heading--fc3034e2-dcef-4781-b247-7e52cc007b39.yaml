@@ -19,7 +19,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 5e95a9e0-5571-4685-8d60-5a6ff21e9971
@@ -41,7 +41,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 8368a790-29ed-4910-8fec-2b1ea60a3fe1

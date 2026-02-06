@@ -14,13 +14,29 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 930c2e06-ec65-4ff3-b619-746204f9ac12
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            dateAdded: '2026-02-06T03:03:48+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 8a21b25b-dfd1-4441-8276-d1457d126775 # Email
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 66bb7e05-758f-4848-b3d7-6fb22c3cb1d7
+            userCondition: null
+            warning: null
+            width: 50
         name: Globals
         uid: 4036473b-47dd-48fd-bfc5-5dda56b5abce
         userCondition: null

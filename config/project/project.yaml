@@ -1,4 +1,4 @@
-dateModified: 1770306541
+dateModified: 1770347028
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -78,6 +78,7 @@ meta:
     7bcca8fb-6082-4c2d-9726-ea6482194a8e: 'Image Block' # Image Block
     7cbed487-b42f-4d26-8ca5-5a6e97aaefc8: 'Banner Images' # Banner Images
     7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Cards # Cards
+    8a21b25b-dfd1-4441-8276-d1457d126775: Email # Email
     8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
     08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: 'Herobar - Subheading' # Herobar - Subheading
     8f2af3e8-cdf5-4c6b-921e-814f25286901: 'Contact Form' # Contact Form
