@@ -14,7 +14,7 @@ settings:
   defaultUploadLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
   defaultUploadLocationSubpath: null
   maintainHierarchy: false
-  maxRelations: null
+  maxRelations: 1
   minRelations: null
   previewMode: full
   restrictFiles: true

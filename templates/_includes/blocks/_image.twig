@@ -1,15 +1,15 @@
 {% set image = block.image.one() %}
-{% set imageSize = imageSize|default('imagesmall') %}
+{% set imageSize = imageSize|default('imageSmall') %}
 {% set imageAlign = imageAlign|default('center') %}
 {% set imageVerticalAlignment = imageVerticalAlignment|default('center') %}
 
 {% switch imageSize %}
     {% case 'large' %}
-        {% set imageTransform = 'imagelarge' %}
+        {% set imageTransform = 'imageLarge' %}
     {% case 'medium' %}
-        {% set imageTransform = 'imagemedium' %}
+        {% set imageTransform = 'imageMedium' %}
     {% default %}
-        {% set imageTransform = 'imagesmall' %}
+        {% set imageTransform = 'imageSmall' %}
 {% endswitch %}
 
 {% switch imageAlign %}

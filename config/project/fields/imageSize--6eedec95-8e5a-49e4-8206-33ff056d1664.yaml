@@ -15,6 +15,12 @@ settings:
           - value
           - small
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
     -
@@ -25,6 +31,12 @@ settings:
         -
           - value
           - medium
+        -
+          - icon
+          - ''
+        -
+          - color
+          - ''
         -
           - default
           - ''
@@ -37,8 +49,14 @@ settings:
           - value
           - large
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - '1'
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Dropdown
+type: craft\fields\RadioButtons

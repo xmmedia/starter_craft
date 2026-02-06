@@ -7,7 +7,36 @@ settings:
   fullGraphqlData: false
   maxLength: 255
   showLabelField: false
+  typeSettings:
+    __assoc__:
+      -
+        - url
+        -
+          __assoc__:
+            -
+              - allowRootRelativeUrls
+              - ''
+            -
+              - allowAnchors
+              - '1'
+            -
+              - allowCustomSchemes
+              - ''
+      -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - showUnpermittedSections
+              - ''
+            -
+              - showUnpermittedEntries
+              - ''
   types:
+    - entry
     - url
     - tel
     - email

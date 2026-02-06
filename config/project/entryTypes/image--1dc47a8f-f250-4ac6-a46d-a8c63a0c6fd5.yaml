@@ -19,26 +19,10 @@ fieldLayouts:
             handle: image
             instructions: null
             label: Image
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 6397da29-9c20-4124-b59a-381c81cfe0cb
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-12-02T16:21:50+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc # Image Caption
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: b761546f-8e73-45fd-8b4e-1dbdce3ccf94
             userCondition: null
             warning: null
             width: 100
@@ -57,7 +41,23 @@ fieldLayouts:
             uid: e87a6359-ed14-46e9-acca-8f33824de65d
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            dateAdded: '2024-12-02T16:21:50+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc # Image Caption
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b761546f-8e73-45fd-8b4e-1dbdce3ccf94
+            userCondition: null
+            warning: null
+            width: 50
         name: Content
         uid: 2c830cd9-4e6c-4f49-9445-9e224a1638ab
         userCondition: null
@@ -79,7 +79,7 @@ fieldLayouts:
             uid: e3bf449f-7aa6-4bf0-b23a-a1933672a3d5
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-02T16:21:50+00:00'
             editCondition: null
@@ -95,7 +95,7 @@ fieldLayouts:
             uid: 808ac820-aa23-4fd8-b2e1-f6658dc79a55
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T23:47:37+00:00'
             editCondition: null
@@ -111,7 +111,7 @@ fieldLayouts:
             uid: dde483de-2806-49e4-9549-56f0ebd741d0
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T23:56:41+00:00'
             editCondition: null
@@ -127,7 +127,7 @@ fieldLayouts:
             uid: 21e42079-fbb9-46b6-b5f9-694ae79e8682
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Style
         uid: 69894a45-d5c3-4e21-af38-4cc66ff77b54
         userCondition: null
@@ -149,7 +149,7 @@ fieldLayouts:
             uid: 5ad0c4e0-5dc7-4122-84c4-fc2f504ea355
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T22:13:59+00:00'
             editCondition: null
@@ -165,7 +165,7 @@ fieldLayouts:
             uid: ec4ebb93-3fd8-40b9-aa85-569b33a2cdb9
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Attributes
         uid: 59737b3d-4fc9-41a0-b985-93f9d15fe487
         userCondition: null
