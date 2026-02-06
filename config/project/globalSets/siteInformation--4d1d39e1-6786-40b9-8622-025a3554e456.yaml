@@ -20,7 +20,7 @@ fieldLayouts:
             uid: 930c2e06-ec65-4ff3-b619-746204f9ac12
             userCondition: null
             warning: null
-            width: 50
+            width: 100
           -
             dateAdded: '2026-02-06T19:04:48+00:00'
             editCondition: null
@@ -68,7 +68,7 @@ fieldLayouts:
             uid: e7126713-4349-4106-9828-4ff3fef9201f
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2026-02-06T19:04:48+00:00'
             editCondition: null
@@ -84,7 +84,7 @@ fieldLayouts:
             uid: 641d0ced-cac9-44ff-952f-a831fe1b4d75
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Globals
         uid: 4036473b-47dd-48fd-bfc5-5dda56b5abce
         userCondition: null
