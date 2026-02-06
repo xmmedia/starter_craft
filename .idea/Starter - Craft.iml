@@ -151,6 +151,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/translation-contracts" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/thamtech/yii2-ratelimiter-advanced" />
+      <excludeFolder url="file://$MODULE_DIR$/public/assets" />
+      <excludeFolder url="file://$MODULE_DIR$/storage" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
