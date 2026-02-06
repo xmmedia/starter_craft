@@ -4,15 +4,18 @@ instructions: "Set the links to social media platforms. These will be used throu
 name: 'Social Media'
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'Add platform'
   defaultIndexViewMode: cards
-  enableVersioning: false
+  enableVersioning: true
   entryTypes:
     -
       __assoc__:
         -
           - uid
-          - 8b7f28d8-533c-4c53-befc-8bf5de329775 # URLs
+          - 8e90774b-6fbc-4e14-b5ee-0e7072719820 # URL
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: null
