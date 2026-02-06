@@ -10,8 +10,7 @@ return [
     'useDevServer'               => App::env('ENVIRONMENT') === 'dev' || App::env('CRAFT_ENVIRONMENT') === 'dev',
 
     // URL to the Vite development server.
-    // @todo update this to the correct port (from vite.config.js)
-    'devServerPublic'            => 'https://localhost:9028/build/',
+    'devServerPublic'            => 'https://localhost:9028/',
     'checkDevServer'             => false,
 
     // Public URL for production assets.
