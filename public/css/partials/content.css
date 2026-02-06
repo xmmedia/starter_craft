@@ -3,36 +3,18 @@
 .w-content,
 .w-content-narrow,
 .w-content-copy,
+.w-content-screen,
 .w-content-wide {
-    @apply max-w-11/12 mx-auto;
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
 }
 
-.w-content        { @apply xl:max-w-6xl; }
-.w-content-copy   { @apply sm:max-w-xl; }
-.w-content-narrow { @apply md:max-w-3xl; }
-.w-content-wide   { @apply 2xl:max-w-7xl; }
+.w-content        { @apply max-w-6xl; }
+.w-content-copy   { @apply max-w-xl; }
+.w-content-narrow { @apply max-w-3xl; }
+.w-content-wide   { @apply max-w-7xl; }
 
-/* Remove top margin from first child text/content elements */
 .blocks-wrap, .text-block-wrap {
-    p:first-child,
-    h1:first-child,
-    h2:first-child,
-    h3:first-child,
-    h4:first-child,
-    ul:first-child,
-    ol:first-child {
-        @apply mt-0;
-    }
-}
-
-.blocks-wrap {
-    @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 gap-y-8 justify-center lg:justify-start
-    w-full max-w-11/12 xl:max-w-8xl mx-auto lg:px-8 2xl:px-0;
-}
-
-.text-block-wrap {
-    @apply flex max-w-11/12 md:max-w-2xl xl:max-w-3xl;
-
+    /* Remove top margin from first child text/content elements */
     p:first-child,
     h1:first-child,
     h2:first-child,
@@ -48,6 +30,14 @@
     ol:last-child {
         @apply mb-0;
     }
+}
+
+.blocks-wrap {
+    @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 w-full;
+}
+
+.text-block-wrap {
+    @apply flex max-w-11/12 md:max-w-2xl xl:max-w-3xl;
 }
 /* Ensure .text-block-wrap is centered when also .col-span-12 */
 .text-block-wrap.md\:col-span-12 {
