@@ -9,6 +9,15 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
+            dateAdded: '2026-02-06T20:25:11+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'The label will be shown beside the phone number. The label directly on the phone number will be how the phone number is displayed.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 602bc862-ec7d-41c6-a4fc-2754c77def21
+            userCondition: null
+          -
             dateAdded: '2026-02-06T19:02:42+00:00'
             editCondition: null
             elementCondition: null
@@ -52,7 +61,7 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{label}'
+titleFormat: '{phoneNumberLabel} {phoneNumber.label}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{label}'
+uiLabelFormat: '{phoneNumberLabel} {phoneNumber.label}'
