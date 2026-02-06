@@ -1,4 +1,4 @@
-dateModified: 1770403703
+dateModified: 1770404688
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -59,6 +59,7 @@ fs:
 meta:
   __names__:
     0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
+    1bf74653-4a17-4c76-9fa3-4a5d76c42703: Address # Address
     1ca3f937-5a8b-4504-a7c3-22feb254fd6c: SEO # SEO
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     2a962a82-04dd-4e7a-9e92-e45cc7807082: 'Image Blocks' # Image Blocks
@@ -84,6 +85,7 @@ meta:
     8a21b25b-dfd1-4441-8276-d1457d126775: Email # Email
     8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
     08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: 'Herobar - Subheading' # Herobar - Subheading
+    8ed21dd3-26d7-4536-8646-9a109e17ea3b: 'Phone Number' # Phone Number
     8f2af3e8-cdf5-4c6b-921e-814f25286901: 'Contact Form' # Contact Form
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element Id' # Element Id
     9cf43e1b-e9c6-4233-9ac8-ef908559899b: Simple # Simple
@@ -119,6 +121,7 @@ meta:
     486e0db8-6cbd-4cd7-85af-77040ab2b43c: Image # Image
     511f52f1-d8bb-4d5e-820d-d3f65afcfdc9: 'Text Block Simple' # Text Block Simple
     554d5c17-904d-4637-9bfc-f85a9f70ba44: Blocks # Blocks
+    602c4974-25ab-4f0f-bf26-09a60494c2aa: 'Directions Link' # Directions Link
     605efa4c-a424-4d47-b191-23b72038cc7b: 'Video Thumbnail' # Video Thumbnail
     609f74fc-ee58-439b-afdb-10d9c919d562: Cards # Cards
     681bd2d8-cf04-4239-bcc5-a1bbcc3c8625: 'Card Text Block' # Card Text Block
@@ -144,6 +147,7 @@ meta:
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
     144007f7-7bab-40c2-9327-b324abf12787: 'Image - Medium' # Image - Medium
     941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
+    a8e6c61b-4a37-4d1a-8de1-c908b52dbf43: 'Phone Numbers' # Phone Numbers
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
     ac3ae0db-5f19-443a-b104-285f5f394a3b: Gallery # Gallery
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Hero # Hero
@@ -157,6 +161,7 @@ meta:
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
+    ce0260d9-af51-4c3c-81dd-a1ca82ca7552: Label # Label
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
@@ -171,6 +176,7 @@ meta:
     ec34d844-46a7-4389-965e-a1a4048a0798: Accordion # Accordion
     f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
+    f84ef073-f5e7-404c-a8ee-c24b36df5bd4: 'Phone Number' # Phone Number
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
