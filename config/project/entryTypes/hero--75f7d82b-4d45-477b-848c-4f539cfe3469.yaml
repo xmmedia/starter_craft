@@ -73,7 +73,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: fde5281f-1a78-4749-abcc-3c136ffc0258 # Menu Link
+            fieldUid: fde5281f-1a78-4749-abcc-3c136ffc0258 # Button
             handle: heroButton
             instructions: null
             label: Button

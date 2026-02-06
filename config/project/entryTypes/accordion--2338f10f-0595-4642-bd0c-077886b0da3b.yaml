@@ -41,7 +41,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: ec34d844-46a7-4389-965e-a1a4048a0798 # Header Menu
+            fieldUid: ec34d844-46a7-4389-965e-a1a4048a0798 # Accordion
             handle: null
             instructions: 'Only enter one of each'
             label: null

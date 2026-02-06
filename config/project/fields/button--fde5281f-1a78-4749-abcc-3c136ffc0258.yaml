@@ -1,7 +1,7 @@
 columnSuffix: izohntqr
-handle: menuLink
+handle: button
 instructions: null
-name: 'Menu Link'
+name: Button
 searchable: false
 settings:
   fullGraphqlData: false
@@ -9,6 +9,22 @@ settings:
   showLabelField: true
   typeSettings:
     __assoc__:
+      -
+        - asset
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowedKinds
+              - '*'
+            -
+              - showUnpermittedVolumes
+              - ''
+            -
+              - showUnpermittedFiles
+              - ''
       -
         - entry
         -
@@ -28,7 +44,7 @@ settings:
           __assoc__:
             -
               - allowRootRelativeUrls
-              - '1'
+              - ''
             -
               - allowAnchors
               - '1'
@@ -38,6 +54,9 @@ settings:
   types:
     - entry
     - url
+    - asset
+    - email
+    - tel
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Link

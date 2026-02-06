@@ -43,4 +43,4 @@ fieldLayouts:
     thumbFieldKey: null
 handle: siteInformation
 name: 'Site Information'
-sortOrder: 1
+sortOrder: 2
