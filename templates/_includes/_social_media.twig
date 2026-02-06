@@ -1,25 +1,8 @@
-<div class="flex justify-center md:justify-start xl:justify-center my-4 gap-x-4">
-{% if socialMedia.socialMedia.one().facebookUrl %}
-    <a href="{{ socialMedia.socialMedia.one().facebookUrl }}" class="footer-social-icon" title="Facebook">
-        <svg class="fill-current w-6 h-6 pr-px pb-px">
-            <use xlink:href="{{ rev('build/images/icons-public.svg') }}#social-facebook"></use>
+{% for profile in socialMedia.socialMedia.all() %}
+    {# if the url/link label has been entered in craft, it will be output; if not, nothing will be output #}
+    <a href="{{ profile.profileUrl.value }}" title="{{ profile.profileUrl.label(true) }}">
+        <svg class="social-icon">
+            <use xlink:href="{{ craft.vite.asset("/images/icons-public.svg") }}#social-{{ profile.platform }}"></use>
         </svg>
     </a>
-{% endif %}
-
-{% if socialMedia.socialMedia.one().instagramUrl %}
-    <a href="{{ socialMedia.socialMedia.one().instagramUrl }}" class="footer-social-icon" title="Instagram">
-        <svg class="fill-current w-6 h-6 pr-px pb-px">
-            <use xlink:href="{{ rev('build/images/icons-public.svg') }}#social-instagram"></use>
-        </svg>
-    </a>
-{% endif %}
-
-{% if socialMedia.socialMedia.one().twitterUrl %}
-    <a href="{{ socialMedia.socialMedia.one().twitterUrl }}" class="footer-social-icon" title="Twitter">
-        <svg class="fill-current w-6 h-6 pr-px pb-px">
-            <use xlink:href="{{ rev('build/images/icons-public.svg') }}#social-twitter"></use>
-        </svg>
-    </a>
-{% endif %}
-</div>
+{% endfor %}

@@ -25,7 +25,7 @@ fieldLayouts:
             uid: 2a29591e-83d2-41dc-9344-8c7485517e6d
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2026-02-06T19:12:08+00:00'
             editCondition: null
@@ -35,21 +35,21 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
-            tip: null
+            required: true
+            tip: 'The label will show up as alt text for SEO and accessbility.'
             type: craft\fieldlayoutelements\CustomField
             uid: 98984520-c140-477b-a82b-806c100ae542
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Content
         uid: 23253e14-00b6-486a-a881-20774824a06a
         userCondition: null
     thumbFieldKey: null
-handle: url
+handle: socialMediaUrl
 hasTitleField: false
 icon: null
-name: URL
+name: 'Social Medial URL'
 showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null

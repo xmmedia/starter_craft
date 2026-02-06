@@ -38,9 +38,7 @@
 
                     <div id="menu"></div>
 
-                    <svg class="social-icon">
-                        <use xlink:href="{{ craft.vite.asset("/images/icons-public.svg") }}#social-instagram"></use>
-                    </svg>
+                    {% include '_includes/_social_media.twig' %}
                 </div>
             </header>
         {% endblock header %}
@@ -54,6 +52,8 @@
 
         {% block footer %}
             <footer class="footer">
+                {% include '_includes/_social_media.twig' %}
+
                 <div class="text-sm">
                     ©{{ 'now'|date('Y') }} {{ siteInformation.companyName }} All Rights Reserved.
                 </div>

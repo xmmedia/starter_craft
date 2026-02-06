@@ -4,9 +4,9 @@ instructions: null
 name: 'Profile URL'
 searchable: false
 settings:
-  fullGraphqlData: true
+  fullGraphqlData: false
   maxLength: 255
-  showLabelField: false
+  showLabelField: true
   typeSettings:
     __assoc__:
       -
