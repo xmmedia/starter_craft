@@ -1,0 +1,58 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  e956eec2-e0f2-481d-bbb1-84b77e94542c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-02-06T18:23:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 771cfa66-1ab2-4dd5-a78b-06d352880a82 # Label
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: b8753f5d-9c02-4132-a417-3e9d687ef0e6
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-02-06T18:23:21+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 60b69a25-9856-4ebd-88f0-c74aeb1e5445 # Phone Number
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 94ee343b-395a-4696-a409-0c82bfeea823
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: a7df53b6-7be5-4589-9af0-b562b76b3631
+        userCondition: null
+    thumbFieldKey: null
+handle: phoneNumber
+hasTitleField: false
+icon: null
+name: 'Phone Number'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: '{label}'
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{label}'

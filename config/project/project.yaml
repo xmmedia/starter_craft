@@ -1,4 +1,4 @@
-dateModified: 1770401721
+dateModified: 1770402360
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -63,7 +63,8 @@ meta:
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     2a962a82-04dd-4e7a-9e92-e45cc7807082: 'Image Blocks' # Image Blocks
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
-    2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
+    2ebda50a-529a-4080-a436-20f253d62a8b: 'Phone Numbers' # Phone Numbers
+    03b06886-2b87-444b-9672-bb466f15d54d: 'Directions Link' # Directions Link
     3b8ce3ab-45bc-4658-8990-47cab2d46d75: 'Pattern Library' # Pattern Library
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Image - Small' # Image - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
@@ -89,6 +90,7 @@ meta:
     17ed004b-264f-4318-be4a-407867219887: 'Image Align' # Image Align
     22bd92e8-fa46-4ac8-b91d-7b8a84bebccb: 'Accordion Icon' # Accordion Icon
     41e7d3e7-7f22-4eec-8732-1a4b2cc13182: 'Accordion Content' # Accordion Content
+    46e9bae9-bb03-4bb3-af1f-a20e53db446d: Address # Address
     48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
     48b81495-c226-4048-afdd-066e97f6a4a5: 'Contact Form Thank You' # Contact Form Thank You
     49a23caf-c4e8-450b-a4d5-7acbe7d2ef69: 'Button Text' # Button Text
@@ -97,6 +99,7 @@ meta:
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
     55c62e14-e98e-4d1a-a181-845f6ebf20e4: Heading # Heading
     55db9051-b419-4237-b226-acfb99d40498: 'Image Link' # Image Link
+    60b69a25-9856-4ebd-88f0-c74aeb1e5445: 'Phone Number' # Phone Number
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
     64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: 'Post Content - Image' # Post Content - Image
@@ -121,6 +124,8 @@ meta:
     683dcf54-f292-4177-bc23-e0af464cc90e: 'Public Schema' # Public Schema
     730c7dfd-2c56-4285-a09e-65cc6b0332f7: 'Banner Image' # Banner Image
     733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
+    771cfa66-1ab2-4dd5-a78b-06d352880a82: Label # Label
+    778e7e30-f3bb-48d9-9f3a-043a4c16b821: 'Phone Number' # Phone Number
     787e1739-73f9-4cc5-876c-48a53d41a987: 'Post Categories' # Post Categories
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
