@@ -1,4 +1,4 @@
-dateModified: 1770394314
+dateModified: 1770401721
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -138,12 +138,13 @@ meta:
     70722bde-7efe-42d4-a06e-399a44b02435: 'Gallery Image' # Gallery Image
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
     144007f7-7bab-40c2-9327-b324abf12787: 'Image - Medium' # Image - Medium
+    475060cf-fb95-42a7-8887-8f5ed9ffbd7e: Menus # Menus
     941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
     ac3ae0db-5f19-443a-b104-285f5f394a3b: Gallery # Gallery
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Hero # Hero
     b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid
-    b7e52fb1-8f8c-42af-b4dd-89f7bff35de2: 'Accordion Wrapper' # Accordion Wrapper
+    b7e52fb1-8f8c-42af-b4dd-89f7bff35de2: 'Footer Menu' # Footer Menu
     b17a01c1-f13b-415b-80b2-c7e3680ec338: Banner # Banner
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
     c0a4b738-d7e7-4400-9576-7e279127345f: 'Card Heading' # Card Heading
@@ -163,13 +164,15 @@ meta:
     e797d026-fc3a-408a-a1c8-c17aa4f57f3d: Assets # Assets
     e3499da5-5edf-46f5-95cc-7f24c8c8f862: 'Image Block' # Image Block
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
-    ec34d844-46a7-4389-965e-a1a4048a0798: Accordion # Accordion
+    ec34d844-46a7-4389-965e-a1a4048a0798: 'Header Menu' # Header Menu
+    f02cfe8f-517a-4f23-a3bd-3ed65dc87db9: 'Menu Item' # Menu Item
     f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
+    fc8b81be-d376-4af1-9eef-ec1d2ae8e3f0: 'Menu Item' # Menu Item
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
-    fde5281f-1a78-4749-abcc-3c136ffc0258: Button # Button
+    fde5281f-1a78-4749-abcc-3c136ffc0258: 'Menu Link' # Menu Link
     fe9ab73f-86a5-45dd-8efd-91ea40ad88ac: 'Card Image' # Card Image
 plugins:
   ckeditor:

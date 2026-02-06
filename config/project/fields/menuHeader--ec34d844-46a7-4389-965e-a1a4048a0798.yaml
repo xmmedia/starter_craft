@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: accordion
+handle: menuHeader
 instructions: null
-name: Accordion
+name: 'Header Menu'
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'Add item'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,19 +12,12 @@ settings:
       __assoc__:
         -
           - uid
-          - 72bf15bd-1c10-49b7-9d48-b1192343eea6 # Accordion Heading
-    -
-      __assoc__:
+          - fc8b81be-d376-4af1-9eef-ec1d2ae8e3f0 # Menu Item
         -
-          - uid
-          - 41e7d3e7-7f22-4eec-8732-1a4b2cc13182 # Accordion Content
-    -
-      __assoc__:
-        -
-          - uid
-          - 22bd92e8-fa46-4ac8-b91d-7b8a84bebccb # Accordion Icon
+          - group
+          - General
   includeTableView: false
-  maxEntries: 3
+  maxEntries: null
   minEntries: null
   pageSize: 50
   propagationKeyFormat: null

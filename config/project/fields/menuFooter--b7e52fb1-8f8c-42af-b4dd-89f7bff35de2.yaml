@@ -1,10 +1,10 @@
 columnSuffix: null
-handle: accordionWrapper
+handle: menuFooter
 instructions: null
-name: 'Accordion Wrapper'
+name: 'Footer Menu'
 searchable: false
 settings:
-  createButtonLabel: null
+  createButtonLabel: 'Add item'
   defaultIndexViewMode: cards
   enableVersioning: false
   entryTypes:
@@ -12,10 +12,13 @@ settings:
       __assoc__:
         -
           - uid
-          - 2338f10f-0595-4642-bd0c-077886b0da3b # Accordion
+          - f02cfe8f-517a-4f23-a3bd-3ed65dc87db9 # Menu Item
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
-  minEntries: 1
+  minEntries: null
   pageSize: 50
   propagationKeyFormat: null
   propagationMethod: all
