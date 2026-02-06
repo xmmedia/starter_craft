@@ -22,22 +22,6 @@ fieldLayouts:
             warning: null
             width: 50
           -
-            dateAdded: '2026-02-06T18:26:00+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 2ebda50a-529a-4080-a436-20f253d62a8b # Phone Numbers
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 05679d78-4c23-4891-a712-1f0c006fbaed
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2026-02-06T03:03:48+00:00'
             editCondition: null
             elementCondition: null
@@ -53,38 +37,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
-          -
-            dateAdded: '2026-02-06T18:26:00+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 46e9bae9-bb03-4bb3-af1f-a20e53db446d # Address
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4a36f90e-d383-4988-9915-73fc497c5fac
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2026-02-06T18:26:00+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 03b06886-2b87-444b-9672-bb466f15d54d # Directions Link
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 43efbdaf-5f80-41cc-8810-aeecbb09cc80
-            userCondition: null
-            warning: null
-            width: 100
         name: Globals
         uid: 4036473b-47dd-48fd-bfc5-5dda56b5abce
         userCondition: null
