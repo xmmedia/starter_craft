@@ -1,4 +1,4 @@
-dateModified: 1770347028
+dateModified: 1770394314
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -169,7 +169,7 @@ meta:
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
-    fde5281f-1a78-4749-abcc-3c136ffc0258: 'Button Link' # Button Link
+    fde5281f-1a78-4749-abcc-3c136ffc0258: Button # Button
     fe9ab73f-86a5-45dd-8efd-91ea40ad88ac: 'Card Image' # Card Image
 plugins:
   ckeditor:

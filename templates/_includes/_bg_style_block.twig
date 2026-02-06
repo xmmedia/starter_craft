@@ -1,0 +1,19 @@
+{% macro bg_style_block(image, imageTransform, className, uniqueClassAppend) %}
+    {% set _image = image.getUrlsBySize(['1x', '2x', '3x'], imageTransform) %}
+
+    <style>
+        .{{ className }}--{{ uniqueClassAppend }} {
+            background-image: url("{{ _image['1x'] }}");
+        }
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .{{ className }}--{{ uniqueClassAppend }} {
+                background-image: url("{{ _image['2x'] }}");
+            }
+        }
+        @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
+            .{{ className }}--{{ uniqueClassAppend }} {
+                background-image: url("{{ _image['3x'] }}");
+            }
+        }
+    </style>
+{% endmacro %}

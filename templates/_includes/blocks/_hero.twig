@@ -1,21 +1,20 @@
-{% if block.heroImage|length > 0 %}
-    {% set heading = block.heading %}
-    {% set subheading = block.heroSubheading %}
-    {% set image = block.heroImage.one() %}
-    {% set imageTransform = 'hero' %}
+{% import '_includes/_bg_style_block.twig' as style %}
 
-    <section class="hero col-span-12" style="background-image: url('{{ image.getUrl(imageTransform) }}'); ">
-        <div class="flex justify-center items-center w-full h-full bg-white-transparent">
-            <div class="text-center">
-                {% if heading %}
-                    <h1>{{ heading }}</h1>
-                {% else %}
-                    <h1>{{ entry.title }}</h1>
-                {% endif %}
-                {% if subheading %}
-                    <h2>{{ subheading }}</h2>
-                {% endif %}
-            </div>
+{{ style.bg_style_block(block.heroImage.one(), 'hero', 'hero--', block.id) }}
+
+<section class="hero hero--{{ block.id }}">
+    <div class="flex justify-center items-center w-full h-full bg-white-transparent">
+        <div class="text-center">
+            <h1>{{ block.heading|heading_striptags }}</h1>
+            {% if block.heroSubheading %}
+                <h2>{{ block.heroSubheading|heading_striptags  }}</h2>
+            {% endif %}
+
+            {% if block.heroButton %}
+                <a href="{{ block.heroButton.value }}" class="button">
+                    {{ block.heroButton.label }}
+                </a>
+            {% endif %}
         </div>
-    </section>
-{% endif %}
+    </div>
+</section>
