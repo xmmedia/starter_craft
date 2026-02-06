@@ -1,0 +1,68 @@
+fieldLayouts:
+  8876af48-2dd0-4441-b19c-d385702221dd:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-02-06T18:44:29+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 6bb359ec-89c1-4aef-aaab-a009d0be000b # Header Menu
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c4e80aaf-e950-4b8c-b89a-53c622fe339f
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-02-06T18:48:23+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 68b242e4-9392-4e63-a1e6-d39cf4b73d02 # Menu Link
+            handle: mainMenuButton
+            instructions: null
+            label: 'Menu Button'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: ff8e4337-9f96-4188-ad3b-f198de9170e4
+            userCondition: null
+            warning: null
+            width: 100
+        name: Header
+        uid: 71fb1086-8d5d-4f6b-8b5f-942ce7ed8a70
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-02-06T18:48:23+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7f2f459b-4ae8-4ac5-be02-8accf436e43e # Footer Menu
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 3f8b824a-57c9-4e95-b8dc-09c6211b7cb1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Footer
+        uid: fbc45c30-e949-4090-8f6b-724a04c68d76
+        userCondition: null
+    thumbFieldKey: null
+handle: menus
+name: Menus
+sortOrder: 2

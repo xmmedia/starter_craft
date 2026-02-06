@@ -1,4 +1,4 @@
-dateModified: 1770394314
+dateModified: 1770403703
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -64,6 +64,7 @@ meta:
     2a962a82-04dd-4e7a-9e92-e45cc7807082: 'Image Blocks' # Image Blocks
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
+    2fc8ea4c-f70b-4cc7-a530-6fff07267456: 'Menu Item' # Menu Item
     3b8ce3ab-45bc-4658-8990-47cab2d46d75: 'Pattern Library' # Pattern Library
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Image - Small' # Image - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
@@ -71,6 +72,7 @@ meta:
     4deb1488-ff4e-4359-91ed-22574db39b8e: 'Accordion Wrapper' # Accordion Wrapper
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
     5f2efa0b-1e87-4d02-a636-f17256ef85d1: 'Block Width' # Block Width
+    6bb359ec-89c1-4aef-aaab-a009d0be000b: 'Header Menu' # Header Menu
     6bd2bd9a-6b57-45fb-b914-f5b8e27e926f: Gallery # Gallery
     6cdb288c-7205-4c21-9a0a-7d58451a4b56: 'Vertical Align Center' # Vertical Align Center
     6eedec95-8e5a-49e4-8206-33ff056d1664: 'Image Size' # Image Size
@@ -78,6 +80,7 @@ meta:
     7bcca8fb-6082-4c2d-9726-ea6482194a8e: 'Image Block' # Image Block
     7cbed487-b42f-4d26-8ca5-5a6e97aaefc8: 'Banner Images' # Banner Images
     7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Cards # Cards
+    7f2f459b-4ae8-4ac5-be02-8accf436e43e: 'Footer Menu' # Footer Menu
     8a21b25b-dfd1-4441-8276-d1457d126775: Email # Email
     8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
     08c0e2a2-aaf5-48e9-bed6-e1f8fc7ce863: 'Herobar - Subheading' # Herobar - Subheading
@@ -100,6 +103,7 @@ meta:
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
     64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: 'Post Content - Image' # Post Content - Image
+    68b242e4-9392-4e63-a1e6-d39cf4b73d02: 'Menu Link' # Menu Link
     68c02e53-bd4b-45e6-8721-dfa278498dbb: 'Herobar Image' # Herobar Image
     72bf15bd-1c10-49b7-9d48-b1192343eea6: 'Accordion Heading' # Accordion Heading
     75b94bea-4929-4bc5-8103-72bd8820c8c8: 'Card Link' # Card Link
@@ -123,6 +127,7 @@ meta:
     733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
     787e1739-73f9-4cc5-876c-48a53d41a987: 'Post Categories' # Post Categories
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
+    0897a6a4-127b-4d14-8fae-96c64eb06027: Menus # Menus
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - Sharing Image' # SEO - Sharing Image

@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: menuFooter
+instructions: null
+name: 'Footer Menu'
+searchable: false
+settings:
+  createButtonLabel: 'Add item'
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 2fc8ea4c-f70b-4cc7-a530-6fff07267456 # Menu Item
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: null
+  minEntries: null
+  pageSize: 50
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: cards
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix
