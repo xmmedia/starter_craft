@@ -2,6 +2,7 @@
 {% set imageSize = imageSize|default('imageSmall') %}
 {% set imageAlign = imageAlign|default('center') %}
 {% set imageVerticalAlignment = imageVerticalAlignment|default('center') %}
+{% set imageClasses = imageClasses|default() %}
 
 {% switch imageSize %}
     {% case 'large' %}
@@ -33,7 +34,7 @@
         {% if block.imageLink %}
         <a href="{{ block.imageLink }}">
             {% endif %}
-            {{ image(image, imageTransform) }}
+            {{ image(image, imageTransform, { class: imageClasses }) }}
             {% if block.imageLink %}
         </a>
         {% endif %}
