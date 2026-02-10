@@ -2,30 +2,6 @@ const plugin = require('tailwindcss/plugin');
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
-    theme: {
-        extend: {
-            maxWidth: {
-                '1/2': '50%',
-                '3/5': '60%',
-                '11/12': '91%',
-                '8xl' : '90rem',
-            },
-            height: {
-                '120': '30rem',
-                '152' : '38rem',
-            },
-            fontFamily: {
-                'headings': [
-                    '"Roboto"',
-                    '"Helvetica Neue"',
-                    'Arial',
-                    // see https://tailwindcss.com/docs/font-family for list
-                    ...defaultTheme.fontFamily.sans,
-                ],
-            },
-        },
-    },
-
     plugins: [
         require('@tailwindcss/typography'),
 
