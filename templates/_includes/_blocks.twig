@@ -99,7 +99,9 @@
                 %}
 
             {% case 'contactForm' %}
-                {% include '_includes/blocks/_contact_form.twig' %}
+                {% include '_includes/blocks/_contact_form.twig' with {
+                    blockWidth: block.blockWidth|default(12),
+                } %}
 
             {% case 'patternLibrary' %}
                 {% include '_includes/blocks/_pattern_library.twig' %}

@@ -1,76 +1,101 @@
-{% macro errorList(errors) %}
-    {% if errors %}
-        {% for error in errors %}
-            <div class="alert alert-danger">{{ error }}</div>
-        {% endfor %}
+{% if block.formRedirect %}
+    {% set successUrl = block.formRedirect.value %}
+{% else %}
+    {% set successUrl = craft.app.request.url ~ '#form--' ~ block.id %}
+{% endif %}
+
+<div id="form--{{ block.id }}" class="col-span-12 md:col-span-{{ blockWidth }} {{ block.classes }}"
+    {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+    {% if block.heading %}
+        {{ tag('h2', { html: block.heading|heading_striptags }) }}
     {% endif %}
-{% endmacro %}
-
-{% set submission = submission ?? null %}
-
-<form id="form"
-      method="post"
-      action="#form"
-      accept-charset="utf-8"
-      class="form-wrap col-span-{{ block.blockWidth }}"
-      {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    {% if submission %}
-        <div class="alert alert-danger">Looks like something isn't quite right. Please see the messages below.</div>
+    {% if block.intro %}
+        <div class="w-content-copy">{{ block.intro }}</div>
     {% endif %}
 
-    {{ csrfInput() }}
-    {{ actionInput('contact-form/send') }}
-    {{ redirectInput('contact/thanks') }}
+    {% macro errorList(errors) %}
+        {% if errors %}
+            {% for error in errors %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endmacro %}
 
-    <div class="field-wrap">
-        <label for="from-name">Name</label>
-        {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
-        {{ input('text', 'fromName', submission.fromName ?? null, {
-            id: 'from-name',
-            autocomplete: 'name',
-            maxlength: 100,
-            required: true,
-        }) }}
+    {% set submission = submission ?? null %}
+
+    <div class="flex flex-col justify-center md:justify-start">
+        <form method="post" action="{{ successUrl }}" accept-charset="utf-8" class="form-wrap">
+
+            {% set flashes = craft.app.session.getAllFlashes(true) %}
+            {% if flashes | length %}
+                <div class="mb-4">
+                    {% for level, flash in flashes %}
+                        {# level is success or error #}
+                        <div class="alert w-full alert-{{ level }}">{{ flash }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {{ csrfInput() }}
+            {{ actionInput('contact-form/send') }}
+            {{ redirectInput(successUrl) }}
+
+            {{ successMessageInput(block.successMessage|heading_striptags|default('Thank you for reaching out. We\'ll be in contact within 3 business days.')) }}
+            {{ failMessageInput(block.errorMessage|heading_striptags|default('Looks like something isn\'t quite right. Please see the messages below.')) }}
+
+            <div class="field-wrap">
+                <label for="from-name">Name</label>
+                {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
+                {{ input('text', 'fromName', submission.fromName ?? null, {
+                    id: 'from-name',
+                    autocomplete: 'name',
+                    maxlength: 100,
+                    required: true,
+                }) }}
+            </div>
+
+            <div class="field-wrap">
+                <label for="from-email">Email</label>
+                {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
+                {{ input('text', 'fromEmail', submission.fromEmail ?? null, {
+                    id: 'from-email',
+                    autocomplete: 'email',
+                    maxlength: 100,
+                    required: true,
+                    placeholder: 'Required – you@example.com',
+                }) }}
+            </div>
+
+            <div class="field-wrap hidden">
+                <label for="repeat-email">Repeat your email</label>
+                {{ input('email', 'repeatEmail', null, {
+                    id: 'repeat-email',
+                    autocomplete: 'email',
+                    maxlength: 100,
+                }) }}
+            </div>
+
+            <div class="field-wrap">
+                <label for="phone">Phone</label>
+                {{ input('tel', 'message[Phone]', submission.message.Phone ?? null, {
+                    id: 'phone',
+                    autocomplete: 'tel',
+                    maxlength: 15,
+                    placeholder: 'Optional – 780-222-3333',
+                }) }}
+            </div>
+
+            <div class="field-wrap field-wrap-textarea">
+                <label for="message">Message</label>
+                {{ submission ? _self.errorList(submission.getErrors('message.body')) }}
+                <textarea id="message" name="message[body]" required maxlength="10000" class="h-48">{{ submission.message.body ?? null }}</textarea>
+            </div>
+
+            <input type="hidden" name="message[formName]" value="Contact">
+
+            <div class="mt-6 text-center">
+                <button class="button" type="submit">Send Message</button>
+            </div>
+        </form>
     </div>
-
-    <div class="field-wrap">
-        <label for="from-email">Email</label>
-        {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
-        {{ input('text', 'fromEmail', submission.fromEmail ?? null, {
-            id: 'from-email',
-            autocomplete: 'email',
-            maxlength: 100,
-            required: true,
-            placeholder: 'Required – you@example.com',
-        }) }}
-    </div>
-
-    <div class="field-wrap hidden">
-        <label for="repeat-email">Repeat your email</label>
-        {{ input('email', 'repeatEmail', null, {
-            id: 'repeat-email',
-            autocomplete: 'email',
-            maxlength: 100,
-        }) }}
-    </div>
-
-    <div class="field-wrap">
-        <label for="phone">Phone</label>
-        {{ input('tel', 'message[Phone]', submission.message.Phone ?? null, {
-            id: 'phone',
-            autocomplete: 'tel',
-            maxlength: 15,
-            placeholder: 'Optional – 780-222-3333',
-        }) }}
-    </div>
-
-    <div class="field-wrap field-wrap-textarea">
-        <label for="message">Message</label>
-        {{ submission ? _self.errorList(submission.getErrors('message.body')) }}
-        <textarea id="message" name="message[body]" required maxlength="10000" class="h-48">{{ submission.message.body ?? null }}</textarea>
-    </div>
-
-    <input type="hidden" name="message[formName]" value="Contact">
-
-    <button class="button" type="submit">Send</button>
-</form>
+</div>
