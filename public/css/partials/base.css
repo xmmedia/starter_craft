@@ -11,9 +11,9 @@
 /* colour converter: https://lik.ai/tools/color-convertor/ */
 @theme {
     --breakpoint-xs: 25rem;
-    --color-black-transparent: hsl(none 0% 0% / 0.4);
-    --color-white-transparent: hsl(none 0% 100% / 0.6);
-    --color-white-transparent-dark: hsl(none 0% 100% / 0.8);
+    --color-black-transparent: hsl(none 0% 0% / 40%);
+    --color-white-transparent: hsl(none 0% 100% / 60%);
+    --color-white-transparent-dark: hsl(none 0% 100% / 80%);
     --max-width-8xl: 90rem;
 
     /* see https://tailwindcss.com/docs/font-family for list */
@@ -25,9 +25,9 @@
         /* not sure this is needed (does it make a difference), but it's easy to add */
         --color-white: color(display-p3 1 1 1);
         --color-black: color(display-p3 0 0 0);
-        --color-black-transparent: color(display-p3 0 0 0 / 0.4);
-        --color-white-transparent: color(display-p3 0 0 0 / 0.6);
-        --color-white-transparent-dark: color(display-p3 0 0 0 / 0.8);
+        --color-black-transparent: color(display-p3 0 0 0 / 40%);
+        --color-white-transparent: color(display-p3 0 0 0 / 60%);
+        --color-white-transparent-dark: color(display-p3 0 0 0 / 80%);
     }
 }
 
