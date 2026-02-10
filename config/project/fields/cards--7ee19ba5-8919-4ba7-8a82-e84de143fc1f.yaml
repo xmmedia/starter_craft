@@ -1,18 +1,21 @@
 columnSuffix: null
 handle: cards
 instructions: null
-name: Cards
+name: Items
 searchable: false
 settings:
   createButtonLabel: null
   defaultIndexViewMode: cards
-  enableVersioning: false
+  enableVersioning: true
   entryTypes:
     -
       __assoc__:
         -
           - uid
           - f9c080c6-18df-4ea2-a482-b955a918cdc7 # Card
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: null

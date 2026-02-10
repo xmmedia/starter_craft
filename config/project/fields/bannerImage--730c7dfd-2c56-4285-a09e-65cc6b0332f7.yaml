@@ -18,9 +18,9 @@ settings:
   minRelations: null
   previewMode: full
   restrictFiles: true
-  restrictLocation: true
+  restrictLocation: false
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:7cbed487-b42f-4d26-8ca5-5a6e97aaefc8' # Banner Images
+  restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
   restrictedLocationSubpath: null
   selectionLabel: null
   showSearchInput: true

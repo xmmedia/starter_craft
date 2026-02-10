@@ -1,5 +1,5 @@
 altTranslationKeyFormat: null
-altTranslationMethod: site
+altTranslationMethod: none
 fieldLayouts:
   596ae60f-1e41-4235-ac72-833aac837ce8:
     cardThumbAlignment: end
@@ -35,6 +35,30 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            attribute: alt
+            class: null
+            cols: null
+            dateAdded: '2026-02-10T17:36:50+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
+            required: false
+            rows: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AltField
+            uid: 1eb856ad-fa21-4a63-bd48-9368cb5eaec4
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: 3070f588-7ce6-4d83-868c-6ddc19d22bfa
         userCondition: null
@@ -42,9 +66,9 @@ fieldLayouts:
 fs: general
 handle: general
 name: General
-sortOrder: 2
+sortOrder: 1
 subpath: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-transformFs: null
+transformFs: transformed
 transformSubpath: ''

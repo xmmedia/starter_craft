@@ -18,6 +18,92 @@ fieldLayouts:
             uid: 18c9832d-7a56-4b47-b703-265b453bfb4c
             userCondition: null
           -
+            dateAdded: '2026-02-10T17:56:35+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 76e801b6-5ef4-4c8c-a18d-bdcde31a35b2
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-02-10T17:56:35+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
+            handle: intro
+            instructions: null
+            label: Intro
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 35892e32-6c94-4fd6-a36e-c7df1d2bc4a1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-02-10T17:56:35+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f5ce74ee-26a4-476d-8821-9fa472b0e3dd # Message
+            handle: successMessage
+            instructions: 'Shown after a successful submission.'
+            label: 'Success Message'
+            required: false
+            tip: "Defaults to: Thank you for reaching out. We'll be in contact within 3 business days."
+            type: craft\fieldlayoutelements\CustomField
+            uid: a5546e48-ce9d-4483-a26c-8f78522ba546
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-02-10T17:56:35+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: f5ce74ee-26a4-476d-8821-9fa472b0e3dd # Message
+            handle: errorMessage
+            instructions: "Shown when there's an error submitting the form."
+            label: 'Error Message'
+            required: false
+            tip: "Defaults to: Looks like something isn't quite right. Please see the messages below."
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9422e5cd-99e9-4349-9c50-f19ebf9915d7
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-02-10T17:56:35+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: ac4ba437-838f-42de-8732-07ae62617da4 # Form Redirect
+            handle: null
+            instructions: "By default the form will return to the current page and scroll to the contact form. Select/enter a different URL to redirect to a different location. The success message won't be displayed if it redirects elsewhere."
+            label: 'Success Redirect URL'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 86602c24-3edb-405f-9b4e-203f45f3d7b1
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: fce21a72-4053-422d-bf0a-23ebefb43091
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
             dateAdded: '2024-12-02T21:19:59+00:00'
             editCondition: null
             elementCondition: null
@@ -33,8 +119,46 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
-        name: Content
-        uid: fce21a72-4053-422d-bf0a-23ebefb43091
+        name: Styles
+        uid: cf9c22ac-0f87-4177-b813-7e8611594421
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-02-10T17:58:24+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 793eed31-81c3-4f32-8a63-4d8735c2db0f
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-02-10T17:58:24+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 39d0f8b8-71f2-4059-9bd3-c2ed904f431d
+            userCondition: null
+            warning: null
+            width: 50
+        name: Attributes
+        uid: a81681d1-d148-4218-b1a3-192574090e06
         userCondition: null
     thumbFieldKey: null
 handle: contactForm

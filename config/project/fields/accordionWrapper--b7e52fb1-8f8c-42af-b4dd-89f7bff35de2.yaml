@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: accordionWrapper
 instructions: null
-name: 'Accordion Wrapper'
+name: Items
 searchable: false
 settings:
   createButtonLabel: null
@@ -13,6 +13,9 @@ settings:
         -
           - uid
           - 2338f10f-0595-4642-bd0c-077886b0da3b # Accordion
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: 1

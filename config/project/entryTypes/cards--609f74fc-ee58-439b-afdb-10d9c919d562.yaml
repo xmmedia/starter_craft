@@ -7,6 +7,12 @@ fieldLayouts:
     cardView:
       - 'layoutElement:d33fff37-7dd3-40ba-91c0-926dace95c47'
       - 'layoutElement:4bde8a6a-e9be-4dfb-ad3e-8e2efd92a7f1'
+    generatedFields:
+      -
+        handle: count
+        name: Count
+        template: '{cards|length} item(s)'
+        uid: f9e09b42-05c1-4205-9527-eab289ec91de
     tabs:
       -
         elementCondition: null
@@ -21,7 +27,7 @@ fieldLayouts:
             elementCondition: null
             id: null
             inputType: null
-            instructions: 'Enter a title so cards are distinguishable in editor. This will not appear on the website.'
+            instructions: null
             label: null
             max: null
             min: null
@@ -29,10 +35,10 @@ fieldLayouts:
             orientation: null
             placeholder: null
             readonly: false
-            required: true
+            required: false
             size: null
             step: null
-            tip: null
+            tip: 'Only shown in the admin.'
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 42a08e37-5175-42de-a309-fb9a6a90e8ef
@@ -44,7 +50,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 7ee19ba5-8919-4ba7-8a82-e84de143fc1f # Cards
+            fieldUid: 7ee19ba5-8919-4ba7-8a82-e84de143fc1f # Items
             handle: null
             instructions: null
             label: null
@@ -76,13 +82,13 @@ fieldLayouts:
             uid: d33fff37-7dd3-40ba-91c0-926dace95c47
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T22:10:19+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
             handle: null
             instructions: null
             label: null
@@ -92,7 +98,7 @@ fieldLayouts:
             uid: 4bde8a6a-e9be-4dfb-ad3e-8e2efd92a7f1
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Attributes
         uid: d743dacc-20a6-4198-a8e8-f4b444006822
         userCondition: null
@@ -105,7 +111,7 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{title}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: "{title ? title ~ ':' : ''} {count}"

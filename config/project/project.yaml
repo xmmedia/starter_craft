@@ -1,4 +1,30 @@
-dateModified: 1770743062
+dateModified: 1770746902
+elementSources:
+  craft\elements\Entry:
+    -
+      key: '*'
+      page: Entries
+      type: native
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: singles
+      page: Entries
+      tableAttributes:
+        - status
+        - link
+      type: native
+    -
+      key: 'section:4119a1ff-3e12-46a5-b9f5-a6f932b4fec2' # Pages
+      page: Entries
+      type: native
+    -
+      key: 'section:2b537640-9acd-4e53-a1b4-f497d2e79cd0' # Blog
+      page: Entries
+      type: native
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -21,13 +47,6 @@ fs:
       path: '@webroot/assets/pdfs'
     type: craft\fs\Local
     url: '@web/assets/pdfs'
-  banners:
-    hasUrls: true
-    name: banners
-    settings:
-      path: '@webroot/assets/banners'
-    type: craft\fs\Local
-    url: '@web/assets/banners'
   blog:
     hasUrls: true
     name: Blog
@@ -56,9 +75,15 @@ fs:
       path: '@webroot/assets/og'
     type: craft\fs\Local
     url: '@web/assets/og'
+  transformed:
+    hasUrls: true
+    name: Transformed
+    settings:
+      path: '@webroot/assets/transformed'
+    type: craft\fs\Local
+    url: /assets/transformed
 meta:
   __names__:
-    0a84d050-b078-4401-9449-cdda849f722b: Contact # Contact
     1bf74653-4a17-4c76-9fa3-4a5d76c42703: Address # Address
     1ca3f937-5a8b-4504-a7c3-22feb254fd6c: SEO # SEO
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
@@ -69,7 +94,7 @@ meta:
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Image - Small' # Image - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
-    4deb1488-ff4e-4359-91ed-22574db39b8e: 'Accordion Wrapper' # Accordion Wrapper
+    4deb1488-ff4e-4359-91ed-22574db39b8e: Accordion # Accordion
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
     5f2efa0b-1e87-4d02-a636-f17256ef85d1: 'Block Width' # Block Width
     6bb359ec-89c1-4aef-aaab-a009d0be000b: 'Header Menu' # Header Menu
@@ -78,8 +103,7 @@ meta:
     6eedec95-8e5a-49e4-8206-33ff056d1664: 'Image Size' # Image Size
     7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7bcca8fb-6082-4c2d-9726-ea6482194a8e: 'Image Block' # Image Block
-    7cbed487-b42f-4d26-8ca5-5a6e97aaefc8: 'Banner Images' # Banner Images
-    7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Cards # Cards
+    7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Items # Items
     7f2f459b-4ae8-4ac5-be02-8accf436e43e: 'Footer Menu' # Footer Menu
     8a21b25b-dfd1-4441-8276-d1457d126775: Email # Email
     8b7f28d8-533c-4c53-befc-8bf5de329775: URLs # URLs
@@ -87,16 +111,14 @@ meta:
     8e90774b-6fbc-4e14-b5ee-0e7072719820: 'Social Medial URL' # Social Medial URL
     8ed21dd3-26d7-4536-8646-9a109e17ea3b: 'Phone Number' # Phone Number
     8f2af3e8-cdf5-4c6b-921e-814f25286901: 'Contact Form' # Contact Form
-    09cd580c-e508-46a1-85a9-66581dd3a958: 'Element Id' # Element Id
+    09cd580c-e508-46a1-85a9-66581dd3a958: 'Element ID' # Element ID
     9cf43e1b-e9c6-4233-9ac8-ef908559899b: Simple # Simple
-    12bf30a3-ae66-402c-aa6a-1957b9eace70: Card # Card
     14b6e20f-f619-4fbc-9b76-72460ba1423b: 'Image - Extra Small' # Image - Extra Small
     17ed004b-264f-4318-be4a-407867219887: 'Image Align' # Image Align
     22bd92e8-fa46-4ac8-b91d-7b8a84bebccb: 'Accordion Icon' # Accordion Icon
     41e7d3e7-7f22-4eec-8732-1a4b2cc13182: 'Accordion Content' # Accordion Content
     48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
     48b81495-c226-4048-afdd-066e97f6a4a5: 'Contact Form Thank You' # Contact Form Thank You
-    49a23caf-c4e8-450b-a4d5-7acbe7d2ef69: 'Button Text' # Button Text
     49c7c1d7-292b-450a-bf9e-c53ee0c295f8: 'Accordion Icon' # Accordion Icon
     50ce781f-8f6e-4eeb-b0b7-faa9e9821913: 'Text Block' # Text Block
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
@@ -114,7 +136,7 @@ meta:
     77e77066-5f46-47e0-8cd1-44df0c9e2033: 'Social Media' # Social Media
     80ffc64e-4e53-4ba1-8e8f-95d4f45b8946: 'Text Align' # Text Align
     84d2deef-d6fe-4a07-b967-b71469d68219: 'SEO - Sharing Image Alt' # SEO - Sharing Image Alt
-    84ee4464-5ee9-437c-8ce9-ac6cd3d50663: Gallery # Gallery
+    84ee4464-5ee9-437c-8ce9-ac6cd3d50663: Images # Images
     95ce255a-2242-4832-a7bd-6ef99ba868c1: General # General
     95e5ecb2-f98f-455b-bd08-580743d5fa53: 'Text Align Center (Mobile)' # Text Align Center (Mobile)
     414f0663-ff97-44ab-b402-98890d76f713: 'SEO - Page Title' # SEO - Page Title
@@ -135,10 +157,10 @@ meta:
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - Sharing Image' # SEO - Sharing Image
+    4119a1ff-3e12-46a5-b9f5-a6f932b4fec2: Pages # Pages
     4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Image - Large' # Image - Large
     5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
     7424ebc8-4255-41f1-ab4c-0898425525e9: Gallery # Gallery
-    8794b2b7-43f4-4b76-87bb-e1875f1d0357: 'Contact Thanks' # Contact Thanks
     23405c96-1469-4872-a55a-6488791f767a: Default # Default
     25053ba9-0cb9-477b-98bb-ef1d6c5bd9ea: 'Contact Thanks' # Contact Thanks
     42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter
@@ -147,14 +169,14 @@ meta:
     70722bde-7efe-42d4-a06e-399a44b02435: 'Gallery Image' # Gallery Image
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
     144007f7-7bab-40c2-9327-b324abf12787: 'Image - Medium' # Image - Medium
-    941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
     a8e6c61b-4a37-4d1a-8de1-c908b52dbf43: 'Phone Numbers' # Phone Numbers
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
     a2177e53-f588-4293-a115-f5b574937c78: 'Pattern Library' # Pattern Library
     ac3ae0db-5f19-443a-b104-285f5f394a3b: Gallery # Gallery
+    ac4ba437-838f-42de-8732-07ae62617da4: 'Form Redirect' # Form Redirect
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Hero # Hero
     b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid
-    b7e52fb1-8f8c-42af-b4dd-89f7bff35de2: 'Accordion Wrapper' # Accordion Wrapper
+    b7e52fb1-8f8c-42af-b4dd-89f7bff35de2: Items # Items
     b17a01c1-f13b-415b-80b2-c7e3680ec338: Banner # Banner
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
     c0a4b738-d7e7-4400-9576-7e279127345f: 'Card Heading' # Card Heading
@@ -165,18 +187,16 @@ meta:
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
     ce0260d9-af51-4c3c-81dd-a1ca82ca7552: Label # Label
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
-    d9b45246-8d18-46e0-9a98-ac7b65120828: About # About
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
     d2312b71-68b5-4869-b6ca-0d3d447abb38: 'Section End' # Section End
     d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text' # Post Content - Text
     d9750188-899b-4d90-b854-a86818225807: 'Image Block' # Image Block
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
-    e797d026-fc3a-408a-a1c8-c17aa4f57f3d: Assets # Assets
     e3499da5-5edf-46f5-95cc-7f24c8c8f862: 'Image Block' # Image Block
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
-    ec34d844-46a7-4389-965e-a1a4048a0798: Accordion # Accordion
     f4c0b7f9-3337-442b-b4fa-8f3cf2bbee89: Services # Services
+    f5ce74ee-26a4-476d-8821-9fa472b0e3dd: Message # Message
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
     f84ef073-f5e7-404c-a8ee-c24b36df5bd4: 'Phone Number' # Phone Number
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary

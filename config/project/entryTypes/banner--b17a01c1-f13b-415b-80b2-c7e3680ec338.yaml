@@ -21,7 +21,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: c64b1776-2199-45fd-b05f-ecbaeada3fe0
@@ -68,11 +68,11 @@ handle: banner
 hasTitleField: false
 icon: null
 name: Banner
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: '{heading}'

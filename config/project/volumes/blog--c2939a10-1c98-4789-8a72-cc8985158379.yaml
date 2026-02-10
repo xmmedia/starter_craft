@@ -1,5 +1,5 @@
 altTranslationKeyFormat: null
-altTranslationMethod: site
+altTranslationMethod: none
 fieldLayouts:
   a68ab1ba-6a26-4ee1-8208-db2b6066f1db:
     cardThumbAlignment: end
@@ -35,6 +35,30 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+          -
+            attribute: alt
+            class: null
+            cols: null
+            dateAdded: '2026-02-10T17:35:50+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            instructions: null
+            label: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            requirable: true
+            required: false
+            rows: null
+            tip: null
+            title: null
+            type: craft\fieldlayoutelements\assets\AltField
+            uid: ab9662c8-b04d-4f2e-ad42-3fa794f76773
+            userCondition: null
+            warning: null
+            width: 100
         name: Content
         uid: e12d42c1-c0bb-4ecc-8ff8-c5b6e3e0d33d
         userCondition: null
@@ -42,9 +66,9 @@ fieldLayouts:
 fs: blog
 handle: blog
 name: Blog
-sortOrder: 1
+sortOrder: 3
 subpath: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-transformFs: null
+transformFs: transformed
 transformSubpath: ''

@@ -52,14 +52,6 @@ settings:
       __assoc__:
         -
           - uid
-          - 2a962a82-04dd-4e7a-9e92-e45cc7807082 # Image Blocks
-        -
-          - group
-          - General
-    -
-      __assoc__:
-        -
-          - uid
           - 6bd2bd9a-6b57-45fb-b914-f5b8e27e926f # Gallery
         -
           - group
@@ -92,7 +84,7 @@ settings:
       __assoc__:
         -
           - uid
-          - 4deb1488-ff4e-4359-91ed-22574db39b8e # Accordion Wrapper
+          - 4deb1488-ff4e-4359-91ed-22574db39b8e # Accordion
         -
           - group
           - General

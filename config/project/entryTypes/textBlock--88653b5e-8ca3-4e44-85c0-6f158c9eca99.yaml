@@ -102,13 +102,13 @@ fieldLayouts:
             uid: 43a2eba1-aec5-4a29-a7d1-a5b1441597be
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T22:17:33+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
             handle: null
             instructions: null
             label: null
@@ -118,7 +118,7 @@ fieldLayouts:
             uid: 909a47f8-36df-4d6c-8c8f-1e7ca299baae
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Attributes
         uid: cb36922c-0f11-41b7-a065-62885d17a2d0
         userCondition: null

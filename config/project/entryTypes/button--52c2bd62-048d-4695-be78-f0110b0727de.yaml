@@ -4,41 +4,23 @@ description: null
 fieldLayouts:
   027f3c10-aa09-4bb7-8174-6d3bf5fb3ab1:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:507f358d-0a4f-410c-b5b0-6fc190984d60'
     tabs:
       -
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-11-26T18:45:15+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 49a23caf-c4e8-450b-a4d5-7acbe7d2ef69 # Button Text
-            handle: null
-            instructions: null
-            label: 'Button Text'
-            required: true
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 4bddfb10-0798-40a1-93ab-645393c731e5
-            userCondition: null
-            warning: null
-            width: 100
-          -
-            dateAdded: '2024-11-26T18:45:15+00:00'
+            dateAdded: '2026-02-10T17:24:58+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
             fieldUid: fde5281f-1a78-4749-abcc-3c136ffc0258 # Button
             handle: null
             instructions: null
-            label: 'Button Link'
-            required: true
+            label: null
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 507f358d-0a4f-410c-b5b0-6fc190984d60
+            uid: 7148e69d-1382-4761-a1f8-c43f7fb16697
             userCondition: null
             warning: null
             width: 100
@@ -63,7 +45,7 @@ fieldLayouts:
             uid: c8a04cf2-8dd7-4c50-9690-df4e142998af
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-03T23:52:17+00:00'
             editCondition: null
@@ -79,8 +61,8 @@ fieldLayouts:
             uid: 8c52dd0e-60d2-4f22-b72b-3b6cda809dbf
             userCondition: null
             warning: null
-            width: 100
-        name: Style
+            width: 50
+        name: Styles
         uid: 6dc64ce9-90cb-4483-9598-4acf0dcd724a
         userCondition: null
       -
@@ -101,13 +83,13 @@ fieldLayouts:
             uid: afb178e5-68e2-4638-879e-008ac17efd37
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T22:07:50+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
             handle: null
             instructions: null
             label: null
@@ -117,7 +99,7 @@ fieldLayouts:
             uid: 896c52be-a449-445e-a3da-c861c9625988
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Attributes
         uid: f46d9bee-7fb1-40d5-a0c7-94ef4c375df1
         userCondition: null

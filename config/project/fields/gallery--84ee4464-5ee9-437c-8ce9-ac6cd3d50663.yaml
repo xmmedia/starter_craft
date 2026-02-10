@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: gallery
 instructions: null
-name: Gallery
+name: Images
 searchable: false
 settings:
   createButtonLabel: 'Add Image'
@@ -19,11 +19,11 @@ settings:
   includeTableView: false
   maxEntries: null
   minEntries: 1
-  pageSize: 50
+  pageSize: null
   propagationKeyFormat: null
   propagationMethod: all
   showCardsInGrid: false
-  viewMode: cards
+  viewMode: blocks
 translationKeyFormat: null
 translationMethod: site
 type: craft\fields\Matrix

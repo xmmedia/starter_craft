@@ -1,11 +1,7 @@
-{% set width = block.blockWidth|default(100) %}
-{% set image = block.image.one() %}
-{% set imageTransform = 'videoThumbnail' %}
-
-{#separate div wrapper so column doesn't mess with embed-wrap#}
-<div class="col-{{ width }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+{# separate div wrapper so column doesn't mess with embed-wrap #}
+<div class="col-{{ block.blockWidth|default(100) }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div class="embed-wrap" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-        {{ image(image, imageTransform) }}
+        {{ image(block.image.one(), 'videoThumbnail') }}
     </div>
     <div class="hidden embed-wrap max-w-3xl">
         <div class="embed-container embed-container-16-9">

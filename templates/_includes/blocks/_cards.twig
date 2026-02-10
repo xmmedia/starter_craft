@@ -2,24 +2,14 @@
     <div class="cards-wrap pt-36 z-0">
         {% for cardItem in block.cards.all() %}
             <a href="{{ cardItem.cardLink }}" class="relative card">
-                {% for item in cardItem.card.all() %}
-                    {% if item.type.handle == 'cardImage' %}
-                        {% set image = item.image[0] %}
-                        {% if image %}
-                            {{ image(image, 'card', { class: 'card-image' }) }}
-                        {% endif %}
-                    {% endif %}
-                {% endfor %}
-                {% for item in cardItem.card.all() %}
-                    {% if item.type.handle == 'cardHeading' %}
-                        <h3 class="uppercase">{{ item.heading }}</h3>
-                    {% endif %}
-                {% endfor %}
-                {% for item in cardItem.card.all() %}
-                    {% if item.type.handle == 'cardTextBlock' %}
-                        {{ item.textBlock }}
-                    {% endif %}
-                {% endfor %}
+                {% set image = cardItem.image.one() %}
+                {% if image %}
+                    {{ image(image, 'card') }}
+                {% endif %}
+
+                <h3>{{ cardItem.heading }}</h3>
+
+                {{ cardItem.textBlock }}
             </a>
         {% endfor %}
     </div>

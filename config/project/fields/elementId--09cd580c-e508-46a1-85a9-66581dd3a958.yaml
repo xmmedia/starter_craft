@@ -1,7 +1,7 @@
 columnSuffix: zezbhvxw
 handle: elementId
 instructions: 'Used for referencing the section so the page scrolls to that section.'
-name: 'Element Id'
+name: 'Element ID'
 searchable: false
 settings:
   byteLimit: null

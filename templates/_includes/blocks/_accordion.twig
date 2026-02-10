@@ -1,33 +1,18 @@
 <div class="col-span-{{ width }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}
-        {% set heading = null %}
-        {% set textBlock = null %}
-        {% set icon = null %}
-
-        {% for item in accordionItem.accordion.all() %}
-            {% switch(item.type.handle) %}
-                {% case 'accordionHeading' %}
-                    {% set heading = item.heading %}
-                {% case 'accordionContent' %}
-                    {% set textBlock = item.textBlock %}
-                {% case 'accordionIcon' %}
-                    {% set icon = item.accordionIcon[0] %}
-            {% endswitch %}
-        {% endfor %}
-
         <details class="relative max-w-3xl mx-auto my-6">
             <summary class="accordion-summary">
                 <span class="flex items-center gap-2">
+                    {% set icon = accordionItem.accordionIcon.one() %}
                     {% if icon %}
                         {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
                     {% endif %}
-                    <span class="mr-4">{{ heading }}</span>
+                    <span class="mr-8">{{ accordionItem.heading }}</span>
                 </span>
                 <span class="details-plus">+</span>
                 <span class="details-minus">−</span>
             </summary>
-            <div class="bg-gray-200 py-12 pl-12">{{ textBlock }}</div>
+            <div class="bg-gray-200 py-12 pl-12">{{ accordionItem.textBlock }}</div>
         </details>
-{#        {{ dump(accordion.accordion.all()[2].accordionIcon ) }}#}
     {% endfor %}
 </div>

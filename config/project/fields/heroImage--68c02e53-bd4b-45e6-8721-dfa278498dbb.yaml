@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: heroImage
-instructions: 'Image should be 1290x538px or larger and the same proportions'
+instructions: 'Image should be 3000px wide and 2000px tall or larger.'
 name: 'Herobar Image'
 searchable: false
 settings:

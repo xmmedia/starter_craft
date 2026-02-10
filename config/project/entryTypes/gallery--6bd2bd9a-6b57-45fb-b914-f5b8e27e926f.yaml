@@ -4,6 +4,12 @@ description: null
 fieldLayouts:
   909e3be5-fce7-4edc-b183-4248040bfea6:
     cardThumbAlignment: end
+    generatedFields:
+      -
+        handle: count
+        name: Count
+        template: '{gallery|length} image(s)'
+        uid: ed69391c-3c4c-40b6-96c2-5fe440727880
     tabs:
       -
         elementCondition: null
@@ -26,10 +32,10 @@ fieldLayouts:
             orientation: null
             placeholder: null
             readonly: false
-            required: true
+            required: false
             size: null
             step: null
-            tip: null
+            tip: 'Only shown in the admin.'
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: 511b4125-7210-4377-af9b-8ef59b8aa7ab
@@ -41,7 +47,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 84ee4464-5ee9-437c-8ce9-ac6cd3d50663 # Gallery
+            fieldUid: 84ee4464-5ee9-437c-8ce9-ac6cd3d50663 # Images
             handle: null
             instructions: null
             label: null
@@ -60,11 +66,11 @@ handle: gallery
 hasTitleField: true
 icon: null
 name: Gallery
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: "{title ? title ~ ':' : null} {count}"

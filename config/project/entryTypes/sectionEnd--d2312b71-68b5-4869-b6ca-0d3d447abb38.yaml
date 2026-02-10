@@ -13,7 +13,7 @@ fieldLayouts:
             dismissible: false
             elementCondition: null
             style: tip
-            tip: 'Ends a section. Normally not required.'
+            tip: "Ends a section. Normally not required.  \r\nWhen a new section is started, the previous one is automatically ended."
             type: craft\fieldlayoutelements\Tip
             uid: 963c7bcc-f6ec-4599-ac59-d258960b852e
             userCondition: null

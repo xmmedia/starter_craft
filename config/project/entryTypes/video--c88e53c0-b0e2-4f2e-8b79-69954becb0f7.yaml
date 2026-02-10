@@ -6,7 +6,6 @@ fieldLayouts:
     cardThumbAlignment: end
     cardView:
       - 'layoutElement:b6197d04-75c0-47b8-8382-1b43266f61b2'
-      - 'layoutElement:de2d54f1-f3fd-4c6c-b89a-9bc805951b97'
     tabs:
       -
         elementCondition: null
@@ -32,7 +31,7 @@ fieldLayouts:
             required: false
             size: null
             step: null
-            tip: null
+            tip: 'Shown only in the admin.'
             title: null
             type: craft\fieldlayoutelements\entries\EntryTitleField
             uid: ecc3052c-636d-4494-b08a-f61fc4ce3715
@@ -48,7 +47,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 3eaa7be8-1a2c-476a-a2d8-595da16d02c1
@@ -64,7 +63,7 @@ fieldLayouts:
             handle: null
             instructions: 'Add a thumbnail to override the default video thumbnail if desired.'
             label: Thumbnail
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d41a2d79-b292-483a-a997-0f74f3b0c9de
@@ -93,6 +92,12 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 100
+        name: Styles
+        uid: 2625a1a5-4f9b-46cf-ae77-b677d09f01cd
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
           -
             dateAdded: '2024-12-04T22:19:27+00:00'
             editCondition: null
@@ -108,13 +113,13 @@ fieldLayouts:
             uid: de2d54f1-f3fd-4c6c-b89a-9bc805951b97
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T22:19:27+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element Id
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
             handle: null
             instructions: null
             label: null
@@ -124,7 +129,7 @@ fieldLayouts:
             uid: 489e175d-83f3-4a25-8537-6df121bdfd56
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Attributes
         uid: eb139aec-ccdf-4378-b378-ffcb602718fa
         userCondition: null
@@ -137,7 +142,7 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{title}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 uiLabelFormat: '{title}'
