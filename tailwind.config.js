@@ -4,9 +4,6 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     theme: {
         extend: {
-            borderWidth: {
-                '10': '10px',
-            },
             maxWidth: {
                 '1/2': '50%',
                 '3/5': '60%',
