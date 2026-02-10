@@ -39,6 +39,7 @@ return GeneralConfig::create()
     ->maxUploadFileSize('50M')
     // in prod/staging, don't run the queue automatically, instead use cron job (every minute)
     ->runQueueAutomatically(App::env('DEV_MODE') ?? false)
+    // @todo-craft update with new favicons
     ->cpHeadTags([
         ['link', ['rel' => 'icon', 'type' => 'image/png', 'href' => '/favicon-96x96.png', 'sizes' => '96x96']],
         ['link', ['rel' => 'icon', 'type' => 'image/svg+xml', 'href' => '/favicon.svg']],
