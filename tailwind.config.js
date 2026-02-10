@@ -1,5 +1,4 @@
 const plugin = require('tailwindcss/plugin');
-const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
     plugins: [
