@@ -4,11 +4,6 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     theme: {
         extend: {
-            colors: {
-                'black-transparent' : 'rgba(0,0,0,0.4)',
-                'white-transparent' : 'rgba(255,255,255,0.6)',
-                'white-transparent-dark' : 'rgba(255,255,255,0.8)',
-            },
             borderWidth: {
                 '10': '10px',
             },
