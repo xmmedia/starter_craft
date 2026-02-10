@@ -13,7 +13,7 @@
 .w-content-narrow { @apply max-w-3xl; }
 .w-content-wide   { @apply max-w-7xl; }
 
-.blocks-wrap, .text-block-wrap {
+.blocks-wrap, .text-block-wrap, .no_padding-wrap {
     /* Remove top margin from first child text/content elements */
     p:first-child,
     h1:first-child,
