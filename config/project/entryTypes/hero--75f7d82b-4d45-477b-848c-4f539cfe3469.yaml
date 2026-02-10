@@ -29,7 +29,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: 'Herobar Image'
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 137144ce-7c7c-4cef-95e8-c737b79a007d
@@ -45,7 +45,7 @@ fieldLayouts:
             handle: heading
             instructions: null
             label: Heading
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: bb7b634f-5780-4144-89f9-8228402711da
