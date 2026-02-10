@@ -1,4 +1,4 @@
-dateModified: 1770526190
+dateModified: 1770735558
 email:
   fromEmail: $FROM_EMAIL
   fromName: $FROM_EMAIL_NAME
@@ -66,7 +66,6 @@ meta:
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
     2fc8ea4c-f70b-4cc7-a530-6fff07267456: 'Menu Item' # Menu Item
-    3b8ce3ab-45bc-4658-8990-47cab2d46d75: 'Pattern Library' # Pattern Library
     3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Image - Small' # Image - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
@@ -151,6 +150,7 @@ meta:
     941223b2-225a-4a1c-8095-3ef96f00d2f5: Services # Services
     a8e6c61b-4a37-4d1a-8de1-c908b52dbf43: 'Phone Numbers' # Phone Numbers
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
+    a2177e53-f588-4293-a115-f5b574937c78: 'Pattern Library' # Pattern Library
     ac3ae0db-5f19-443a-b104-285f5f394a3b: Gallery # Gallery
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Hero # Hero
     b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid

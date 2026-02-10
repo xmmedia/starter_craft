@@ -120,6 +120,14 @@ settings:
         -
           - group
           - General
+    -
+      __assoc__:
+        -
+          - uid
+          - a2177e53-f588-4293-a115-f5b574937c78 # Pattern Library
+        -
+          - group
+          - General
   includeTableView: false
   maxEntries: null
   minEntries: null

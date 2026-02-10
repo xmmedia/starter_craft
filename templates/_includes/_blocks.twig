@@ -101,6 +101,9 @@
             {% case 'contactForm' %}
                 {% include '_includes/blocks/_contact_form.twig' %}
 
+            {% case 'patternLibrary' %}
+                {% include '_includes/blocks/_pattern_library.twig' %}
+
             {% default %}
                 <!-- !! A block has been created without adding case to block twig file: {{ block.type.handle }} !! -->
                 {% if devMode %}

@@ -1,0 +1,44 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  5ffb7db7-3bea-4fd7-875b-9c03fd49e02c:
+    cardThumbAlignment: end
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-02-10T14:59:14+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Displays the pattern library on the page.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 08bb8781-d2ed-485b-9fe6-cf152ac38dc8
+            userCondition: null
+          -
+            dateAdded: '2026-02-10T14:59:14+00:00'
+            dismissible: false
+            elementCondition: null
+            style: warning
+            tip: 'Typically only used during development.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 6873789a-2a17-4bd2-a138-811133748285
+            userCondition: null
+        name: Content
+        uid: a188ed6e-250c-46f3-802f-d97200f7105f
+        userCondition: null
+    thumbFieldKey: null
+handle: patternLibrary
+hasTitleField: false
+icon: null
+name: 'Pattern Library'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Pattern Library'
