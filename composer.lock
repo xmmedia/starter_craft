@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "15c305a5e1d393ea9b0609dc74d294e4",
+    "content-hash": "0221ec6d88c408aa90915725fc398931",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -46,16 +46,16 @@
         },
         {
             "name": "brick/math",
-            "version": "0.14.7",
+            "version": "0.14.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/brick/math.git",
-                "reference": "07ff363b16ef8aca9692bba3be9e73fe63f34e50"
+                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/brick/math/zipball/07ff363b16ef8aca9692bba3be9e73fe63f34e50",
-                "reference": "07ff363b16ef8aca9692bba3be9e73fe63f34e50",
+                "url": "https://api.github.com/repos/brick/math/zipball/63422359a44b7f06cae63c3b429b59e8efcc0629",
+                "reference": "63422359a44b7f06cae63c3b429b59e8efcc0629",
                 "shasum": ""
             },
             "require": {
@@ -94,7 +94,7 @@
             ],
             "support": {
                 "issues": "https://github.com/brick/math/issues",
-                "source": "https://github.com/brick/math/tree/0.14.7"
+                "source": "https://github.com/brick/math/tree/0.14.8"
             },
             "funding": [
                 {
@@ -102,7 +102,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-07T10:57:35+00:00"
+            "time": "2026-02-10T14:33:43+00:00"
         },
         {
             "name": "carbonphp/carbon-doctrine-types",
@@ -849,11 +849,16 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.7",
+            "version": "5.9.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/craftcms/cms.git",
+                "reference": "c4e8e75fb785017dcad6a653513f8569b190b4c9"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/9986382fbf26ed5cd46926ecd84084bf1b564680",
-                "reference": "9986382fbf26ed5cd46926ecd84084bf1b564680",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/c4e8e75fb785017dcad6a653513f8569b190b4c9",
+                "reference": "c4e8e75fb785017dcad6a653513f8569b190b4c9",
                 "shasum": ""
             },
             "require": {
@@ -917,6 +922,22 @@
                 "bower-asset/yii2-pjax": "~2.0.1",
                 "yii2tech/ar-softdelete": "1.0.4"
             },
+            "require-dev": {
+                "codeception/codeception": "^5.2.0",
+                "codeception/lib-innerbrowser": "4.0.1",
+                "codeception/module-asserts": "^3.0.0",
+                "codeception/module-datafactory": "^3.0.0",
+                "codeception/module-phpbrowser": "^3.0.0",
+                "codeception/module-rest": "^3.3.2",
+                "codeception/module-yii2": "^1.1.9",
+                "craftcms/ecs": "dev-main",
+                "fakerphp/faker": "^1.19.0",
+                "league/factory-muffin": "^3.3.0",
+                "phpstan/phpstan": "^2.1",
+                "rector/rector": "^2.0",
+                "vlucas/phpdotenv": "^5.4.1",
+                "yiisoft/yii2-redis": "^2.0"
+            },
             "suggest": {
                 "ext-exif": "Adds support for parsing image EXIF data.",
                 "ext-iconv": "Adds support for more character encodings than PHP’s built-in mb_convert_encoding() function, which Craft will take advantage of when converting strings to UTF-8.",
@@ -929,6 +950,7 @@
                     "yii2tech\\ar\\softdelete\\": "lib/ar-softdelete/src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "proprietary"
             ],
@@ -946,14 +968,14 @@
                 "yii2"
             ],
             "support": {
-                "email": "support@craftcms.com",
-                "issues": "https://github.com/craftcms/cms/issues?state=open",
-                "forum": "https://craftcms.stackexchange.com/",
-                "source": "https://github.com/craftcms/cms",
                 "docs": "https://craftcms.com/docs/5.x/",
-                "rss": "https://github.com/craftcms/cms/releases.atom"
+                "email": "support@craftcms.com",
+                "forum": "https://craftcms.stackexchange.com/",
+                "issues": "https://github.com/craftcms/cms/issues?state=open",
+                "rss": "https://github.com/craftcms/cms/releases.atom",
+                "source": "https://github.com/craftcms/cms"
             },
-            "time": "2026-02-09T18:47:18+00:00"
+            "time": "2026-02-10T16:01:58+00:00"
         },
         {
             "name": "craftcms/contact-form",
