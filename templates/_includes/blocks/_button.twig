@@ -1,6 +1,6 @@
 <div{% if block.elementId %} id="{{ block.elementId }}"{% endif %}
     class="mb-12{% if textAlign == 'textCenter' %} text-center{% endif %} col-span-{{ width }}" >
-    <a href="{{ block.buttonLink }}" class="button{% if textAlign == 'textCenter' %} mx-auto{% endif %}">
-        {{ block.buttonText }}
+    <a href="{{ block.buttonLink.value }}" class="button{% if textAlign == 'textCenter' %} mx-auto{% endif %}">
+        {{ block.buttonLink.label }}
     </a>
 </div>
