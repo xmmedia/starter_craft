@@ -31,7 +31,7 @@
 }
 
 .blocks-wrap {
-    @apply grid grid-cols-1 sm:grid-cols-12 sm:gap-x-12 w-full;
+    @apply grid grid-cols-1 md:grid-cols-12 md:gap-x-12 w-full;
 }
 
 .text-block-wrap {
