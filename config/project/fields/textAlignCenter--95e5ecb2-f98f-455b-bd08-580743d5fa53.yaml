@@ -1,7 +1,7 @@
 columnSuffix: eqxpofhf
 handle: textAlignCenter
 instructions: 'Turning this field on will align text center on mobile sized screens.'
-name: 'Text Align Center (Mobile)'
+name: 'Mobile Text Alignment'
 searchable: false
 settings:
   default: false

@@ -1,4 +1,4 @@
-dateModified: 1770906262
+dateModified: 1770907151
 elementSources:
   craft\elements\Entry:
     -
@@ -99,7 +99,7 @@ meta:
     5f2efa0b-1e87-4d02-a636-f17256ef85d1: 'Block Width' # Block Width
     6bb359ec-89c1-4aef-aaab-a009d0be000b: 'Header Menu' # Header Menu
     6bd2bd9a-6b57-45fb-b914-f5b8e27e926f: Gallery # Gallery
-    6cdb288c-7205-4c21-9a0a-7d58451a4b56: 'Vertical Align Center' # Vertical Align Center
+    6cdb288c-7205-4c21-9a0a-7d58451a4b56: 'Vertical Alignment' # Vertical Alignment
     6eedec95-8e5a-49e4-8206-33ff056d1664: 'Image Size' # Image Size
     7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7bcca8fb-6082-4c2d-9726-ea6482194a8e: 'Image Block' # Image Block
@@ -138,7 +138,7 @@ meta:
     84d2deef-d6fe-4a07-b967-b71469d68219: 'SEO - Sharing Image Alt' # SEO - Sharing Image Alt
     84ee4464-5ee9-437c-8ce9-ac6cd3d50663: Images # Images
     95ce255a-2242-4832-a7bd-6ef99ba868c1: General # General
-    95e5ecb2-f98f-455b-bd08-580743d5fa53: 'Text Align Center (Mobile)' # Text Align Center (Mobile)
+    95e5ecb2-f98f-455b-bd08-580743d5fa53: 'Mobile Text Alignment' # Mobile Text Alignment
     414f0663-ff97-44ab-b402-98890d76f713: 'SEO - Page Title' # SEO - Page Title
     451ac180-f985-4b01-ba54-9b873058697b: 'Image Blocks' # Image Blocks
     486e0db8-6cbd-4cd7-85af-77040ab2b43c: Image # Image

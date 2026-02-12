@@ -4,9 +4,6 @@ description: null
 fieldLayouts:
   f9cb0c59-7cba-4b14-95b5-a97e840eb210:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:69e91706-6a35-43c5-aaa0-775077ee9a21'
-      - type
     tabs:
       -
         elementCondition: null
@@ -54,7 +51,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 95e5ecb2-f98f-455b-bd08-580743d5fa53 # Text Align Center (Mobile)
+            fieldUid: 95e5ecb2-f98f-455b-bd08-580743d5fa53 # Mobile Text Alignment
             handle: null
             instructions: null
             label: null
@@ -70,7 +67,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 6cdb288c-7205-4c21-9a0a-7d58451a4b56 # Vertical Align Center
+            fieldUid: 6cdb288c-7205-4c21-9a0a-7d58451a4b56 # Vertical Alignment
             handle: null
             instructions: null
             label: null
@@ -131,7 +128,7 @@ showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: "{textBlock|striptags|truncate(50, '...')}"
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: "{textBlock|striptags|truncate(50, '...')}"

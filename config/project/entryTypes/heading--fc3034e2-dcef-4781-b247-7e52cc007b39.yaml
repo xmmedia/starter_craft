@@ -4,8 +4,6 @@ description: null
 fieldLayouts:
   8290f42c-be7d-495f-930d-62189f73dc3d:
     cardThumbAlignment: end
-    cardView:
-      - type
     tabs:
       -
         elementCondition: null
@@ -63,7 +61,7 @@ fieldLayouts:
             uid: e8c6d865-95cf-4f22-9a2a-aa783bd59720
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2024-12-04T23:42:19+00:00'
             editCondition: null
@@ -79,7 +77,7 @@ fieldLayouts:
             uid: 6e8b4ce8-5b25-423c-8297-8129e0779bba
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Styles
         uid: de238c42-1429-4948-9f49-ea8383fa7b24
         userCondition: null
@@ -130,7 +128,7 @@ showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
-titleFormat: '{heading|striptags}'
+titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: '{heading|striptags}'

@@ -15,6 +15,12 @@ settings:
           - value
           - textCenter
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - '1'
     -
@@ -26,8 +32,14 @@ settings:
           - value
           - textLeft
         -
+          - icon
+          - ''
+        -
+          - color
+          - ''
+        -
           - default
           - ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\Dropdown
+type: craft\fields\RadioButtons
