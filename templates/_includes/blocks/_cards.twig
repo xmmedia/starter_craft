@@ -1,15 +1,15 @@
 <div class="col-span-12"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <div class="cards-wrap pt-36 z-0">
+    <div class="w-content cards-wrap">
         {% for cardItem in block.cards.all() %}
-            <a href="{{ cardItem.cardLink }}" class="relative card">
+            <a href="{{ cardItem.cardLink }}" class="card">
                 {% set image = cardItem.image.one() %}
                 {% if image %}
                     {{ image(image, 'card') }}
                 {% endif %}
 
-                <h3>{{ cardItem.heading }}</h3>
+                <h3>{{ cardItem.heading|heading_striptags }}</h3>
 
-                {{ cardItem.textBlock }}
+                {{ cardItem.textBlock|heading_striptags }}
             </a>
         {% endfor %}
     </div>
