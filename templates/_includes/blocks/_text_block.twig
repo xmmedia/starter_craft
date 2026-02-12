@@ -10,12 +10,6 @@
     {% set classes = classes | merge(['text-center', 'lg:text-left']) %}
 {% endif %}
 
-{% if block.fontWeight == '300' %}
-    {% set classes = classes | merge(['font-light']) %}
-{% elseif block.fontWeight == '700' %}
-    {% set classes = classes | merge(['font-bold']) %}
-{% endif %}
-
 {% if block.classes %}
     {% set classes = classes | merge(block.classes | explodeClass) %}
 {% endif %}
