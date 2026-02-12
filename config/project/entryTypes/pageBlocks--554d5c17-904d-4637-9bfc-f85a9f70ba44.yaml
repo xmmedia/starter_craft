@@ -78,7 +78,7 @@ fieldLayouts:
         uid: f4b05aab-c90c-420f-8afc-c59caa06b4cc
         userCondition: null
     thumbFieldKey: null
-handle: blocks
+handle: pageBlocks
 hasTitleField: true
 icon: null
 name: 'Page Blocks'
