@@ -1,13 +1,14 @@
-{% set verticalAlignCenter = block.verticalAlignCenter %}
+{##}
+{% set classes = ['md:col-span-' ~ width] %}
 
-{% set classes = ['col-span-12', 'md:col-span-' ~ width] %}
-
-{% if verticalAlignCenter == true %}
-    {% set classes = classes | merge(['items-center']) %}
+{% if block.textVerticalAlign == 'center' %}
+    {% set classes = classes | merge(['flex fex-col items-center']) %}
 {% endif %}
 
-{% if block.textAlignCenter == true %}
-    {% set classes = classes | merge(['text-center', 'lg:text-left']) %}
+{% if block.textAlign == 'textCenter' %}
+    {% set classes = classes|merge(['text-center']) %}
+{% elseif block.textAlign == 'textCenterMobile' %}
+    {% set classes = classes|merge(['text-center', 'lg:text-left']) %}
 {% endif %}
 
 {% if block.classes %}

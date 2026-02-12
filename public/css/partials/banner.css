@@ -1,5 +1,5 @@
 .banner {
-    @apply w-full h-152 col-span-12 bg-cover bg-no-repeat;
+    @apply w-full h-152 md:col-span-12 bg-cover bg-no-repeat;
 }
 
 .banner-heading {

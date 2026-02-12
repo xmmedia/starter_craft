@@ -4,7 +4,7 @@
     {% set successUrl = craft.app.request.url ~ '#form--' ~ block.id %}
 {% endif %}
 
-<div id="form--{{ block.id }}" class="col-span-12 md:col-span-{{ blockWidth }} {{ block.classes }}"
+<div id="form--{{ block.id }}" class="md:col-span-{{ blockWidth }} {{ block.classes }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% if block.heading %}
         {{ tag('h2', { html: block.heading|heading_striptags }) }}

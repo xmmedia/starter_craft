@@ -92,7 +92,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 6eedec95-8e5a-49e4-8206-33ff056d1664 # Image Size
+            fieldUid: 6eedec95-8e5a-49e4-8206-33ff056d1664 # Size
             handle: null
             instructions: null
             label: null
@@ -108,7 +108,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 17ed004b-264f-4318-be4a-407867219887 # Image Align
+            fieldUid: 17ed004b-264f-4318-be4a-407867219887 # Horizontal Alignment
             handle: null
             instructions: null
             label: null
@@ -124,7 +124,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: c3bdff5b-2014-42e0-87b1-372f17b8ec0e # Image Vertical Alignment
+            fieldUid: c3bdff5b-2014-42e0-87b1-372f17b8ec0e # Vertical Alignment
             handle: null
             instructions: null
             label: null

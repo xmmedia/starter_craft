@@ -2,7 +2,7 @@ defaultPlacement: end
 enableVersioning: true
 entryTypes:
   -
-    uid: 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Blocks
+    uid: 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Page Blocks
 handle: homepage
 maxAuthors: 5
 name: Homepage

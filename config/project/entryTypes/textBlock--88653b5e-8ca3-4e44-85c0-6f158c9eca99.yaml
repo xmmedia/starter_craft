@@ -55,21 +55,21 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-12-03T23:22:17+00:00'
+            dateAdded: '2026-02-12T18:01:04+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 95e5ecb2-f98f-455b-bd08-580743d5fa53 # Mobile Text Alignment
+            fieldUid: 80ffc64e-4e53-4ba1-8e8f-95d4f45b8946 # Text Alignment
             handle: null
             instructions: null
             label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 09fc8b9e-3d2b-41dc-ae35-9b48887e7208
+            uid: b5e06933-54ad-47c2-bb07-ee8e8ab01167
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2025-05-26T20:30:41+00:00'
             editCondition: null
@@ -85,7 +85,7 @@ fieldLayouts:
             uid: 6d44d530-681a-48c7-bc9e-6e2493a04805
             userCondition: null
             warning: null
-            width: 100
+            width: 50
         name: Styles
         uid: 09db7656-ff1a-4af5-8d3c-7ce1b5ac5770
         userCondition: null

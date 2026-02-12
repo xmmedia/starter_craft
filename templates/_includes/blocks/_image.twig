@@ -28,7 +28,7 @@
 {% set flexItems = imageVerticalAlignment %}
 
 <div class="flex flex-wrap
-        justify-{{ flexJustify }} items-{{ flexItems }} col-span-12 md:col-span-{{ width }}"
+        justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <figure>
         {% if block.imageLink %}

@@ -35,7 +35,8 @@
 }
 
 .text-block-wrap {
-    @apply flex max-w-11/12 md:max-w-2xl xl:max-w-3xl;
+    /* same as .w-content-copy */
+    @apply max-w-3xl;
 }
 /* Ensure .text-block-wrap is centered when also .col-span-12 */
 .text-block-wrap.md\:col-span-12 {

@@ -1,26 +1,28 @@
-columnSuffix: ywfqtvbw
-handle: imageAlign
+columnSuffix: null
+handle: textVerticalAlign
 instructions: null
-name: 'Horizontal Alignment'
+name: 'Vertical Alignment'
 searchable: false
 settings:
   customOptions: false
-  iconsOnly: false
   options:
     -
       __assoc__:
         -
           - label
-          - Left
+          - Top
         -
           - value
-          - left
+          - top
         -
           - icon
           - ''
         -
-          - default
+          - color
           - ''
+        -
+          - default
+          - '1'
     -
       __assoc__:
         -
@@ -33,22 +35,11 @@ settings:
           - icon
           - ''
         -
-          - default
-          - '1'
-    -
-      __assoc__:
-        -
-          - label
-          - Right
-        -
-          - value
-          - right
-        -
-          - icon
+          - color
           - ''
         -
           - default
           - ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\ButtonGroup
+type: craft\fields\RadioButtons

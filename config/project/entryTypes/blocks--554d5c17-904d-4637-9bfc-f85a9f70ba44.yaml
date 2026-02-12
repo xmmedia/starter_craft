@@ -81,7 +81,7 @@ fieldLayouts:
 handle: blocks
 hasTitleField: true
 icon: null
-name: Blocks
+name: 'Page Blocks'
 showSlugField: true
 showStatusField: true
 slugTranslationKeyFormat: null

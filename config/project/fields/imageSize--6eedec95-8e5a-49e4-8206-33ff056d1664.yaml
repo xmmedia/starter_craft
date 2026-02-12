@@ -1,7 +1,7 @@
 columnSuffix: adknstvl
 handle: imageSize
 instructions: null
-name: 'Image Size'
+name: Size
 searchable: false
 settings:
   customOptions: false
@@ -10,7 +10,7 @@ settings:
       __assoc__:
         -
           - label
-          - Small
+          - 'Small (150x125)'
         -
           - value
           - small
@@ -27,7 +27,7 @@ settings:
       __assoc__:
         -
           - label
-          - Medium
+          - 'Medium (350x250)'
         -
           - value
           - medium
@@ -44,7 +44,7 @@ settings:
       __assoc__:
         -
           - label
-          - Large
+          - 'Large (600x425)'
         -
           - value
           - large
