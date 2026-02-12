@@ -4,12 +4,19 @@ description: null
 fieldLayouts:
   bdd2ed66-d918-49fd-a987-d86903be5300:
     cardThumbAlignment: end
+    cardView:
+      - 'generatedField:73f005b7-735f-4532-808f-8fcd64a99088'
     generatedFields:
       -
         handle: count
         name: Count
         template: '{accordionWrapper|length} item(s)'
         uid: a025e53e-314a-4a85-a699-6a58fdf21c16
+      -
+        handle: adminWidth
+        name: Width
+        template: 'Width: {blockWidth} / 12'
+        uid: 73f005b7-735f-4532-808f-8fcd64a99088
     tabs:
       -
         elementCondition: null

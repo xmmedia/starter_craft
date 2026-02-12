@@ -6,6 +6,13 @@ fieldLayouts:
     cardThumbAlignment: end
     cardView:
       - 'layoutElement:b761546f-8e73-45fd-8b4e-1dbdce3ccf94'
+      - 'generatedField:97a2eda0-31a3-4395-b6a0-ba97d19e8986'
+    generatedFields:
+      -
+        handle: adminWidth
+        name: Width
+        template: 'Width: {blockWidth} / 12'
+        uid: 97a2eda0-31a3-4395-b6a0-ba97d19e8986
     tabs:
       -
         elementCondition: null

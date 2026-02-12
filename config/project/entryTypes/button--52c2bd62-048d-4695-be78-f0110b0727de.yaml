@@ -4,6 +4,14 @@ description: null
 fieldLayouts:
   027f3c10-aa09-4bb7-8174-6d3bf5fb3ab1:
     cardThumbAlignment: end
+    cardView:
+      - 'generatedField:316fc2e3-d41f-4d62-a71a-2d7241f9e11d'
+    generatedFields:
+      -
+        handle: adminWidth
+        name: Width
+        template: 'Width: {blockWidth} / 12'
+        uid: 316fc2e3-d41f-4d62-a71a-2d7241f9e11d
     tabs:
       -
         elementCondition: null

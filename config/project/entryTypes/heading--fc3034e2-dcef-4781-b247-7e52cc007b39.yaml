@@ -4,6 +4,14 @@ description: null
 fieldLayouts:
   8290f42c-be7d-495f-930d-62189f73dc3d:
     cardThumbAlignment: end
+    cardView:
+      - 'generatedField:e5e5f7f6-85ae-430f-821d-2b8284f957b7'
+    generatedFields:
+      -
+        handle: adminWidth
+        name: Width
+        template: 'Width: {blockWidth} / 12'
+        uid: e5e5f7f6-85ae-430f-821d-2b8284f957b7
     tabs:
       -
         elementCondition: null
@@ -124,7 +132,7 @@ handle: heading
 hasTitleField: false
 icon: null
 name: Heading
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
