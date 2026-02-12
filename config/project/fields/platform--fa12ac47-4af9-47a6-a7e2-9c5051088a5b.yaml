@@ -16,7 +16,7 @@ settings:
           - facebook
         -
           - icon
-          - ''
+          - facebook
         -
           - color
           - ''
@@ -27,47 +27,13 @@ settings:
       __assoc__:
         -
           - label
-          - 'X (Twitter)'
-        -
-          - value
-          - xTwitter
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
           - Instagram
         -
           - value
           - instagram
         -
           - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - YouTube
-        -
-          - value
-          - youtube
-        -
-          - icon
-          - ''
+          - instagram
         -
           - color
           - ''
@@ -84,7 +50,41 @@ settings:
           - linkedin
         -
           - icon
+          - linkedin
+        -
+          - color
           - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'X (Twitter)'
+        -
+          - value
+          - xTwitter
+        -
+          - icon
+          - x-twitter
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - YouTube
+        -
+          - value
+          - youtube
+        -
+          - icon
+          - youtube
         -
           - color
           - ''
