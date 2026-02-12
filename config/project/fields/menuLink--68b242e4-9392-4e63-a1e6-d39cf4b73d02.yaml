@@ -4,7 +4,7 @@ instructions: null
 name: 'Menu Link'
 searchable: false
 settings:
-  fullGraphqlData: true
+  fullGraphqlData: false
   maxLength: 255
   showLabelField: true
   typeSettings:
@@ -35,9 +35,28 @@ settings:
             -
               - allowCustomSchemes
               - ''
+      -
+        - asset
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - allowedKinds
+              - '*'
+            -
+              - showUnpermittedVolumes
+              - ''
+            -
+              - showUnpermittedFiles
+              - ''
   types:
     - entry
     - url
+    - email
+    - tel
+    - asset
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Link
