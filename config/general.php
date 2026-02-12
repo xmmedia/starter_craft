@@ -12,6 +12,7 @@ use craft\config\GeneralConfig;
 use craft\helpers\App;
 
 return GeneralConfig::create()
+    ->enableTwigSandbox()
     // Set the default week start day for date pickers (0 = Sunday, 1 = Monday, etc.)
     ->defaultWeekStartDay(0)
     // Prevent generated URLs from including "index.php"
