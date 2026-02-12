@@ -3,5 +3,5 @@
 }
 
 .card {
-    @apply w-80 p-8 bg-zinc-300 hover:no-underline hover:shadow-lg text-black focus:ring-blue-500 ring-offset-2 rounded-md;
+    @apply w-80 p-8 bg-zinc-300 hover:no-underline hover:shadow-lg text-black focus:ring-blue-500 rounded-md;
 }
