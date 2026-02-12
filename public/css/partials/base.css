@@ -21,17 +21,6 @@
     --font-headings: "Roboto", "Helvetica Neue", "Arial", var(--font-sans);
 }
 
-@supports (color: color(display-p3 1 0 0)) {
-    @theme {
-        /* not sure this is needed (does it make a difference), but it's easy to add */
-        --color-white: color(display-p3 1 1 1);
-        --color-black: color(display-p3 0 0 0);
-        --color-black-transparent: color(display-p3 0 0 0 / 40%);
-        --color-white-transparent: color(display-p3 0 0 0 / 60%);
-        --color-white-transparent-dark: color(display-p3 0 0 0 / 80%);
-    }
-}
-
 body {
     @apply font-sans leading-normal text-gray-800;
 }
