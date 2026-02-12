@@ -61,10 +61,27 @@ settings:
       __assoc__:
         -
           - label
+          - Pinterest
+        -
+          - value
+          - pinterest
+        -
+          - icon
+          - pinterest
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - 'X (Twitter)'
         -
           - value
-          - xTwitter
+          - twitter
         -
           - icon
           - x-twitter
