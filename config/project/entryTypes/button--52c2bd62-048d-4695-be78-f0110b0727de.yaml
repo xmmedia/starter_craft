@@ -115,4 +115,4 @@ slugTranslationMethod: site
 titleFormat: '{buttonText}'
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: "{title ? title : 'Button: ' ~ buttonLink.label}"
