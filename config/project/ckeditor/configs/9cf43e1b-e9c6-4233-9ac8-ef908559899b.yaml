@@ -13,9 +13,6 @@ options:
       - small
       - big
       - huge
-  replaceTags:
-    b: strong
-    i: em
 toolbar:
   - undo
   - redo
