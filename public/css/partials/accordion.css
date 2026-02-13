@@ -16,10 +16,6 @@
     &:hover {
         @apply bg-zinc-200;
     }
-
-    p {
-        @apply gap-0;
-    }
 }
 
 .accordion-summary .details-plus,
