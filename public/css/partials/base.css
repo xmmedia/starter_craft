@@ -11,9 +11,9 @@
 /* colour converter: https://lik.ai/tools/color-convertor/ */
 @theme {
     --breakpoint-xs: 25rem;
-    --color-black-transparent: hsl(none 0% 0% / 40%);
-    --color-white-transparent: hsl(none 0% 100% / 60%);
-    --color-white-transparent-dark: hsl(none 0% 100% / 80%);
+    --color-black-transparent: oklch(0% 0 0deg / 40%);
+    --color-white-transparent: oklch(100% 0 0deg / 60%);
+    --color-white-transparent-dark: oklch(100% 0 0deg / 80%);
 
     --max-width-8xl: 90rem;
 
