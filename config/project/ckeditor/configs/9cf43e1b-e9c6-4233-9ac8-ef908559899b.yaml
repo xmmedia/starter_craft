@@ -14,7 +14,7 @@ options:
       - big
       - huge
   replaceTags:
-    b: string
+    b: strong
     i: em
 toolbar:
   - undo
