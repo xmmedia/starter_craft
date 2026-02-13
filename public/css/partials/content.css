@@ -40,5 +40,5 @@
 }
 /* Ensure .text-block-wrap is centered when also .col-span-12 */
 .text-block-wrap.md\:col-span-12 {
-    @apply lg:mx-auto;
+    @apply md:mx-auto;
 }
