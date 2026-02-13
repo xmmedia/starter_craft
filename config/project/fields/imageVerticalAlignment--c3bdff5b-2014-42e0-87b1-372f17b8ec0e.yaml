@@ -17,7 +17,7 @@ settings:
           - top
         -
           - icon
-          - ''
+          - objects-align-top
         -
           - default
           - ''
@@ -31,7 +31,7 @@ settings:
           - center
         -
           - icon
-          - ''
+          - objects-align-center-vertical
         -
           - default
           - '1'
@@ -45,7 +45,7 @@ settings:
           - bottom
         -
           - icon
-          - ''
+          - objects-align-bottom
         -
           - default
           - ''

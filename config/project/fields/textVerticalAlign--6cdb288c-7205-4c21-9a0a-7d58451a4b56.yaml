@@ -5,6 +5,7 @@ name: 'Vertical Alignment'
 searchable: false
 settings:
   customOptions: false
+  iconsOnly: false
   options:
     -
       __assoc__:
@@ -16,10 +17,7 @@ settings:
           - top
         -
           - icon
-          - ''
-        -
-          - color
-          - ''
+          - objects-align-top
         -
           - default
           - '1'
@@ -33,13 +31,10 @@ settings:
           - center
         -
           - icon
-          - ''
-        -
-          - color
-          - ''
+          - objects-align-center-vertical
         -
           - default
           - ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\RadioButtons
+type: craft\fields\ButtonGroup

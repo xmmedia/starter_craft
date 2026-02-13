@@ -31,7 +31,7 @@ settings:
           - textLeft
         -
           - icon
-          - ''
+          - objects-align-left
         -
           - default
           - ''
@@ -45,7 +45,7 @@ settings:
           - textCenter
         -
           - icon
-          - ''
+          - objects-align-center-horizontal
         -
           - default
           - ''
