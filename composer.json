@@ -4,7 +4,7 @@
     "type": "project",
     "description": "Starter for creating Craft 5 sites at XM Media",
     "require": {
-        "php": "8.4.*",
+        "php": "8.5.*",
         "ext-intl": "*",
         "craftcms/ckeditor": "4.11.0",
         "craftcms/cms": "^5.9.10",

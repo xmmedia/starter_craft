@@ -29,6 +29,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Set the email Subject Text for contact form submissions in Settings > Contact Form (under Plugins).
+# @todo does this still work
 12. Add icon/logo as SVGs in `/storage/rebrand/icon/` and `/storage/rebrand/logo/` as `logo.svg`. (SVGs are best.) Only works with paid version of Craft.
 13. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
 14. Update site name:
@@ -41,7 +42,7 @@ Craft admin is located at `/admin`
 
 ## System Requirements
 
-  - PHP 8.4+
+  - PHP 8.5+
   - MySQL 8.0
   - Node 22
   - [Yarn v4](https://yarnpkg.com/en/docs/install)
@@ -110,13 +111,13 @@ Craft admin is located at `/admin`
 
 1. Change version in `composer.json`.
 1. Update the PHP version in the following files:
-    - `.lando.yml`
+    - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, you must override the appserver service with `type: php:X.X`)
     - `setup_dev.sh` – 4 places
     - `setup_prod.sh` – 4 places
-    - `.gitlab-ci.yml` – 2 places
+    - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, and `php-fpm` service name)
     - `.php-cs-fixer.dist.php` – add the new version or update the `@PHP8#Migration` version to match the current version.
 1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
 1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
-1. Update version in `README.md`.
+1. Update version in `README.md` and `CLAUDE.md`.
 
 consider: https://plugins.craftcms.com/image-toolbox?craft4

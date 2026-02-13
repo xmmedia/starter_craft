@@ -11,12 +11,13 @@ recipe: symfony
 config:
   config:
     php: lando_php.ini
-  php: '8.4'
+  php: '8.5'
   database: mysql:8.0
   webroot: public
   xdebug: true
 services:
   appserver:
+    type: php:8.5
     build_as_root:
       - a2enmod headers
   database:

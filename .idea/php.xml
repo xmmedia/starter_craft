@@ -157,7 +157,7 @@
       <path value="$PROJECT_DIR$/vendor/illuminate/support" />
     </include_path>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.5" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="7d7f7997-3475-4657-bcd9-e6525f4d807f" timeout="60000" />

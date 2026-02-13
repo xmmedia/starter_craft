@@ -15,7 +15,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 ## System Requirements
 
-- PHP 8.4+
+- PHP 8.5+
 - MySQL 8.0
 - Node 22
 - [Yarn v4](https://yarnpkg.com/en/docs/install)
@@ -229,9 +229,13 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 
 ## Updating PHP Version
 
-When updating PHP (currently 8.4):
+When updating PHP (currently 8.5):
 1. Update `composer.json` require version
-2. Update in: `.lando.yml`, `setup_dev.sh` (4 places), `setup_prod.sh` (4 places), `.gitlab-ci.yml` (2 places)
+2. Update in:
+   - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, override appserver with `type: php:X.X`)
+   - `setup_dev.sh` – 4 places
+   - `setup_prod.sh` – 4 places
+   - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, `php-fpm` service name)
 3. Run `lando rebuild`
 4. Update `composer.lock` via `lando composer update`
-5. Update version in `README.md`
+5. Update version in `README.md` and `CLAUDE.md`
