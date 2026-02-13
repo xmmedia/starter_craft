@@ -11,7 +11,7 @@ details summary > * {
 }
 
 .details-plus, .details-minus {
-    @apply absolute right-0 text-4xl;
+    @apply text-4xl;
 }
 
 .details-plus {

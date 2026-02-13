@@ -1,32 +1,27 @@
 {% set width = block.blockWidth|default('12') %}
 
-<div class="col-span-12 md:col-span-{{ width }} gap-y-8"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="md:col-span-{{ width }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}
-        <details class="accordion-content">
-            <summary class="accordion-summary">
-                <span class="flex items-center gap-2">
-                    <span class="details-plus">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="/images/icons-public.svg#plus"></use>
-                        </svg>
-                    </span>
-                    <span class="details-minus">
-                        <svg class="w-5 h-5">
-                            <use xlink:href="/images/icons-public.svg#minus"></use>
-                        </svg>
-                    </span>
-                    <span class="accordion-heading">{{ accordionItem.heading }}</span>
-                </span>
+        {# using border instead of divide because divide only adds between and at the end, not on the first item #}
+        <details class="first:border-t border-b border-gray-600 hover:bg-zinc-200">
+            <summary class="flex items-center-safe gap-4 w-full p-4">
+                <svg class="details-plus w-5 h-5">
+                    <use xlink:href="/images/icons-public.svg#plus"></use>
+                </svg>
+                <svg class="details-minus w-5 h-5">
+                    <use xlink:href="/images/icons-public.svg#minus"></use>
+                </svg>
+                <span class="font-headings font-bold">{{ accordionItem.heading }}</span>
+
                 {% set icon = accordionItem.accordionIcon.one() %}
                 {% if icon %}
-                <span class="accordion-icon">
-                    {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
-                </span>
+                    {# ml-auto pushed the icon to the right side #}
+                    {{ image(icon, 'accordionIcon', { class: 'ml-auto w-8 h-8' }) }}
                 {% endif %}
             </summary>
-            {% if accordionItem.textBlock %}
-                <div class="ml-16 mt-4 mb-4">{{ accordionItem.textBlock }}</div>
-            {% endif %}
+
+            {# mx-9 aligns with the summary text above & adds the same space on the other side #}
+            <div class="mx-13 mb-8">{{ accordionItem.textBlock }}</div>
         </details>
     {% endfor %}
 </div>
