@@ -17,6 +17,12 @@
                     </span>
                     <span class="ml-12 font-headings text-3xl font-bold uppercase">{{ accordionItem.heading }}</span>
                 </span>
+                <span class="accordion-icon">
+                        {% set icon = accordionItem.accordionIcon.one() %}
+                    {% if icon %}
+                        {{ image(icon, 'accordionIcon', { class: 'w-8 h-8' }) }}
+                    {% endif %}
+                </span>
             </summary>
             {% if accordionItem.textBlock %}
                 <div class="details-content">{{ accordionItem.textBlock }}</div>

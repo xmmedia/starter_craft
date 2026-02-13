@@ -1,3 +1,7 @@
 .accordion-summary {
     @apply flex justify-between items-center w-full z-50;
 }
+
+.accordion-icon {
+    @apply flex-shrink-0 mx-6;
+}
