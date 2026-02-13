@@ -8,7 +8,7 @@
 @source inline("{sm:,md:,lg:,}{col-span}-{1,2,3,4,5,6,7,8,9,10,11,12}");
 
 /* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
-/* colour converter: https://lik.ai/tools/color-convertor/ */
+/* colour converter: https://lik.ai/tools/color-convertor/ *** with a precision of 4 ***  */
 @theme {
     --breakpoint-xs: 25rem;
     --color-black-transparent: oklch(0% 0 0deg / 40%);
