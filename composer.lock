@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87bab7c07fad315d3c1e70716edc16f3",
+    "content-hash": "4f353d9d7d9a8b4ce18f66e2c3a22cf3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -849,11 +849,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.9.9",
+            "version": "5.9.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/74eb5d3a9ffa935df1a4fc2b6ddb1042d9f8e582",
-                "reference": "74eb5d3a9ffa935df1a4fc2b6ddb1042d9f8e582",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/2f5149d4d64a5dafae9db99357823655422ba77d",
+                "reference": "2f5149d4d64a5dafae9db99357823655422ba77d",
                 "shasum": ""
             },
             "require": {
@@ -953,7 +953,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-02-12T01:13:27+00:00"
+            "time": "2026-02-13T00:01:18+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -10566,6 +10566,6 @@
         "php": "8.4.*",
         "ext-intl": "*"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
