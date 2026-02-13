@@ -8,7 +8,7 @@
 {% if block.textAlign == 'textCenter' %}
     {% set classes = classes|merge(['text-center']) %}
 {% elseif block.textAlign == 'textCenterMobile' %}
-    {% set classes = classes|merge(['text-center', 'lg:text-left']) %}
+    {% set classes = classes|merge(['text-center', 'md:text-left']) %}
 {% endif %}
 
 {% if block.classes %}
