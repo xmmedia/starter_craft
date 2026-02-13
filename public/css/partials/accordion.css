@@ -1,7 +1,28 @@
 .accordion-summary {
-    @apply flex justify-between items-center w-full z-50;
+    @apply flex justify-between items-center w-full relative;
 }
 
 .accordion-icon {
-    @apply flex-shrink-0 mx-6;
+    @apply flex-shrink-0;
+}
+
+.accordion-heading {
+    @apply ml-12 mr-8 font-headings font-bold;
+}
+
+.accordion-content {
+    @apply relative p-4 first:border-t border-b border-gray-600;
+
+    &:hover {
+        @apply bg-zinc-200;
+    }
+
+    p {
+        @apply gap-0;
+    }
+}
+
+.accordion-summary .details-plus,
+.accordion-summary .details-minus {
+    @apply absolute left-1 right-auto top-1/2 -translate-y-1/2;
 }
