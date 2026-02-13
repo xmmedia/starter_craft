@@ -20,5 +20,5 @@
 
 .accordion-summary .details-plus,
 .accordion-summary .details-minus {
-    @apply absolute left-1 right-auto top-1/2 -translate-y-1/2;
+    @apply left-1 right-auto;
 }
