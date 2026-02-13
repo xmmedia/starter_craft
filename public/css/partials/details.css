@@ -1,3 +1,11 @@
+.details {
+    @apply relative p-4 first:border-t border-b border-gray-600 transition-default;
+    &:hover {
+        @apply bg-zinc-200;
+    }
+    p { @apply m-0; }
+}
+
 details summary {
     @apply list-none cursor-pointer;
 }
@@ -11,25 +19,19 @@ details summary > * {
 }
 
 .details-plus, .details-minus {
-    @apply absolute right-0 text-4xl;
-}
-
-.details-plus {
-    @apply top-1;
-}
-
-.details-minus {
-    @apply top-1;
+    @apply absolute top-6 left-4;
 }
 
 details .details-minus {
     @apply hidden;
 }
-
 details[open] .details-minus {
     @apply inline-block;
 }
-
 details[open] .details-plus {
     @apply hidden;
+}
+
+.details-content {
+    @apply pl-16 text-lg mt-4 pb-6;
 }
