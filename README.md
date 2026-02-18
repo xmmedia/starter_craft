@@ -29,7 +29,6 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Set the email Subject Text for contact form submissions in Settings > Contact Form (under Plugins).
-# @todo does this still work
 12. Add icon/logo as SVGs in `/storage/rebrand/icon/` and `/storage/rebrand/logo/` as `logo.svg`. (SVGs are best.) Only works with paid version of Craft.
 13. Delete starter files: `README.md` (or update) and `TEMPLATES.md`.
 14. Update site name:
