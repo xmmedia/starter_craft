@@ -2,7 +2,7 @@
 {% set classes = ['md:col-span-' ~ width] %}
 
 {% if block.textVerticalAlign == 'center' %}
-    {% set classes = classes | merge(['flex flex-col items-center']) %}
+    {% set classes = classes | merge(['flex flex-col justify-center']) %}
 {% endif %}
 
 {% if block.textAlign == 'textCenter' %}
