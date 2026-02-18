@@ -27,17 +27,19 @@
 {# tw: items-start, items-end, items-center #}
 {% set flexItems = imageVerticalAlignment %}
 
-<div class="flex flex-wrap
-        justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}"
+<div class="flex flex-wrap justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <figure>
         {% if block.imageLink %}
-        <a href="{{ block.imageLink }}">
-            {% endif %}
-            {{ image(image, imageTransform, { class: imageClasses }) }}
-            {% if block.imageLink %}
-        </a>
+            <a href="{{ block.imageLink }}">
         {% endif %}
+
+        {{ image(image, imageTransform, { class: imageClasses }) }}
+
+        {% if block.imageLink %}
+            </a>
+        {% endif %}
+
         {% if block.imageCaption|length > 0 %}
             <figcaption class="w-full mt-2">
                 {{ block.imageCaption }}
