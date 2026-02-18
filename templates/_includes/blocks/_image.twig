@@ -2,7 +2,7 @@
 {% set imageSize = imageSize|default('imageSmall') %}
 {% set imageAlign = imageAlign|default('center') %}
 {% set imageVerticalAlignment = imageVerticalAlignment|default('center') %}
-{% set imageClasses = imageClasses|default() %}
+{% set imageClasses = imageClasses|default([])|merge(['w-full']) %}
 
 {% switch imageSize %}
     {% case 'large' %}
@@ -27,9 +27,9 @@
 {# tw: items-start, items-end, items-center #}
 {% set flexItems = imageVerticalAlignment %}
 
-<div class="flex flex-wrap justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}"
+<div class="flex justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <figure>
+    <figure class="w-full">
         {% if block.imageLink %}
             <a href="{{ block.imageLink }}">
         {% endif %}
