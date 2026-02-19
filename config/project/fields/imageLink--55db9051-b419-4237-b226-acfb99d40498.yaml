@@ -10,6 +10,19 @@ settings:
   typeSettings:
     __assoc__:
       -
+        - entry
+        -
+          __assoc__:
+            -
+              - sources
+              - '*'
+            -
+              - showUnpermittedSections
+              - ''
+            -
+              - showUnpermittedEntries
+              - ''
+      -
         - url
         -
           __assoc__:
@@ -23,23 +36,27 @@ settings:
               - allowCustomSchemes
               - ''
       -
-        - entry
+        - asset
         -
           __assoc__:
             -
               - sources
               - '*'
             -
-              - showUnpermittedSections
+              - allowedKinds
+              - '*'
+            -
+              - showUnpermittedVolumes
               - ''
             -
-              - showUnpermittedEntries
+              - showUnpermittedFiles
               - ''
   types:
     - entry
     - url
     - tel
     - email
+    - asset
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Link
