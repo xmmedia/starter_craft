@@ -6,8 +6,8 @@
     "require": {
         "php": "8.5.*",
         "ext-intl": "*",
-        "craftcms/ckeditor": "4.11.0",
-        "craftcms/cms": "^5.9.10",
+        "craftcms/ckeditor": "^4.11.1",
+        "craftcms/cms": "^5.9.12",
         "craftcms/contact-form": "3.1.0",
         "craftcms/contact-form-honeypot": "2.1.0",
         "ether/seo": "5.0.0",
