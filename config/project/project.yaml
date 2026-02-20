@@ -1,4 +1,4 @@
-dateModified: 1771535109
+dateModified: 1771537198
 elementSources:
   craft\elements\Entry:
     -
@@ -174,6 +174,7 @@ meta:
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
     ce0260d9-af51-4c3c-81dd-a1ca82ca7552: Label # Label
+    d5c492ee-956f-4375-b1ab-c768dffd4071: 'Heading Link' # Heading Link
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
     d2312b71-68b5-4869-b6ca-0d3d447abb38: 'Section End' # Section End
