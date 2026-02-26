@@ -31,6 +31,9 @@
 
         {% if devMode %}
             <!-- >>> block start: {{ block.type.handle }} >>> -->
+            {% if block.blockWidth %}
+                <!-- blockWidth: {{ block.blockWidth }} / 12 -->
+            {% endif %}
         {% endif %}
 
         {# This is really the block handle #}
