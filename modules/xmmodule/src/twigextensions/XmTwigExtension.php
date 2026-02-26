@@ -86,7 +86,7 @@ class XmTwigExtension extends AbstractExtension
             return null;
         }
 
-        return strip_tags($heading, '<strong><em><br><a><sup><sub>');
+        return strip_tags($heading, '<strong><em><br><a><sup><sub><span>');
     }
 
     public function phoneStrip(string $phone): string
