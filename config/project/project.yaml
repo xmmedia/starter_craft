@@ -1,8 +1,30 @@
-dateModified: 1772342065
+dateModified: 1772344917
 elementSources:
   craft\elements\Entry:
     -
-      key: '*'
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: d96c8013-5a0a-4667-b075-7c409fad3ed2
+            values:
+              - 49523c85-f034-4218-a653-a10e294faac5 # Homepage
+              - 4119a1ff-3e12-46a5-b9f5-a6f932b4fec2 # Pages
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - id
+        - asc
+      defaultViewMode: ''
+      key: 'custom:15ef40e8-ff07-46ea-ad98-b8358c1f2c70'
+      label: 'All Pages'
+      page: Entries
+      tableAttributes: '-'
+      type: custom
+    -
+      key: 'section:4119a1ff-3e12-46a5-b9f5-a6f932b4fec2' # Pages
       page: Entries
       type: native
     -
@@ -18,11 +40,11 @@ elementSources:
         - link
       type: native
     -
-      key: 'section:4119a1ff-3e12-46a5-b9f5-a6f932b4fec2' # Pages
+      key: 'section:2b537640-9acd-4e53-a1b4-f497d2e79cd0' # Blog
       page: Entries
       type: native
     -
-      key: 'section:2b537640-9acd-4e53-a1b4-f497d2e79cd0' # Blog
+      key: '*'
       page: Entries
       type: native
 email:
