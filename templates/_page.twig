@@ -4,10 +4,6 @@
 {% set seo = null %}
 {% set pageTitle = null %}
 
-{% if entry is defined %}
-    {% set pageTitle = entry.title %}
-{% endif %}
-
 {% if entry is defined and entry.seo is defined and entry.seo is not null %}
     {% set seo = entry.seo.one() %}
     {% if seo and seo.pageTitle %}
