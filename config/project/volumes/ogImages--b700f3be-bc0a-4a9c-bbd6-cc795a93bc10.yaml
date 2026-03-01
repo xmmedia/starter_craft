@@ -71,4 +71,4 @@ subpath: ''
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
 transformFs: transformed
-transformSubpath: ''
+transformSubpath: og
