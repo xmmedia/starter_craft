@@ -5,6 +5,8 @@
       <sourceFolder url="file://$MODULE_DIR$/modules" isTestSource="false" packagePrefix="modules\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/imagemodule/src" isTestSource="false" packagePrefix="modules\imagemodule\" />
       <sourceFolder url="file://$MODULE_DIR$/modules/xmmodule/src" isTestSource="false" packagePrefix="modules\xmmodule\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/cebe/markdown" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/craftcms/cms" />
