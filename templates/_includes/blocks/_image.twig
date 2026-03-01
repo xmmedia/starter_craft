@@ -2,7 +2,7 @@
 {% set imageSize = imageSize|default('imageSmall') %}
 {% set imageAlign = imageAlign|default('center') %}
 {% set imageVerticalAlignment = imageVerticalAlignment|default('center') %}
-{% set imageClasses = imageClasses|default([])|merge(['w-full']) %}
+{% set imageClasses = imageClasses|explodeClass|default([])|merge(['w-full']) %}
 
 {% switch imageSize %}
     {% case 'large' %}
