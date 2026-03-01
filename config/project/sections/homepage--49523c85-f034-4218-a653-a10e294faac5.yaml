@@ -16,6 +16,6 @@ siteSettings:
   42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter
     enabledByDefault: true
     hasUrls: true
-    template: _default.twig
+    template: _home.twig
     uriFormat: __home__
 type: single

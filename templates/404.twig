@@ -1,6 +1,6 @@
 {# to preview, go to /404 #}
-
-{% extends "error.twig" %}
+{# parents: error > page > layout #}
+{% extends 'error.twig' %}
 
 {% block page_title %}Page Not Found | {% endblock %}
 {% block heading %}Oops! Page Not Found{% endblock %}

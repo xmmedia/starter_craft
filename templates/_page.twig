@@ -1,3 +1,4 @@
+{# parent: layout #}
 {% extends '_layout.twig' %}
 
 {% set seo = null %}
@@ -28,3 +29,7 @@
         } only %}
     {% endif %}
 {% endblock head %}
+
+{% block content %}
+    {% include '_includes/_blocks.twig' %}
+{% endblock %}

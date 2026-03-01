@@ -1,0 +1,6 @@
+{# parents: home > page > layout #}
+{% extends '_page' %}
+
+{% block page_title_wrap %}
+    {{ siteInformation.companyName }}{% if pageTitle %} | {{ pageTitle }}{% endif %}
+{% endblock %}
