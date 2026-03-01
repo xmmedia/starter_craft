@@ -36,7 +36,26 @@
                         <img src="/images/logo.svg" fetchPriority="high" width="150" height="154" alt="{{ siteInformation.companyName }}">
                     </a>
 
-                    <div id="menu"></div>
+                    {% set menuButton = {} %}
+                    {% if menus.mainMenuButton %}
+                        {% set menuButton = { 'label': menus.mainMenuButton.label, 'value': menus.mainMenuButton.value } %}
+                    {% endif %}
+
+                    <ul id="menu"
+                        class="pl-0"
+                        data-items="{{ menu(menus.menuHeader.all())|json_encode }}"
+                        data-menu-button="{{ menuButton|json_encode }}">
+                        {# display a basic menu so there's something if JS fails or for SEO #}
+                        {% for menuItem in menus.menuHeader.all() %}
+                            <li>
+                                <a href="{{ menuItem.menuLink.value }}">{{ menuItem.menuLink.label }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    {% if menus.mainMenuButton %}
+                        <a href="{{ menus.mainMenuButton.value }}" class="button hidden">{{ menus.mainMenuButton.label }}</a>
+                    {% endif %}
 
                     {% include '_includes/_social_media.twig' %}
                 </div>

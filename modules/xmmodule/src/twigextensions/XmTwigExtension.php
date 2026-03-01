@@ -54,6 +54,7 @@ class XmTwigExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
+            new TwigFunction('menu', [$this, 'menu']),
             new TwigFunction('submenu', [$this, 'submenu']),
         ];
     }
@@ -64,6 +65,19 @@ class XmTwigExtension extends AbstractExtension
             new TwigFilter('heading_striptags', [$this, 'headingStripTags'], ['is_safe' => ['html']]),
             new TwigFilter('phone_strip', [$this, 'phoneStrip']),
         ];
+    }
+
+    public function menu(array $items): array
+    {
+        return array_map(
+            function (Entry $item): array {
+                return [
+                    'url'   => $item->menuLink->url,
+                    'label' => $item->menuLink->label,
+                ];
+            },
+            $items,
+        );
     }
 
     public function submenu(array $subpages): array
