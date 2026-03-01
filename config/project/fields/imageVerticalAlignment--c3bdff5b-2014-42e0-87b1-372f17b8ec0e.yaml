@@ -20,7 +20,7 @@ settings:
           - objects-align-top
         -
           - default
-          - ''
+          - '1'
     -
       __assoc__:
         -
@@ -34,7 +34,7 @@ settings:
           - objects-align-center-vertical
         -
           - default
-          - '1'
+          - ''
     -
       __assoc__:
         -

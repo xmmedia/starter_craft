@@ -1,11 +1,11 @@
 fill: null
 format: null
-handle: imageSmall
-height: 125
+handle: imageTallLarge
+height: 1125
 interlace: none
-mode: fit
-name: 'Image - Small'
+mode: crop
+name: 'Image - Tall - Large'
 position: center-center
 quality: null
 upscale: true
-width: 150
+width: 900

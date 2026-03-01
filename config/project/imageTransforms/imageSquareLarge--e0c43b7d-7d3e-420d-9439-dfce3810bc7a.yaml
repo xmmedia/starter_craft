@@ -1,11 +1,11 @@
 fill: null
 format: null
-handle: imageLarge
-height: 425
+handle: imageSquareLarge
+height: 900
 interlace: none
-mode: fit
-name: 'Image - Large'
+mode: crop
+name: 'Image - Square - Large'
 position: center-center
 quality: null
 upscale: true
-width: 600
+width: 900

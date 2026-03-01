@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: imageFullWidth
+instructions: null
+name: 'Image Full Width'
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: 'Full Width'
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

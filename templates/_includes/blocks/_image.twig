@@ -1,47 +1,59 @@
-{% set image = block.image.one() %}
-{% set imageSize = imageSize|default('imageSmall') %}
-{% set imageAlign = imageAlign|default('center') %}
-{% set imageVerticalAlignment = imageVerticalAlignment|default('center') %}
-{% set imageClasses = imageClasses|explodeClass|default([])|merge(['w-full']) %}
+{% set imageHorizontalAlignment = block.imageHorizontalAlignment|default('center') %}
+{% set imageVerticalAlignment = block.imageVerticalAlignment|default('center') %}
+{% set classes = classes|explodeClass|default([]) %}
 
-{% switch imageSize %}
-    {% case 'large' %}
-        {% set imageTransform = 'imageLarge' %}
-    {% case 'medium' %}
-        {% set imageTransform = 'imageMedium' %}
-    {% default %}
-        {% set imageTransform = 'imageSmall' %}
-{% endswitch %}
+{% if block.imageAspectRatio == 'custom' %}
+    {% set imageTransform = {
+        width: block.customImageDimensions.imageWidth,
+        height: block.customImageDimensions.imageHeight,
+    } %}
+{% else %}
+    {# 1088 is the maximum width of the whole grid, 12 is the number of columns #}
+    {% set blockWidth = width * 1088 / 12 %}
+    {% set imageTransform = 'image' ~ block.imageAspectRatio|title ~ (blockWidth <= 720 ? 'Small' : 'Large') %}
+{% endif %}
 
-{% switch imageAlign %}
+{% switch imageHorizontalAlignment %}
     {% case 'left' %}
         {# tw: justify-start #}
         {% set flexJustify = 'start' %}
     {% case 'right' %}
-        {# tw: justify-end #}
-        {% set flexJustify = 'end' %}
+        {# tw: justify-end-safe #}
+        {% set flexJustify = 'end-safe' %}
     {% default %}
-        {# tw: justify-center #}
+        {# tw: justify-center-safe #}
         {% set flexJustify = 'center' %}
 {% endswitch %}
-{# tw: items-start, items-end, items-center #}
-{% set flexItems = imageVerticalAlignment %}
+{% switch imageVerticalAlignment %}
+    {% case 'top' %}
+        {# tw: items-start #}
+        {% set flexItems = 'start' %}
+    {% case 'bottom' %}
+        {# tw: items-end-safe #}
+        {% set flexItems = 'end-safe' %}
+    {% default %}
+        {# tw: items-center-safe #}
+        {% set flexItems = 'center' %}
+{% endswitch %}
 
-<div class="flex justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}"
-    {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <figure class="w-full">
+{% set wrapperClasses %}
+flex justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}
+{% endset %}
+
+<div class="{{ wrapperClasses }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+    <figure class="{% if block.fullWidth %}image-full_width{% endif %} {{ classes | join(' ') }}">
         {% if block.imageLink %}
             <a href="{{ block.imageLink }}">
         {% endif %}
 
-        {{ image(image, imageTransform, { class: imageClasses }) }}
+        {{ image(block.image.one(), imageTransform) }}
 
         {% if block.imageLink %}
             </a>
         {% endif %}
 
-        {% if block.imageCaption|length > 0 %}
-            <figcaption class="w-full mt-2">
+        {% if block.imageCaption %}
+            <figcaption class="{% if block.fullWidth %}w-full {% endif %}mt-2">
                 {{ block.imageCaption }}
             </figcaption>
         {% endif %}

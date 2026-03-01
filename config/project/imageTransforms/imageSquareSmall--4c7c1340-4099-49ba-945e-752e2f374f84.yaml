@@ -1,11 +1,11 @@
 fill: null
 format: null
-handle: imageGrid
-height: 247
+handle: imageSquareSmall
+height: 725
 interlace: none
-mode: fit
-name: 'Image Grid'
+mode: crop
+name: 'Image - Square - Small'
 position: center-center
 quality: null
 upscale: true
-width: 370
+width: 725

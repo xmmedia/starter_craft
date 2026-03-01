@@ -1,3 +1,8 @@
+.image-full_width {
+    /* makes images go full width on desktop, but limit the height on mobile to restrict how big they can get */
+    @apply w-auto md:w-full max-h-124 md:max-h-none;
+}
+
 .image_block-wrap:nth-of-type(even) {
     .image_block-image {
         @apply order-1;

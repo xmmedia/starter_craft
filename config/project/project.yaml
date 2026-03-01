@@ -1,4 +1,4 @@
-dateModified: 1772230749
+dateModified: 1772341917
 elementSources:
   craft\elements\Entry:
     -
@@ -90,8 +90,9 @@ meta:
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
     2fc8ea4c-f70b-4cc7-a530-6fff07267456: 'Menu Item' # Menu Item
-    3c4b2037-49c2-46d7-8e32-de494f9fb4ff: 'Image - Small' # Image - Small
+    3c51fb22-78f8-42a0-8b90-5969644be5c8: 'Image - Tall - Small' # Image - Tall - Small
     3ccf3102-3b57-4a41-8571-700d76e6afca: Standard # Standard
+    4c7c1340-4099-49ba-945e-752e2f374f84: 'Image - Square - Small' # Image - Square - Small
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
     4deb1488-ff4e-4359-91ed-22574db39b8e: Accordion # Accordion
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
@@ -99,9 +100,7 @@ meta:
     6bb359ec-89c1-4aef-aaab-a009d0be000b: 'Header Menu' # Header Menu
     6bd2bd9a-6b57-45fb-b914-f5b8e27e926f: Gallery # Gallery
     6cdb288c-7205-4c21-9a0a-7d58451a4b56: 'Vertical Alignment' # Vertical Alignment
-    6eedec95-8e5a-49e4-8206-33ff056d1664: Size # Size
     7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
-    7bcca8fb-6082-4c2d-9726-ea6482194a8e: 'Image Block' # Image Block
     7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Items # Items
     7f2f459b-4ae8-4ac5-be02-8accf436e43e: 'Footer Menu' # Footer Menu
     8a21b25b-dfd1-4441-8276-d1457d126775: Email # Email
@@ -111,7 +110,7 @@ meta:
     8f2af3e8-cdf5-4c6b-921e-814f25286901: 'Contact Form' # Contact Form
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element ID' # Element ID
     9cf43e1b-e9c6-4233-9ac8-ef908559899b: Simple # Simple
-    14b6e20f-f619-4fbc-9b76-72460ba1423b: 'Image - Extra Small' # Image - Extra Small
+    15e7ea2c-5cb7-40b2-81bc-1a179ea40cd1: 'Image - Wide - Large' # Image - Wide - Large
     17ed004b-264f-4318-be4a-407867219887: 'Horizontal Alignment' # Horizontal Alignment
     48ab6525-2753-4564-a94c-19b9a23de6df: 'Blog Categories' # Blog Categories
     49c7c1d7-292b-450a-bf9e-c53ee0c295f8: 'Accordion Icon' # Accordion Icon
@@ -131,6 +130,7 @@ meta:
     80ffc64e-4e53-4ba1-8e8f-95d4f45b8946: 'Text Alignment' # Text Alignment
     84d2deef-d6fe-4a07-b967-b71469d68219: 'SEO - Sharing Image Alt' # SEO - Sharing Image Alt
     84ee4464-5ee9-437c-8ce9-ac6cd3d50663: Images # Images
+    89de971e-19fa-4476-965e-aae2fab994b7: 'Image Dimension' # Image Dimension
     95ce255a-2242-4832-a7bd-6ef99ba868c1: General # General
     414f0663-ff97-44ab-b402-98890d76f713: 'SEO - Page Title' # SEO - Page Title
     486e0db8-6cbd-4cd7-85af-77040ab2b43c: Image # Image
@@ -145,11 +145,11 @@ meta:
     787e1739-73f9-4cc5-876c-48a53d41a987: 'Post Categories' # Post Categories
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
     0897a6a4-127b-4d14-8fae-96c64eb06027: Menus # Menus
+    1140dcc1-54a1-40f2-b988-d071f0737166: 'Image Orientation' # Image Orientation
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - Sharing Image' # SEO - Sharing Image
     4119a1ff-3e12-46a5-b9f5-a6f932b4fec2: Pages # Pages
-    4294d06d-5c1a-4afe-83cb-048be5c27d4a: 'Image - Large' # Image - Large
     5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
     7424ebc8-4255-41f1-ab4c-0898425525e9: Gallery # Gallery
     23405c96-1469-4872-a55a-6488791f767a: Default # Default
@@ -157,32 +157,32 @@ meta:
     49523c85-f034-4218-a653-a10e294faac5: Homepage # Homepage
     70722bde-7efe-42d4-a06e-399a44b02435: 'Gallery Image' # Gallery Image
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
-    144007f7-7bab-40c2-9327-b324abf12787: 'Image - Medium' # Image - Medium
     a8e6c61b-4a37-4d1a-8de1-c908b52dbf43: 'Phone Numbers' # Phone Numbers
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
     a2177e53-f588-4293-a115-f5b574937c78: 'Pattern Library' # Pattern Library
     ac3ae0db-5f19-443a-b104-285f5f394a3b: Gallery # Gallery
     ac4ba437-838f-42de-8732-07ae62617da4: 'Form Redirect' # Form Redirect
     b2bcdb56-a6f3-4968-8e8b-ec20a7512d37: Hero # Hero
-    b6b7c09d-6eb1-403b-bfbe-2be795f73901: 'Image Grid' # Image Grid
     b7e52fb1-8f8c-42af-b4dd-89f7bff35de2: Items # Items
     b17a01c1-f13b-415b-80b2-c7e3680ec338: Banner # Banner
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
+    bea9ed95-9878-430d-9120-caefb22d2846: 'Image - Tall - Large' # Image - Tall - Large
     c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3: 'Featured Image' # Featured Image
     c3bdff5b-2014-42e0-87b1-372f17b8ec0e: 'Vertical Alignment' # Vertical Alignment
+    c5a86f25-411f-425a-a809-8053ee814aa4: 'Image Full Width' # Image Full Width
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
     ce0260d9-af51-4c3c-81dd-a1ca82ca7552: Label # Label
+    cea0f3cd-2cc2-4077-a433-fb3f195703cc: 'Image - Wide - Small' # Image - Wide - Small
     d5c492ee-956f-4375-b1ab-c768dffd4071: 'Heading Link' # Heading Link
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
     d2312b71-68b5-4869-b6ca-0d3d447abb38: 'Section End' # Section End
     d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text' # Post Content - Text
-    d9750188-899b-4d90-b854-a86818225807: 'Image Block' # Image Block
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
+    e0c43b7d-7d3e-420d-9439-dfce3810bc7a: 'Image - Square - Large' # Image - Square - Large
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
-    e3499da5-5edf-46f5-95cc-7f24c8c8f862: 'Image Block' # Image Block
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
     f5ce74ee-26a4-476d-8821-9fa472b0e3dd: Message # Message
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
@@ -191,6 +191,7 @@ meta:
     fa12ac47-4af9-47a6-a7e2-9c5051088a5b: Platform # Platform
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
+    fd880dcd-7683-4631-b25d-c13338a1b4d5: 'Image Dimensions' # Image Dimensions
     fde5281f-1a78-4749-abcc-3c136ffc0258: Button # Button
 plugins:
   ckeditor:

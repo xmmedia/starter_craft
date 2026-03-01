@@ -1,0 +1,19 @@
+columnSuffix: null
+handle: imageDimension
+instructions: null
+name: 'Image Dimension'
+searchable: false
+settings:
+  decimals: 0
+  defaultValue: null
+  max: 1500
+  min: 10
+  prefix: null
+  previewCurrency: null
+  previewFormat: decimal
+  size: null
+  step: null
+  suffix: px
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Number

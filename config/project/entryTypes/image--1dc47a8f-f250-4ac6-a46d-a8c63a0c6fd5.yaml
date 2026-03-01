@@ -65,6 +65,114 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
+          -
+            dateAdded: '2026-03-01T04:51:40+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: bfed7a4c-a2a6-4d1a-982f-fa73095ff535
+            userCondition: null
+          -
+            dateAdded: '2026-03-01T04:51:40+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 1140dcc1-54a1-40f2-b988-d071f0737166 # Image Orientation
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6c8cfe2f-0b72-4f31-9897-fc77a7a088dc
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-03-01T04:51:40+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c5a86f25-411f-425a-a809-8053ee814aa4 # Image Full Width
+            handle: fullWidth
+            instructions: null
+            label: 'Full Width'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 5f111460-8d5f-4beb-bfd0-b972a57ab720
+            userCondition: null
+            warning: null
+            width: 25
+          -
+            dateAdded: '2026-03-01T04:54:54+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 1140dcc1-54a1-40f2-b988-d071f0737166 # Image Orientation
+                  layoutElementUid: 6c8cfe2f-0b72-4f31-9897-fc77a7a088dc
+                  operator: in
+                  uid: 3d7d4991-217f-4080-b027-22f9562285db
+                  values:
+                    - custom
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: fd880dcd-7683-4631-b25d-c13338a1b4d5 # Image Dimensions
+            handle: customImageDimensions
+            instructions: null
+            label: 'Custom Image Dimensions'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 2ae7f78b-3c6a-465d-94ba-fb0516ca8151
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2024-12-04T23:56:41+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: c3bdff5b-2014-42e0-87b1-372f17b8ec0e # Vertical Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 21e42079-fbb9-46b6-b5f9-694ae79e8682
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2024-12-04T23:47:37+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\LightswitchFieldConditionRule
+                  fieldUid: c5a86f25-411f-425a-a809-8053ee814aa4 # Image Full Width
+                  layoutElementUid: 5f111460-8d5f-4beb-bfd0-b972a57ab720
+                  uid: 4b35dcf0-9849-42fd-84be-d50c4bf14612
+                  value: false
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 17ed004b-264f-4318-be4a-407867219887 # Horizontal Alignment
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dde483de-2806-49e4-9549-56f0ebd741d0
+            userCondition: null
+            warning: null
+            width: 50
         name: Content
         uid: 2c830cd9-4e6c-4f49-9445-9e224a1638ab
         userCondition: null
@@ -84,54 +192,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e3bf449f-7aa6-4bf0-b23a-a1933672a3d5
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-12-02T16:21:50+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 6eedec95-8e5a-49e4-8206-33ff056d1664 # Size
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 808ac820-aa23-4fd8-b2e1-f6658dc79a55
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-12-04T23:47:37+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 17ed004b-264f-4318-be4a-407867219887 # Horizontal Alignment
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: dde483de-2806-49e4-9549-56f0ebd741d0
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2024-12-04T23:56:41+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: c3bdff5b-2014-42e0-87b1-372f17b8ec0e # Vertical Alignment
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 21e42079-fbb9-46b6-b5f9-694ae79e8682
             userCondition: null
             warning: null
             width: 50

@@ -1,62 +1,68 @@
-columnSuffix: adknstvl
-handle: imageSize
+columnSuffix: null
+handle: imageAspectRatio
 instructions: null
-name: Size
+name: 'Image Orientation'
 searchable: false
 settings:
   customOptions: false
+  iconsOnly: true
   options:
     -
       __assoc__:
         -
           - label
-          - 'Small (150x125)'
+          - Square
         -
           - value
-          - small
+          - square
         -
           - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Medium (350x250)'
-        -
-          - value
-          - medium
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
-        -
-          - default
-          - ''
-    -
-      __assoc__:
-        -
-          - label
-          - 'Large (600x425)'
-        -
-          - value
-          - large
-        -
-          - icon
-          - ''
-        -
-          - color
-          - ''
+          - square
         -
           - default
           - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - Portrait/Tall
+        -
+          - value
+          - tall
+        -
+          - icon
+          - rectangle-vertical
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Landscape/Wide
+        -
+          - value
+          - wide
+        -
+          - icon
+          - rectangle-wide
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - Custom
+        -
+          - value
+          - custom
+        -
+          - icon
+          - ''
+        -
+          - default
+          - ''
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\RadioButtons
+type: craft\fields\ButtonGroup

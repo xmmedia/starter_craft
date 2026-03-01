@@ -1,0 +1,85 @@
+columnSuffix: null
+handle: imageDimensions
+instructions: null
+name: 'Image Dimensions'
+searchable: false
+settings:
+  fieldLayouts:
+    __assoc__:
+      -
+        - 7727d19f-34a1-47c7-99e2-21ce2cc22d8f
+        -
+          __assoc__:
+            0:
+              - tabs
+              -
+                -
+                  __assoc__:
+                    0:
+                      - name
+                      - Content
+                    1:
+                      - uid
+                      - e4b024a8-bb16-4f4b-b709-1b162b8ba09e
+                    4:
+                      - elements
+                      -
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - imageWidth
+                            2:
+                              - label
+                              - Width
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-03-01T04:54:17+00:00'
+                            9:
+                              - uid
+                              - 7431e7a8-de93-49e4-ac5b-aa5079f5d855
+                            12:
+                              - fieldUid
+                              - 89de971e-19fa-4476-965e-aae2fab994b7 # Image Dimension
+                        -
+                          __assoc__:
+                            0:
+                              - type
+                              - craft\fieldlayoutelements\CustomField
+                            1:
+                              - handle
+                              - imageHeight
+                            2:
+                              - label
+                              - Height
+                            6:
+                              - required
+                              - false
+                            7:
+                              - width
+                              - 25
+                            8:
+                              - dateAdded
+                              - '2026-03-01T04:54:17+00:00'
+                            9:
+                              - uid
+                              - 0dee119b-47ca-4ab2-aa9e-399ca9e4d01e
+                            12:
+                              - fieldUid
+                              - 89de971e-19fa-4476-965e-aae2fab994b7 # Image Dimension
+            4:
+              - cardThumbAlignment
+              - end
+  viewMode: pane
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\ContentBlock

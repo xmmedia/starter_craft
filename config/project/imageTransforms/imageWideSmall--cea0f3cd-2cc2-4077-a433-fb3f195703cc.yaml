@@ -1,11 +1,11 @@
 fill: null
 format: null
-handle: imageBlock
-height: 500
+handle: imageWideSmall
+height: 560
 interlace: none
 mode: crop
-name: 'Image Block'
+name: 'Image - Wide - Small'
 position: center-center
 quality: null
 upscale: true
-width: 500
+width: 700
