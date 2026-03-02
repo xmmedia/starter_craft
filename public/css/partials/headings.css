@@ -2,10 +2,13 @@
 /* stylelint-disable no-duplicate-selectors */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    @apply font-headings font-bold text-pretty;
+    @apply font-headings font-bold;
+    /* @todo-craft uncomment if there's a need on this site, though can cause extra line breaks (in Safari)
+    @apply text-pretty;
+     */
 }
 
-/* @todo-craft uncomment if there's a need on this site, though can cause extra hyphenation
+/* @todo-craft uncomment if there's a need on this site, though can cause extra hyphenation (mainly in Safari)
 h1, .h1, h2, .h1 {
     @apply hyphens-auto sm:hyphens-none;
 }
