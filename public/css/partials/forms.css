@@ -81,7 +81,7 @@ select {
 }
 
 .form-wrap {
-    @apply max-w-lg mx-auto my-4 p-4 border border-gray-200 rounded;
+    @apply w-full max-w-lg mx-auto my-4 p-4 border border-gray-200 rounded;
 }
 
 .field-wrap {
