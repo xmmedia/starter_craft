@@ -27,7 +27,7 @@
         <form method="post" action="{{ successUrl }}" accept-charset="utf-8" class="form-wrap">
 
             {% set flashes = craft.app.session.getAllFlashes(true) %}
-            {% if flashes | length %}
+            {% if flashes|length %}
                 <div class="mb-4">
                     {% for level, flash in flashes %}
                         {# level is success or error #}

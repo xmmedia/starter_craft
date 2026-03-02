@@ -11,9 +11,9 @@
 
 			<h2>{{ post.title }}</h2>
 
-			<time datetime="{{ post.postDate | atom }}">{{ post.postDate | date }}</time>
+			<time datetime="{{ post.postDate|atom }}">{{ post.postDate|date }}</time>
 
-			{{ post.summary | md }}
+			{{ post.summary|md }}
 
 			<a href="{{ post.url }}">Continue Reading</a>
 		</article>

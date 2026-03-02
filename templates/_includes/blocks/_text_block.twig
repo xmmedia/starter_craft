@@ -1,7 +1,7 @@
 {% set classes = ['md:col-span-' ~ width] %}
 
 {% if block.textVerticalAlign == 'center' %}
-    {% set classes = classes | merge(['flex flex-col justify-center']) %}
+    {% set classes = classes|merge(['flex flex-col justify-center']) %}
 {% endif %}
 
 {% if block.textAlign == 'textCenter' %}
@@ -11,9 +11,9 @@
 {% endif %}
 
 {% if block.classes %}
-    {% set classes = classes | merge(block.classes | explodeClass) %}
+    {% set classes = classes|merge(block.classes|explodeClass) %}
 {% endif %}
 
-<div class="text-block-wrap {{ classes | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="text-block-wrap {{ classes|join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div>{{ block.textBlock }}</div>
 </div>
