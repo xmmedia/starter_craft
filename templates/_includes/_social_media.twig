@@ -4,5 +4,6 @@
         <svg class="social-icon">
             <use xlink:href="{{ craft.vite.asset("/images/icons-public.svg") }}#social-{{ profile.platform }}"></use>
         </svg>
+        <span class="sr-only">{{ profile.profileUrl.label }}</span>
     </a>
 {% endfor %}
