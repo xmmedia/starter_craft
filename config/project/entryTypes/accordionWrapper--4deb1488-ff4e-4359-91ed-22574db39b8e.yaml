@@ -80,7 +80,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 4d528505-7ae2-4b35-9e9d-264b0d06a321

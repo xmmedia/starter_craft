@@ -1,4 +1,4 @@
-dateModified: 1772344917
+dateModified: 1772429577
 elementSources:
   craft\elements\Entry:
     -
@@ -21,12 +21,9 @@ elementSources:
       key: 'custom:15ef40e8-ff07-46ea-ad98-b8358c1f2c70'
       label: 'All Pages'
       page: Entries
-      tableAttributes: '-'
+      tableAttributes:
+        - uri
       type: custom
-    -
-      key: 'section:4119a1ff-3e12-46a5-b9f5-a6f932b4fec2' # Pages
-      page: Entries
-      type: native
     -
       defaultSort:
         - title
@@ -38,6 +35,22 @@ elementSources:
       tableAttributes:
         - status
         - link
+        - uri
+      type: native
+    -
+      defaultSort:
+        - structure
+        - asc
+      defaultViewMode: ''
+      disabled: false
+      key: 'section:4119a1ff-3e12-46a5-b9f5-a6f932b4fec2' # Pages
+      page: Entries
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
+        - uri
       type: native
     -
       key: 'section:2b537640-9acd-4e53-a1b4-f497d2e79cd0' # Blog

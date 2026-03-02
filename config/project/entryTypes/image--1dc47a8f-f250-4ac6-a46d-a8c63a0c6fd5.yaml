@@ -188,7 +188,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e3bf449f-7aa6-4bf0-b23a-a1933672a3d5
