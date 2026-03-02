@@ -1,4 +1,4 @@
-{% set classes = ['max-w-3xl'] %}
+{% set classes = ['md:col-span-' ~ block.blockWidth|default(12)] %}
 
 {% if block.textAlign == 'textCenter' %}
     {% set classes = classes|merge(['mx-auto', 'text-center']) %}
@@ -6,16 +6,13 @@
     {% set classes = classes|merge(['text-center', 'md:text-left']) %}
 {% endif %}
 
-{% if block.classes %}
-    {% set classes = classes|merge(block.classes|explodeClass) %}
-{% endif %}
-
 {% if block.uppercase %}
     {% set classes = classes|merge(['uppercase']) %}
 {% endif %}
 
-{% set width = block.blockWidth|default(12) %}
-{% set classes = classes|merge(['md:col-span-' ~ width]) %}
+{% if block.classes %}
+    {% set classes = classes|merge(block.classes|explodeClass) %}
+{% endif %}
 
 {% set heading = block.heading|heading_striptags %}
 {% if block.headingLink %}

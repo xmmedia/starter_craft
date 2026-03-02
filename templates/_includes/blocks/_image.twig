@@ -1,6 +1,5 @@
 {% set imageHorizontalAlignment = block.imageHorizontalAlignment|default('center') %}
 {% set imageVerticalAlignment = block.imageVerticalAlignment|default('center') %}
-{% set classes = classes|explodeClass|default([]) %}
 
 {% if block.imageAspectRatio == 'custom' %}
     {% set imageTransform = {
@@ -41,7 +40,7 @@ flex justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}
 {% endset %}
 
 <div class="{{ wrapperClasses }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <figure class="{% if block.fullWidth %}image-full_width{% endif %} {{ classes | join(' ') }}">
+    <figure class="{% if block.fullWidth %}image-full_width{% endif %} {{ block.classes }}">
         {% if block.imageLink %}
             <a href="{{ block.imageLink }}">
         {% endif %}
