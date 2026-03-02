@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c98770c8d5e699387469198087b3737",
+    "content-hash": "cfc8e886f2d5f7b5c51406a5f1faed95",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -796,11 +796,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.11.1",
+            "version": "4.11.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/2e75b5050377aafb0aeef4b67230d26c28a07218",
-                "reference": "2e75b5050377aafb0aeef4b67230d26c28a07218",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/9681db10641a03edd529fca1a403f6f5cc72eb2a",
+                "reference": "9681db10641a03edd529fca1a403f6f5cc72eb2a",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2026-02-18T22:13:33+00:00"
+            "time": "2026-03-02T22:35:06+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -10569,6 +10569,6 @@
         "php": "8.5.*",
         "ext-intl": "*"
     },
-    "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "platform-dev": [],
+    "plugin-api-version": "2.6.0"
 }
