@@ -5,9 +5,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     @apply font-headings font-bold text-pretty;
 }
 
+/* @todo-craft uncomment if there's a need on this site, though can cause extra hyphenation
 h1, .h1, h2, .h1 {
     @apply hyphens-auto sm:hyphens-none;
 }
+*/
 
 h1, .h1 {
     @apply text-4xl lg:text-5xl;
