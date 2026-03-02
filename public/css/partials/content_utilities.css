@@ -1,0 +1,19 @@
+@utility w-content-base {
+    @apply mx-auto px-6 sm:px-8;
+}
+
+@utility w-content {
+    @apply w-content-base max-w-6xl;
+}
+
+@utility w-content-copy {
+    @apply w-content-base max-w-3xl;
+}
+
+@utility w-content-wide {
+    @apply w-content-base max-w-7xl;
+}
+
+@utility w-content-screen {
+    @apply w-content-base;
+}

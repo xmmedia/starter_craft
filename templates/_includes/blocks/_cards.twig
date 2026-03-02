@@ -1,5 +1,5 @@
 <div class="md:col-span-12"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <div class="w-content cards-wrap">
+    <div class="cards-wrap">
         {% for cardItem in block.cards.all() %}
             <a href="{{ cardItem.cardLink }}" class="card">
                 {% set image = cardItem.image.one() %}

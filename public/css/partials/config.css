@@ -1,0 +1,47 @@
+/* Safelist specific classes & pattern-based utilities
+   These classes are used/referenced in the the database/CMS,
+   but not used in the code so normally Tailwind would skip them */
+@source inline("{sm:,md:,lg:,}{block,inline}");
+@source inline("{xs:,sm:,md:,lg:,xl:,}{m,p}{t,b,r,l,x,y}-{0,1,2,3,4,6,8,10,12,16,24}");
+@source inline("{sm:,md:,lg:,}{col-span}-{1,2,3,4,5,6,7,8,9,10,11,12}");
+@source inline("{sm:,md:,lg:,}whitespace-{normal,nowrap}");
+@source inline("md-enter-active md-leave-active md-enter md-leave-active");
+
+/* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
+/* colour converter: https://lik.ai/tools/color-convertor/ *** with a precision of 4 ***  */
+@theme {
+    --breakpoint-xs: 25rem;
+
+    --color-black-transparent: oklch(0% 0 0deg / 40%);
+    --color-white-transparent: oklch(100% 0 0deg / 60%);
+    --color-white-transparent-dark: oklch(100% 0 0deg / 80%);
+
+    --max-width-8xl: 90rem;
+
+    /* see https://tailwindcss.com/docs/font-family for list */
+    --font-headings: "Roboto", "Helvetica Neue", "Arial", var(--font-sans);
+}
+
+@utility w-content-base {
+    @apply mx-auto px-6 sm:px-8;
+}
+
+@utility w-content {
+    @apply w-content-base max-w-6xl;
+}
+
+@utility w-content-copy {
+    @apply w-content-base max-w-3xl;
+}
+
+@utility w-content-wide {
+    @apply w-content-base max-w-7xl;
+}
+
+@utility w-content-screen {
+    @apply w-content-base;
+}
+
+@utility transition-default {
+    transition: all 300ms ease-in-out;
+}

@@ -1,5 +1,5 @@
 .cards-wrap {
-    @apply flex flex-wrap justify-center gap-8 mx-auto p-8;
+    @apply w-content flex flex-wrap justify-center gap-8 mx-auto p-8;
     /* @apply grid sm:grid-cols-2 gap-8 mx-auto; */
 }
 

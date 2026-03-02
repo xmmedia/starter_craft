@@ -12,7 +12,7 @@
     {% for block in entry.blocks.all() %}
         {% if block.type.handle in wrappedBlocks %}
             {% if inBlock == false %}
-                <div class="w-content blocks-wrap">
+                <div class="blocks-wrap">
                 {% set inBlock = true %}
             {% endif %}
         {% else %}

@@ -3,6 +3,7 @@
 @import "tailwindcss";
 
 /* base styles */
+@import "./partials/config.css";
 @import "./partials/base.css";
 
 @layer components {
