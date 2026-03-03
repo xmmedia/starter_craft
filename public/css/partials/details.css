@@ -1,3 +1,7 @@
+details {
+    interpolate-size: allow-keywords;
+}
+
 details summary {
     @apply list-none cursor-pointer;
 }
@@ -13,4 +17,59 @@ details[open] .details-minus {
 }
 details[open] .details-plus {
     @apply hidden;
+}
+
+/* Fallback: open animation only (browsers without ::details-content) */
+details > div {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+
+details[open] > div {
+    height: auto;
+    opacity: 1;
+}
+
+@starting-style {
+    details[open] > div {
+        height: 0;
+        opacity: 0;
+    }
+}
+
+/* Modern: animate both open and close (Chrome 131+) */
+@supports selector(details::details-content) {
+    details > div {
+        overflow: revert;
+        height: revert;
+        opacity: revert;
+        transition: revert;
+    }
+
+    details[open] > div {
+        height: revert;
+        opacity: revert;
+    }
+
+    details::details-content {
+        overflow: hidden;
+        height: 0;
+        opacity: 0;
+        transition: height 0.3s ease, opacity 0.3s ease,
+            content-visibility 0.3s ease allow-discrete;
+    }
+
+    details[open]::details-content {
+        height: auto;
+        opacity: 1;
+    }
+
+    @starting-style {
+        details[open]::details-content {
+            height: 0;
+            opacity: 0;
+        }
+    }
 }
