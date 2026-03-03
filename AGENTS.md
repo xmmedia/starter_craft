@@ -64,7 +64,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 - **Vue 3** for interactive components
 - **Vite** for bundling and dev server (replaces Webpack)
 - **Tailwind CSS 4** for styling
-- **PostCSS** with autoprefixer, nested, and nesting plugins
+- **PostCSS** with env-function and nesting plugins (autoprefixer via Tailwind)
 - ESLint and Stylelint for code quality
 
 ### Project Structure
@@ -134,11 +134,10 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 - Vue 3 Composition API available
 - Components mounted via `createApp()` in entry files
 - Example: Menu component mounted to `#menu` element
-- See `TEMPLATES.md` for Vue component structure templates
 
 **CSS Processing**:
 - Tailwind CSS 4 (via `@tailwindcss/vite` plugin)
-- PostCSS with env-function, nested, and nesting plugins
+- PostCSS with env-function and nesting plugins
 - Source maps enabled in dev mode
 
 ### Deployment
@@ -198,7 +197,6 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 **JavaScript**:
 - ESLint config in `eslint.config.mjs` (Flat Config format)
 - Vue 3 style guide conventions
-- See `TEMPLATES.md` for component structure
 
 **CSS**:
 - Tailwind utility-first approach
