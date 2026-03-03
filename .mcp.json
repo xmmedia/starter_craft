@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "craft-cms": {
+            "command": "bash",
+            "args": [
+                "-c",
+                "lando ssh --command \"php vendor/stimmt/craft-mcp/bin/mcp-server\""
+            ]
+        }
+    }
+}

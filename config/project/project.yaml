@@ -1,4 +1,4 @@
-dateModified: 1772429577
+dateModified: 1772515954
 elementSources:
   craft\elements\Entry:
     -
@@ -270,6 +270,10 @@ plugins:
     settings:
       honeypotParam: repeatEmail
   field-manager:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+  mcp:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
