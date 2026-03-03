@@ -202,6 +202,7 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 - Tailwind utility-first approach
 - Stylelint with Tailwind config (`stylelint.config.mjs`)
 - Use `@apply` sparingly
+- Prefer CSS animations over JavaScript-driven animations when possible
 
 **Twig**:
 - Consistent naming: partials prefixed with `_`
