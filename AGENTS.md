@@ -16,7 +16,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 ## System Requirements
 
 - PHP 8.5+
-- MySQL 8.0
+- MySQL 8.4
 - Node 22
 - [Yarn v4](https://yarnpkg.com/en/docs/install)
 
