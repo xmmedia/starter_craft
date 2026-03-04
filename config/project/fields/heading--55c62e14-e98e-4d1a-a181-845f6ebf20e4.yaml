@@ -48,6 +48,7 @@ settings:
   toolbar:
     - undo
     - redo
+    - findAndReplace
     - '|'
     - bold
     - italic
@@ -57,7 +58,6 @@ settings:
     - fontColor
     - fontSize
     - '|'
-    - bookmark
     - removeFormat
     - sourceEditing
   wordLimit: null

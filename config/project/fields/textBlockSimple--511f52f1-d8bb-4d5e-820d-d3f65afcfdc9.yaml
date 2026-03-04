@@ -4,19 +4,25 @@ instructions: null
 name: 'Text Block Simple'
 searchable: false
 settings:
+  advancedLinkFields: null
   availableTransforms: '*'
   availableVolumes: '*'
   characterLimit: null
   css: null
   defaultTransform: null
-  fullGraphqlData: false
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
+  fullGraphqlData: true
   headingLevels:
-    - 1
-    - 2
-    - 3
-    - 4
-    - 5
-    - 6
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
   js: null
   options:
     __assoc__:
@@ -42,6 +48,7 @@ settings:
   toolbar:
     - undo
     - redo
+    - findAndReplace
     - '|'
     - bold
     - italic
@@ -51,7 +58,6 @@ settings:
     - fontColor
     - fontSize
     - '|'
-    - bookmark
     - removeFormat
     - sourceEditing
   wordLimit: null

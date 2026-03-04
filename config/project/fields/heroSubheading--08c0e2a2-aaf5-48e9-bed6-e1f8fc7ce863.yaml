@@ -4,13 +4,51 @@ instructions: null
 name: 'Herobar - Subheading'
 searchable: false
 settings:
-  byteLimit: null
-  charLimit: null
-  code: false
-  initialRows: 4
-  multiline: false
-  placeholder: null
-  uiMode: normal
+  advancedLinkFields:
+    - target
+    - download
+  availableTransforms: '*'
+  availableVolumes: '*'
+  characterLimit: null
+  css: null
+  defaultTransform: null
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
+  fullGraphqlData: true
+  headingLevels:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
+  js: null
+  options: null
+  parseEmbeds: false
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: true
+  sourceEditingGroups:
+    - __ADMINS__
+  toolbar:
+    - undo
+    - redo
+    - findAndReplace
+    - '|'
+    - bold
+    - italic
+    - link
+    - subscript
+    - superscript
+    - '|'
+    - removeFormat
+    - sourceEditing
+  wordLimit: 50
 translationKeyFormat: null
 translationMethod: none
-type: craft\fields\PlainText
+type: craft\ckeditor\Field

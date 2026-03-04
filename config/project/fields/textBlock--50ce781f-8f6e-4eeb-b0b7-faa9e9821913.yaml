@@ -46,6 +46,7 @@ settings:
     - heading
     - undo
     - redo
+    - findAndReplace
     - '|'
     - bold
     - italic
@@ -63,7 +64,6 @@ settings:
     - insertImage
     - mediaEmbed
     - bookmark
-    - findAndReplace
     - removeFormat
     - sourceEditing
   wordLimit: null
