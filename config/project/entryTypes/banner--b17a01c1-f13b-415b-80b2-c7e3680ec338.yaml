@@ -4,10 +4,6 @@ description: null
 fieldLayouts:
   f84c98ad-7400-463b-a3c2-5fba6759b74e:
     cardThumbAlignment: end
-    cardView:
-      - 'layoutElement:c64b1776-2199-45fd-b05f-ecbaeada3fe0'
-      - type
-      - 'layoutElement:58f3bb22-a6c5-437a-b836-612bf71f7c4d'
     tabs:
       -
         elementCondition: null
@@ -63,7 +59,7 @@ fieldLayouts:
         name: Content
         uid: 98e3b46d-c478-47f5-a67a-5a222d93010e
         userCondition: null
-    thumbFieldKey: null
+    thumbFieldKey: 'layoutElement:c64b1776-2199-45fd-b05f-ecbaeada3fe0'
 handle: banner
 hasTitleField: false
 icon: null
@@ -75,4 +71,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{heading}'
+uiLabelFormat: "{heading ? heading|striptags : 'Banner'}"

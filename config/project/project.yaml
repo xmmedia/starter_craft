@@ -1,4 +1,4 @@
-dateModified: 1772600247
+dateModified: 1772600753
 elementSources:
   craft\elements\Entry:
     -
@@ -220,6 +220,7 @@ meta:
     f5ce74ee-26a4-476d-8821-9fa472b0e3dd: Message # Message
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
     f84ef073-f5e7-404c-a8ee-c24b36df5bd4: 'Phone Number' # Phone Number
+    f9712ce8-7f9e-4fb3-a227-4fbaa04f025c: Banner # Banner
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
     fa12ac47-4af9-47a6-a7e2-9c5051088a5b: Platform # Platform
     fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog

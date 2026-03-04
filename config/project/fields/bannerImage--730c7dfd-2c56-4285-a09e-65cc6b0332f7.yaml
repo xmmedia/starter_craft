@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: bannerImage
-instructions: 'Image should be 1290x538px or larger and the same proportions'
+instructions: 'The background image should be ~1200px tall and 5000px wide or larger.'
 name: 'Banner Image'
 searchable: false
 settings:
@@ -30,7 +30,7 @@ settings:
   sources: '*'
   targetSiteId: null
   validateRelatedElements: false
-  viewMode: list
+  viewMode: thumbs
 translationKeyFormat: null
 translationMethod: none
 type: craft\fields\Assets
