@@ -4,14 +4,39 @@ instructions: null
 name: Heading
 searchable: false
 settings:
+  advancedLinkFields: null
   availableTransforms: '*'
   availableVolumes: '*'
   characterLimit: null
-  ckeConfig: 9cf43e1b-e9c6-4233-9ac8-ef908559899b # Simple
-  createButtonLabel: null
+  css: null
   defaultTransform: null
-  expandEntryButtons: false
-  fullGraphqlData: false
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: 95ce255a-2242-4832-a7bd-6ef99ba868c1 # General
+  fullGraphqlData: true
+  headingLevels:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
+  js: null
+  options:
+    __assoc__:
+      -
+        - fontSize
+        -
+          __assoc__:
+            -
+              - options
+              -
+                - tiny
+                - small
+                - big
+                - huge
   parseEmbeds: false
   purifierConfig: null
   purifyHtml: true
@@ -20,6 +45,21 @@ settings:
   showWordCount: false
   sourceEditingGroups:
     - __ADMINS__
+  toolbar:
+    - undo
+    - redo
+    - '|'
+    - bold
+    - italic
+    - link
+    - superscript
+    - subscript
+    - fontColor
+    - fontSize
+    - '|'
+    - bookmark
+    - removeFormat
+    - sourceEditing
   wordLimit: null
 translationKeyFormat: null
 translationMethod: none

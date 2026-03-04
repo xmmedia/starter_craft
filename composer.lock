@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3800ab1614a3136a176afc21c8ce10d1",
+    "content-hash": "6a3de3a29434fec5a0c05b515ea519a3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -796,15 +796,15 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "4.11.2",
+            "version": "5.0.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/9681db10641a03edd529fca1a403f6f5cc72eb2a",
-                "reference": "9681db10641a03edd529fca1a403f6f5cc72eb2a",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/8b3f165547a32a2c7d8a95961b2ad48e417f661a",
+                "reference": "8b3f165547a32a2c7d8a95961b2ad48e417f661a",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^5.6.1",
+                "craftcms/cms": "^5.9.0",
                 "craftcms/html-field": "^3.4.0",
                 "embed/embed": "^4.4",
                 "nystudio107/craft-code-editor": ">=1.0.8 <=1.0.13 || ^1.0.16",
@@ -845,7 +845,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2026-03-02T22:35:06+00:00"
+            "time": "2026-03-03T22:45:34+00:00"
         },
         {
             "name": "craftcms/cms",
