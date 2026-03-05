@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6a3de3a29434fec5a0c05b515ea519a3",
+    "content-hash": "d242b3d9b07f57f7a5fe2eb4ef921996",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -796,11 +796,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "5.0.1",
+            "version": "5.1.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/8b3f165547a32a2c7d8a95961b2ad48e417f661a",
-                "reference": "8b3f165547a32a2c7d8a95961b2ad48e417f661a",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/a86e7dc1703dcf33f6824cfe283f4f6af1b1c172",
+                "reference": "a86e7dc1703dcf33f6824cfe283f4f6af1b1c172",
                 "shasum": ""
             },
             "require": {
@@ -845,7 +845,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
             },
-            "time": "2026-03-03T22:45:34+00:00"
+            "time": "2026-03-05T16:29:16+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -6772,11 +6772,11 @@
         },
         {
             "name": "stimmt/craft-mcp",
-            "version": "v1.2.1",
+            "version": "v1.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/04c84d9d961e0ff6239439c22d781a0a32489ab0",
-                "reference": "04c84d9d961e0ff6239439c22d781a0a32489ab0",
+                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/c1f49ee09aba56fe151ad3659abfe0e3f3ed4d94",
+                "reference": "c1f49ee09aba56fe151ad3659abfe0e3f3ed4d94",
                 "shasum": ""
             },
             "require": {
@@ -6827,7 +6827,7 @@
                 "issues": "https://github.com/stimmtdigital/craft-mcp/issues",
                 "source": "https://github.com/stimmtdigital/craft-mcp"
             },
-            "time": "2026-02-24T14:40:55+00:00"
+            "time": "2026-03-04T14:48:55+00:00"
         },
         {
             "name": "symfony/console",
@@ -10324,11 +10324,11 @@
         },
         {
             "name": "wrav/oembed",
-            "version": "3.2.0",
+            "version": "3.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wrav/oembed/zipball/f6f8da49efbc52617318594ba91b25fdc554135b",
-                "reference": "f6f8da49efbc52617318594ba91b25fdc554135b",
+                "url": "https://api.github.com/repos/wrav/oembed/zipball/1052ae607eb7fc83f6470c3d8e73202c78236669",
+                "reference": "1052ae607eb7fc83f6470c3d8e73202c78236669",
                 "shasum": ""
             },
             "require": {
@@ -10384,7 +10384,7 @@
                 "docs": "https://github.com/wrav/oembed/blob/master/README.md",
                 "issues": "https://github.com/wrav/oembed/issues"
             },
-            "time": "2026-01-14T10:55:26+00:00"
+            "time": "2026-03-05T02:24:29+00:00"
         },
         {
             "name": "yiisoft/yii2",
