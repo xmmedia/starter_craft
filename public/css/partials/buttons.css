@@ -1,4 +1,4 @@
-.button {
+@utility button {
     @apply px-4 py-2 text-white text-center shadow-none border-2 border-blue-500 bg-blue-500
     leading-tight transition-default outline-hidden rounded-sm cursor-pointer;
 
@@ -20,5 +20,5 @@
 }
 
 a.button {
-    @apply inline-block focus:bg-blue-500;
+    @apply button inline-block focus:bg-blue-500;
 }

@@ -5,6 +5,7 @@
 /* base styles */
 @import "./partials/config.css";
 @import "./partials/base.css";
+@import "./partials/buttons.css";
 
 @layer components {
     /* common styles */
@@ -13,7 +14,6 @@
     @import "./partials/headings.css";
     @import "./partials/forms.css";
     @import "./partials/embed.css";
-    @import "./partials/buttons.css";
     @import "./partials/details.css";
     @import "./partials/gallery.css";
     @import "./partials/social.css";
