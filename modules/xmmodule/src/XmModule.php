@@ -14,7 +14,10 @@ namespace modules\xmmodule;
 
 use modules\xmmodule\twigextensions\XmTwigExtension;
 use Craft;
+use craft\mail\Mailer;
+use yii\base\Event;
 use yii\base\Module;
+use yii\mail\MailEvent;
 
 /**
  * Craft plugins are very much like little applications in and of themselves. We’ve made
@@ -79,6 +82,19 @@ class XmModule extends Module
 
         // Add in our Twig extensions
         Craft::$app->getView()->registerTwigExtension(new XmTwigExtension());
+
+        // Append site name to system email subjects
+        Event::on(Mailer::class, Mailer::EVENT_BEFORE_SEND, function(MailEvent $event) {
+            $key = $event->message->key ?? null;
+
+            if (!in_array($key, ['account_activation', 'forgot_password'], true)) {
+                return;
+            }
+
+            $siteName = Craft::$app->getSystemName();
+            $currentSubject = $event->message->getSubject();
+            $event->message->setSubject($currentSubject . ' on ' . $siteName);
+        });
 
         /**
          * Logging in Craft involves using one of the following methods:
