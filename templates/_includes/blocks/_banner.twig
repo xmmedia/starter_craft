@@ -3,9 +3,9 @@
 {% set heading = block.heading|heading_striptags %}
 {% set textBlock = block.textBlock %}
 
-{{ style.bg_style_block(block.heroImage.one(), 'hero', 'banner--', block.id) }}
+{{ style.bg_style_block(block.bannerImage.one(), 'banner', 'banner--', block.id) }}
 
-<div class="banner" style="background-image: url('{{ block.bannerImage.one().getUrl('banner') }}'); ">
+<div class="banner banner--{{ block.id }} {{ block.classes }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% if heading or textBlock %}
         <div class="flex flex-col justify-center items-center h-full bg-black-transparent text-center">
             <div class="relative">

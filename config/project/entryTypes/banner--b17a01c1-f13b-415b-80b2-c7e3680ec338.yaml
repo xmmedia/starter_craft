@@ -59,6 +59,44 @@ fieldLayouts:
         name: Content
         uid: 98e3b46d-c478-47f5-a67a-5a222d93010e
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-03-05T17:44:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 326c4c47-4fc7-47f8-b514-61f49153f049
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-03-05T17:44:33+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 425fa7bc-8a7d-44fb-9fe9-a0228e790321
+            userCondition: null
+            warning: null
+            width: 50
+        name: Attributes
+        uid: fadace37-afc0-40b5-b301-9ad5a6cf283c
+        userCondition: null
     thumbFieldKey: 'layoutElement:c64b1776-2199-45fd-b05f-ecbaeada3fe0'
 handle: banner
 hasTitleField: false
