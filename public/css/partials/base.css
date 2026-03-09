@@ -1,5 +1,9 @@
 /* stylelint-disable custom-property-pattern */
 
+@view-transition {
+    navigation: auto;
+}
+
 body {
     @apply font-sans leading-normal text-gray-800;
 }
