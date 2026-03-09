@@ -20,6 +20,9 @@
 
     /* see https://tailwindcss.com/docs/font-family for list */
     --font-headings: "Roboto", "Helvetica Neue", "Arial", var(--font-sans);
+
+    --default-transition-duration: 300ms;
+    --default-transition-timing-function: ease-in-out;
 }
 
 @utility w-content-base {
@@ -40,8 +43,4 @@
 
 @utility w-content-screen {
     @apply w-content-base;
-}
-
-@utility transition-default {
-    transition: all 300ms ease-in-out;
 }
