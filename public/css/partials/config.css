@@ -19,7 +19,8 @@
     --max-width-8xl: 90rem;
 
     /* see https://tailwindcss.com/docs/font-family for list */
-    --font-headings: "Roboto", "Helvetica Neue", "Arial", var(--font-sans);
+    --default-font-family: "Roboto", "Helvetica Neue", "Arial", var(--font-sans);
+    --font-headings: var(--default-font-family);
 
     --default-transition-duration: 300ms;
     --default-transition-timing-function: ease-in-out;

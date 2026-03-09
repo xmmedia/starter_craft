@@ -5,7 +5,7 @@
 }
 
 body {
-    @apply font-sans leading-normal text-gray-800;
+    @apply leading-normal text-gray-800;
 }
 
 @layer base {
