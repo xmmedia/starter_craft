@@ -6,14 +6,10 @@
             </li>
 
             <li v-if="!showMobileMenu" class="header-nav_item header-nav_item-toggle">
-                <button type="button"
-                        class="button-link"
-                        @click="toggleMobileMenu">+ More</button>
+                <button type="button" class="button-link" @click="toggleMobileMenu">+ More</button>
             </li>
             <li v-else class="header-nav_item header-nav_item-toggle">
-                <button type="button"
-                        class="button-link"
-                        @click="toggleMobileMenu">– Less</button>
+                <button type="button" class="button-link" @click="toggleMobileMenu">– Less</button>
             </li>
 
             <li v-if="hasButton">
