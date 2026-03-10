@@ -41,17 +41,19 @@
                         {% set menuButton = { 'label': menus.mainMenuButton.label, 'value': menus.mainMenuButton.value } %}
                     {% endif %}
 
-                    <ul id="menu"
-                        class="pl-0"
-                        data-items="{{ menu(menus.menuHeader.all())|json_encode }}"
-                        data-menu-button="{{ menuButton|json_encode }}">
+                    <div id="menu"
+                         class="contents"
+                         data-items="{{ menu(menus.menuHeader.all())|json_encode }}"
+                         data-menu-button="{{ menuButton|json_encode }}">
                         {# display a basic menu so there's something if JS fails or for SEO #}
-                        {% for menuItem in menus.menuHeader.all() %}
-                            <li>
-                                <a href="{{ menuItem.menuLink.value }}">{{ menuItem.menuLink.label }}</a>
-                            </li>
-                        {% endfor %}
-                    </ul>
+                        <ul class="header_nav-list">
+                            {% for menuItem in menus.menuHeader.all() %}
+                                <li class="header-nav_item">
+                                    <a href="{{ menuItem.menuLink.value }}" class="header_nav-link">{{ menuItem.menuLink.label }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
 
                     {% if menus.mainMenuButton %}
                         <a href="{{ menus.mainMenuButton.value }}" class="button hidden">{{ menus.mainMenuButton.label }}</a>

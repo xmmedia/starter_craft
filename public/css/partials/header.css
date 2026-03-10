@@ -4,6 +4,10 @@
     }
 }
 
+.header_nav-list {
+    @apply flex flex-nowrap list-none;
+}
+
 .header-nav_item {
     @apply mx-4;
 
