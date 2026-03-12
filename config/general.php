@@ -17,6 +17,8 @@ return GeneralConfig::create()
     ->defaultWeekStartDay(0)
     // Prevent generated URLs from including "index.php"
     ->omitScriptNameInUrls()
+    // remove all non-ASCII characters from generated slugs (still allowed for manually entered)
+    ->limitAutoSlugsToAscii()
     // Enable Dev Mode (see https://craftcms.com/guides/what-dev-mode-does)
     ->devMode(App::env('DEV_MODE') ?? false)
     // Allow administrative changes
@@ -29,6 +31,8 @@ return GeneralConfig::create()
     ->enableGql(false)
     // @todo-craft
     ->timezone('America/Edmonton')
+    // @todo-craft
+    ->defaultCountryCode('CA')
     ->aliases([
         '@web'     => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__).'/public',
@@ -38,6 +42,10 @@ return GeneralConfig::create()
     ->purgeUnsavedDraftsDuration(0)
     ->softDeleteDuration(0)
     ->maxUploadFileSize('50M')
+    ->transformSvgs(false)
+    ->useEmailAsUsername()
+    // increase the expiry on account activation & password reset tokens to 7 days
+    ->verificationCodeDuration('P7D')
     // in prod/staging, don't run the queue automatically, instead use cron job (every minute)
     ->runQueueAutomatically(App::env('DEV_MODE') ?? false)
     // @todo-craft update with new favicons
