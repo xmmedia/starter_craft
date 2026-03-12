@@ -117,12 +117,10 @@
       <path value="$PROJECT_DIR$/vendor/markbaker/complex" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/recovery" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/google2fa" />
-      <path value="$PROJECT_DIR$/vendor/lcobucci/clock" />
       <path value="$PROJECT_DIR$/vendor/moneyphp/money" />
       <path value="$PROJECT_DIR$/vendor/web-auth/webauthn-lib" />
       <path value="$PROJECT_DIR$/vendor/web-auth/cose-lib" />
       <path value="$PROJECT_DIR$/vendor/pragmarx/random" />
-      <path value="$PROJECT_DIR$/vendor/thamtech/yii2-ratelimiter-advanced" />
       <path value="$PROJECT_DIR$/vendor/craftcms/cms" />
       <path value="$PROJECT_DIR$/vendor/craftcms/server-check" />
       <path value="$PROJECT_DIR$/vendor/craftcms/ckeditor" />
@@ -163,6 +161,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-server-handler" />
       <path value="$PROJECT_DIR$/vendor/opis/string" />
       <path value="$PROJECT_DIR$/vendor/php-http/discovery" />
+      <path value="$PROJECT_DIR$/vendor/symfony/clock" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.5" />
