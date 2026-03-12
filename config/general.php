@@ -12,6 +12,10 @@ use craft\config\GeneralConfig;
 use craft\helpers\App;
 
 return GeneralConfig::create()
+    // @todo-craft
+    ->timezone('America/Edmonton')
+    // @todo-craft
+    ->defaultCountryCode('CA')
     ->enableTwigSandbox()
     // Set the default week start day for date pickers (0 = Sunday, 1 = Monday, etc.)
     ->defaultWeekStartDay(0)
@@ -29,10 +33,6 @@ return GeneralConfig::create()
     ->sendPoweredByHeader(false)
     // disable graphql
     ->enableGql(false)
-    // @todo-craft
-    ->timezone('America/Edmonton')
-    // @todo-craft
-    ->defaultCountryCode('CA')
     ->aliases([
         '@web'     => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__).'/public',
