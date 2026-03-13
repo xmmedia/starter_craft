@@ -7,5 +7,15 @@
                 "lando ssh --command \"php vendor/stimmt/craft-mcp/bin/mcp-server\""
             ]
         }
+    },
+    "disabledMcpServers": {
+        "figma-desktop": {
+            "url": "http://127.0.0.1:3845/mcp",
+            "type": "http"
+        },
+        "figma": {
+            "url": "https://mcp.figma.com/mcp",
+            "type": "http"
+        }
     }
 }
