@@ -35,6 +35,7 @@
 }
 
 @utility w-content-copy {
+    /* max width matches .text-block-wrap */
     @apply w-content-base max-w-3xl;
 }
 
