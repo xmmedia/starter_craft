@@ -8,6 +8,7 @@
 @source inline("md-enter-active md-leave-active md-enter md-leave-active");
 
 /* https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
+/* all default tw theme vars: https://tailwindcss.com/docs/theme#default-theme-variable-reference */
 /* colour converter: https://lik.ai/tools/color-convertor/ *** with a precision of 4 ***  */
 @theme {
     --breakpoint-xs: 25rem;
