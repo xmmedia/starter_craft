@@ -64,6 +64,7 @@ class XmTwigExtension extends AbstractExtension
         return [
             new TwigFilter('heading_striptags', [$this, 'headingStripTags'], ['is_safe' => ['html']]),
             new TwigFilter('phone_strip', [$this, 'phoneStrip']),
+            new TwigFilter('address_format', [$this, 'addressFormat'], ['is_safe' => ['html']]),
         ];
     }
 
@@ -110,5 +111,10 @@ class XmTwigExtension extends AbstractExtension
         }
 
         return 'tel:+'.preg_replace('/\D+/', '', $phone) ?? '';
+    }
+
+    public function addressFormat(string $address): string
+    {
+        return nl2br(str_replace('  ', ' &MediumSpace;', e($address)));
     }
 }
