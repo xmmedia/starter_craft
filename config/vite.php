@@ -10,6 +10,7 @@ return [
     'useDevServer'               => App::env('ENVIRONMENT') === 'dev' || App::env('CRAFT_ENVIRONMENT') === 'dev',
 
     // URL to the Vite development server.
+    // @todo-craft change port number to match vite config
     'devServerPublic'            => 'https://localhost:9028/',
     'checkDevServer'             => false,
 

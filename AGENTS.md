@@ -9,9 +9,9 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 | Setting | Value | Files to update |
 |---------|-------|-----------------|
 | Project slug | `craftstarter` | `.lando.yml`, `vite.config.mjs`, this file |
-| Vite dev port | `9028` | `vite.config.mjs` |
-| Local URL | `https://craftstarter.lndo.site/` | Derived from slug |
-| PHPMyAdmin URL | `https://pma.craftstarter.lndo.site/` | Derived from slug |
+| Vite dev port | `9028` @todo-craft | `vite.config.mjs` |
+| Local URL | `https://craftstarter.lndo.site/` @todo-craft | Derived from lando config |
+| PHPMyAdmin URL | `https://pma.craftstarter.lndo.site/` @todo-craft | Derived from lando config |
 
 ## System Requirements
 
