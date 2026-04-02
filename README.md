@@ -67,41 +67,30 @@ Craft admin is located at `/admin`
 
 ## Incorporated Libraries & Tools
 
-  - Frontend – full list of dependencies can be found in [package.json](https://github.com/xmmedia/starter_symfony_4/blob/master/package.json)
-    - [Vue](https://vuejs.org/) – frontend framework
-      - [Vue Router](https://router.vuejs.org/) – routing package for frontend
-      - [Vuex](https://vuex.vuejs.org/) – helps to manage state
-      - [Vue Devtools](https://github.com/vuejs/vue-devtools) – makes debugging in the browser easier
-      - [Vue Templates](https://vuejs.org/v2/guide/syntax.html) – the syntax for .vue files
-      - [Vue Test Utils](https://vue-test-utils.vuejs.org/) – to help testing Vue components
-    - [Vue CLI](https://cli.vuejs.org/) – to manage & run the frontend compilation & testing
-    - [SASS](https://sass-lang.com/) – CSS preprocessor (uses [node-sass](https://www.npmjs.com/package/node-sass))
-    - [Webpack](https://webpack.js.org/) – compiles JS & CSS
-      - [Babel](https://babeljs.io/) – transforms JS to work in all browsers
-      - [Webpack Encore](https://symfony.com/doc/current/frontend.html) – connects the frontend and backend and makes Webpack configuration simpler
-      - [PostCSS](https://github.com/postcss/postcss) – transforms CSS
-      - [Autoprefixer](ub.com/postcss/autoprefixer) – for adding browser prefixes
-      - [Purge CSS](https://github.com/FullHuman/purgecss) – removes unused CSS during the deployment process (not run in dev)
-      - [SVGO](https://github.com/svg/svgo) – optimizes SVG files
-      - [Bundle Analyzer](https://github.com/webpack-contrib/webpack-bundle-analyzer) – displays sizes/stats on the JS bundle size
-    - [Tailwind](https://tailwindcss.com/) – utility first styling framework
-    - [Jest](https://jestjs.io/) – JS unit testing
-    - [Cypress](https://www.cypress.io/) – end-to-end (e2e) testing
-    - [Lodash](https://lodash.com/) – helper functions for JS
-    - [date-fns](https://date-fns.org/) – helper functions for Dates in JS
-    - [PortalVue](https://github.com/LinusBorg/portal-vue) – helps to manage things like modals
-    - [Vue-JS-Modal](http://vue-js-modal.yev.io/) – for modals 
-    - [Faker.js](https://github.com/marak/Faker.js/) – for generating fake data in tests
+  - Frontend – full list of dependencies can be found in [package.json](https://github.com/xmmedia/starter_craft/blob/master/package.json)
+    - [Vue 3](https://vuejs.org/) – frontend framework
+    - [Vite](https://vitejs.dev/) – frontend build tool and dev server with HMR
+    - [Tailwind CSS 4](https://tailwindcss.com/) – utility-first styling framework
+      - [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) – prose styling plugin
+    - [PostCSS](https://github.com/postcss/postcss) – transforms CSS
+      - [postcss-env-function](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-env-function) – environment variable support in CSS
+      - [postcss-nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting) – CSS nesting support
     - [ESLint](https://eslint.org/) – checks JS for conventions & errors
     - [Stylelint](https://stylelint.io/) – checks CSS for conventions & errors
-  - Backend – full list of dependencies can be found in [composer.json](https://github.com/xmmedia/starter_symfony_4/blob/master/composer.json)
-    - [Symfony](https://symfony.com/doc/current/index.html#gsc.tab=0) – backend framework
-    - [Twig](https://twig.symfony.com/) – server side templating language (limited use)
-    - [PhpUnit](https://phpunit.de/) – for running PHP tests
-    - [PHP CS](https://cs.sensiolabs.org/) – PHP coding standards analyzer & fixer
+    - [SVGO](https://github.com/svg/svgo) – optimizes SVG files
+  - Backend – full list of dependencies can be found in [composer.json](https://github.com/xmmedia/starter_craft/blob/master/composer.json)
+    - [Craft CMS 5](https://craftcms.com/) – CMS framework
+    - [Twig](https://twig.symfony.com/) – server-side templating language
+    - [CKEditor](https://github.com/craftcms/ckeditor) – rich text editor plugin for Craft
+    - [Contact Form](https://github.com/craftcms/contact-form) – contact form plugin for Craft
+    - [Contact Form Honeypot](https://github.com/craftcms/contact-form-honeypot) – spam protection for contact forms
+    - [Contact Form Extensions](https://github.com/hybridinteractive/craft-contact-form-extensions) – additional contact form features
+    - [SEO (Ether)](https://github.com/ethercreative/seo) – SEO plugin for Craft
+    - [Field Manager (Verbb)](https://verbb.io/craft-plugins/field-manager) – field management plugin for Craft
+    - [oEmbed](https://github.com/wrav/oembed) – oEmbed support for Craft
+    - [Craft Vite](https://nystudio107.com/docs/vite/) – Vite integration for Craft CMS
     - [PHPStan](https://github.com/phpstan/phpstan) – static analysis of PHP
-    - [Postmark](https://postmarkapp.com/) – for sending email, contains email templates (currently setup under XM Media's account)
-  - [GitLab](https://gitlab.com/) – deployment
+  - [GitLab](https://gitlab.com/) – CI/CD and deployment
   - Dev Tools
     - [Vue Devtools](https://github.com/vuejs/vue-devtools)
 
