@@ -1,75 +1,12 @@
 /* stylelint-disable custom-property-pattern */
+/* stylelint-disable no-invalid-position-at-import-rule */
 
 @view-transition {
     navigation: auto;
 }
 
 body {
-    @apply leading-normal text-gray-800;
+    @apply body-base;
 }
 
-@layer base {
-    button {
-        @apply cursor-pointer disabled:cursor-not-allowed;
-    }
-
-    a, .button-link {
-        @apply text-blue-500 no-underline transition-colors outline-hidden rounded-sm;
-
-        &:hover,
-        &:active {
-            @apply underline text-blue-700;
-        }
-
-        &:focus {
-            @apply ring-2 ring-zinc-200 bg-zinc-200;
-        }
-
-        &:disabled {
-            @apply opacity-75;
-
-            &:hover {
-                @apply no-underline cursor-default;
-            }
-        }
-    }
-
-    a[href^="tel"], a[href^="mailto"] {
-        @apply whitespace-normal md:whitespace-nowrap;
-    }
-
-    b, strong {
-        @apply font-bold;
-    }
-
-    p, ul, ol {
-        @apply my-4;
-    }
-
-    ul, ol {
-        @apply pl-10 text-left;
-    }
-
-    ul {
-        @apply list-disc;
-    }
-
-    ol {
-        @apply list-decimal;
-    }
-
-    li {
-        @apply mb-2;
-        &:last-child {
-            @apply mb-0;
-        }
-    }
-
-    address {
-        @apply not-italic;
-    }
-
-    td {
-        @apply align-top;
-    }
-}
+@import "./base_content.css";

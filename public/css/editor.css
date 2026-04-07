@@ -1,10 +1,18 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
 @config "../../tailwind.config.js";
 
 @import "tailwindcss";
 
 /* base styles */
 @import "./partials/config.css";
-@import "./partials/base.css";
+
+.ck-content {
+    @apply body-base;
+
+    @import "./partials/base_content.css";
+}
+
 @import "./partials/buttons.css";
 
 @layer components {
