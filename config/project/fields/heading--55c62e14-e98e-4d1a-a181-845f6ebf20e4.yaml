@@ -9,6 +9,7 @@ settings:
   availableVolumes: '*'
   characterLimit: null
   css: null
+  cssFile: null
   defaultTransform: null
   defaultUploadLocationSubpath: null
   defaultUploadLocationVolume: 95ce255a-2242-4832-a7bd-6ef99ba868c1 # General
@@ -24,6 +25,7 @@ settings:
   imageFieldUid: null
   imageMode: img
   js: null
+  jsFile: null
   options:
     __assoc__:
       -
