@@ -2,60 +2,196 @@
 {# ####### Headings ######### #}
 {# ############################# #}
 <h2>Headings</h2>
-<h1>Heading 1<br>Heading 1</h1>
-<h2>Heading 2<br>Heading 2</h2>
-<h3>Heading 3<br>Heading 3</h3>
-<h4>Heading 4<br>Heading 4</h4>
-<h5>Heading 5<br>Heading 5</h5>
-<h6>Heading 6<br>Heading 6</h6>
+{# Mobile: stacked layout #}
+<div id="pl-headings-mobile" class="sm:hidden divide-y divide-gray-200 border-y border-gray-200">
+    <div><h1>Heading 1<br>Heading 1</h1>
+        <div class="font-mono text-xs text-gray-400 mt-1 space-x-3">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <div><h2>Heading 2<br>Heading 2</h2>
+        <div class="font-mono text-xs text-gray-400 mt-1 space-x-3">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <div><h3>Heading 3<br>Heading 3</h3>
+        <div class="font-mono text-xs text-gray-400 mt-1 space-x-3">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <div><h4>Heading 4<br>Heading 4</h4>
+        <div class="font-mono text-xs text-gray-400 mt-1 space-x-3">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <div><h5>Heading 5<br>Heading 5</h5>
+        <div class="font-mono text-xs text-gray-400 mt-1 space-x-3">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+    <div><h6>Heading 6<br>Heading 6</h6>
+        <div class="font-mono text-xs text-gray-400 mt-1 space-x-3">
+            <span></span><span></span><span></span><span></span><span></span>
+        </div>
+    </div>
+</div>
 
-<h2 class="mt-16">Headings with .h1</h2>
-<h1 class="h1">Heading 1<br>Heading 1</h1>
-<h2 class="h1">Heading 2<br>Heading 2</h2>
-<h3 class="h1">Heading 3<br>Heading 3</h3>
-<h4 class="h1">Heading 4<br>Heading 4</h4>
-<h5 class="h1">Heading 5<br>Heading 5</h5>
-<h6 class="h1">Heading 6<br>Heading 6</h6>
+{# Desktop: table layout #}
+<table id="pl-headings" class="hidden sm:table w-full mx-4 border-collapse">
+    <thead>
+        <tr class="border-b border-gray-300 text-left">
+            <th>Heading</th>
+            <th class="px-2 font-mono font-normal text-gray-500">font-size</th>
+            <th class="px-2 font-mono font-normal text-gray-500">line-height</th>
+            <th class="px-2 font-mono font-normal text-gray-500">letter-spacing</th>
+            <th class="px-2 font-mono font-normal text-gray-500">margin-top</th>
+            <th class="px-2 font-mono font-normal text-gray-500">margin-bottom</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="odd:bg-gray-100">
+            <td><h1>Heading 1<br>Heading 1</h1></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+        </tr>
+        <tr class="odd:bg-gray-100">
+            <td><h2>Heading 2<br>Heading 2</h2></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+        </tr>
+        <tr class="odd:bg-gray-100">
+            <td><h3>Heading 3<br>Heading 3</h3></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+        </tr>
+        <tr class="odd:bg-gray-100">
+            <td><h4>Heading 4<br>Heading 4</h4></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+        </tr>
+        <tr class="odd:bg-gray-100">
+            <td><h5>Heading 5<br>Heading 5</h5></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+        </tr>
+        <tr class="odd:bg-gray-100">
+            <td><h6>Heading 6<br>Heading 6</h6></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+            <td class="p-2 font-mono text-gray-400"></td>
+        </tr>
+    </tbody>
+</table>{# end #pl-headings #}
+<script>
+    /* this adds the font-size, line-height, letter-spacing, and margin values to the tables above */
+    const plUpdateHeadings = () => {
+        const rootStyles = getComputedStyle(document.documentElement);
+        const rootFs = parseFloat(rootStyles.fontSize);
 
-<h2 class="mt-16">Headings with .h2</h2>
-<h1 class="h2">Heading 1<br>Heading 1</h1>
-<h2 class="h2">Heading 2<br>Heading 2</h2>
-<h3 class="h2">Heading 3<br>Heading 3</h3>
-<h4 class="h2">Heading 4<br>Heading 4</h4>
-<h5 class="h2">Heading 5<br>Heading 5</h5>
-<h6 class="h2">Heading 6<br>Heading 6</h6>
+        function toPx(val) {
+            if (!val) return null;
+            val = val.trim();
+            if (val.endsWith('rem')) return parseFloat(val) * rootFs;
+            if (val.endsWith('px')) return parseFloat(val);
+            return null;
+        }
 
-<h2 class="mt-16">Headings with .h3</h2>
-<h1 class="h3">Heading 1<br>Heading 1</h1>
-<h2 class="h3">Heading 2<br>Heading 2</h2>
-<h3 class="h3">Heading 3<br>Heading 3</h3>
-<h4 class="h3">Heading 4<br>Heading 4</h4>
-<h5 class="h3">Heading 5<br>Heading 5</h5>
-<h6 class="h3">Heading 6<br>Heading 6</h6>
+        function flatRules(ruleList) {
+            return [...ruleList].flatMap(rule =>
+                rule.cssRules ? flatRules(rule.cssRules) : [rule]
+            );
+        }
 
-<h2 class="mt-16">Headings with .h4</h2>
-<h1 class="h4">Heading 1<br>Heading 1</h1>
-<h2 class="h4">Heading 2<br>Heading 2</h2>
-<h3 class="h4">Heading 3<br>Heading 3</h3>
-<h4 class="h4">Heading 4<br>Heading 4</h4>
-<h5 class="h4">Heading 5<br>Heading 5</h5>
-<h6 class="h4">Heading 6<br>Heading 6</h6>
+        function buildLookup(filterFn) {
+            const map = {};
+            [...document.styleSheets].flatMap(sheet => {
+                try { return flatRules(sheet.cssRules); } catch(e) { return []; }
+            }).filter(rule => rule.selectorText === ':root')
+              .forEach(rule => {
+                [...rule.style].filter(filterFn).forEach(name => {
+                    const px = toPx(rootStyles.getPropertyValue(name));
+                    if (px !== null) {
+                        const key = Math.round(px * 100) / 100;
+                        if (!map[key]) map[key] = name;
+                    }
+                });
+            });
+            return map;
+        }
 
-<h2 class="mt-16">Headings with .h5</h2>
-<h1 class="h5">Heading 1<br>Heading 1</h1>
-<h2 class="h5">Heading 2<br>Heading 2</h2>
-<h3 class="h5">Heading 3<br>Heading 3</h3>
-<h4 class="h5">Heading 4<br>Heading 4</h4>
-<h5 class="h5">Heading 5<br>Heading 5</h5>
-<h6 class="h5">Heading 6<br>Heading 6</h6>
+        const fontSizeVars   = buildLookup(n => n.startsWith('--text-') && !n.slice(7).includes('--'));
+        const lineHeightVars = buildLookup(n => (n.startsWith('--text-') && n.includes('--line-height')) || n.startsWith('--leading-'));
+        const trackingVars   = buildLookup(n => n.startsWith('--tracking-'));
+        const spacingUnit    = toPx(rootStyles.getPropertyValue('--spacing'));
 
-<h2 class="mt-16">Headings with .h6</h2>
-<h1 class="h6">Heading 1<br>Heading 1</h1>
-<h2 class="h6">Heading 2<br>Heading 2</h2>
-<h3 class="h6">Heading 3<br>Heading 3</h3>
-<h4 class="h6">Heading 4<br>Heading 4</h4>
-<h5 class="h6">Heading 5<br>Heading 5</h5>
-<h6 class="h6">Heading 6<br>Heading 6</h6>
+        function fmtWithVar(computedVal, lookup) {
+            const px = parseFloat(computedVal);
+            if (isNaN(px)) return computedVal;
+            const varName = lookup[Math.round(px * 100) / 100];
+            return varName ? `${varName} (${computedVal})` : computedVal;
+        }
+
+        function fmtSpacing(computedVal, twPrefix) {
+            const px = parseFloat(computedVal);
+            if (isNaN(px)) return computedVal;
+            if (px === 0) return '0';
+            if (spacingUnit > 0) {
+                const steps = px / spacingUnit;
+                const rounded = Math.round(steps * 4) / 4;
+                if (Math.abs(rounded - steps) < 0.01) return `${twPrefix}${rounded} (${computedVal})`;
+            }
+            return computedVal;
+        }
+
+        function populate(el, values) {
+            const s = getComputedStyle(el);
+            values[0].textContent = fmtWithVar(s.fontSize, fontSizeVars);
+            values[1].textContent = fmtWithVar(s.lineHeight, lineHeightVars);
+            values[2].textContent = fmtWithVar(s.letterSpacing, trackingVars);
+            values[3].textContent = fmtSpacing(s.marginTop, 'mt-');
+            values[4].textContent = fmtSpacing(s.marginBottom, 'mb-');
+        }
+
+        document.querySelectorAll('#pl-headings tbody tr').forEach((row) => {
+            populate(row.querySelector('h1, h2, h3, h4, h5, h6'), row.querySelectorAll('td:not(:first-child)'));
+        });
+        document.querySelectorAll('#pl-headings-mobile > div').forEach((block) => {
+            populate(block.querySelector('h1, h2, h3, h4, h5, h6'), block.querySelectorAll('span'));
+        });
+    };
+
+    window.addEventListener('load', plUpdateHeadings);
+    window.addEventListener('resize', plUpdateHeadings);
+</script>
+
+<div class="w-content my-8 border-y border-gray-200">
+    <h2>Headings with classes</h2>
+    <div class="text-sm">All the heading should be the same size – the size of the class</div>
+
+    {% for hClass in 1..6 %}
+        <h2 class="mt-10">Headings with .h{{ hClass }}</h2>
+        {% for hTag in 1..6 %}
+            <h{{ hTag }} class="h{{ hClass }}">Heading {{ hTag }}<br>Heading {{ hTag }}</h{{ hTag }}>
+        {% endfor %}
+    {% endfor %}
+</div>
 
 {# ############################# #}
 {# ########## Text ############# #}
