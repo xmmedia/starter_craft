@@ -311,17 +311,46 @@
 {# ############################# #}
 {# ######### Buttons ########### #}
 {# ############################# #}
+{% macro button_table() %}
+    <table class="w-full border-collapse mt-4">
+        <thead>
+            <tr class="border-b-2 border-b-gray-200">
+                <th class="text-left p-2">Description</th>
+                <th class="text-left p-2">Classes</th>
+                <th class="text-left p-2">Using &lt;button&gt;</th>
+                <th class="text-left p-2">Using &lt;a&gt;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="border-b border-b-gray-200">
+                <td class="p-2">Button</td>
+                <td class="p-2"><code>button</code></td>
+                <td class="p-2"><button class="button">Button</button></td>
+                <td class="p-2"><a href="" class="button">Button</a></td>
+            </tr>
+            <tr class="border-b border-b-gray-200">
+                <td class="p-2">Button Link</td>
+                <td class="p-2"><code>button-link</code></td>
+                <td class="p-2"><button class="button-link">Button Link</button></td>
+                <td class="p-2"><a href="" class="button-link">Button Link</a></td>
+            </tr>
+            <tr class="border-b border-b-gray-200">
+                <td class="p-2">Link</td>
+                <td class="p-2"></td>
+                <td class="p-2"></td>
+                <td class="p-2"><a href="">Link</a></td>
+            </tr>
+        </tbody>
+    </table>
+{% endmacro %}
+
 <div class="my-4 p-4">
     <h2>Buttons</h2>
-    <button class="button">Button Button</button>
-    <a href="" class="button">Link Button</a>
-    <button class="button-link">Button Link</button>
-    <a href="" class="ml-4">Link</a>
+    {{ _self.button_table() }}
 </div>
 <div class="bg-gray-500 my-4 p-4">
     <h2>Buttons on Dark Background</h2>
-    <button class="button">Button Button</button>
-    <a href="" class="button">Link Button</a>
+    {{ _self.button_table() }}
 </div>
 
 {# ############################# #}
