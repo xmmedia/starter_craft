@@ -34,6 +34,8 @@ h4, .h4 {
 }
 
 h5, .h5 {
+    /* apply the base font size so using the class overrides the font size of the tag/element */
+    @apply text-base;
     margin: 1.67rem 0;
 }
 
