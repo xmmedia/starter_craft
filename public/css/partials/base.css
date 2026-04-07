@@ -13,7 +13,6 @@ body {
         @apply cursor-pointer disabled:cursor-not-allowed;
     }
 
-    /* this file is for public and private/admin pages */
     a, .button-link {
         @apply text-blue-500 no-underline transition-colors outline-hidden rounded-sm;
 
