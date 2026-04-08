@@ -6,10 +6,10 @@
         <details class="first:border-t border-b border-gray-600 hover:bg-zinc-200">
             <summary class="flex items-center-safe gap-4 w-full p-4">
                 <svg class="details-plus w-5 h-5">
-                    <use xlink:href="/images/icons-public.svg#plus"></use>
+                    <use xlink:href="{{ craft.vite.asset('/images/icons-public.svg') }}#plus"></use>
                 </svg>
                 <svg class="details-minus w-5 h-5">
-                    <use xlink:href="/images/icons-public.svg#minus"></use>
+                    <use xlink:href="{{ craft.vite.asset('/images/icons-public.svg') }}#minus"></use>
                 </svg>
                 <span class="font-headings font-bold">{{ accordionItem.heading }}</span>
 
