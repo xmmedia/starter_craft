@@ -62,7 +62,7 @@ class ImageTwigExtension extends AbstractExtension
 
     public function getImage(
         ?Asset $image,
-        string|array $transform = null,
+        string|array|null $transform = null,
         array $attributes = []
     ): Markup {
         if (null === $image) {
