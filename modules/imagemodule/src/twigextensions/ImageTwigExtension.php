@@ -60,11 +60,8 @@ class ImageTwigExtension extends AbstractExtension
         ];
     }
 
-    public function getImage(
-        ?Asset $image,
-        string|array|null $transform = null,
-        array $attributes = []
-    ): Markup {
+    public function getImage(?Asset $image, string|array|null $transform = null, array $attributes = []): Markup
+    {
         if (null === $image) {
             return new Markup('', Craft::$app->charset);
         }
