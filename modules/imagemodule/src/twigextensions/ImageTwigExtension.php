@@ -77,32 +77,19 @@ class ImageTwigExtension extends AbstractExtension
             }
         }
 
-        if ('svg' === $image->extension) {
-            $html = Html::tag(
-                'img',
-                '',
-                array_merge([
-                    'src'      => $image->getUrl(),
-                    'width'    => $image->getWidth($transform),
-                    'height'   => $image->getHeight($transform),
-                    'loading'  => 'lazy',
-                    'decoding' => 'async',
-                ], $attributes),
-            );
-        } else {
-            $html = Html::tag(
-                'img',
-                '',
-                array_merge([
-                    'src'      => $image->getUrl($transform),
-                    'srcset'   => $image->getSrcset(['1.5x', '2x', '3x'], $transform),
-                    'width'    => $image->getWidth($transform),
-                    'height'   => $image->getHeight($transform),
-                    'loading'  => 'lazy',
-                    'decoding' => 'async',
-                ], $attributes),
-            );
-        }
+        $html = Html::tag(
+            'img',
+            '',
+            array_merge([
+                'src'      => $image->getUrl($transform),
+                // craft returns false (bool) when the image is an SVG, so srcset won't be added to the img tag
+                'srcset'   => $image->getSrcset(['1.5x', '2x', '3x'], $transform),
+                'width'    => $image->getWidth($transform),
+                'height'   => $image->getHeight($transform),
+                'loading'  => 'lazy',
+                'decoding' => 'async',
+            ], $attributes),
+        );
 
         return Template::raw($html);
     }
