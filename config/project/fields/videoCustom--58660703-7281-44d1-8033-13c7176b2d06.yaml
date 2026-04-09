@@ -1,0 +1,47 @@
+columnSuffix: null
+handle: videoCustom
+instructions: null
+name: 'Video Custom'
+searchable: false
+settings:
+  advancedLinkFields: null
+  availableTransforms: '*'
+  availableVolumes: '*'
+  characterLimit: null
+  css: "@import url('/editorcss.php');"
+  cssFile: null
+  defaultTransform: null
+  defaultUploadLocationSubpath: null
+  defaultUploadLocationVolume: null
+  fullGraphqlData: true
+  headingLevels:
+    - '1'
+    - '2'
+    - '3'
+    - '4'
+    - '5'
+    - '6'
+  imageEntryTypeUid: null
+  imageFieldUid: null
+  imageMode: img
+  js: "return {\r\n  toolbar: {\r\n      shouldNotGroupWhenFull: true\r\n  },\r\n\r\n  htmlSupport: {\r\n    allow: [\r\n        {\r\n            name: /.*/,\r\n            attributes: true,\r\n            classes: true,\r\n            styles: true\r\n        }\r\n    ]\r\n  },\r\n\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'right',\r\n      'center',\r\n    ],\r\n  },\r\n\r\n  fontSize: {\r\n    options: [\r\n      'tiny',\r\n      'small',\r\n      'big',\r\n      'huge',\r\n    ],\r\n  }\r\n}"
+  jsFile: null
+  options: null
+  parseEmbeds: true
+  purifierConfig: null
+  purifyHtml: true
+  showUnpermittedFiles: false
+  showUnpermittedVolumes: false
+  showWordCount: false
+  sourceEditingGroups:
+    - __ADMINS__
+  toolbar:
+    - mediaEmbed
+    - htmlEmbed
+    - insertImage
+    - '|'
+    - sourceEditing
+  wordLimit: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\ckeditor\Field

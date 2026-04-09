@@ -1,14 +1,18 @@
 {# separate div wrapper so column doesn't mess with embed-wrap #}
-<div class="col-{{ block.blockWidth|default(100) }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <div class="embed-wrap" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-        {{ image(block.image.one(), 'videoThumbnail') }}
-    </div>
+<div class="md:col-span-{{ width }} {{ block.classes }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+    {% set image = block.image.one() %}
+    {% if image %}
+        <button type="button" class="embed-wrap block" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none';">
+            {{ image(image, 'videoThumbnail') }}
+        </button>
+    {% endif %}
     <div class="hidden embed-wrap max-w-3xl">
         <div class="embed-container embed-container-16-9">
-            {{ block.video.render({
-                width: 640,
-                height: 400,
-            }) }}
+            {% if block.videoToggle == 'oembed' %}
+                {{ block.videoOembed.render() }}
+            {% elseif block.videoToggle == 'iframe' %}
+                {{ block.videoIframe|raw }}
+            {% endif %}
         </div>
     </div>
 </div>

@@ -1,4 +1,4 @@
-dateModified: 1775535774
+dateModified: 1775696632
 elementSources:
   craft\elements\Entry:
     -
@@ -177,6 +177,7 @@ meta:
     733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
     787e1739-73f9-4cc5-876c-48a53d41a987: 'Post Categories' # Post Categories
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
+    843ce4e9-9dc0-4828-a41f-d0ec6f8df011: 'Video iFrame' # Video iFrame
     0897a6a4-127b-4d14-8fae-96c64eb06027: Menus # Menus
     1140dcc1-54a1-40f2-b988-d071f0737166: 'Image Orientation' # Image Orientation
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
@@ -184,12 +185,14 @@ meta:
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - Sharing Image' # SEO - Sharing Image
     4119a1ff-3e12-46a5-b9f5-a6f932b4fec2: Pages # Pages
     5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
+    7341bd64-4ef1-46ff-96d3-f3d8346c2ab6: 'Video Toggle' # Video Toggle
     7424ebc8-4255-41f1-ab4c-0898425525e9: Gallery # Gallery
     23405c96-1469-4872-a55a-6488791f767a: Default # Default
     42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter
     49523c85-f034-4218-a653-a10e294faac5: Homepage # Homepage
     70722bde-7efe-42d4-a06e-399a44b02435: 'Gallery Image' # Gallery Image
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
+    58660703-7281-44d1-8033-13c7176b2d06: 'Video Custom' # Video Custom
     a8e6c61b-4a37-4d1a-8de1-c908b52dbf43: 'Phone Numbers' # Phone Numbers
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
     a2177e53-f588-4293-a115-f5b574937c78: 'Pattern Library' # Pattern Library

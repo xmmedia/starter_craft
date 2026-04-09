@@ -1,6 +1,6 @@
 columnSuffix: kuaiidjs
-handle: video
-instructions: 'Paste the embed/iframe URL.'
+handle: videoOembed
+instructions: 'Paste the embed URL.'
 name: Video
 searchable: false
 settings:

@@ -1,0 +1,16 @@
+columnSuffix: null
+handle: videoIframe
+instructions: null
+name: 'Video iFrame'
+searchable: false
+settings:
+  byteLimit: null
+  charLimit: null
+  code: false
+  initialRows: 4
+  multiline: true
+  placeholder: 'Paste the iframe code.'
+  uiMode: enlarged
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\PlainText

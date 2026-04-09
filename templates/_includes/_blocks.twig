@@ -83,7 +83,9 @@
                 {% include '_includes/blocks/_cards.twig' %}
 
             {% case 'video' %}
-                {% include '_includes/blocks/_video.twig' %}
+                {% include '_includes/blocks/_video.twig' with {
+                    width: block.blockWidth|default(12),
+                } %}
 
             {% case 'accordionWrapper' %}
                 {% include '_includes/blocks/_accordion.twig'

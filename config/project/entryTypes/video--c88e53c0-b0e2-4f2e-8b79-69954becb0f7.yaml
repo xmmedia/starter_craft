@@ -5,7 +5,6 @@ fieldLayouts:
   599523b1-d5da-4db4-a3a7-d37a4369be1b:
     cardThumbAlignment: end
     cardView:
-      - 'layoutElement:b6197d04-75c0-47b8-8382-1b43266f61b2'
       - 'generatedField:945dcf78-f788-49c6-a0f5-e8f9ef80127f'
     generatedFields:
       -
@@ -46,9 +45,37 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-12-04T21:14:00+00:00'
+            dateAdded: '2026-04-09T00:42:57+00:00'
             editCondition: null
             elementCondition: null
+            elementEditCondition: null
+            fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Toggle
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 1eb6ded2-c9f5-491a-a3e6-c39927186689
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-12-04T21:14:00+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Toggle
+                  layoutElementUid: 1eb6ded2-c9f5-491a-a3e6-c39927186689
+                  operator: in
+                  uid: cd67e1ab-63e4-4a5f-a1f1-53868efa9a5d
+                  values:
+                    - oembed
+              elementType: craft\elements\Entry
+              fieldContext: global
             elementEditCondition: null
             fieldUid: dadbdcf6-f9f1-4d87-9c01-c567a77669ff # Video
             handle: null
@@ -62,6 +89,34 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-04-09T00:42:57+00:00'
+            editCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\fields\conditions\OptionsFieldConditionRule
+                  fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Toggle
+                  layoutElementUid: 1eb6ded2-c9f5-491a-a3e6-c39927186689
+                  operator: in
+                  uid: 722ba7c0-cd9d-470e-9635-0f17c9fcabb6
+                  values:
+                    - iframe
+              elementType: craft\elements\Entry
+              fieldContext: global
+            elementEditCondition: null
+            fieldUid: 843ce4e9-9dc0-4828-a41f-d0ec6f8df011 # Video iFrame
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0e0b953e-7490-4668-bb92-7dfc25787236
+            userCondition: null
+            warning: null
+            width: 100
+          -
             dateAdded: '2025-06-03T19:42:47+00:00'
             editCondition: null
             elementCondition: null
@@ -70,7 +125,7 @@ fieldLayouts:
             handle: null
             instructions: 'Add a thumbnail to override the default video thumbnail if desired.'
             label: Thumbnail
-            required: true
+            required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: d41a2d79-b292-483a-a997-0f74f3b0c9de
@@ -140,7 +195,7 @@ fieldLayouts:
         name: Attributes
         uid: eb139aec-ccdf-4378-b378-ffcb602718fa
         userCondition: null
-    thumbFieldKey: null
+    thumbFieldKey: 'layoutElement:d41a2d79-b292-483a-a997-0f74f3b0c9de'
 handle: video
 hasTitleField: true
 icon: null
@@ -152,4 +207,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{title}'
+uiLabelFormat: "{title ?: 'Video'}"
