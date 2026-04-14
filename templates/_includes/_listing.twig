@@ -1,22 +1,17 @@
 <div class="grid grid-cols-3 gap-8">
-{% for post in posts %}
+    {% for post in posts %}
+        <article class="p-6 border border-gray-400">
+            {% if post.featureImage.one() %}
+                {{ image(post.featureImage.one()) }}
+            {% endif %}
 
-		<article class="p-6 border border-gray-400">
-			{% if post.featureImage.one() %}
-				{% set image = post.featureImage.one() %}
-				<div class="thumbnail">
-					<img src="{{ image.getUrl() }}" alt="{{ image.title }}">
-				</div>
-			{% endif %}
+            <h2>{{ post.title }}</h2>
 
-			<h2>{{ post.title }}</h2>
+            <time datetime="{{ post.postDate|atom }}">{{ post.postDate|date }}</time>
 
-			<time datetime="{{ post.postDate|atom }}">{{ post.postDate|date }}</time>
+            {{ post.summary|md }}
 
-			{{ post.summary|md }}
-
-			<a href="{{ post.url }}">Continue Reading</a>
-		</article>
-
-{% endfor %}
+            <a href="{{ post.url }}">Continue Reading</a>
+        </article>
+    {% endfor %}
 </div>
