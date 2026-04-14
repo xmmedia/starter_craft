@@ -1,0 +1,96 @@
+columnSuffix: null
+handle: headingLevel
+instructions: null
+name: 'Heading Level'
+searchable: false
+settings:
+  customOptions: false
+  iconsOnly: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - H1
+        -
+          - value
+          - h1
+        -
+          - icon
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - 'H2 (Default)'
+        -
+          - value
+          - h2
+        -
+          - icon
+          - ''
+        -
+          - default
+          - '1'
+    -
+      __assoc__:
+        -
+          - label
+          - H3
+        -
+          - value
+          - h3
+        -
+          - icon
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H4
+        -
+          - value
+          - h4
+        -
+          - icon
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H5
+        -
+          - value
+          - h5
+        -
+          - icon
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
+          - H6
+        -
+          - value
+          - h6
+        -
+          - icon
+          - ''
+        -
+          - default
+          - ''
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\ButtonGroup

@@ -1,4 +1,4 @@
-dateModified: 1775696632
+dateModified: 1776181403
 elementSources:
   craft\elements\Entry:
     -
@@ -125,6 +125,7 @@ meta:
     2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
     2fc8ea4c-f70b-4cc7-a530-6fff07267456: 'Menu Item' # Menu Item
+    3ac4730a-1415-412a-b4cd-37189f1a9a61: 'Heading Style' # Heading Style
     3c51fb22-78f8-42a0-8b90-5969644be5c8: 'Image - Tall - Small' # Image - Tall - Small
     4c7c1340-4099-49ba-945e-752e2f374f84: 'Image - Square - Small' # Image - Square - Small
     4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
@@ -209,6 +210,7 @@ meta:
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
+    cdfb2a4f-7805-449f-9e67-8b2a5d34f588: 'Heading Level' # Heading Level
     ce0260d9-af51-4c3c-81dd-a1ca82ca7552: Label # Label
     cea0f3cd-2cc2-4077-a433-fb3f195703cc: 'Image - Wide - Small' # Image - Wide - Small
     d5c492ee-956f-4375-b1ab-c768dffd4071: 'Heading Link' # Heading Link

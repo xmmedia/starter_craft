@@ -71,6 +71,38 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-04-14T15:35:30+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: cdfb2a4f-7805-449f-9e67-8b2a5d34f588 # Heading Level
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f9e5601c-e834-45d8-85ca-86c656268ffa
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-04-14T15:37:19+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3ac4730a-1415-412a-b4cd-37189f1a9a61 # Heading Style
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: dc2c7cca-bff7-4f8b-b701-02d494fd00c6
+            userCondition: null
+            warning: null
+            width: 50
+          -
             dateAdded: '2024-12-02T16:50:32+00:00'
             editCondition: null
             elementCondition: null
