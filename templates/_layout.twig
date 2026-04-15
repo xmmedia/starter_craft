@@ -6,6 +6,8 @@
     <title>{% block page_title_wrap %}{% block page_title %}{% endblock %}{{ siteInformation.companyName }}{% endblock %}</title>
 
     {% block head %}
+        {# @todo add fonts here #}
+
         {{ craft.vite.script("public/js/src/public.js", false, { 'defer': true }) }}
     {% endblock %}
 
