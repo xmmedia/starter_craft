@@ -1,8 +1,6 @@
 <?php
 /**
- * Image module for Craft CMS 3.x
- *
- * Image module
+ * Image module for Craft CMS 5.x
  *
  * @link      https://www.xmmedia.com
  * @copyright Copyright (c) 2022 XM Media Inc.

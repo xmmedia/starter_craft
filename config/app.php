@@ -23,10 +23,8 @@ return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
     'modules' => [
         'contact-form' => \modules\contactformmodule\ContactFormModule::class,
-        'xm-module' => \modules\xmmodule\XmModule::class,
-        'image-module' => [
-            'class' => \modules\imagemodule\ImageModule::class,
-        ],
+        'xm-module'    => \modules\xmmodule\XmModule::class,
+        'image-module' => \modules\imagemodule\ImageModule::class,
     ],
     'bootstrap' => ['contact-form', 'xm-module', 'image-module'],
     'components' => [
