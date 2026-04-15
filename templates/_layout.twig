@@ -43,8 +43,8 @@
 
                     <div id="menu"
                          class="contents"
-                         data-items="{{ menu(menus.menuHeader.all())|json_encode }}"
-                         data-menu-button="{{ menuButton|json_encode }}">
+                         data-items="{{ menu(menus.menuHeader.all()) | json_encode }}"
+                         data-menu-button="{{ menuButton | json_encode }}">
                         {# display a basic menu so there's something if JS fails or for SEO #}
                         <ul class="header_nav-list">
                             {% for menuItem in menus.menuHeader.all() %}
@@ -76,7 +76,7 @@
                 {% include '_includes/_social_media.twig' %}
 
                 <div class="text-sm">
-                    ©{{ 'now'|date('Y') }} {{ siteInformation.companyName }} All Rights Reserved.
+                    ©{{ 'now' | date('Y') }} {{ siteInformation.companyName }} All Rights Reserved.
                 </div>
             </footer>
         {% endblock footer %}

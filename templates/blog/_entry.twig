@@ -10,8 +10,8 @@
 {% block content %}
     <div class="w-content">
 		<h1 class="text-4xl text-black font-display my-4">{{ entry.title }}</h1>
-		<time class="text-sm block pb-4" datetime="{{ entry.postDate|date('Y-m-d') }}">{{ entry.postDate|date('d M Y') }}</time>
-		{% if entry.featureImage|length %}
+		<time class="text-sm block pb-4" datetime="{{ entry.postDate | date('Y-m-d') }}">{{ entry.postDate | date('d M Y') }}</time>
+		{% if entry.featureImage | length %}
 			{% for image in entry.featureImage.all() %}
 			  <img src="{{ image.getUrl(featureImage) }}" alt="{{ image.title }}">
 			{% endfor %}
@@ -21,7 +21,7 @@
             {% include '_includes/_blocks.twig' %}
         </div>
 
-		{% if entry.postCategories|length %}
+		{% if entry.postCategories | length %}
 			<div class="w-content border-t border-gray-400 py-2 mb-6">
 				{% for category in entry.postCategories.all() %}
 				<a href="{{ category.url }}" class="inline-block border border-gray-400 rounded px-2 py-1 text-sm">

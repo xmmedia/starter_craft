@@ -1,6 +1,6 @@
 {% import '_includes/_bg_style_block.twig' as style %}
 
-{% set heading = block.heading|heading_striptags %}
+{% set heading = block.heading | heading_striptags %}
 {% set textBlock = block.textBlock %}
 
 {{ style.bg_style_block(block.bannerImage.one(), 'banner', 'banner--', block.id) }}

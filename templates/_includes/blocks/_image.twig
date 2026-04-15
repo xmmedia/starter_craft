@@ -1,5 +1,5 @@
-{% set imageHorizontalAlignment = block.imageHorizontalAlignment|default('center') %}
-{% set imageVerticalAlignment = block.imageVerticalAlignment|default('center') %}
+{% set imageHorizontalAlignment = block.imageHorizontalAlignment | default('center') %}
+{% set imageVerticalAlignment = block.imageVerticalAlignment | default('center') %}
 
 {% if block.imageAspectRatio == 'custom' %}
     {% set imageTransform = {
@@ -9,7 +9,7 @@
 {% else %}
     {# 1088 is the maximum width of the whole grid, 12 is the number of columns #}
     {% set blockWidth = width * 1088 / 12 %}
-    {% set imageTransform = 'image' ~ block.imageAspectRatio|title ~ (blockWidth <= 720 ? 'Small' : 'Large') %}
+    {% set imageTransform = 'image' ~ block.imageAspectRatio | title ~ (blockWidth <= 720 ? 'Small' : 'Large') %}
 {% endif %}
 
 {% switch imageHorizontalAlignment %}

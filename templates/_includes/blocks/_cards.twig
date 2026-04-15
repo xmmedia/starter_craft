@@ -7,9 +7,9 @@
                     {{ image(image, 'card') }}
                 {% endif %}
 
-                <h3>{{ cardItem.heading|heading_striptags }}</h3>
+                <h3>{{ cardItem.heading | heading_striptags }}</h3>
 
-                {{ cardItem.textBlock|heading_striptags }}
+                {{ cardItem.textBlock | heading_striptags }}
             </a>
         {% endfor %}
     </div>

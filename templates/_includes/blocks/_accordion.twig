@@ -1,4 +1,4 @@
-{% set width = block.blockWidth|default('12') %}
+{% set width = block.blockWidth | default('12') %}
 
 <div class="md:col-span-{{ width }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}

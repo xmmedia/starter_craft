@@ -11,7 +11,7 @@
             {% if block.videoToggle == 'oembed' %}
                 {{ block.videoOembed.render() }}
             {% elseif block.videoToggle == 'iframe' %}
-                {{ block.videoIframe|raw }}
+                {{ block.videoIframe | raw }}
             {% endif %}
         </div>
     </div>

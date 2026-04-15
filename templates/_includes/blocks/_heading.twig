@@ -1,24 +1,24 @@
-{% set classes = ['md:col-span-' ~ block.blockWidth|default(12)] %}
+{% set classes = ['md:col-span-' ~ block.blockWidth | default(12)] %}
 
 {% if block.headingStyle != 'default' %}
-    {% set classes = classes|merge([block.headingStyle|string]) %}
+    {% set classes = classes | merge([block.headingStyle | string]) %}
 {% endif %}
 
 {% if block.textAlign == 'textCenter' %}
-    {% set classes = classes|merge(['mx-auto', 'text-center']) %}
+    {% set classes = classes | merge(['mx-auto', 'text-center']) %}
 {% elseif block.textAlign == 'textCenterMobile' %}
-    {% set classes = classes|merge(['text-center', 'md:text-left']) %}
+    {% set classes = classes | merge(['text-center', 'md:text-left']) %}
 {% endif %}
 
 {% if block.uppercase %}
-    {% set classes = classes|merge(['uppercase']) %}
+    {% set classes = classes | merge(['uppercase']) %}
 {% endif %}
 
 {% if block.classes %}
-    {% set classes = classes|merge(block.classes|explodeClass) %}
+    {% set classes = classes | merge(block.classes | explodeClass) %}
 {% endif %}
 
-{% set heading = block.heading|heading_striptags %}
+{% set heading = block.heading | heading_striptags %}
 {% if block.headingLink %}
     {% set heading %}
         <a href="{{ block.headingLink.value }}">{{ heading }}</a>
@@ -26,7 +26,7 @@
 {% endif %}
 
 {# if adjusted, review other uses #}
-{{ tag(block.headingLevel|default('h2'), {
+{{ tag(block.headingLevel | default('h2'), {
     html: heading,
     id: block.elementId,
     class: classes,
