@@ -11,6 +11,21 @@ use FriendsOfTwig\Twigcs\Ruleset\RulesetInterface;
 use FriendsOfTwig\Twigcs\TemplateResolver\FileResolver;
 use FriendsOfTwig\Twigcs\Validator\Violation;
 
+/* Example of a ruleset that disables the RegEngine ruleset for a specific template
+readonly class NoRegEngineRuleset implements RulesetInterface
+{
+    public function __construct(private int $twigMajorVersion) {}
+
+    public function getRules(): array
+    {
+        return [
+            new Rule\TrailingSpace(Violation::SEVERITY_ERROR),
+            new Rule\UnusedMacro(Violation::SEVERITY_WARNING, new FileResolver(__DIR__ . '/templates')),
+            new Rule\UnusedVariable(Violation::SEVERITY_WARNING, new FileResolver(__DIR__ . '/templates')),
+        ];
+    }
+}*/
+
 readonly class StarterCraftRuleset implements RulesetInterface
 {
     public function __construct(private int $twigMajorVersion) {}
@@ -38,4 +53,7 @@ return Config::create()
     ->setName('starter_craft')
     ->setSeverity('error')
     ->setRuleset(StarterCraftRuleset::class)
+    // ->setSpecificRulesets([
+    //     __DIR__ . '/templates/_layout.twig' => NoRegEngineRuleset::class,
+    // ])
     ->addFinder($finder);
