@@ -52,6 +52,8 @@ static:
     # lint JS & CSS
     - yarn lint:js
     - yarn lint:css
+    # lint Twig templates
+    - php composer.phar lint:twig
 
 .deploy template: &deploy
   stage: deploy
