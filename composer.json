@@ -20,6 +20,7 @@
         "wrav/oembed": "^3.2.1"
     },
     "require-dev": {
+        "craftcms/generator": "^2.2",
         "yiisoft/yii2-shell": "^2.0.3"
     },
     "autoload": {
