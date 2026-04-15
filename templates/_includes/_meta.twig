@@ -3,10 +3,10 @@ Usage:
 {% block head %}
     {{ parent() }}
     {% include '_includes/_meta.twig' with {
-        'title' : 'Page Title',
-        'description' : 'Meta/OG/Twitter Description',
-        'url' : <relative/url>,
-        'image' : '/images/logo-og.png',
+        'title': 'Page Title',
+        'description': 'Meta/OG/Twitter Description',
+        'url': <relative/url>,
+        'image': '/images/logo-og.png',
         'image_alt': 'Image Alt',
     } only %}
 {% endblock head %}
@@ -23,7 +23,7 @@ Usage:
 {% endif %}
 
 {% if description %}
-    {% set description = description | replace({"\n":' ', "\r":' '}) %}
+    {% set description = description | replace({ "\n": ' ', "\r": ' ' }) %}
 {% endif %}
 
 {% if description %}
@@ -36,7 +36,7 @@ Usage:
 <meta property="og:site_name" content="{{ siteInformation.companyName }}">
 {% if image is defined and image | length > 0 %}
     {# should be 1200x630 #}
-    <meta property="og:image" content="{{ image.one().getUrl({ width: 1200, height: 600}) }}">
+    <meta property="og:image" content="{{ image.one().getUrl({ width: 1200, height: 600 }) }}">
     {% if image_alt %}
         <meta property="og:image:alt" content="{{ image_alt }}">
     {% endif %}
@@ -56,7 +56,7 @@ Usage:
     <meta name="twitter:description" content="{{ description }}">
 {% endif %}
 {% if image is defined and image | length > 0 %}
-    <meta name="twitter:image" content="{{ image.one().getUrl({ width: 1200, height: 600}) }}">
+    <meta name="twitter:image" content="{{ image.one().getUrl({ width: 1200, height: 600 }) }}">
     {% if image_alt %}
         <meta property="twitter:image:alt" content="{{ image_alt }}">
     {% endif %}
