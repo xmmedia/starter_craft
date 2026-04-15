@@ -1,3 +1,3 @@
-# XM Module for Craft CMS 4.x
+# XM Module for Craft CMS 5.x
 
 

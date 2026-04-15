@@ -1,8 +1,6 @@
 <?php
 /**
- * XM module for Craft CMS 3.x
- *
- * XM module
+ * XM module for Craft CMS 5.x
  *
  * @link      https://www.xmmedia.com
  * @copyright Copyright (c) 2022 XM Media Inc.
@@ -13,7 +11,6 @@ declare(strict_types=1);
 namespace modules\xmmodule\twigextensions;
 
 use craft\elements\Entry;
-use modules\xmmodule\XmModule;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
