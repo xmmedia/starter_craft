@@ -1,6 +1,3 @@
-{% set imageHorizontalAlignment = block.imageHorizontalAlignment | default('center') %}
-{% set imageVerticalAlignment = block.imageVerticalAlignment | default('center') %}
-
 {% if block.imageAspectRatio == 'custom' %}
     {% set imageTransform = {
         width: block.customImageDimensions.imageWidth,
@@ -12,7 +9,7 @@
     {% set imageTransform = 'image' ~ block.imageAspectRatio | title ~ (blockWidth <= 720 ? 'Small' : 'Large') %}
 {% endif %}
 
-{% switch imageHorizontalAlignment %}
+{% switch block.imageHorizontalAlignment | default('center') %}
     {% case 'left' %}
         {# tw: justify-start #}
         {% set flexJustify = 'start' %}
@@ -23,7 +20,7 @@
         {# tw: justify-center-safe #}
         {% set flexJustify = 'center' %}
 {% endswitch %}
-{% switch imageVerticalAlignment %}
+{% switch block.imageVerticalAlignment | default('center') %}
     {% case 'top' %}
         {# tw: items-start #}
         {% set flexItems = 'start' %}
