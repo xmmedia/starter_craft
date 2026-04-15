@@ -1,2 +1,16 @@
+{% if block.spacing == '40' %}
+    {% set classes = classes | merge(['py-30', 'lg:py-40']) %}
+{% elseif block.spacing == '30' %}
+    {% set classes = classes | merge(['py-30']) %}
+{% elseif block.spacing == '60' %}
+    {% set classes = classes | merge(['py-30', 'lg:py-60']) %}
+{% elseif block.spacing == '20' %}
+    {% set classes = classes | merge(['py-20']) %}
+{% endif %}
+
+{% if block.classes %}
+    {% set classes = classes | merge(block.classes | explodeClass) %}
+{% endif %}
+
 <!-- >>> section start >>> -->
-<section class="py-16"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<section class="{{ classes | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
