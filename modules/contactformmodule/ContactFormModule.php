@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace modules\contactformmodule;
 
 use Craft;
+use craft\base\Model;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
 use craft\contactform\models\Submission;
@@ -50,7 +51,7 @@ class ContactFormModule extends BaseModule
         // do some additional/different validation
         Event::on(
             Submission::class,
-            Submission::EVENT_AFTER_VALIDATE,
+            Model::EVENT_AFTER_VALIDATE,
             function (Event $e) {
                 /** @var Submission $submission */
                 $submission = $e->sender;
