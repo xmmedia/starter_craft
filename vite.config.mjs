@@ -16,7 +16,7 @@ export default defineConfig(({ command }) => {
         ],
         build: {
             outDir: 'public/build',
-            rollupOptions: {
+            rolldownOptions: {
                 input: {
                     public: './public/js/src/public.js',
                     editor: './public/js/src/editor.js',
