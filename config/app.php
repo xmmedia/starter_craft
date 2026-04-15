@@ -22,7 +22,7 @@ use craft\helpers\App;
 return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
     'modules' => [
-        'contact-form' => \modules\ContactFormModule::class,
+        'contact-form' => \modules\contactformmodule\ContactFormModule::class,
         'xm-module' => \modules\xmmodule\XmModule::class,
         'image-module' => [
             'class' => \modules\imagemodule\ImageModule::class,

@@ -2,50 +2,38 @@
 
 declare(strict_types=1);
 
-namespace modules;
+namespace modules\contactformmodule;
 
 use Craft;
-use craft\contactform\models\Submission;
-use yii\base\Event;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
+use craft\contactform\models\Submission;
+use yii\base\Event;
+use yii\base\Module as BaseModule;
 
 /**
- * Custom module class.
- *
- * This class will be available throughout the system via:
- * `Craft::$app->getModule('my-module')`.
- *
- * You can change its module ID ("my-module") to something else from
- * config/app.php.
- *
- * If you want the module to get loaded on every request, uncomment this line
- * in config/app.php:
- *
- *     'bootstrap' => ['my-module']
- *
- * Learn more about Yii module development in Yii's documentation:
- * http://www.yiiframework.com/doc-2.0/guide-structure-modules.html
+ * @method static ContactFormModule getInstance()
  */
-class ContactFormModule extends \yii\base\Module
+class ContactFormModule extends BaseModule
 {
-    /**
-     * Initializes the module.
-     */
-    public function init()
+    public function init(): void
     {
-        // Set a @modules alias pointed to the modules/ directory
-        Craft::setAlias('@modules', __DIR__);
+        Craft::setAlias('@modules/contactformmodule', __DIR__);
 
         // Set the controllerNamespace based on whether this is a console or web request
-        if (Craft::$app->getRequest()->getIsConsoleRequest()) {
-            $this->controllerNamespace = 'modules\\console\\controllers';
+        if (Craft::$app->request->isConsoleRequest) {
+            $this->controllerNamespace = 'modules\\contactformmodule\\console\\controllers';
         } else {
-            $this->controllerNamespace = 'modules\\controllers';
+            $this->controllerNamespace = 'modules\\contactformmodule\\controllers';
         }
 
         parent::init();
 
+        $this->attachEventHandlers();
+    }
+
+    private function attachEventHandlers(): void
+    {
         Event::on(
             Mailer::class,
             Mailer::EVENT_BEFORE_SEND,
