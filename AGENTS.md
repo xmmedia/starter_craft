@@ -32,6 +32,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 - **Linting**:
   - JS: `yarn lint:js` or `yarn lint:js:fix`
   - CSS: `yarn lint:css` or `yarn lint:css:fix`
+  - Twig: `lando composer lint:twig`
 - **Security audits**:
   - Moderate: `yarn audit:moderate`
   - High: `yarn audit:high`

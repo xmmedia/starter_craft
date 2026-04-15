@@ -56,6 +56,7 @@ Craft admin is located at `/admin`
   - Linting:
     - JS ([ESLint](https://eslint.org/)): `yarn lint:js` or `yarn lint:js:fix`
     - CSS: `yarn lint:css` or `yarn lint:css:fix`
+    - Twig ([twigcs](https://github.com/friendsoftwig/twigcs)): `lando composer lint:twig`
   - PHP Tests ([PhpUnit](https://phpunit.de/)): 
     - `composer test`
     - no memory limit `php -d memory_limit=-1 bin/simple-phpunit`
