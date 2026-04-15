@@ -1,0 +1,28 @@
+columnSuffix: null
+handle: bgColor
+instructions: null
+name: 'Background Colour'
+searchable: false
+settings:
+  customOptions: false
+  options:
+    -
+      __assoc__:
+        -
+          - label
+          - White
+        -
+          - value
+          - white
+        -
+          - icon
+          - ''
+        -
+          - color
+          - '#ffffff'
+        -
+          - default
+          - '1'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\RadioButtons

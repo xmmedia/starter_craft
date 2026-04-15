@@ -10,6 +10,10 @@
     {% set classes = classes | merge(['py-20']) %}
 {% endif %}
 
+{% if block.bgColor != 'white' %}
+    {% set classes = classes | merge(['bg-' ~ block.bgColor]) %}
+{% endif %}
+
 {% if block.classes %}
     {% set classes = classes | merge(block.classes | explodeClass) %}
 {% endif %}
