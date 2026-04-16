@@ -356,38 +356,56 @@
 {# ############################# #}
 {# ########## Colours ########## #}
 {# ############################# #}
-<h2 class="mb-12 text-center">Colors</h2>
+<style>
+    .pl-swatch-alpha {
+        background-image:
+            linear-gradient(45deg, #ccc 25%, transparent 25%),
+            linear-gradient(-45deg, #ccc 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, #ccc 75%),
+            linear-gradient(-45deg, transparent 75%, #ccc 75%);
+        background-size: 10px 10px;
+        background-position: 0 0, 0 5px, 5px -5px, -5px 0;
+    }
+</style>
 
-<div class="flex flex-col items-center gap-y-4 mb-8">
+{% macro swatch(name, rgba, dark) %}
+    {% set alpha = rgba matches '/\\/\\s*0\\./' %}
     <div class="text-center">
-        orange-500
-        <div class="flex flex-row">
-            <div class="h-32 w-32" style="background: var(--color-orange-500);">oklch</div>
-            <div class="h-32 w-32" style="background: rgba(255 105 0 / 100);">rgba</div>
+        <div class="text-xs font-mono mb-1">{{ name }}</div>
+        <div class="flex flex-row text-xs font-mono {{ dark ? 'text-white' : '' }}">
+            <div class="flex flex-col items-center justify-end p-1 h-20 w-20 {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}" style="background-color: var({{ name }});">
+                <span class="{{ alpha ? 'bg-white/70 px-0.5' }}">oklch</span>
+            </div>
+            <div class="flex flex-col items-center justify-end p-1 h-20 w-20 {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}" style="background-color: rgba({{ rgba }});">
+                <span class="{{ alpha ? 'bg-white/70 px-0.5' }}">rgba</span>
+            </div>
+        </div>
+        <div class="text-xs text-gray-400 font-mono mt-1 leading-relaxed">
+            <div data-css-var="{{ name }}"></div>
+            <div>rgba({{ rgba }})</div>
         </div>
     </div>
+{% endmacro %}
 
-    <div class="text-center">
-        red-400
-        <div class="flex flex-row">
-            <div class="h-32 w-32" style="background: var(--color-red-400);">oklch</div>
-            <div class="h-32 w-32" style="background: rgba(255 100 103 / 100);">rgba</div>
-        </div>
-    </div>
+<div class="w-content my-16">
+    <h2 class="mb-8 text-center">Colors</h2>
 
-    <div class="text-center">
-        red-400
-        <div class="flex flex-row text-white">
-            <div class="h-32 w-32" style="background: var(--color-black);">oklch</div>
-            <div class="h-32 w-32" style="background: rgba(0 0 0 / 100);">rgba</div>
-        </div>
+    <div class="flex flex-wrap gap-4 justify-around">
+        {{ _self.swatch('--color-orange-500', '255 105 0 / 1', false) }}
+        {{ _self.swatch('--color-red-400',    '255 100 103 / 1', false) }}
+        {{ _self.swatch('--color-black', '0 0 0 / 0.4') }}
     </div>
 </div>
+<script>
+    document.querySelectorAll('[data-css-var]').forEach(el => {
+        el.textContent = getComputedStyle(document.documentElement).getPropertyValue(el.dataset.cssVar).trim();
+    });
+</script>
 
 {# ############################# #}
 {# ###### Content Blocks ####### #}
 {# ############################# #}
-<div class="mt-16">
+<div class="my-16">
     <div class="w-content-copy">
         <div class="h-16 text-center p-4 mb-2 bg-gray-300 border border-orange-400">.w-content-copy</div>
     </div>
