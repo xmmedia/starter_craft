@@ -13,6 +13,7 @@ namespace modules\xmmodule;
 use Craft;
 use craft\mail\Mailer;
 use modules\xmmodule\twigextensions\XmTwigExtension;
+use yii\base\Event;
 use yii\base\Module as BaseModule;
 use yii\mail\BaseMailer;
 use yii\mail\MailEvent;
@@ -74,7 +75,7 @@ XmModule extends BaseModule
     {
         // Append site name to system email subjects
         // EVENT_BEFORE_SEND is defined on \yii\mail\BaseMailer (parent of craft\mail\Mailer)
-        \yii\base\Event::on(Mailer::class, BaseMailer::EVENT_BEFORE_SEND, function(MailEvent $event) {
+        Event::on(Mailer::class, BaseMailer::EVENT_BEFORE_SEND, function(MailEvent $event) {
             $key = $event->message->key ?? null;
 
             if (!in_array($key, ['account_activation', 'forgot_password'], true)) {
