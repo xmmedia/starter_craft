@@ -11,10 +11,10 @@ use FriendsOfTwig\Twigcs\Ruleset\RulesetInterface;
 use FriendsOfTwig\Twigcs\TemplateResolver\FileResolver;
 use FriendsOfTwig\Twigcs\Validator\Violation;
 
-/* Example of a ruleset that disables the RegEngine ruleset for a specific template
+// Ruleset without RegEngine for files where alignment spacing is intentional
 readonly class NoRegEngineRuleset implements RulesetInterface
 {
-    public function __construct(private int $twigMajorVersion) {}
+    public function __construct(int $twigMajorVersion) {}
 
     public function getRules(): array
     {
@@ -24,7 +24,7 @@ readonly class NoRegEngineRuleset implements RulesetInterface
             new Rule\UnusedVariable(Violation::SEVERITY_WARNING, new FileResolver(__DIR__ . '/templates')),
         ];
     }
-}*/
+}
 
 readonly class StarterCraftRuleset implements RulesetInterface
 {
@@ -53,7 +53,7 @@ return Config::create()
     ->setName('starter_craft')
     ->setSeverity('error')
     ->setRuleset(StarterCraftRuleset::class)
-    // ->setSpecificRulesets([
-    //     __DIR__ . '/templates/_layout.twig' => NoRegEngineRuleset::class,
-    // ])
+    ->setSpecificRulesets([
+        __DIR__ . '/templates/_includes/blocks/_pattern_library.twig' => NoRegEngineRuleset::class,
+    ])
     ->addFinder($finder);
