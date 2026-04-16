@@ -51,6 +51,8 @@ export default defineConfig(({ command }) => {
                 ignored: ['**/vendor/**', '**/storage/**'],
             },
         },
+        // tell Vite not to treat any directory as a special static-file directory
+        publicDir: false,
         appType: 'custom',
         clearScreen: false,
     };
