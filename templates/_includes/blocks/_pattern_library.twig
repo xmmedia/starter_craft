@@ -407,20 +407,48 @@
 {# ############################# #}
 {# ###### Content Blocks ####### #}
 {# ############################# #}
-<div class="my-16">
+<div class="my-16" id="pl-content-widths">
     <div class="w-content-copy">
-        <div class="h-16 text-center p-4 mb-2 bg-gray-300 border border-orange-400">.w-content-copy</div>
+        <div class="text-center p-4 mb-2 bg-gray-300 border border-orange-400">
+            .w-content-copy
+            <div data-pl-width class="font-mono text-xs text-gray-500"></div>
+        </div>
     </div>
     <div class="w-content">
-        <div class="h-16 text-center p-4 mb-2 bg-gray-300 border border-orange-400">.w-content</div>
+        <div class="text-center p-4 mb-2 bg-gray-300 border border-orange-400">
+            .w-content
+            <div data-pl-width class="font-mono text-xs text-gray-500"></div>
+        </div>
     </div>
     <div class="w-content-wide">
-        <div class="h-16 text-center p-4 mb-2 bg-gray-300 border border-orange-400">.w-content-wide</div>
+        <div class="text-center p-4 mb-2 bg-gray-300 border border-orange-400">
+            .w-content-wide
+            <div data-pl-width class="font-mono text-xs text-gray-500"></div>
+        </div>
     </div>
     <div class="w-content-screen">
-        <div class="h-16 text-center p-4 mb-2 bg-gray-300 border border-orange-400">.w-content-screen</div>
+        <div class="text-center p-4 mb-2 bg-gray-300 border border-orange-400">
+            .w-content-screen
+            <div data-pl-width class="font-mono text-xs text-gray-500"></div>
+        </div>
     </div>
 </div>
+<script>
+    window.addEventListener('load', () => {
+        const rootFs = parseFloat(getComputedStyle(document.documentElement).fontSize);
+        document.querySelectorAll('#pl-content-widths > div').forEach(el => {
+            const span = el.querySelector('[data-pl-width]');
+            const maxWidth = getComputedStyle(el).maxWidth;
+            if (maxWidth && maxWidth !== 'none') {
+                const px = parseFloat(maxWidth);
+                const rem = Math.round(px / rootFs * 100) / 100;
+                span.textContent = `${rem}rem / ${px}px`;
+            } else {
+                span.textContent = 'no max-width';
+            }
+        });
+    });
+</script>
 
 {# ############################# #}
 {# ########## Forms ############ #}
