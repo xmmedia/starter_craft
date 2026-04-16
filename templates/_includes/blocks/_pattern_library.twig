@@ -397,8 +397,10 @@
     </div>
 </div>
 <script>
-    document.querySelectorAll('[data-css-var]').forEach(el => {
-        el.textContent = getComputedStyle(document.documentElement).getPropertyValue(el.dataset.cssVar).trim();
+    window.addEventListener('load', () => {
+        document.querySelectorAll('[data-css-var]').forEach(el => {
+            el.textContent = getComputedStyle(document.documentElement).getPropertyValue(el.dataset.cssVar).trim();
+        });
     });
 </script>
 
