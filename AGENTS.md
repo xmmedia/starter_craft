@@ -204,6 +204,18 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 - Stylelint with Tailwind config (`stylelint.config.mjs`)
 - Use `@apply` sparingly
 - Prefer CSS animations over JavaScript-driven animations when possible
+- Property order:
+  1. Visually obstructive — `display: none`, `visibility: hidden`
+  2. Visibility — `visibility`, `overflow`, `opacity`
+  3. Positioning — `position`, `float`, `z-index`, `clear`
+  4. Box Model — constraining props first (`display`, `max-width`), then structural (`top`, `width`, `margin`, `padding`); width before height / x before y
+  5. Element-specific — `list-style`, `border-collapse`, `resize`
+  6. Aesthetic display (greatest → least impact) — `filter`, `background`, `border`, `transform`, `box-shadow`
+  7. Font — structural (`font-size`, `line-height`, `font-weight`, `font-family`), then aesthetic (`text-align`, `text-transform`), then visual (`color`, `text-shadow`, `letter-spacing`)
+  8. UI-bound — `animation`, `transition`
+  9. Browser-specific hacks
+  10. `!important` declarations
+  11. Deprecated / candidates for removal
 
 **Twig**:
 - Consistent naming: partials prefixed with `_`
