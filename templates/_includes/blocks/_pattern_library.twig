@@ -396,7 +396,7 @@
     {% set alpha = rgba matches '/\\/\\s*0\\./' %}
     <div class="text-center">
         <div class="text-xs font-mono mb-1">{{ name }}</div>
-        <div class="flex flex-row text-xs font-mono {{ dark ? 'text-white' : '' }}">
+        <div class="flex flex-row justify-center text-xs font-mono {{ dark ? 'text-white' : '' }}">
             <div class="flex flex-col items-center justify-end p-1 h-20 w-20 {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}" style="background-color: var({{ name }});">
                 <span class="{{ alpha ? 'bg-white/70 px-0.5' }}">oklch</span>
             </div>
@@ -412,7 +412,7 @@
 {% endmacro %}
 
 <div class="w-content my-16">
-    <h2 class="mb-8 text-center">Colors</h2>
+    <h2 class="mb-8 text-center">Colours</h2>
 
     <div class="flex flex-wrap gap-4 justify-around">
         {{ _self.swatch('--color-orange-500', '255 105 0 / 1', false) }}
