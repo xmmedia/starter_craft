@@ -19,6 +19,12 @@
     }
 }
 
-a.button {
-    @apply button inline-block focus:bg-blue-500;
+/*
+the components layer is below the utilities layer,
+this allows the utilities (above) to override what's applied below (in the component layer)
+*/
+@layer components {
+    a.button {
+        @apply button inline-block focus:bg-blue-500;
+    }
 }
