@@ -1,4 +1,4 @@
-dateModified: 1776870483
+dateModified: 1776872874
 elementSources:
   craft\elements\Entry:
     -
@@ -81,35 +81,35 @@ fs:
     settings:
       path: '@webroot/assets/pdfs'
     type: craft\fs\Local
-    url: '@web/assets/pdfs'
+    url: /assets/pdfs
   blog:
     hasUrls: true
     name: Blog
     settings:
       path: '@webroot/assets/blog'
     type: craft\fs\Local
-    url: '@web/assets/blog'
+    url: /assets/blog
   gallery:
     hasUrls: true
     name: Gallery
     settings:
       path: '@webroot/assets/gallery'
     type: craft\fs\Local
-    url: '@web/assets/gallery'
+    url: /assets/gallery
   general:
     hasUrls: true
     name: General
     settings:
       path: '@webroot/assets/general'
     type: craft\fs\Local
-    url: '@web/assets/general'
+    url: /assets/general
   ogImages:
     hasUrls: true
     name: 'Sharing Images'
     settings:
       path: '@webroot/assets/og'
     type: craft\fs\Local
-    url: '@web/assets/og'
+    url: /assets/og
   transformed:
     hasUrls: true
     name: Transformed
