@@ -29,7 +29,8 @@
 }
 
 @utility body-base {
-    @apply leading-normal text-gray-800;
+    /* text-base applied so if the text base size is changed, it automatically applies to all default text */
+    @apply text-base leading-normal text-gray-800;
 }
 
 @utility w-content-base {
