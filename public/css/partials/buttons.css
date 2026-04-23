@@ -1,6 +1,6 @@
 @utility button {
     @apply px-4 py-2 fill-current stroke-current;
-    @apply text-white text-center leading-tight;
+    @apply text-box text-white text-center leading-tight;
     @apply shadow-none border-2 border-blue-500 bg-blue-500 transition-colors outline-hidden rounded-sm cursor-pointer;
 
     &:hover {

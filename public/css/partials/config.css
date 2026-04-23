@@ -54,3 +54,8 @@
 @utility w-content-screen {
     @apply w-content-base;
 }
+
+@utility text-box {
+    /* improves vertical alignment of text inside buttons */
+    text-box: trim-both cap alphabetic;
+}
