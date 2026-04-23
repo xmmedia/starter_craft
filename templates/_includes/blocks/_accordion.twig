@@ -1,5 +1,3 @@
-{% set width = block.blockWidth | default('12') %}
-
 <div class="{{ blockWidth(block) }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% for accordionItem in block.accordionWrapper.all() %}
         {# using border instead of divide because divide only adds between and at the end, not on the first item #}
