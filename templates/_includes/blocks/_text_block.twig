@@ -1,4 +1,4 @@
-{% set classes = ['md:col-span-' ~ width] %}
+{% set classes = [blockWidth(block)] %}
 
 {% if block.textVerticalAlign == 'center' %}
     {% set classes = classes | merge(['flex flex-col justify-center']) %}

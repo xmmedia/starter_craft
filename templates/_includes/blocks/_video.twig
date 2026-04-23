@@ -1,5 +1,5 @@
 {# separate div wrapper so column doesn't mess with embed-wrap #}
-<div class="md:col-span-{{ width }} {{ block.classes }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="{{ blockWidth(block) }} {{ block.classes }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% set image = block.image.one() %}
     {% if image %}
         <button type="button" class="embed-wrap block" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none';">

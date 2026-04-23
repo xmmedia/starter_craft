@@ -33,7 +33,7 @@
 {% endswitch %}
 
 {% set wrapperClasses %}
-flex justify-{{ flexJustify }} items-{{ flexItems }} md:col-span-{{ width }}
+flex justify-{{ flexJustify }} items-{{ flexItems }} {{ blockWidth(block) }}
 {% endset %}
 
 <div class="{{ wrapperClasses }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>

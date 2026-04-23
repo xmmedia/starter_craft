@@ -9,7 +9,7 @@
     {% set buttonClasses = buttonClasses | merge(['mx-auto', 'md:mx-0']) %}
 {% endif %}
 
-{% set wrapperClasses = wrapperClasses | merge(['md:col-span-' ~ width]) %}
+{% set wrapperClasses = wrapperClasses | merge([blockWidth(block)]) %}
 
 <div class="{{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <a href="{{ block.button.value }}" class="button {{ buttonClasses | join(' ') }}">

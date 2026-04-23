@@ -51,6 +51,7 @@ class XmTwigExtension extends AbstractExtension
     public function getFunctions(): array
     {
         return [
+            new TwigFunction('blockWidth', [$this, 'blockWidth']),
             new TwigFunction('menu', [$this, 'menu']),
             new TwigFunction('submenu', [$this, 'submenu']),
         ];
@@ -63,6 +64,15 @@ class XmTwigExtension extends AbstractExtension
             new TwigFilter('phone_strip', [$this, 'phoneStrip']),
             new TwigFilter('address_format', [$this, 'addressFormat'], ['is_safe' => ['html']]),
         ];
+    }
+
+    public function blockWidth(Entry $block): ?string
+    {
+        if (null === $block->blockWidth) {
+            return null;
+        }
+
+        return 'md:col-md-'.($block->blockWidth ?? 12);
     }
 
     public function menu(array $items): array
