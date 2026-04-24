@@ -111,13 +111,13 @@ class XmTwigExtension extends AbstractExtension
         return strip_tags($heading, '<strong><em><br><a><sup><sub><span>');
     }
 
-    public function phoneStrip(string $phone): string
+    public function phoneStrip(string $phone, string $prefix = 'tel'): string
     {
         if (str_starts_with($phone, 'tel:+')) {
             $phone = substr($phone, strlen('tel:+'));
         }
 
-        return 'tel:+'.preg_replace('/\D+/', '', $phone) ?? '';
+        return $prefix.':+'.preg_replace('/\D+/', '', $phone);
     }
 
     public function addressFormat(string $address): string
