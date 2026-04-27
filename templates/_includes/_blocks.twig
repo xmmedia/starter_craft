@@ -2,7 +2,7 @@
 {% set inSection = false %}
 
 {# these fields exist within a .blocks-wrap so start a block if not already started #}
-{% set wrappedBlocks = ['heading', 'textBlock', 'image', 'button', 'accordionWrapper'] %}
+{% set wrappedBlocks = ['heading', 'textBlock', 'image', 'button', 'accordionWrapper', 'spacer']] %}
 
 {# these blocks cannot be within a section, so end the section before #}
 {% set notWithinSection = ['sectionStart', 'banner', 'patternLibrary'] %}
@@ -44,6 +44,9 @@
 
             {% case 'sectionEnd' %}
                 {# nothing, dealt with above #}
+
+            {% case 'blockSpacer' %}
+                {% include '_includes/blocks/_block_spacer.twig' %}
 
             {% case 'hero' %}
                 {% include '_includes/blocks/_hero.twig' %}

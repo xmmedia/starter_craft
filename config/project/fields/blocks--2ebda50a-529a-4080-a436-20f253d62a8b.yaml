@@ -20,6 +20,14 @@ settings:
       __assoc__:
         -
           - uid
+          - 02b381ce-da60-43b4-97dc-a4c5bec552a0 # Spacer
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
           - 75f7d82b-4d45-477b-848c-4f539cfe3469 # Hero
         -
           - group

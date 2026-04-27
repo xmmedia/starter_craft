@@ -1,0 +1,75 @@
+allowLineBreaksInTitles: false
+color: yellow
+description: null
+fieldLayouts:
+  1c176d5a-1934-4b3a-b7f1-11db9c6f06ad:
+    cardThumbAlignment: end
+    cardView:
+      - 'generatedField:26799951-5582-42e8-87ab-c24a05bec0ef'
+    generatedFields:
+      -
+        handle: adminWidth
+        name: Width
+        template: 'Width: {blockWidth} / 12'
+        uid: 26799951-5582-42e8-87ab-c24a05bec0ef
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-04-23T18:46:16+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 64415fb8-4fcf-4c03-b35b-0baade3e6224 # Size
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 6b3d3118-710e-41c0-a767-52bbcec502c1
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2026-04-23T18:46:16+00:00'
+            dismissible: false
+            elementCondition: null
+            style: tip
+            tip: 'Typically spacers are full width, but this can be changed by adjusting the block width.'
+            type: craft\fieldlayoutelements\Tip
+            uid: 0d9d058b-0e51-4e05-b0e8-ce87f8ad18fa
+            userCondition: null
+          -
+            dateAdded: '2026-04-23T18:46:16+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
+            handle: null
+            instructions: null
+            label: null
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4dfa195c-8d34-4a6c-b4a8-2b680107307a
+            userCondition: null
+            warning: null
+            width: 100
+        name: Content
+        uid: 0e95f37a-72bd-44c4-80e7-4ca561d3f137
+        userCondition: null
+    thumbFieldKey: null
+handle: blockSpacer
+hasTitleField: false
+icon: null
+name: Spacer
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: 'Space: {spaceSize}'

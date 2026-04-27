@@ -1,0 +1,14 @@
+columnSuffix: null
+handle: spaceSize
+instructions: null
+name: Size
+searchable: false
+settings:
+  defaultValue: 8
+  max: 16
+  min: 4
+  step: 4
+  suffix: null
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Range
