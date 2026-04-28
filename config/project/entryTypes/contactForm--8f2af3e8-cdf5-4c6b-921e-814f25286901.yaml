@@ -21,7 +21,7 @@ fieldLayouts:
             dismissible: false
             elementCondition: null
             style: tip
-            tip: 'Adds Contact Form to page'
+            tip: 'Adds a contact form to the page.'
             type: craft\fieldlayoutelements\Tip
             uid: 18c9832d-7a56-4b47-b703-265b453bfb4c
             userCondition: null

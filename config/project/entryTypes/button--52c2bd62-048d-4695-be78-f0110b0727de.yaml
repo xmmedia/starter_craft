@@ -77,34 +77,6 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            autocapitalize: true
-            autocomplete: false
-            autocorrect: true
-            class: null
-            dateAdded: '2026-02-13T00:36:06+00:00'
-            disabled: false
-            elementCondition: null
-            id: null
-            inputType: null
-            instructions: null
-            label: null
-            max: null
-            min: null
-            name: null
-            orientation: null
-            placeholder: null
-            readonly: false
-            required: false
-            size: null
-            step: null
-            tip: null
-            title: null
-            type: craft\fieldlayoutelements\entries\EntryTitleField
-            uid: f23103ae-f519-4e9b-a553-d022dffff534
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-12-04T22:07:50+00:00'
             editCondition: null
             elementCondition: null
@@ -138,6 +110,40 @@ fieldLayouts:
             width: 50
         name: Attributes
         uid: f46d9bee-7fb1-40d5-a0c7-94ef4c375df1
+        userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            autocapitalize: true
+            autocomplete: false
+            autocorrect: true
+            class: null
+            dateAdded: '2026-02-13T00:36:06+00:00'
+            disabled: false
+            elementCondition: null
+            id: null
+            inputType: null
+            instructions: null
+            label: null
+            max: null
+            min: null
+            name: null
+            orientation: null
+            placeholder: null
+            readonly: false
+            required: false
+            size: null
+            step: null
+            tip: 'Only shown in the admin.'
+            title: null
+            type: craft\fieldlayoutelements\entries\EntryTitleField
+            uid: f23103ae-f519-4e9b-a553-d022dffff534
+            userCondition: null
+            warning: null
+            width: 100
+        name: Admin
+        uid: ca84b27a-c8e3-4f85-8ca0-cbf60c1c224f
         userCondition: null
     thumbFieldKey: null
 handle: button
