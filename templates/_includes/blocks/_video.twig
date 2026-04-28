@@ -11,8 +11,12 @@
         {{ block.videoIframe | raw }}
     {% elseif block.videoEmbedType == 'oembed' %}
         <div class="{% if image %}hidden {% endif %}embed-wrap">
-            {% set proportions = (block.videoOembed.media.height / block.videoOembed.media.width * 100) | round(2) %}
-            <div class="embed-container" style="padding-top: {{ proportions }}%;">
+            {% if block.videoOembed.media.width > 0 %}
+                {% set proportions = (block.videoOembed.media.height / block.videoOembed.media.width * 100) | round(2) %}
+                <div class="embed-container" style="padding-top: {{ proportions }}%;">
+            {% else %}
+                <div class="embed-container">
+            {% endif %}
                 {{ block.videoOembed.render() }}
             </div>
         </div>
