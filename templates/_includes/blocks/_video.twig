@@ -6,7 +6,7 @@
             {{ image(image, 'videoThumbnail') }}
         </button>
     {% endif %}
-    <div class="hidden embed-wrap max-w-3xl">
+    <div class="{% if image %}hidden {% endif %} embed-wrap max-w-3xl">
         <div class="embed-container embed-container-16-9">
             {% if block.videoEmbedType == 'oembed' %}
                 {{ block.videoOembed.render() }}
