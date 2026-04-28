@@ -3,6 +3,12 @@ altTranslationMethod: none
 fieldLayouts:
   e1abb53d-6738-40cc-be2a-9a84ad2bdc87:
     cardThumbAlignment: end
+    generatedFields:
+      -
+        handle: altTruncated
+        name: Alt
+        template: '{alt|truncate(25)}'
+        uid: 47e74b99-6fdf-42eb-a043-629061478355
     tabs:
       -
         elementCondition: null
