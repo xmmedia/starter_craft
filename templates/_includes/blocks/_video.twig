@@ -8,9 +8,9 @@
     {% endif %}
     <div class="hidden embed-wrap max-w-3xl">
         <div class="embed-container embed-container-16-9">
-            {% if block.videoToggle == 'oembed' %}
+            {% if block.videoEmbedType == 'oembed' %}
                 {{ block.videoOembed.render() }}
-            {% elseif block.videoToggle == 'iframe' %}
+            {% elseif block.videoEmbedType == 'iframe' %}
                 {{ block.videoIframe | raw }}
             {% endif %}
         </div>

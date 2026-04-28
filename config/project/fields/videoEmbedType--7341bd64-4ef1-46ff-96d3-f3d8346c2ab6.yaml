@@ -1,7 +1,7 @@
 columnSuffix: null
-handle: videoToggle
+handle: videoEmbedType
 instructions: null
-name: 'Video Toggle'
+name: 'Video Embed Type'
 searchable: false
 settings:
   customOptions: false

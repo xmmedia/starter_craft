@@ -1,4 +1,4 @@
-dateModified: 1777318518
+dateModified: 1777347784
 elementSources:
   craft\elements\Entry:
     -
@@ -189,7 +189,7 @@ meta:
     3782b2bb-7c19-4392-a96c-6ee2ed24a4cd: 'SEO - Sharing Image' # SEO - Sharing Image
     4119a1ff-3e12-46a5-b9f5-a6f932b4fec2: Pages # Pages
     5806aa3f-0845-4297-a1c8-edc07c16ef07: 'Section Start' # Section Start
-    7341bd64-4ef1-46ff-96d3-f3d8346c2ab6: 'Video Toggle' # Video Toggle
+    7341bd64-4ef1-46ff-96d3-f3d8346c2ab6: 'Video Embed Type' # Video Embed Type
     7424ebc8-4255-41f1-ab4c-0898425525e9: Gallery # Gallery
     23405c96-1469-4872-a55a-6488791f767a: Default # Default
     42773db2-f2e9-40a9-ab5e-e3406f1a6a25: 'XM Craft Starter' # XM Craft Starter

@@ -49,7 +49,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Toggle
+            fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Embed Type
             handle: null
             instructions: null
             label: null
@@ -68,7 +68,7 @@ fieldLayouts:
               conditionRules:
                 -
                   class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Toggle
+                  fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Embed Type
                   layoutElementUid: 1eb6ded2-c9f5-491a-a3e6-c39927186689
                   operator: in
                   uid: cd67e1ab-63e4-4a5f-a1f1-53868efa9a5d
@@ -96,7 +96,7 @@ fieldLayouts:
               conditionRules:
                 -
                   class: craft\fields\conditions\OptionsFieldConditionRule
-                  fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Toggle
+                  fieldUid: 7341bd64-4ef1-46ff-96d3-f3d8346c2ab6 # Video Embed Type
                   layoutElementUid: 1eb6ded2-c9f5-491a-a3e6-c39927186689
                   operator: in
                   uid: 722ba7c0-cd9d-470e-9635-0f17c9fcabb6
