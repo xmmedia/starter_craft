@@ -1,5 +1,65 @@
-dateModified: 1777399586
+dateModified: 1777410136
 elementSources:
+  craft\elements\Asset:
+    -
+      defaultSort:
+        - dateCreated
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - link
+        - 'generatedField:87678bc7-4fe8-4e93-830e-0ab947118a79'
+      type: native
+    -
+      defaultSort:
+        - dateCreated
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'volume:7424ebc8-4255-41f1-ab4c-0898425525e9' # Gallery
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - link
+        - 'generatedField:47e74b99-6fdf-42eb-a043-629061478355'
+      type: native
+    -
+      defaultSort:
+        - dateCreated
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - link
+        - 'generatedField:726c1bb4-4b81-4015-b473-465524aafb87'
+      type: native
+    -
+      defaultSort:
+        - dateCreated
+        - desc
+      defaultViewMode: ''
+      disabled: false
+      key: 'volume:b700f3be-bc0a-4a9c-bbd6-cc795a93bc10' # Sharing Images
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - link
+        - 'generatedField:b61905c2-4c7a-48d1-b6dd-08d8feb2715a'
+      type: native
+    -
+      key: temp
+      type: native
   craft\elements\Entry:
     -
       condition:
