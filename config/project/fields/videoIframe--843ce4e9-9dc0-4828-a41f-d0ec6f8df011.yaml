@@ -9,7 +9,7 @@ settings:
   code: false
   initialRows: 4
   multiline: true
-  placeholder: 'Paste the iframe code.'
+  placeholder: 'Paste the iFrame code.'
   uiMode: enlarged
 translationKeyFormat: null
 translationMethod: none

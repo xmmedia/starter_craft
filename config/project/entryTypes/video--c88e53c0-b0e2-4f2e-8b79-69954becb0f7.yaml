@@ -123,7 +123,7 @@ fieldLayouts:
             elementEditCondition: null
             fieldUid: 486e0db8-6cbd-4cd7-85af-77040ab2b43c # Image
             handle: null
-            instructions: 'Add a thumbnail to override the default video thumbnail if desired.'
+            instructions: 'dd a thumbnail to override the default video thumbnail if desired. Clicking the thumbnail will load the video. If blank, the video will load immediately.'
             label: Thumbnail
             required: false
             tip: null
