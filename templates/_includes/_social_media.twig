@@ -2,7 +2,7 @@
     {# if the url/link label has been entered in craft, it will be output; if not, nothing will be output #}
     <a href="{{ profile.profileUrl.value }}" title="{{ profile.profileUrl.label(true) }}">
         <svg class="social-icon">
-            <use xlink:href="{{ craft.vite.asset('/images/icons-public.svg') }}#social-{{ profile.platform }}"></use>
+            <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#social-{{ profile.platform }}"></use>
         </svg>
         <span class="sr-only">{{ profile.profileUrl.label }}</span>
     </a>
