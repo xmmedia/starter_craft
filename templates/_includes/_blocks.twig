@@ -1,5 +1,7 @@
 {% set inBlock = false %}
 {% set inSection = false %}
+{# note: using default() fails because it checks if value === false #}
+{% set includePlaceholder = includePlaceholder ?? true %}
 
 {# these fields exist within a .blocks-wrap so start a block if not already started #}
 {% set wrappedBlocks = [
@@ -120,6 +122,6 @@
         </div>
     {% endif %}
 
-{% else %}
+{% elseif includePlaceholder %}
     {% include '_includes/blocks/_page_placeholder.twig' %}
 {% endif %}
