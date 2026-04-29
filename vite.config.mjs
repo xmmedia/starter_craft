@@ -14,6 +14,7 @@ export default defineConfig(({ command }) => {
             vuePlugin(),
             tailwindcss(),
         ],
+        base: command === 'build' ? '/build/' : '/',
         build: {
             outDir: 'public/build',
             rolldownOptions: {
