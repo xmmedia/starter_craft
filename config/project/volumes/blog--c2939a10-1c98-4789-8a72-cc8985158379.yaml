@@ -7,7 +7,7 @@ fieldLayouts:
       -
         handle: altTruncated
         name: Alt
-        template: '{alt|truncate(25)}'
+        template: '{alt ? alt|truncate(25) : null}'
         uid: 726c1bb4-4b81-4015-b473-465524aafb87
     tabs:
       -
