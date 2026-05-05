@@ -11,6 +11,8 @@
         {{ craft.vite.script("public/js/src/public.js", false) }}
     {% endblock %}
 
+    {{ head() }}
+
     {% block favicons %}
         {% include '_includes/_favicons.twig' %}
     {% endblock %}

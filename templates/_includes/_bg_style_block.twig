@@ -1,7 +1,7 @@
 {% macro bg_style_block(image, imageTransform, className, uniqueClassAppend) %}
     {% set _image = image.getUrlsBySize(['1x', '2x', '3x'], imageTransform) %}
 
-    <style>
+    {% css %}
         .{{ className }}--{{ uniqueClassAppend }} {
             background-image: url("{{ _image['1x'] }}");
         }
@@ -15,5 +15,5 @@
                 background-image: url("{{ _image['3x'] }}");
             }
         }
-    </style>
+    {% endcss %}
 {% endmacro %}
