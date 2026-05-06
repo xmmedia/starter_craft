@@ -20,7 +20,7 @@
 }
 
 .blocks-wrap {
-    @apply w-content grid grid-cols-1 md:grid-cols-12 md:gap-x-12 w-full;
+    @apply w-content-max grid grid-cols-1 md:grid-cols-12 md:gap-x-12 w-full;
 }
 
 .text-block-wrap {

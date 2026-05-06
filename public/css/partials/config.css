@@ -14,11 +14,14 @@
 @theme {
     --breakpoint-xs: 25rem;
 
+    /* the max width of the design */
+    --max-width-max: 80rem; /* 1280px */
+    --max-width-8xl: 90rem; /* 1440px */
+    --max-width-9xl: 100rem; /* 1600px */
+
     --color-black-transparent: oklch(0% 0 0deg / 40%);
     --color-white-transparent: oklch(100% 0 0deg / 60%);
     --color-white-transparent-dark: oklch(100% 0 0deg / 80%);
-
-    --max-width-8xl: 90rem;
 
     /* see https://tailwindcss.com/docs/font-family for list */
     --default-font-family: "Roboto", "Helvetica Neue", "Arial", var(--font-sans);
@@ -49,6 +52,11 @@
 
 @utility w-content-wide {
     @apply w-content-base max-w-7xl;
+}
+
+@utility w-content-max {
+    /* max width of the design */
+    @apply w-content-base max-w-max;
 }
 
 @utility w-content-screen {
