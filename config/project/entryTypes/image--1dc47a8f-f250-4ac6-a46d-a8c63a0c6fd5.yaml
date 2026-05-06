@@ -18,18 +18,18 @@ fieldLayouts:
         elementCondition: null
         elements:
           -
-            dateAdded: '2024-11-26T18:45:15+00:00'
+            dateAdded: '2026-05-06T19:59:08+00:00'
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 64ec34a3-ecdf-4518-b59f-faaa5d33b8a9 # Post Content - Image
-            handle: image
+            fieldUid: 486e0db8-6cbd-4cd7-85af-77040ab2b43c # Image
+            handle: null
             instructions: null
-            label: Image
+            label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
-            uid: 6397da29-9c20-4124-b59a-381c81cfe0cb
+            uid: 41bf4be2-977f-491b-aa05-f8fe0b978f1e
             userCondition: null
             warning: null
             width: 100
@@ -236,7 +236,7 @@ fieldLayouts:
         name: Attributes
         uid: 59737b3d-4fc9-41a0-b985-93f9d15fe487
         userCondition: null
-    thumbFieldKey: 'layoutElement:6397da29-9c20-4124-b59a-381c81cfe0cb'
+    thumbFieldKey: null
 handle: image
 hasTitleField: false
 icon: null
