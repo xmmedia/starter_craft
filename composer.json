@@ -6,7 +6,7 @@
     "require": {
         "php": "8.5.*",
         "ext-intl": "*",
-        "craftcms/ckeditor": "^5.4.0",
+        "craftcms/ckeditor": "^5.5.0",
         "craftcms/cms": "^5.9.22",
         "craftcms/contact-form": "3.1.0",
         "craftcms/contact-form-honeypot": "2.1.0",
@@ -17,7 +17,7 @@
         "stimmt/craft-mcp": "^v1.2.2",
         "verbb/field-manager": "4.0.3",
         "vlucas/phpdotenv": "^5.4",
-        "wrav/oembed": "^3.2.1"
+        "wrav/oembed": "^3.2.2"
     },
     "require-dev": {
         "craftcms/generator": "^2.2",

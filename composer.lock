@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d18079cf9a2c018fcf682d28727fd3fa",
+    "content-hash": "8efc8b37b46cf3732316573ded573af2",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -791,11 +791,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "5.4.0",
+            "version": "5.5.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/40c1435142ba5e2e895cf7a9edcd2f55607678a6",
-                "reference": "40c1435142ba5e2e895cf7a9edcd2f55607678a6",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/743a4e1bccd3c98eb544b4730dd6689ca03ab4af",
+                "reference": "743a4e1bccd3c98eb544b4730dd6689ca03ab4af",
                 "shasum": ""
             },
             "require": {
@@ -809,7 +809,7 @@
             "extra": {
                 "name": "CKEditor",
                 "handle": "ckeditor",
-                "documentationUrl": "https://github.com/craftcms/ckeditor/blob/master/README.md"
+                "documentationUrl": "https://github.com/craftcms/ckeditor/blob/5.x/README.md"
             },
             "autoload": {
                 "psr-4": {
@@ -837,10 +837,10 @@
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/ckeditor/issues?state=open",
                 "source": "https://github.com/craftcms/ckeditor",
-                "docs": "https://github.com/craftcms/ckeditor/blob/master/README.md",
-                "rss": "https://github.com/craftcms/ckeditor/commits/master.atom"
+                "docs": "https://github.com/craftcms/ckeditor/blob/5.x/README.md",
+                "rss": "https://github.com/craftcms/ckeditor/commits/5.x.atom"
             },
-            "time": "2026-03-30T19:11:21+00:00"
+            "time": "2026-04-27T23:04:54+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -10384,11 +10384,11 @@
         },
         {
             "name": "wrav/oembed",
-            "version": "3.2.1",
+            "version": "3.2.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wrav/oembed/zipball/1052ae607eb7fc83f6470c3d8e73202c78236669",
-                "reference": "1052ae607eb7fc83f6470c3d8e73202c78236669",
+                "url": "https://api.github.com/repos/wrav/oembed/zipball/32a58c0cdec1ec4e2187aace2c4fbb4eaec178ad",
+                "reference": "32a58c0cdec1ec4e2187aace2c4fbb4eaec178ad",
                 "shasum": ""
             },
             "require": {
@@ -10444,7 +10444,7 @@
                 "docs": "https://github.com/wrav/oembed/blob/master/README.md",
                 "issues": "https://github.com/wrav/oembed/issues"
             },
-            "time": "2026-03-05T02:24:29+00:00"
+            "time": "2026-05-01T01:26:57+00:00"
         },
         {
             "name": "yiisoft/yii2",
