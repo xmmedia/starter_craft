@@ -40,6 +40,12 @@ proxy:
     # @todo-craft update
     - pma.craftstarter.lndo.site
 tooling:
+  console:
+    disabled: true
+  craft:
+    service: appserver
+    description: Run a Craft CMS console command.
+    cmd: /app/craft
   xdebug-on:
     service: appserver
     description: Enable xdebug for apache.
