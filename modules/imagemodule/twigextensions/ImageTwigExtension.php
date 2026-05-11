@@ -14,6 +14,7 @@ use Craft;
 use craft\elements\Asset;
 use craft\helpers\Html;
 use craft\helpers\Template;
+use craft\web\twig\Extension;
 use Twig\Extension\AbstractExtension;
 use Twig\Markup;
 use Twig\TwigFunction;
@@ -55,6 +56,7 @@ class ImageTwigExtension extends AbstractExtension
     {
         return [
             new TwigFunction('image', [$this, 'getImage'], ['is_safe' => ['html']]),
+            new TwigFunction('imageOrSvg', [$this, 'getImageOrSvg'], ['is_safe' => ['html']]),
         ];
     }
 
@@ -65,11 +67,7 @@ class ImageTwigExtension extends AbstractExtension
         }
 
         if (!array_key_exists('alt', $attributes)) {
-            if (!empty(trim((string) $image->alt))) {
-                $attributes['alt'] = $image->alt;
-            } else {
-                $attributes['alt'] = $image->title;
-            }
+            $attributes['alt'] = $this->resolveAlt($image);
         }
 
         $html = Html::tag(
@@ -87,5 +85,39 @@ class ImageTwigExtension extends AbstractExtension
         );
 
         return Template::raw($html);
+    }
+
+    public function getImageOrSvg(
+        ?Asset $image,
+        string|array|null $transform = null,
+        array $attributes = [],
+    ): Markup|string {
+        if (null === $image) {
+            return new Markup('', Craft::$app->charset);
+        }
+
+        if ('image/svg+xml' === $image->getMimeType()) {
+            $twig = Craft::$app->getView()->getTwig();
+            /** @var Extension $craftExtension */
+            $craftExtension = $twig->getExtension(Extension::class);
+
+            if (!array_key_exists('aria-label', $attributes) && !array_key_exists('role', $attributes)) {
+                $attributes['role'] = 'img';
+                $attributes['aria-label'] = $this->resolveAlt($image);
+            }
+
+            return $craftExtension->attrFilter($craftExtension->svgFunction($image), $attributes);
+        }
+
+        return $this->getImage($image, $transform, $attributes);
+    }
+
+    private function resolveAlt(Asset $image): string
+    {
+        if (!empty(trim((string) $image->alt))) {
+            return $image->alt;
+        }
+
+        return $image->title;
     }
 }
