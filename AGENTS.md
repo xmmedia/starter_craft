@@ -39,9 +39,9 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 ### Craft CMS
 
-- **Run console**: `./craft` (executable)
-- **Clear caches**: `./craft clear-caches/all`
-- **Apply migrations**: `./craft up`
+- **Run console**: `./craft` (executable) or `lando craft` within Lando
+- **Clear caches**: `lando craft clear-caches/all`
+- **Apply migrations**: `lando craft up`
 - **Project config**: Stored in `config/project/` directory with YAML files
 
 ### Local Development (Lando)
