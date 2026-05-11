@@ -3,7 +3,7 @@
 {% set heading = block.heading | heading_striptags %}
 {% set textBlock = block.textBlock %}
 
-{{ style.bg_style_block(block.bannerImage.one(), 'banner', 'banner--', block.id) }}
+{{ style.bg_style_block(block.bannerImage.one(), 'banner', 'banner', block.id) }}
 
 <section class="banner banner--{{ block.id }} {{ block.classes }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% if heading or textBlock %}
