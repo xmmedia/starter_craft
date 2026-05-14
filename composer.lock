@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7eff47fd90a822a4319159c9e37054aa",
+    "content-hash": "69a42fa706bcbcb7fcd788e13cbf94ef",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -9998,11 +9998,11 @@
         },
         {
             "name": "verbb/field-manager",
-            "version": "4.0.3",
+            "version": "4.0.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/dcb654555159ac4812f62907f59efbcc626da276",
-                "reference": "dcb654555159ac4812f62907f59efbcc626da276",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/592b96f904df8e31c9e0d197a2d7fbddd64528a4",
+                "reference": "592b96f904df8e31c9e0d197a2d7fbddd64528a4",
                 "shasum": ""
             },
             "require": {
@@ -10046,7 +10046,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2024-10-20T02:01:18+00:00"
+            "time": "2026-05-14T00:59:57+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
