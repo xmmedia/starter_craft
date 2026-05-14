@@ -5,6 +5,7 @@ entryTypes:
     uid: 554d5c17-904d-4637-9bfc-f85a9f70ba44 # Page Blocks
 handle: homepage
 maxAuthors: 5
+minAuthors: 1
 name: Homepage
 previewTargets:
   -
