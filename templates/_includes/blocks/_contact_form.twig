@@ -7,7 +7,7 @@
 <div id="form--{{ block.id }}" class="{{ blockWidth(block) }} {{ block.classes }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     {% if block.heading %}
-        {{ tag('h2', { html: block.heading | heading_striptags }) }}
+        <h2>{{ block.heading | heading_striptags }}</h2>
     {% endif %}
     {% if block.intro %}
         <div class="w-content-copy">{{ block.intro }}</div>
