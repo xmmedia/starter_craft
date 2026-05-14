@@ -4,7 +4,7 @@
     }
 
     a, .button-link {
-        @apply text-blue-500 no-underline transition-colors outline-hidden rounded-sm;
+        @apply text-blue-500 no-underline transition outline-hidden rounded-sm;
 
         &:hover,
         &:active {
