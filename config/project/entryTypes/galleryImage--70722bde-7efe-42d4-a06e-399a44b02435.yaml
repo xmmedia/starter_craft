@@ -18,7 +18,7 @@ fieldLayouts:
             fieldUid: c4018390-9eaa-416b-a81c-bc7ddecf162c # Gallery Image
             handle: null
             instructions: null
-            label: null
+            label: Image
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -34,7 +34,7 @@ handle: galleryImage
 hasTitleField: false
 icon: null
 name: 'Gallery Image'
-showSlugField: true
+showSlugField: false
 showStatusField: true
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
