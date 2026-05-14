@@ -26,7 +26,7 @@
 {% endif %}
 
 {# if adjusted, review other uses #}
-{{ tag(block.headingLevel | default('h2'), {
+{{ heading(block.headingLevel | default(2), {
     html: heading,
     id: block.elementId,
     class: classes,
