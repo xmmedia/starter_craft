@@ -198,7 +198,7 @@ fieldLayouts:
     thumbFieldKey: 'layoutElement:d41a2d79-b292-483a-a997-0f74f3b0c9de'
 handle: video
 hasTitleField: true
-icon: null
+icon: film
 name: Video
 showSlugField: false
 showStatusField: true

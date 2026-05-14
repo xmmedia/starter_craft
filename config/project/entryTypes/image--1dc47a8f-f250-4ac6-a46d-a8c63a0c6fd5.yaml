@@ -239,7 +239,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: image
 hasTitleField: false
-icon: null
+icon: image
 name: Image
 showSlugField: false
 showStatusField: true

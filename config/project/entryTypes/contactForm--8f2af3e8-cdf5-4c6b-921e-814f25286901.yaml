@@ -171,7 +171,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: contactForm
 hasTitleField: false
-icon: null
+icon: input-text
 name: 'Contact Form'
 showSlugField: false
 showStatusField: true

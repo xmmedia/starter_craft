@@ -64,7 +64,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: gallery
 hasTitleField: true
-icon: null
+icon: images
 name: Gallery
 showSlugField: false
 showStatusField: true

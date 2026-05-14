@@ -178,7 +178,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: heading
 hasTitleField: false
-icon: null
+icon: heading
 name: Heading
 showSlugField: false
 showStatusField: true

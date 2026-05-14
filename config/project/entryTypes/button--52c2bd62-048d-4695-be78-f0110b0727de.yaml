@@ -148,7 +148,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: button
 hasTitleField: true
-icon: null
+icon: hand-pointer
 name: Button
 showSlugField: false
 showStatusField: true
