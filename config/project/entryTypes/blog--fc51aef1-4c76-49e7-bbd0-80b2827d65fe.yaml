@@ -69,22 +69,6 @@ fieldLayouts:
             warning: null
             width: 100
           -
-            dateAdded: '2024-11-26T18:45:15+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 787e1739-73f9-4cc5-876c-48a53d41a987 # Post Categories
-            handle: null
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 0ab016bf-47ec-422f-a6b2-ad590e2dfe55
-            userCondition: null
-            warning: null
-            width: 100
-          -
             dateAdded: '2024-12-09T22:11:18+00:00'
             editCondition: null
             elementCondition: null
