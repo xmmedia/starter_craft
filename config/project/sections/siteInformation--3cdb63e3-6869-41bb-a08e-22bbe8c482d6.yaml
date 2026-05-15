@@ -1,0 +1,17 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: c483ee11-fc15-44c9-affb-071a9fa2bbb7 # Site Information
+handle: siteInformation
+maxAuthors: 1
+minAuthors: 1
+name: 'Site Information'
+propagationMethod: all
+siteSettings:
+  42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

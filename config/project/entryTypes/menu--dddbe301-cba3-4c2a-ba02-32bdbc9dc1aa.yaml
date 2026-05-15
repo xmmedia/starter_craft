@@ -1,5 +1,8 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
 fieldLayouts:
-  8876af48-2dd0-4441-b19c-d385702221dd:
+  3d523120-4087-417a-9b72-2701926028dd:
     cardThumbAlignment: end
     tabs:
       -
@@ -63,6 +66,15 @@ fieldLayouts:
         uid: fbc45c30-e949-4090-8f6b-724a04c68d76
         userCondition: null
     thumbFieldKey: null
-handle: menus
-name: Menus
-sortOrder: 2
+handle: menu
+hasTitleField: false
+icon: null
+name: Menu
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

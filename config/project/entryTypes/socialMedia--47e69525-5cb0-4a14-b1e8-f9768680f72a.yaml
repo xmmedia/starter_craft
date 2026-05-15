@@ -1,5 +1,8 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
 fieldLayouts:
-  0ff68ca1-69a6-441e-b612-244774f99bc7:
+  549fef70-7420-4c59-8342-95c5a4276271:
     cardThumbAlignment: end
     tabs:
       -
@@ -26,5 +29,14 @@ fieldLayouts:
         userCondition: null
     thumbFieldKey: null
 handle: socialMedia
+hasTitleField: false
+icon: null
 name: 'Social Media'
-sortOrder: 3
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

@@ -1,0 +1,17 @@
+defaultPlacement: end
+enableVersioning: true
+entryTypes:
+  -
+    uid: 47e69525-5cb0-4a14-b1e8-f9768680f72a # Social Media
+handle: socialMedia
+maxAuthors: 1
+minAuthors: 1
+name: 'Social Media'
+propagationMethod: all
+siteSettings:
+  42773db2-f2e9-40a9-ab5e-e3406f1a6a25: # XM Craft Starter
+    enabledByDefault: true
+    hasUrls: false
+    template: null
+    uriFormat: null
+type: single

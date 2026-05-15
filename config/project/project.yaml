@@ -1,4 +1,4 @@
-dateModified: 1778865804
+dateModified: 1778868176
 elementSources:
   craft\elements\Asset:
     -
@@ -80,23 +80,31 @@ elementSources:
       defaultViewMode: ''
       key: 'custom:15ef40e8-ff07-46ea-ad98-b8358c1f2c70'
       label: 'All Pages'
-      page: Entries
+      page: Content
       tableAttributes:
         - uri
       type: custom
     -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: eb9ee93b-e480-4e98-8876-f7c6be3e03b0
+            values:
+              - 49523c85-f034-4218-a653-a10e294faac5 # Homepage
+        elementType: craft\elements\Entry
+        fieldContext: global
       defaultSort:
-        - title
+        - id
         - asc
       defaultViewMode: ''
-      disabled: false
-      key: singles
-      page: Entries
-      tableAttributes:
-        - status
-        - link
-        - uri
-      type: native
+      key: 'custom:642cb71e-7434-433f-8cfd-b202dc8d58c9'
+      label: Homepage
+      page: Content
+      tableAttributes: '-'
+      type: custom
     -
       defaultSort:
         - structure
@@ -104,7 +112,7 @@ elementSources:
       defaultViewMode: ''
       disabled: false
       key: 'section:4119a1ff-3e12-46a5-b9f5-a6f932b4fec2' # Pages
-      page: Entries
+      page: Content
       tableAttributes:
         - status
         - postDate
@@ -113,12 +121,69 @@ elementSources:
         - uri
       type: native
     -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
       key: 'section:2b537640-9acd-4e53-a1b4-f497d2e79cd0' # Blog
-      page: Entries
+      page: Content
+      tableAttributes:
+        - status
+        - postDate
+        - expiryDate
+        - link
       type: native
     -
+      condition:
+        class: craft\elements\conditions\entries\EntryCondition
+        conditionRules:
+          -
+            class: craft\elements\conditions\entries\SectionConditionRule
+            operator: in
+            uid: 8b925003-dee6-4284-8519-0fc7e119c035
+            values:
+              - 608469c0-0a9a-46ad-bbec-1ddb9b3b768e # Menus
+              - 3cdb63e3-6869-41bb-a08e-22bbe8c482d6 # Site Information
+              - e79e5cd5-8880-4019-9734-a624230303ed # Social Media
+        elementType: craft\elements\Entry
+        fieldContext: global
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: cards
+      key: 'custom:8f7b5fb9-7343-40e6-9265-bb160565e450'
+      label: Globals
+      page: Content
+      tableAttributes: '-'
+      type: custom
+    -
+      defaultSort:
+        - title
+        - asc
+      defaultViewMode: cards
+      disabled: false
+      key: singles
+      page: Content
+      tableAttributes:
+        - status
+        - link
+        - uri
+      type: native
+    -
+      defaultSort:
+        - postDate
+        - desc
+      defaultViewMode: ''
+      disabled: false
       key: '*'
-      page: Entries
+      page: Content
+      tableAttributes:
+        - status
+        - section
+        - postDate
+        - expiryDate
+        - link
       type: native
 email:
   fromEmail: $FROM_EMAIL
@@ -189,8 +254,8 @@ meta:
     3ac4730a-1415-412a-b4cd-37189f1a9a61: 'Heading Style' # Heading Style
     3c51fb22-78f8-42a0-8b90-5969644be5c8: 'Image - Tall - Small' # Image - Tall - Small
     3c177d9c-9600-48c6-b1bc-2b1067275e4b: Link # Link
+    3cdb63e3-6869-41bb-a08e-22bbe8c482d6: 'Site Information' # Site Information
     4c7c1340-4099-49ba-945e-752e2f374f84: 'Image - Square - Small' # Image - Square - Small
-    4d1d39e1-6786-40b9-8622-025a3554e456: 'Site Information' # Site Information
     4deb1488-ff4e-4359-91ed-22574db39b8e: Accordion # Accordion
     4e2f2db3-5884-4b3c-807d-936f4f7dbcf6: Card # Card
     5f2efa0b-1e87-4d02-a636-f17256ef85d1: 'Block Width' # Block Width
@@ -208,6 +273,7 @@ meta:
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element ID' # Element ID
     15e7ea2c-5cb7-40b2-81bc-1a179ea40cd1: 'Image - Wide - Large' # Image - Wide - Large
     17ed004b-264f-4318-be4a-407867219887: 'Horizontal Alignment' # Horizontal Alignment
+    47e69525-5cb0-4a14-b1e8-f9768680f72a: 'Social Media' # Social Media
     49c7c1d7-292b-450a-bf9e-c53ee0c295f8: 'Accordion Icon' # Accordion Icon
     50ce781f-8f6e-4eeb-b0b7-faa9e9821913: 'Text Block' # Text Block
     52c2bd62-048d-4695-be78-f0110b0727de: Button # Button
@@ -220,7 +286,6 @@ meta:
     68b242e4-9392-4e63-a1e6-d39cf4b73d02: 'Menu Link' # Menu Link
     68c02e53-bd4b-45e6-8721-dfa278498dbb: 'Herobar Image' # Herobar Image
     75f7d82b-4d45-477b-848c-4f539cfe3469: Hero # Hero
-    77e77066-5f46-47e0-8cd1-44df0c9e2033: 'Social Media' # Social Media
     80ffc64e-4e53-4ba1-8e8f-95d4f45b8946: 'Text Alignment' # Text Alignment
     84d2deef-d6fe-4a07-b967-b71469d68219: 'SEO - Sharing Image Alt' # SEO - Sharing Image Alt
     84ee4464-5ee9-437c-8ce9-ac6cd3d50663: Images # Images
@@ -239,7 +304,6 @@ meta:
     733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
     843ce4e9-9dc0-4828-a41f-d0ec6f8df011: 'Video iFrame' # Video iFrame
-    0897a6a4-127b-4d14-8fae-96c64eb06027: Menus # Menus
     1140dcc1-54a1-40f2-b988-d071f0737166: 'Image Orientation' # Image Orientation
     2062b2bd-5662-4e7c-a7cf-0f05a4b4da60: 'Herobar - Heading' # Herobar - Heading
     2338f10f-0595-4642-bd0c-077886b0da3b: Accordion # Accordion
@@ -254,6 +318,7 @@ meta:
     64415fb8-4fcf-4c03-b35b-0baade3e6224: Size # Size
     70722bde-7efe-42d4-a06e-399a44b02435: 'Gallery Image' # Gallery Image
     88653b5e-8ca3-4e44-85c0-6f158c9eca99: 'Text Block' # Text Block
+    608469c0-0a9a-46ad-bbec-1ddb9b3b768e: Menus # Menus
     58660703-7281-44d1-8033-13c7176b2d06: 'Video Custom' # Video Custom
     a8e6c61b-4a37-4d1a-8de1-c908b52dbf43: 'Phone Numbers' # Phone Numbers
     a9d87289-cfe2-4244-bc61-fcf804f19e75: 'SEO - Meta Description' # SEO - Meta Description
@@ -269,6 +334,7 @@ meta:
     c3bdff5b-2014-42e0-87b1-372f17b8ec0e: 'Vertical Alignment' # Vertical Alignment
     c5a86f25-411f-425a-a809-8053ee814aa4: 'Image Full Width' # Image Full Width
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
+    c483ee11-fc15-44c9-affb-071a9fa2bbb7: 'Site Information' # Site Information
     c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
     cdfb2a4f-7805-449f-9e67-8b2a5d34f588: 'Heading Level' # Heading Level
@@ -279,8 +345,10 @@ meta:
     d2312b71-68b5-4869-b6ca-0d3d447abb38: 'Section End' # Section End
     d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text' # Post Content - Text
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
+    dddbe301-cba3-4c2a-ba02-32bdbc9dc1aa: Menu # Menu
     e0c43b7d-7d3e-420d-9439-dfce3810bc7a: 'Image - Square - Large' # Image - Square - Large
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
+    e79e5cd5-8880-4019-9734-a624230303ed: 'Social Media' # Social Media
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
     f5ce74ee-26a4-476d-8821-9fa472b0e3dd: Message # Message
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card

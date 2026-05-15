@@ -44,6 +44,8 @@ return GeneralConfig::create()
     ->maxUploadFileSize('50M')
     ->transformSvgs(false)
     ->useEmailAsUsername()
+    // preload the singles so that they act like the old globals
+    ->preloadSingles()
     // increase the expiry on account activation & password reset tokens to 7 days
     ->verificationCodeDuration('P7D')
     // in prod/staging, don't run the queue automatically, instead use cron job (every minute)

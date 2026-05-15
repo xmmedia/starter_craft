@@ -1,5 +1,8 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
 fieldLayouts:
-  9e790d65-95f2-44bb-8135-327e7f77b6aa:
+  48d198f3-2b4e-436d-a88a-3534e813c909:
     cardThumbAlignment: end
     tabs:
       -
@@ -90,5 +93,14 @@ fieldLayouts:
         userCondition: null
     thumbFieldKey: null
 handle: siteInformation
+hasTitleField: false
+icon: null
 name: 'Site Information'
-sortOrder: 1
+showSlugField: false
+showStatusField: false
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'

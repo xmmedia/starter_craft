@@ -82,8 +82,8 @@ handle: pageBlocks
 hasTitleField: true
 icon: null
 name: 'Page Blocks'
-showSlugField: true
-showStatusField: true
+showSlugField: false
+showStatusField: false
 slugTranslationKeyFormat: null
 slugTranslationMethod: site
 titleFormat: null
