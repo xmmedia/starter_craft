@@ -57,7 +57,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 **Backend:**
 - **Craft CMS 5** (CMS)
-- Craft plugins: Contact Form, Contact Form Honeypot, Contact Form Extensions, CKEditor, SEO (Ether), Field Manager (Verbb), oEmbed, Vite integration
+- Craft plugins: Contact Form, Contact Form Honeypot, Contact Form Extensions, CKEditor, SEO (Ether), Field Manager (Verbb), oEmbed, Vite integration, Craft MCP (stimmt)
 - Custom Yii2 modules for extending functionality
 - Twig templating engine
 
@@ -85,8 +85,9 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 /templates              # Twig templates
   _layout.twig          # Base layout
   _page.twig            # Page template wrapper
-  _default.twig         # Default entry template
+  _home.twig            # Home page template
   /_includes            # Reusable template partials
+    /blocks             # Block-specific partials (accordion, banner, etc.)
   /blog                 # Blog templates
   /services             # Services templates
 
@@ -107,7 +108,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 The application bootstraps three custom Yii2 modules in `config/app.php`:
 
-1. **ContactFormModule** (`modules/ContactFormModule.php`):
+1. **ContactFormModule** (`modules/contactformmodule/ContactFormModule.php`):
    - Customizes Craft's Contact Form plugin behavior
    - Sets from address to default mailer from
    - Adds custom validation for name, email, and message fields
@@ -124,7 +125,7 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 ### Frontend Build System
 
 **Vite Configuration** (`vite.config.mjs`):
-- Two entry points: `public.js` and `editor.js`
+- Two entry points: `public.js` and `editor.js` (via `rolldownOptions` — Vite 8/Rolldown)
 - Output directory: `public/build`
 - Dev server port and CORS origin: See Project Configuration
 - HTTPS via mkcert
