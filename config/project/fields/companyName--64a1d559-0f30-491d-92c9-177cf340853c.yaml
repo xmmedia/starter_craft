@@ -1,6 +1,6 @@
 columnSuffix: null
 handle: companyName
-instructions: 'Shown in the footer as the copyright holder.'
+instructions: 'Appended to the page title of the site and shown in the footer as the copyright holder.'
 name: 'Company Name'
 searchable: false
 settings:
