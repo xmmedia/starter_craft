@@ -1,4 +1,4 @@
-dateModified: 1778870783
+dateModified: 1778877701
 elementSources:
   craft\elements\Asset:
     -
@@ -103,7 +103,9 @@ elementSources:
       key: 'custom:642cb71e-7434-433f-8cfd-b202dc8d58c9'
       label: Homepage
       page: Content
-      tableAttributes: '-'
+      tableAttributes:
+        - link
+        - uri
       type: custom
     -
       defaultSort:
