@@ -17,6 +17,8 @@ return GeneralConfig::create()
     // @todo-craft
     ->defaultCountryCode('CA')
     ->enableTwigSandbox()
+    // preload the singles so that they act like the old globals
+    ->preloadSingles()
     // Set the default week start day for date pickers (0 = Sunday, 1 = Monday, etc.)
     ->defaultWeekStartDay(0)
     // Prevent generated URLs from including "index.php"
@@ -44,8 +46,6 @@ return GeneralConfig::create()
     ->maxUploadFileSize('50M')
     ->transformSvgs(false)
     ->useEmailAsUsername()
-    // preload the singles so that they act like the old globals
-    ->preloadSingles()
     // increase the expiry on account activation & password reset tokens to 7 days
     ->verificationCodeDuration('P7D')
     // in prod/staging, don't run the queue automatically, instead use cron job (every minute)
