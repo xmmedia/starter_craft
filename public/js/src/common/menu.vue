@@ -1,5 +1,5 @@
 <template>
-    <nav class="w-full lg:w-auto" :class="{ 'header-mobile-open': showMobileMenu }" role="navigation" aria-label="Main">
+    <nav class="w-full lg:w-auto" :class="{ 'header-mobile-open': showMobileMenu }" aria-label="Main">
         <ul class="header_nav-list">
             <li v-for="(item,key) in items" :key="key" class="header-nav_item">
                 <a :href="item.url" class="header_nav-link" @click="showMobileMenu = false">{{ item.label }}</a>
