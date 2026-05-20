@@ -40,7 +40,7 @@ fieldLayouts:
             fieldUid: 3c177d9c-9600-48c6-b1bc-2b1067275e4b # Link
             handle: headingLink
             instructions: 'Makes the heading a link.'
-            label: Lnk
+            label: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField

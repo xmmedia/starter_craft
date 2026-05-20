@@ -105,7 +105,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: cards
 hasTitleField: true
-icon: null
+icon: money-check
 name: Cards
 showSlugField: false
 showStatusField: true
