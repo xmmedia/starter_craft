@@ -32,7 +32,7 @@ fieldLayouts:
             fieldUid: 3c177d9c-9600-48c6-b1bc-2b1067275e4b # Link
             handle: cardLink
             instructions: null
-            label: Link
+            label: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
