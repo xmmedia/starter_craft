@@ -75,7 +75,7 @@ fieldLayouts:
         name: Content
         uid: decee093-ad21-4ef2-a706-7c96b2acdcb7
         userCondition: null
-    thumbFieldKey: null
+    thumbFieldKey: 'layoutElement:1abfa14f-d134-4de7-a026-c141c0b75c0d'
 handle: card
 hasTitleField: false
 icon: null
