@@ -27,6 +27,23 @@ settings:
       __assoc__:
         -
           - label
+          - Google
+        -
+          - value
+          - google
+        -
+          - icon
+          - google
+        -
+          - color
+          - ''
+        -
+          - default
+          - ''
+    -
+      __assoc__:
+        -
+          - label
           - Instagram
         -
           - value
