@@ -47,5 +47,10 @@
     "vite-plugin-mkcert": "^2.0.0",
     "vue-eslint-parser": "^10.0.0"
   },
+  "dependenciesMeta": {
+    "core-js": {
+      "built": true
+    }
+  },
   "packageManager": "yarn@4.15.0"
 }
