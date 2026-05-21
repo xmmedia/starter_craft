@@ -32,7 +32,7 @@ fieldLayouts:
             uid: 41bf4be2-977f-491b-aa05-f8fe0b978f1e
             userCondition: null
             warning: null
-            width: 100
+            width: 50
           -
             dateAdded: '2026-05-06T16:45:15+00:00'
             editCondition: null
