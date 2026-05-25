@@ -1,9 +1,10 @@
 {% for profile in socialMedia.socialMedia.all() %}
-    {# if the url/link label has been entered in craft, it will be output; if not, nothing will be output #}
-    <a href="{{ profile.profileUrl.value }}" title="{{ profile.profileUrl.label(true) }}">
+    {% set linkTitle = profile.profileUrl.label(true) ?? profile.platform.label %}
+
+    <a href="{{ profile.profileUrl.value }}" title="{{ linkTitle }}">
         <svg class="social-icon">
             <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#social-{{ profile.platform }}"></use>
         </svg>
-        <span class="sr-only">{{ profile.profileUrl.label }}</span>
+        <span class="sr-only">{{ linkTitle }}</span>
     </a>
 {% endfor %}

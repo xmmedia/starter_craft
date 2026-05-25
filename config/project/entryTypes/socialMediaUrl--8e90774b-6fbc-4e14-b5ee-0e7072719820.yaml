@@ -36,7 +36,7 @@ fieldLayouts:
             instructions: null
             label: null
             required: true
-            tip: 'The label will show up as alt/title text for SEO and accessbility.'
+            tip: 'The label will show up as alt/title text for SEO and accessibility. If left blank, the social media network name will be used.'
             type: craft\fieldlayoutelements\CustomField
             uid: 98984520-c140-477b-a82b-806c100ae542
             userCondition: null
