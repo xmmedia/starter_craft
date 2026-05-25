@@ -53,7 +53,7 @@
                         <ul class="header_nav-list">
                             {% for menuItem in menus.menuHeader.all() %}
                                 <li class="header-nav_item">
-                                    <a href="{{ menuItem.menuLink.value }}" class="header_nav-link">{{ menuItem.menuLink.label }}</a>
+                                    <a href="{{ menuItem.menuLink.value }}" class="header_nav-link">{{ menuItem.menuLabel }}</a>
                                 </li>
                             {% endfor %}
                         </ul>

@@ -81,7 +81,7 @@ class XmTwigExtension extends AbstractExtension
             function (Entry $item): array {
                 return [
                     'url'   => $item->menuLink->url,
-                    'label' => $item->menuLink->label,
+                    'label' => $item->menuLabel,
                 ];
             },
             $items,
@@ -94,7 +94,7 @@ class XmTwigExtension extends AbstractExtension
             function (Entry $page): array {
                 return [
                     'id'    => $page->getId(),
-                    'title' => $page->title,
+                    'title' => $page->menuLabel ?? $page->title,
                     'url'   => $page->getUrl(),
                 ];
             },

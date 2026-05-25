@@ -16,14 +16,30 @@ fieldLayouts:
             fieldUid: 68b242e4-9392-4e63-a1e6-d39cf4b73d02 # Menu Link
             handle: null
             instructions: null
-            label: null
+            label: Link
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: 822480e6-28c8-496b-a594-b583afa3a026
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            dateAdded: '2026-05-25T12:58:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 67affb61-d6a6-4da9-bba4-dc9c601838fa # Menu Label
+            handle: null
+            instructions: null
+            label: Label
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 81582c43-9ef8-4366-b33c-f1e7cd306d37
+            userCondition: null
+            warning: null
+            width: 50
         name: Content
         uid: 60756cdd-384e-4a2e-84dd-75aafef8b8bd
         userCondition: null
