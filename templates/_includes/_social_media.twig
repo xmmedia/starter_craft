@@ -2,7 +2,7 @@
     {% set linkTitle = profile.profileUrl.label(true) ?? profile.platform.label %}
 
     <a href="{{ profile.profileUrl.value }}" title="{{ linkTitle }}">
-        <svg class="social-icon">
+        <svg class="fill-current w-6 h-6">
             <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#social-{{ profile.platform }}"></use>
         </svg>
         <span class="sr-only">{{ linkTitle }}</span>
