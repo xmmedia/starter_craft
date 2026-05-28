@@ -44,9 +44,10 @@ static:
   interruptible: true
   script:
     - *versions-script
-    - *security-checks
     # install php dependencies
     - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs
+    # composer requires packages to be installed before running security checks
+    - *security-checks
     # Install node/JS dependencies
     - yarn install --immutable
     # lint JS & CSS
@@ -63,6 +64,9 @@ static:
     - master
   script:
     - *versions-script
+    # install php dependencies
+    - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs --no-dev
+    # composer requires packages to be installed before running security checks
     - *security-checks
     # setup vars for paths
     - TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"
