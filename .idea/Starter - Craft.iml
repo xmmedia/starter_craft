@@ -163,6 +163,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/friendsoftwig/twigcs" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/php-generator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php85" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
