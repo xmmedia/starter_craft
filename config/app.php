@@ -48,5 +48,9 @@ return [
                 'maxFiles' => 90,
             ],
         ],
+        /*'queue' => [
+            // Allow individual jobs to run for 15 minutes:
+            'ttr' => 900,
+        ],*/
     ],
 ];
