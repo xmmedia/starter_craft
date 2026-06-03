@@ -17,6 +17,10 @@ export default {
         ],
         "custom-property-empty-line-before": null,
         "comment-empty-line-before": null,
+        "at-rule-empty-line-before": [
+            "always",
+            { "ignore": ["after-comment", "first-nested", "inside-block"], "ignoreAtRules": ["apply"] },
+        ],
         "nesting-selector-no-missing-scoping-root": [true, { "ignoreAtRules": ["utility"] }],
     },
 };
