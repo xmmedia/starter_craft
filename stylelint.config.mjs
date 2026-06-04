@@ -19,7 +19,7 @@ export default {
         "comment-empty-line-before": null,
         "at-rule-empty-line-before": [
             "always",
-            { "ignore": ["after-comment", "first-nested", "inside-block"], "ignoreAtRules": ["apply"] },
+            { "ignore": ["after-comment", "first-nested"], "ignoreAtRules": ["else", "apply", "import"] },
         ],
         "nesting-selector-no-missing-scoping-root": [true, { "ignoreAtRules": ["utility"] }],
     },
