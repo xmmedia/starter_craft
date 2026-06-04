@@ -5,7 +5,7 @@ name: 'Element ID'
 searchable: false
 settings:
   byteLimit: null
-  charLimit: 25
+  charLimit: 50
   code: false
   initialRows: 4
   multiline: false
