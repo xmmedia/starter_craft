@@ -7,6 +7,7 @@ settings:
   advancedLinkFields:
     - target
     - download
+    - urlSuffix
   availableTransforms:
     - e0c43b7d-7d3e-420d-9439-dfce3810bc7a # Image - Square - Large
     - 4c7c1340-4099-49ba-945e-752e2f374f84 # Image - Square - Small
