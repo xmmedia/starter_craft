@@ -259,6 +259,7 @@ When updating PHP (currently 8.5):
    - `setup_dev.sh` – 4 places
    - `setup_prod.sh` – 4 places
    - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, `php-fpm` service name)
+   - Add the related migration to `php_cs.dist`
 3. Run `lando rebuild`
 4. Update `composer.lock` via `lando composer update`
 5. Update version in `README.md` and `AGENTS.md`
