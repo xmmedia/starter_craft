@@ -12,7 +12,7 @@
 /* all default tw theme vars: https://tailwindcss.com/docs/theme#default-theme-variable-reference */
 /* colour converter: https://lik.ai/tools/color-convertor/ *** with a precision of 4 ***  */
 @theme {
-    --breakpoint-xs: 25rem;
+    --breakpoint-xs: 25rem; /* 400px */
 
     /* the max width of the design */
     --max-width-max: 80rem; /* 1280px */
