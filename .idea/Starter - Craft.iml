@@ -159,7 +159,11 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/php-generator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/nette/utils" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php85" />
-      <excludeFolder url="file://$MODULE_DIR$/storage" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/backups" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/composer-backups" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/config-deltas" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/runtime" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/sessions" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
