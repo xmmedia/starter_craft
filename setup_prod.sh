@@ -24,7 +24,7 @@ fi
 PHP_VERSION=$(php -v|grep --only-matching --perl-regexp "(PHP )\d+\.\\d+\.\\d+"|cut -c 5-7)
 PHP_MINIMUM_VERSION=8.5
 printf "Current PHP version: ${PHP_VERSION}\nMinimum PHP version: ${PHP_MINIMUM_VERSION}\n"
-if [ $(echo "$PHP_VERSION >= $PHP_MINIMUM_VERSION" | bc) -eq 0 ]; then
+if [ $(awk "BEGIN {print ($PHP_VERSION >= $PHP_MINIMUM_VERSION) ? 0 : 1}") -eq 1 ]; then
     echo "************"
     echo "Will switch PHP version to ${PHP_MINIMUM_VERSION}"
     echo "************"
@@ -56,7 +56,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 printf "\nDISABLE_AUTO_TITLE=\"true\"" >> ~/.zshrc
 printf "\n\n"
 
-if [ $(echo "$PHP_VERSION >= $PHP_MINIMUM_VERSION" | bc) -eq 0 ]; then
+if [ $(awk "BEGIN {print ($PHP_VERSION >= $PHP_MINIMUM_VERSION) ? 0 : 1}") -eq 1 ]; then
     echo "Switching PHP version to ${PHP_MINIMUM_VERSION}"
     printf "\nsource /opt/remi/php85/enable" >> ~/.zshrc
     printf "\nsource /opt/remi/php85/enable" >> ~/.bashrc
