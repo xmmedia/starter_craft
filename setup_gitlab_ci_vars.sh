@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Sets GitLab CI/CD variables for a site using this starter.
+# Sets GitLab CI/CD variables for a site.
 # Run once per scope (staging / production) per project.
 #
 # Prerequisites:
@@ -249,4 +249,7 @@ if [[ -f "${KEY_FILE}.pub" ]]; then
     cat "${KEY_FILE}.pub"
     echo ""
     echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
+    echo ""
+    echo -e "${YELLOW}Once the public key is on the server, delete the local key files:${NC}"
+    echo "  rm \"$KEY_FILE\" \"${KEY_FILE}.pub\""
 fi
