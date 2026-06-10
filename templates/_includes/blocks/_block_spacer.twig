@@ -1,14 +1,1 @@
-{% set classes = [] %}
-
-{% switch block.spaceSize %}
-    {% case '4' %}
-        {% set classes = classes | merge(['mb-4']) %}
-    {% case '8' %}
-        {% set classes = classes | merge(['mb-8']) %}
-    {% case '12' %}
-        {% set classes = classes | merge(['mb-12']) %}
-    {% case '16' %}
-        {% set classes = classes | merge(['mb-16']) %}
-{% endswitch %}
-
-<div class="{{ blockWidth(block) }} {{ classes | join(' ') }}"></div>
+<div class="{{ blockWidth(block) }} mb-{{ block.spaceSize }}"></div>
