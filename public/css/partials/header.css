@@ -1,5 +1,5 @@
-@media not (prefers-reduced-motion: reduce) {
-    .header {
+.header {
+    @variant motion-safe {
         view-transition-name: header;
     }
 }
