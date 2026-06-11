@@ -14,29 +14,23 @@
 
 {% switch block.imageHorizontalAlignment | default('center') %}
     {% case 'left' %}
-        {# tw: justify-start #}
-        {% set flexJustify = 'start' %}
+        {% set flexJustify = 'justify-start' %}
     {% case 'right' %}
-        {# tw: justify-end-safe #}
-        {% set flexJustify = 'end-safe' %}
+        {% set flexJustify = 'justify-end-safe' %}
     {% default %}
-        {# tw: justify-center-safe #}
-        {% set flexJustify = 'center' %}
+        {% set flexJustify = 'justify-center' %}
 {% endswitch %}
 {% switch block.imageVerticalAlignment | default('center') %}
     {% case 'top' %}
-        {# tw: items-start #}
-        {% set flexItems = 'start' %}
+        {% set flexItems = 'items-start' %}
     {% case 'bottom' %}
-        {# tw: items-end-safe #}
-        {% set flexItems = 'end-safe' %}
+        {% set flexItems = 'items-end-safe' %}
     {% default %}
-        {# tw: items-center-safe #}
-        {% set flexItems = 'center' %}
+        {% set flexItems = 'items-center' %}
 {% endswitch %}
 
 {% set wrapperClasses %}
-flex justify-{{ flexJustify }} items-{{ flexItems }} {{ blockWidth(block) }}
+flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
 {% endset %}
 
 <div class="{{ wrapperClasses }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
