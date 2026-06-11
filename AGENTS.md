@@ -202,8 +202,8 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 
 **CSS**:
 - Tailwind utility-first approach
+- Group related CSS properties together
 - Stylelint with Tailwind config (`stylelint.config.mjs`)
-- Use `@apply` sparingly
 - Prefer CSS animations over JavaScript-driven animations when possible
 - Property order:
   1. Visually obstructive — `display: none`, `visibility: hidden`
