@@ -1,8 +1,8 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 
-@config "../../tailwind.config.js";
-
 @import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
 
 /* base styles */
 @import "./partials/config.css";
