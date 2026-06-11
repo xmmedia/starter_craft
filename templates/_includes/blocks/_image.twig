@@ -1,8 +1,9 @@
 {% if block.imageAspectRatio == 'custom' %}
+    {# use imageWideLarge as the base, but change the width/height to the custom size #}
     {% set imageTransform = {
+        transform: 'imageWideLarge',
         width: block.customImageDimensions.imageWidth,
         height: block.customImageDimensions.imageHeight,
-        format: 'webp',
     } %}
 {% else %}
     {# @todo-craft adjust the maximum width to match the design maximum width #}
