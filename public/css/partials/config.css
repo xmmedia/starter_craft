@@ -64,6 +64,6 @@
 }
 
 @utility text-box {
-    /* improves vertical alignment of text inside buttons */
+    /* improves vertical alignment of text inside buttons (when they're all caps) */
     text-box: trim-both cap alphabetic;
 }
