@@ -164,6 +164,7 @@
       <excludeFolder url="file://$MODULE_DIR$/storage/config-deltas" />
       <excludeFolder url="file://$MODULE_DIR$/storage/runtime" />
       <excludeFolder url="file://$MODULE_DIR$/storage/sessions" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/logs" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
