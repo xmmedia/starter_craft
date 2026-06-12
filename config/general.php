@@ -45,6 +45,8 @@ return GeneralConfig::create()
     ->softDeleteDuration(0)
     ->maxUploadFileSize('50M')
     ->transformSvgs(false)
+    // disables for programmatic transforms & the default is off for new transforms
+    ->upscaleImages(false)
     ->useEmailAsUsername()
     // increase the expiry on account activation & password reset tokens to 7 days
     ->verificationCodeDuration('P7D')
