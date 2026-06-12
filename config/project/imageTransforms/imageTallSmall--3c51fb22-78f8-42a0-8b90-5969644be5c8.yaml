@@ -7,5 +7,5 @@ mode: crop
 name: 'Image - Tall - Small'
 position: center-center
 quality: null
-upscale: true
+upscale: false
 width: 700

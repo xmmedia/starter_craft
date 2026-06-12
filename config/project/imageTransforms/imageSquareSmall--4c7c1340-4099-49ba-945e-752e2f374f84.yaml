@@ -7,5 +7,5 @@ mode: crop
 name: 'Image - Square - Small'
 position: center-center
 quality: null
-upscale: true
+upscale: false
 width: 725

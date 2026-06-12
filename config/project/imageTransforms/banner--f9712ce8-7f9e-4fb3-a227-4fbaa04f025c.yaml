@@ -7,5 +7,5 @@ mode: crop
 name: Banner
 position: center-center
 quality: null
-upscale: true
+upscale: false
 width: null

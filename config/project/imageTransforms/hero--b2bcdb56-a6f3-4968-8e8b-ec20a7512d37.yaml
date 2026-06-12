@@ -7,5 +7,5 @@ mode: crop
 name: Hero
 position: center-center
 quality: null
-upscale: true
+upscale: false
 width: null

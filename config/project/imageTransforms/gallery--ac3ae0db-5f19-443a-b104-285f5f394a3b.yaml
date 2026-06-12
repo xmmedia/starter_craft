@@ -7,5 +7,5 @@ mode: crop
 name: Gallery
 position: center-center
 quality: null
-upscale: true
+upscale: false
 width: 525
