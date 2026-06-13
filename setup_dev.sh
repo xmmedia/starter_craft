@@ -79,6 +79,7 @@ mkdir -p $SHARED/storage
 mkdir -p $SHARED/storage/rebrand
 ln -s $SHARED/storage $RELEASE/storage
 ln -s $SHARED/public/assets $RELEASE/public/assets
+touch $SHARED/.env
 printf "\n\n"
 
 cd $RELEASE || exit
