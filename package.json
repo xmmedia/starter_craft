@@ -52,5 +52,9 @@
       "built": true
     }
   },
+  "engines": {
+    "node": ">=22",
+    "yarn": ">=4.15.0"
+  },
   "packageManager": "yarn@4.15.0"
 }
