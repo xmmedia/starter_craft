@@ -17,7 +17,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 - PHP 8.5+
 - MySQL 8.4
-- Node 22
+- Node 24
 - [Yarn v4](https://yarnpkg.com/en/docs/install)
 
 ## Development Commands
