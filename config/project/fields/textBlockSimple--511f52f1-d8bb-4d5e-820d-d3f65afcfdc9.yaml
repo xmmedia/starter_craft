@@ -4,7 +4,10 @@ instructions: null
 name: 'Text Block Simple'
 searchable: false
 settings:
-  advancedLinkFields: null
+  advancedLinkFields:
+    - target
+    - download
+    - urlSuffix
   availableTransforms: '*'
   availableVolumes: '*'
   characterLimit: null

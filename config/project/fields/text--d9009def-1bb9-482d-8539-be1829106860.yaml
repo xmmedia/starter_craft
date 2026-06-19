@@ -4,6 +4,10 @@ instructions: null
 name: 'Post Content - Text'
 searchable: false
 settings:
+  advancedLinkFields:
+    - target
+    - download
+    - urlSuffix
   availableTransforms: '*'
   availableVolumes: '*'
   characterLimit: null
