@@ -21,6 +21,7 @@ services:
     type: php:8.5
     build_as_root:
       - a2enmod headers
+      # to fix the "Xdebug: [Log Files] File '/tmp/xdebug.log' could not be opened." error
       - touch /tmp/xdebug.log && chmod 666 /tmp/xdebug.log
   database:
     creds:
