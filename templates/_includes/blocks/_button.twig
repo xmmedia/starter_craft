@@ -1,18 +1,15 @@
 {% set wrapperClasses = [] %}
-{% set buttonClasses = [] %}
 
 {% if block.buttonAlign == 'textCenter' %}
-    {% set wrapperClasses = wrapperClasses | merge(['text-center']) %}
-    {% set buttonClasses = buttonClasses | merge(['mx-auto']) %}
+    {% set wrapperClasses = wrapperClasses | merge(['justify-center']) %}
 {% elseif block.buttonAlign == 'textCenterMobile' %}
-    {% set wrapperClasses = wrapperClasses | merge(['text-center', 'md:text-left']) %}
-    {% set buttonClasses = buttonClasses | merge(['mx-auto', 'md:mx-0']) %}
+    {% set wrapperClasses = wrapperClasses | merge(['justify-center', 'md:justify-start']) %}
 {% endif %}
 
 {% set wrapperClasses = wrapperClasses | merge([blockWidth(block)]) %}
 
-<div class="{{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
-    <a href="{{ block.button.value }}" class="button {{ buttonClasses | join(' ') }}">
+<div class="flex {{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+    <a href="{{ block.button.value }}" class="button">
         {{ block.button.label }}
     </a>
 </div>
