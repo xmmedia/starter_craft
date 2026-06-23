@@ -8,7 +8,7 @@
 
 {% set wrapperClasses = wrapperClasses | merge([blockWidth(block)]) %}
 
-<div class="flex {{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="{{ blockWidth(block) }} flex {{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <a href="{{ block.button.value }}" class="button">
         {{ block.button.label }}
     </a>
