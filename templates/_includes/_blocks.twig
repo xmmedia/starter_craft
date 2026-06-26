@@ -111,13 +111,13 @@
 
     {% endfor %}
 
+    {% if inBlock %}
+        </div>
+    {% endif %}
+
     {% if inSection %}
         </section>
         <!-- <<< section ended <<< -->
-    {% endif %}
-
-    {% if inBlock %}
-        </div>
     {% endif %}
 
 {% elseif includePlaceholder %}
