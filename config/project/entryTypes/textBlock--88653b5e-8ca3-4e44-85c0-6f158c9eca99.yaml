@@ -139,4 +139,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: "{textBlock|striptags|truncate(50, '...')}"
+uiLabelFormat: "{textBlock.plainText|truncate(50, '...')}"

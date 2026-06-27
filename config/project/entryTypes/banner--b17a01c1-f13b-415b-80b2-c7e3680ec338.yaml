@@ -109,4 +109,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: "{heading ? heading|striptags : 'Banner'}"
+uiLabelFormat: "{heading ? heading.plainText : 'Banner'}"

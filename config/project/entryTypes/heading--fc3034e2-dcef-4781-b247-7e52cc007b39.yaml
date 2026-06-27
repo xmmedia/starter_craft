@@ -187,4 +187,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{heading|striptags}'
+uiLabelFormat: '{heading.plainText}'
