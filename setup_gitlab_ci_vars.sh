@@ -8,6 +8,7 @@
 #
 # Usage: ./setup_gitlab_ci_vars.sh <group/project>
 # Example: ./setup_gitlab_ci_vars.sh xmmedia/my-client-site
+#          ./setup_gitlab_ci_vars.sh xmmedia/company/my-client-site
 set -euo pipefail
 
 RED='\033[0;31m'
@@ -26,6 +27,7 @@ glab auth status >/dev/null 2>&1 || die "Not authenticated with glab. Run: glab 
 if [[ $# -lt 1 ]]; then
     echo "Usage: $0 <group/project>"
     echo "Example: $0 xmmedia/my-client-site"
+    echo "         $0 xmmedia/company/my-client-site"
     exit 1
 fi
 
