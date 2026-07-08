@@ -1,4 +1,4 @@
-{% set classes = ['md:col-span-' ~ block.blockWidth | default(12)] %}
+{% set classes = [blockWidth(block)] %}
 
 {% if block.headingStyle != 'default' %}
     {% set classes = classes | merge([block.headingStyle | string]) %}
