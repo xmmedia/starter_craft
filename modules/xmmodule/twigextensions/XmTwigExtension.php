@@ -72,7 +72,7 @@ class XmTwigExtension extends AbstractExtension
             return null;
         }
 
-        return 'md:col-span-'.($block->blockWidth ?? 12);
+        return 'blocks-wrap:col-span-'.($block->blockWidth ?? 12);
     }
 
     public function menu(array $items): array

@@ -20,7 +20,7 @@
 }
 
 .blocks-wrap {
-    @apply w-content-max grid grid-cols-1 md:grid-cols-12 md:gap-x-12 w-full;
+    @apply w-content-max grid grid-cols-1 blocks-wrap:grid-cols-12 blocks-wrap:gap-x-12 w-full;
 }
 
 .text-block-wrap {
@@ -28,6 +28,6 @@
     @apply max-w-3xl;
 }
 /* Ensure .text-block-wrap is centered when also .col-span-12 */
-.text-block-wrap.md\:col-span-12 {
+.text-block-wrap.blocks-wrap\:col-span-12 {
     @apply md:mx-auto;
 }
