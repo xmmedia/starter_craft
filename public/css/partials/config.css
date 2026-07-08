@@ -13,6 +13,7 @@
 /* colour converter: https://lik.ai/tools/color-convertor/ *** with a precision of 4 ***  */
 @theme {
     --breakpoint-xs: 25rem; /* 400px */
+    /* the breakpoint at which the blocks switch from a single col to 12 cols */
     --breakpoint-blocks-wrap: 53rem;
 
     /* the max width of the design */
