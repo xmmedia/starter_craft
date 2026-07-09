@@ -25,8 +25,7 @@ use yii\mail\MailEvent;
  *
  * @method static XmModule getInstance()
  */
-class
-XmModule extends BaseModule
+class XmModule extends BaseModule
 {
     public function init(): void
     {
