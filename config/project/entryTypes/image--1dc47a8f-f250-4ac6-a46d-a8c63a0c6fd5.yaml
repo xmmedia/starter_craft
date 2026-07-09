@@ -236,7 +236,7 @@ fieldLayouts:
         name: Attributes
         uid: 59737b3d-4fc9-41a0-b985-93f9d15fe487
         userCondition: null
-    thumbFieldKey: null
+    thumbFieldKey: 'layoutElement:41bf4be2-977f-491b-aa05-f8fe0b978f1e'
 handle: image
 hasTitleField: false
 icon: image
