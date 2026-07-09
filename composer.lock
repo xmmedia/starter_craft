@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "252440d9098d1ac8272f0194215896b2",
+    "content-hash": "2910166e381bec7d50474a87dd568397",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -10258,6 +10258,45 @@
             ],
             "description": "PHP library for parsing a string containing a full name into its parts",
             "time": "2019-11-14T14:08:48+00:00"
+        },
+        {
+            "name": "towardstudio/asset-locations",
+            "version": "3.0.3",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/towardstudio/asset-locations/zipball/b4ebad14d4799be5f5c9604a351ee6727ac882d0",
+                "reference": "b4ebad14d4799be5f5c9604a351ee6727ac882d0",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Asset Locations",
+                "handle": "assetlocations",
+                "developer": "Toward Studio",
+                "developerUrl": "https://toward.studio",
+                "documentationUrl": "https://github.com/towardstudio/asset-locations/blob/main/README.md",
+                "changelogUrl": "https://raw.githubusercontent.com/towardstudio/asset-locations/main/CHANGELOG.md",
+                "class": "towardstudio\\assetlocations\\AssetLocations"
+            },
+            "autoload": {
+                "psr-4": {
+                    "towardstudio\\assetlocations\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Toward Studio",
+                    "homepage": "https://toward.studio"
+                }
+            ],
+            "description": "New native field to display an assets location",
+            "time": "2024-09-30T09:55:59+00:00"
         },
         {
             "name": "twig/twig",

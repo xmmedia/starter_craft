@@ -1,4 +1,4 @@
-dateModified: 1783610532
+dateModified: 1783617101
 elementSources:
   craft\elements\Asset:
     -
@@ -363,6 +363,10 @@ meta:
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
     fd880dcd-7683-4631-b25d-c13338a1b4d5: 'Image Dimensions' # Image Dimensions
 plugins:
+  assetlocations:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
   ckeditor:
     edition: standard
     enabled: true
