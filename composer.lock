@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2910166e381bec7d50474a87dd568397",
+    "content-hash": "245da6bcb72cb0001911c907574b3d2d",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -60,6 +60,71 @@
                 "source": "https://github.com/Bacon/BaconQrCode/tree/v3.1.1"
             },
             "time": "2026-04-05T21:06:35+00:00"
+        },
+        {
+            "name": "born05/craft-assetusage",
+            "version": "4.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/roelvanhintum/craft-assetusage.git",
+                "reference": "b1096a4b5c884730c39065834dd2292767b96d0b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/roelvanhintum/craft-assetusage/zipball/b1096a4b5c884730c39065834dd2292767b96d0b",
+                "reference": "b1096a4b5c884730c39065834dd2292767b96d0b",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^5.0.0",
+                "php": "^8.2.0"
+            },
+            "require-dev": {
+                "craftcms/ecs": "dev-main",
+                "craftcms/phpstan": "dev-main",
+                "verbb/hyper": "^2.0.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Asset Usage",
+                "handle": "assetusage",
+                "changelogUrl": "https://raw.githubusercontent.com/roelvanhintum/craft-assetusage/craft4/CHANGELOG.md",
+                "hasCpSection": false,
+                "hasCpSettings": false
+            },
+            "autoload": {
+                "psr-4": {
+                    "roelvanhintum\\assetusage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Roel van Hintum",
+                    "homepage": "https://roel.vanhintum.eu/"
+                },
+                {
+                    "name": "Born05",
+                    "homepage": "https://www.born05.com/"
+                }
+            ],
+            "description": "Adds a column to see which assets are used or unused.",
+            "keywords": [
+                "Craft",
+                "asset usage",
+                "cms",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "docs": "https://github.com/roelvanhintum/craft-assetusage/blob/craft4/README.md",
+                "issues": "https://github.com/roelvanhintum/craft-assetusage/issues",
+                "source": "https://github.com/roelvanhintum/craft-assetusage/tree/4.3.0"
+            },
+            "time": "2026-07-05T08:34:48+00:00"
         },
         {
             "name": "brick/math",
@@ -10258,45 +10323,6 @@
             ],
             "description": "PHP library for parsing a string containing a full name into its parts",
             "time": "2019-11-14T14:08:48+00:00"
-        },
-        {
-            "name": "towardstudio/asset-locations",
-            "version": "3.0.3",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/towardstudio/asset-locations/zipball/b4ebad14d4799be5f5c9604a351ee6727ac882d0",
-                "reference": "b4ebad14d4799be5f5c9604a351ee6727ac882d0",
-                "shasum": ""
-            },
-            "require": {
-                "craftcms/cms": "^5.0.0"
-            },
-            "type": "craft-plugin",
-            "extra": {
-                "name": "Asset Locations",
-                "handle": "assetlocations",
-                "developer": "Toward Studio",
-                "developerUrl": "https://toward.studio",
-                "documentationUrl": "https://github.com/towardstudio/asset-locations/blob/main/README.md",
-                "changelogUrl": "https://raw.githubusercontent.com/towardstudio/asset-locations/main/CHANGELOG.md",
-                "class": "towardstudio\\assetlocations\\AssetLocations"
-            },
-            "autoload": {
-                "psr-4": {
-                    "towardstudio\\assetlocations\\": "src/"
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Toward Studio",
-                    "homepage": "https://toward.studio"
-                }
-            ],
-            "description": "New native field to display an assets location",
-            "time": "2024-09-30T09:55:59+00:00"
         },
         {
             "name": "twig/twig",
