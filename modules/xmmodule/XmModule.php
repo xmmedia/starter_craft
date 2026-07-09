@@ -11,6 +11,10 @@ declare(strict_types=1);
 namespace modules\xmmodule;
 
 use Craft;
+use craft\elements\Asset;
+use craft\events\AssetEvent;
+use craft\events\SetAssetFilenameEvent;
+use craft\helpers\Assets as AssetsHelper;
 use craft\mail\Mailer;
 use modules\xmmodule\twigextensions\XmTwigExtension;
 use yii\base\Event;
@@ -27,6 +31,14 @@ use yii\mail\MailEvent;
  */
 class XmModule extends BaseModule
 {
+    /**
+     * Cased asset basenames, keyed by the lowercase filename Craft is about to store.
+     *
+     * @var string[]
+     * @see forceLowercaseFilenames()
+     */
+    private array $assetBasenames = [];
+
     public function init(): void
     {
         Craft::setAlias('@modules/xmmodule', __DIR__);
@@ -41,6 +53,7 @@ class XmModule extends BaseModule
         parent::init();
 
         $this->attachEventHandlers();
+        $this->forceLowercaseFilenames();
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
@@ -84,6 +97,43 @@ class XmModule extends BaseModule
             $siteName = Craft::$app->getSystemName();
             $currentSubject = $event->message->getSubject();
             $event->message->setSubject($currentSubject . ' on ' . $siteName);
+        });
+    }
+
+    /**
+     * Forces all asset filenames to lowercase. Asset will keep their original title casing.
+     */
+    private function forceLowercaseFilenames(): void
+    {
+        // Fires from Assets::prepareAssetName(), which covers uploads, renames, moves and file replacements
+        Event::on(AssetsHelper::class, AssetsHelper::EVENT_SET_FILENAME, function (SetAssetFilenameEvent $event) {
+            $lowercased = mb_strtolower($event->filename);
+            // the extension includes the leading dot, e.g. ".JPG"
+            $extension = mb_strtolower($event->extension);
+
+            // Craft derives a new asset's default title from the sanitized filename, which is
+            // about to lose its casing. Remember the cased name against the lowercase filename
+            // Craft will store, so beforeHandleFile() can build the title from it instead.
+            $this->assetBasenames[$lowercased . $extension] = $event->filename;
+
+            $event->filename = $lowercased;
+            $event->extension = $extension;
+        });
+
+        // Restore the original casing of a new asset's title, just before Asset::beforeSave()
+        // falls back to a title generated from the (now lowercase) filename.
+        Event::on(Asset::class, Asset::EVENT_BEFORE_HANDLE_FILE, function (AssetEvent $event) {
+            $asset = $event->asset;
+
+            // A title the editor typed, or one an existing asset already has, is left alone.
+            if (!$event->isNew || $asset->title) {
+                return;
+            }
+
+            $filename = mb_strtolower($asset->getFilename());
+            $basename = $this->assetBasenames[$filename] ?? pathinfo($filename, PATHINFO_FILENAME);
+
+            $asset->title = AssetsHelper::filename2Title($basename);
         });
     }
 }
