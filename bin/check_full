@@ -2,6 +2,6 @@
 
 set -e
 
-lando composer rector:fix
+lando composer rector
 lando composer cs:fix
 bin/check
