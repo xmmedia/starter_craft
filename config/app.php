@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Yii Application Config
  *
@@ -22,21 +23,21 @@ use craft\helpers\App;
 return [
     'id' => App::env('CRAFT_APP_ID') ?: 'CraftCMS',
     'modules' => [
-        'contact-form' => \modules\contactformmodule\ContactFormModule::class,
-        'xm-module'    => \modules\xmmodule\XmModule::class,
-        'image-module' => \modules\imagemodule\ImageModule::class,
+        'contact-form' => modules\contactformmodule\ContactFormModule::class,
+        'xm-module'    => modules\xmmodule\XmModule::class,
+        'image-module' => modules\imagemodule\ImageModule::class,
     ],
     'bootstrap' => ['contact-form', 'xm-module', 'image-module'],
     'components' => [
-        'session' => function () {
+        'session' => static function () {
             $savePath = Craft::getAlias('@storage').'/sessions/';
 
             if (!is_dir($savePath)) {
-                mkdir($savePath, 0777, true);
+                mkdir($savePath, 0o777, true);
             }
 
             // Get the default component config
-            $config = craft\helpers\App::sessionConfig();
+            $config = App::sessionConfig();
             $config['savePath'] = $savePath;
 
             // Instantiate and return it

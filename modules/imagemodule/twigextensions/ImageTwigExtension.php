@@ -1,8 +1,10 @@
 <?php
+
 /**
  * Image module for Craft CMS 5.x
  *
- * @link      https://www.xmmedia.com
+ * @see      https://www.xmmedia.com
+ *
  * @copyright Copyright (c) 2022 XM Media Inc.
  */
 
@@ -27,7 +29,7 @@ use Twig\TwigFunction;
  * http://twig.sensiolabs.org/doc/advanced.html
  *
  * @author    XM Media Inc.
- * @package   ImageModule
+ *
  * @since     1.0.0
  */
 class ImageTwigExtension extends AbstractExtension
@@ -49,8 +51,6 @@ class ImageTwigExtension extends AbstractExtension
      * Returns an array of Twig functions, used in Twig templates via:
      *
      *      {% set this = someFunction('something') %}
-     *
-     * @return array
      */
     public function getFunctions(): array
     {
@@ -63,10 +63,10 @@ class ImageTwigExtension extends AbstractExtension
     public function getImage(?Asset $image, string|array|null $transform = null, array $attributes = []): Markup
     {
         if (null === $image) {
-            return new Markup('', Craft::$app->charset);
+            return new Markup('', \Craft::$app->charset);
         }
 
-        if (!array_key_exists('alt', $attributes)) {
+        if (!\array_key_exists('alt', $attributes)) {
             $attributes['alt'] = $this->resolveAlt($image);
         }
 
@@ -93,15 +93,15 @@ class ImageTwigExtension extends AbstractExtension
         array $attributes = [],
     ): Markup|string {
         if (null === $image) {
-            return new Markup('', Craft::$app->charset);
+            return new Markup('', \Craft::$app->charset);
         }
 
         if ('image/svg+xml' === $image->getMimeType()) {
-            $twig = Craft::$app->getView()->getTwig();
+            $twig = \Craft::$app->getView()->getTwig();
             /** @var Extension $craftExtension */
             $craftExtension = $twig->getExtension(Extension::class);
 
-            if (!array_key_exists('aria-label', $attributes) && !array_key_exists('role', $attributes)) {
+            if (!\array_key_exists('aria-label', $attributes) && !\array_key_exists('role', $attributes)) {
                 $attributes['role'] = 'img';
                 $attributes['aria-label'] = $this->resolveAlt($image);
             }

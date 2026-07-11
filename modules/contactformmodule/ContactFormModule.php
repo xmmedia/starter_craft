@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace modules\contactformmodule;
 
-use Craft;
 use craft\base\Model;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
@@ -19,10 +18,10 @@ class ContactFormModule extends BaseModule
 {
     public function init(): void
     {
-        Craft::setAlias('@modules/contactformmodule', __DIR__);
+        \Craft::setAlias('@modules/contactformmodule', __DIR__);
 
         // Set the controllerNamespace based on whether this is a console or web request
-        if (Craft::$app->request->isConsoleRequest) {
+        if (\Craft::$app->request->isConsoleRequest) {
             $this->controllerNamespace = 'modules\\contactformmodule\\console\\controllers';
         } else {
             $this->controllerNamespace = 'modules\\contactformmodule\\controllers';
@@ -38,10 +37,10 @@ class ContactFormModule extends BaseModule
         Event::on(
             Mailer::class,
             Mailer::EVENT_BEFORE_SEND,
-            function (SendEvent $e) {
+            static function (SendEvent $e) {
                 // set the from to the default mailer from
                 // this is instead of "<prefix> <fromName>" which is confusing
-                $e->message->setFrom(Craft::$app->getMailer()->from);
+                $e->message->setFrom(\Craft::$app->getMailer()->from);
                 $e->message->setSubject(
                     'Website form submission from '.$e->submission->fromName
                 );
@@ -52,7 +51,7 @@ class ContactFormModule extends BaseModule
         Event::on(
             Submission::class,
             Model::EVENT_AFTER_VALIDATE,
-            function (Event $e) {
+            static function (Event $e) {
                 /** @var Submission $submission */
                 $submission = $e->sender;
 

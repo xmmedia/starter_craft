@@ -1,8 +1,10 @@
 <?php
+
 /**
  * XM module for Craft CMS 5.x
  *
- * @link      https://www.xmmedia.com
+ * @see      https://www.xmmedia.com
+ *
  * @copyright Copyright (c) 2022 XM Media Inc.
  */
 
@@ -24,7 +26,7 @@ use yii\mail\MailEvent;
 
 /**
  * @author  XM Media Inc.
- * @package XmModule
+ *
  * @since   1.0.0
  *
  * @method static XmModule getInstance()
@@ -35,16 +37,17 @@ class XmModule extends BaseModule
      * Cased asset basenames, keyed by the lowercase filename Craft is about to store.
      *
      * @var string[]
+     *
      * @see forceLowercaseFilenames()
      */
     private array $assetBasenames = [];
 
     public function init(): void
     {
-        Craft::setAlias('@modules/xmmodule', __DIR__);
+        \Craft::setAlias('@modules/xmmodule', __DIR__);
 
         // Set the controllerNamespace based on whether this is a console or web request
-        if (Craft::$app->request->isConsoleRequest) {
+        if (\Craft::$app->request->isConsoleRequest) {
             $this->controllerNamespace = 'modules\\xmmodule\\console\\controllers';
         } else {
             $this->controllerNamespace = 'modules\\xmmodule\\controllers';
@@ -57,12 +60,12 @@ class XmModule extends BaseModule
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
-        Craft::$app->onInit(function() {
+        \Craft::$app->onInit(static function () {
             // Add in our Twig extensions
-            Craft::$app->getView()->registerTwigExtension(new XmTwigExtension());
+            \Craft::$app->getView()->registerTwigExtension(new XmTwigExtension());
         });
 
-        /**
+        /*
          * Logging in Craft involves using one of the following methods:
          *
          * Craft::trace(): record a message to trace how a piece of code runs. This is mainly for development use.
@@ -80,23 +83,23 @@ class XmModule extends BaseModule
          *
          * http://www.yiiframework.com/doc-2.0/guide-runtime-logging.html
          */
-        Craft::info('XM module loaded', __METHOD__);
+        \Craft::info('XM module loaded', __METHOD__);
     }
 
     private function attachEventHandlers(): void
     {
         // Append site name to system email subjects
         // EVENT_BEFORE_SEND is defined on \yii\mail\BaseMailer (parent of craft\mail\Mailer)
-        Event::on(Mailer::class, BaseMailer::EVENT_BEFORE_SEND, function(MailEvent $event) {
+        Event::on(Mailer::class, BaseMailer::EVENT_BEFORE_SEND, static function (MailEvent $event) {
             $key = $event->message->key ?? null;
 
-            if (!in_array($key, ['account_activation', 'forgot_password'], true)) {
+            if (!\in_array($key, ['account_activation', 'forgot_password'], true)) {
                 return;
             }
 
-            $siteName = Craft::$app->getSystemName();
+            $siteName = \Craft::$app->getSystemName();
             $currentSubject = $event->message->getSubject();
-            $event->message->setSubject($currentSubject . ' on ' . $siteName);
+            $event->message->setSubject($currentSubject.' on '.$siteName);
         });
     }
 
@@ -114,7 +117,7 @@ class XmModule extends BaseModule
             // Craft derives a new asset's default title from the sanitized filename, which is
             // about to lose its casing. Remember the cased name against the lowercase filename
             // Craft will store, so beforeHandleFile() can build the title from it instead.
-            $this->assetBasenames[$lowercased . $extension] = $event->filename;
+            $this->assetBasenames[$lowercased.$extension] = $event->filename;
 
             $event->filename = $lowercased;
             $event->extension = $extension;
@@ -131,7 +134,7 @@ class XmModule extends BaseModule
             }
 
             $filename = mb_strtolower($asset->getFilename());
-            $basename = $this->assetBasenames[$filename] ?? pathinfo($filename, PATHINFO_FILENAME);
+            $basename = $this->assetBasenames[$filename] ?? pathinfo($filename, \PATHINFO_FILENAME);
 
             $asset->title = AssetsHelper::filename2Title($basename);
         });

@@ -2,7 +2,7 @@
 
 use HTMLPurifier_Config;
 
-return function(HTMLPurifier_Config $config) {
+return static function (HTMLPurifier_Config $config) {
     $config->set('Attr.AllowedFrameTargets', ['_blank']);
     $config->set('Attr.EnableID', true);
     $config->set('HTML.AllowedComments', ['pagebreak']);

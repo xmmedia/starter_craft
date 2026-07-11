@@ -1,8 +1,10 @@
 <?php
+
 /**
  * XM module for Craft CMS 5.x
  *
- * @link      https://www.xmmedia.com
+ * @see      https://www.xmmedia.com
+ *
  * @copyright Copyright (c) 2022 XM Media Inc.
  */
 
@@ -23,7 +25,7 @@ use Twig\TwigFunction;
  * http://twig.sensiolabs.org/doc/advanced.html
  *
  * @author    XM Media Inc.
- * @package   XmModule
+ *
  * @since     1.0.0
  */
 class XmTwigExtension extends AbstractExtension
@@ -45,8 +47,6 @@ class XmTwigExtension extends AbstractExtension
      * Returns an array of Twig functions, used in Twig templates via:
      *
      *      {% set this = someFunction('something') %}
-     *
-     * @return array
      */
     public function getFunctions(): array
     {
@@ -78,7 +78,7 @@ class XmTwigExtension extends AbstractExtension
     public function menu(array $items): array
     {
         return array_map(
-            function (Entry $item): array {
+            static function (Entry $item): array {
                 return [
                     'url'   => $item->menuLink->url,
                     'label' => $item->menuLabel,
@@ -91,7 +91,7 @@ class XmTwigExtension extends AbstractExtension
     public function submenu(array $subpages): array
     {
         return array_map(
-            function (Entry $page): array {
+            static function (Entry $page): array {
                 return [
                     'id'    => $page->getId(),
                     'title' => $page->menuLabel ?? $page->title,
@@ -114,7 +114,7 @@ class XmTwigExtension extends AbstractExtension
     public function phoneStrip(string $phone, string $prefix = 'tel'): string
     {
         if (str_starts_with($phone, 'tel:+')) {
-            $phone = substr($phone, strlen('tel:+'));
+            $phone = substr($phone, \strlen('tel:+'));
         }
 
         return $prefix.':+'.preg_replace('/\D+/', '', $phone);
