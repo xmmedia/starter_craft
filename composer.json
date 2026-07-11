@@ -23,10 +23,17 @@
     "require-dev": {
         "craftcms/generator": "^2.2",
         "friendsoftwig/twigcs": "^6.0",
+        "friendsofphp/php-cs-fixer": "^3.95",
+        "phpstan/phpstan": "^2.2",
+        "rector/rector": "^2.0",
         "yiisoft/yii2-shell": "^2.0.3"
     },
     "scripts": {
-        "lint:twig": "twigcs templates/"
+        "lint:twig": "twigcs templates/",
+        "lint:yaml": "yaml-lint config/project",
+        "static": "phpstan analyse -c phpstan.neon.dist",
+        "cs:fix": "php-cs-fixer fix --config=php_cs.dist",
+        "rector": "rector process --config=rector.php"
     },
     "autoload": {
         "psr-4": {

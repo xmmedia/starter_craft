@@ -37,6 +37,18 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
   - Moderate: `yarn audit:moderate`
   - High: `yarn audit:high`
 
+### PHP
+
+- **Static analysis**: `lando composer static` (PHPStan, config in `phpstan.neon.dist`)
+- **Code style**: `lando composer cs:fix` (PHP CS Fixer, config in `php_cs.dist`)
+- **Automated refactoring**: `lando composer rector` (Rector, config in `rector.php`)
+
+### Full checks
+
+- **Quick check** (lint, static analysis, security audits — no fixes): `bin/check`
+- **Full check** (runs Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
+  - Run `bin/check_full` before opening a PR
+
 ### Craft CMS
 
 - **Run console**: `./craft` (executable) or `lando craft` within Lando
