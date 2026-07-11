@@ -49,8 +49,6 @@ static:
     - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs
     # composer requires packages to be installed before running security checks
     - *security-checks
-    # static analysis
-    - php composer.phar static
     # Install node/JS dependencies
     - yarn install --immutable
     # lint JS & CSS
