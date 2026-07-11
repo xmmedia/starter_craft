@@ -38,12 +38,6 @@ yarn-error.log
 /.phpstan.cache
 ###< phpstan/phpstan ###
 
-###> cypress ###
-cypress/videos
-cypress/screenshots
-cypress/integration/examples
-###< cypress ###
-
 ###> phpstorm ###
 # User-specific stuff:
 .idea/**/workspace.xml
