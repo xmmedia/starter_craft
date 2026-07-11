@@ -16,6 +16,7 @@ use yii\base\Module as BaseModule;
  */
 class ContactFormModule extends BaseModule
 {
+    #[\Override]
     public function init(): void
     {
         \Craft::setAlias('@modules/contactformmodule', __DIR__);

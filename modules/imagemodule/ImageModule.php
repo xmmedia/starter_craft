@@ -25,6 +25,7 @@ use yii\base\Module as BaseModule;
  */
 class ImageModule extends BaseModule
 {
+    #[\Override]
     public function init(): void
     {
         \Craft::setAlias('@modules/imagemodule', __DIR__);

@@ -52,11 +52,12 @@ class ImageTwigExtension extends AbstractExtension
      *
      *      {% set this = someFunction('something') %}
      */
+    #[\Override]
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('image', [$this, 'getImage'], ['is_safe' => ['html']]),
-            new TwigFunction('imageOrSvg', [$this, 'getImageOrSvg'], ['is_safe' => ['html']]),
+            new TwigFunction('image', $this->getImage(...), ['is_safe' => ['html']]),
+            new TwigFunction('imageOrSvg', $this->getImageOrSvg(...), ['is_safe' => ['html']]),
         ];
     }
 

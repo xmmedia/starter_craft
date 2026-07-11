@@ -48,21 +48,23 @@ class XmTwigExtension extends AbstractExtension
      *
      *      {% set this = someFunction('something') %}
      */
+    #[\Override]
     public function getFunctions(): array
     {
         return [
-            new TwigFunction('blockWidth', [$this, 'blockWidth']),
-            new TwigFunction('menu', [$this, 'menu']),
-            new TwigFunction('submenu', [$this, 'submenu']),
+            new TwigFunction('blockWidth', $this->blockWidth(...)),
+            new TwigFunction('menu', $this->menu(...)),
+            new TwigFunction('submenu', $this->submenu(...)),
         ];
     }
 
+    #[\Override]
     public function getFilters(): array
     {
         return [
-            new TwigFilter('heading_striptags', [$this, 'headingStripTags'], ['is_safe' => ['html']]),
-            new TwigFilter('phone_strip', [$this, 'phoneStrip']),
-            new TwigFilter('address_format', [$this, 'addressFormat'], ['is_safe' => ['html']]),
+            new TwigFilter('heading_striptags', $this->headingStripTags(...), ['is_safe' => ['html']]),
+            new TwigFilter('phone_strip', $this->phoneStrip(...)),
+            new TwigFilter('address_format', $this->addressFormat(...), ['is_safe' => ['html']]),
         ];
     }
 
@@ -78,12 +80,10 @@ class XmTwigExtension extends AbstractExtension
     public function menu(array $items): array
     {
         return array_map(
-            static function (Entry $item): array {
-                return [
-                    'url'   => $item->menuLink->url,
-                    'label' => $item->menuLabel,
-                ];
-            },
+            static fn(Entry $item): array => [
+                'url'   => $item->menuLink->url,
+                'label' => $item->menuLabel,
+            ],
             $items,
         );
     }
@@ -91,13 +91,11 @@ class XmTwigExtension extends AbstractExtension
     public function submenu(array $subpages): array
     {
         return array_map(
-            static function (Entry $page): array {
-                return [
-                    'id'    => $page->getId(),
-                    'title' => $page->menuLabel ?? $page->title,
-                    'url'   => $page->getUrl(),
-                ];
-            },
+            static fn(Entry $page): array => [
+                'id'    => $page->getId(),
+                'title' => $page->menuLabel ?? $page->title,
+                'url'   => $page->getUrl(),
+            ],
             $subpages,
         );
     }

@@ -42,6 +42,7 @@ class XmModule extends BaseModule
      */
     private array $assetBasenames = [];
 
+    #[\Override]
     public function init(): void
     {
         \Craft::setAlias('@modules/xmmodule', __DIR__);
