@@ -41,7 +41,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 - **Static analysis**: `lando composer static` (PHPStan, config in `phpstan.neon.dist`)
 - **Code style**: `lando composer cs:fix` (PHP CS Fixer, config in `php_cs.dist`)
-- **Automated refactoring**: `lando composer rector` (Rector, config in `rector.php`)
+- **Automated refactoring**: `lando composer rector` (dry-run) / `lando composer rector:fix` (applies changes) — Rector, config in `rector.php`
 
 ### Full checks
 
