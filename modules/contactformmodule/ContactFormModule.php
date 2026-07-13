@@ -56,7 +56,7 @@ class ContactFormModule extends BaseModule
                 /** @var Submission $submission */
                 $submission = $e->sender;
 
-                if (empty(trim($submission->fromName))) {
+                if (empty(trim((string) $submission->fromName))) {
                     $submission->clearErrors('fromName');
                     $submission->addError(
                         'fromName',
@@ -64,7 +64,7 @@ class ContactFormModule extends BaseModule
                     );
                 }
 
-                if (empty(trim($submission->fromEmail))) {
+                if (empty(trim((string) $submission->fromEmail))) {
                     $submission->clearErrors('fromEmail');
                     $submission->addError(
                         'fromEmail',
@@ -72,7 +72,7 @@ class ContactFormModule extends BaseModule
                     );
                 }
 
-                if (empty($submission->message['body']) || empty(trim($submission->message['body']))) {
+                if (empty(trim((string) $submission->message['body']))) {
                     $submission->addError(
                         'message.body',
                         'Please add a message.'
