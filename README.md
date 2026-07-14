@@ -47,6 +47,10 @@ Craft admin is located at `/admin`
 
 ## Commands
 
+  - Run all checks & fixes: `bin/check_full`
+    - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before opening a PR
+  - Check all code (no fixes): `bin/check`
+    - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
   - Production JS/CSS build: `yarn build`
   - Dev JS/CSS build: `yarn dev`
   - Dev JS/CSS watch: `yarn watch` (files will not be versioned)
