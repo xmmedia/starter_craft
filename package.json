@@ -16,8 +16,8 @@
     "lint:js:fix": "eslint . --fix",
     "lint:css": "stylelint public/css/**/*.css",
     "lint:css:fix": "stylelint public/css/**/*.css --fix",
-    "audit:moderate": "npx audit-ci@^7 --moderate --config .audit-ci.jsonc --report-type summary",
-    "audit:high": "npx audit-ci@^7 --high --config .audit-ci.jsonc --report-type summary"
+    "audit:moderate": "npx --yes audit-ci@^7 --moderate --config .audit-ci.jsonc --report-type summary",
+    "audit:high": "npx --yes audit-ci@^7 --high --config .audit-ci.jsonc --report-type summary"
   },
   "dependencies": {
     "vue": "^3.2.0"
