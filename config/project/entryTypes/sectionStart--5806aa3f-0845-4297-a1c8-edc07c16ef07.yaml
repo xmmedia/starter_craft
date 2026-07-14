@@ -57,7 +57,23 @@ fieldLayouts:
             uid: 9eb0a7f2-0a9a-429e-a068-1275b119aff8
             userCondition: null
             warning: null
-            width: 50
+            width: 25
+          -
+            dateAdded: '2026-07-14T03:40:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 6f618eda-3e50-4f1d-9b77-f4c5c5894436 # Bottom Spacing
+            handle: null
+            instructions: 'The amount of space at the bottom of the section.'
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e5f9034d-5e66-4fa7-aadf-0e1b99e93808
+            userCondition: null
+            warning: null
+            width: 25
         name: Content
         uid: d70bdcdd-80bd-4497-a977-4e8884471fc5
         userCondition: null

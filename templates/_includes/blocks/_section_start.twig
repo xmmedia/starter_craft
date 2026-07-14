@@ -10,6 +10,16 @@
     {% set classes = classes | merge(['py-20']) %}
 {% endif %}
 
+{% if block.sectionSpacingBottom == '40' %}
+    {% set classes = classes | merge(['pb-30', 'lg:pb-40']) %}
+{% elseif block.sectionSpacingBottom == '30' %}
+    {% set classes = classes | merge(['pb-30', 'lg:pb-30']) %}
+{% elseif block.sectionSpacingBottom == '60' %}
+    {% set classes = classes | merge(['pb-30', 'lg:pb-60']) %}
+{% elseif block.sectionSpacingBottom == '20' %}
+    {% set classes = classes | merge(['pb-20', 'lg:pb-20']) %}
+{% endif %}
+
 {% if block.bgColor != 'white' %}
     {% set classes = classes | merge(['bg-' ~ block.bgColor]) %}
 {% endif %}
