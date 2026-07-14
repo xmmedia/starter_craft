@@ -62,7 +62,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: f5ce74ee-26a4-476d-8821-9fa472b0e3dd # Message
+            fieldUid: 511f52f1-d8bb-4d5e-820d-d3f65afcfdc9 # Text Block Simple
             handle: successMessage
             instructions: 'Shown after a successful submission.'
             label: 'Success Message'
@@ -78,7 +78,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: f5ce74ee-26a4-476d-8821-9fa472b0e3dd # Message
+            fieldUid: 511f52f1-d8bb-4d5e-820d-d3f65afcfdc9 # Text Block Simple
             handle: errorMessage
             instructions: "Shown when there's an error submitting the form."
             label: 'Error Message'

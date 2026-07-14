@@ -1,4 +1,4 @@
-dateModified: 1784000966
+dateModified: 1784006078
 elementSources:
   craft\elements\Asset:
     -
@@ -354,7 +354,6 @@ meta:
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
     e79e5cd5-8880-4019-9734-a624230303ed: 'Social Media' # Social Media
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
-    f5ce74ee-26a4-476d-8821-9fa472b0e3dd: Message # Message
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
     f84ef073-f5e7-404c-a8ee-c24b36df5bd4: 'Phone Number' # Phone Number
     f9712ce8-7f9e-4fb3-a227-4fbaa04f025c: Banner # Banner
