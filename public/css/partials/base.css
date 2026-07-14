@@ -8,4 +8,9 @@ body {
     @apply body-base;
 }
 
+/* lock page scroll while the modal is open */
+html:has(.modal[open]) {
+    @apply overflow-hidden scrollbar-gutter-stable;
+}
+
 @import "./base_content.css";
