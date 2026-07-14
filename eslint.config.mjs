@@ -4,7 +4,15 @@ import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
 
 export default defineConfig([
-    globalIgnores(['public/js/svgxuse.min.js']),
+    globalIgnores([
+        '.yarn/',
+        'config/',
+        'public/build/',
+        'public/cpresources/',
+        'public/js/svgxuse.min.js',
+        'storage/',
+        'vendor/',
+    ]),
 
     {
         languageOptions: {
