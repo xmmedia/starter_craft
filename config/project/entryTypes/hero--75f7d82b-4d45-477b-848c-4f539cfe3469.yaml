@@ -87,7 +87,7 @@ fieldLayouts:
     thumbFieldKey: 'layoutElement:137144ce-7c7c-4cef-95e8-c737b79a007d'
 handle: hero
 hasTitleField: false
-icon: null
+icon: flag-swallowtail
 name: Hero
 showSlugField: false
 showStatusField: true
