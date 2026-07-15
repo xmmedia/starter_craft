@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: imageLimitMobileWidth
+instructions: 'When enabled, the width of the image will be limited on mobile.'
+name: 'Limit Mobile Width'
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch
