@@ -80,7 +80,7 @@ class XmTwigExtension extends AbstractExtension
     public function menu(array $items): array
     {
         return array_map(
-            static fn(Entry $item): array => [
+            static fn (Entry $item): array => [
                 'url'   => $item->menuLink->url,
                 'label' => $item->menuLabel,
             ],
@@ -91,7 +91,7 @@ class XmTwigExtension extends AbstractExtension
     public function submenu(array $subpages): array
     {
         return array_map(
-            static fn(Entry $page): array => [
+            static fn (Entry $page): array => [
                 'id'    => $page->getId(),
                 'title' => $page->menuLabel ?? $page->title,
                 'url'   => $page->getUrl(),
