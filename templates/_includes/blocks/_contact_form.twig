@@ -1,8 +1,4 @@
-{% if block.formRedirect %}
-    {% set successUrl = block.formRedirect.value %}
-{% else %}
-    {% set successUrl = craft.app.request.url ~ '#form--' ~ block.id %}
-{% endif %}
+{% set successUrl = craft.app.request.url ~ '#form--' ~ block.id %}
 
 <div id="form--{{ block.id }}" class="{{ blockWidth(block) }} {{ block.classes }}"
     {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
@@ -13,40 +9,30 @@
         <div class="w-content-copy">{{ block.intro }}</div>
     {% endif %}
 
-    {% macro errorList(errors) %}
-        {% if errors %}
-            {% for error in errors %}
-                <div class="alert alert-danger">{{ error }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endmacro %}
-
-    {% set submission = submission ?? null %}
+    {% set successMessage = block.successMessage | heading_striptags | default('Thank you for reaching out. We\'ll be in contact within 3 business days.') %}
+    {% set failMessage = block.errorMessage | heading_striptags | default('Looks like something isn\'t quite right. Please try again.') %}
 
     <div class="flex flex-col justify-center md:justify-start">
-        <form method="post" action="{{ successUrl }}" accept-charset="utf-8" class="form-wrap">
+        <form method="post"
+              action="{{ successUrl }}"
+              accept-charset="utf-8"
+              class="form-wrap"
+              data-ajax-form
+              data-success-message="{{ successMessage }}"
+              data-fail-message="{{ failMessage }}">
 
-            {% set flashes = craft.app.session.getAllFlashes(true) %}
-            {% if flashes | length %}
-                <div class="mb-4">
-                    {% for level, flash in flashes %}
-                        {# level is success or error #}
-                        <div class="alert w-full alert-{{ level }}">{{ flash }}</div>
-                    {% endfor %}
-                </div>
-            {% endif %}
+            {% include '_includes/_form_messages.twig' with { classes: 'mb-4' } only %}
 
             {{ csrfInput() }}
             {{ actionInput('contact-form/send') }}
             {{ redirectInput(successUrl) }}
 
-            {{ successMessageInput(block.successMessage | heading_striptags | default('Thank you for reaching out. We\'ll be in contact within 3 business days.')) }}
-            {{ failMessageInput(block.errorMessage | heading_striptags | default('Looks like something isn\'t quite right. Please see the messages below.')) }}
+            {{ successMessageInput(successMessage) }}
+            {{ failMessageInput(failMessage) }}
 
             <div class="field-wrap">
                 <label for="from-name">Name</label>
-                {{ submission ? _self.errorList(submission.getErrors('fromName')) }}
-                {{ input('text', 'fromName', submission.fromName ?? null, {
+                {{ input('text', 'fromName', null, {
                     id: 'from-name',
                     autocomplete: 'name',
                     maxlength: 100,
@@ -56,8 +42,7 @@
 
             <div class="field-wrap">
                 <label for="from-email">Email</label>
-                {{ submission ? _self.errorList(submission.getErrors('fromEmail')) }}
-                {{ input('text', 'fromEmail', submission.fromEmail ?? null, {
+                {{ input('text', 'fromEmail', null, {
                     id: 'from-email',
                     autocomplete: 'email',
                     maxlength: 100,
@@ -77,7 +62,7 @@
 
             <div class="field-wrap">
                 <label for="phone">Phone</label>
-                {{ input('tel', 'message[Phone]', submission.message.Phone ?? null, {
+                {{ input('tel', 'message[Phone]', null, {
                     id: 'phone',
                     autocomplete: 'tel',
                     maxlength: 15,
@@ -87,8 +72,7 @@
 
             <div class="field-wrap field-wrap-textarea">
                 <label for="message">Message</label>
-                {{ submission ? _self.errorList(submission.getErrors('message.body')) }}
-                <textarea id="message" name="message[body]" required maxlength="10000" class="h-48">{{ submission.message.body ?? null }}</textarea>
+                <textarea id="message" name="message[body]" required maxlength="10000" class="h-48"></textarea>
             </div>
 
             {% if entry is defined and entry %}

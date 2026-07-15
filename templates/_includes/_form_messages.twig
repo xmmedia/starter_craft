@@ -1,0 +1,19 @@
+{# Message container shared by the AJAX forms.
+
+   Renders Craft's session flashes for the no-JS fallback, and is the element
+   ajax_form.js writes its success/error alerts into.
+
+   Params:
+     classes – extra classes for the container
+
+   The whitespace control below ({%- ... -%}) is load-bearing: `empty:hidden`
+   compiles to `:empty`, which won't match if the container holds so much as a
+   whitespace text node. #}
+{% set flashes = craft.app.session.getAllFlashes(true) %}
+{# level is success or error #}
+<div class="js-form-messages {{ classes ?? '' }} empty:hidden" role="status" aria-live="polite">
+    {%- for level, flash in flashes -%}
+        {# flash is the hash-verified successMessage/failMessage (CMS-authored HTML), safe to render raw #}
+        <div class="alert alert-{{ level }}">{{ flash | raw }}</div>
+    {%- endfor -%}
+</div>
