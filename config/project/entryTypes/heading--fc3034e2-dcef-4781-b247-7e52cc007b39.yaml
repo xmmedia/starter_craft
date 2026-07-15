@@ -69,7 +69,23 @@ fieldLayouts:
             uid: 8368a790-29ed-4910-8fec-2b1ea60a3fe1
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            dateAdded: '2026-07-15T16:43:06+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 31f8f81e-540a-4ecd-92c4-ad24132d9b92 # Heading Full Width
+            handle: fullWidth
+            instructions: null
+            label: 'Full Width'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: c6cd63f2-41ac-49bf-8aa9-a45f54705dac
+            userCondition: null
+            warning: null
+            width: 50
           -
             dateAdded: '2026-04-14T15:35:30+00:00'
             editCondition: null

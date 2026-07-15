@@ -23,11 +23,12 @@
     @apply w-content-max grid grid-cols-1 blocks-wrap:grid-cols-12 blocks-wrap:gap-x-12 w-full;
 }
 
-.text-block-wrap {
+.heading-full-width, .text-block-wrap {
     /* same as .w-content-copy */
-    @apply max-w-3xl;
+    @apply max-w-copy;
 }
-/* Ensure .text-block-wrap is centered when also .col-span-12 */
+/* Ensure .heading-full-width & .text-block-wrap is centered when also .col-span-12 */
+.heading-full-width.blocks-wrap\:col-span-12,
 .text-block-wrap.blocks-wrap\:col-span-12 {
     @apply md:mx-auto;
 }

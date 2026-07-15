@@ -1,4 +1,4 @@
-dateModified: 1784130010
+dateModified: 1784134250
 elementSources:
   craft\elements\Asset:
     -
@@ -276,6 +276,7 @@ meta:
     09cd580c-e508-46a1-85a9-66581dd3a958: 'Element ID' # Element ID
     15e7ea2c-5cb7-40b2-81bc-1a179ea40cd1: 'Image - Wide - Large' # Image - Wide - Large
     17ed004b-264f-4318-be4a-407867219887: 'Horizontal Alignment' # Horizontal Alignment
+    31f8f81e-540a-4ecd-92c4-ad24132d9b92: 'Heading Full Width' # Heading Full Width
     47e69525-5cb0-4a14-b1e8-f9768680f72a: 'Social Media' # Social Media
     49c7c1d7-292b-450a-bf9e-c53ee0c295f8: 'Accordion Icon' # Accordion Icon
     50ce781f-8f6e-4eeb-b0b7-faa9e9821913: 'Text Block' # Text Block

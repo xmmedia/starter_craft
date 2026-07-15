@@ -18,6 +18,8 @@
 
     /* the max width of the design */
     --max-width-max: 80rem; /* 1280px */
+    /* the max width of copy/text */
+    --max-width-copy: var(--container-3xl); /* 768px */
     --max-width-8xl: 90rem; /* 1440px */
     --max-width-9xl: 100rem; /* 1600px */
 
@@ -49,7 +51,7 @@
 
 @utility w-content-copy {
     /* max width matches .text-block-wrap */
-    @apply w-content-base max-w-3xl;
+    @apply w-content-base max-w-copy;
 }
 
 @utility w-content-wide {
