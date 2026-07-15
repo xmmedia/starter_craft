@@ -4,6 +4,10 @@
     {% set classes = classes | merge([block.headingStyle | string]) %}
 {% endif %}
 
+{% if block.fullWidth == false %}
+    {% set classes = classes | merge(['heading-full-width']) %}
+{% endif %}
+
 {% if block.textAlign == 'textCenter' %}
     {% set classes = classes | merge(['mx-auto', 'text-center']) %}
 {% elseif block.textAlign == 'textCenterMobile' %}
