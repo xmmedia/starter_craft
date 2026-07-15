@@ -11,7 +11,7 @@ settings:
   availableTransforms: '*'
   availableVolumes: '*'
   characterLimit: null
-  css: null
+  css: "@import url('/editorcss.php');"
   cssFile: null
   defaultTransform: null
   defaultUploadLocationSubpath: null
@@ -27,21 +27,9 @@ settings:
   imageEntryTypeUid: null
   imageFieldUid: null
   imageMode: img
-  js: null
+  js: "return {\r\n  toolbar: {\r\n      shouldNotGroupWhenFull: true\r\n  },\r\n\r\n  htmlSupport: {\r\n    allow: [\r\n        {\r\n            name: /.*/,\r\n            attributes: true,\r\n            classes: true,\r\n            styles: true\r\n        }\r\n    ]\r\n  },\r\n\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'right',\r\n      'center',\r\n    ],\r\n  },\r\n}"
   jsFile: null
-  options:
-    __assoc__:
-      -
-        - fontSize
-        -
-          __assoc__:
-            -
-              - options
-              -
-                - tiny
-                - small
-                - big
-                - huge
+  options: null
   parseEmbeds: false
   purifierConfig: null
   purifyHtml: true
@@ -60,8 +48,6 @@ settings:
     - link
     - superscript
     - subscript
-    - fontColor
-    - fontSize
     - '|'
     - removeFormat
     - sourceEditing
