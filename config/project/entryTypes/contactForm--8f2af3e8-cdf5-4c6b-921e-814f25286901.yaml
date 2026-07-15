@@ -89,22 +89,6 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
-          -
-            dateAdded: '2026-02-10T17:56:35+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: ac4ba437-838f-42de-8732-07ae62617da4 # Form Redirect
-            handle: null
-            instructions: "By default the form will return to the current page and scroll to the contact form. Select/enter a different URL to redirect to a different location. The success message won't be displayed if it redirects elsewhere."
-            label: 'Success Redirect URL'
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: 86602c24-3edb-405f-9b4e-203f45f3d7b1
-            userCondition: null
-            warning: null
-            width: 100
         name: Content
         uid: fce21a72-4053-422d-bf0a-23ebefb43091
         userCondition: null
