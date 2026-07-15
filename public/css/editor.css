@@ -1,22 +1,24 @@
 /* stylelint-disable no-invalid-position-at-import-rule */
 
-@import "tailwindcss";
+/* Preflight is intentionally excluded: this file is loaded directly into the
+   Craft control panel (via the CKEditor field's `css` setting), not into a
+   sandboxed iframe, so any unscoped base reset would leak onto the CP UI. */
+@import "tailwindcss/theme" layer(theme);
+@import "tailwindcss/utilities" layer(utilities);
 
 @plugin "@tailwindcss/typography";
 
 /* base styles */
 @import "./partials/config.css";
 
+@import "./partials/buttons.css";
+
+/* Everything below must stay nested inside .ck-content — these partials use
+   bare tag selectors (h1, p, ul, …) that would otherwise apply CP-wide. */
 .ck-content {
     @apply body-base;
 
     @import "./partials/base_content.css";
-}
-
-@import "./partials/buttons.css";
-
-@layer components {
-    /* common styles */
     @import "./partials/headings.css";
     @import "./partials/content.css";
 }
