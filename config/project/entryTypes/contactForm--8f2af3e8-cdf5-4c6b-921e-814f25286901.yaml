@@ -30,10 +30,10 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 55c62e14-e98e-4d1a-a181-845f6ebf20e4 # Heading
-            handle: null
+            fieldUid: 511f52f1-d8bb-4d5e-820d-d3f65afcfdc9 # Text Block Simple
+            handle: heading
             instructions: null
-            label: null
+            label: Heading
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField

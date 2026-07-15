@@ -179,6 +179,12 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 - Changes propagated via `./craft up` (applies project config)
 - Includes: fields, sections, entry types, volumes, transforms, category groups, global sets
 
+**CKEditor Fields**:
+- Reuse the existing `textBlock` or `textBlockSimple` fields (`config/project/fields/`) instead of creating a new CKEditor field
+  - `textBlock` — full toolbar (headings, alignment, images, embeds, etc.)
+  - `textBlockSimple` — minimal toolbar (bold, italic, link, super/subscript only)
+- Only create a new CKEditor field if neither existing config fits the use case
+
 **Entry Types and Sections**:
 - Organized in `config/project/sections/` and `config/project/entryTypes/`
 - Blog section with dedicated templates
