@@ -27,8 +27,8 @@ settings:
   imageEntryTypeUid: null
   imageFieldUid: null
   imageMode: img
-  js: "return {\r\n  toolbar: {\r\n      shouldNotGroupWhenFull: true\r\n  },\r\n\r\n  htmlSupport: {\r\n    allow: [\r\n        {\r\n            name: /.*/,\r\n            attributes: true,\r\n            classes: true,\r\n            styles: true\r\n        }\r\n    ]\r\n  },\r\n\r\n  alignment: {\r\n    options: [\r\n      'left',\r\n      'right',\r\n      'center',\r\n    ],\r\n  },\r\n}"
-  jsFile: null
+  js: null
+  jsFile: default.js
   options: null
   parseEmbeds: false
   purifierConfig: null
