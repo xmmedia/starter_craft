@@ -9,6 +9,7 @@
 
 @layer components {
     /* common styles */
+    @import "partials/text_colors.css";
     @import "./partials/alerts.css";
     @import "./partials/content_alignment.css";
     @import "./partials/headings.css";

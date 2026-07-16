@@ -1,0 +1,13 @@
+/* classes to help change the text colour when on a dark vs light bg */
+
+/* @todo-craft add all the dark bg's that have light text on top */
+/* makes the text light when on a dark bg */
+.bg-gray-700 {
+    @apply text-on-dark-bg;
+}
+
+/* @todo-craft add a selector here for every other light bgColor option */
+/* when something is on a light bg that inside a dark bg, this resets the text colours back to dark */
+.bg-white {
+    @apply text-on-light-bg;
+}
