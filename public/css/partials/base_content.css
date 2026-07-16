@@ -62,4 +62,8 @@
     td {
         @apply align-top;
     }
+
+    dialog {
+        @apply text-gray-800;
+    }
 }
