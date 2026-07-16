@@ -15,7 +15,7 @@
 [type="url"],
 [type="color"],
 textarea {
-    @apply w-full px-2 py-1 text-gray-800 border border-gray-300 bg-gray-100 transition-colors outline-hidden rounded-xs;
+    @apply w-full px-2 py-1 text-primary-text border border-gray-300 bg-gray-100 transition-colors outline-hidden rounded-xs;
 
     &:focus {
         @apply bg-gray-100 outline-hidden ring-2 ring-blue-500;
