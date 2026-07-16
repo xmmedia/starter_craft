@@ -73,3 +73,16 @@
     /* improves vertical alignment of text inside buttons (when they're all caps) */
     text-box: trim-both cap alphabetic;
 }
+
+@utility text-on-dark-bg {
+    --body-color: var(--color-white);
+    --heading-color: var(--color-white);
+    @apply text-(--body-color);
+}
+
+@utility text-on-light-bg {
+    --body-color: var(--color-primary-text);
+    /* initial makes var(--heading-color, ...) use its fallback, i.e. the heading's normal colour */
+    --heading-color: initial;
+    @apply text-(--body-color);
+}

@@ -1,6 +1,9 @@
 /* stylelint-disable no-descending-specificity */
 /* stylelint-disable no-duplicate-selectors */
 
+/* if a heading colour is added below, set it as `color: var(--heading-color, <colour>);` instead of
+   an `@apply text-*`, so it still flips to white on dark bgs (see partials/text_colors.css) */
+
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     @apply font-headings font-bold;
     /* @todo-craft uncomment if there's a need on this site, though can cause extra line breaks (in Safari)
@@ -16,14 +19,17 @@ h1, .h1, h2, .h1 {
 
 h1, .h1 {
     @apply my-[0.67rem] text-4xl lg:text-5xl;
+    color: var(--heading-color, var(--color-gray-800));
 }
 
 h2, .h2 {
     @apply my-[0.83rem] text-3xl lg:text-4xl;
+    color: var(--heading-color, var(--color-gray-800));
 }
 
 h3, .h3 {
     @apply mt-4 mb-2 text-2xl lg:text-3xl;
+    color: var(--heading-color, var(--color-gray-800));
 }
 
 h4, .h4 {
