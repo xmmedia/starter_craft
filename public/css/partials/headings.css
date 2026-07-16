@@ -34,15 +34,18 @@ h3, .h3 {
 
 h4, .h4 {
     @apply mt-[1.33rem] mb-2 text-lg lg:text-xl;
+    color: var(--heading-color, var(--color-gray-800));
 }
 
 h5, .h5 {
     /* apply the base font size so using the class overrides the font size of the tag/element */
     @apply my-[1.67rem] text-base;
+    color: var(--heading-color, var(--color-gray-800));
 }
 
 h6, .h6 {
     @apply mt-6 mb-2 text-sm;
+    color: var(--heading-color, var(--color-gray-800));
 }
 
 h3, .h3, h4, .h4 {
