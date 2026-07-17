@@ -41,8 +41,8 @@ Craft admin is located at `/admin`
 ## System Requirements
 
   - PHP 8.5+
-  - MySQL 8.0
-  - Node 22
+  - MySQL 8.4
+  - Node 24
   - [Yarn v4](https://yarnpkg.com/en/docs/install)
 
 ## Commands
