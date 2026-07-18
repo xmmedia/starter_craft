@@ -37,7 +37,7 @@ before_script:
   - symfony security:check
   - php composer.phar audit --abandoned=report
   # check for JS security issues in libs
-  - npm run audit:high
+  - yarn audit:high
 
 static:
   stage: static
