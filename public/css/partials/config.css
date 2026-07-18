@@ -86,3 +86,10 @@
     --heading-color: initial;
     @apply text-(--body-color);
 }
+
+/* apply to an svg so the fill is only applied if the svg doesn't already have a fill on the svg element */
+@utility fill-conditional {
+    &:not([fill]) {
+        @apply fill-current;
+    }
+}
