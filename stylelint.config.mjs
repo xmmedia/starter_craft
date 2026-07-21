@@ -11,19 +11,20 @@ export default {
             },
         ],
         "at-rule-no-deprecated": null,
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                "except": [ "blockless-after-same-name-blockless", "first-nested" ],
+                "ignore": [ "after-comment", "first-nested", "inside-block" ],
+                "ignoreAtRules": [ "else", "apply", "import", "source" ],
+            },
+        ],
         "no-invalid-position-at-import-rule": [
             true,
             { "ignoreAtRules": [ "config", "plugin", "source", "theme", "supports", "layer" ] },
         ],
         "custom-property-empty-line-before": null,
         "comment-empty-line-before": null,
-        "at-rule-empty-line-before": [
-            "always",
-            {
-                "ignore": ["after-comment", "first-nested", "inside-block"],
-                "ignoreAtRules": ["else", "apply", "import", "source"],
-            },
-        ],
         "nesting-selector-no-missing-scoping-root": [true, { "ignoreAtRules": ["utility"] }],
     },
 };
