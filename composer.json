@@ -8,7 +8,7 @@
         "ext-intl": "*",
         "born05/craft-assetusage": "^4.2.1",
         "craftcms/ckeditor": "^5.6.1",
-        "craftcms/cms": "^5.10.10",
+        "craftcms/cms": "^5.10.11",
         "craftcms/contact-form": "3.1.0",
         "craftcms/contact-form-honeypot": "2.1.0",
         "ether/seo": "5.0.0",
