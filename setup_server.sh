@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo
-echo '-- Setting up PRODUCTION site --'
+echo '-- Setting up site --'
 echo
 
 echo "Paths:"
