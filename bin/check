@@ -1,25 +1,31 @@
 #!/bin/bash
 
-set -e
+set -Ee
+
+# shellcheck source=bin/_output.sh
+. "$(dirname "$0")/_output.sh"
+trap report_failure ERR
 
 # use the Node version in .nvmrc, if nvm is installed
 NVM_SH="${NVM_DIR:-$HOME/.nvm}/nvm.sh"
 if [ -s "$NVM_SH" ]; then
     # shellcheck disable=SC1090
     . "$NVM_SH"
-    nvm use
+    step "Node version (nvm use)" nvm use
 fi
 
 # check if composer.json & lock match
-lando composer validate --no-check-all --no-check-version --check-lock
+step "Composer validate" lando composer validate --no-check-all --no-check-version --check-lock
 
-lando composer static
-yarn lint:js
-yarn lint:css
-lando composer lint:yaml
-lando composer lint:twig
+step "PHPStan (static analysis)" lando composer static
+step "ESLint (JS)" yarn lint:js
+step "Stylelint (CSS)" yarn lint:css
+step "YAML lint" lando composer lint:yaml
+step "Twig lint" lando composer lint:twig
 
 # security checks
-symfony security:check
-lando composer audit --abandoned=report
-yarn audit:high
+step "Symfony security check" symfony security:check
+step "Composer audit" lando composer audit --abandoned=report
+step "Yarn audit (high)" yarn audit:high
+
+report_success "All checks passed"
