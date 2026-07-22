@@ -6,9 +6,19 @@
 #   - glab CLI installed and authenticated (glab auth login)
 #   - jq installed (brew install jq)
 #
-# Usage: ./setup_gitlab_ci_vars.sh <group/project>
+# Usage: ./setup_gitlab_ci_vars.sh <group/project> [options]
 # Example: ./setup_gitlab_ci_vars.sh xmmedia/my-client-site
 #          ./setup_gitlab_ci_vars.sh xmmedia/company/my-client-site
+#
+# Every option below is optional and becomes the default for its prompt, so you
+# can still change it at the prompt. provision_site.sh passes the values it already
+# collected.
+#
+#   --scope <staging|production>  skips the scope menu entirely
+#   --remote-base <path>          e.g. /home/username/example.com
+#   --remote-server <host>        ssh hostname or IP
+#   --remote-user <user>          ssh username
+#   --context-host <host>         e.g. www.example.com
 set -euo pipefail
 
 RED='\033[0;31m'
@@ -19,19 +29,9 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 die() { echo -e "${RED}Error: $*${NC}" >&2; exit 1; }
-
-command -v glab >/dev/null 2>&1 || die "glab CLI not installed. See: https://gitlab.com/gitlab-org/cli"
-command -v jq   >/dev/null 2>&1 || die "jq not installed. Run: brew install jq"
-glab auth status >/dev/null 2>&1 || die "Not authenticated with glab. Run: glab auth login"
-
-if [[ $# -lt 1 ]]; then
-    echo "Usage: $0 <group/project>"
-    echo "Example: $0 xmmedia/my-client-site"
-    echo "         $0 xmmedia/company/my-client-site"
-    exit 1
-fi
-
-PROJECT="$1"
+heading() { echo ""; echo -e "${BOLD}${CYAN}$*${NC}"; }
+ok() { echo -e "  ${GREEN}✓${NC} $*"; }
+warn() { echo -e "  ${YELLOW}!${NC} $*"; }
 
 # ask <label> [default]
 ask() {
@@ -54,6 +54,28 @@ ask_required() {
         echo -e "  ${RED}Required.${NC}" >&2
     done
     echo "$result"
+}
+
+# confirm <question> [default y|n] — returns 0 for yes
+confirm() {
+    local question="$1" default="${2:-n}" prompt reply
+    [[ "$default" == "y" ]] && prompt="[Y/n]" || prompt="[y/N]"
+    read -r -p "$question $prompt: " reply
+    reply="$(echo "${reply:-$default}" | tr '[:upper:]' '[:lower:]')"
+    [[ "$reply" == "y" ]]
+}
+
+usage() {
+    echo "Usage: $0 <group/project> [options]"
+    echo "Example: $0 xmmedia/my-client-site"
+    echo "         $0 xmmedia/company/my-client-site --remote-user exampledev"
+    echo ""
+    echo "Options (each becomes the default for its prompt):"
+    echo "  --scope <staging|production>  skips the scope menu"
+    echo "  --remote-base <path>          e.g. /home/username/example.com"
+    echo "  --remote-server <host>        ssh hostname or IP"
+    echo "  --remote-user <user>          ssh username"
+    echo "  --context-host <host>         e.g. www.example.com"
 }
 
 VARIABLES_JSON=""
@@ -95,23 +117,69 @@ set_var() {
     fi
 }
 
+# --- Arguments ---------------------------------------------------------------
+
+PROJECT=""
+ARG_SCOPE=""
+ARG_REMOTE_BASE=""
+ARG_REMOTE_SERVER=""
+ARG_REMOTE_USER=""
+ARG_CONTEXT_HOST=""
+
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        --scope)         ARG_SCOPE="${2:-}";         shift 2 ;;
+        --remote-base)   ARG_REMOTE_BASE="${2:-}";   shift 2 ;;
+        --remote-server) ARG_REMOTE_SERVER="${2:-}"; shift 2 ;;
+        --remote-user)   ARG_REMOTE_USER="${2:-}";   shift 2 ;;
+        --context-host)  ARG_CONTEXT_HOST="${2:-}";  shift 2 ;;
+        -h|--help)       usage; exit 0 ;;
+        -*)              usage >&2; die "unknown option: $1" ;;
+        *)
+            [[ -z "$PROJECT" ]] || { usage >&2; die "unexpected argument: $1"; }
+            PROJECT="$1"; shift
+            ;;
+    esac
+done
+
+if [[ -z "$PROJECT" ]]; then
+    usage >&2
+    exit 1
+fi
+
+case "$ARG_SCOPE" in
+    ''|staging|production) ;;
+    *) die "--scope must be 'staging' or 'production'" ;;
+esac
+
+# --- Preflight ---------------------------------------------------------------
+
+command -v glab >/dev/null 2>&1 || die "glab CLI not installed. See: https://gitlab.com/gitlab-org/cli"
+command -v jq   >/dev/null 2>&1 || die "jq not installed. Run: brew install jq"
+glab auth status >/dev/null 2>&1 || die "Not authenticated with glab. Run: glab auth login"
+
 echo ""
 echo -e "${BOLD}${CYAN}GitLab CI Variable Setup${NC}"
 echo -e "Project: ${YELLOW}$PROJECT${NC}"
-echo ""
 
-# Scope -----------------------------------------------------------------------
-echo "Which scope are you setting up?"
-echo "  1) staging"
-echo "  2) production"
-read -r -p "Scope [1]: " scope_choice
-case "${scope_choice:-1}" in
-    2|production) SCOPE="production" ;;
-    *) SCOPE="staging" ;;
-esac
+# --- Gather input ------------------------------------------------------------
+
+heading "Scope"
+if [[ -n "$ARG_SCOPE" ]]; then
+    SCOPE="$ARG_SCOPE"
+    echo -e "  Using: ${YELLOW}$SCOPE${NC}"
+else
+    echo "  1) staging"
+    echo "  2) production"
+    read -r -p "Which scope are you setting up? [1]: " scope_choice
+    case "${scope_choice:-1}" in
+        2|production) SCOPE="production" ;;
+        *)            SCOPE="staging" ;;
+    esac
+fi
 
 echo ""
-echo -n "Checking existing GitLab variables..."
+echo -n "Checking existing GitLab variables… "
 fetch_variables
 SCOPED_VARS=("SSH_PRIVATE_KEY" "REMOTE_BASE" "REMOTE_SERVER" "REMOTE_USER" "REQUEST_CONTEXT_HOST")
 EXISTING=()
@@ -124,12 +192,9 @@ if [[ "${#EXISTING[@]}" -gt 0 ]]; then
     echo ""
     die "The following variables already exist for scope '$SCOPE': ${EXISTING[*]}"
 fi
-echo -e " ${GREEN}none exist${NC}"
+echo -e "${GREEN}none exist${NC}"
 
-echo ""
-
-# SSH key ---------------------------------------------------------------------
-echo -e "${CYAN}SSH Private Key${NC}"
+heading "SSH private key"
 echo "  1) Generate a new key"
 echo "  2) Use an existing key"
 read -r -p "Choice [1]: " key_choice
@@ -140,38 +205,32 @@ if [[ "${key_choice:-1}" == "2" ]]; then
 else
     KEY_FILE=$(ask "Save key to" "./id_gitlab")
     if [[ -f "$KEY_FILE" ]]; then
-        read -r -p "Key already exists at $KEY_FILE — delete and regenerate? [y/N]: " del_confirm
-        [[ "$(echo "$del_confirm" | tr '[:upper:]' '[:lower:]')" == "y" ]] || { echo "Aborted."; exit 0; }
+        confirm "Key already exists at $KEY_FILE — delete and regenerate?" n \
+            || { echo "Aborted."; exit 0; }
         rm -f "$KEY_FILE" "${KEY_FILE}.pub"
     fi
     ssh-keygen -t ed25519 -C "ci@gitlab.com" -f "$KEY_FILE" -N "" || die "ssh-keygen failed"
-    echo -e "  ${GREEN}✓${NC} Key generated: $KEY_FILE"
+    ok "key generated: $KEY_FILE"
 fi
 
 SSH_KEY=$(< "$KEY_FILE")
 
-echo ""
-
-# Remote config ---------------------------------------------------------------
-REMOTE_BASE=$(ask_required "REMOTE_BASE (e.g. /home/username/example.com)")
+heading "Remote"
+REMOTE_BASE=$(ask_required "REMOTE_BASE (e.g. /home/username/example.com)" "$ARG_REMOTE_BASE")
 REMOTE_BASE="${REMOTE_BASE%/}"
 [[ "$REMOTE_BASE" == */current ]] && die "REMOTE_BASE should not include /current"
 
-REMOTE_SERVER=$(ask_required "REMOTE_SERVER (SSH hostname or IP)")
-REMOTE_USER=$(ask_required  "REMOTE_USER (SSH username)")
+REMOTE_SERVER=$(ask_required "REMOTE_SERVER (SSH hostname or IP)" "$ARG_REMOTE_SERVER")
+REMOTE_USER=$(ask_required  "REMOTE_USER (SSH username)"          "$ARG_REMOTE_USER")
 
-echo ""
-
-# REQUEST_CONTEXT_HOST --------------------------------------------------------
-CONTEXT_HOST=$(ask_required "REQUEST_CONTEXT_HOST for $SCOPE (e.g. www.example.com)")
+heading "Request context"
+CONTEXT_HOST=$(ask_required "REQUEST_CONTEXT_HOST for $SCOPE (e.g. www.example.com)" "$ARG_CONTEXT_HOST")
 CONTEXT_HOST="${CONTEXT_HOST#https://}"
 CONTEXT_HOST="${CONTEXT_HOST#http://}"
 CONTEXT_HOST="${CONTEXT_HOST%/}"
 
-echo ""
-
-# REMOTE_PORT and REQUEST_CONTEXT_SCHEME — only when missing at * scope -------
-echo "Checking * scope variables..."
+# REMOTE_PORT and REQUEST_CONTEXT_SCHEME — only asked when missing at * scope
+heading "Shared (* scope) variables"
 NEED_PORT="false"
 NEED_SCHEME="false"
 REMOTE_PORT="10022"
@@ -195,9 +254,9 @@ else
     REQUEST_CONTEXT_SCHEME=$(ask "REQUEST_CONTEXT_SCHEME" "https")
 fi
 
-# Summary ---------------------------------------------------------------------
-echo ""
-echo -e "${CYAN}Summary:${NC}"
+# --- Summary -----------------------------------------------------------------
+
+heading "Summary"
 printf "  %-35s scope: %s  (key file: %s)\n" "SSH_PRIVATE_KEY" "$SCOPE" "$KEY_FILE"
 printf "  %-35s scope: %s  = %s\n" "REMOTE_BASE" "$SCOPE" "$REMOTE_BASE"
 printf "  %-35s scope: %s  = %s\n" "REMOTE_SERVER" "$SCOPE" "$REMOTE_SERVER"
@@ -214,12 +273,11 @@ if [[ "$NEED_SCHEME" == "true" ]]; then
 fi
 
 echo ""
-read -r -p "Proceed? [y/N]: " confirm
-[[ "$(echo "$confirm" | tr '[:upper:]' '[:lower:]')" == "y" ]] || { echo "Aborted."; exit 0; }
+confirm "Proceed? Everything after this point makes changes." n || { echo "Aborted."; exit 0; }
 
-# Set variables ---------------------------------------------------------------
-echo ""
-echo "Setting variables..."
+# --- Setting the variables ---------------------------------------------------
+
+heading "Setting variables"
 set_var "SSH_PRIVATE_KEY"        "$SSH_KEY"        "$SCOPE"
 set_var "REMOTE_BASE"            "$REMOTE_BASE"    "$SCOPE"
 set_var "REMOTE_SERVER"          "$REMOTE_SERVER"  "$SCOPE"
@@ -235,6 +293,8 @@ if [[ "$NEED_SCHEME" == "true" ]]; then
     set_var "REQUEST_CONTEXT_SCHEME" "$REQUEST_CONTEXT_SCHEME" "*"
 fi
 
+# --- Done --------------------------------------------------------------------
+
 echo ""
 if [[ "$FAILED" -eq 1 ]]; then
     echo -e "${RED}Done with errors — one or more variables failed to set.${NC}"
@@ -243,6 +303,7 @@ fi
 echo -e "${GREEN}Done!${NC}"
 
 if [[ -f "${KEY_FILE}.pub" ]]; then
+    echo ""
     echo ""
     echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
     echo -e "${BOLD}  Add this public key to the server's ~/.ssh/authorized_keys${NC}"
@@ -254,4 +315,5 @@ if [[ -f "${KEY_FILE}.pub" ]]; then
     echo ""
     echo -e "${YELLOW}Once the public key is on the server, delete the local key files:${NC}"
     echo "  rm \"$KEY_FILE\" \"${KEY_FILE}.pub\""
+    echo ""
 fi
