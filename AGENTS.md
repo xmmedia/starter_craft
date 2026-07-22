@@ -48,6 +48,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 - **Quick check** (lint, static analysis, security audits — no fixes): `bin/check`
 - **Full check** (runs Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
+  - `bin/check` sources nvm and runs `nvm use` (per `.nvmrc`) if nvm is installed, so there's no need to run `nvm use` first
 
 ### Craft CMS
 

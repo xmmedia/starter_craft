@@ -69,7 +69,7 @@ Related scripts:
 ## Commands
 
   - Run all checks & fixes: `bin/check_full`
-    - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before opening a PR
+    - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
   - Production JS/CSS build: `yarn build`
