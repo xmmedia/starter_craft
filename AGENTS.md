@@ -147,7 +147,11 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 **Vue Integration**:
 - Vue 3 Composition API available
 - Components mounted via `createApp()` in entry files
-- Example: Menu component mounted to `#menu` element
+- No components in the starter — add them as a project needs them
+
+**Mobile menu**:
+- A `<dialog>` in `_layout.twig`, opened/closed via invoker commands (`command`/`commandfor`) — no JS needed
+- `public/js/src/common/menu.js` adds a fallback for browsers without invoker support, and closes the dialog on link clicks and at the `md` breakpoint
 
 **CSS Processing**:
 - Tailwind CSS 4 (via `@tailwindcss/vite` plugin)

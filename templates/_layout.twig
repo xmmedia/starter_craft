@@ -38,38 +38,73 @@
 <div>
     {% block body %}
         {% block header %}
+            {% set menuItems = menus.menuHeader.all() %}
+
             <header class="header">
                 <div class="w-content flex flex-wrap justify-between items-center">
                     <a href="/">
                         <img src="/images/logo.svg" fetchPriority="high" width="150" height="154" alt="{{ siteInformation.companyName }}">
                     </a>
 
-                    {% set menuButton = {} %}
-                    {% if menus.mainMenuButton %}
-                        {% set menuButton = { 'label': menus.mainMenuButton.label, 'value': menus.mainMenuButton.value } %}
-                    {% endif %}
-
-                    <div id="menu"
-                         class="contents"
-                         data-items="{{ menu(menus.menuHeader.all()) | json_encode }}"
-                         data-menu-button="{{ menuButton | json_encode }}">
-                        {# display a basic menu so there's something if JS fails or for SEO #}
-                        <ul class="header_nav-list">
-                            {% for menuItem in menus.menuHeader.all() %}
-                                <li class="header-nav_item">
-                                    <a href="{{ menuItem.menuLink.value }}" class="header_nav-link">{{ menuItem.menuLabel }}</a>
+                    <nav class="hidden md:block" aria-label="Main">
+                        <ul class="flex flex-nowrap gap-8 p-0 list-none">
+                            {% for menuItem in menuItems %}
+                                <li class="m-0">
+                                    <a href="{{ menuItem.menuLink.url }}">{{ menuItem.menuLabel }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
-                    </div>
+                    </nav>
 
                     {% if menus.mainMenuButton %}
-                        <a href="{{ menus.mainMenuButton.value }}" class="button hidden">{{ menus.mainMenuButton.label }}</a>
+                        <a href="{{ menus.mainMenuButton.url }}" class="button hidden md:inline-block">
+                            {{ menus.mainMenuButton.label }}
+                        </a>
                     {% endif %}
+
+                    {# the command/commandfor attributes open the dialog without JS; see menu.js for the fallback #}
+                    <button type="button"
+                            class="header-menu_toggle md:hidden"
+                            command="show-modal"
+                            commandfor="mobile-menu"
+                            aria-label="Open menu">
+                        <svg width="24" height="24" aria-hidden="true">
+                            <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#menu"></use>
+                        </svg>
+                    </button>
 
                     {% include '_includes/_social_media.twig' %}
                 </div>
             </header>
+
+            <dialog id="mobile-menu" class="header-mobile-menu" aria-label="Menu">
+                <div class="flex justify-end">
+                    <button type="button"
+                            class="header-menu_toggle"
+                            command="close"
+                            commandfor="mobile-menu"
+                            autofocus
+                            aria-label="Close menu">
+                        <svg width="24" height="24" aria-hidden="true">
+                            <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#close"></use>
+                        </svg>
+                    </button>
+                </div>
+
+                <nav class="header-mobile-menu_scroll" aria-label="Mobile menu">
+                    <ul class="flex flex-col gap-4 list-none">
+                        {% for menuItem in menuItems %}
+                            <li class="m-0">
+                                <a href="{{ menuItem.menuLink.url }}">{{ menuItem.menuLabel }}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+
+                    {% if menus.mainMenuButton %}
+                        <a href="{{ menus.mainMenuButton.url }}" class="button mt-8">{{ menus.mainMenuButton.label }}</a>
+                    {% endif %}
+                </nav>
+            </dialog>
         {% endblock header %}
 
         {% block content_wrap %}

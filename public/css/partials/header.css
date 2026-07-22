@@ -4,29 +4,23 @@
     }
 }
 
-.header_nav-list {
-    @apply flex flex-nowrap list-none;
-}
+.header-menu_toggle {
+    @apply m-4 cursor-pointer bg-transparent border-0;
 
-.header-nav_item {
-    @apply mx-4;
-
-    &:last-of-type {
-        @apply mr-0;
+    svg {
+        @apply fill-current;
     }
 }
 
-/* Menu items need to be revealed at the desired screen size using mq
- .header-nav_item-products {
-    @apply hidden sm:block;
-/*} */
+/* full screen mobile menu; overflow-hidden so only _scroll scrolls */
+.header-mobile-menu {
+    @apply w-full max-w-none h-full max-h-none m-0 border-0 overflow-hidden;
 
-.header-mobile-open {
-    .header-nav_item {
-        @apply block;
+    &[open] {
+        @apply flex flex-col;
     }
 }
 
-.header-nav_item-toggle {
-    @apply sm:hidden;
+.header-mobile-menu_scroll {
+    @apply flex-1 min-h-0 overflow-y-auto overscroll-y-contain;
 }
