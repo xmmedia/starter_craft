@@ -11,7 +11,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 2. Update `composer.json`: `name`, `license` (likely `proprietary`) and `description`
 3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
 4. Setup dev server:
-   1. If using InterWorx, upload `setup_dev.sh` and run: `sh ./setup_dev.sh` 
+   1. If using InterWorx, run `./provision_site.sh` locally — it provisions the whole site (see [Provisioning a Site](#provisioning-a-site) below) and runs `setup_server.sh` for you. To do it by hand instead, upload `setup_server.sh` to the domain dir and run: `sh ./setup_server.sh`
    2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
    3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
    4. Install PHP packages/vendors: `php composer.phar install`
@@ -37,6 +37,27 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 
 **Dev site can be accessed at https://[domain]/**  
 Craft admin is located at `/admin`
+
+## Provisioning a Site
+
+For sites on an InterWorx server, `./provision_site.sh` (run locally) does the whole setup:
+1Password items, the SiteWorx account, the database, `setup_server.sh`, the PHP restart
+sudoers entry, the Craft queue cron job and the GitLab CI/CD variables.
+
+  - Requires an ssh Host with passwordless sudo, [`op`](https://developer.1password.com/docs/cli/)
+    signed in, [`glab`](https://gitlab.com/gitlab-org/cli) authenticated and `jq` installed.
+  - It asks whether you're provisioning staging or production, then prompts for everything
+    else and shows a summary before making any changes.
+  - The remaining manual steps (DNS record, SSL certificate, CI public key, `shared/.env`,
+    first deploy, Craft database) are printed at the end. The DNS record doesn't need to
+    exist beforehand — it's only needed before generating the SSL certificate.
+
+Related scripts:
+
+  - `setup_server.sh` – runs on the server as the site user, in the domain dir; creates the
+    `releases`/`shared` structure and symlinks. Normally run by `provision_site.sh`.
+  - `setup_gitlab_ci_vars.sh <group/project>` – sets the GitLab CI/CD variables for one
+    scope (staging or production). Can be run on its own; see `--help`.
 
 ## System Requirements
 
@@ -104,12 +125,11 @@ Craft admin is located at `/admin`
 1. Change version in `composer.json`.
 1. Update the PHP version in the following files:
     - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, you must override the appserver service with `type: php:X.X`)
-    - `setup_dev.sh` – 4 places
-    - `setup_prod.sh` – 4 places
+    - `setup_server.sh` – 4 places
     - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, and `php-fpm` service name)
-    - `.php-cs-fixer.dist.php` – add the new version or update the `@PHP8#Migration` version to match the current version.
+    - `php_cs.dist` – add the new version or update the `@PHP8#Migration` version to match the current version.
 1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
 1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
-1. Update version in `README.md` and `CLAUDE.md`.
+1. Update version in `README.md` and `AGENTS.md`.
 
 consider: https://plugins.craftcms.com/image-toolbox?craft4

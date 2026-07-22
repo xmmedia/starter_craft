@@ -172,6 +172,15 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 - `storage/` - logs, cache, sessions, rebrand assets
 - `public/assets/` - user-uploaded content
 
+**Provisioning Scripts** (see README for the runbook):
+- `provision_site.sh` — orchestrates provisioning a new site on an InterWorx server
+- `setup_gitlab_ci_vars.sh` — sets the GitLab CI/CD variables for one scope
+- `setup_server.sh` — creates the release/shared structure; runs on the server
+
+Never run these — they're interactive and make changes to servers, 1Password and GitLab.
+`provision_site.sh` and `setup_gitlab_ci_vars.sh` share the same structure, helpers and
+output style; keep them in sync when editing either one.
+
 ### Content Management
 
 **Craft Project Config**:
@@ -274,8 +283,7 @@ When updating PHP (currently 8.5):
 1. Update `composer.json` require version
 2. Update in:
    - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, override appserver with `type: php:X.X`)
-   - `setup_dev.sh` – 4 places
-   - `setup_prod.sh` – 4 places
+   - `setup_server.sh` – 4 places
    - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, `php-fpm` service name)
    - Add the related migration to `php_cs.dist`
 3. Run `lando rebuild`

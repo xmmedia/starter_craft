@@ -11,10 +11,8 @@
 #   7. Run setup_gitlab_ci_vars.sh locally
 #
 # The SSL certificate is not generated here — the InterWorx CLI always includes
-# the www subdomain and gives no way to exclude it, so it fails when www has no
-# DNS record. Generate it in SiteWorx instead (see the manual steps at the end).
-#
-# The DNS record must already exist.
+# the www subdomain and gives no way to exclude it. Generate it in SiteWorx
+# instead (see the manual steps at the end), once the DNS record is in place.
 #
 # Prerequisites:
 #   - ssh access to the server via a configured ssh Host, with passwordless sudo
@@ -96,7 +94,6 @@ op account list >/dev/null 2>&1 || die "Not signed in to 1Password. Run: op sign
 
 echo ""
 echo -e "${BOLD}${CYAN}New Site Setup${NC}"
-echo "The DNS record should already be added before running this."
 
 # --- Gather input ------------------------------------------------------------
 
@@ -349,15 +346,16 @@ echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━�
 echo -e "${BOLD}  Remaining manual steps${NC}"
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
-echo -e "  ${BOLD}1.${NC} Generate the SSL certificate in SiteWorx (not scriptable — the CLI"
-echo -e "     always includes www and cannot exclude it)"
+echo -e "  ${BOLD}1.${NC} Add the DNS record for ${YELLOW}$DOMAIN${NC} if it isn't in place yet"
+echo -e "  ${BOLD}2.${NC} Generate the SSL certificate in SiteWorx, once DNS has propagated"
+echo -e "     (not scriptable — the CLI always includes www and cannot exclude it)"
 echo -e "     Log in as ${YELLOW}$SITE_USER${NC} at ${YELLOW}https://$SERVER_HOST:2443/${NC} → SSL/TLS → Let's Encrypt"
 echo -e "     Untick ${YELLOW}www.$DOMAIN${NC} unless it has its own DNS record"
-echo -e "  ${BOLD}2.${NC} Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
-echo -e "  ${BOLD}3.${NC} Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
+echo -e "  ${BOLD}3.${NC} Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
+echo -e "  ${BOLD}4.${NC} Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
 echo "     Copy .env.example, then set CRAFT_ENVIRONMENT=production and ENVIRONMENT=development"
-echo -e "  ${BOLD}4.${NC} Deploy from GitLab (the first attempt often fails — fix and retry)"
-echo -e "  ${BOLD}5.${NC} Install or import the Craft database"
+echo -e "  ${BOLD}5.${NC} Deploy from GitLab (the first attempt often fails — fix and retry)"
+echo -e "  ${BOLD}6.${NC} Install or import the Craft database"
 echo ""
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
