@@ -6,9 +6,7 @@
     {% set wrapperClasses = wrapperClasses | merge(['justify-center', 'md:justify-start']) %}
 {% endif %}
 
-{% if block.classes %}
-    {% set wrapperClasses = wrapperClasses | merge(block.classes | explodeClass) %}
-{% endif %}
+{% set wrapperClasses = wrapperClasses | merge(block.classes | explodeClass) %}
 
 <div class="{{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <a href="{{ block.button.value }}" class="button">

@@ -10,9 +10,7 @@
     {% set classes = classes | merge(['text-center', 'blocks-wrap:text-left']) %}
 {% endif %}
 
-{% if block.classes %}
-    {% set classes = classes | merge(block.classes | explodeClass) %}
-{% endif %}
+{% set classes = classes | merge(block.classes | explodeClass) %}
 
 <div class="text-block-wrap {{ classes | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <div>{{ block.textBlock }}</div>
