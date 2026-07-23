@@ -67,7 +67,7 @@ fieldLayouts:
             handle: null
             instructions: 'The amount of space at the bottom of the section.'
             label: null
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: e5f9034d-5e66-4fa7-aadf-0e1b99e93808
