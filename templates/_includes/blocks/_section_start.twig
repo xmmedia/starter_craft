@@ -24,9 +24,7 @@
     {% set classes = classes | merge(['bg-' ~ block.bgColor]) %}
 {% endif %}
 
-{% if block.classes %}
-    {% set classes = classes | merge(block.classes | explodeClass) %}
-{% endif %}
+{% set classes = classes | merge(block.classes | explodeClass) %}
 
 <!-- >>> section start >>> -->
 <section class="{{ classes | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
