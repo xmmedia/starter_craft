@@ -16,10 +16,13 @@
     /* the breakpoint at which the blocks switch from a single col to 12 cols */
     --breakpoint-blocks-wrap: 53rem; /* 848px */
 
+    /* the max width of copy/text */
+    --width-copy: var(--container-3xl); /* 768px */
+
     /* the max width of the design */
     --max-width-max: 80rem; /* 1280px */
     /* the max width of copy/text */
-    --max-width-copy: var(--container-3xl); /* 768px */
+    --max-width-copy: var(--width-copy); /* 768px */
     --max-width-8xl: 90rem; /* 1440px */
     --max-width-9xl: 100rem; /* 1600px */
 
