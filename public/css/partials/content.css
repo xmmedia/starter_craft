@@ -30,5 +30,5 @@
 /* Ensure .heading-full-width & .text-block-wrap is centered when also .col-span-12 */
 .heading-full-width.blocks-wrap\:col-span-12,
 .text-block-wrap.blocks-wrap\:col-span-12 {
-    @apply blocks-wrap:mx-auto;
+    @apply blocks-wrap:w-copy blocks-wrap:mx-auto;
 }
