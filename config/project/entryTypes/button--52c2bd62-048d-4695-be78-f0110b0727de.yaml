@@ -62,7 +62,7 @@ fieldLayouts:
             fieldUid: 80ffc64e-4e53-4ba1-8e8f-95d4f45b8946 # Text Alignment
             handle: buttonAlign
             instructions: null
-            label: 'Button Align'
+            label: 'Button Alignment'
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
