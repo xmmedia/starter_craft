@@ -40,7 +40,7 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
 {% if block.limitMobileWidth %}
     {% set figureClasses = figureClasses | merge(['max-w-lg blocks-wrap:max-w-none']) %}
 {% endif %}
-{% set figureClasses = figureClasses | merge([block.classes]) %}
+{% set figureClasses = figureClasses | merge(block.classes | explodeClass) %}
 
 <div class="{{ wrapperClasses }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
     <figure class="{{ figureClasses | join(' ') }}">
