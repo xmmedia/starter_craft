@@ -14,7 +14,7 @@
 @theme {
     --breakpoint-xs: 25rem; /* 400px */
     /* the breakpoint at which the blocks switch from a single col to 12 cols */
-    --breakpoint-blocks-wrap: 53rem;
+    --breakpoint-blocks-wrap: 53rem; /* 848px */
 
     /* the max width of the design */
     --max-width-max: 80rem; /* 1280px */
