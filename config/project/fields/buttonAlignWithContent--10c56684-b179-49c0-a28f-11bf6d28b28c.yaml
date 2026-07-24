@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: buttonAlignWithContent
+instructions: 'Constrains the block to the same max width as text content and centers it.'
+name: 'Button Align with Content'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

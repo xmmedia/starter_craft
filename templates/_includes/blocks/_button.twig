@@ -6,6 +6,10 @@
     {% set wrapperClasses = wrapperClasses | merge(['justify-center', 'md:justify-start']) %}
 {% endif %}
 
+{% if block.alignWithContent %}
+    {% set wrapperClasses = wrapperClasses | merge(['w-copy', 'mx-auto']) %}
+{% endif %}
+
 {% set wrapperClasses = wrapperClasses | merge(block.classes | explodeClass) %}
 
 <div class="{{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
