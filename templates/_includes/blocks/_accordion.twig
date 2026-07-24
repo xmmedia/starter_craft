@@ -1,4 +1,6 @@
-<div class="{{ blockWidth(block) }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="{{ blockWidth(block) }} flex flex-col gap-6 w-full max-w-copy mx-auto"
+    {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+
     {% for accordionItem in block.accordionWrapper.all() %}
         {# using border instead of divide because divide only adds between and at the end, not on the first item #}
         <details class="first:border-t border-b border-gray-600 hover:bg-zinc-200">
@@ -22,4 +24,5 @@
             <div class="mx-13 mb-8">{{ accordionItem.textBlock }}</div>
         </details>
     {% endfor %}
+
 </div>
