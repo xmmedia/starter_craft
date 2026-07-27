@@ -49,6 +49,7 @@ export const initMenu = () => {
     });
 
     // matches the md breakpoint, where the desktop nav is displayed
+    // if the window goes beyond that size, hide the mobile menu
     const desktop = window.matchMedia('(width >= 48rem)');
     desktop.addEventListener('change', (event) => {
         if (event.matches) {
