@@ -35,6 +35,8 @@
     {% endblock %}
 </head>
 <body{% if body_attributes is defined %}{{ body_attributes }}{% endif %}>
+{{ beginBody() }}
+
 <div>
     {% block body %}
         {% block header %}
@@ -131,6 +133,8 @@
         <script defer src="/js/svgxuse.min.js"></script>
     {% endif %}
 {% endblock %}
+
+{{ endBody() }}
 </body>
 </html>
 
