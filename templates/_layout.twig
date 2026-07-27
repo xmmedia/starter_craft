@@ -13,6 +13,12 @@
         {# @todo add fonts here #}
 
         {{ craft.vite.script("public/js/src/public.js", false) }}
+        {% if craft.vite.devServerRunning() %}
+            {% html %}
+                {# this will be loaded in the footer, here so it's with the dev server include #}
+                {% js "/js/svgxuse.min.js" with { defer: true } %}
+            {% endhtml %}
+        {% endif %}
     {% endblock %}
 
     {{ head() }}
@@ -127,12 +133,6 @@
         {% endblock footer %}
     {% endblock body %}
 </div>
-
-{% block javascripts %}
-    {% if craft.vite.devServerRunning() %}
-        <script defer src="/js/svgxuse.min.js"></script>
-    {% endif %}
-{% endblock %}
 
 {{ endBody() }}
 </body>
