@@ -1,5 +1,9 @@
 {% set classes = [blockWidth(block)] %}
 
+{% if block.fullWidth %}
+    {% set classes = classes | merge(['w-full max-w-none']) %}
+{% endif %}
+
 {% if block.textVerticalAlign == 'center' %}
     {% set classes = classes | merge(['flex flex-col justify-center']) %}
 {% endif %}

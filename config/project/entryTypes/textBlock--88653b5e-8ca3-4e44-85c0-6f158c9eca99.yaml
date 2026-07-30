@@ -53,7 +53,23 @@ fieldLayouts:
             uid: 814e76fb-d534-4afe-9253-5d1c94d60693
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            dateAdded: '2026-07-21T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 31f8f81e-540a-4ecd-92c4-ad24132d9b92 # Full Width
+            handle: fullWidth
+            instructions: 'By default, the max width of the text block is limited for readability. Turn on to match a full width heading.'
+            label: 'Full Width'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: f86de1ee-830d-4928-8445-2e450fc2bf95
+            userCondition: null
+            warning: null
+            width: 50
           -
             dateAdded: '2026-02-12T18:01:04+00:00'
             editCondition: null

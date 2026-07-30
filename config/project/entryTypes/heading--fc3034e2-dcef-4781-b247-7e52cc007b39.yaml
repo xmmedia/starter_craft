@@ -75,9 +75,9 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 31f8f81e-540a-4ecd-92c4-ad24132d9b92 # Heading Full Width
+            fieldUid: 31f8f81e-540a-4ecd-92c4-ad24132d9b92 # Full Width
             handle: fullWidth
-            instructions: null
+            instructions: 'By default, the max width of the headings will be the same as the text blocks. Turn on to make them go full width.'
             label: 'Full Width'
             required: false
             tip: null

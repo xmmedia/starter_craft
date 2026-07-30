@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: headingFullWidth
-instructions: 'By default, the max width of the headings will be the same as the text blocks. Turn on to make them go full width.'
-name: 'Heading Full Width'
+instructions: 'By default, the max width is limited for readability. Turn on to go full width.'
+name: 'Full Width'
 searchable: false
 settings:
   default: false
