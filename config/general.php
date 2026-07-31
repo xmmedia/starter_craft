@@ -51,6 +51,8 @@ return GeneralConfig::create()
     ->useEmailAsUsername()
     // increase the expiry on account activation & password reset tokens to 7 days
     ->verificationCodeDuration('P7D')
+    // increase how long users stay logged in when idle (default is 1 hour)
+    ->userSessionDuration('P1D')
     // in prod/staging, don't run the queue automatically, instead use cron job (every minute)
     ->runQueueAutomatically(App::env('DEV_MODE') ?? false)
     // @todo-craft update with new favicons
