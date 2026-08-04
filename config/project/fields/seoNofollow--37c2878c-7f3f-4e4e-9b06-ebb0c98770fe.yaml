@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: seoNofollow
+instructions: 'Asks search engines not to follow the links on this page. Has no effect on the sitemap — use "Hide from Search Engines" for that.'
+name: 'Don’t Follow Links'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -8,6 +8,7 @@ Usage:
         'url': <relative/url>,
         'image': '/images/logo-og.png',
         'image_alt': 'Image Alt',
+        'robots': <array of robots directives, e.g. ['noindex']>,
     } only %}
 {% endblock head %}
 #}
@@ -24,6 +25,10 @@ Usage:
 
 {% if description %}
     {% set description = description | replace({ "\n": ' ', "\r": ' ' }) %}
+{% endif %}
+
+{% if robots is defined and robots is not empty %}
+    <meta name="robots" content="{{ robots | join(', ') }}">
 {% endif %}
 
 {% if description %}
