@@ -353,7 +353,7 @@ echo -e "     Log in as ${YELLOW}$SITE_USER${NC} at ${YELLOW}https://$SERVER_HOS
 echo -e "     Untick ${YELLOW}www.$DOMAIN${NC} unless it has its own DNS record"
 echo -e "  ${BOLD}3.${NC} Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
 echo -e "  ${BOLD}4.${NC} Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
-echo "     Copy .env.example, then set CRAFT_ENVIRONMENT=production and ENVIRONMENT=development"
+echo "     Copy .env.example, then set CRAFT_ENVIRONMENT=production"
 echo -e "  ${BOLD}5.${NC} Deploy from GitLab (the first attempt often fails — fix and retry)"
 echo -e "  ${BOLD}6.${NC} Install or import the Craft database"
 echo ""
