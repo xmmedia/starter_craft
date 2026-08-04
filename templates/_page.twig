@@ -13,6 +13,15 @@
 
 {% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif %}{% endblock %}
 
+{# lightswitches in the SEO block; SeoModule also drops noindex pages from the sitemap #}
+{% set robots = [] %}
+{% if seo and seo.seoNoindex %}
+    {% set robots = robots | merge(['noindex']) %}
+{% endif %}
+{% if seo and seo.seoNofollow %}
+    {% set robots = robots | merge(['nofollow']) %}
+{% endif %}
+
 {% block head %}
     {{ parent() }}
 
@@ -22,6 +31,7 @@
             'description': seo.metaDescription,
             'image': seo.ogImage,
             'image_alt': seo.ogImageAlt,
+            'robots': robots,
         } only %}
     {% endif %}
 {% endblock head %}

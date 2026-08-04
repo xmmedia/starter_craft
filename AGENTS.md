@@ -119,7 +119,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 ### Custom Modules
 
-The application bootstraps three custom Yii2 modules in `config/app.php`:
+The application bootstraps four custom Yii2 modules in `config/app.php`:
 
 1. **ContactFormModule** (`modules/contactformmodule/ContactFormModule.php`):
    - Customizes Craft's Contact Form plugin behavior
@@ -134,6 +134,10 @@ The application bootstraps three custom Yii2 modules in `config/app.php`:
 3. **ImageModule** (`modules/imagemodule/`):
    - Custom image processing functionality
    - PSR-4 autoloaded from `modules/imagemodule/src/`
+
+4. **SeoModule** (`modules/seomodule/SeoModule.php`):
+   - Keeps entries flagged "Hide from Search Engines" out of the sitemap — see
+     **Hiding a page from search engines** below
 
 ### Frontend Build System
 
@@ -203,6 +207,17 @@ output style; keep them in sync when editing either one.
 - Organized in `config/project/sections/` and `config/project/entryTypes/`
 - Blog section with dedicated templates
 - Services section with dedicated templates
+
+**Hiding a page from search engines**:
+- Page meta comes from the `seo` Matrix field, *not* the Ether SEO plugin's own field
+  type — so the plugin's per-entry noindex option (`SitemapService::core()`) is inert
+  here. The plugin is only used for the sitemap, robots.txt and redirects
+- The `seoNoindex` lightswitch drives both the `robots` meta tag and sitemap exclusion,
+  the latter via `SeoModule::filterSitemap()`. Don't reimplement that as a URL rule — the
+  plugin registers `sitemap.xml` on `EVENT_REGISTER_SITE_URL_RULES` and will silently
+  overwrite a config route under the same key
+- Which sections appear in the sitemap lives in the `seo_sitemap` DB table, not project
+  config — set per environment in Settings → SEO → Sitemap
 
 ## Development Workflow
 

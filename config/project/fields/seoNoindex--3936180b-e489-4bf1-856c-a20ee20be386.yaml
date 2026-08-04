@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: seoNoindex
+instructions: 'Keeps this page out of the sitemap and asks search engines not to list it. The page stays publicly reachable — anyone with the link can still open it.'
+name: 'Hide from Search Engines'
+searchable: false
+settings:
+  default: false
+  offLabel: null
+  onLabel: null
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

@@ -26,8 +26,9 @@ return [
         'contact-form' => modules\contactformmodule\ContactFormModule::class,
         'xm-module'    => modules\xmmodule\XmModule::class,
         'image-module' => modules\imagemodule\ImageModule::class,
+        'seo-module'   => modules\seomodule\SeoModule::class,
     ],
-    'bootstrap' => ['contact-form', 'xm-module', 'image-module'],
+    'bootstrap' => ['contact-form', 'xm-module', 'image-module', 'seo-module'],
     'components' => [
         'session' => static function () {
             $savePath = Craft::getAlias('@storage').'/sessions/';
