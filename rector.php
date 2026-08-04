@@ -18,6 +18,7 @@ return RectorConfig::configure()
     ->withSets([
         SetList::DEAD_CODE,
         SetList::CODE_QUALITY,
+        SetList::IF,
     ])
     ->withSkip([
         // don't remove useless variables inside event handler closures
