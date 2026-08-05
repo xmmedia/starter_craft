@@ -130,6 +130,9 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 2. **XmModule** (`modules/xmmodule/`):
    - Custom XM Media functionality
    - PSR-4 autoloaded from `modules/xmmodule/src/`
+   - Twig extension (`twigextensions/XmTwigExtension.php`) — includes `blockWidth()` and
+     `blockId()` functions
+   - Validates the shared `elementId` field on save — see **Block element IDs** below
 
 3. **ImageModule** (`modules/imagemodule/`):
    - Custom image processing functionality
@@ -207,6 +210,20 @@ output style; keep them in sync when editing either one.
 - Organized in `config/project/sections/` and `config/project/entryTypes/`
 - Blog section with dedicated templates
 - Services section with dedicated templates
+
+**Block element IDs**:
+- Nearly every block has the shared `elementId` field, used for `#anchor` links
+- Never write the attribute by hand — use `blockId(block)`, which returns the escaped
+  ` id="…"` (leading space included) or an empty string:
+  `<div class="{{ classes }}"{{ blockId(block) }}>`. `_heading.twig` is the exception:
+  it passes `block.elementId` into `heading()`, which drops a null attribute itself
+- Form blocks fall back to a generated ID so the post-submit scroll target always exists:
+  `{% set formId = block.elementId ?? ('form--' ~ block.id) %}`
+- `XmModule::validateElementIds()` rejects values that aren't a valid HTML `id` at save
+  time — stricter than the spec (must start with a letter, then only letters, numbers,
+  hyphens, underscores) so the value always works in a URL fragment and a CSS selector
+  unescaped. Applied to any entry whose layout has the field, so new block types are
+  covered automatically
 
 **Hiding a page from search engines**:
 - Page meta comes from the `seo` Matrix field, *not* the Ether SEO plugin's own field

@@ -27,4 +27,4 @@
 {% set classes = classes | merge(block.classes | explodeClass) %}
 
 <!-- >>> section start >>> -->
-<section class="{{ classes | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<section class="{{ classes | join(' ') }}"{{ blockId(block) }}>

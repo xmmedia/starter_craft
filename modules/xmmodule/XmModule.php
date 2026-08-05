@@ -13,8 +13,12 @@ declare(strict_types=1);
 namespace modules\xmmodule;
 
 use Craft;
+use craft\base\Element;
+use craft\base\Model;
 use craft\elements\Asset;
+use craft\elements\Entry;
 use craft\events\AssetEvent;
+use craft\events\DefineRulesEvent;
 use craft\events\SetAssetFilenameEvent;
 use craft\helpers\Assets as AssetsHelper;
 use craft\mail\Mailer;
@@ -58,6 +62,7 @@ class XmModule extends BaseModule
 
         $this->attachEventHandlers();
         $this->forceLowercaseFilenames();
+        $this->validateElementIds();
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
@@ -101,6 +106,54 @@ class XmModule extends BaseModule
             $siteName = \Craft::$app->getSystemName();
             $currentSubject = $event->message->getSubject();
             $event->message->setSubject($currentSubject.' on '.$siteName);
+        });
+    }
+
+    /**
+     * Rejects Element IDs that can't be used as an HTML `id`.
+     *
+     * HTML requires the value to be non-empty and free of whitespace, so `id="id id"` is
+     * invalid — and since the field exists to make `#anchor` links scroll to a block, an
+     * ID a fragment or CSS selector can't address just silently doesn't work. This is
+     * stricter than the spec (letter first, then letters/numbers/hyphens/underscores) so
+     * the value is always usable in a URL and a selector without escaping.
+     *
+     * Applied to any entry whose field layout has the field, so every block type — and
+     * any added later — is covered without listing them here.
+     */
+    private function validateElementIds(): void
+    {
+        Event::on(Entry::class, Model::EVENT_DEFINE_RULES, static function (DefineRulesEvent $event): void {
+            $entry = $event->sender;
+
+            if (!$entry instanceof Entry) {
+                return;
+            }
+
+            // an entry mid-construction may not have a field layout yet
+            try {
+                $hasField = null !== $entry->getFieldLayout()?->getFieldByHandle('elementId');
+            } catch (\Throwable) {
+                return;
+            }
+
+            if (!$hasField) {
+                return;
+            }
+
+            $event->rules[] = [
+                ['elementId'],
+                'match',
+                'pattern' => '/^[A-Za-z][A-Za-z0-9_-]*$/',
+                'skipOnEmpty' => true,
+                // Not SCENARIO_ESSENTIALS: that's what the CP autosaves drafts under
+                // (ElementsController::actionCreate()), and Matrix passes the owner's scenario
+                // down to its nested entries. Validating there fails the autosave of a
+                // half-typed ID, and the CP can only report a generic "Couldn't save draft".
+                'on' => [Element::SCENARIO_DEFAULT, Element::SCENARIO_LIVE],
+                'message' => 'The Element ID must start with a letter and contain only letters, '
+                    .'numbers, hyphens and underscores — no spaces.',
+            ];
         });
     }
 
