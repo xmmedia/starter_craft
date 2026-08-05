@@ -1,7 +1,7 @@
-{% set successUrl = craft.app.request.url ~ '#form--' ~ block.id %}
+{% set formId = block.elementId ?? ('form--' ~ block.id) %}
+{% set successUrl = craft.app.request.url ~ '#' ~ formId %}
 
-<div id="form--{{ block.id }}" class="{{ blockWidth(block) }} {{ block.classes }}"
-    {% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div id="{{ formId }}" class="{{ blockWidth(block) }} {{ block.classes }}">
     {% if block.heading %}
         <h2>{{ block.heading | heading_striptags }}</h2>
     {% endif %}
