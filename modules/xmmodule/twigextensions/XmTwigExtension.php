@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace modules\xmmodule\twigextensions;
 
 use craft\elements\Entry;
+use craft\helpers\Html;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
@@ -53,6 +54,7 @@ class XmTwigExtension extends AbstractExtension
     {
         return [
             new TwigFunction('blockWidth', $this->blockWidth(...)),
+            new TwigFunction('blockId', $this->blockId(...), ['is_safe' => ['html']]),
             new TwigFunction('menu', $this->menu(...)),
             new TwigFunction('submenu', $this->submenu(...)),
         ];
@@ -75,6 +77,24 @@ class XmTwigExtension extends AbstractExtension
         }
 
         return 'blocks-wrap:col-span-'.($block->blockWidth ?? 12);
+    }
+
+    /**
+     * The block's `id` attribute, ready to drop into a tag, or an empty string when it has none.
+     *
+     * Includes the leading space, so it goes straight after the previous attribute:
+     * `<div class="{{ classes }}"{{ blockId(block) }}>`.
+     *
+     * No trimming needed — PlainText::normalizeValue() already trims and turns an empty
+     * value into null.
+     */
+    public function blockId(Entry $block): string
+    {
+        if (null === $block->elementId) {
+            return '';
+        }
+
+        return Html::renderTagAttributes(['id' => $block->elementId]);
     }
 
     public function menu(array $items): array

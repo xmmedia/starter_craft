@@ -12,7 +12,7 @@
 
 {% set wrapperClasses = wrapperClasses | merge(block.classes | explodeClass) %}
 
-<div class="{{ wrapperClasses | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="{{ wrapperClasses | join(' ') }}"{{ blockId(block) }}>
     <a href="{{ block.button.value }}" class="button">
         {{ block.button.label }}
     </a>

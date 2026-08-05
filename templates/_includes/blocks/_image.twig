@@ -42,7 +42,7 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
 {% endif %}
 {% set figureClasses = figureClasses | merge(block.classes | explodeClass) %}
 
-<div class="{{ wrapperClasses }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="{{ wrapperClasses }}"{{ blockId(block) }}>
     <figure class="{{ figureClasses | join(' ') }}">
         {% if block.imageLink %}
             <a href="{{ block.imageLink }}">

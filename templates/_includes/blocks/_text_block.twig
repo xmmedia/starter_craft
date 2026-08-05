@@ -16,6 +16,6 @@
 
 {% set classes = classes | merge(block.classes | explodeClass) %}
 
-<div class="text-block-wrap {{ classes | join(' ') }}"{% if block.elementId %} id="{{ block.elementId }}"{% endif %}>
+<div class="text-block-wrap {{ classes | join(' ') }}"{{ blockId(block) }}>
     <div>{{ block.textBlock }}</div>
 </div>
