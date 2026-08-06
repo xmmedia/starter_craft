@@ -9,19 +9,22 @@ details {
         }
     }
 
-    .details-minus {
-        @apply hidden;
-    }
-
     @variant open {
-        .details-minus {
-            @apply block;
-        }
-
-        .details-plus {
-            @apply hidden;
+        .details-toggle-cross {
+            @apply rotate-0;
         }
     }
+}
+
+/* stacks the toggle's svgs on top of each other; callers can override the svg size */
+.details-toggle svg {
+    @apply col-start-1 row-start-1 size-5 fill-current transition-transform;
+}
+
+/* must stay here, not as a utility class in the markup: the open rule above is in
+   the components layer & would lose to a utility regardless of specificity */
+.details-toggle-cross {
+    @apply rotate-90;
 }
 
 /* Fallback: open animation only (browsers without ::details-content) */

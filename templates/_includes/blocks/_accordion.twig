@@ -4,12 +4,13 @@
         {# using border instead of divide because divide only adds between and at the end, not on the first item #}
         <details class="first:border-t border-b border-gray-600 hover:bg-zinc-200">
             <summary class="flex items-center-safe gap-4 w-full p-4">
-                <svg class="details-plus w-5 h-5">
-                    <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#plus"></use>
-                </svg>
-                <svg class="details-minus w-5 h-5">
-                    <use href="{{ craft.vite.asset('/images/icons-public.svg') }}#minus"></use>
-                </svg>
+                {# two stacked minus icons, the second rotated 90° to make a plus,
+                   unrotating to a minus when the <details> is open #}
+                <span class="details-toggle grid place-items-center shrink-0">
+                    <svg><use href="{{ craft.vite.asset('/images/icons-public.svg') }}#minus"></use></svg>
+                    <svg class="details-toggle-cross"><use href="{{ craft.vite.asset('/images/icons-public.svg') }}#minus"></use></svg>
+                </span>
+
                 <span class="font-headings font-bold">{{ accordionItem.heading }}</span>
 
                 {% set icon = accordionItem.accordionIcon.one() %}
