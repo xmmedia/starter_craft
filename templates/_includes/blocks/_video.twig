@@ -3,20 +3,23 @@
     {% set image = block.image.one() %}
     {% if image %}
         <button type="button" class="embed-wrap block" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none';">
-            {{ image(image, 'videoThumbnail') }}
+            {{ image(image, 'videoThumbnail', { class: 'w-full' }) }}
         </button>
     {% endif %}
 
     {% if block.videoEmbedType == 'iframe' %}
-        {{ block.videoIframe | raw }}
-    {% elseif block.videoEmbedType == 'oembed' %}
         <div class="{% if image %}hidden {% endif %}embed-wrap">
-            {% if block.videoOembed.media.width > 0 %}
-                {% set proportions = (block.videoOembed.media.height / block.videoOembed.media.width * 100) | round(2) %}
-                <div class="embed-container" style="padding-top: {{ proportions }}%;">
-            {% else %}
-                <div class="embed-container">
-            {% endif %}
+            <div class="embed-container">
+                {{ block.videoIframe | raw }}
+            </div>
+        </div>
+    {% elseif block.videoEmbedType == 'oembed' %}
+        {% if block.videoOembed.media.width > 0 and block.videoOembed.media.height > 0 %}
+            {% set aspectRatio = block.videoOembed.media.width ~ ' / ' ~ block.videoOembed.media.height %}
+        {% endif %}
+
+        <div class="{% if image %}hidden {% endif %}embed-wrap">
+            <div class="embed-container"{% if aspectRatio is defined %} style="aspect-ratio: {{ aspectRatio }};"{% endif %}>
                 {{ block.videoOembed.render() }}
             </div>
         </div>
