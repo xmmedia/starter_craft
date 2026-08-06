@@ -36,6 +36,7 @@ readonly class StarterCraftRuleset implements RulesetInterface
         $configurator->setTwigMajorVersion($this->twigMajorVersion);
         $configurator->setPropertySpacingPattern('expr.expr | filter');
         $configurator->setHashSpacingPattern('{ key: expr, key: expr }');
+
         $builder = new RulesetBuilder($configurator);
 
         return [

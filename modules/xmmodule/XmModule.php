@@ -66,7 +66,7 @@ class XmModule extends BaseModule
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
-        \Craft::$app->onInit(static function () {
+        \Craft::$app->onInit(static function (): void {
             // Add in our Twig extensions
             \Craft::$app->getView()->registerTwigExtension(new XmTwigExtension());
         });
@@ -96,7 +96,7 @@ class XmModule extends BaseModule
     {
         // Append site name to system email subjects
         // EVENT_BEFORE_SEND is defined on \yii\mail\BaseMailer (parent of craft\mail\Mailer)
-        Event::on(Mailer::class, BaseMailer::EVENT_BEFORE_SEND, static function (MailEvent $event) {
+        Event::on(Mailer::class, BaseMailer::EVENT_BEFORE_SEND, static function (MailEvent $event): void {
             $key = $event->message->key ?? null;
 
             if (!\in_array($key, ['account_activation', 'forgot_password'], true)) {
@@ -163,7 +163,7 @@ class XmModule extends BaseModule
     private function forceLowercaseFilenames(): void
     {
         // Fires from Assets::prepareAssetName(), which covers uploads, renames, moves and file replacements
-        Event::on(AssetsHelper::class, AssetsHelper::EVENT_SET_FILENAME, function (SetAssetFilenameEvent $event) {
+        Event::on(AssetsHelper::class, AssetsHelper::EVENT_SET_FILENAME, function (SetAssetFilenameEvent $event): void {
             $lowercased = mb_strtolower($event->filename);
             // the extension includes the leading dot, e.g. ".JPG"
             $extension = mb_strtolower($event->extension);
@@ -179,7 +179,7 @@ class XmModule extends BaseModule
 
         // Restore the original casing of a new asset's title, just before Asset::beforeSave()
         // falls back to a title generated from the (now lowercase) filename.
-        Event::on(Asset::class, Asset::EVENT_BEFORE_HANDLE_FILE, function (AssetEvent $event) {
+        Event::on(Asset::class, Asset::EVENT_BEFORE_HANDLE_FILE, function (AssetEvent $event): void {
             $asset = $event->asset;
 
             // A title the editor typed, or one an existing asset already has, is left alone.

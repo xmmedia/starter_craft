@@ -41,7 +41,7 @@ class ImageModule extends BaseModule
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
-        \Craft::$app->onInit(static function () {
+        \Craft::$app->onInit(static function (): void {
             // Add in our Twig extensions
             \Craft::$app->getView()->registerTwigExtension(new ImageTwigExtension());
         });

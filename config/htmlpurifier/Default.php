@@ -18,7 +18,7 @@ $softHyphenFilter = new class () extends HTMLPurifier_Filter {
     }
 };
 
-return static function (HTMLPurifier_Config $config) use ($softHyphenFilter) {
+return static function (HTMLPurifier_Config $config) use ($softHyphenFilter): void {
     $config->set('Attr.AllowedFrameTargets', ['_blank']);
     $config->set('Attr.EnableID', true);
     $config->set('HTML.AllowedComments', ['pagebreak']);
