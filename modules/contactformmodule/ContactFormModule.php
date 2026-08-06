@@ -38,7 +38,7 @@ class ContactFormModule extends BaseModule
         Event::on(
             Mailer::class,
             Mailer::EVENT_BEFORE_SEND,
-            static function (SendEvent $e) {
+            static function (SendEvent $e): void {
                 // set the from to the default mailer from
                 // this is instead of "<prefix> <fromName>" which is confusing
                 $e->message->setFrom(\Craft::$app->getMailer()->from);
@@ -56,7 +56,7 @@ class ContactFormModule extends BaseModule
         Event::on(
             Submission::class,
             Model::EVENT_AFTER_VALIDATE,
-            static function (Event $e) {
+            static function (Event $e): void {
                 /** @var Submission $submission */
                 $submission = $e->sender;
 
@@ -102,6 +102,7 @@ class ContactFormModule extends BaseModule
                 if (\in_array($key, $excludedFields, true)) {
                     continue;
                 }
+
                 $fields[$key] = \is_array($value) ? implode(', ', $value) : (string) $value;
             }
         }
