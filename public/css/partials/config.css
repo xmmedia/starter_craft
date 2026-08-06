@@ -80,13 +80,18 @@
 @utility text-on-dark-bg {
     --body-color: var(--color-white);
     --heading-color: var(--color-white);
+    --link-color: var(--color-blue-300);
+    --link-hover-color: var(--color-blue-200);
     @apply text-(--body-color);
 }
 
 @utility text-on-light-bg {
     --body-color: var(--color-primary-text);
-    /* initial makes var(--heading-color, ...) use its fallback, i.e. the heading's normal colour */
+    /* initial makes var(--heading-color, ...) & var(--link-color, ...) use their
+       fallbacks, i.e. the heading's & link's normal colours */
     --heading-color: initial;
+    --link-color: initial;
+    --link-hover-color: initial;
     @apply text-(--body-color);
 }
 
