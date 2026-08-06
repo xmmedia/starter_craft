@@ -25,6 +25,12 @@ fieldLayouts:
             warning: null
             width: 100
           -
+            dateAdded: '2026-08-06T19:11:18+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: 4db4c139-342b-4a0c-9d24-11703c5f4dce
+            userCondition: null
+          -
             dateAdded: '2026-02-06T18:48:23+00:00'
             editCondition: null
             elementCondition: null
@@ -33,13 +39,29 @@ fieldLayouts:
             handle: mainMenuButton
             instructions: null
             label: 'Menu Button'
-            required: false
+            required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: ff8e4337-9f96-4188-ad3b-f198de9170e4
             userCondition: null
             warning: null
-            width: 100
+            width: 50
+          -
+            dateAdded: '2026-08-06T19:11:18+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 67affb61-d6a6-4da9-bba4-dc9c601838fa # Menu Label
+            handle: mainMenuButtonLabel
+            instructions: null
+            label: Label
+            required: true
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: a0e1cf3b-ca44-4671-b114-1d90df4fecae
+            userCondition: null
+            warning: null
+            width: 50
         name: Header
         uid: 71fb1086-8d5d-4f6b-8b5f-942ce7ed8a70
         userCondition: null

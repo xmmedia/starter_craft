@@ -64,11 +64,9 @@
                         </ul>
                     </nav>
 
-                    {% if menus.mainMenuButton %}
-                        <a href="{{ menus.mainMenuButton.url }}" class="button hidden md:inline-block">
-                            {{ menus.mainMenuButton.label }}
-                        </a>
-                    {% endif %}
+                    <a href="{{ menus.mainMenuButton.url }}" class="button hidden md:inline-block">
+                        {{ menus.mainMenuButtonLabel }}
+                    </a>
 
                     {# the command/commandfor attributes open the dialog without JS; see menu.js for the fallback #}
                     <button type="button"
