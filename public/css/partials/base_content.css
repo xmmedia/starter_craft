@@ -3,12 +3,15 @@
         @apply cursor-pointer disabled:cursor-not-allowed;
     }
 
+    /* the colour flips to a light blue on dark bgs (see partials/text_colors.css) */
     a, .button-link {
-        @apply text-blue-500 no-underline transition outline-hidden rounded-sm;
+        @apply no-underline transition outline-hidden rounded-sm;
+        color: var(--link-color, var(--color-blue-500));
 
         &:hover,
         &:active {
-            @apply underline text-blue-700;
+            @apply underline;
+            color: var(--link-hover-color, var(--color-blue-700));
         }
 
         &:focus {
