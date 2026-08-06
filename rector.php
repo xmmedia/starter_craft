@@ -3,10 +3,21 @@
 declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
-use Rector\Set\ValueObject\SetList;
 
 return RectorConfig::configure()
     ->withParallel()
+    ->withPreparedSets(
+        deadCode: true,
+        codeQuality: true,
+        codingStyle: true,
+        typeDeclarations: true,
+        if: true,
+        earlyReturn: true,
+        carbon: true,
+        // no privatization, naming, namedArgs, instanceOf, rectorPreset
+    )
+    ->withComposerBased(twig: true)
+    ->withPhpSets()
     ->withPaths([
         __DIR__ . '/config',
         __DIR__ . '/modules',
@@ -14,12 +25,6 @@ return RectorConfig::configure()
         __DIR__ . '/public/editorcss.php',
     ])
     ->withRootFiles()
-    ->withPhpSets()
-    ->withSets([
-        SetList::DEAD_CODE,
-        SetList::CODE_QUALITY,
-        SetList::IF,
-    ])
     ->withSkip([
         // don't remove useless variables inside event handler closures
         // it's nice to keep them for editing later
