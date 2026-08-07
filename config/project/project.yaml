@@ -1,4 +1,4 @@
-dateModified: 1786127430
+dateModified: 1786127431
 elementSources:
   craft\elements\Asset:
     -
@@ -380,7 +380,7 @@ plugins:
       prependSender: ''
       prependSubject: 'Message from XM Craft Starter website'
       successFlashMessage: 'Your message has been sent.'
-      toEmail: $FROM_EMAIL
+      toEmail: $TO_EMAIL
   contact-form-extensions:
     edition: standard
     enabled: true
