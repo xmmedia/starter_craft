@@ -43,7 +43,13 @@ class ContactFormModule extends BaseModule
                 // this is instead of "<prefix> <fromName>" which is confusing
                 $e->message->setFrom(\Craft::$app->getMailer()->from);
 
+                // the formName field is submitted by the form & so can't be trusted:
+                // only use it if it's one of the names we know about
                 $formName = self::messageValue($e->submission, 'formName');
+                if (!\in_array($formName, self::formNames(), true)) {
+                    $formName = null;
+                }
+
                 $e->message->setSubject(
                     ($formName ? "$formName form" : 'Website form').' submission from '.$e->submission->fromName
                 );
@@ -96,5 +102,16 @@ class ContactFormModule extends BaseModule
         $value = $submission->message[$key];
 
         return \is_array($value) ? implode(', ', $value) : $value;
+    }
+
+    /**
+     * The form names, keyed by handle, from config/custom.php.
+     * The form templates use the same list for their hidden formName field.
+     *
+     * @return string[]
+     */
+    private static function formNames(): array
+    {
+        return \Craft::$app->getConfig()->getCustom()->formNames;
     }
 }

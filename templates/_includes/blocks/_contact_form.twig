@@ -79,7 +79,7 @@
                 <input type="hidden" name="message[Page Name]" value="{{ entry.title }}">
             {% endif %}
             <input type="hidden" name="message[Page URL]" value="{{ craft.app.request.absoluteUrl }}">
-            <input type="hidden" name="message[formName]" value="Contact">
+            <input type="hidden" name="message[formName]" value="{{ craft.app.config.custom.formNames.contact }}">
 
             <div class="mt-6 text-center">
                 <button class="button" type="submit">Send Message</button>
