@@ -17,7 +17,11 @@
     {% endif %}
 {% endfor %}
 
+{# the formName field is submitted by the form & so can't be trusted:
+   only use it if it's one of the names we know about #}
+{% set knownFormNames = craft.app.config.custom.formNames | values %}
 {% set formName = message.formName ?? null %}
+{% set formName = formName in knownFormNames ? formName : null %}
 {% set pageName = message['Page Name'] ?? null %}
 {% set pageUrl = message['Page URL'] ?? null %}
 {% set body = message.body ?? null %}
