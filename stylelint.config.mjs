@@ -5,9 +5,10 @@ export default {
         "rule-empty-line-before": null,
         "declaration-empty-line-before": null,
         "selector-class-pattern": [
-            "^[a-z0-9\\-_]+$",
+            // trailing `:…` segments allow Tailwind variants, e.g. `blocks-wrap\\:text-left`
+            "^[a-z0-9\\-_]+(:[a-z0-9\\-_]+)*$",
             {
-                "message": "Expected class selector to be kebab-case or BEM-style (lowercase, digits, hyphens, underscores).",
+                "message": "Expected class selector to be kebab-case or BEM-style (lowercase, digits, hyphens, underscores), optionally with Tailwind variant prefixes.",
             },
         ],
         "at-rule-no-deprecated": null,
