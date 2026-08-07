@@ -1,4 +1,4 @@
-dateModified: 1786043556
+dateModified: 1786127430
 elementSources:
   craft\elements\Asset:
     -
@@ -390,8 +390,9 @@ plugins:
       confirmationTemplate: ''
       enableConfirmationEmail: ''
       enableDatabase: '1'
-      enableTemplateOverwrite: ''
-      notificationTemplate: ''
+      enableRecaptchaOverride: ''
+      enableTemplateOverwrite: '1'
+      notificationTemplate: _emails/contact-form-notification
       recaptcha: ''
       recaptchaDataBadge: bottomright
       recaptchaDebug: ''
@@ -400,6 +401,8 @@ plugins:
       recaptchaSiteKey: ''
       recaptchaThreshold: '0.5'
       recaptchaTimeout: '5'
+      recaptchaUrl: ''
+      recaptchaVerificationUrl: ''
       recaptchaVersion: ''
   contact-form-honeypot:
     edition: standard
