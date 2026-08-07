@@ -48,7 +48,8 @@ class ContactFormModule extends BaseModule
                     ($formName ? "$formName form" : 'Website form').' submission from '.$e->submission->fromName
                 );
 
-                $e->message->setHtmlBody(self::renderNotificationHtml($e->submission));
+                // the HTML body comes from the Contact Form Extensions plugin's
+                // notification template setting (_emails/contact-form-notification)
             }
         );
 
@@ -84,43 +85,6 @@ class ContactFormModule extends BaseModule
                 }
             }
         );
-    }
-
-    /**
-     * Renders the styled HTML notification email for a contact form submission.
-     * Any message fields beyond the standard body/formName/page context are
-     * included automatically, so forms can submit extra fields without needing
-     * template changes here.
-     */
-    private static function renderNotificationHtml(Submission $submission): string
-    {
-        $excludedFields = ['body', 'formName', 'Page Name', 'Page URL'];
-        $fields = [];
-
-        if (\is_array($submission->message)) {
-            foreach ($submission->message as $key => $value) {
-                if (\in_array($key, $excludedFields, true)) {
-                    continue;
-                }
-
-                $fields[$key] = \is_array($value) ? implode(', ', $value) : (string) $value;
-            }
-        }
-
-        $body = \is_array($submission->message)
-            ? (string) ($submission->message['body'] ?? '')
-            : (string) $submission->message;
-
-        return \Craft::$app->getView()->renderTemplate('_emails/contact-form-notification', [
-            'siteName'  => \Craft::$app->getSystemName(),
-            'formName'  => self::messageValue($submission, 'formName'),
-            'fromName'  => $submission->fromName,
-            'fromEmail' => $submission->fromEmail,
-            'fields'    => $fields,
-            'body'      => $body,
-            'pageName'  => self::messageValue($submission, 'Page Name'),
-            'pageUrl'   => self::messageValue($submission, 'Page URL'),
-        ]);
     }
 
     private static function messageValue(Submission $submission, string $key): ?string

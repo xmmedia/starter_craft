@@ -1,3 +1,29 @@
+{# Rendered by the Contact Form Extensions plugin, which passes only `submission`.
+   Set in Settings → Contact Form Extensions → Notification Template. #}
+{% set message = submission.message %}
+{% set message = message is iterable ? message : { body: message } %}
+
+{# fields shown in the details table: everything except the message body, the page
+   context (shown in the footer) and the plugin's own control keys #}
+{% set excluded = [
+    'body', 'formName', 'Page Name', 'Page URL',
+    'toEmail', 'notificationTemplate', 'confirmationTemplate', 'confirmationSubject',
+    'disableRecaptcha', 'disableConfirmation', 'disableSaveSubmission',
+] %}
+{% set fields = {} %}
+{% for label, value in message %}
+    {% if label not in excluded %}
+        {% set fields = fields | merge({ (label): (value is iterable ? value | join(', ') : value) }) %}
+    {% endif %}
+{% endfor %}
+
+{% set formName = message.formName ?? null %}
+{% set pageName = message['Page Name'] ?? null %}
+{% set pageUrl = message['Page URL'] ?? null %}
+{% set body = message.body ?? null %}
+{% set fromName = submission.fromName %}
+{% set fromEmail = submission.fromEmail %}
+{% set siteName = craft.app.systemName %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
