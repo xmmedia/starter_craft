@@ -51,6 +51,44 @@ fieldLayouts:
         name: Content
         uid: 0e95f37a-72bd-44c4-80e7-4ca561d3f137
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-08T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 51fb4247-e4a2-4361-9589-e70004f299af
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-08T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9d02e2c9-f241-4dd9-a72c-6474e3c7f7a9
+            userCondition: null
+            warning: null
+            width: 50
+        name: Attributes
+        uid: 6e2322c4-7b26-45a4-b7fb-66824d66b2a9
+        userCondition: null
     thumbFieldKey: null
 handle: blockSpacer
 hasTitleField: false

@@ -1,4 +1,4 @@
-<div class="gallery-wrap">
+<div class="gallery-wrap {{ block.classes }}"{{ blockId(block) }}>
     {% for galleryImage in block.gallery.all() %}
         {% if galleryImage %}
             {{ image(galleryImage.galleryImage.one(), 'gallery') }}
