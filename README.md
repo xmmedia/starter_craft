@@ -77,20 +77,17 @@ Related scripts:
     - Builds to `node_modules/.build-check`, so it's safe to run while `yarn dev` is running
   - Production JS/CSS build: `yarn build`
     - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running `yarn dev` relies on
-  - JS Tests ([Jest](https://jestjs.io/)): `yarn test:unit`
-  - E2E Tests ([Cypress](https://www.cypress.io/)): `yarn test:e2e`
   - Linting:
     - JS ([ESLint](https://eslint.org/)): `yarn lint:js` or `yarn lint:js:fix`
-    - CSS: `yarn lint:css` or `yarn lint:css:fix`
+    - CSS ([Stylelint](https://stylelint.io/)): `yarn lint:css` or `yarn lint:css:fix`
     - Twig ([twigcs](https://github.com/friendsoftwig/twigcs)): `lando composer lint:twig`
-  - PHP Tests ([PhpUnit](https://phpunit.de/)): 
-    - `composer test`
-    - no memory limit `php -d memory_limit=-1 bin/simple-phpunit`
-    - with coverage (HTML) `composer test:coverage`
-  - [PHP CS](https://cs.sensiolabs.org/): (must be installed first)
-    - Dry run: `composer cs`
-    - Fix: `composer cs:fix`
-  - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `composer static`
+    - YAML: `lando composer lint:yaml`
+  - [PHP CS Fixer](https://cs.symfony.com/): `lando composer cs:fix`
+  - [Rector](https://getrector.com/): `lando composer rector` (dry run) or `lando composer rector:fix`
+  - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `lando composer static`
+  - Security audits: `yarn audit:moderate` or `yarn audit:high`
+
+  There are no tests in the starter — add them (and their scripts) as a project needs them.
 
 ## Incorporated Libraries & Tools
 
