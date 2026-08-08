@@ -61,6 +61,44 @@ fieldLayouts:
         name: Content
         uid: e1a653a5-df97-4a39-8709-2da116f23ee0
         userCondition: null
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2026-08-08T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: d7f5b5cc-8e4d-422b-ba64-da1a79121801 # Classes
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d5da965-bb93-4e1c-929d-2d21b560ee63
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-08T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 09cd580c-e508-46a1-85a9-66581dd3a958 # Element ID
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0ec9953e-7d1f-423e-a633-f0d466e75d78
+            userCondition: null
+            warning: null
+            width: 50
+        name: Attributes
+        uid: 884265fb-caa0-4e97-a08d-4e78692f4231
+        userCondition: null
     thumbFieldKey: null
 handle: gallery
 hasTitleField: true
