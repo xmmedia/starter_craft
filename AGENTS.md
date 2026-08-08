@@ -24,11 +24,17 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 ### Frontend (JavaScript/CSS)
 
-- **Production build**: `yarn build`
 - **Dev build**: `yarn dev`
 - **Dev server with HMR**: Vite dev server runs on `https://localhost:{port}` (see Project Configuration)
   - Configured in `vite.config.mjs` with HTTPS and CORS for Lando
   - Toggle via `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env vars (see `config/vite.php`)
+- **Compile check**: `yarn build:check` — use this to verify JS/CSS compiles. Builds to
+  `node_modules/.build-check` (gitignored, and ignored by the dev server's watcher), so
+  it's safe to run while `yarn dev` is running. A green build only proves it bundles —
+  the browser is still the real check
+- **Production build**: `yarn build` — production/deploy only. Never run it to verify a
+  change: it empties and rewrites `public/build`, clobbering the manifest a running
+  `yarn dev` relies on
 - **Linting**:
   - JS: `yarn lint:js` or `yarn lint:js:fix`
   - CSS: `yarn lint:css` or `yarn lint:css:fix`
@@ -242,6 +248,7 @@ output style; keep them in sync when editing either one.
 2. **Making JS/CSS Changes**:
    - Run `yarn dev` for Vite dev server with HMR
    - Changes appear immediately in browser
+   - Verify compilation with `yarn build:check` (safe alongside `yarn dev`)
    - Production build via `yarn build` before deploy
 3. **Adding Craft Fields/Sections**:
    - Make changes in Craft admin UI

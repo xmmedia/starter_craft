@@ -9,7 +9,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
     composer create-project xm/starter_craft project-name --stability=dev --no-install --remove-vcs
     ```
 2. Update `composer.json`: `name`, `license` (likely `proprietary`) and `description`
-3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`, `script.dev-server`
+3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`
 4. Setup dev server:
    1. If using InterWorx, run `./provision_site.sh` locally — it provisions the whole site (see [Provisioning a Site](#provisioning-a-site) below) and runs `setup_server.sh` for you. To do it by hand instead, upload `setup_server.sh` to the domain dir and run: `sh ./setup_server.sh`
    2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
@@ -72,10 +72,11 @@ Related scripts:
     - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
+  - Dev JS/CSS server with HMR: `yarn dev`
+  - Compile check: `yarn build:check`
+    - Builds to `node_modules/.build-check`, so it's safe to run while `yarn dev` is running
   - Production JS/CSS build: `yarn build`
-  - Dev JS/CSS build: `yarn dev`
-  - Dev JS/CSS watch: `yarn watch` (files will not be versioned)
-  - Dev JS/CSS HMR server: `yarn dev-server` (see below)
+    - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running `yarn dev` relies on
   - JS Tests ([Jest](https://jestjs.io/)): `yarn test:unit`
   - E2E Tests ([Cypress](https://www.cypress.io/)): `yarn test:e2e`
   - Linting:
