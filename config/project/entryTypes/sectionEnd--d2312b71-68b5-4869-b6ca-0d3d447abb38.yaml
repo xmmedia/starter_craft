@@ -23,7 +23,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: sectionEnd
 hasTitleField: false
-icon: null
+icon: angles-up
 name: 'Section End'
 showSlugField: false
 showStatusField: true

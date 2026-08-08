@@ -100,7 +100,7 @@ fieldLayouts:
     thumbFieldKey: 'layoutElement:c64b1776-2199-45fd-b05f-ecbaeada3fe0'
 handle: banner
 hasTitleField: false
-icon: null
+icon: image-landscape
 name: Banner
 showSlugField: false
 showStatusField: true

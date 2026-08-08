@@ -131,7 +131,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: accordionWrapper
 hasTitleField: true
-icon: null
+icon: rectangle-history
 name: Accordion
 showSlugField: false
 showStatusField: true

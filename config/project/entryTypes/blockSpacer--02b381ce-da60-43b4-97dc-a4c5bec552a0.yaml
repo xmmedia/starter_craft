@@ -92,7 +92,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: blockSpacer
 hasTitleField: false
-icon: null
+icon: angles-up-down
 name: Spacer
 showSlugField: false
 showStatusField: true
