@@ -42,6 +42,10 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 - **Security audits**:
   - Moderate: `yarn audit:moderate`
   - High: `yarn audit:high`
+- **Upgrading packages**: `yarn up:bypass <package>` — runs `yarn up -R` with
+  `YARN_NPM_MINIMAL_AGE_GATE=0`, bypassing the 7 day `npmMinimalAgeGate` in `.yarnrc.yml`
+  that otherwise skips just-published versions. Match every package with `'**'`, not
+  `'*'` — `*` doesn't cross the `/` in scoped names, so it misses `@tailwindcss/*` etc.
 
 ### PHP
 

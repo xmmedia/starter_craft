@@ -24,7 +24,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 5. Remove or update the `LICENSE` file.
 6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
 7. Composer install & update (locally): `composer install && composer update`
-8. Run `yarn && yarn upgrade` locally.
+8. Run `yarn && yarn up -R '**'` locally.
 9. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. ./node_setup.sh` again.
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
@@ -86,6 +86,7 @@ Related scripts:
   - [Rector](https://getrector.com/): `lando composer rector` (dry run) or `lando composer rector:fix`
   - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `lando composer static`
   - Security audits: `yarn audit:moderate` or `yarn audit:high`
+  - Upgrade a JS package, ignoring the age gate: `yarn up:bypass <package>`
 
   There are no tests in the starter — add them (and their scripts) as a project needs them.
 
