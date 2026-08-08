@@ -34,7 +34,7 @@ return [
             $savePath = Craft::getAlias('@storage').'/sessions/';
 
             if (!is_dir($savePath)) {
-                mkdir($savePath, 0o777, true);
+                mkdir($savePath, 0o700, true);
             }
 
             // Get the default component config
