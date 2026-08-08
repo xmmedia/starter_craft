@@ -7,7 +7,7 @@ return [
     'manifestPath'               => '@webroot/build/.vite/manifest.json',
 
     // Dynamically enable dev server based on environment.
-    'useDevServer'               => 'dev' === App::env('ENVIRONMENT') || 'dev' === App::env('CRAFT_ENVIRONMENT'),
+    'useDevServer'               => 'dev' === App::env('CRAFT_ENVIRONMENT'),
 
     // URL to the Vite development server.
     // @todo-craft change port number to match vite config
