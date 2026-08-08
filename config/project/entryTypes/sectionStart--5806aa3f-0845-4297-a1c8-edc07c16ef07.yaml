@@ -152,7 +152,7 @@ fieldLayouts:
     thumbFieldKey: null
 handle: sectionStart
 hasTitleField: true
-icon: null
+icon: angles-down
 name: 'Section Start'
 showSlugField: false
 showStatusField: true
