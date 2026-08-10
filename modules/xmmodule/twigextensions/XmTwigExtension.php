@@ -12,9 +12,11 @@ declare(strict_types=1);
 
 namespace modules\xmmodule\twigextensions;
 
+use Craft;
 use craft\elements\Entry;
 use craft\helpers\Html;
 use Twig\Extension\AbstractExtension;
+use Twig\Markup;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
 
@@ -120,14 +122,27 @@ class XmTwigExtension extends AbstractExtension
         );
     }
 
-    public function headingStripTags(?string $heading): ?string
+    /**
+     * Strips all but inline formatting tags from a heading.
+     *
+     * Returns Markup so the value survives a `{% set %}` unescaped — `is_safe` only
+     * covers the expression it's used in. Empty results are null, not empty Markup,
+     * which is always truthy in Twig.
+     */
+    public function headingStripTags(?string $heading): ?Markup
     {
         if (null === $heading) {
             return null;
         }
 
         // b & i are because CKeditor doesn't use strong or em
-        return strip_tags($heading, '<strong><b><em><i><br><a><sup><sub><span>');
+        $stripped = strip_tags($heading, '<strong><b><em><i><br><a><sup><sub><span>');
+
+        if ('' === trim($stripped)) {
+            return null;
+        }
+
+        return new Markup($stripped, Craft::$app->charset);
     }
 
     public function phoneStrip(string $phone, string $prefix = 'tel'): string
