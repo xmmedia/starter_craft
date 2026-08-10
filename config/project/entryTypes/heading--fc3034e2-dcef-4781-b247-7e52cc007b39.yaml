@@ -203,4 +203,4 @@ slugTranslationMethod: site
 titleFormat: null
 titleTranslationKeyFormat: null
 titleTranslationMethod: site
-uiLabelFormat: '{heading.plainText}'
+uiLabelFormat: "{heading.plainText ?: 'Banner'}"
