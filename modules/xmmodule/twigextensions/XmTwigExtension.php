@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace modules\xmmodule\twigextensions;
 
-use Craft;
 use craft\elements\Entry;
 use craft\helpers\Html;
 use Twig\Extension\AbstractExtension;
@@ -142,7 +141,7 @@ class XmTwigExtension extends AbstractExtension
             return null;
         }
 
-        return new Markup($stripped, Craft::$app->charset);
+        return new Markup($stripped, \Craft::$app->charset);
     }
 
     public function phoneStrip(string $phone, string $prefix = 'tel'): string
