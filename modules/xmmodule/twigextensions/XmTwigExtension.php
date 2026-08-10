@@ -126,7 +126,8 @@ class XmTwigExtension extends AbstractExtension
             return null;
         }
 
-        return strip_tags($heading, '<strong><em><br><a><sup><sub><span>');
+        // b & i are because CKeditor doesn't use strong or em
+        return strip_tags($heading, '<strong><b><em><i><br><a><sup><sub><span>');
     }
 
     public function phoneStrip(string $phone, string $prefix = 'tel'): string
