@@ -6,7 +6,7 @@ searchable: false
 settings:
   fullGraphqlData: false
   maxLength: 255
-  showLabelField: true
+  showLabelField: false
   typeSettings:
     __assoc__:
       -
