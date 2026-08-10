@@ -17,8 +17,9 @@
           accept-charset="utf-8"
           class="form-wrap"
           data-ajax-form
-          data-success-message="{{ successMessage }}"
-          data-fail-message="{{ failMessage }}">
+          {# escaped explicitly: heading_striptags returns Markup, which autoescaping skips #}
+          data-success-message="{{ successMessage | escape }}"
+          data-fail-message="{{ failMessage | escape }}">
 
         {% include '_includes/_form_messages.twig' with { classes: 'mb-4' } only %}
 
