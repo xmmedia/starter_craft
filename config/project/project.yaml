@@ -1,4 +1,4 @@
-dateModified: 1786384952
+dateModified: 1786463577
 elementSources:
   craft\elements\Asset:
     -
@@ -356,6 +356,7 @@ meta:
     e9250cf7-3f95-4113-85e5-0140eb887bfe: SEO # SEO
     f9c080c6-18df-4ea2-a482-b955a918cdc7: Card # Card
     f84ef073-f5e7-404c-a8ee-c24b36df5bd4: 'Phone Number' # Phone Number
+    f522eb3e-7273-4f42-b5ec-ba0aff0d4ebf: 'Link - Button' # Link - Button
     f9712ce8-7f9e-4fb3-a227-4fbaa04f025c: Banner # Banner
     fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
     fa12ac47-4af9-47a6-a7e2-9c5051088a5b: Platform # Platform

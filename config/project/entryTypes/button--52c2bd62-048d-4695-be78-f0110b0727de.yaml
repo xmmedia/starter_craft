@@ -21,7 +21,7 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 3c177d9c-9600-48c6-b1bc-2b1067275e4b # Link
+            fieldUid: f522eb3e-7273-4f42-b5ec-ba0aff0d4ebf # Link - Button
             handle: button
             instructions: null
             label: Button
