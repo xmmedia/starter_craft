@@ -153,8 +153,14 @@ class XmTwigExtension extends AbstractExtension
         return $prefix.':+'.preg_replace('/\D+/', '', $phone);
     }
 
-    public function addressFormat(string $address): string
+    /**
+     * Returns Markup for the same reason as {@see self::headingStripTags()}.
+     */
+    public function addressFormat(string $address): Markup
     {
-        return nl2br(str_replace('  ', ' &MediumSpace;', e($address)));
+        return new Markup(
+            nl2br(str_replace('  ', ' &MediumSpace;', e($address))),
+            \Craft::$app->charset,
+        );
     }
 }
