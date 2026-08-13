@@ -29,8 +29,10 @@
         {% set flexItems = 'items-center' %}
 {% endswitch %}
 
+{% set wrapperTag = block.wrapperTag | default('div') %}
+
 {% set wrapperClasses %}
-flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
+flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }} {{ wrapperTag != 'div' ? 'my-0' }}
 {% endset %}
 
 {% set figureClasses = [] %}
@@ -42,7 +44,7 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
 {% endif %}
 {% set figureClasses = figureClasses | merge(block.classes | explodeClass) %}
 
-<div class="{{ wrapperClasses }}"{{ blockId(block) }}>
+<{{ wrapperTag }} class="{{ wrapperClasses }}"{{ blockId(block) }}>
     <figure class="{{ figureClasses | join(' ') }}">
         {% if block.imageLink %}
             <a href="{{ block.imageLink }}">
@@ -60,4 +62,4 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
             </figcaption>
         {% endif %}
     </figure>
-</div>
+</{{ wrapperTag }}>

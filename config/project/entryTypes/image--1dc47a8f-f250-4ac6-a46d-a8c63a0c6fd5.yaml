@@ -249,6 +249,22 @@ fieldLayouts:
             userCondition: null
             warning: null
             width: 50
+          -
+            dateAdded: '2026-08-13T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: de115555-64b6-4326-ae7c-9cfa9830bec3 # Image Wrapper Tag
+            handle: wrapperTag
+            instructions: null
+            label: 'Wrapper Tag'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 9bb944db-0c55-4f11-9f7f-c8b662b9d7a0
+            userCondition: null
+            warning: null
+            width: 50
         name: Attributes
         uid: 59737b3d-4fc9-41a0-b985-93f9d15fe487
         userCondition: null

@@ -1,4 +1,4 @@
-dateModified: 1786463577
+dateModified: 1786649116
 elementSources:
   craft\elements\Asset:
     -
@@ -350,6 +350,7 @@ meta:
     d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text' # Post Content - Text
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
     dddbe301-cba3-4c2a-ba02-32bdbc9dc1aa: Menu # Menu
+    de115555-64b6-4326-ae7c-9cfa9830bec3: 'Image Wrapper Tag' # Image Wrapper Tag
     e0c43b7d-7d3e-420d-9439-dfce3810bc7a: 'Image - Square - Large' # Image - Square - Large
     e16fd2de-54c9-4363-a6bd-d3a6756c0720: Uppercase # Uppercase
     e79e5cd5-8880-4019-9734-a624230303ed: 'Social Media' # Social Media
