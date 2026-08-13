@@ -4,5 +4,5 @@
 }
 
 .card {
-    @apply p-8 bg-zinc-300 hover:no-underline hover:shadow-lg text-black focus:ring-blue-500 rounded-md;
+    @apply p-8 bg-zinc-300 hover:no-underline hover:shadow-lg text-black focus-visible:ring-2 focus-visible:ring-blue-500 rounded-md;
 }

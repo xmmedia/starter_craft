@@ -17,7 +17,7 @@
 textarea {
     @apply w-full px-2 py-1 text-primary-text border border-gray-300 bg-gray-100 transition-colors outline-hidden rounded-xs;
 
-    &:focus {
+    &:focus-visible {
         @apply bg-gray-100 outline-hidden ring-2 ring-blue-500;
     }
 }
@@ -30,7 +30,7 @@ select {
     @apply w-full p-1 text-black border border-gray-300 bg-gray-100 transition-colors outline-hidden rounded-xs;
     height: 2.14rem;
 
-    &:focus {
+    &:focus-visible {
         @apply outline-hidden ring-2 ring-blue-500;
     }
 }
@@ -47,7 +47,7 @@ select {
 [type="file"] {
     @apply w-full outline-hidden rounded-xs;
 
-    &:focus {
+    &:focus-visible {
         @apply outline-hidden ring-2 ring-blue-500;
     }
 }

@@ -14,7 +14,7 @@
             color: var(--link-hover-color, var(--color-blue-700));
         }
 
-        &:focus {
+        &:focus-visible {
             @apply ring-2 ring-zinc-200 bg-zinc-200;
         }
 
