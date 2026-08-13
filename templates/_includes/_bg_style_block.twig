@@ -14,16 +14,16 @@
             {% css %}
                 {{ _selector }} {
                     background-image: url("{{ _image['1x'] }}");
-                }
-                @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-                    {{ _selector }} {
-                        background-image: url("{{ _image['2x'] }}");
-                    }
-                }
-                @media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi) {
-                    {{ _selector }} {
-                        background-image: url("{{ _image['3x'] }}");
-                    }
+                    background-image: -webkit-image-set(
+                        url("{{ _image['1x'] }}") 1x,
+                        url("{{ _image['2x'] }}") 2x,
+                        url("{{ _image['3x'] }}") 3x
+                    );
+                    background-image: image-set(
+                        url("{{ _image['1x'] }}") 1x,
+                        url("{{ _image['2x'] }}") 2x,
+                        url("{{ _image['3x'] }}") 3x
+                    );
                 }
             {% endcss %}
         {% endif %}
