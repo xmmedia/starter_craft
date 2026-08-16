@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e56d5d2b8a7d836b655eb9c54824c950",
+    "content-hash": "9e2e069d88ea57f173ef8a03e0c670b1",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -3358,16 +3358,16 @@
         },
         {
             "name": "mcp/sdk",
-            "version": "v0.6.0",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modelcontextprotocol/php-sdk.git",
-                "reference": "433c84b58af346dd32f15f9909679e96a46ebe23"
+                "reference": "785fc3b9b7006ecc8a73322c939d96a4a7154345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modelcontextprotocol/php-sdk/zipball/433c84b58af346dd32f15f9909679e96a46ebe23",
-                "reference": "433c84b58af346dd32f15f9909679e96a46ebe23",
+                "url": "https://api.github.com/repos/modelcontextprotocol/php-sdk/zipball/785fc3b9b7006ecc8a73322c939d96a4a7154345",
+                "reference": "785fc3b9b7006ecc8a73322c939d96a4a7154345",
                 "shasum": ""
             },
             "require": {
@@ -3436,9 +3436,9 @@
             "description": "Model Context Protocol SDK for Client and Server applications in PHP",
             "support": {
                 "issues": "https://github.com/modelcontextprotocol/php-sdk/issues",
-                "source": "https://github.com/modelcontextprotocol/php-sdk/tree/v0.6.0"
+                "source": "https://github.com/modelcontextprotocol/php-sdk/tree/v0.7.1"
             },
-            "time": "2026-06-02T15:47:04+00:00"
+            "time": "2026-08-10T20:09:23+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -3909,6 +3909,57 @@
                 "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
             },
             "time": "2026-07-04T14:30:18+00:00"
+        },
+        {
+            "name": "nyholm/psr7",
+            "version": "1.8.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nyholm/psr7/zipball/a71f2b11690f4b24d099d6b16690a90ae14fc6f3",
+                "reference": "a71f2b11690f4b24d099d6b16690a90ae14fc6f3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.1 || ^2.0"
+            },
+            "provide": {
+                "php-http/message-factory-implementation": "1.0",
+                "psr/http-factory-implementation": "1.0",
+                "psr/http-message-implementation": "1.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.8-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Nyholm\\Psr7\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tobias Nyholm",
+                    "email": "tobias.nyholm@gmail.com"
+                },
+                {
+                    "name": "Martijn van der Ven",
+                    "email": "martijn@vanderven.se"
+                }
+            ],
+            "description": "A fast PHP7 implementation of PSR-7",
+            "homepage": "https://tnyholm.se",
+            "keywords": [
+                "psr-17",
+                "psr-7"
+            ],
+            "time": "2024-09-09T07:06:30+00:00"
         },
         {
             "name": "nystudio107/craft-code-editor",
@@ -7253,17 +7304,20 @@
         },
         {
             "name": "stimmt/craft-mcp",
-            "version": "v1.3.0",
+            "version": "v1.4.0-beta.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/2bc0cff9cd3d2a1dd965760ef41d28d5dba3a1b0",
-                "reference": "2bc0cff9cd3d2a1dd965760ef41d28d5dba3a1b0",
+                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/1fa15c6757a1b43fcc8b2f54ed9a667753e45d48",
+                "reference": "1fa15c6757a1b43fcc8b2f54ed9a667753e45d48",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^5.0",
-                "mcp/sdk": "^0.6",
+                "craftcms/cms": "^5.1",
+                "mcp/sdk": "^0.7",
+                "nyholm/psr7": "^1.8",
                 "php": "^8.3",
+                "psr/event-dispatcher": "^1.0",
+                "psr/simple-cache": "^2.0 || ^3.0",
                 "psy/psysh": "^0.12",
                 "symfony/finder": "^6.4 || ^7.3 || ^8.0",
                 "symfony/polyfill-php84": "^1.31"
@@ -7311,7 +7365,7 @@
                 "issues": "https://github.com/stimmtdigital/craft-mcp/issues",
                 "source": "https://github.com/stimmtdigital/craft-mcp"
             },
-            "time": "2026-07-07T18:08:50+00:00"
+            "time": "2026-08-06T09:03:24+00:00"
         },
         {
             "name": "symfony/clock",
@@ -12885,7 +12939,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20
+        "roave/security-advisories": 20,
+        "stimmt/craft-mcp": 10
     },
     "prefer-stable": false,
     "prefer-lowest": false,
