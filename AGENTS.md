@@ -36,9 +36,11 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
   change: it empties and rewrites `public/build`, clobbering the manifest a running
   `yarn dev` relies on
 - **Linting**:
-  - JS: `yarn lint:js` or `yarn lint:js:fix`
-  - CSS: `yarn lint:css` or `yarn lint:css:fix`
-  - Twig: `lando composer lint:twig`
+  - JS: `yarn lint:js` or `yarn lint:js:fix` (`eslint.config.mjs`)
+  - CSS: `yarn lint:css` or `yarn lint:css:fix` (`stylelint.config.mjs`)
+  - Twig: `lando composer lint:twig` (twigcs, config in `.twig_cs.php` — a custom
+    ruleset, with a no-RegEngine variant for files where alignment spacing is intentional)
+  - YAML (project config): `lando composer lint:yaml`
 - **Security audits**:
   - Moderate: `yarn audit:moderate`
   - High: `yarn audit:high`
@@ -55,7 +57,9 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 ### Full checks
 
-- **Quick check** (lint, static analysis, security audits — no fixes): `bin/check`
+- **Quick check** (no fixes): `bin/check` — `composer validate`, PHPStan, ESLint,
+  Stylelint, YAML lint, Twig lint, then the security checks (`symfony security:check`,
+  `composer audit`, `yarn audit:high`)
 - **Full check** (runs Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
   - `bin/check` sources nvm and runs `nvm use` (per `.nvmrc`) if nvm is installed, so there's no need to run `nvm use` first
@@ -66,6 +70,9 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 - **Clear caches**: `lando craft clear-caches/all`
 - **Apply migrations**: `lando craft up`
 - **Project config**: Stored in `config/project/` directory with YAML files
+- **Craft MCP**: `.mcp.json` registers a `craft-cms` MCP server (runs
+  `vendor/stimmt/craft-mcp/bin/mcp-server` through `lando ssh`). Server-side settings in
+  `config/mcp.php` — off unless `MCP_ENABLED`, `tinker`/`run_query` disabled, localhost only
 
 ### Local Development (Lando)
 
@@ -80,7 +87,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 **Backend:**
 - **Craft CMS 5** (CMS)
-- Craft plugins: Contact Form, Contact Form Honeypot, Contact Form Extensions, CKEditor, SEO (Ether), Field Manager (Verbb), oEmbed, Vite integration, Craft MCP (stimmt)
+- Craft plugins: Contact Form, Contact Form Honeypot, Contact Form Extensions, CKEditor, SEO (Ether), Field Manager (Verbb), Asset Usage (born05), oEmbed, Vite integration, Craft MCP (stimmt)
 - Custom Yii2 modules for extending functionality
 - Twig templating engine
 
@@ -96,19 +103,28 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 ```
 /config                 # Craft CMS configuration
   /project              # Project Config (YAML) - version controlled Craft settings
+  /ckeditor             # CKEditor config (default.js)
+  /htmlpurifier         # HTML Purifier config (Default.php)
+  /rebrand              # Craft admin logo customizations
   app.php               # App/module registration
   general.php           # General Craft settings
+  custom.php            # Custom settings (formNames, gaTrackingId)
   vite.php              # Vite integration config
+  mcp.php               # Craft MCP plugin settings
   routes.php            # Custom URL routes
 
-/modules                # Custom Yii2 modules
-  ContactFormModule.php # Contact form customization
-  /imagemodule          # Image processing module
+/modules                # Custom Yii2 modules (PSR-4: modules\)
+  /contactformmodule    # Contact form customization + queued send job
+  /xmmodule             # XM Media functionality + Twig extension
+  /imagemodule          # Image rendering Twig extension
+  /seomodule            # Sitemap filtering
 
 /templates              # Twig templates
   _layout.twig          # Base layout
   _page.twig            # Page template wrapper
   _home.twig            # Home page template
+  404.twig, error.twig  # Error templates
+  /_emails              # Email templates (contact form notification)
   /_includes            # Reusable template partials
     /blocks             # Block-specific partials (accordion, banner, etc.)
   /blog                 # Blog templates
@@ -120,9 +136,15 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
   /js/src               # Source JavaScript
     public.js           # Main public entry point
     editor.js           # CKEditor customizations
-    /common             # Shared Vue components
+    /common             # Shared JS (ajax_form.js, lib.js, menu.js)
   /css                  # Source CSS
+    public.css          # Main entry, imports the partials
+    editor.css          # CKEditor styles
+    /partials           # Base/config/component styles
+    /blocks             # Block-specific styles
   /images               # Static images
+
+/bin                    # check / check_full scripts
 
 /storage                # Craft runtime files (logs, cache, sessions)
 ```
@@ -139,16 +161,16 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
    - Queues the emails rather than sending them inline — see **Queued contact form
      emails** below
 
-2. **XmModule** (`modules/xmmodule/`):
+2. **XmModule** (`modules/xmmodule/XmModule.php`):
    - Custom XM Media functionality
-   - PSR-4 autoloaded from `modules/xmmodule/src/`
-   - Twig extension (`twigextensions/XmTwigExtension.php`) — includes `blockWidth()` and
-     `blockId()` functions
+   - Twig extension (`twigextensions/XmTwigExtension.php`):
+     - functions — `blockWidth()`, `blockId()`, `menu()`, `submenu()`
+     - filters — `heading_striptags`, `phone_strip`, `address_format`
    - Validates the shared `elementId` field on save — see **Block element IDs** below
 
-3. **ImageModule** (`modules/imagemodule/`):
-   - Custom image processing functionality
-   - PSR-4 autoloaded from `modules/imagemodule/src/`
+3. **ImageModule** (`modules/imagemodule/ImageModule.php`):
+   - Twig extension (`twigextensions/ImageTwigExtension.php`) — `image(asset, transform,
+     attributes)` and `imageOrSvg()` functions for rendering images/SVGs
 
 4. **SeoModule** (`modules/seomodule/SeoModule.php`):
    - Keeps entries flagged "Hide from Search Engines" out of the sitemap — see
@@ -164,10 +186,22 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 - Manifest mode for Craft integration
 - No inlined assets (all files separate)
 
+**Entry point JS** (`public/js/src/public.js`):
+- Imports `public.css` and `images/icons-public.svg`, then calls `initMenu()` and
+  `initAjaxForms()` — no Vue app is mounted in the starter
+
 **Vue Integration**:
-- Vue 3 Composition API available
-- Components mounted via `createApp()` in entry files
-- No components in the starter — add them as a project needs them
+- Vue 3 + `@vitejs/plugin-vue` are installed and the Composition API is available
+- No components in the starter — add them (and a `createApp()` mount in an entry file)
+  as a project needs them
+
+**AJAX forms** (`public/js/src/common/ajax_form.js`):
+- Progressively enhances forms, posting via `fetch()` and rendering the response into
+  `.js-form-messages` (see `_includes/_form_messages.twig`)
+- Reads the `action` attribute directly — Craft's `actionInput()` hidden field shadows
+  `form.action`. Success/failure copy comes from `data-success-message` /
+  `data-fail-message`. Field errors are inserted as text; only CMS-authored or
+  Craft-verified messages are set as HTML
 
 **Mobile menu**:
 - A `<dialog>` in `_layout.twig`, opened/closed via invoker commands (`command`/`commandfor`) — no JS needed
@@ -181,16 +215,20 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 ### Deployment
 
 **GitLab CI/CD** (`.gitlab-ci.yml`):
-- **Static stage**: Runs security checks, linting (JS/CSS)
-- **Deploy stages**: Staging and Production (manual trigger, main branch only)
+- **Static stage**: security checks (Symfony, Composer, yarn) then linting — JS, CSS,
+  Twig and project config YAML. PHPStan is *not* run in CI; it only runs via `bin/check`
+- **Deploy stages**: Staging and Production, both `when: manual`, and only on the
+  `master` branch (`@todo-craft` — update if the project's main branch differs)
 - Deployment process:
   1. Security audits (Symfony, Composer, npm)
   2. Install dependencies and build assets
   3. rsync to timestamped release directory
-  4. Symlink shared folders (storage, public/assets)
-  5. Run Craft migrations and clear caches
-  6. Reload PHP-FPM
-  7. Clean up old releases (keeps 2 most recent)
+  4. Copy rebrand assets and the shared `.env` into the release
+  5. Symlink shared folders (storage, public/assets), then point `current` at the release
+  6. Run Craft migrations (`craft up`) and clear caches
+  7. Reload PHP-FPM
+  8. Clean up old releases (keeps 2 most recent)
+  9. Request the site and fail the job if it doesn't return 200
 
 **Shared Directories** (persist across deploys):
 - `storage/` - logs, cache, sessions, rebrand assets
@@ -218,17 +256,39 @@ output style; keep them in sync when editing either one.
   - `textBlockSimple` — minimal toolbar (bold, italic, link, super/subscript only)
 - Only create a new CKEditor field if neither existing config fits the use case
 
+**Notable `general.php` settings** (things that change how templates behave):
+- `preloadSingles()` — singles are preloaded so they act like the old globals
+- `enableTwigSandbox()`, `enableGql(false)`, `sendPoweredByHeader(false)`
+- `runQueueAutomatically()` is on only when `DEV_MODE` — prod/staging need the
+  every-minute cron
+- `transformSvgs(false)`, `upscaleImages(false)`, `maxUploadFileSize('50M')`
+
 **Entry Types and Sections**:
 - Organized in `config/project/sections/` and `config/project/entryTypes/`
 - Blog section with dedicated templates
 - Services section with dedicated templates
+
+**Blocks**:
+- Pages are built from a `blocks` Matrix field; `templates/_includes/_blocks.twig` loops
+  the entries and `{% switch block.type.handle %}` includes the matching
+  `_includes/blocks/_*.twig` partial. Adding a block type means: entry type in project
+  config, a partial, and a `case` in `_blocks.twig` — a missing case renders an HTML
+  comment (plus a visible notice in devMode)
+- `_blocks.twig` also handles layout wrapping: `wrappedBlocks` are grouped into a
+  `.blocks-wrap` div, `sectionStart`/`sectionEnd` open and close a `<section>`, and
+  `notWithinSection` blocks force the section closed first. Width within the wrap comes
+  from `blockWidth(block)` (a 12-column `col-span-*` class)
+- `patternLibrary` renders `_pattern_library.twig` — a living style reference (headings,
+  buttons, forms, colour swatches, icons, etc.). Add new shared component styles there so
+  they're visible in one place
 
 **Block element IDs**:
 - Nearly every block has the shared `elementId` field, used for `#anchor` links
 - Never write the attribute by hand — use `blockId(block)`, which returns the escaped
   ` id="…"` (leading space included) or an empty string:
   `<div class="{{ classes }}"{{ blockId(block) }}>`. `_heading.twig` is the exception:
-  it passes `block.elementId` into `heading()`, which drops a null attribute itself
+  it passes `block.elementId` into Craft's built-in `heading()` function, which drops a
+  null attribute itself
 - Form blocks fall back to a generated ID so the post-submit scroll target always exists:
   `{% set formId = block.elementId ?? ('form--' ~ block.id) %}`
 - `XmModule::validateElementIds()` rejects values that aren't a valid HTML `id` at save
@@ -324,7 +384,8 @@ output style; keep them in sync when editing either one.
 
 ## Environment Configuration
 
-- **Environment file**: `.env` (not in git, see `.env.example`)
+- **Environment file**: `.env` (not in git). `.env.example` is the server template;
+  `.env.example-local` the local/Lando one
 - **Environment detection**:
   - `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env var
   - Controls Vite dev server usage, error display, etc.
