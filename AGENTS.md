@@ -136,6 +136,8 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
    - Sets from address to default mailer from
    - Adds custom validation for name, email, and message fields
    - Modifies subject line format
+   - Queues the emails rather than sending them inline — see **Queued contact form
+     emails** below
 
 2. **XmModule** (`modules/xmmodule/`):
    - Custom XM Media functionality
@@ -234,6 +236,28 @@ output style; keep them in sync when editing either one.
   hyphens, underscores) so the value always works in a URL fragment and a CSS selector
   unescaped. Applied to any entry whose layout has the field, so new block types are
   covered automatically
+
+**Queued contact form emails**:
+- Contact form emails go through the queue (`modules/contactformmodule/jobs/SendEmail.php`)
+  so a mail transport outage retries instead of silently dropping the message. Without
+  it the email is lost: `craft\contactform\Mailer::send()` ignores the mailer's return
+  value and always reports success to the visitor
+- `ContactFormModule` flags the request on the Contact Form plugin's `EVENT_BEFORE_SEND`,
+  then intercepts `craft\mail\Mailer::EVENT_BEFORE_SEND` — pushing the job and setting
+  `$e->isValid = false` to cancel the inline send. Hooking the Craft mailer (rather than
+  the plugin's own send) means the message is already final, including the notification
+  template rendered by the Contact Form Extensions plugin
+- The job stores the message as plain values rather than a serialised Symfony email, with
+  attachment contents inlined — the uploaded temp file is gone by the time it runs.
+  Embedded parts are spotted by their `inline` disposition, not `hasContentId()`: Symfony
+  doesn't assign the content ID until send time
+- Retries every `TTR` (5 min) for `MAX_ATTEMPTS` (10) tries, then the job is marked failed
+  and shows in Utilities → Queue Manager. The retry delay *is* the TTR — the queue only
+  re-reserves a job once its reservation times out
+- Depends on the queue actually running: `runQueueAutomatically` is off outside dev, so
+  prod/staging need the every-minute cron. If it stops, nothing sends. Submissions
+  themselves aren't lost either way — Contact Form Extensions saves them to the DB
+  (`enableDatabase`) before the send is attempted
 
 **Hiding a page from search engines**:
 - Page meta comes from the `seo` Matrix field, *not* the Ether SEO plugin's own field

@@ -8,14 +8,23 @@ use craft\base\Model;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
 use craft\contactform\models\Submission;
+use craft\mail\Mailer as CraftMailer;
+use modules\contactformmodule\jobs\SendEmail;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
+use yii\mail\MailEvent;
 
 /**
  * @method static ContactFormModule getInstance()
  */
 class ContactFormModule extends BaseModule
 {
+    /**
+     * Whether emails being sent for the current request are contact form emails,
+     * and so should be pushed to the queue rather than sent inline.
+     */
+    private bool $queueSends = false;
+
     #[\Override]
     public function init(): void
     {
@@ -33,8 +42,43 @@ class ContactFormModule extends BaseModule
         $this->attachEventHandlers();
     }
 
+    public function setQueueSends(bool $value): void
+    {
+        $this->queueSends = $value;
+    }
+
     private function attachEventHandlers(): void
     {
+        // flag every email sent for the rest of this request as a contact form email:
+        // the submission action doesn't send anything else, and the Contact Form
+        // Extensions confirmation email should be queued too
+        Event::on(
+            Mailer::class,
+            Mailer::EVENT_BEFORE_SEND,
+            function (SendEvent $e): void {
+                $this->setQueueSends(true);
+            }
+        );
+
+        // push the email onto the queue instead of sending it inline, so that a
+        // transport outage (eg Postmark being down) is retried rather than lost.
+        // this runs after every handler that builds the message, including the
+        // notification template rendered by the Contact Form Extensions plugin
+        Event::on(
+            CraftMailer::class,
+            CraftMailer::EVENT_BEFORE_SEND,
+            function (MailEvent $e): void {
+                if (!$this->queueSends) {
+                    return;
+                }
+
+                \Craft::$app->getQueue()->push(SendEmail::fromMessage($e->message));
+
+                // cancel the inline send; the queued job will do it
+                $e->isValid = false;
+            }
+        );
+
         Event::on(
             Mailer::class,
             Mailer::EVENT_BEFORE_SEND,
