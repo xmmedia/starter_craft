@@ -35,8 +35,8 @@
         @apply border-blue-400;
     }
 
-    input:focus ~ label,
-    input:focus ~ label::after {
+    input:focus-visible ~ label,
+    input:focus-visible ~ label::after {
         @apply border-blue-600 cursor-pointer;
         inset: -0.2rem;
     }
@@ -47,8 +47,8 @@
     input:hover ~ label::after,
     label:hover,
     label:hover::after,
-    input:focus ~ label,
-    input:focus ~ label::after {
+    input:focus-visible ~ label,
+    input:focus-visible ~ label::after {
         @apply border-green-700;
     }
 
@@ -67,8 +67,8 @@
     input:hover ~ label::after,
     label:hover,
     label:hover::after,
-    input:focus ~ label,
-    input:focus ~ label::after {
+    input:focus-visible ~ label,
+    input:focus-visible ~ label::after {
         @apply border-red-700;
     }
 

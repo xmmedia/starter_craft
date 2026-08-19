@@ -11,7 +11,7 @@
         @apply text-white border-blue-800 bg-blue-800 no-underline;
     }
 
-    &:focus {
+    &:focus-visible {
         @apply outline-hidden ring-3 ring-blue-500 no-underline bg-blue-500;
     }
 
