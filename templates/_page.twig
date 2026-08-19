@@ -27,7 +27,7 @@
 
     {% if seo is not null %}
         {% include '_includes/_meta.twig' with {
-            'title': seo.pageTitle,
+            'title': pageTitle,
             'description': seo.metaDescription,
             'image': seo.ogImage,
             'image_alt': seo.ogImageAlt,
