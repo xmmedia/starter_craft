@@ -1,0 +1,29 @@
+columnSuffix: null
+handle: seoOptional
+instructions: null
+name: 'SEO Optional'
+searchable: false
+settings:
+  createButtonLabel: null
+  defaultIndexViewMode: cards
+  enableVersioning: false
+  entryTypes:
+    -
+      __assoc__:
+        -
+          - uid
+          - 88c5feb1-e46d-4fb1-885c-6dcda3a38307 # SEO Optional
+        -
+          - group
+          - General
+  includeTableView: false
+  maxEntries: 1
+  minEntries: 1
+  pageSize: null
+  propagationKeyFormat: null
+  propagationMethod: all
+  showCardsInGrid: false
+  viewMode: blocks
+translationKeyFormat: null
+translationMethod: site
+type: craft\fields\Matrix

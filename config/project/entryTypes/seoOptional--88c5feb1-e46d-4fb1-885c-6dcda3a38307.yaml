@@ -1,0 +1,124 @@
+allowLineBreaksInTitles: false
+color: null
+description: null
+fieldLayouts:
+  85092198-0420-41f8-b1e0-765fcf1bd853:
+    cardThumbAlignment: end
+    cardView:
+      - 'layoutElement:db317511-c5fd-416f-b0dd-42afedc9d8c5'
+    tabs:
+      -
+        elementCondition: null
+        elements:
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 414f0663-ff97-44ab-b402-98890d76f713 # SEO - Page Title
+            handle: null
+            instructions: null
+            label: 'Page Title'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: db317511-c5fd-416f-b0dd-42afedc9d8c5
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: a9d87289-cfe2-4244-bc61-fcf804f19e75 # SEO - Meta Description
+            handle: null
+            instructions: null
+            label: 'Meta Description'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 01cf2f39-c6bc-4e22-b25f-27d0789f927d
+            userCondition: null
+            warning: null
+            width: 100
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3782b2bb-7c19-4392-a96c-6ee2ed24a4cd # SEO - Sharing Image
+            handle: null
+            instructions: null
+            label: 'Sharing Image'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 02600ca0-a4c0-486c-b30e-6c24eb927b3d
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2024-11-26T18:45:15+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 84d2deef-d6fe-4a07-b967-b71469d68219 # SEO - Sharing Image Alt
+            handle: null
+            instructions: null
+            label: 'Sharing Image Alt'
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 4ba55907-5b91-4644-ab53-b76fa8b11378
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-04T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 3936180b-e489-4bf1-856c-a20ee20be386 # Hide from Search Engines
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 0d3e4510-afd7-458e-bf85-6a9010615613
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-04T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 37c2878c-7f3f-4e4e-9b06-ebb0c98770fe # Don’t Follow Links
+            handle: null
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: 06ba424d-56d6-4645-a649-7ec94114280d
+            userCondition: null
+            warning: null
+            width: 50
+        name: Content
+        uid: f2647dfa-b01a-41f2-aacf-0c9541188006
+        userCondition: null
+    thumbFieldKey: 'layoutElement:02600ca0-a4c0-486c-b30e-6c24eb927b3d'
+handle: seoOptional
+hasTitleField: false
+icon: null
+name: 'SEO Optional'
+showSlugField: false
+showStatusField: true
+slugTranslationKeyFormat: null
+slugTranslationMethod: site
+titleFormat: null
+titleTranslationKeyFormat: null
+titleTranslationMethod: site
+uiLabelFormat: '{title}'
