@@ -82,6 +82,11 @@
     --heading-color: var(--color-white);
     --link-color: var(--color-blue-300);
     --link-hover-color: var(--color-blue-200);
+    /* the button focus ring (partials/buttons.css) & its offset gap: the gap has to be the
+       bg it sits on, else it reads as part of the ring, so once there's more than one dark
+       bg colour move these two onto the bg classes in partials/text_colors.css */
+    --button-ring-color: var(--color-white);
+    --button-ring-offset-color: var(--color-gray-700);
     @apply text-(--body-color);
 }
 
@@ -92,6 +97,8 @@
     --heading-color: initial;
     --link-color: initial;
     --link-hover-color: initial;
+    --button-ring-color: initial;
+    --button-ring-offset-color: initial;
     @apply text-(--body-color);
 }
 

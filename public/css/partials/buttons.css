@@ -1,4 +1,8 @@
 @utility button {
+    /* focus ring & its offset gap; set per bg colour in partials/text_colors.css */
+    --button-ring: var(--button-ring-color, var(--color-blue-500));
+    --button-ring-offset: var(--button-ring-offset-color, var(--color-white));
+
     @apply px-4 py-2 fill-current stroke-current;
     @apply text-box text-white text-center leading-tight;
     @apply shadow-none border-2 border-blue-500 bg-blue-500 transition-colors outline-hidden rounded-sm;
@@ -12,7 +16,8 @@
     }
 
     &:focus-visible {
-        @apply outline-hidden ring-3 ring-blue-500 no-underline bg-blue-500;
+        @apply outline-hidden ring-3 ring-offset-2 no-underline bg-blue-500;
+        @apply ring-(--button-ring) ring-offset-(--button-ring-offset);
     }
 
     &:disabled {
