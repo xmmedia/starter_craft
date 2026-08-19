@@ -2,7 +2,8 @@
 {% extends '_layout.twig' %}
 
 {% set seo = null %}
-{% set pageTitle = null %}
+{# a template can set pageTitle before this to provide a default; the SEO page title wins when it's filled in #}
+{% set pageTitle = pageTitle ?? null %}
 
 {% if entry is defined and entry.seo is defined and entry.seo is not null %}
     {% set seo = entry.seo.one() %}
