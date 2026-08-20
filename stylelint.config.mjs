@@ -27,5 +27,8 @@ export default {
         "custom-property-empty-line-before": null,
         "comment-empty-line-before": null,
         "nesting-selector-no-missing-scoping-root": [true, { "ignoreAtRules": ["utility"] }],
+        // `@utility` is a rule, not a plain at-rule, so declarations nested inside it
+        // (incl. inside a nested `@supports`/`@media`) are valid
+        "no-invalid-position-declaration": [true, { "ignoreAtRules": ["utility"] }],
     },
 };
