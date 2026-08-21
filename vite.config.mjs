@@ -20,15 +20,16 @@ const https = inLando ? {
     key: readFileSync(keyPath),
 } : true;
 
-export default defineConfig(({ command }) => {
+export default defineConfig(({ command, isPreview }) => {
     return {
         plugins: [
             ...(inLando ? [] : [mkcert()]),
             vuePlugin(),
             tailwindcss(),
         ],
-        // must match the proxied path in lando_apache_vite.conf
-        base: command === 'build' ? '/build/' : '/vite-dev/',
+        // the dev base must match the proxied path in lando_apache_vite.conf;
+        // preview runs as `serve`, but should mirror the production paths
+        base: command === 'build' || isPreview ? '/build/' : '/vite-dev/',
         build: {
             outDir: 'public/build',
             rolldownOptions: {
@@ -70,6 +71,11 @@ export default defineConfig(({ command }) => {
             watch: {
                 ignored: ['**/vendor/**', '**/storage/**'],
             },
+        },
+        preview: {
+            // @todo-craft change port number (must match .lando.yml)
+            port: 9528,
+            strictPort: true,
         },
         appType: 'custom',
         clearScreen: false,

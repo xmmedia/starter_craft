@@ -42,8 +42,9 @@ services:
     ssl: true
     sslExpose: false
     ports:
-      # `yarn preview` (vite's default port)
-      - '4173:4173'
+      # `yarn preview` (must match vite.config.mjs)
+      # @todo-craft change port number 2x
+      - '9528:9528'
     # note: the Vite port is deliberately NOT published — the appserver proxies to it over
     # the internal network, and publishing it would shadow a host-run `yarn dev`
     build:

@@ -53,8 +53,9 @@ container dies on a missing `@rolldown/binding-linux-*`.
   it's safe to run while `lando vite` is running. A green build only proves it bundles —
   the browser is still the real check
 - **Preview a production build**: `lando yarn preview` — static server over `public/build` at
-  `https://localhost:4173/` (assets at `/assets/…`, no `/build/` prefix — preview runs as
-  `serve`, so `base` is `/`). The `node` service publishes 4173 for it
+  `https://localhost:9528/build/`, mirroring the production paths — `base` keys off
+  `isPreview` as well as `command`, since preview otherwise runs as `serve` and would
+  inherit the dev base. The `node` service publishes 9528 for it (its only published port)
 - **Production build**: `lando yarn build` — production/deploy only. Never run it to verify a
   change: it empties and rewrites `public/build`, clobbering the manifest a running
   `lando vite` relies on
@@ -105,7 +106,7 @@ container dies on a missing `@rolldown/binding-linux-*`.
 - **Rebuild**: `lando rebuild` — needed after any change under `config:` or a service's
   `ports:`; `lando start` isn't enough. Rebuilding also recreates the appserver container,
   so run `lando start` afterwards or the app 404s
-- **Node/Vite**: the `node` service (`node:24`, `ssl: true`; publishes only 4173 for
+- **Node/Vite**: the `node` service (`node:24`, `ssl: true`; publishes only 9528 for
   `yarn preview`) — see **Frontend** above for `lando yarn` / `lando vite` / `lando vite-stop`
 
 ## Architecture Overview
