@@ -9,7 +9,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 | Setting | Value | Files to update |
 |---------|-------|-----------------|
 | Project slug | `craftstarter` | `.lando.yml`, `vite.config.mjs`, this file |
-| Vite dev port | `9028` @todo-craft | `vite.config.mjs` |
+| Vite dev port | `9028` @todo-craft | `vite.config.mjs`, `.lando.yml` |
 | Local URL | `https://craftstarter.lndo.site/` @todo-craft | Derived from lando config |
 | PHPMyAdmin URL | `https://pma.craftstarter.lndo.site/` @todo-craft | Derived from lando config |
 
@@ -24,20 +24,42 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 
 ### Frontend (JavaScript/CSS)
 
-- **Dev build**: `yarn dev`
-- **Dev server with HMR**: Vite dev server runs on `https://localhost:{port}` (see Project Configuration)
-  - Configured in `vite.config.mjs` with HTTPS and CORS for Lando
+Node/yarn run in the Lando `node` service — `lando yarn <command>` for everything,
+`lando yarn install` to install — so the Node version matches `.nvmrc` rather than the
+host's. Running them on the host still works; one `node_modules` is shared over the Lando
+mount between host and container, which is why `.yarnrc.yml` widens
+`supportedArchitectures` (darwin/linux × arm64/x64 × glibc/musl) — without it the
+container dies on a missing `@rolldown/binding-linux-*`.
+
+- **Dev server with HMR**: `lando vite` (runs `yarn dev` in the container) or `yarn dev` on
+  the host — either way it serves `https://localhost:{port}` (see Project Configuration), so
+  `config/vite.php` needs no change. Run one or the other, never both
+  - `vite.config.mjs` picks the certificate by checking for `/certs/cert.crt`: inside the
+    container it uses the one Lando issues the service (`ssl: true`) — signed by the CA Lando
+    installed on the host, with `localhost`/`127.0.0.1` in the SANs; on the host it falls back
+    to `vite-plugin-mkcert`. mkcert can't work in the container — it needs root, and a CA
+    generated there isn't trusted by the host browser, so the plugin is skipped when `inLando`
+  - **Caveat**: Docker publishes `{port}` and holds `127.0.0.1:{port}` for the container's
+    lifetime, running or not. A host-side `yarn dev` still binds and is reachable — browsers
+    resolve `localhost` to `::1` and the host server answers there — but over IPv4 the request
+    hits Docker instead (`curl -4` fails). Stop the app (`lando stop`) if an IPv4-only client
+    needs it
+  - **Stop it**: `lando vite-stop` — killing `lando vite` on the host can leave the process
+    holding the port inside the container
   - Toggle via `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env vars (see `config/vite.php`)
-- **Compile check**: `yarn build:check` — use this to verify JS/CSS compiles. Builds to
+- **Compile check**: `lando yarn build:check` — use this to verify JS/CSS compiles. Builds to
   `node_modules/.build-check` (gitignored, and ignored by the dev server's watcher), so
-  it's safe to run while `yarn dev` is running. A green build only proves it bundles —
+  it's safe to run while `lando vite` is running. A green build only proves it bundles —
   the browser is still the real check
-- **Production build**: `yarn build` — production/deploy only. Never run it to verify a
+- **Preview a production build**: `lando yarn preview` — static server over `public/build` at
+  `https://localhost:4173/` (assets at `/assets/…`, no `/build/` prefix — preview runs as
+  `serve`, so `base` is `/`). The `node` service publishes 4173 for it
+- **Production build**: `lando yarn build` — production/deploy only. Never run it to verify a
   change: it empties and rewrites `public/build`, clobbering the manifest a running
-  `yarn dev` relies on
+  `lando vite` relies on
 - **Linting**:
-  - JS: `yarn lint:js` or `yarn lint:js:fix` (`eslint.config.mjs`)
-  - CSS: `yarn lint:css` or `yarn lint:css:fix` (`stylelint.config.mjs`)
+  - JS: `lando yarn lint:js` or `lando yarn lint:js:fix` (`eslint.config.mjs`)
+  - CSS: `lando yarn lint:css` or `lando yarn lint:css:fix` (`stylelint.config.mjs`)
   - Twig: `lando composer lint:twig` (twigcs, config in `.twig_cs.php` — a custom
     ruleset, with a no-RegEngine variant for files where alignment spacing is intentional)
   - YAML (project config): `lando composer lint:yaml`
@@ -62,7 +84,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
   `composer audit`, `yarn audit:high`)
 - **Full check** (runs Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
-  - `bin/check` sources nvm and runs `nvm use` (per `.nvmrc`) if nvm is installed, so there's no need to run `nvm use` first
+  - `bin/check` runs everything through Lando (`lando composer` / `lando yarn`), so it doesn't depend on the host's Node or PHP
 
 ### Craft CMS
 
@@ -79,7 +101,11 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 - **URL**: See Project Configuration above
 - **Database**: accessible at `database:3306` (credentials in `.lando.yml`)
 - **Xdebug**: `lando xdebug-on` / `lando xdebug-off`
-- **Rebuild**: `lando rebuild`
+- **Rebuild**: `lando rebuild` — needed after any change under `config:` or a service's
+  `ports:`; `lando start` isn't enough. Rebuilding also recreates the appserver container,
+  so run `lando start` afterwards or the app 404s
+- **Node/Vite**: the `node` service (`node:24`, `ssl: true`, publishes the Vite port) —
+  see **Frontend** above for `lando yarn` / `lando vite` / `lando vite-stop`
 
 ## Architecture Overview
 
@@ -182,7 +208,7 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 - Two entry points: `public.js` and `editor.js` (via `rolldownOptions` — Vite 8/Rolldown)
 - Output directory: `public/build`
 - Dev server port and CORS origin: See Project Configuration
-- HTTPS via mkcert
+- HTTPS via the Lando service cert in the container, mkcert on the host
 - Manifest mode for Craft integration
 - No inlined assets (all files separate)
 
@@ -215,6 +241,10 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 ### Deployment
 
 **GitLab CI/CD** (`.gitlab-ci.yml`):
+- CI narrows `supportedArchitectures` back to the runner's own platform
+  (`yarn config set --json supportedArchitectures …` in `before_script`) so only its native
+  binaries install. `--immutable` is unaffected — the lockfile records every platform variant
+  regardless
 - **Static stage**: security checks (Symfony, Composer, yarn) then linting — JS, CSS,
   Twig and project config YAML. PHPStan is *not* run in CI; it only runs via `bin/check`
 - **Deploy stages**: Staging and Production, both `when: manual`, and only on the
@@ -334,10 +364,10 @@ output style; keep them in sync when editing either one.
 
 1. **Making Template Changes**: Edit files in `templates/`, Craft auto-detects changes
 2. **Making JS/CSS Changes**:
-   - Run `yarn dev` for Vite dev server with HMR
+   - Run `lando vite` for the Vite dev server with HMR
    - Changes appear immediately in browser
-   - Verify compilation with `yarn build:check` (safe alongside `yarn dev`)
-   - Production build via `yarn build` before deploy
+   - Verify compilation with `lando yarn build:check` (safe alongside `lando vite`)
+   - Production build via `lando yarn build` before deploy
 3. **Adding Craft Fields/Sections**:
    - Make changes in Craft admin UI
    - Project Config auto-saves to `config/project/`

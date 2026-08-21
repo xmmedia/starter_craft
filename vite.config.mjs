@@ -1,5 +1,6 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
+import { existsSync, readFileSync } from 'node:fs';
 import mkcert from 'vite-plugin-mkcert';
 import vuePlugin from '@vitejs/plugin-vue';
 import tailwindcss from '@tailwindcss/vite';
@@ -7,10 +8,22 @@ import dns from 'dns';
 
 dns.setDefaultResultOrder('verbatim');
 
+// inside the Lando node service (`lando vite`), use the certificate Lando issues it:
+// signed by the CA Lando installs on the host, with localhost & 127.0.0.1 in the SANs.
+// mkcert can't run there — it needs root, & a CA made in the container isn't trusted by
+// the host browser. Outside (host `yarn dev`, builds, CI), mkcert handles the cert.
+const certPath = '/certs/cert.crt';
+const keyPath = '/certs/cert.key';
+const inLando = existsSync(certPath) && existsSync(keyPath);
+const https = inLando ? {
+    cert: readFileSync(certPath),
+    key: readFileSync(keyPath),
+} : true;
+
 export default defineConfig(({ command }) => {
     return {
         plugins: [
-            mkcert(),
+            ...(inLando ? [] : [mkcert()]),
             vuePlugin(),
             tailwindcss(),
         ],
@@ -39,7 +52,7 @@ export default defineConfig(({ command }) => {
         },
         server: {
             host: true,
-            // @todo-craft change port number 2x
+            // @todo-craft change port number 2x (must match .lando.yml)
             port: 9028,
             origin: 'https://localhost:9028',
             cors: {
@@ -47,7 +60,7 @@ export default defineConfig(({ command }) => {
                 origin: 'https://craftstarter.lndo.site',
             },
             strictPort: true,
-            https: true,
+            https,
             watch: {
                 ignored: ['**/vendor/**', '**/storage/**'],
             },

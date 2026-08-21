@@ -17,14 +17,14 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
    4. Install PHP packages/vendors: `php composer.phar install`
    5. Add `.env` (copy `.env.example` and update).
    6. Run `. ./node_setup.sh` (this will setup node & install the JS packages – requires yarn to be installed).
-   7. Run `yarn dev` or `yarn build` (for production) to compile JS & CSS files.
+   7. Run `yarn build` (for production) to compile JS & CSS files.
    8. Give executable perms to bin dir: `chmod u+x craft`
    9. Ensure you have lando running.
    10. Within `lando ssh`, install craft: `./craft install/craft`
 5. Remove or update the `LICENSE` file.
 6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
 7. Composer install & update (locally): `composer install && composer update`
-8. Run `yarn && yarn up -R '**'` locally.
+8. Run `lando yarn && lando yarn up -R '**'` locally.
 9. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. ./node_setup.sh` again.
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
@@ -68,25 +68,33 @@ Related scripts:
 
 ## Commands
 
+Yarn commands run inside the Lando `node` container via `lando yarn <command>`, so the
+Node version matches [`.nvmrc`](.nvmrc) rather than whatever the host happens to have.
+Running them on the host with `yarn <command>` still works.
+
+  - Install JS packages: `lando yarn install`
   - Run all checks & fixes: `bin/check_full`
     - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
-  - Dev JS/CSS server with HMR: `yarn dev`
-  - Compile check: `yarn build:check`
-    - Builds to `node_modules/.build-check`, so it's safe to run while `yarn dev` is running
-  - Production JS/CSS build: `yarn build`
-    - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running `yarn dev` relies on
+  - Dev JS/CSS server with HMR: `lando vite` (runs `yarn dev` in the `node` container) or `yarn dev` on the host
+    - Either way it's served at https://localhost:9028/ over HTTPS — in the container with the certificate Lando issues the service, on the host with [mkcert](https://github.com/liuweiGL/vite-plugin-mkcert). Run one or the other, not both
+    - Stop a server left running in the container: `lando vite-stop`
+    - Docker publishes the port, so while the app is up the host-side server is only reachable over IPv6 `localhost` (`::1`) — fine for browsers, but IPv4-only clients hit Docker instead
+  - Compile check: `lando yarn build:check`
+    - Builds to `node_modules/.build-check`, so it's safe to run while `lando vite` is running
+  - Production JS/CSS build: `lando yarn build`
+    - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running `lando vite` relies on
   - Linting:
-    - JS ([ESLint](https://eslint.org/)): `yarn lint:js` or `yarn lint:js:fix`
-    - CSS ([Stylelint](https://stylelint.io/)): `yarn lint:css` or `yarn lint:css:fix`
+    - JS ([ESLint](https://eslint.org/)): `lando yarn lint:js` or `lando yarn lint:js:fix`
+    - CSS ([Stylelint](https://stylelint.io/)): `lando yarn lint:css` or `lando yarn lint:css:fix`
     - Twig ([twigcs](https://github.com/friendsoftwig/twigcs)): `lando composer lint:twig`
     - YAML: `lando composer lint:yaml`
   - [PHP CS Fixer](https://cs.symfony.com/): `lando composer cs:fix`
   - [Rector](https://getrector.com/): `lando composer rector` (dry run) or `lando composer rector:fix`
   - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `lando composer static`
-  - Security audits: `yarn audit:moderate` or `yarn audit:high`
-  - Upgrade a JS package, ignoring the age gate: `yarn up:bypass <package>`
+  - Security audits: `lando yarn audit:moderate` or `lando yarn audit:high`
+  - Upgrade a JS package, ignoring the age gate: `lando yarn up:bypass <package>`
 
   There are no tests in the starter — add them (and their scripts) as a project needs them.
 
