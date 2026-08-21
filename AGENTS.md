@@ -9,7 +9,7 @@ These values are project-specific and defined in `.lando.yml` and `vite.config.m
 | Setting | Value | Files to update |
 |---------|-------|-----------------|
 | Project slug | `craftstarter` | `.lando.yml`, `vite.config.mjs`, this file |
-| Vite dev port | `9028` @todo-craft | `vite.config.mjs`, `.lando.yml` |
+| Vite dev port | `9028` @todo-craft | `vite.config.mjs`, `lando_apache_vite.conf` |
 | Local URL | `https://craftstarter.lndo.site/` @todo-craft | Derived from lando config |
 | PHPMyAdmin URL | `https://pma.craftstarter.lndo.site/` @todo-craft | Derived from lando config |
 
@@ -31,19 +31,20 @@ mount between host and container, which is why `.yarnrc.yml` widens
 `supportedArchitectures` (darwin/linux × arm64/x64 × glibc/musl) — without it the
 container dies on a missing `@rolldown/binding-linux-*`.
 
-- **Dev server with HMR**: `lando vite` (runs `yarn dev` in the container) or `yarn dev` on
-  the host — either way it serves `https://localhost:{port}` (see Project Configuration), so
-  `config/vite.php` needs no change. Run one or the other, never both
+- **Dev server with HMR**: `lando vite` (runs `yarn dev` in the container). Assets are
+  served **through the appserver** at `https://{local URL}/vite-dev/`, not from the Vite
+  port directly — see **Vite through the appserver proxy** below. Run one dev server at a
+  time
   - `vite.config.mjs` picks the certificate by checking for `/certs/cert.crt`: inside the
     container it uses the one Lando issues the service (`ssl: true`) — signed by the CA Lando
     installed on the host, with `localhost`/`127.0.0.1` in the SANs; on the host it falls back
     to `vite-plugin-mkcert`. mkcert can't work in the container — it needs root, and a CA
     generated there isn't trusted by the host browser, so the plugin is skipped when `inLando`
-  - **Caveat**: Docker publishes `{port}` and holds `127.0.0.1:{port}` for the container's
-    lifetime, running or not. A host-side `yarn dev` still binds and is reachable — browsers
-    resolve `localhost` to `::1` and the host server answers there — but over IPv4 the request
-    hits Docker instead (`curl -4` fails). Stop the app (`lando stop`) if an IPv4-only client
-    needs it
+  - **On the host instead**: `yarn dev` works with no config change — Apache falls back to
+    it (see the balancer below). Craft's URLs are identical either way
+  - The Vite port is deliberately **not** published by the `node` service: the appserver
+    reaches it over the internal network, and publishing it would shadow a host-run
+    `yarn dev` on `127.0.0.1`, which is what makes the fallback fail
   - **Stop it**: `lando vite-stop` — killing `lando vite` on the host can leave the process
     holding the port inside the container
   - Toggle via `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env vars (see `config/vite.php`)
@@ -104,8 +105,8 @@ container dies on a missing `@rolldown/binding-linux-*`.
 - **Rebuild**: `lando rebuild` — needed after any change under `config:` or a service's
   `ports:`; `lando start` isn't enough. Rebuilding also recreates the appserver container,
   so run `lando start` afterwards or the app 404s
-- **Node/Vite**: the `node` service (`node:24`, `ssl: true`, publishes the Vite port) —
-  see **Frontend** above for `lando yarn` / `lando vite` / `lando vite-stop`
+- **Node/Vite**: the `node` service (`node:24`, `ssl: true`; publishes only 4173 for
+  `yarn preview`) — see **Frontend** above for `lando yarn` / `lando vite` / `lando vite-stop`
 
 ## Architecture Overview
 
@@ -204,11 +205,37 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 
 ### Frontend Build System
 
+**Vite through the appserver proxy**:
+- In dev, Apache proxies `/vite-dev/` to the node service (`lando_apache_vite.conf`,
+  symlinked into `conf-enabled` by a `build_as_root` step), so dev assets are same-origin
+  with the site. `base` in `vite.config.mjs` and `devServerPublic` in `config/vite.php`
+  both have to match that path
+- **Why**: SVG `<use href>` cannot cross origins — there is no CORS opt-in for it. That's
+  what previously forced the svgxuse polyfill in dev; with the proxy the icon sprite
+  resolves natively and the polyfill is gone. Scripts and CSS were never the problem
+- The proxy conf must live at server level, not in a vhost: `ProxyPass` is inherited by
+  vhosts, but **mod_rewrite directives are not** — a `RewriteRule … [P]` for the websocket
+  silently never fires from `conf-enabled`. Use `upgrade=websocket` on `ProxyPass` instead
+- `ProxyPreserveHost On` means Vite sees the site's host, so it must be in `allowedHosts`
+  — Vite rejects HMR websocket upgrades from unknown hosts with a bare `400`, which looks
+  like a proxy bug but isn't
+- `server.hmr.clientPort` is 443 and the protocol `wss`, because the HMR socket rides the
+  proxied path rather than the Vite port
+- The proxy is a **balancer**: the node container is the primary, a host-run `yarn dev`
+  (`host.docker.internal`) is a hot standby, so either works at the same URL. Editing a
+  `BalancerMember` needs a full Apache restart — the values live in shared memory, and a
+  graceful reload keeps the old ones without saying so
+- **A `503` on any `/vite-dev/…` URL means the dev server isn't running** — Apache has
+  nothing to proxy to. Start it with `lando vite`. (Before the proxy the same situation
+  showed up as a connection refused.) Note `pgrep -f vite` in the container gives a false
+  positive by matching its own `sh -c` wrapper; check for a listener on the port instead
+
 **Vite Configuration** (`vite.config.mjs`):
 - Two entry points: `public.js` and `editor.js` (via `rolldownOptions` — Vite 8/Rolldown)
 - Output directory: `public/build`
 - Dev server port and CORS origin: See Project Configuration
 - HTTPS via the Lando service cert in the container, mkcert on the host
+- Dev `base` is `/vite-dev/` — the path Apache proxies (production `base` is `/build/`)
 - Manifest mode for Craft integration
 - No inlined assets (all files separate)
 

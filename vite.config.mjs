@@ -8,13 +8,13 @@ import dns from 'dns';
 
 dns.setDefaultResultOrder('verbatim');
 
-// inside the Lando node service (`lando vite`), use the certificate Lando issues it:
-// signed by the CA Lando installs on the host, with localhost & 127.0.0.1 in the SANs.
-// mkcert can't run there — it needs root, & a CA made in the container isn't trusted by
-// the host browser. Outside (host `yarn dev`, builds, CI), mkcert handles the cert.
+// in the Lando node service use the cert Lando issues it; mkcert can't run there
+// (needs root, & a CA made in the container isn't trusted by the host browser)
 const certPath = '/certs/cert.crt';
 const keyPath = '/certs/cert.key';
 const inLando = existsSync(certPath) && existsSync(keyPath);
+// @todo-craft update to match your local dev URL
+const siteOrigin = 'https://craftstarter.lndo.site';
 const https = inLando ? {
     cert: readFileSync(certPath),
     key: readFileSync(keyPath),
@@ -27,7 +27,8 @@ export default defineConfig(({ command }) => {
             vuePlugin(),
             tailwindcss(),
         ],
-        base: command === 'build' ? '/build/' : '/',
+        // must match the proxied path in lando_apache_vite.conf
+        base: command === 'build' ? '/build/' : '/vite-dev/',
         build: {
             outDir: 'public/build',
             rolldownOptions: {
@@ -52,12 +53,17 @@ export default defineConfig(({ command }) => {
         },
         server: {
             host: true,
-            // @todo-craft change port number 2x (must match .lando.yml)
+            // @todo-craft change port number 2x (must match lando_apache_vite.conf)
             port: 9028,
-            origin: 'https://localhost:9028',
-            cors: {
-                // @todo-craft update to match your local dev URL
-                origin: 'https://craftstarter.lndo.site',
+            // always reached through the appserver proxy, in the container or on the host
+            origin: siteOrigin,
+            // the proxy passes the site's Host through; Vite 400s unknown hosts
+            allowedHosts: [new URL(siteOrigin).hostname],
+            // the HMR socket rides the proxied path, not the Vite port
+            hmr: {
+                protocol: 'wss',
+                host: new URL(siteOrigin).hostname,
+                clientPort: 443,
             },
             strictPort: true,
             https,

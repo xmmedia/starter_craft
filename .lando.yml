@@ -21,6 +21,9 @@ services:
     type: php:8.5
     build_as_root:
       - a2enmod headers
+      # proxy the Vite dev server (node service) at /vite-dev/ — see lando_apache_vite.conf
+      - a2enmod proxy proxy_http proxy_wstunnel proxy_balancer lbmethod_byrequests
+      - ln -sf /app/lando_apache_vite.conf /etc/apache2/conf-enabled/vite.conf
       # to fix the "Xdebug: [Log Files] File '/tmp/xdebug.log' could not be opened." error
       - touch /tmp/xdebug.log && chmod 666 /tmp/xdebug.log
   database:
@@ -39,10 +42,10 @@ services:
     ssl: true
     sslExpose: false
     ports:
-      # @todo-craft change port number 2x (must match vite.config.mjs)
-      - '9028:9028'
       # `yarn preview` (vite's default port)
       - '4173:4173'
+    # note: the Vite port is deliberately NOT published — the appserver proxies to it over
+    # the internal network, and publishing it would shadow a host-run `yarn dev`
     build:
       - corepack enable
     overrides:

@@ -77,10 +77,11 @@ Running them on the host with `yarn <command>` still works.
     - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
-  - Dev JS/CSS server with HMR: `lando vite` (runs `yarn dev` in the `node` container) or `yarn dev` on the host
-    - Either way it's served at https://localhost:9028/ over HTTPS — in the container with the certificate Lando issues the service, on the host with [mkcert](https://github.com/liuweiGL/vite-plugin-mkcert). Run one or the other, not both
+  - Dev JS/CSS server with HMR: `lando vite` (runs `yarn dev` in the `node` container)
+    - Assets are proxied through the appserver at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `lando_apache_vite.conf`
     - Stop a server left running in the container: `lando vite-stop`
-    - Docker publishes the port, so while the app is up the host-side server is only reachable over IPv6 `localhost` (`::1`) — fine for browsers, but IPv4-only clients hit Docker instead
+    - A `503` on a `/vite-dev/…` asset means the dev server isn't running — start it with `lando vite`
+    - To run it on the host instead, just use `yarn dev` — Apache falls back to a host-run dev server, so the URLs and behaviour are the same
   - Compile check: `lando yarn build:check`
     - Builds to `node_modules/.build-check`, so it's safe to run while `lando vite` is running
   - Production JS/CSS build: `lando yarn build`

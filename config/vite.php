@@ -9,9 +9,10 @@ return [
     // Dynamically enable dev server based on environment.
     'useDevServer'               => 'dev' === App::env('CRAFT_ENVIRONMENT'),
 
-    // URL to the Vite development server.
-    // @todo-craft change port number to match vite config
-    'devServerPublic'            => 'https://localhost:9028/',
+    // URL to the Vite dev server, proxied through Apache to be same-origin
+    // (see lando_apache_vite.conf). Works for `lando vite` & a host-run `yarn dev`.
+    // @todo-craft update to match your local dev URL
+    'devServerPublic'            => 'https://craftstarter.lndo.site/vite-dev/',
     'checkDevServer'             => false,
 
     // Public URL for production assets.
