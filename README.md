@@ -77,7 +77,7 @@ Running them on the host with `yarn <command>` still works.
     - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
-  - Dev JS/CSS server with HMR: `lando vite` (runs `yarn dev` in the `node` container)
+  - Dev JS/CSS server with HMR: `lando vite` (runs `yarn install`, then `yarn dev`, in the `node` container)
     - Assets are proxied through the appserver at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `lando_apache_vite.conf`
     - Stop a server left running in the container: `lando vite-stop`
     - A `503` on a `/vite-dev/…` asset means the dev server isn't running — start it with `lando vite`
@@ -86,6 +86,8 @@ Running them on the host with `yarn <command>` still works.
     - Builds to `node_modules/.build-check`, so it's safe to run while `lando vite` is running
   - Production JS/CSS build: `lando yarn build`
     - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running `lando vite` relies on
+  - Preview a production build: `lando yarn preview`
+    - Serves `public/build` at `https://localhost:9528/build/`, mirroring the production paths (9528 is the only port the `node` service publishes)
   - Linting:
     - JS ([ESLint](https://eslint.org/)): `lando yarn lint:js` or `lando yarn lint:js:fix`
     - CSS ([Stylelint](https://stylelint.io/)): `lando yarn lint:css` or `lando yarn lint:css:fix`
