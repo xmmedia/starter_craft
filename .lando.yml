@@ -68,8 +68,10 @@ tooling:
     description: Run a yarn command.
   vite:
     service: node
-    description: Run the Vite dev server.
-    cmd: yarn dev
+    description: Install packages, then run the Vite dev server.
+    cmd:
+      - yarn install
+      - yarn dev
   vite-stop:
     service: node
     description: Stop the Vite dev server left running in the container.

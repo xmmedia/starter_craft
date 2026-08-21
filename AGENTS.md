@@ -31,7 +31,8 @@ mount between host and container, which is why `.yarnrc.yml` widens
 `supportedArchitectures` (darwin/linux × arm64/x64 × glibc/musl) — without it the
 container dies on a missing `@rolldown/binding-linux-*`.
 
-- **Dev server with HMR**: `lando vite` (runs `yarn dev` in the container). Assets are
+- **Dev server with HMR**: `lando vite` (runs `yarn install` then `yarn dev` in the
+  container, so packages are always in sync before it starts). Assets are
   served **through the appserver** at `https://{local URL}/vite-dev/`, not from the Vite
   port directly — see **Vite through the appserver proxy** below. Run one dev server at a
   time
