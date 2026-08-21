@@ -38,7 +38,5 @@ return RectorConfig::configure()
         // keep @param tags even when redundant with type declarations
         Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector::class,
         Rector\TypeDeclaration\Rector\StmtsAwareInterface\SafeDeclareStrictTypesRector::class,
-        // keep empty() as-is; don't rewrite to in_array($x, ['', '0'], true)
-        Rector\Strict\Rector\Empty_\DisallowedEmptyRuleFixerRector::class,
     ])
 ;
