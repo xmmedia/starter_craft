@@ -124,8 +124,18 @@ container dies on a missing `@rolldown/binding-linux-*`.
 - **Vue 3** for interactive components
 - **Vite** for bundling and dev server (replaces Webpack)
 - **Tailwind CSS 4** for styling
-- **PostCSS** with env-function and nesting plugins (autoprefixer via Tailwind)
+- No PostCSS pipeline — Tailwind 4's Lightning CSS handles nesting and prefixing
 - ESLint and Stylelint for code quality
+
+**Browser support floor**:
+- Set by Vite's default `build.target` (`baseline-widely-available`) and Tailwind 4's own
+  hard-coded Lightning CSS targets. They currently agree: **Chrome 111+, Edge 111+,
+  Firefox 114+, Safari/iOS 16.4+**
+- **Neither reads browserslist** — a `.browserslistrc` here would be inert and would drift
+  out of sync silently, so there deliberately isn't one
+- Upgrading Vite or Tailwind can move the floor on its own — check their release notes.
+  The current values live in `vite`'s `ESBUILD_BASELINE_WIDELY_AVAILABLE_TARGET` and
+  `@tailwindcss/node`'s `targets`
 
 ### Project Structure
 
@@ -264,7 +274,6 @@ The application bootstraps four custom Yii2 modules in `config/app.php`:
 
 **CSS Processing**:
 - Tailwind CSS 4 (via `@tailwindcss/vite` plugin)
-- PostCSS with env-function and nesting plugins
 - Source maps enabled in dev mode
 
 ### Deployment
@@ -457,7 +466,6 @@ output style; keep them in sync when editing either one.
 - **Session Storage**: Custom path in `storage/sessions/` (configured in `config/app.php`)
 - **SVG Processing**: SVGO config in `svgo.config.cjs`
 - **Git Hooks**: None configured
-- **Browserlist**: Specified in `.browserslistrc`
 
 ## Browser Automation
 

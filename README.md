@@ -108,9 +108,6 @@ Running them on the host with `yarn <command>` still works.
     - [Vite](https://vitejs.dev/) – frontend build tool and dev server with HMR
     - [Tailwind CSS 4](https://tailwindcss.com/) – utility-first styling framework
       - [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) – prose styling plugin
-    - [PostCSS](https://github.com/postcss/postcss) – transforms CSS
-      - [postcss-env-function](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-env-function) – environment variable support in CSS
-      - [postcss-nesting](https://github.com/csstools/postcss-plugins/tree/main/plugins/postcss-nesting) – CSS nesting support
     - [ESLint](https://eslint.org/) – checks JS for conventions & errors
     - [Stylelint](https://stylelint.io/) – checks CSS for conventions & errors
     - [SVGO](https://github.com/svg/svgo) – optimizes SVG files
