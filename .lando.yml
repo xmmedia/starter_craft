@@ -20,16 +20,17 @@ services:
   appserver:
     type: php:8.5
     build_as_root:
-      # LANG: build steps inherit the host's, which the image doesn't have (perl warnings)
-      - LANG=C.UTF-8 a2enmod headers
+      # LC_ALL: build steps inherit the host's locale, which the image doesn't have (perl
+      # warnings); LC_ALL overrides the inherited LANG & LC_* vars in one go
+      - LC_ALL=C.UTF-8 a2enmod headers
       # proxy the Vite dev server (node service) at /vite-dev/ — see lando_apache_vite.conf
-      - LANG=C.UTF-8 a2enmod proxy proxy_http proxy_wstunnel proxy_balancer lbmethod_byrequests
+      - LC_ALL=C.UTF-8 a2enmod proxy proxy_http proxy_wstunnel proxy_balancer lbmethod_byrequests
       - ln -sf /app/lando_apache_vite.conf /etc/apache2/conf-enabled/vite.conf
       # to fix the "Xdebug: [Log Files] File '/tmp/xdebug.log' could not be opened." error
       - touch /tmp/xdebug.log && chmod 666 /tmp/xdebug.log
       # insurance against git's "dubious ownership" refusal if the mount's uid ever
       # stops matching the container user (composer shells out to git, e.g. `validate`)
-      - LANG=C.UTF-8 git config --system --add safe.directory /app
+      - LC_ALL=C.UTF-8 git config --system --add safe.directory /app
   database:
     creds:
       user:     craft
