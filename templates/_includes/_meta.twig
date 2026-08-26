@@ -6,7 +6,7 @@ Usage:
         'title': 'Page Title',
         'description': 'Meta/OG/Twitter Description',
         'url': <relative/url>,
-        'image': '/images/logo-og.png',
+        'image': <asset query, e.g. entry.ogImage>,
         'image_alt': 'Image Alt',
         'robots': <array of robots directives, e.g. ['noindex']>,
     } only %}
@@ -35,38 +35,34 @@ Usage:
     <meta name="description" content="{{ description }}">
 {% endif %}
 
+{% set ogTransform = 'ogImage' %}
+{% set ogImage = image is defined and image ? image.one() : null %}
+{% set ogImageAlt = (image_alt is defined and image_alt) ? image_alt : (ogImage ? ogImage.alt : null) %}
+
 <meta property="og:title" content="{{ title }}">
 <meta property="og:type"  content="website">
 <meta property="og:url"   content="{{ url }}">
 <meta property="og:site_name" content="{{ siteInformation.companyName }}">
-{% if image is defined and image | length > 0 %}
-    {# should be 1200x630 #}
-    <meta property="og:image" content="{{ image.one().getUrl({ width: 1200, height: 600 }) }}">
-    {% if image_alt %}
-        <meta property="og:image:alt" content="{{ image_alt }}">
+{% if ogImage %}
+    <meta property="og:image" content="{{ ogImage.getUrl(ogTransform) }}">
+    {# read back from the transform: upscaleImages is off, so a small source scales the dimensions down #}
+    <meta property="og:image:width"  content="{{ ogImage.getWidth(ogTransform) }}">
+    <meta property="og:image:height" content="{{ ogImage.getHeight(ogTransform) }}">
+    {% if ogImageAlt %}
+        <meta property="og:image:alt" content="{{ ogImageAlt }}">
     {% endif %}
+{% else %}
+    {# @todo-craft add the fallback OG image at public/images/logo-og.png, matching the ogImage transform's 1200x630 #}
+    <meta property="og:image" content="{{ siteUrl('/images/logo-og.png') }}">
+    <meta property="og:image:width"  content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ siteInformation.companyName }} Logo">
 {% endif %}
-{# should be 1200x630 #}
-<meta property="og:image" content="{{ siteUrl('/images/logo-og.png') }}">
-<meta property="og:image:alt" content="{{ siteInformation.companyName }} Logo">
 {% if description %}
     <meta property="og:description" content="{{ description }}">
 {% endif %}
 
-<meta name="twitter:card"  content="summary_large_image">
+{# X/Twitter falls back to the og: tags above for title, description, image & alt #}
+<meta name="twitter:card" content="summary_large_image">
 {# @todo-craft update twitter username (if they have one) & uncomment #}
-{#<meta name="twitter:site"  content="<twitter-username>">#}
-<meta name="twitter:title" content="{{ title }}">
-{% if description %}
-    <meta name="twitter:description" content="{{ description }}">
-{% endif %}
-{% if image is defined and image | length > 0 %}
-    <meta name="twitter:image" content="{{ image.one().getUrl({ width: 1200, height: 600 }) }}">
-    {% if image_alt %}
-        <meta property="twitter:image:alt" content="{{ image_alt }}">
-    {% endif %}
-{% else %}
-    <meta name="twitter:image" content="{{ siteUrl('/images/logo-og.png') }}">
-    <meta property="twitter:image:alt" content="{{ siteInformation.companyName }} Logo">
-{% endif %}
-<meta name="twitter:url"   content="{{ url }}">
+{#<meta name="twitter:site" content="<twitter-username>">#}
