@@ -1,12 +1,17 @@
 class SoftHyphenPlugin {
-    static get pluginName() { return 'SoftHyphenPlugin'; }
-    static get requires() { return []; }
+    static get pluginName () {
+        return 'SoftHyphenPlugin';
+    }
 
-    constructor(editor) {
+    static get requires () {
+        return [];
+    }
+
+    constructor (editor) {
         this.editor = editor;
     }
 
-    init() {
+    init () {
         const proc = this.editor.data.processor;
         const origToData = proc.toData.bind(proc);
 
