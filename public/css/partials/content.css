@@ -1,4 +1,4 @@
-.blocks-wrap, .text-block-wrap, .no_padding-wrap {
+.blocks-wrap, .text-block-wrap, .no_margin-wrap {
     /* Remove top margin from first child text/content elements */
     p:first-child,
     h1:first-child,
