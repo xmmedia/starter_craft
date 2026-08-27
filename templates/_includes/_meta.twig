@@ -3,7 +3,7 @@ Usage:
 {% block head %}
     {{ parent() }}
     {% include '_includes/_meta.twig' with {
-        'title': 'Page Title',
+        'title': <the full title, incl. the company name — usually block('page_title_wrap')>,
         'description': 'Meta/OG/Twitter Description',
         'url': <relative/url>,
         'image': <asset query, e.g. entry.ogImage>,
@@ -13,11 +13,8 @@ Usage:
 {% endblock head %}
 #}
 
-{% if title is defined and title is not empty %}
-    {% set title = title ~ ' | ' ~ siteInformation.companyName %}
-{% else %}
-    {% set title = siteInformation.companyName %}
-{% endif %}
+{# the title is passed in already composed, so og:/twitter: can't drift from the <title> tag #}
+{% set title = (title is defined and title is not empty) ? title | trim : siteInformation.companyName %}
 
 {% if url is not defined %}
     {% set url = craft.app.request.absoluteUrl %}

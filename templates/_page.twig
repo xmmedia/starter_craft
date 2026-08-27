@@ -27,8 +27,9 @@
     {{ parent() }}
 
     {% if seo is not null %}
+        {# title is the same string as the <title> tag, so the homepage's company-name-first order carries over #}
         {% include '_includes/_meta.twig' with {
-            'title': pageTitle,
+            'title': block('page_title_wrap'),
             'description': seo.metaDescription,
             'image': seo.ogImage,
             'image_alt': seo.ogImageAlt,
