@@ -6,7 +6,6 @@ import pluginVue from 'eslint-plugin-vue';
 export default defineConfig([
     globalIgnores([
         '.yarn/',
-        'config/',
         'public/build/',
         'public/cpresources/',
         'public/js/svgxuse.min.js',
@@ -25,6 +24,19 @@ export default defineConfig([
 
     js.configs.recommended,
     ...pluginVue.configs['flat/recommended'],
+
+    {
+        // Craft evaluates the CKEditor config in a function context, so it can `return`
+        files: ['config/ckeditor/*.js'],
+        languageOptions: {
+            sourceType: 'script',
+            parserOptions: {
+                ecmaFeatures: {
+                    globalReturn: true,
+                },
+            },
+        },
+    },
 
     {
         rules: {
