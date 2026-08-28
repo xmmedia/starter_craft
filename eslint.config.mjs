@@ -8,7 +8,6 @@ export default defineConfig([
         '.yarn/',
         'public/build/',
         'public/cpresources/',
-        'public/js/svgxuse.min.js',
         'storage/',
         'vendor/',
     ]),
