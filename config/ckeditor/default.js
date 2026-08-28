@@ -22,6 +22,28 @@ class SoftHyphenPlugin {
     }
 }
 
+/* @todo-craft uncomment (with the style key below) if the site needs text styles in the editor;
+   add/remove the styles to suit the design, & safelist any class that isn't used in the code
+const textStyles = [
+    { label: 'Small', class: 'text-sm' },
+    { label: 'Large', class: 'text-lg' },
+];
+// li (rather than ul/ol) so one definition covers bulleted & numbered lists;
+// applies to whichever items are selected
+const styleTargets = [
+    // paragraphs are the unprefixed default; the prefix only exists to keep the
+    // names unique, which CKEditor requires to resolve a style
+    { prefix: '', element: 'p' },
+    { prefix: 'List ', element: 'li' },
+];
+
+const styleDefinitions = styleTargets.flatMap(({ prefix, element }) => textStyles.map((style) => ({
+    name: `${prefix}${style.label}`,
+    element,
+    classes: [style.class],
+})));
+*/
+
 return {
     extraPlugins: [SoftHyphenPlugin],
 
@@ -47,4 +69,10 @@ return {
             'center',
         ],
     },
+
+    /*
+    style: {
+        definitions: styleDefinitions,
+    },
+    */
 };
