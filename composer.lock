@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d443179fbf5e07538cbd4cf2f5d9f173",
+    "content-hash": "70fceae0b295d15bfa8451d5abb7723e",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -7298,11 +7298,11 @@
         },
         {
             "name": "stimmt/craft-mcp",
-            "version": "v1.4.0-beta.13",
+            "version": "v1.4.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/9bcb0a3b519863a6703849fdc67c61bd93228990",
-                "reference": "9bcb0a3b519863a6703849fdc67c61bd93228990",
+                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/2dca432ed212b3a0ac8501e412ec3b18b5987754",
+                "reference": "2dca432ed212b3a0ac8501e412ec3b18b5987754",
                 "shasum": ""
             },
             "require": {
@@ -7359,7 +7359,7 @@
                 "issues": "https://github.com/stimmtdigital/craft-mcp/issues",
                 "source": "https://github.com/stimmtdigital/craft-mcp"
             },
-            "time": "2026-08-18T10:47:02+00:00"
+            "time": "2026-08-28T12:06:27+00:00"
         },
         {
             "name": "symfony/clock",
@@ -12932,8 +12932,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "roave/security-advisories": 20,
-        "stimmt/craft-mcp": 10
+        "roave/security-advisories": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
