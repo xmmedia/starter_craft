@@ -132,6 +132,28 @@ fieldLayouts:
             warning: null
             width: 50
           -
+            dateAdded: '2026-07-15T00:00:00+00:00'
+            editCondition: null
+            elementCondition: null
+            elementEditCondition: null
+            fieldUid: 9f09c2bb-cbf2-45d3-88b0-3f8d35886675 # Limit Mobile Width
+            handle: limitMobileWidth
+            instructions: null
+            label: null
+            required: false
+            tip: null
+            type: craft\fieldlayoutelements\CustomField
+            uid: e24bdc27-c805-430c-95b9-7131351e1a9b
+            userCondition: null
+            warning: null
+            width: 50
+          -
+            dateAdded: '2026-08-31T19:59:29+00:00'
+            elementCondition: null
+            type: craft\fieldlayoutelements\HorizontalRule
+            uid: e4b3e965-5e4a-41bf-aaca-bc03440f14da
+            userCondition: null
+          -
             dateAdded: '2024-12-04T23:56:41+00:00'
             editCondition: null
             elementCondition: null
@@ -170,22 +192,6 @@ fieldLayouts:
             tip: null
             type: craft\fieldlayoutelements\CustomField
             uid: dde483de-2806-49e4-9549-56f0ebd741d0
-            userCondition: null
-            warning: null
-            width: 50
-          -
-            dateAdded: '2026-07-15T00:00:00+00:00'
-            editCondition: null
-            elementCondition: null
-            elementEditCondition: null
-            fieldUid: 9f09c2bb-cbf2-45d3-88b0-3f8d35886675 # Limit Mobile Width
-            handle: limitMobileWidth
-            instructions: null
-            label: null
-            required: false
-            tip: null
-            type: craft\fieldlayoutelements\CustomField
-            uid: e24bdc27-c805-430c-95b9-7131351e1a9b
             userCondition: null
             warning: null
             width: 50
