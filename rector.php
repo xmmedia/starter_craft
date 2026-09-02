@@ -32,8 +32,6 @@ return RectorConfig::configure()
         // we may not want the property to have a default value
         Rector\Php74\Rector\Property\RestoreDefaultNullToNullableTypePropertyRector::class,
         Rector\CodeQuality\Rector\Identical\FlipTypeControlToUseExclusiveTypeRector::class,
-        Rector\CodeQuality\Rector\If_\CombineIfRector::class,
-        Rector\CodeQuality\Rector\If_\ExplicitBoolCompareRector::class,
         Rector\CodeQuality\Rector\If_\ObjectExplicitBoolCompareRector::class,
         // keep @param tags even when redundant with type declarations
         Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector::class,
