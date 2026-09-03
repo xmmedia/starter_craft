@@ -21,9 +21,13 @@
     'patternLibrary',
 ] %}
 
-{% if entry.blocks is not empty %}
+{# filtering on the elements, not the query: in preview the query matches the canonical
+   blocks (still enabled) and provisional drafts are swapped in after the status filter #}
+{% set blockList = entry.blocks.all() | filter(block => block.enabled) %}
 
-    {% for block in entry.blocks.all() %}
+{% if blockList is not empty %}
+
+    {% for block in blockList %}
         {% if block.type.handle in wrappedBlocks %}
             {% if inBlock == false %}
                 <div class="blocks-wrap">
