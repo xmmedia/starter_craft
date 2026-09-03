@@ -1,3 +1,6 @@
+{# optional `blocksField` renders a blocks field other than entry.blocks #}
+{% set _blocksField = blocksField is defined ? blocksField : entry.blocks %}
+
 {% set inBlock = false %}
 {% set inSection = false %}
 {# note: using default() fails because it checks if value === false #}
@@ -23,7 +26,7 @@
 
 {# filtering on the elements, not the query: in preview the query matches the canonical
    blocks (still enabled) and provisional drafts are swapped in after the status filter #}
-{% set blockList = entry.blocks.all() | filter(block => block.enabled) %}
+{% set blockList = _blocksField.all() | filter(block => block.enabled) %}
 
 {% if blockList is not empty %}
 
