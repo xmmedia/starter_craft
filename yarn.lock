@@ -139,6 +139,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@dreamsicle.io/stylelint-config-tailwindcss@npm:^1.2.2":
+  version: 1.2.2
+  resolution: "@dreamsicle.io/stylelint-config-tailwindcss@npm:1.2.2"
+  peerDependencies:
+    stylelint: ^16.17.0 || ^17.0.0
+  checksum: 10/bb91dd54ae6b6d315734ec5cb40b2c4d0cc81ad15fe50a9cdd9e47e0d5bfeb67a5333ddcdff3fc38a7824bafaf32ce70d75c66d09e7d7653b178942fcdc765db
+  languageName: node
+  linkType: hard
+
 "@emnapi/core@npm:^1.11.1":
   version: 1.11.3
   resolution: "@emnapi/core@npm:1.11.3"
@@ -2550,16 +2559,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-config-tailwindcss@npm:^1.0.0":
-  version: 1.0.1
-  resolution: "stylelint-config-tailwindcss@npm:1.0.1"
-  peerDependencies:
-    stylelint: ">=13.13.1"
-    tailwindcss: ">=2.2.16"
-  checksum: 10/1f3f47f6474dacc0ad8c0c09ba5e7af6c24a16360fc1f8203ed4c1f392192f7dac96c0931b2b892ddd0152d24476f963625fef6301281bb76ad303df72f52725
-  languageName: node
-  linkType: hard
-
 "stylelint@npm:^17.0.0":
   version: 17.14.1
   resolution: "stylelint@npm:17.14.1"
@@ -2891,6 +2890,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "xm_starter_craft@workspace:."
   dependencies:
+    "@dreamsicle.io/stylelint-config-tailwindcss": "npm:^1.2.2"
     "@eslint/js": "npm:^10.0.0"
     "@tailwindcss/typography": "npm:^0.5.0"
     "@tailwindcss/vite": "npm:^4.1.10"
@@ -2901,7 +2901,6 @@ __metadata:
     globals: "npm:^17.0.0"
     stylelint: "npm:^17.0.0"
     stylelint-config-standard: "npm:^40.0.0"
-    stylelint-config-tailwindcss: "npm:^1.0.0"
     tailwindcss: "npm:^4.1.7"
     vite: "npm:^8.0.0"
     vite-plugin-mkcert: "npm:^2.0.0"
