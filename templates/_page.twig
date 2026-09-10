@@ -14,7 +14,10 @@
 
 {% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif %}{% endblock %}
 
-{# lightswitches in the SEO block; SeoModule also drops noindex pages from the sitemap #}
+{% set isLive = entry is not defined or entry.status is not defined or entry.status == 'live' %}
+
+{# lightswitches in the SEO block; SeoModule also drops noindex pages from the sitemap.
+   _meta.twig adds noindex/nofollow of its own when the entry isn't live #}
 {% set robots = [] %}
 {% if seo and seo.seoNoindex %}
     {% set robots = robots | merge(['noindex']) %}
@@ -26,13 +29,13 @@
 {% block head %}
     {{ parent() }}
 
-    {% if seo is not null %}
+    {% if seo is not null or robots is not empty or not isLive %}
         {# title is the same string as the <title> tag, so the homepage's company-name-first order carries over #}
         {% include '_includes/_meta.twig' with {
             'title': block('page_title_wrap'),
-            'description': seo.metaDescription,
-            'image': seo.ogImage,
-            'image_alt': seo.ogImageAlt,
+            'description': seo ? seo.metaDescription : null,
+            'image': seo ? seo.ogImage : null,
+            'image_alt': seo ? seo.ogImageAlt : null,
             'robots': robots,
         } only %}
     {% endif %}

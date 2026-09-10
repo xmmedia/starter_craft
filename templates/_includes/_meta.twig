@@ -5,11 +5,14 @@ Usage:
     {% include '_includes/_meta.twig' with {
         'title': <the full title, incl. the company name — usually block('page_title_wrap')>,
         'description': 'Meta/OG/Twitter Description',
-        'url': <relative/url>,
+        'url': <relative/url; defaults to the current URL>,
         'image': <asset query, e.g. entry.ogImage>,
         'image_alt': 'Image Alt',
         'robots': <array of robots directives, e.g. ['noindex']>,
     } only %}
+
+Only 'title' is worth always passing; everything else falls back. noindex, nofollow is added
+on its own for entries that aren't live, so every URL-ed template should include this.
 {% endblock head %}
 #}
 
@@ -20,11 +23,17 @@ Usage:
     {% set url = craft.app.request.absoluteUrl %}
 {% endif %}
 
-{% if description %}
-    {% set description = description | replace({ "\n": ' ', "\r": ' ' }) %}
+{% set description = description is defined and description ? description | replace({ "\n": ' ', "\r": ' ' }) : null %}
+
+{% set robots = robots is defined ? robots : [] %}
+{# entries that aren't live (disabled, pending, expired) only reach the front end through a preview
+   or share token, so keep those URLs out of the index if one gets passed around #}
+{% set matchedElement = craft.app.urlManager.matchedElement %}
+{% if matchedElement and matchedElement.status is defined and matchedElement.status != 'live' %}
+    {% set robots = ['noindex', 'nofollow'] %}
 {% endif %}
 
-{% if robots is defined and robots is not empty %}
+{% if robots is not empty %}
     <meta name="robots" content="{{ robots | join(', ') }}">
 {% endif %}
 
