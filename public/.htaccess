@@ -13,7 +13,7 @@
 #     Allow from all
 # </Files>
 
-# ErrorDocument 403 /maintenance.html
+# ErrorDocument 503 /maintenance.html
 
 # ######################################################################
 # # SYMFONY + DEFAULT REDIRECTS                                        #
