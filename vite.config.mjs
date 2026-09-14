@@ -74,6 +74,7 @@ export default defineConfig(({ command, isPreview }) => {
                 ignored: [
                     '**/.idea/**',
                     '**/bin/**',
+                    '**/docs/**',
                     '**/public/assets/**',
                     '**/public/cpresources/**',
                     '**/storage/**',
