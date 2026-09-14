@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "dd670a8ddbe4d628ceb9b1e956f24163",
+    "content-hash": "e8b0cb4b4bac945fd5aa400b6844f3b8",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -10678,16 +10678,16 @@
         },
         {
             "name": "verbb/base",
-            "version": "3.0.14",
+            "version": "3.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/verbb-base.git",
-                "reference": "c847f893fa7278413b6554324447137b815e7d3e"
+                "reference": "46503ae96026f3b2f782fda04d2a746da5b388ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/c847f893fa7278413b6554324447137b815e7d3e",
-                "reference": "c847f893fa7278413b6554324447137b815e7d3e",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/46503ae96026f3b2f782fda04d2a746da5b388ab",
+                "reference": "46503ae96026f3b2f782fda04d2a746da5b388ab",
                 "shasum": ""
             },
             "require": {
@@ -10724,15 +10724,15 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-14T11:53:23+00:00"
+            "time": "2026-09-14T10:35:35+00:00"
         },
         {
             "name": "verbb/field-manager",
-            "version": "4.0.4",
+            "version": "4.0.6",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/592b96f904df8e31c9e0d197a2d7fbddd64528a4",
-                "reference": "592b96f904df8e31c9e0d197a2d7fbddd64528a4",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/1f3e23e90cccbaf2102bc97f96849534126d637b",
+                "reference": "1f3e23e90cccbaf2102bc97f96849534126d637b",
                 "shasum": ""
             },
             "require": {
@@ -10776,7 +10776,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2026-05-14T00:59:57+00:00"
+            "time": "2026-09-14T10:30:39+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
