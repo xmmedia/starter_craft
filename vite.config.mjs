@@ -69,7 +69,16 @@ export default defineConfig(({ command, isPreview }) => {
             strictPort: true,
             https,
             watch: {
-                ignored: ['**/vendor/**', '**/storage/**'],
+                // matched against the absolute path, so they must start with **/
+                // node_modules, .git, the cache dir & build.outDir are already ignored by vite
+                ignored: [
+                    '**/.idea/**',
+                    '**/bin/**',
+                    '**/public/assets/**',
+                    '**/public/cpresources/**',
+                    '**/storage/**',
+                    '**/vendor/**',
+                ],
             },
         },
         preview: {
