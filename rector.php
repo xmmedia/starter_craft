@@ -38,5 +38,8 @@ return RectorConfig::configure()
         // keep @param tags even when redundant with type declarations
         Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector::class,
         Rector\TypeDeclaration\Rector\StmtsAwareInterface\SafeDeclareStrictTypesRector::class,
+        Rector\CodeQuality\Rector\Concat\DirnameDirConcatStringToDirectStringPathRector::class => [
+            __DIR__ . '/config',
+        ],
     ])
 ;
