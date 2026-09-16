@@ -483,6 +483,8 @@ section handle, no query needed:
   `_page.twig`; templates extending `_layout.twig` include it themselves, like `_meta.twig`
 - Add nodes via `nodes` (or `schemaNodes` under `_page.twig`), linking to the shared ones by
   `@id` — see the `BlogPosting` in `blog/_entry.twig`
+- `logo` is `public/images/logo-schema.png` (the logo trimmed to its edges, for Google's logo
+  display); `image` is the `logo-og.png` share image
 - Only mark up visible content. Add types (`Event`, `Product`, …) per project as needed
 
 ## Code Style and Patterns

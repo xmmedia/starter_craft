@@ -21,13 +21,16 @@ Reference the shared nodes by @id. Empty values are dropped. Only mark up visibl
 {% set phone = siteInformation.phoneNumbers.one() %}
 {% set addressText = siteInformation.address ? siteInformation.address | replace({ "\r": '' }) | split("\n") | map(line => line | trim) | filter | join(', ') : null %}
 
-{# @todo-craft confirm the logo is at least 112x112. hasMap is only valid on a LocalBusiness #}
+{# @todo-craft replace public/images/logo-schema.png with the site's logo: trimmed to its edges with a small margin, at least 112x112,
+   readable on white (square, e.g. 512x512, unless the logo is too wide to read at that size).
+   hasMap is only valid on a LocalBusiness #}
 {% set organisation = {
     '@type': organisationType,
     '@id': siteUrl ~ '#organization',
     name: siteInformation.companyName,
     url: siteUrl,
-    logo: siteUrl('images/logo.svg'),
+    logo: siteUrl('images/logo-schema.png'),
+    image: siteUrl('images/logo-og.png'),
     telephone: phone and phone.phoneNumber ? phone.phoneNumber.url | phone_strip('') : null,
     email: siteInformation.email ? siteInformation.email.url | replace({ 'mailto:': '' }) : null,
     address: postalAddress ?? addressText,
