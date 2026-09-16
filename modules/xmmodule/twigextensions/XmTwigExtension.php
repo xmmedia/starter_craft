@@ -144,13 +144,23 @@ class XmTwigExtension extends AbstractExtension
         return new Markup($stripped, \Craft::$app->charset);
     }
 
-    public function phoneStrip(string $phone, string $prefix = 'tel'): string
+    /**
+     * Formats a phone number as E.164 (`+14035555555`), prefixed with `tel:` by default.
+     * Pass an empty prefix for the bare number.
+     *
+     * A 10 digit number without a leading `+` is assumed to be North American and gets
+     * the default country code; anything else is assumed to already include one.
+     */
+    public function phoneStrip(string $phone, ?string $prefix = 'tel', string $defaultCountryCode = '1'): string
     {
-        if (str_starts_with($phone, 'tel:+')) {
-            $phone = substr($phone, \strlen('tel:+'));
+        $phone = preg_replace('/^[a-z]+:/i', '', trim($phone));
+        $digits = preg_replace('/\D+/', '', $phone);
+
+        if (!str_starts_with($phone, '+') && 10 === \strlen($digits)) {
+            $digits = $defaultCountryCode.$digits;
         }
 
-        return $prefix.':+'.preg_replace('/\D+/', '', $phone);
+        return ($prefix ? $prefix.':' : '').'+'.$digits;
     }
 
     /**
