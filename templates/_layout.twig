@@ -118,6 +118,24 @@
             <footer class="footer">
                 {% include '_includes/_social_media.twig' %}
 
+                <address class="flex flex-col gap-1 my-4 not-italic">
+                    {% for phone in siteInformation.phoneNumbers.all() %}
+                        <div>
+                            {% if phone.phoneNumberLabel %}{{ phone.phoneNumberLabel }} {% endif %}
+                            <a href="{{ phone.phoneNumber.url | phone_strip }}">{{ phone.phoneNumber.label }}</a>
+                        </div>
+                    {% endfor %}
+                    {% if siteInformation.email %}
+                        <div><a href="{{ siteInformation.email.url }}">{{ siteInformation.email.label }}</a></div>
+                    {% endif %}
+                    {% if siteInformation.address %}
+                        <div>{{ siteInformation.address | address_format }}</div>
+                    {% endif %}
+                    {% if siteInformation.directionsLink %}
+                        <div><a href="{{ siteInformation.directionsLink.url }}" target="_blank" rel="noopener">Directions</a></div>
+                    {% endif %}
+                </address>
+
                 <div class="text-sm">
                     ©{{ 'now' | date('Y') }} {{ siteInformation.companyName }} All Rights Reserved.
                 </div>
