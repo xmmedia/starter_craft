@@ -33,6 +33,9 @@ services:
       user:     craft
       password: craft
       database: craft
+    run_as_root:
+      # load named time zones
+      - mysql_tzinfo_to_sql /usr/share/zoneinfo 2>/dev/null | mysql -uroot mysql
   phpmyadmin:
     type: phpmyadmin
     ssl: true
