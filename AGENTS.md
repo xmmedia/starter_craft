@@ -220,6 +220,7 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
   /_includes            # Reusable template partials
     _blocks.twig        # Matrix block dispatcher
     _meta.twig          # <meta>, Open Graph & Twitter tags
+    _schema.twig        # schema.org JSON-LD
     _bg_style_block.twig # bg_style_block() macro — image-set() backgrounds
     _listing.twig       # Blog post listing grid
     _social_media.twig, _favicons.twig, _form_messages.twig
@@ -476,6 +477,13 @@ section handle, no query needed:
   same key
 - Which sections appear in the sitemap lives in the `seo_sitemap` DB table, not project
   config — set per environment in Settings → SEO → Sitemap
+
+**Structured data (schema.org)**:
+- `_includes/_schema.twig` outputs an `Organization` and `WebSite` as JSON-LD. Included by
+  `_page.twig`; templates extending `_layout.twig` include it themselves, like `_meta.twig`
+- Add nodes via `nodes` (or `schemaNodes` under `_page.twig`), linking to the shared ones by
+  `@id` — see the `BlogPosting` in `blog/_entry.twig`
+- Only mark up visible content. Add types (`Event`, `Product`, …) per project as needed
 
 ## Code Style and Patterns
 

@@ -39,6 +39,8 @@
             'robots': robots,
         } only %}
     {% endif %}
+
+    {% include '_includes/_schema.twig' with { nodes: schemaNodes ?? [] } only %}
 {% endblock head %}
 
 {% block content %}

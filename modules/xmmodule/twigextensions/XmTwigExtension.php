@@ -68,6 +68,7 @@ class XmTwigExtension extends AbstractExtension
             new TwigFilter('heading_striptags', $this->headingStripTags(...), ['is_safe' => ['html']]),
             new TwigFilter('phone_strip', $this->phoneStrip(...)),
             new TwigFilter('address_format', $this->addressFormat(...), ['is_safe' => ['html']]),
+            new TwigFilter('json_ld', $this->jsonLd(...), ['is_safe' => ['html']]),
         ];
     }
 
@@ -170,6 +171,34 @@ class XmTwigExtension extends AbstractExtension
     {
         return new Markup(
             nl2br(str_replace('  ', ' &MediumSpace;', e($address))),
+            \Craft::$app->charset,
+        );
+    }
+
+    /**
+     * Renders schema.org nodes as a JSON-LD script tag, dropping each node's empty values.
+     *
+     * @param array<array<string, mixed>> $nodes
+     */
+    public function jsonLd(array $nodes): Markup
+    {
+        $graph = array_map(
+            static fn (array $node): array => array_filter(
+                $node,
+                static fn (mixed $value): bool => !\in_array($value, [null, '', false, []], true),
+            ),
+            array_values($nodes),
+        );
+
+        // the HEX flags escape < > & and quotes, so the content can't close the tag
+        $json = json_encode(
+            ['@context' => 'https://schema.org', '@graph' => $graph],
+            JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
+                | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_THROW_ON_ERROR,
+        );
+
+        return new Markup(
+            "<script type=\"application/ld+json\">\n{$json}\n</script>",
             \Craft::$app->charset,
         );
     }

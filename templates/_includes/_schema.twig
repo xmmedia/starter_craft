@@ -1,0 +1,47 @@
+{#
+schema.org JSON-LD: Organization + WebSite, plus any nodes passed in (see blog/_entry.twig).
+Reference the shared nodes by @id. Empty values are dropped. Only mark up visible content.
+#}
+
+{% set nodes = nodes ?? [] %}
+
+{# @todo-craft Organization, or a LocalBusiness subtype (https://schema.org/LocalBusiness) with postalAddress filled in
+   — siteInformation.address is used as text otherwise #}
+{% set organisationType = 'Organization' %}
+{% set postalAddress = null %}
+{#{% set postalAddress = {
+    '@type': 'PostalAddress',
+    streetAddress: '',
+    addressLocality: '',
+    addressRegion: '',
+    postalCode: '',
+    addressCountry: 'CA',
+} %}#}
+
+{% set phone = siteInformation.phoneNumbers.one() %}
+{% set addressText = siteInformation.address ? siteInformation.address | replace({ "\r": '' }) | split("\n") | map(line => line | trim) | filter | join(', ') : null %}
+
+{# @todo-craft confirm the logo is at least 112x112. hasMap is only valid on a LocalBusiness #}
+{% set organisation = {
+    '@type': organisationType,
+    '@id': siteUrl ~ '#organization',
+    name: siteInformation.companyName,
+    url: siteUrl,
+    logo: siteUrl('images/logo.svg'),
+    telephone: phone and phone.phoneNumber ? phone.phoneNumber.url | phone_strip('') : null,
+    email: siteInformation.email ? siteInformation.email.url | replace({ 'mailto:': '' }) : null,
+    address: postalAddress ?? addressText,
+    hasMap: postalAddress and siteInformation.directionsLink ? siteInformation.directionsLink.url : null,
+    sameAs: socialMedia.socialMedia.all() | map(profile => profile.profileUrl.url ?? null) | filter(url => url is not empty) | values,
+} %}
+
+{% set website = {
+    '@type': 'WebSite',
+    '@id': siteUrl ~ '#website',
+    name: siteInformation.companyName,
+    url: siteUrl,
+    inLanguage: craft.app.language,
+    publisher: { '@id': siteUrl ~ '#organization' },
+} %}
+
+{{ [organisation, website] | merge(nodes) | json_ld }}

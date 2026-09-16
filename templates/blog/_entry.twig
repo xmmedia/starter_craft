@@ -7,6 +7,28 @@
   quality: 90,
 } %}
 
+{% block head %}
+    {{ parent() }}
+
+    {% set postImage = entry.featureImage.one() %}
+    {# generate now, so it's not the transform action URL; siteUrl() as the volume URL may be relative #}
+    {% include '_includes/_schema.twig' with {
+        nodes: [{
+            '@type': 'BlogPosting',
+            '@id': entry.url ~ '#article',
+            mainEntityOfPage: entry.url,
+            headline: entry.title,
+            description: entry.summary,
+            image: postImage ? siteUrl(postImage.getUrl('ogImage', true)) : null,
+            datePublished: entry.postDate | atom,
+            dateModified: entry.dateUpdated | atom,
+            author: { '@id': siteUrl ~ '#organization' },
+            publisher: { '@id': siteUrl ~ '#organization' },
+            isPartOf: { '@id': siteUrl ~ '#website' },
+        }],
+    } only %}
+{% endblock head %}
+
 {% block content %}
     <div class="w-content">
 		<h1 class="text-4xl text-black font-display my-4">{{ entry.title }}</h1>
