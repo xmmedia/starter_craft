@@ -7,7 +7,8 @@
 
     {% block head %}
         {% block canonical %}
-            <link rel="canonical" href="{{ craft.app.request.absoluteUrl }}">
+            {# not the request URL: drops query strings & ignores the Host header #}
+            <link rel="canonical" href="{{ siteUrl(craft.app.request.pathInfo) }}">
         {% endblock %}
 
         {# @todo add fonts here #}
