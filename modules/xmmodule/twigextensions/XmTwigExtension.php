@@ -193,8 +193,8 @@ class XmTwigExtension extends AbstractExtension
         // the HEX flags escape < > & and quotes, so the content can't close the tag
         $json = json_encode(
             ['@context' => 'https://schema.org', '@graph' => $graph],
-            JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE
-                | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_QUOT | JSON_THROW_ON_ERROR,
+            \JSON_PRETTY_PRINT | \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE
+                | \JSON_HEX_TAG | \JSON_HEX_AMP | \JSON_HEX_QUOT | \JSON_THROW_ON_ERROR,
         );
 
         return new Markup(
