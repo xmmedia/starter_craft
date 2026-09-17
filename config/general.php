@@ -49,6 +49,8 @@ return GeneralConfig::create()
     // disables for programmatic transforms & the default is off for new transforms
     ->upscaleImages(false)
     ->useEmailAsUsername()
+    // don't reveal whether an account exists on login/password reset
+    ->preventUserEnumeration()
     // increase the expiry on account activation & password reset tokens to 7 days
     ->verificationCodeDuration('P7D')
     // increase how long users stay logged in when idle (default is 1 hour)
