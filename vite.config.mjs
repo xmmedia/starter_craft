@@ -30,6 +30,9 @@ export default defineConfig(({ command, isPreview }) => {
         // the dev base must match the proxied path in lando_apache_vite.conf;
         // preview runs as `serve`, but should mirror the production paths
         base: command === 'build' || isPreview ? '/build/' : '/vite-dev/',
+        // Craft's webroot is public/, not a Vite static dir: without this Vite treats
+        // every source file under it as a public asset & warns on each import
+        publicDir: false,
         build: {
             outDir: 'public/build',
             rolldownOptions: {
@@ -39,7 +42,6 @@ export default defineConfig(({ command, isPreview }) => {
                 },
             },
             sourcemap: 'serve' === command,
-            copyPublicDir: false,
             // don't inline assets
             assetsInlineLimit: 0,
             manifest: true,
