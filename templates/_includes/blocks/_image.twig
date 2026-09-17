@@ -29,10 +29,12 @@
         {% set flexItems = 'items-center' %}
 {% endswitch %}
 
-{% set wrapperTag = block.wrapperTag | default('div') %}
+{# headings only allow phrasing content, so they wrap the image itself
+   rather than the <figure>, which isn't valid inside one #}
+{% set headingTag = block.wrapperTag matches '/^h[1-6]$/' ? block.wrapperTag : null %}
 
 {% set wrapperClasses %}
-flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }} {{ wrapperTag != 'div' ? 'my-0' }}
+flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
 {% endset %}
 
 {% set figureClasses = [] %}
@@ -44,8 +46,12 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }} {{ wrapperTag != 
 {% endif %}
 {% set figureClasses = figureClasses | merge(block.classes | explodeClass) %}
 
-<{{ wrapperTag }} class="{{ wrapperClasses }}"{{ blockId(block) }}>
+<div class="{{ wrapperClasses }}"{{ blockId(block) }}>
     <figure class="{{ figureClasses | join(' ') }}">
+        {% if headingTag %}
+            <{{ headingTag }} class="my-0{{ block.fullWidth ? ' w-full' }}">
+        {% endif %}
+
         {% if block.imageLink %}
             <a href="{{ block.imageLink }}">
         {% endif %}
@@ -56,10 +62,14 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }} {{ wrapperTag != 
             </a>
         {% endif %}
 
+        {% if headingTag %}
+            </{{ headingTag }}>
+        {% endif %}
+
         {% if block.imageCaption %}
             <figcaption class="{% if block.fullWidth %}w-full {% endif %}mt-2">
                 {{ block.imageCaption }}
             </figcaption>
         {% endif %}
     </figure>
-</{{ wrapperTag }}>
+</div>
