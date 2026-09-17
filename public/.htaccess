@@ -74,7 +74,10 @@ DirectoryIndex index.php
     # If the requested filename exists, simply serve it.
     # We only want to let Apache serve files and not directories.
     # Rewrite all other queries to the front controller.
+    # Browsers & bots probe for icons that may not exist (apple-touch-icon-precomposed.png, etc.);
+    # let Apache 404 them rather than booting Craft.
     RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_URI} !^/(favicon\.ico|apple-touch-icon.*\.png)$ [NC]
     RewriteRule ^ %{ENV:BASE}/index.php [QSA,L]
 </IfModule>
 
