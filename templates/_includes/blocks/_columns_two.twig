@@ -1,0 +1,53 @@
+{% set columnsBlock = block %}
+{% set leftProportion = columnsBlock.columnProportions ?: 50 %}
+
+{% set classes = [columnsBlock.fullWidth ? 'w-content-max' : 'w-content'] %}
+{% set classes = classes | merge(columnsBlock.classes | explodeClass) %}
+
+<div class="columns-two {{ classes | join(' ') }}"
+     style="--columns-two-left: {{ leftProportion }}fr; --columns-two-right: {{ 100 - leftProportion }}fr;"{{ blockId(columnsBlock) }}>
+
+    {% for columnBlocks in [columnsBlock.blocksInsideLeft, columnsBlock.blocksInsideRight] %}
+        {# min-w-0 so a wide block can't push a column past its share of the row #}
+        <div class="no_margin-wrap min-w-0">
+            {# filtering on the elements, not the query: in preview the query matches the
+               canonical blocks (still enabled) and provisional drafts are swapped in
+               after the status filter #}
+            {% for block in columnBlocks.all() | filter(block => block.enabled) %}
+                {% if devMode %}
+                    <!-- >>> column block start: {{ block.type.handle }} >>> -->
+                {% endif %}
+
+                {# only these blocks work within a column, and none of the page level
+                   wrapping (.blocks-wrap, sections) applies here #}
+                {% switch block.type.handle %}
+                    {% case 'blockSpacer' %}
+                        {% include '_includes/blocks/_block_spacer.twig' %}
+
+                    {% case 'heading' %}
+                        {% include '_includes/blocks/_heading.twig' %}
+
+                    {% case 'textBlock' %}
+                        {% include '_includes/blocks/_text_block.twig' %}
+
+                    {% case 'image' %}
+                        {% include '_includes/blocks/_image.twig' %}
+
+                    {% case 'button' %}
+                        {% include '_includes/blocks/_button.twig' %}
+
+                    {% default %}
+                        <!-- !! The "{{ block.type.handle }}" block isn't supported within a column !! -->
+                        {% if devMode %}
+                            <div class="w-content py-4 text-center">Unsupported block within a column: {{ block.type.handle }}</div>
+                        {% endif %}
+                {% endswitch %}
+
+                {% if devMode %}
+                    <!-- <<< column block ended: {{ block.type.handle }} <<< -->
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+
+</div>

@@ -22,8 +22,9 @@
     @import "./partials/footer.css";
 
     /* blocks */
-    @import "./blocks/gallery.css";
     @import "./blocks/hero.css";
-    @import "./blocks/banner.css";
+    @import "./blocks/columns_two.css";
     @import "./blocks/cards.css";
+    @import "./blocks/gallery.css";
+    @import "./blocks/banner.css";
 }

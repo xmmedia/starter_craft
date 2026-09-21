@@ -1,0 +1,13 @@
+columnSuffix: null
+handle: columnsFullWidth
+instructions: 'By default, the columns span the full width of the design. Turn off to limit them to the standard content width.'
+name: 'Columns Full Width'
+searchable: false
+settings:
+  default: true
+  offLabel: null
+  onLabel: 'Full Width'
+  showLabelsInCards: false
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Lightswitch

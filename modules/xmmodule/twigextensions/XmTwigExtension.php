@@ -78,6 +78,12 @@ class XmTwigExtension extends AbstractExtension
             return null;
         }
 
+        // column spans only apply in the page level .blocks-wrap grid: a block nested
+        // within another block (eg. a column) isn't one of its grid items
+        if (null !== $block->getOwner()?->getField()) {
+            return null;
+        }
+
         return 'blocks-wrap:col-span-'.($block->blockWidth ?? 12);
     }
 

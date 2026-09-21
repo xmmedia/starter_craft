@@ -1,0 +1,14 @@
+columnSuffix: null
+handle: columnProportions
+instructions: 'Move the marker to set the widths of the columns.'
+name: 'Column Proportions'
+searchable: false
+settings:
+  defaultValue: 50
+  max: 80
+  min: 20
+  step: 5
+  suffix: '%'
+translationKeyFormat: null
+translationMethod: none
+type: craft\fields\Range

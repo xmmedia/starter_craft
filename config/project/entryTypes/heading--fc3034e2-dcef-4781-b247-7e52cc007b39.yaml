@@ -59,7 +59,18 @@ fieldLayouts:
           -
             dateAdded: '2024-12-02T16:46:19+00:00'
             editCondition: null
-            elementCondition: null
+            elementCondition:
+              class: craft\elements\conditions\entries\EntryCondition
+              conditionRules:
+                -
+                  class: craft\elements\conditions\entries\FieldConditionRule
+                  operator: ni
+                  uid: 698bc40e-861a-40d0-b7c9-dcef51a2f617
+                  values:
+                    - 7c94e8f1-c92f-47b8-ac85-3795e822ff9a # Blocks Inside - Left
+                    - 13a0788b-0c2f-4f60-9cde-f5a2155f12b3 # Blocks Inside - Right
+              elementType: craft\elements\Entry
+              fieldContext: global
             elementEditCondition: null
             fieldUid: 5f2efa0b-1e87-4d02-a636-f17256ef85d1 # Block Width
             handle: null

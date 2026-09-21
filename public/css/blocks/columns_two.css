@@ -1,0 +1,7 @@
+.columns-two {
+    --columns-two-left: 50fr;
+    --columns-two-right: 50fr;
+
+    @apply grid grid-cols-1 gap-y-8 blocks-wrap:gap-x-12;
+    @apply blocks-wrap:grid-cols-[var(--columns-two-left)_var(--columns-two-right)];
+}

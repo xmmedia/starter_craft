@@ -36,6 +36,14 @@ settings:
       __assoc__:
         -
           - uid
+          - 78a8375c-4b91-4e81-9c99-fd0e2489a960 # 2 Columns
+        -
+          - group
+          - General
+    -
+      __assoc__:
+        -
+          - uid
           - fc3034e2-dcef-4781-b247-7e52cc007b39 # Heading
         -
           - group
