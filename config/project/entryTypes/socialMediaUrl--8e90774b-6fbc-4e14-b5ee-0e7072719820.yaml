@@ -19,6 +19,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: true
             tip: null
             type: craft\fieldlayoutelements\CustomField
@@ -35,6 +36,7 @@ fieldLayouts:
             handle: null
             instructions: null
             label: null
+            oldFieldUid: null
             required: true
             tip: 'The label will show up as alt/title text for SEO and accessibility. If left blank, the social media network name will be used.'
             type: craft\fieldlayoutelements\CustomField

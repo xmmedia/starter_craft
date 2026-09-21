@@ -32,22 +32,22 @@ settings:
                             1:
                               - handle
                               - imageWidth
-                            2:
+                            3:
                               - label
                               - Width
-                            6:
+                            7:
                               - required
                               - false
-                            7:
+                            8:
                               - width
                               - 25
-                            8:
+                            9:
                               - dateAdded
                               - '2026-03-01T04:54:17+00:00'
-                            9:
+                            10:
                               - uid
                               - 7431e7a8-de93-49e4-ac5b-aa5079f5d855
-                            12:
+                            13:
                               - fieldUid
                               - 89de971e-19fa-4476-965e-aae2fab994b7 # Image Dimension
                         -
@@ -58,22 +58,22 @@ settings:
                             1:
                               - handle
                               - imageHeight
-                            2:
+                            3:
                               - label
                               - Height
-                            6:
+                            7:
                               - required
                               - false
-                            7:
+                            8:
                               - width
                               - 25
-                            8:
+                            9:
                               - dateAdded
                               - '2026-03-01T04:54:17+00:00'
-                            9:
+                            10:
                               - uid
                               - 0dee119b-47ca-4ab2-aa9e-399ca9e4d01e
-                            12:
+                            13:
                               - fieldUid
                               - 89de971e-19fa-4476-965e-aae2fab994b7 # Image Dimension
             4:
