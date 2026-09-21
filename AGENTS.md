@@ -144,7 +144,8 @@ container dies on a missing `@rolldown/binding-linux-*`.
 
 - **Quick check** (no fixes): `bin/check` — `composer validate`, PHPStan, ESLint,
   Stylelint, YAML lint, Twig lint, then the security checks (`symfony security:check`,
-  `composer audit`, `yarn audit:high`)
+  `composer audit`, `yarn audit:high`, and `yarn audit:moderate` — which
+  warns but never fails the check)
 - **Full check** (runs Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
   - `bin/check` runs everything through Lando (`lando composer` / `lando yarn`), so it doesn't depend on the host's Node or PHP
