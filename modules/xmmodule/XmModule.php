@@ -18,13 +18,18 @@ use craft\base\Model;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\AssetEvent;
+use craft\events\DefineAttributeHtmlEvent;
 use craft\events\DefineRulesEvent;
+use craft\events\RegisterElementSortOptionsEvent;
+use craft\events\RegisterElementTableAttributesEvent;
 use craft\events\SetAssetFilenameEvent;
 use craft\helpers\Assets as AssetsHelper;
+use craft\helpers\Html;
 use craft\mail\Mailer;
 use modules\xmmodule\twigextensions\XmTwigExtension;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
+use yii\db\Expression;
 use yii\mail\BaseMailer;
 use yii\mail\MailEvent;
 
@@ -62,6 +67,7 @@ class XmModule extends BaseModule
 
         $this->attachEventHandlers();
         $this->forceLowercaseFilenames();
+        $this->addAssetExtensionColumn();
         $this->validateElementIds();
 
         // Any code that creates an element query or loads Twig should be deferred until
@@ -191,6 +197,41 @@ class XmModule extends BaseModule
             $basename = $this->assetBasenames[$filename] ?? pathinfo($filename, \PATHINFO_FILENAME);
 
             $asset->title = AssetsHelper::filename2Title($basename);
+        });
+    }
+
+    /**
+     * Adds an Extension column to the asset index — File Kind only says "Image", not jpg vs svg.
+     * To filter by extension, search `extension:svg` or use the Filename "ends with" filter.
+     */
+    private function addAssetExtensionColumn(): void
+    {
+        // The extension isn't stored in its own column, so it's sorted on the part of the
+        // filename after the last dot (MySQL only), then by filename within each extension.
+        Event::on(Asset::class, Element::EVENT_REGISTER_SORT_OPTIONS, static function (RegisterElementSortOptionsEvent $event): void {
+            $event->sortOptions[] = [
+                'label' => 'Extension',
+                'orderBy' => static function (int $dir): Expression {
+                    $direction = \SORT_DESC === $dir ? 'DESC' : 'ASC';
+
+                    return new Expression(
+                        "LOWER(SUBSTRING_INDEX([[assets.filename]], '.', -1)) {$direction}, [[assets.filename]] ASC",
+                    );
+                },
+                'attribute' => 'extension',
+            ];
+        });
+
+        Event::on(Asset::class, Element::EVENT_REGISTER_TABLE_ATTRIBUTES, static function (RegisterElementTableAttributesEvent $event): void {
+            $event->tableAttributes['extension'] = ['label' => 'Extension'];
+        });
+
+        Event::on(Asset::class, Element::EVENT_DEFINE_ATTRIBUTE_HTML, static function (DefineAttributeHtmlEvent $event): void {
+            if ('extension' !== $event->attribute || !$event->sender instanceof Asset) {
+                return;
+            }
+
+            $event->html = Html::encode(mb_strtolower($event->sender->getExtension()));
         });
     }
 }
