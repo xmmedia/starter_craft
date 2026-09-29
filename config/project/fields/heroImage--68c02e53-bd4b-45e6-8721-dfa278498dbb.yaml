@@ -1,7 +1,7 @@
 columnSuffix: null
 handle: heroImage
 instructions: 'Image should be 3000px wide and 2000px tall or larger.'
-name: 'Herobar Image'
+name: 'Hero Image'
 searchable: false
 settings:
   allowSelfRelations: false

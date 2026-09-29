@@ -22,10 +22,10 @@ fieldLayouts:
             editCondition: null
             elementCondition: null
             elementEditCondition: null
-            fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb # Herobar Image
+            fieldUid: 68c02e53-bd4b-45e6-8721-dfa278498dbb # Hero Image
             handle: null
             instructions: null
-            label: 'Herobar Image'
+            label: null
             oldFieldUid: null
             required: true
             tip: null
