@@ -48,6 +48,8 @@ return GeneralConfig::create()
     ->transformSvgs(false)
     // disables for programmatic transforms & the default is off for new transforms
     ->upscaleImages(false)
+    // add ?v= to asset & transform URLs so a replaced file or moved focal point isn't served from browser cache
+    ->revAssetUrls()
     ->useEmailAsUsername()
     // don't reveal whether an account exists on login/password reset
     ->preventUserEnumeration()
