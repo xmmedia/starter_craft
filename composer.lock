@@ -2825,16 +2825,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "6.13.0",
+            "version": "6.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
-                "reference": "30de5e9b3fa04253af272a7d932a38cd026c311b"
+                "reference": "e54aacc4c0657b3a4af4f628428d2702146828c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/30de5e9b3fa04253af272a7d932a38cd026c311b",
-                "reference": "30de5e9b3fa04253af272a7d932a38cd026c311b",
+                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/e54aacc4c0657b3a4af4f628428d2702146828c6",
+                "reference": "e54aacc4c0657b3a4af4f628428d2702146828c6",
                 "shasum": ""
             },
             "require": {
@@ -2884,9 +2884,9 @@
             ],
             "support": {
                 "issues": "https://github.com/jsonrainbow/json-schema/issues",
-                "source": "https://github.com/jsonrainbow/json-schema/tree/6.13.0"
+                "source": "https://github.com/jsonrainbow/json-schema/tree/6.13.1"
             },
-            "time": "2026-09-23T19:46:42+00:00"
+            "time": "2026-09-30T07:42:28+00:00"
         },
         {
             "name": "league/html-to-markdown",
@@ -5878,12 +5878,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "29d8074758af7918a288c4c6911d6c58effeed70"
+                "reference": "69ddaead6caa68f4f6190e2ee732f103326e78ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/29d8074758af7918a288c4c6911d6c58effeed70",
-                "reference": "29d8074758af7918a288c4c6911d6c58effeed70",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/69ddaead6caa68f4f6190e2ee732f103326e78ba",
+                "reference": "69ddaead6caa68f4f6190e2ee732f103326e78ba",
                 "shasum": ""
             },
             "conflict": {
@@ -6298,6 +6298,7 @@
                 "james-heinrich/getid3": "<1.9.21",
                 "james-heinrich/phpthumb": "<=1.7.23",
                 "jasig/phpcas": "<1.3.3",
+                "jayanta/laravel-threat-detection": "<1.9",
                 "jbartels/wec-map": "<3.0.3",
                 "jcbrand/converse.js": "<3.3.3",
                 "jleehr/canto-saas-api": "<=2",
@@ -6348,7 +6349,7 @@
                 "lara-zeus/artemis": ">=1,<=1.0.6",
                 "lara-zeus/dynamic-dashboard": ">=3,<=3.0.1",
                 "laravel/fortify": "<1.11.1",
-                "laravel/framework": "<12.61.1|>=13,<13.12",
+                "laravel/framework": "<12.69|>=13,<13.30",
                 "laravel/laravel": ">=5.4,<5.4.22",
                 "laravel/passport": ">=13,<13.7.1",
                 "laravel/pulse": "<1.3.1",
@@ -6358,8 +6359,8 @@
                 "lavalite/cms": "<=10.1",
                 "lavitto/typo3-form-to-database": "<2.2.5|>=3,<3.2.2|>=4,<4.2.3|>=5,<5.0.2",
                 "lcobucci/jwt": ">=3.4,<3.4.6|>=4,<4.0.4|>=4.1,<4.1.5",
-                "league/commonmark": "<2.10",
-                "league/flysystem": "<1.1.4|>=2,<2.1.1",
+                "league/commonmark": "<=2.10.1",
+                "league/flysystem": "<=3.35.2",
                 "league/oauth2-server": ">=8.3.2,<8.4.2|>=8.5,<8.5.3",
                 "leantime/leantime": "<3.3",
                 "lexik/jwt-authentication-bundle": "<2.10.7|>=2.11,<2.11.3",
@@ -6550,7 +6551,7 @@
                 "phpoffice/phpexcel": "<=1.8.2",
                 "phpoffice/phpspreadsheet": "<=1.30.5|>=2,<=2.1.17|>=2.2,<=2.4.6|>=3,<=3.10.6|>=4,<=5.8",
                 "phppgadmin/phppgadmin": "<=7.13",
-                "phpseclib/phpseclib": "<=2.0.54|>=3,<=3.0.53",
+                "phpseclib/phpseclib": "<3.0.57|>=4,<4.0.1",
                 "phpservermon/phpservermon": "<3.6",
                 "phpsysinfo/phpsysinfo": "<=3.4.5",
                 "phpunit/phpunit": "<8.5.52|>=9,<9.6.33|>=10,<10.5.62|>=11,<11.5.50|>=12,<12.5.8|>=12.5.21,<12.5.22|>=13.1.5,<13.1.6",
@@ -7018,7 +7019,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-25T16:39:10+00:00"
+            "time": "2026-09-30T15:40:52+00:00"
         },
         {
             "name": "samdark/yii2-psr-log-target",
@@ -7167,16 +7168,16 @@
         },
         {
             "name": "seld/phar-utils",
-            "version": "1.2.2",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/phar-utils.git",
-                "reference": "990bbd0e92caa216d52eca0935f6e35e589bfaa5"
+                "reference": "65fb381613fd31745d39a740a112a233f978d2d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/990bbd0e92caa216d52eca0935f6e35e589bfaa5",
-                "reference": "990bbd0e92caa216d52eca0935f6e35e589bfaa5",
+                "url": "https://api.github.com/repos/Seldaek/phar-utils/zipball/65fb381613fd31745d39a740a112a233f978d2d9",
+                "reference": "65fb381613fd31745d39a740a112a233f978d2d9",
                 "shasum": ""
             },
             "require": {
@@ -7209,9 +7210,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Seldaek/phar-utils/issues",
-                "source": "https://github.com/Seldaek/phar-utils/tree/1.2.2"
+                "source": "https://github.com/Seldaek/phar-utils/tree/1.2.3"
             },
-            "time": "2026-08-01T12:48:55+00:00"
+            "time": "2026-10-01T08:16:23+00:00"
         },
         {
             "name": "seld/signal-handler",
@@ -11943,16 +11944,16 @@
         },
         {
             "name": "fidry/cpu-core-counter",
-            "version": "1.4.0",
+            "version": "1.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/theofidry/cpu-core-counter.git",
-                "reference": "7cbeb03e286fa81b2bbe0e6bd6b8a27c71a3144d"
+                "reference": "d384a7d0d6e67aa497327260ca95023e92dc2032"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/7cbeb03e286fa81b2bbe0e6bd6b8a27c71a3144d",
-                "reference": "7cbeb03e286fa81b2bbe0e6bd6b8a27c71a3144d",
+                "url": "https://api.github.com/repos/theofidry/cpu-core-counter/zipball/d384a7d0d6e67aa497327260ca95023e92dc2032",
+                "reference": "d384a7d0d6e67aa497327260ca95023e92dc2032",
                 "shasum": ""
             },
             "require": {
@@ -11993,7 +11994,7 @@
             ],
             "support": {
                 "issues": "https://github.com/theofidry/cpu-core-counter/issues",
-                "source": "https://github.com/theofidry/cpu-core-counter/tree/1.4.0"
+                "source": "https://github.com/theofidry/cpu-core-counter/tree/1.4.1"
             },
             "funding": [
                 {
@@ -12001,7 +12002,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-27T17:40:20+00:00"
+            "time": "2026-09-29T22:11:39+00:00"
         },
         {
             "name": "friendsofphp/php-cs-fixer",
