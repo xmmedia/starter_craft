@@ -8,7 +8,7 @@
         "ext-intl": "*",
         "born05/craft-assetusage": "^4.2.1",
         "craftcms/ckeditor": "^5.8.0",
-        "craftcms/cms": "^5.11.3",
+        "craftcms/cms": "^5.11.4",
         "craftcms/contact-form": "3.1.0",
         "craftcms/contact-form-honeypot": "2.1.0",
         "ether/seo": "5.0.0",
@@ -16,7 +16,7 @@
         "nystudio107/craft-vite": "^5.0.2",
         "roave/security-advisories": "dev-master",
         "stimmt/craft-mcp": "^1.4.0",
-        "verbb/field-manager": "^4.0.6",
+        "verbb/field-manager": "^4.0.7",
         "vlucas/phpdotenv": "^5.4",
         "wrav/oembed": "^3.2.2"
     },
