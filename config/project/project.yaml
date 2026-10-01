@@ -1,4 +1,4 @@
-dateModified: 1790714538
+dateModified: 1790827392
 elementSources:
   craft\elements\Asset:
     -
@@ -58,7 +58,18 @@ elementSources:
         - 'generatedField:b61905c2-4c7a-48d1-b6dd-08d8feb2715a'
       type: native
     -
+      defaultSort:
+        - dateCreated
+        - desc
+      defaultViewMode: ''
+      disabled: true
       key: temp
+      tableAttributes:
+        - filename
+        - size
+        - dateModified
+        - uploader
+        - link
       type: native
   craft\elements\Entry:
     -
