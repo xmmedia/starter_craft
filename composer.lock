@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3006df197f2dd0f6bc13e7f14ac44f7c",
+    "content-hash": "2a5878dd169347438f92ccb972099019",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -10730,16 +10730,16 @@
         },
         {
             "name": "verbb/base",
-            "version": "3.0.18",
+            "version": "3.0.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/verbb-base.git",
-                "reference": "1d53b2b2dbb51a9dcb005bde5421b88fde620ae5"
+                "reference": "36addde3aee74adaa2b7c13ec0724f2d27b39ef5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/1d53b2b2dbb51a9dcb005bde5421b88fde620ae5",
-                "reference": "1d53b2b2dbb51a9dcb005bde5421b88fde620ae5",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/36addde3aee74adaa2b7c13ec0724f2d27b39ef5",
+                "reference": "36addde3aee74adaa2b7c13ec0724f2d27b39ef5",
                 "shasum": ""
             },
             "require": {
@@ -10776,21 +10776,21 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-09-27T11:35:17+00:00"
+            "time": "2026-10-02T04:48:53+00:00"
         },
         {
             "name": "verbb/field-manager",
-            "version": "4.0.7",
+            "version": "4.0.8",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/c25c8b05d46d0c87f986a9927a5968eb7f23f793",
-                "reference": "c25c8b05d46d0c87f986a9927a5968eb7f23f793",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/163b27b34c52dd06f6e6dbf5c735e9e2584a3320",
+                "reference": "163b27b34c52dd06f6e6dbf5c735e9e2584a3320",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0.0",
                 "php": "^8.2",
-                "verbb/base": "^3.0.18"
+                "verbb/base": "^3.0.19"
             },
             "type": "craft-plugin",
             "extra": {
@@ -10828,7 +10828,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2026-09-30T09:41:08+00:00"
+            "time": "2026-10-02T08:55:11+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
