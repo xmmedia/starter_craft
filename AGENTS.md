@@ -441,6 +441,19 @@ section handle, no query needed:
   unescaped. Applied to any entry whose layout has the field, so new block types are
   covered automatically
 
+**Link fields**:
+- Render a Link field that allows entries/assets with `getUrl(false)`, and check that, not the
+  link itself: `{% if block.heroButton.getUrl(false) ?? false %}<a href="{{ block.heroButton.getUrl(false) }}">`
+- A link to a deleted entry stays a truthy `LinkData` with an empty URL — "required" is only
+  checked on the owner's next save — so `{% if block.link %}` passes and renders `href=""`.
+  `.url` (`getUrl()` with `$anyStatus = true`) also returns the URL of a disabled, pending or
+  expired entry; `getUrl(false)` returns `''` for those
+- `?? false` only on optional fields: devMode's `strict_variables` throws reading off a null
+  link. Required fields can only be empty on content that skipped validation
+- Use `getUrl()` rather than `.value` for the `href` — it appends the URL suffix advanced field
+- Fields limited to url/email/tel (phone, email, directions, social) have no target to lose,
+  so `.url` and a check on the link are fine
+
 **Queued contact form emails**:
 - Contact form emails go through the queue (`modules/contactformmodule/jobs/SendEmail.php`)
   so a mail transport outage retries instead of silently dropping the message. Without
