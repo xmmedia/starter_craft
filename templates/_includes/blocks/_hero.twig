@@ -10,8 +10,8 @@
                 <h2>{{ block.heroSubheading | heading_striptags }}</h2>
             {% endif %}
 
-            {% if block.heroButton.url ?? false %}
-                <a href="{{ block.heroButton.url }}" class="button">
+            {% if block.heroButton.getUrl(false) ?? false %}
+                <a href="{{ block.heroButton.getUrl(false) }}" class="button">
                     {{ block.heroButton.label }}
                 </a>
             {% endif %}

@@ -1,7 +1,7 @@
 <div class="blocks-wrap:col-span-12"{{ blockId(block) }}>
     <div class="cards-wrap">
         {% for cardItem in block.cards.all() %}
-            {% set cardUrl = cardItem.cardLink.url %}
+            {% set cardUrl = cardItem.cardLink.getUrl(false) %}
             <{{ cardUrl ? 'a' : 'div' }}{% if cardUrl %} href="{{ cardUrl }}"{% endif %} class="card">
                 {% set image = cardItem.image.one() %}
                 {% if image %}
