@@ -41,7 +41,7 @@
 <div>
     {% block body %}
         {% block header %}
-            {% set menuItems = menus.menuHeader.all() %}
+            {% set menuItems = menus.menuHeader.all() | filter(menuItem => menuItem.menuLink.url) %}
 
             <header class="header">
                 <div class="w-content flex flex-wrap justify-between items-center">
@@ -59,9 +59,11 @@
                         </ul>
                     </nav>
 
-                    <a href="{{ menus.mainMenuButton.url }}" class="button hidden md:inline-block">
-                        {{ menus.mainMenuButtonLabel }}
-                    </a>
+                    {% if menus.mainMenuButton.url %}
+                        <a href="{{ menus.mainMenuButton.url }}" class="button hidden md:inline-block">
+                            {{ menus.mainMenuButtonLabel }}
+                        </a>
+                    {% endif %}
 
                     {# the command/commandfor attributes open the dialog without JS; see menu.js for the fallback #}
                     <button type="button"
@@ -101,7 +103,7 @@
                         {% endfor %}
                     </ul>
 
-                    {% if menus.mainMenuButton %}
+                    {% if menus.mainMenuButton.url %}
                         <a href="{{ menus.mainMenuButton.url }}" class="button mt-8">{{ menus.mainMenuButton.label }}</a>
                     {% endif %}
                 </nav>

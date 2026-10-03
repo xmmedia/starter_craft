@@ -1,7 +1,8 @@
 <div class="blocks-wrap:col-span-12"{{ blockId(block) }}>
     <div class="cards-wrap">
         {% for cardItem in block.cards.all() %}
-            <a href="{{ cardItem.cardLink }}" class="card">
+            {% set cardUrl = cardItem.cardLink.url %}
+            <{{ cardUrl ? 'a' : 'div' }}{% if cardUrl %} href="{{ cardUrl }}"{% endif %} class="card">
                 {% set image = cardItem.image.one() %}
                 {% if image %}
                     {{ image(image, 'card') }}
@@ -10,7 +11,7 @@
                 <h3>{{ cardItem.heading | heading_striptags }}</h3>
 
                 {{ cardItem.textBlock | heading_striptags }}
-            </a>
+            </{{ cardUrl ? 'a' : 'div' }}>
         {% endfor %}
     </div>
 </div>

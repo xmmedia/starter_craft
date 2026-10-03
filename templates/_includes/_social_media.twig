@@ -1,7 +1,7 @@
 {% for profile in socialMedia.socialMedia.all() %}
     {% set linkTitle = profile.profileUrl.label(true) ?? profile.platform.label %}
 
-    <a href="{{ profile.profileUrl.value }}" title="{{ linkTitle }}">
+    <a href="{{ profile.profileUrl.url }}" title="{{ linkTitle }}">
         <svg class="fill-current w-6 h-6">
             <use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#social-{{ profile.platform }}"></use>
         </svg>

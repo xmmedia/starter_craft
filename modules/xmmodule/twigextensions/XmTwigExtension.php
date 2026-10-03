@@ -107,13 +107,15 @@ class XmTwigExtension extends AbstractExtension
 
     public function menu(array $items): array
     {
-        return array_map(
+        $items = array_filter($items, static fn (Entry $item): bool => '' !== $item->menuLink->url);
+
+        return array_values(array_map(
             static fn (Entry $item): array => [
                 'url'   => $item->menuLink->url,
                 'label' => $item->menuLabel,
             ],
             $items,
-        );
+        ));
     }
 
     public function submenu(array $subpages): array
