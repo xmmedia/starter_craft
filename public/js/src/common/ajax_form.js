@@ -10,8 +10,7 @@ const createAlert = function (level, message) {
     return alert;
 };
 
-const createErrorList = function (errors) {
-    const messages = Object.values(errors ?? {}).flat();
+const createErrorList = function (messages) {
     if (!messages.length) {
         return null;
     }
@@ -26,6 +25,28 @@ const createErrorList = function (errors) {
     });
 
     return list;
+};
+
+// places each error above its field (below the label), returning the errors
+// without a field; keys use dots for nested names (message.body → message[body])
+const showFieldErrors = function (form, errors) {
+    const unmatched = [];
+
+    Object.entries(errors ?? {}).forEach(([key, messages]) => {
+        const name = key.replace(/\.([^.]+)/g, '[$1]');
+        const field = form.querySelector(`[name="${name}"]:not([type="hidden"])`);
+        if (!field) {
+            unmatched.push(...messages);
+
+            return;
+        }
+
+        const list = createErrorList(messages);
+        list.classList.add('js-field-errors');
+        field.before(list);
+    });
+
+    return unmatched;
 };
 
 const initAjaxForm = function (form) {
@@ -54,6 +75,7 @@ const initAjaxForm = function (form) {
         sending = true;
         submitButton.disabled = true;
         messagesEl.replaceChildren();
+        form.querySelectorAll('.js-field-errors').forEach((list) => list.remove());
 
         try {
             const response = await fetch(url, {
@@ -73,7 +95,7 @@ const initAjaxForm = function (form) {
             } else {
                 showMessages(
                     createAlert('danger', failMessage),
-                    createErrorList(data.errors),
+                    createErrorList(showFieldErrors(form, data.errors)),
                 );
             }
         } catch (err) {
