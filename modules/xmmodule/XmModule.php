@@ -25,6 +25,7 @@ use craft\events\RegisterElementTableAttributesEvent;
 use craft\events\SetAssetFilenameEvent;
 use craft\helpers\Assets as AssetsHelper;
 use craft\helpers\Html;
+use craft\helpers\StringHelper;
 use craft\mail\Mailer;
 use modules\xmmodule\twigextensions\XmTwigExtension;
 use yii\base\Event;
@@ -196,8 +197,20 @@ class XmModule extends BaseModule
             $filename = mb_strtolower($asset->getFilename());
             $basename = $this->assetBasenames[$filename] ?? pathinfo($filename, \PATHINFO_FILENAME);
 
-            $asset->title = AssetsHelper::filename2Title($basename);
+            $asset->title = $this->filenameToTitle($basename);
         });
+    }
+
+    /**
+     * AssetsHelper::filename2Title(), but keeping hyphens between digits so dates, phone
+     * numbers and ranges (2026-10-07) aren't split into separate numbers.
+     */
+    private function filenameToTitle(string $basename): string
+    {
+        $basename = preg_replace('/[._]|(?<!\d)-|-(?!\d)/', ' ', $basename);
+        $title = StringHelper::upperCaseFirst(implode(' ', StringHelper::toWords($basename)));
+
+        return rtrim(mb_substr($title, 0, 255));
     }
 
     /**
