@@ -73,7 +73,13 @@
 
             <div class="field-wrap field-wrap-textarea">
                 <label for="message">Message</label>
-                <textarea id="message" name="message[body]" required maxlength="10000" class="h-48"></textarea>
+                {{ tag('textarea', {
+                    id: 'message',
+                    name: 'message[body]',
+                    required: true,
+                    maxlength: 10000,
+                    class: 'h-48',
+                }) }}
             </div>
 
             {% if entry is defined and entry %}
