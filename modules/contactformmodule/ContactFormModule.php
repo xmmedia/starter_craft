@@ -127,7 +127,8 @@ class ContactFormModule extends BaseModule
                     );
                 }
 
-                if (empty(trim((string) $submission->message['body']))) {
+                if (empty(trim((string) self::messageValue($submission, 'body')))) {
+                    $submission->clearErrors('message');
                     $submission->addError(
                         'message.body',
                         'Please add a message.'
