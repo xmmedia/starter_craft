@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2a5878dd169347438f92ccb972099019",
+    "content-hash": "5e5c73021a6fd2c489a17ab3ee352aee",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -961,11 +961,11 @@
         },
         {
             "name": "craftcms/ckeditor",
-            "version": "5.8.0",
+            "version": "5.9.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/834bc5f288984c4375f7a00b035d386fb1553522",
-                "reference": "834bc5f288984c4375f7a00b035d386fb1553522",
+                "url": "https://api.github.com/repos/craftcms/ckeditor/zipball/ecd96fbd96cfb9685b60688230b26a8f3268e337",
+                "reference": "ecd96fbd96cfb9685b60688230b26a8f3268e337",
                 "shasum": ""
             },
             "require": {
@@ -1010,7 +1010,7 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/5.x/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/5.x.atom"
             },
-            "time": "2026-09-28T17:08:11+00:00"
+            "time": "2026-10-06T15:00:15+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -1225,11 +1225,11 @@
         },
         {
             "name": "craftcms/html-field",
-            "version": "3.6.0",
+            "version": "3.6.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/html-field/zipball/8639205370ca671662fdd421ec1df5051d4f179d",
-                "reference": "8639205370ca671662fdd421ec1df5051d4f179d",
+                "url": "https://api.github.com/repos/craftcms/html-field/zipball/3161a907af39565ac19396eff8ef4d1b69c710f9",
+                "reference": "3161a907af39565ac19396eff8ef4d1b69c710f9",
                 "shasum": ""
             },
             "require": {
@@ -1262,7 +1262,7 @@
                 "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
                 "rss": "https://github.com/craftcms/html-field/commits/main.atom"
             },
-            "time": "2026-08-10T15:57:06+00:00"
+            "time": "2026-10-06T13:37:55+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -2890,16 +2890,16 @@
         },
         {
             "name": "league/html-to-markdown",
-            "version": "5.1.2",
+            "version": "5.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/html-to-markdown.git",
-                "reference": "db234ecdb160b9d2b422c1c130db4b01eb3e9e24"
+                "reference": "5411b9650dd468be52267a6f4a2a26c31d2581be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/db234ecdb160b9d2b422c1c130db4b01eb3e9e24",
-                "reference": "db234ecdb160b9d2b422c1c130db4b01eb3e9e24",
+                "url": "https://api.github.com/repos/thephpleague/html-to-markdown/zipball/5411b9650dd468be52267a6f4a2a26c31d2581be",
+                "reference": "5411b9650dd468be52267a6f4a2a26c31d2581be",
                 "shasum": ""
             },
             "require": {
@@ -2955,7 +2955,7 @@
             ],
             "support": {
                 "issues": "https://github.com/thephpleague/html-to-markdown/issues",
-                "source": "https://github.com/thephpleague/html-to-markdown/tree/5.1.2"
+                "source": "https://github.com/thephpleague/html-to-markdown/tree/5.1.3"
             },
             "funding": [
                 {
@@ -2975,7 +2975,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-09-07T13:53:32+00:00"
+            "time": "2026-10-06T01:08:41+00:00"
         },
         {
             "name": "league/uri",
@@ -10730,16 +10730,16 @@
         },
         {
             "name": "verbb/base",
-            "version": "3.0.19",
+            "version": "3.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/verbb-base.git",
-                "reference": "36addde3aee74adaa2b7c13ec0724f2d27b39ef5"
+                "reference": "0b60c166a79e2762aa968e062dc84ca6c0a9406e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/36addde3aee74adaa2b7c13ec0724f2d27b39ef5",
-                "reference": "36addde3aee74adaa2b7c13ec0724f2d27b39ef5",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/0b60c166a79e2762aa968e062dc84ca6c0a9406e",
+                "reference": "0b60c166a79e2762aa968e062dc84ca6c0a9406e",
                 "shasum": ""
             },
             "require": {
@@ -10776,21 +10776,21 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-02T04:48:53+00:00"
+            "time": "2026-10-04T21:22:12+00:00"
         },
         {
             "name": "verbb/field-manager",
-            "version": "4.0.8",
+            "version": "4.0.9",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/163b27b34c52dd06f6e6dbf5c735e9e2584a3320",
-                "reference": "163b27b34c52dd06f6e6dbf5c735e9e2584a3320",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/8bceeabe664504a178caf429ea8d890107688d92",
+                "reference": "8bceeabe664504a178caf429ea8d890107688d92",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.0.0",
                 "php": "^8.2",
-                "verbb/base": "^3.0.19"
+                "verbb/base": "^3.0.20"
             },
             "type": "craft-plugin",
             "extra": {
@@ -10828,7 +10828,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2026-10-02T08:55:11+00:00"
+            "time": "2026-10-07T09:03:33+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -11151,16 +11151,16 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "2.4.1",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozarts/assert.git",
-                "reference": "2ccb7c2e821038c03a3e6e1700c570c158c55f70"
+                "reference": "8a163706bbcac613733dba03f51e13b5eb1bb819"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozarts/assert/zipball/2ccb7c2e821038c03a3e6e1700c570c158c55f70",
-                "reference": "2ccb7c2e821038c03a3e6e1700c570c158c55f70",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/8a163706bbcac613733dba03f51e13b5eb1bb819",
+                "reference": "8a163706bbcac613733dba03f51e13b5eb1bb819",
                 "shasum": ""
             },
             "require": {
@@ -11211,9 +11211,9 @@
             ],
             "support": {
                 "issues": "https://github.com/webmozarts/assert/issues",
-                "source": "https://github.com/webmozarts/assert/tree/2.4.1"
+                "source": "https://github.com/webmozarts/assert/tree/2.5.0"
             },
-            "time": "2026-06-15T15:31:57+00:00"
+            "time": "2026-10-05T23:14:19+00:00"
         },
         {
             "name": "wrav/oembed",
