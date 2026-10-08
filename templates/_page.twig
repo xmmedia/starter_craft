@@ -6,11 +6,11 @@
 {% set pageTitle = pageTitle ?? null %}
 
 {% if entry is defined and entry.seo is defined and entry.seo is not null %}
-    {% set seo = entry.seo.one() %}
-    {% if seo and seo.pageTitle %}
-        {% set pageTitle = seo.pageTitle %}
-    {% endif %}
-{% endif %}
+    {%- set seo = entry.seo.one() %}
+    {%- if seo and seo.pageTitle %}
+        {%- set pageTitle = seo.pageTitle %}
+    {%- endif %}
+{%- endif %}
 
 {% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif %}{% endblock %}
 
@@ -20,11 +20,11 @@
    _meta.twig adds noindex/nofollow of its own when the entry isn't live #}
 {% set robots = [] %}
 {% if seo and seo.seoNoindex %}
-    {% set robots = robots | merge(['noindex']) %}
-{% endif %}
+    {%- set robots = robots | merge(['noindex']) %}
+{%- endif %}
 {% if seo and seo.seoNofollow %}
-    {% set robots = robots | merge(['nofollow']) %}
-{% endif %}
+    {%- set robots = robots | merge(['nofollow']) %}
+{%- endif %}
 
 {% block head %}
     {{ parent() }}
