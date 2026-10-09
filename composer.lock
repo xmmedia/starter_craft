@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e5c73021a6fd2c489a17ab3ee352aee",
+    "content-hash": "8d0eb32ab7fbc7b916f17aa558dee02a",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -311,16 +311,16 @@
         },
         {
             "name": "commerceguys/addressing",
-            "version": "v2.3.1",
+            "version": "v2.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/commerceguys/addressing.git",
-                "reference": "504ed1765d7a6788830c197390879d677f54d868"
+                "reference": "e3ce66714cfa181b848533d926e8583261253c9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/504ed1765d7a6788830c197390879d677f54d868",
-                "reference": "504ed1765d7a6788830c197390879d677f54d868",
+                "url": "https://api.github.com/repos/commerceguys/addressing/zipball/e3ce66714cfa181b848533d926e8583261253c9e",
+                "reference": "e3ce66714cfa181b848533d926e8583261253c9e",
                 "shasum": ""
             },
             "require": {
@@ -369,9 +369,9 @@
             ],
             "support": {
                 "issues": "https://github.com/commerceguys/addressing/issues",
-                "source": "https://github.com/commerceguys/addressing/tree/v2.3.1"
+                "source": "https://github.com/commerceguys/addressing/tree/v2.3.2"
             },
-            "time": "2026-08-23T14:17:54+00:00"
+            "time": "2026-10-09T10:50:35+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -1014,11 +1014,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "5.11.4",
+            "version": "5.11.5.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/ad1fd3304223047e311b7eeb1721f5ea7363e6f4",
-                "reference": "ad1fd3304223047e311b7eeb1721f5ea7363e6f4",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/b96d1a61aaba061594f53b4454e48a2d0bd41381",
+                "reference": "b96d1a61aaba061594f53b4454e48a2d0bd41381",
                 "shasum": ""
             },
             "require": {
@@ -1118,7 +1118,7 @@
                 "docs": "https://craftcms.com/docs/5.x/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2026-10-01T15:48:49+00:00"
+            "time": "2026-10-08T16:32:34+00:00"
         },
         {
             "name": "craftcms/contact-form",
