@@ -121,7 +121,7 @@
             <footer class="footer">
                 {% include '_includes/_social_media.twig' %}
 
-                <address class="flex flex-col gap-1 my-4 not-italic">
+                <address class="flex flex-col gap-1 my-4">
                     {% for phone in siteInformation.phoneNumbers.all() %}
                         <div>
                             {% if phone.phoneNumberLabel %}{{ phone.phoneNumberLabel }} {% endif %}

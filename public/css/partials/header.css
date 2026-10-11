@@ -5,7 +5,7 @@
 }
 
 .header-menu_toggle {
-    @apply m-4 bg-transparent border-0 cursor-pointer;
+    @apply m-4 bg-transparent border-0;
 
     svg {
         @apply fill-current;
