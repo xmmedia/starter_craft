@@ -24,7 +24,11 @@ export default defineConfig(({ command, isPreview }) => {
     return {
         plugins: [
             ...(inLando ? [] : [mkcert()]),
-            vuePlugin(),
+            vuePlugin({
+                // leave absolute URLs (/images/…) in templates as-is: they're served from
+                // the webroot, not resolved as imports (which fail without a publicDir)
+                template: { transformAssetUrls: { includeAbsolute: false } },
+            }),
             tailwindcss(),
         ],
         // the dev base must match the proxied path in lando_apache_vite.conf;
