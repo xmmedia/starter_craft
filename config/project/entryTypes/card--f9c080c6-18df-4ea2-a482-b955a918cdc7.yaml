@@ -68,7 +68,7 @@ fieldLayouts:
             handle: textBlock
             instructions: null
             label: 'Text Block'
-            oldFieldUid: 50ce781f-8f6e-4eeb-b0b7-faa9e9821913 # Text Block
+            oldFieldUid: null
             required: false
             tip: null
             type: craft\fieldlayoutelements\CustomField
