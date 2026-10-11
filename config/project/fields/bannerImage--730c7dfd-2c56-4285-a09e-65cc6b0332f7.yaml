@@ -20,7 +20,7 @@ settings:
   restrictFiles: true
   restrictLocation: false
   restrictedDefaultUploadSubpath: null
-  restrictedLocationSource: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
+  restrictedLocationSource: 'volume:95ce255a-2242-4832-a7bd-6ef99ba868c1' # General
   restrictedLocationSubpath: null
   selectionLabel: null
   showSearchInput: true

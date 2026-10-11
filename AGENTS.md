@@ -223,10 +223,8 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
     _meta.twig          # <meta>, Open Graph & Twitter tags
     _schema.twig        # schema.org JSON-LD
     _bg_style_block.twig # bg_style_block() macro — image-set() backgrounds
-    _listing.twig       # Blog post listing grid
     _social_media.twig, _favicons.twig, _form_messages.twig
     /blocks             # Block-specific partials (accordion, banner, etc.)
-  /blog                 # Blog templates
   /services             # Scaffolding — build out or delete (@todo-craft)
 
 /public                 # Web root
@@ -390,14 +388,10 @@ output style; keep them in sync when editing either one.
   `config/project/sections/`, or `list_sections` over the Craft MCP):
   - `pages` — structure, entry type `pageBlocks`, `{parent.uri}/{slug}` → `_page.twig`
   - `homepage` — single, also `pageBlocks` → `_home.twig`
-  - `blog` — channel, entry type `blog`, `blog/{slug}` → `blog/_entry.twig`
   - `siteInformation`, `socialMedia`, `menus` — URL-less singles (see below)
-- Two bits of scaffolding reference things the starter's project config doesn't define, so
-  in a project confirm they were built out before relying on them (@todo-craft — otherwise
-  delete):
-  - `templates/services/` — `services/index.twig` queries a `services` section
-  - `blog/_category.twig` and the `entry.postCategories` loop in `blog/_entry.twig` — no
-    category group and no `postCategories` field
+- `templates/services/` is scaffolding for a `services` section the starter's project
+  config doesn't define, so in a project confirm it was built out before relying on it
+  (@todo-craft — otherwise delete)
 
 **Singles as globals** — `preloadSingles()` makes these available in every template by
 section handle, no query needed:
@@ -481,7 +475,7 @@ section handle, no query needed:
   type — so the plugin's per-entry noindex option (`SitemapService::core()`) is inert
   here. The plugin is only used for the sitemap, robots.txt and redirects
 - The `seo` field is on the `pageBlocks` entry type only (Pages + Homepage); `_page.twig`
-  guards with `entry.seo is defined`, so sections without it (Blog) get no meta block.
+  guards with `entry.seo is defined`, so entry types without it get no meta block.
   `seoOptional` is the same Matrix without Page Title required, for entry types where it
   shouldn't be mandatory (unused in the starter)
 - Two lightswitches feed the `robots` tag built in `_page.twig`: `seoNofollow`, and
@@ -496,7 +490,22 @@ section handle, no query needed:
 - `_includes/_schema.twig` outputs an `Organization` and `WebSite` as JSON-LD. Included by
   `_page.twig`; templates extending `_layout.twig` include it themselves, like `_meta.twig`
 - Add nodes via `nodes` (or `schemaNodes` under `_page.twig`), linking to the shared ones by
-  `@id` — see the `BlogPosting` in `blog/_entry.twig`
+  `@id` (`siteUrl ~ '#organization'`, `siteUrl ~ '#website'`):
+  ```twig
+  {% include '_includes/_schema.twig' with {
+      nodes: [{
+          '@type': 'Article',
+          '@id': entry.url ~ '#article',
+          headline: entry.title,
+          image: image ? siteUrl(image.getUrl('ogImage', true)) : null,
+          datePublished: entry.postDate | atom,
+          publisher: { '@id': siteUrl ~ '#organization' },
+          isPartOf: { '@id': siteUrl ~ '#website' },
+      }],
+  } only %}
+  ```
+  Image URLs: pass `true` to `getUrl()` so the transform is generated rather than returning
+  the transform action URL, and wrap in `siteUrl()` as the volume URL may be relative
 - `logo` is `public/images/logo-schema.png` (the logo trimmed to its edges, for Google's logo
   display); `image` is the `logo-og.png` share image
 - Only mark up visible content. Add types (`Event`, `Product`, …) per project as needed

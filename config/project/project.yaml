@@ -1,4 +1,4 @@
-dateModified: 1791687187
+dateModified: 1791689206
 elementSources:
   craft\elements\Asset:
     -
@@ -28,20 +28,6 @@ elementSources:
         - dateModified
         - link
         - 'generatedField:47e74b99-6fdf-42eb-a043-629061478355'
-      type: native
-    -
-      defaultSort:
-        - dateCreated
-        - desc
-      defaultViewMode: ''
-      disabled: false
-      key: 'volume:c2939a10-1c98-4789-8a72-cc8985158379' # Blog
-      tableAttributes:
-        - filename
-        - size
-        - dateModified
-        - link
-        - 'generatedField:726c1bb4-4b81-4015-b473-465524aafb87'
       type: native
     -
       defaultSort:
@@ -134,20 +120,6 @@ elementSources:
         - uri
       type: native
     -
-      defaultSort:
-        - postDate
-        - desc
-      defaultViewMode: ''
-      disabled: false
-      key: 'section:2b537640-9acd-4e53-a1b4-f497d2e79cd0' # Blog
-      page: Content
-      tableAttributes:
-        - status
-        - postDate
-        - expiryDate
-        - link
-      type: native
-    -
       condition:
         class: craft\elements\conditions\entries\EntryCondition
         conditionRules:
@@ -220,13 +192,6 @@ fs:
       path: '@webroot/assets/pdfs'
     type: craft\fs\Local
     url: /assets/pdfs
-  blog:
-    hasUrls: true
-    name: Blog
-    settings:
-      path: '@webroot/assets/blog'
-    type: craft\fs\Local
-    url: /assets/blog
   gallery:
     hasUrls: true
     name: Gallery
@@ -262,7 +227,6 @@ meta:
     1dc47a8f-f250-4ac6-a46d-a8c63a0c6fd5: Image # Image
     1ea0bb2d-a3bc-43be-84f5-211bbb962155: 'Columns Full Width' # Columns Full Width
     02b381ce-da60-43b4-97dc-a4c5bec552a0: Spacer # Spacer
-    2b537640-9acd-4e53-a1b4-f497d2e79cd0: Blog # Blog
     2ebda50a-529a-4080-a436-20f253d62a8b: Blocks # Blocks
     2fc8ea4c-f70b-4cc7-a530-6fff07267456: 'Menu Item' # Menu Item
     3ac4730a-1415-412a-b4cd-37189f1a9a61: 'Heading Style' # Heading Style
@@ -277,7 +241,6 @@ meta:
     6bd2bd9a-6b57-45fb-b914-f5b8e27e926f: Gallery # Gallery
     6cdb288c-7205-4c21-9a0a-7d58451a4b56: 'Vertical Alignment' # Vertical Alignment
     6f618eda-3e50-4f1d-9b77-f4c5c5894436: 'Bottom Spacing' # Bottom Spacing
-    7a5706d7-fc4f-4422-a8d3-9f6e5448d974: Text # Text
     7c94e8f1-c92f-47b8-ac85-3795e822ff9a: 'Blocks Inside - Left' # Blocks Inside - Left
     7dd641af-0dcc-47df-8804-f50f6740838c: 'SEO Optional' # SEO Optional
     7ee19ba5-8919-4ba7-8a82-e84de143fc1f: Items # Items
@@ -303,7 +266,6 @@ meta:
     63c94dc6-f41f-43d2-ae4c-b1112b55a62a: 'Social Media' # Social Media
     63dcc328-c293-414b-8226-91f27de34b68: 'Profile URL' # Profile URL
     64a1d559-0f30-491d-92c9-177cf340853c: 'Company Name' # Company Name
-    64ec34a3-ecdf-4518-b59f-faaa5d33b8a9: 'Post Content - Image' # Post Content - Image
     67affb61-d6a6-4da9-bba4-dc9c601838fa: 'Menu Label' # Menu Label
     68b242e4-9392-4e63-a1e6-d39cf4b73d02: 'Menu Link' # Menu Link
     68c02e53-bd4b-45e6-8721-dfa278498dbb: 'Hero Image' # Hero Image
@@ -325,7 +287,6 @@ meta:
     609f74fc-ee58-439b-afdb-10d9c919d562: Cards # Cards
     683dcf54-f292-4177-bc23-e0af464cc90e: 'Public Schema' # Public Schema
     730c7dfd-2c56-4285-a09e-65cc6b0332f7: 'Banner Image' # Banner Image
-    733fd8a3-3ba2-49a2-bb77-c60b52b6bc66: 'Post Content' # Post Content
     809bc4b9-bc38-4d55-bb2c-4f2983ea3cfc: 'Image Caption' # Image Caption
     843ce4e9-9dc0-4828-a41f-d0ec6f8df011: 'Video iFrame' # Video iFrame
     1140dcc1-54a1-40f2-b988-d071f0737166: 'Image Orientation' # Image Orientation
@@ -352,13 +313,11 @@ meta:
     b17a01c1-f13b-415b-80b2-c7e3680ec338: Banner # Banner
     b700f3be-bc0a-4a9c-bbd6-cc795a93bc10: 'Sharing Images' # Sharing Images
     bea9ed95-9878-430d-9120-caefb22d2846: 'Image - Tall - Large' # Image - Tall - Large
-    c2e7e94e-1754-4c1c-b74d-ba5cf4d0f6b3: 'Featured Image' # Featured Image
     c3bdff5b-2014-42e0-87b1-372f17b8ec0e: 'Vertical Alignment' # Vertical Alignment
     c5a86f25-411f-425a-a809-8053ee814aa4: 'Image Full Width' # Image Full Width
     c38dd091-123f-47e8-8fdc-92fdfe32f1c7: 'OG Image' # OG Image
     c88e53c0-b0e2-4f2e-8b79-69954becb0f7: Video # Video
     c483ee11-fc15-44c9-affb-071a9fa2bbb7: 'Site Information' # Site Information
-    c2939a10-1c98-4789-8a72-cc8985158379: Blog # Blog
     c4018390-9eaa-416b-a81c-bc7ddecf162c: 'Gallery Image' # Gallery Image
     cdfb2a4f-7805-449f-9e67-8b2a5d34f588: 'Heading Level' # Heading Level
     ce0260d9-af51-4c3c-81dd-a1ca82ca7552: Label # Label
@@ -366,7 +325,6 @@ meta:
     d7f5b5cc-8e4d-422b-ba64-da1a79121801: Classes # Classes
     d438c1a3-baf2-4366-9942-1dfcd9b7454a: 'Accordion Icon' # Accordion Icon
     d2312b71-68b5-4869-b6ca-0d3d447abb38: 'Section End' # Section End
-    d9009def-1bb9-482d-8539-be1829106860: 'Post Content - Text' # Post Content - Text
     dadbdcf6-f9f1-4d87-9c01-c567a77669ff: Video # Video
     dddbe301-cba3-4c2a-ba02-32bdbc9dc1aa: Menu # Menu
     de115555-64b6-4326-ae7c-9cfa9830bec3: 'Image Wrapper Tag' # Image Wrapper Tag
@@ -378,9 +336,7 @@ meta:
     f84ef073-f5e7-404c-a8ee-c24b36df5bd4: 'Phone Number' # Phone Number
     f522eb3e-7273-4f42-b5ec-ba0aff0d4ebf: 'Link - Button' # Link - Button
     f9712ce8-7f9e-4fb3-a227-4fbaa04f025c: Banner # Banner
-    fa2ad779-73fc-442c-9c92-1ae549690452: Summary # Summary
     fa12ac47-4af9-47a6-a7e2-9c5051088a5b: Platform # Platform
-    fc51aef1-4c76-49e7-bbd0-80b2827d65fe: Blog # Blog
     fc3034e2-dcef-4781-b247-7e52cc007b39: Heading # Heading
     fd880dcd-7683-4631-b25d-c13338a1b4d5: 'Image Dimensions' # Image Dimensions
 plugins:
