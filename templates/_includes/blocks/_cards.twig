@@ -10,6 +10,8 @@
 
                 <h3>{{ cardItem.heading | heading_striptags }}</h3>
 
+                {# heading_striptags keeps <a>, so a link in the text nests inside the card's link,
+                   and it strips <p>, so separate paragraphs run together #}
                 {{ cardItem.textBlock | heading_striptags }}
             </{{ cardUrl ? 'a' : 'div' }}>
         {% endfor %}
