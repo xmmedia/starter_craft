@@ -5,7 +5,7 @@
 }
 
 .header-menu_toggle {
-    @apply m-4 cursor-pointer bg-transparent border-0;
+    @apply m-4 bg-transparent border-0 cursor-pointer;
 
     svg {
         @apply fill-current;
@@ -14,7 +14,7 @@
 
 /* full screen mobile menu; overflow-hidden so only _scroll scrolls */
 .header-mobile-menu {
-    @apply w-full max-w-none h-full max-h-none m-0 border-0 overflow-hidden;
+    @apply overflow-hidden max-w-none max-h-none w-full h-full m-0 border-0;
 
     &[open] {
         @apply flex flex-col;
@@ -22,5 +22,5 @@
 }
 
 .header-mobile-menu_scroll {
-    @apply flex-1 min-h-0 overflow-y-auto overscroll-y-contain;
+    @apply overflow-y-auto overscroll-y-contain flex-1 min-h-0;
 }

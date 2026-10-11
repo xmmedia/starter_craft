@@ -1,8 +1,8 @@
-<div class="{{ blockWidth(block) }} flex flex-col gap-6 w-full max-w-copy mx-auto"{{ blockId(block) }}>
+<div class="{{ blockWidth(block) }} flex flex-col gap-6 max-w-copy w-full mx-auto"{{ blockId(block) }}>
 
     {% for accordionItem in block.accordionWrapper.all() %}
         {# using border instead of divide because divide only adds between and at the end, not on the first item #}
-        <details class="first:border-t border-b border-gray-600 hover:bg-zinc-200">
+        <details class="hover:bg-zinc-200 border-b first:border-t border-gray-600">
             <summary class="flex items-center-safe gap-4 w-full p-4">
                 {# two stacked minus icons, the second rotated 90° to make a plus,
                    unrotating to a minus when the <details> is open #}
@@ -11,7 +11,7 @@
                     <svg class="details-toggle-cross"><use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#minus"></use></svg>
                 </span>
 
-                <span class="font-headings font-bold">{{ accordionItem.heading }}</span>
+                <span class="font-bold font-headings">{{ accordionItem.heading }}</span>
 
                 {% set icon = accordionItem.accordionIcon.one() %}
                 {% if icon %}

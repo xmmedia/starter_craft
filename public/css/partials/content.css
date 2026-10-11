@@ -18,7 +18,7 @@
 }
 
 .blocks-wrap {
-    @apply w-content-max grid grid-cols-1 blocks-wrap:grid-cols-12 blocks-wrap:gap-x-12 w-full;
+    @apply grid grid-cols-1 blocks-wrap:grid-cols-12 blocks-wrap:gap-x-12 w-content-max w-full;
 }
 
 .heading-full-width, .text-block-wrap {
@@ -28,5 +28,5 @@
 /* Ensure .heading-full-width & .text-block-wrap is centered when also .col-span-12 */
 .heading-full-width.blocks-wrap\:col-span-12,
 .text-block-wrap.blocks-wrap\:col-span-12 {
-    @apply blocks-wrap:w-copy blocks-wrap:mx-auto blocks-wrap:max-w-full;
+    @apply blocks-wrap:max-w-full blocks-wrap:w-copy blocks-wrap:mx-auto;
 }

@@ -1,17 +1,17 @@
 /* stylelint-disable no-descending-specificity, number-max-precision */
 
 .radio-pill {
-    @apply inline-block relative mr-3;
+    @apply relative inline-block mr-3;
 
     input {
-        @apply absolute w-full h-full top-0 left-0 border-2 appearance-none opacity-[0.00001] bg-none z-[2];
+        @apply opacity-[0.00001] absolute z-2 top-0 left-0 w-full h-full appearance-none bg-none border-2;
     }
 
     label {
-        @apply block py-1 px-5 text-blue-800 rounded-full border-2 border-transparent cursor-pointer;
+        @apply block px-5 py-1 border-2 border-transparent rounded-full text-blue-800 cursor-pointer;
 
         &::after {
-            @apply absolute inset-0 border-2 border-gray-400 rounded-full cursor-pointer content-[''];
+            @apply absolute inset-0 border-2 border-gray-400 rounded-full content-[''] cursor-pointer;
             transition: bottom 200ms ease-in-out, border-color 200ms ease-in-out, left 200ms ease-in-out, right 200ms ease-in-out, top 200ms ease-in-out;
         }
     }

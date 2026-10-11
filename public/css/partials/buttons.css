@@ -3,20 +3,20 @@
     --button-ring: var(--button-ring-color, var(--color-blue-500));
     --button-ring-offset: var(--button-ring-offset-color, var(--color-white));
 
-    @apply px-4 py-2 fill-current stroke-current;
-    @apply text-box text-white text-center leading-tight;
-    @apply shadow-none border-2 border-blue-500 bg-blue-500 transition-colors outline-hidden rounded-sm;
+    @apply px-4 py-2;
+    @apply bg-blue-500 border-2 border-blue-500 rounded-sm outline-hidden shadow-none fill-current stroke-current;
+    @apply text-box leading-tight text-center text-white transition-colors;
 
     a& {
         @apply inline-block;
     }
 
     &:hover {
-        @apply text-white border-blue-800 bg-blue-800 no-underline;
+        @apply bg-blue-800 border-blue-800 no-underline text-white;
     }
 
     &:focus-visible {
-        @apply outline-hidden ring-3 ring-offset-2 no-underline bg-blue-500;
+        @apply bg-blue-500 outline-hidden ring-3 ring-offset-2 no-underline;
         @apply ring-(--button-ring) ring-offset-(--button-ring-offset);
     }
 

@@ -49,7 +49,7 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
 <div class="{{ wrapperClasses }}"{{ blockId(block) }}>
     <figure class="{{ figureClasses | join(' ') }}">
         {% if headingTag %}
-            <{{ headingTag }} class="my-0{{ block.fullWidth ? ' w-full' }}">
+            <{{ headingTag }} class="{{ block.fullWidth ? 'w-full' }} my-0">
         {% endif %}
 
         {% if block.imageLink.getUrl(false) ?? false %}

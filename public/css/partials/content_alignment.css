@@ -3,9 +3,9 @@
 }
 
 .content-img-left {
-    @apply float-left my-4 mr-4;
+    @apply float-left mr-4 my-4;
 }
 
 .content-img-right {
-    @apply float-right my-4 ml-4;
+    @apply float-right ml-4 my-4;
 }

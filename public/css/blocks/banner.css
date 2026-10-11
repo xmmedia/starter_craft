@@ -1,11 +1,11 @@
 .banner {
-    @apply w-full h-152 blocks-wrap:col-span-12 bg-cover bg-no-repeat;
+    @apply blocks-wrap:col-span-12 w-full h-152 bg-cover bg-no-repeat;
 }
 
 .banner-heading {
-    @apply text-gray-200 text-3xl lg:text-6xl font-semibold uppercase w-full xl:ml-5 mb-8;
+    @apply w-full xl:ml-5 mb-8 text-3xl lg:text-6xl font-semibold uppercase text-gray-200;
 }
 
 .banner-text {
-    @apply tracking-wide text-lg text-white;
+    @apply text-lg text-white tracking-wide;
 }

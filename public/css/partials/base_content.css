@@ -5,7 +5,7 @@
 
     /* the colour flips to a light blue on dark bgs (see partials/text_colors.css) */
     a, .button-link {
-        @apply no-underline transition outline-hidden rounded-sm;
+        @apply rounded-sm outline-hidden no-underline transition;
         color: var(--link-color, var(--color-blue-500));
 
         &:hover,
@@ -15,7 +15,7 @@
         }
 
         &:focus-visible {
-            @apply ring-2 ring-zinc-200 bg-zinc-200;
+            @apply bg-zinc-200 ring-2 ring-zinc-200;
         }
 
         &:disabled {

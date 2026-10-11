@@ -13,7 +13,7 @@
 [type="url"],
 [type="color"],
 textarea {
-    @apply w-full px-2 py-1 text-primary-text border border-gray-300 bg-gray-100 transition-colors outline-hidden rounded-xs;
+    @apply w-full px-2 py-1 bg-gray-100 border border-gray-300 rounded-xs outline-hidden text-primary-text transition-colors;
 
     &:focus-visible {
         @apply bg-gray-100 outline-hidden ring-2 ring-blue-500;
@@ -25,8 +25,7 @@ textarea {
 }
 
 select {
-    @apply w-full p-1 text-black border border-gray-300 bg-gray-100 transition-colors outline-hidden rounded-xs;
-    height: 2.14rem;
+    @apply w-full h-[2.14rem] p-1 bg-gray-100 border border-gray-300 rounded-xs outline-hidden text-black transition-colors;
 
     &:focus-visible {
         @apply outline-hidden ring-2 ring-blue-500;
@@ -43,7 +42,7 @@ select {
 }
 
 [type="file"] {
-    @apply w-full outline-hidden rounded-xs;
+    @apply w-full rounded-xs outline-hidden;
 
     &:focus-visible {
         @apply outline-hidden ring-2 ring-blue-500;
@@ -54,7 +53,7 @@ select {
 [type="radio"],
 [type="image"],
 [type="submit"] {
-    @apply outline-hidden rounded-xs;
+    @apply rounded-xs outline-hidden;
 
     &:focus-visible {
         @apply outline-hidden ring-2 ring-blue-500;
@@ -62,7 +61,7 @@ select {
 }
 
 .form-wrap {
-    @apply w-full max-w-lg mx-auto my-4 p-4 border border-gray-200 rounded;
+    @apply max-w-lg w-full mx-auto my-4 p-4 border border-gray-200 rounded;
 }
 
 .field-wrap {
@@ -97,7 +96,7 @@ select {
 
     .field-wrap-radio,
     .field-wrap-checkbox {
-        @apply mb-1 mr-4;
+        @apply mr-4 mb-1;
     }
 }
 
@@ -113,7 +112,7 @@ select {
     @apply relative;
 
     &::after {
-        @apply absolute top-[0.5rem] right-0 text-xs opacity-50;
+        @apply opacity-50 absolute top-2 right-0 text-xs;
         content: "read-only";
     }
 
@@ -123,9 +122,9 @@ select {
 }
 
 .field-help {
-    @apply w-full mt-px pl-[0.1em] text-xs italic text-gray-600 leading-tight;
+    @apply w-full mt-px pl-[0.1em] text-xs leading-tight italic text-gray-600;
 }
 
 .form-action {
-    @apply text-sm ml-4;
+    @apply ml-4 text-sm;
 }

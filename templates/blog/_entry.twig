@@ -31,8 +31,8 @@
 
 {% block content %}
     <div class="w-content">
-		<h1 class="text-4xl text-black font-display my-4">{{ entry.title }}</h1>
-		<time class="text-sm block pb-4" datetime="{{ entry.postDate | date('Y-m-d') }}">{{ entry.postDate | date('d M Y') }}</time>
+		<h1 class="my-4 text-4xl font-display text-black">{{ entry.title }}</h1>
+		<time class="block pb-4 text-sm" datetime="{{ entry.postDate | date('Y-m-d') }}">{{ entry.postDate | date('d M Y') }}</time>
 		{% if entry.featureImage | length %}
 			{% for image in entry.featureImage.all() %}
 			  <img src="{{ image.getUrl(featureImage) }}" alt="{{ image.title }}">
@@ -44,9 +44,9 @@
         </div>
 
 		{% if entry.postCategories | length %}
-			<div class="w-content border-t border-gray-400 py-2 mb-6">
+			<div class="w-content mb-6 py-2 border-t border-gray-400">
 				{% for category in entry.postCategories.all() %}
-				<a href="{{ category.url }}" class="inline-block border border-gray-400 rounded px-2 py-1 text-sm">
+				<a href="{{ category.url }}" class="inline-block px-2 py-1 border border-gray-400 rounded text-sm">
 				  {{- category.title }}
 				</a>
 				{% endfor %}
