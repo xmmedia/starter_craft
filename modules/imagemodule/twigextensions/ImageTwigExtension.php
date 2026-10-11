@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace modules\imagemodule\twigextensions;
 
-use Craft;
 use craft\elements\Asset;
 use craft\helpers\Html;
 use craft\helpers\Template;

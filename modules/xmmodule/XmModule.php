@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace modules\xmmodule;
 
-use Craft;
 use craft\base\Element;
 use craft\base\Model;
 use craft\elements\Asset;

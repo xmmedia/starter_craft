@@ -12,7 +12,6 @@ declare(strict_types=1);
 
 namespace modules\imagemodule;
 
-use Craft;
 use modules\imagemodule\twigextensions\ImageTwigExtension;
 use yii\base\Module as BaseModule;
 
