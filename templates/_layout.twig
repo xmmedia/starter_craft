@@ -59,7 +59,7 @@
                         </ul>
                     </nav>
 
-                    {% if menus.mainMenuButton.getUrl(false) %}
+                    {% if menus.mainMenuButton.getUrl(false) ?? false %}
                         <a href="{{ menus.mainMenuButton.getUrl(false) }}" class="button hidden md:inline-block">
                             {{ menus.mainMenuButtonLabel }}
                         </a>
@@ -103,7 +103,7 @@
                         {% endfor %}
                     </ul>
 
-                    {% if menus.mainMenuButton.getUrl(false) %}
+                    {% if menus.mainMenuButton.getUrl(false) ?? false %}
                         <a href="{{ menus.mainMenuButton.getUrl(false) }}" class="button mt-8">{{ menus.mainMenuButtonLabel }}</a>
                     {% endif %}
                 </nav>
