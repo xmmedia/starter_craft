@@ -1,9 +1,9 @@
 .banner {
-    @apply blocks-wrap:col-span-12 w-full h-152 bg-cover bg-no-repeat;
+    @apply h-152 bg-cover bg-no-repeat;
 }
 
 .banner-heading {
-    @apply w-full xl:ml-5 mb-8 text-3xl lg:text-6xl font-semibold uppercase text-gray-200;
+    @apply xl:ml-5 mb-8 text-3xl lg:text-6xl font-semibold uppercase text-gray-200;
 }
 
 .banner-text {
