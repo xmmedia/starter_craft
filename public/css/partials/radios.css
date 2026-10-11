@@ -37,8 +37,7 @@
 
     input:focus-visible ~ label,
     input:focus-visible ~ label::after {
-        @apply border-blue-600 cursor-pointer;
-        inset: -0.2rem;
+        @apply -inset-[0.2rem] border-blue-600 cursor-pointer;
     }
 }
 
