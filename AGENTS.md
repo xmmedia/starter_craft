@@ -471,7 +471,7 @@ section handle, no query needed:
   (`enableDatabase`) before the send is attempted
 
 **Page SEO / hiding a page from search engines**:
-- Page meta comes from the `seo` Matrix field, *not* the Ether SEO plugin's own fieldwwhat 
+- Page meta comes from the `seo` Matrix field, *not* the Ether SEO plugin's own field
   type — so the plugin's per-entry noindex option (`SitemapService::core()`) is inert
   here. The plugin is only used for the sitemap, robots.txt and redirects
 - The `seo` field is on the `pageBlocks` entry type only (Pages + Homepage); `_page.twig`
