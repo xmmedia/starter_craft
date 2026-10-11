@@ -11,16 +11,16 @@
                     <svg class="details-toggle-cross"><use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#minus"></use></svg>
                 </span>
 
-                <span class="font-bold font-headings">{{ accordionItem.heading }}</span>
+                <span class="font-bold font-headings">{{ accordionItem.heading | heading_striptags }}</span>
 
                 {% set icon = accordionItem.accordionIcon.one() %}
                 {% if icon %}
                     {# ml-auto pushed the icon to the right side #}
-                    {{ image(icon, 'accordionIcon', { class: 'ml-auto w-8 h-8' }) }}
+                    {{ imageOrSvg(icon, 'accordionIcon', { class: 'ml-auto w-8 h-8' }) }}
                 {% endif %}
             </summary>
 
-            {# mx-9 aligns with the summary text above & adds the same space on the other side #}
+            {# mx-13 aligns with the summary text above & adds the same space on the other side #}
             <div class="mx-13 mb-8">{{ accordionItem.textBlock }}</div>
         </details>
     {% endfor %}
