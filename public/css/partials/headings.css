@@ -12,7 +12,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 
 /* @todo-craft uncomment if there's a need on this site, though can cause extra hyphenation (mainly in Safari)
-h1, .h1, h2, .h1 {
+h1, .h1, h2, .h2 {
     @apply hyphens-auto sm:hyphens-none;
 }
 */
