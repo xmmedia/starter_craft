@@ -56,7 +56,7 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
             <a href="{{ block.imageLink.getUrl(false) }}">
         {% endif %}
 
-        {{ image(block.image.one(), imageTransform, { class: (block.fullWidth ? ' w-full') }) }}
+        {{ image(block.image.one(), imageTransform, { class: (block.fullWidth ? 'w-full') }) }}
 
         {% if block.imageLink.getUrl(false) ?? false %}
             </a>

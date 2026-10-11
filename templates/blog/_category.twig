@@ -4,10 +4,10 @@
 
 {% block content %}
 
-  <h1 class="my-4 text-4xl font-display text-black">
-    Blog Posts in “{{ category.title }}”
-  </h1>
+    <h1 class="my-4 text-4xl font-display text-black">
+        Blog Posts in “{{ category.title }}”
+    </h1>
 
-  {% include "_includes/listing" with { posts: posts } only %}
+    {% include "_includes/listing" with { posts: posts } only %}
 
 {% endblock %}

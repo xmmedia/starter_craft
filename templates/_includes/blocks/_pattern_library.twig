@@ -101,9 +101,11 @@
 
         function toPx(val) {
             if (!val) return null;
+
             val = val.trim();
             if (val.endsWith('rem')) return parseFloat(val) * rootFs;
             if (val.endsWith('px')) return parseFloat(val);
+
             return null;
         }
 
@@ -127,6 +129,7 @@
                     }
                 });
             });
+
             return map;
         }
 
@@ -137,7 +140,9 @@
         function fmtWithVar(computedVal, lookup) {
             const px = parseFloat(computedVal);
             if (isNaN(px)) return computedVal;
+
             const varName = lookup[Math.round(px * 100) / 100];
+
             return varName ? `${varName} (${computedVal})` : computedVal;
         }
 
@@ -145,16 +150,19 @@
             const px = parseFloat(computedVal);
             if (isNaN(px)) return computedVal;
             if (px === 0) return '0';
+
             if (spacingUnit > 0) {
                 const steps = px / spacingUnit;
                 const rounded = Math.round(steps * 4) / 4;
                 if (Math.abs(rounded - steps) < 0.01) return `${twPrefix}${rounded} (${computedVal})`;
             }
+
             return computedVal;
         }
 
         function fmtFontFamily(computedVal) {
             if (!computedVal) return '';
+
             return computedVal.split(',')[0].trim().replace(/['"]/g, '');
         }
 

@@ -17,6 +17,7 @@ runtime, style="aspect-ratio: 1280 / 720".
 
 .embed-container {
     @apply overflow-hidden aspect-video;
+
     & iframe,
     & object,
     & embed,

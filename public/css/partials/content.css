@@ -25,6 +25,7 @@
     /* same as .w-content-copy */
     @apply max-w-copy;
 }
+
 /* Ensure .heading-full-width & .text-block-wrap is centered when also .col-span-12 */
 .heading-full-width.blocks-wrap\:col-span-12,
 .text-block-wrap.blocks-wrap\:col-span-12 {

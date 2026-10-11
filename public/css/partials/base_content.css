@@ -53,6 +53,7 @@
 
     li {
         @apply mb-2;
+
         &:last-child {
             @apply mb-0;
         }

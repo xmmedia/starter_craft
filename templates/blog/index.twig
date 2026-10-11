@@ -5,28 +5,27 @@
 {% paginate posts as pageInfo, pageEntries %}
 
 {% block content %}
-	<div class="w-content">
-		<h1 class="my-4 text-4xl font-display text-black">Blog Posts</h1>
+    <div class="w-content">
+        <h1 class="my-4 text-4xl font-display text-black">Blog Posts</h1>
 
-		{% include '_includes/_listing.twig' %}
+        {% include '_includes/_listing.twig' %}
 
+        <div class="flex justify-center gap-4 mt-4">
+            <a href="{{ pageInfo.firstUrl }}">First Page</a>
+            {% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
 
-		<div class="flex justify-center gap-4 mt-4">
-		<a href="{{ pageInfo.firstUrl }}">First Page</a>
-			{% if pageInfo.prevUrl %}<a href="{{ pageInfo.prevUrl }}">Previous Page</a>{% endif %}
+            {% for page, url in pageInfo.getPrevUrls(2) %}
+                <a href="{{ url }}">{{ page }}</a>
+            {% endfor %}
 
-			{% for page, url in pageInfo.getPrevUrls(2) %}
-				<a href="{{ url }}">{{ page }}</a>
-			{% endfor %}
+            <span class="current">{{ pageInfo.currentPage }}</span>
 
-			<span class="current">{{ pageInfo.currentPage }}</span>
+            {% for page, url in pageInfo.getNextUrls(2) %}
+                <a href="{{ url }}">{{ page }}</a>
+            {% endfor %}
 
-			{% for page, url in pageInfo.getNextUrls(2) %}
-				<a href="{{ url }}">{{ page }}</a>
-			{% endfor %}
-
-			{% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
-			<a href="{{ pageInfo.lastUrl }}">Last Page</a>
-		</div>
-	</div>
+            {% if pageInfo.nextUrl %}<a href="{{ pageInfo.nextUrl }}">Next Page</a>{% endif %}
+            <a href="{{ pageInfo.lastUrl }}">Last Page</a>
+        </div>
+    </div>
 {% endblock %}
