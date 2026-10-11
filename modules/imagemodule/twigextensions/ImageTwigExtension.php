@@ -37,16 +37,6 @@ class ImageTwigExtension extends AbstractExtension
     // =========================================================================
 
     /**
-     * Returns the name of the extension.
-     *
-     * @return string The extension name
-     */
-    public function getName(): string
-    {
-        return 'ImageFunction';
-    }
-
-    /**
      * Returns an array of Twig functions, used in Twig templates via:
      *
      *      {% set this = someFunction('something') %}
