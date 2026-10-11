@@ -16,7 +16,7 @@
     }
 
     &:focus-visible {
-        @apply bg-blue-500 outline-hidden ring-3 ring-offset-2 no-underline;
+        @apply bg-blue-500 ring-3 ring-offset-2 no-underline;
         @apply ring-(--button-ring) ring-offset-(--button-ring-offset);
     }
 
