@@ -1,10 +1,10 @@
 {
     "name": "xm/starter_craft_3",
+    "description": "Starter for creating Craft 5 sites at XM Media",
     "license": "MIT",
     "type": "project",
-    "description": "Starter for creating Craft 5 sites at XM Media",
     "require": {
-        "php": "8.5.*",
+        "php": "~8.5.0",
         "ext-intl": "*",
         "born05/craft-assetusage": "^4.2.1",
         "craftcms/ckeditor": "^5.9.0",
@@ -29,34 +29,34 @@
         "rector/rector": "^2.0",
         "yiisoft/yii2-shell": "^2.0.3"
     },
-    "scripts": {
-        "lint:twig": "twigcs templates/",
-        "lint:yaml": "yaml-lint config/project",
-        "static": "phpstan analyse -c phpstan.neon.dist",
-        "cs:fix": "php-cs-fixer fix --config=php_cs.dist",
-        "rector": "rector process --config=rector.php --dry-run",
-        "rector:fix": "rector process --config=rector.php"
-    },
-    "autoload": {
-        "psr-4": {
-            "modules\\": "modules/"
-        }
-    },
-    "config": {
-        "sort-packages": true,
-        "optimize-autoloader": true,
-        "allow-plugins": {
-            "craftcms/plugin-installer": true,
-            "php-http/discovery": true,
-            "yiisoft/yii2-composer": true,
-            "ergebnis/composer-normalize": true
-        }
-    },
     "repositories": [
         {
             "type": "composer",
             "url": "https://composer.craftcms.com",
             "canonical": false
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "modules\\": "modules/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "craftcms/plugin-installer": true,
+            "ergebnis/composer-normalize": true,
+            "php-http/discovery": true,
+            "yiisoft/yii2-composer": true
+        },
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "scripts": {
+        "cs:fix": "php-cs-fixer fix --config=php_cs.dist",
+        "lint:twig": "twigcs templates/",
+        "lint:yaml": "yaml-lint config/project",
+        "rector": "rector process --config=rector.php --dry-run",
+        "rector:fix": "rector process --config=rector.php",
+        "static": "phpstan analyse -c phpstan.neon.dist"
+    }
 }
