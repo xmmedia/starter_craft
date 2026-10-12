@@ -142,11 +142,11 @@ container dies on a missing `@rolldown/binding-linux-*`.
 
 ### Full checks
 
-- **Quick check** (no fixes): `bin/check` — `composer validate`, PHPStan, ESLint,
+- **Quick check** (no fixes): `bin/check` — `composer validate`, `composer normalize` (dry run), PHPStan, ESLint,
   Stylelint, YAML lint, Twig lint, then the security checks (`symfony security:check`,
   `composer audit`, `yarn audit:high`, and `yarn audit:moderate` — which
   warns but never fails the check)
-- **Full check** (runs Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
+- **Full check** (runs Composer Normalize, Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
   - `bin/check` runs everything through Lando (`lando composer` / `lando yarn`), so it doesn't depend on the host's Node or PHP
 
@@ -333,7 +333,8 @@ one, `lando craft clear-caches/all` (and a PHP-FPM reload in production).
   (`yarn config set --json supportedArchitectures …` in `before_script`) so only its native
   binaries install. `--immutable` is unaffected — the lockfile records every platform variant
   regardless
-- **Static stage**: security checks (Symfony, Composer, yarn) then linting — JS, CSS,
+- **Static stage**: security checks (Symfony, Composer, yarn), `composer normalize --dry-run`,
+  then linting — JS, CSS,
   Twig and project config YAML. PHPStan is *not* run in CI; it only runs via `bin/check`
 - **Deploy stages**: Staging and Production, both `when: manual`, and only on the
   `master` branch (`@todo-craft` — update if the project's main branch differs)

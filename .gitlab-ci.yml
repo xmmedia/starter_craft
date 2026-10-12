@@ -58,6 +58,7 @@ static:
     - yarn install --immutable
     # composer & yarn require packages to be installed before running security checks
     - *security-checks
+    - php composer.phar normalize --dry-run
     # lint JS & CSS
     - yarn lint:js
     - yarn lint:css

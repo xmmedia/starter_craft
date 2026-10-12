@@ -8,6 +8,7 @@ trap report_failure ERR
 
 # check if composer.json & lock match
 step "Composer validate" lando composer validate --no-check-all --no-check-version --check-lock
+step "Composer normalize" lando composer normalize --dry-run
 
 step "PHPStan (static analysis)" lando composer static
 step "ESLint (JS)" lando yarn lint:js
