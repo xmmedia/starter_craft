@@ -97,8 +97,10 @@ const initAjaxForm = function (form) {
             return;
         }
 
+        // aria-disabled rather than disabled, which would drop the button's focus;
+        // sending blocks a second submit
         sending = true;
-        submitButton.disabled = true;
+        submitButton.setAttribute('aria-disabled', 'true');
         messagesEl.replaceChildren();
         clearFieldErrors(form);
 
@@ -128,7 +130,7 @@ const initAjaxForm = function (form) {
             showMessages(createAlert('danger', failMessage));
         } finally {
             sending = false;
-            submitButton.disabled = false;
+            submitButton.removeAttribute('aria-disabled');
         }
     });
 };

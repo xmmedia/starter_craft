@@ -20,7 +20,8 @@
         @apply ring-(--button-ring) ring-offset-(--button-ring-offset);
     }
 
-    &:disabled {
+    &:disabled,
+    &[aria-disabled="true"] {
         @apply bg-gray-400 border-gray-400 cursor-not-allowed;
 
         &:hover {
