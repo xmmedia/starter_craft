@@ -27,6 +27,30 @@ const createErrorList = function (messages) {
     return list;
 };
 
+// links the errors to their field for screen readers, alongside any help text
+// already in aria-describedby
+const markInvalid = function (field, list) {
+    list.id = `${field.id || field.name}-errors`;
+    const describedBy = field.getAttribute('aria-describedby');
+    field.setAttribute('aria-describedby', describedBy ? `${list.id} ${describedBy}` : list.id);
+    field.setAttribute('aria-invalid', 'true');
+};
+
+const clearFieldErrors = function (form) {
+    form.querySelectorAll('.js-field-errors').forEach((list) => {
+        form.querySelectorAll(`[aria-describedby~="${list.id}"]`).forEach((field) => {
+            const describedBy = field.getAttribute('aria-describedby').split(' ').filter((id) => id !== list.id);
+            if (describedBy.length) {
+                field.setAttribute('aria-describedby', describedBy.join(' '));
+            } else {
+                field.removeAttribute('aria-describedby');
+            }
+            field.removeAttribute('aria-invalid');
+        });
+        list.remove();
+    });
+};
+
 // places each error above its field (below the label), returning the errors
 // without a field; keys use dots for nested names (message.body → message[body])
 const showFieldErrors = function (form, errors) {
@@ -44,6 +68,7 @@ const showFieldErrors = function (form, errors) {
         const list = createErrorList(messages);
         list.classList.add('js-field-errors');
         field.before(list);
+        markInvalid(field, list);
     });
 
     return unmatched;
@@ -75,7 +100,7 @@ const initAjaxForm = function (form) {
         sending = true;
         submitButton.disabled = true;
         messagesEl.replaceChildren();
-        form.querySelectorAll('.js-field-errors').forEach((list) => list.remove());
+        clearFieldErrors(form);
 
         try {
             const response = await fetch(url, {
