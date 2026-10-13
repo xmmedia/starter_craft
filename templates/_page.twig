@@ -30,9 +30,10 @@
     {{ parent() }}
 
     {% if seo is not null or robots is not empty or not isLive %}
-        {# title is the same string as the <title> tag, so the homepage's company-name-first order carries over #}
+        {# title is the same string as the <title> tag, so the homepage's company-name-first order carries over;
+           raw() as the block's output is already escaped #}
         {% include '_includes/_meta.twig' with {
-            'title': block('page_title_wrap'),
+            'title': raw(block('page_title_wrap') | trim),
             'description': seo ? seo.metaDescription : null,
             'image': seo ? seo.ogImage : null,
             'image_alt': seo ? seo.ogImageAlt : null,
