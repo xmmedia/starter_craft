@@ -1,4 +1,4 @@
-dateModified: 1791689421
+dateModified: 1792025234
 elementSources:
   craft\elements\Asset:
     -
@@ -361,13 +361,14 @@ plugins:
   contact-form-extensions:
     edition: standard
     enabled: true
-    schemaVersion: 1.0.1
+    schemaVersion: 1.1.0
     settings:
       confirmationSubject: ''
       confirmationTemplate: ''
       enableConfirmationEmail: ''
       enableDatabase: '1'
       enableRecaptchaOverride: ''
+      enableSaveSpam: '1'
       enableTemplateOverwrite: '1'
       notificationTemplate: _emails/contact-form-notification
       recaptcha: ''
