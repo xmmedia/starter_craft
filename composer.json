@@ -15,7 +15,7 @@
         "hybridinteractive/craft-contact-form-extensions": "^5.1.0",
         "nystudio107/craft-vite": "^5.0.2",
         "roave/security-advisories": "dev-master",
-        "stimmt/craft-mcp": "^1.4.0",
+        "stimmt/craft-mcp": "^1.6.3",
         "verbb/field-manager": "^4.0.9",
         "vlucas/phpdotenv": "^5.4",
         "wrav/oembed": "^3.2.2"

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6742d0e22ab277c59f1c904f263086f6",
+    "content-hash": "66f66a8fab3baf759c6c3c8ca808f7a3",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -2954,16 +2954,16 @@
         },
         {
             "name": "mcp/sdk",
-            "version": "v0.7.1",
+            "version": "v0.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modelcontextprotocol/php-sdk.git",
-                "reference": "785fc3b9b7006ecc8a73322c939d96a4a7154345"
+                "reference": "c5dbfb64e5a2a30872ec3927b4cf13a2eb05e10e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modelcontextprotocol/php-sdk/zipball/785fc3b9b7006ecc8a73322c939d96a4a7154345",
-                "reference": "785fc3b9b7006ecc8a73322c939d96a4a7154345",
+                "url": "https://api.github.com/repos/modelcontextprotocol/php-sdk/zipball/c5dbfb64e5a2a30872ec3927b4cf13a2eb05e10e",
+                "reference": "c5dbfb64e5a2a30872ec3927b4cf13a2eb05e10e",
                 "shasum": ""
             },
             "require": {
@@ -2981,6 +2981,7 @@
                 "psr/http-server-handler": "^1.0",
                 "psr/http-server-middleware": "^1.0",
                 "psr/log": "^1.0 || ^2.0 || ^3.0",
+                "symfony/deprecation-contracts": "^2.5 || ^3.0",
                 "symfony/uid": "^5.4 || ^6.4 || ^7.3 || ^8.0"
             },
             "require-dev": {
@@ -3032,9 +3033,9 @@
             "description": "Model Context Protocol SDK for Client and Server applications in PHP",
             "support": {
                 "issues": "https://github.com/modelcontextprotocol/php-sdk/issues",
-                "source": "https://github.com/modelcontextprotocol/php-sdk/tree/v0.7.1"
+                "source": "https://github.com/modelcontextprotocol/php-sdk/tree/v0.8.1"
             },
-            "time": "2026-08-10T20:09:23+00:00"
+            "time": "2026-08-29T23:10:56+00:00"
         },
         {
             "name": "mikehaertl/php-shellcommand",
@@ -6717,16 +6718,16 @@
         },
         {
             "name": "stimmt/craft-mcp",
-            "version": "v1.4.0",
+            "version": "v1.6.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/2dca432ed212b3a0ac8501e412ec3b18b5987754",
-                "reference": "2dca432ed212b3a0ac8501e412ec3b18b5987754",
+                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/bd2023e4121bd03dfa3b65028938d6ec27bc299f",
+                "reference": "bd2023e4121bd03dfa3b65028938d6ec27bc299f",
                 "shasum": ""
             },
             "require": {
                 "craftcms/cms": "^5.1",
-                "mcp/sdk": "^0.7",
+                "mcp/sdk": "^0.8",
                 "nyholm/psr7": "^1.8",
                 "php": "^8.3",
                 "psr/event-dispatcher": "^1.0",
@@ -6778,7 +6779,7 @@
                 "issues": "https://github.com/stimmtdigital/craft-mcp/issues",
                 "source": "https://github.com/stimmtdigital/craft-mcp"
             },
-            "time": "2026-08-28T12:06:27+00:00"
+            "time": "2026-10-14T20:07:51+00:00"
         },
         {
             "name": "symfony/clock",
