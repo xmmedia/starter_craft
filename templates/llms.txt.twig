@@ -1,0 +1,37 @@
+{#- /llms.txt: a Markdown summary of the site for AI tools (https://llmstxt.org/), built from the
+    pages so it stays current. Pages hidden from search engines are left out, as in the sitemap.
+    Each section's lines are joined, as Twig's whitespace control can't keep one item per line -#}
+{% header 'Content-Type: text/plain; charset=utf-8' %}
+{%- macro link(page) -%}
+    {%- set seo = page.seo ?? null ? page.seo.one() : null -%}
+    {%- if page.url and not (seo and seo.seoNoindex) -%}
+        - [{{ page.title }}]({{ page.url }}){{ seo and seo.metaDescription ? ': ' ~ seo.metaDescription | replace({ "\n": ' ' }) | trim }}
+    {%- endif -%}
+{%- endmacro -%}
+{%- set home = craft.entries.section('homepage').one() -%}
+{# @todo-craft split out sections (products, services…) as the site needs them #}
+{%- set pages = craft.entries.section('pages').level(1).all() -%}
+{%- set description = home and home.seo.one() ? home.seo.one().metaDescription -%}
+{%- set phone = siteInformation.phoneNumbers.one() -%}
+
+{%- set pageLinks = pages | map(page => _self.link(page) | trim) | filter -%}
+{%- set contactLines = [
+    phone and phone.phoneNumber ? '- Phone: ' ~ (phone.phoneNumber.label ?: phone.phoneNumber.url | replace({ 'tel:': '' })),
+    siteInformation.email ? '- Email: ' ~ siteInformation.email.url | replace({ 'mailto:': '' }),
+] | filter -%}
+
+# {{ siteInformation.companyName }}
+{% if description %}
+
+> {{ description }}
+{% endif %}
+
+## Pages
+
+{{ pageLinks | join("\n") }}
+{% if contactLines is not empty %}
+
+## Contact
+
+{{ contactLines | join("\n") }}
+{% endif %}
