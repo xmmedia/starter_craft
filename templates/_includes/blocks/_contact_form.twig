@@ -12,10 +12,16 @@
     {% set successMessage = block.successMessage | heading_striptags | default('Thank you for reaching out. We\'ll be in contact within 3 business days.') %}
     {% set failMessage = block.errorMessage | heading_striptags | default('Looks like something isn\'t quite right. Please try again.') %}
 
+    {# WebMCP: describes the form to AI agents as a tool they can fill in for the visitor, who still submits it #}
+    {# @todo-craft describe the company in the tool description #}
+    {% set toolDescription = 'Send ' ~ siteInformation.companyName ~ ' a message or question.' %}
+
     <form method="post"
           action="{{ successUrl }}"
           accept-charset="utf-8"
           class="form-wrap"
+          toolname="contact"
+          tooldescription="{{ toolDescription }}"
           data-ajax-form
           {# escaped explicitly: heading_striptags returns Markup, which autoescaping skips #}
           data-success-message="{{ successMessage | escape }}"
@@ -36,6 +42,7 @@
                 {{ input('text', 'fromName', null, {
                     id: 'from-name',
                     autocomplete: 'name',
+                    toolparamdescription: 'The full name of the person sending the message',
                     maxlength: 100,
                     required: true,
                 }) }}
@@ -46,6 +53,7 @@
                 {{ input('email', 'fromEmail', null, {
                     id: 'from-email',
                     autocomplete: 'email',
+                    toolparamdescription: 'The email address to reply to',
                     maxlength: 100,
                     required: true,
                     placeholder: 'Required – you@example.com',
@@ -66,6 +74,7 @@
                 {{ input('tel', 'message[Phone]', null, {
                     id: 'phone',
                     autocomplete: 'tel',
+                    toolparamdescription: 'A phone number to reply to, if they would rather be called',
                     maxlength: 15,
                     placeholder: 'Optional – 780-222-3333',
                 }) }}
@@ -76,6 +85,7 @@
                 {{ tag('textarea', {
                     id: 'message',
                     name: 'message[body]',
+                    toolparamdescription: 'The message or question',
                     required: true,
                     maxlength: 10000,
                     class: 'h-48',
