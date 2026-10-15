@@ -80,8 +80,9 @@ tooling:
     service: node
     description: Stop the Vite dev server left running in the container.
     cmd: pkill -f vite || true
-  # Lando puts /app/vendor/bin first on the PATH, so `composer` would run the copy Craft
-  # requires (composer/composer), which breaks when an update replaces its own dependencies
+  # Lando puts /app/vendor/bin first on the PATH, so if a package ever requires
+  # composer/composer, `composer` would run that copy, which breaks when an update replaces
+  # its own dependencies
   composer:
     service: appserver
     description: Run the container's Composer, not vendor/bin/composer.
