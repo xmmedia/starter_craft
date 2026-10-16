@@ -291,7 +291,7 @@ remote sudo -n install -o "$SITE_USER" -g "$SITE_USER" -m 755 \
 remote rm -f "$REMOTE_TMP"
 
 # Run as the site user, in the domain dir; "Y" answers the script's confirm prompt.
-remote sudo -n su - "$SITE_USER" -c "cd $(printf '%q' "$DOMAIN") && echo Y | sh ./setup_server.sh" \
+remote sudo -n su - "$SITE_USER" -c "cd $(printf '%q' "$DOMAIN") && echo Y | bash ./setup_server.sh" \
     || die "setup_server.sh failed — fix and re-run it manually on the server"
 ok "site directory structure created"
 
