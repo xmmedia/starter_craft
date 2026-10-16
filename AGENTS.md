@@ -475,7 +475,7 @@ section handle, no query needed:
   type — so the plugin's per-entry noindex option (`SitemapService::core()`) is inert
   here. The plugin is only used for the sitemap, robots.txt and redirects
 - The `seo` field is on the `pageBlocks` entry type only (Pages + Homepage); `_page.twig`
-  guards with `entry.seo is defined`, so entry types without it get no meta block.
+  guards with `entry.seo is not null`, so entry types without it get no meta block.
   `seoOptional` is the same Matrix without Page Title required, for entry types where it
   shouldn't be mandatory (unused in the starter)
 - Two lightswitches feed the `robots` tag built in `_page.twig`: `seoNofollow`, and
@@ -550,6 +550,11 @@ section handle, no query needed:
 - Consistent naming: partials prefixed with `_`
 - Layout inheritance via `_layout.twig`
 - Page wrapper pattern via `_page.twig`
+- **`entry.someField is defined` is always true**, whether the entry type has that field or
+  not. Craft returns `null` for a field it doesn't have, so test `is not null` instead —
+  `entry.someField is not null`. Getting this wrong 500s the page rather than skipping the
+  block, and only on entry types missing the field, so it hides until a new section is
+  added. `_page.twig` shows the safe form
 
 ## Environment Configuration
 
