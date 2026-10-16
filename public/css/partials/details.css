@@ -9,16 +9,21 @@ details {
         }
     }
 
+    /* its own summary only, so a closed <details> nested in an open one keeps its plus */
     @variant open {
-        .details-toggle-cross {
+        > summary .details-toggle-cross {
             @apply rotate-0;
         }
     }
 }
 
 /* stacks the toggle's svgs on top of each other; callers can override the svg size */
-.details-toggle svg {
-    @apply col-start-1 row-start-1 size-5 fill-current transition-transform;
+.details-toggle {
+    @apply grid place-items-center shrink-0;
+
+    svg {
+        @apply col-start-1 row-start-1 size-5 fill-current transition-transform;
+    }
 }
 
 /* must stay here, not as a utility class in the markup: the open rule above is in
