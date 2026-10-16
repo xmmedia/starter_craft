@@ -62,7 +62,7 @@ fieldLayouts:
         name: Content
         uid: 7f345764-41de-4e41-b59d-3a31de0ae1ad
         userCondition: null
-    thumbFieldKey: null
+    thumbFieldKey: 'layoutElement:068d5b11-4a0d-4b53-b41b-aafbe6809eb1'
 handle: accordion
 hasTitleField: false
 icon: null

@@ -30,7 +30,7 @@ fieldLayouts:
         name: Content
         uid: b84c51fa-6760-42bd-8b0b-a5ec723e67c1
         userCondition: null
-    thumbFieldKey: null
+    thumbFieldKey: 'layoutElement:dabfc40b-ff1f-429d-ac37-c2607342ae8f'
 handle: galleryImage
 hasTitleField: false
 icon: null
