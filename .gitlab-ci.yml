@@ -105,7 +105,7 @@ static:
     # ensure based paths exist
     - remote "mkdir -p $RELEASES $SHARED $SHARED/storage $SHARED/public/assets"
     # sync files to release directory
-    - rsync --archive --stats --human-readable --no-perms --exclude ".git/" --exclude ".idea/" --exclude "node_modules/" --exclude "vendor/" --exclude "cypress/" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$RELEASE
+    - rsync --archive --stats --human-readable --no-perms --exclude ".git/" --exclude ".idea/" --exclude "node_modules/" --exclude "vendor/" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$RELEASE
     # make craft console file executable
     - remote "chmod u+x $RELEASE/craft"
     # ensure platform has all requirements & install packages on the server
