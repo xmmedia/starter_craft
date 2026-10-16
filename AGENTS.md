@@ -52,8 +52,7 @@ project sees.
 **Starter-owned** (a change here often belongs on both sides): `bin/`, `modules/`,
 `.gitlab-ci.yml`, `.lando.yml`, `lando_apache_vite.conf`, `vite.config.mjs`, `.yarnrc.yml`,
 `eslint.config.mjs`, `stylelint.config.mjs`, `.twig_cs.php`, `php_cs.dist`, `rector.php`,
-`phpstan.neon.dist`, `provision_site.sh`, `setup_server.sh`, `setup_gitlab_ci_vars.sh`, and
-this file.
+`phpstan.neon.dist`, and this file.
 
 **Project-owned** (the starter's versions are only a starting point): `templates/`,
 `public/css/`, `public/js/src/`, `public/images/`, `config/project/`, `config/custom.php`.
@@ -241,7 +240,7 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
     /blocks             # Block-specific styles
   /images               # Static images
 
-/bin                    # check / check_full scripts
+/bin                    # check / check_full and the provisioning scripts
 
 /storage                # Craft runtime files (logs, cache, sessions)
 ```
@@ -349,12 +348,12 @@ one, `lando craft clear-caches/all` (and a PHP-FPM reload in production).
 
 **Provisioning Scripts** — run once when a project's server is set up, never against the
 starter (the starter's README has the runbook):
-- `provision_site.sh` — orchestrates provisioning a new site on an InterWorx server
-- `setup_gitlab_ci_vars.sh` — sets the GitLab CI/CD variables for one scope
-- `setup_server.sh` — creates the release/shared structure; runs on the server
+- `bin/provision_site` — orchestrates provisioning a new site on an InterWorx server
+- `bin/setup_gitlab_ci_vars` — sets the GitLab CI/CD variables for one scope
+- `bin/setup_server.sh` — creates the release/shared structure; runs on the server
 
 Never run these — they're interactive and make changes to servers, 1Password and GitLab.
-`provision_site.sh` and `setup_gitlab_ci_vars.sh` share the same structure, helpers and
+`provision_site` and `setup_gitlab_ci_vars` share the same structure, helpers and
 output style; keep them in sync when editing either one.
 
 ### Content Management
@@ -574,7 +573,7 @@ When updating PHP (currently 8.5):
 1. Update `composer.json` require version
 2. Update in:
    - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, override appserver with `type: php:X.X`)
-   - `setup_server.sh` – 4 places
+   - `bin/setup_server.sh` – 4 places
    - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, `php-fpm` service name)
    - Add the related migration to `php_cs.dist`
 3. Run `lando rebuild`

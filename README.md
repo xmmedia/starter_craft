@@ -11,12 +11,12 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 2. Update `composer.json`: `name`, `license` (likely `proprietary`) and `description`
 3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`
 4. Setup dev server:
-   1. If using InterWorx, run `./provision_site.sh` locally — it provisions the whole site (see [Provisioning a Site](#provisioning-a-site) below) and runs `setup_server.sh` for you. To do it by hand instead, upload `setup_server.sh` to the domain dir and run: `sh ./setup_server.sh`
+   1. If using InterWorx, run `bin/provision_site` locally — it provisions the whole site (see [Provisioning a Site](#provisioning-a-site) below) and runs `setup_server.sh` for you. To do it by hand instead, upload `bin/setup_server.sh` to the domain dir and run: `sh ./setup_server.sh`
    2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
    3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
    4. Install PHP packages/vendors: `php composer.phar install`
    5. Add `.env` (copy `.env.example` and update).
-   6. Run `. ./node_setup.sh` (this will setup node & install the JS packages).
+   6. Run `. bin/node_setup.sh` (this will setup node & install the JS packages).
    7. Run `yarn build` (for production) to compile JS & CSS files.
    8. Give executable perms to bin dir: `chmod u+x craft`
    9. Ensure you have lando running.
@@ -25,7 +25,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
 7. Composer install & update (locally): `composer install && composer update`
 8. Run `lando yarn && lando yarn up -R '**'` locally.
-9. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. ./node_setup.sh` again.
+9. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. bin/node_setup.sh` again.
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Set the email Subject Text for contact form submissions in Settings > Contact Form (under Plugins).
@@ -40,7 +40,7 @@ Craft admin is located at `/admin`
 
 ## Provisioning a Site
 
-For sites on an InterWorx server, `./provision_site.sh` (run locally) does the whole setup:
+For sites on an InterWorx server, `bin/provision_site` (run locally) does the whole setup:
 1Password items, the SiteWorx account, the database, `setup_server.sh`, the PHP restart
 sudoers entry, the Craft queue cron job and the GitLab CI/CD variables.
 
@@ -54,9 +54,9 @@ sudoers entry, the Craft queue cron job and the GitLab CI/CD variables.
 
 Related scripts:
 
-  - `setup_server.sh` – runs on the server as the site user, in the domain dir; creates the
-    `releases`/`shared` structure and symlinks. Normally run by `provision_site.sh`.
-  - `setup_gitlab_ci_vars.sh <group/project>` – sets the GitLab CI/CD variables for one
+  - `bin/setup_server.sh` – runs on the server as the site user, in the domain dir; creates the
+    `releases`/`shared` structure and symlinks. Normally run by `bin/provision_site`.
+  - `bin/setup_gitlab_ci_vars <group/project>` – sets the GitLab CI/CD variables for one
     scope (staging or production). Can be run on its own; see `--help`.
 
 ## System Requirements
@@ -132,7 +132,7 @@ Running them on the host with `yarn <command>` still works.
 1. Change version in `composer.json`.
 1. Update the PHP version in the following files:
     - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, you must override the appserver service with `type: php:X.X`)
-    - `setup_server.sh` – 4 places
+    - `bin/setup_server.sh` – 4 places
     - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, and `php-fpm` service name)
     - `php_cs.dist` – add the new version or update the `@PHP8#Migration` version to match the current version.
 1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.

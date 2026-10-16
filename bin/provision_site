@@ -8,7 +8,7 @@
 #   4. Upload and run setup_server.sh as the site user
 #   5. Add the PHP restart sudoers entry for the site user
 #   6. (optional) Add the Craft queue cron job
-#   7. Run setup_gitlab_ci_vars.sh locally
+#   7. Run bin/setup_gitlab_ci_vars locally
 #
 # The SSL certificate is not generated here — the InterWorx CLI always includes
 # the www subdomain and gives no way to exclude it. Generate it in SiteWorx
@@ -18,7 +18,7 @@
 #   - ssh access to the server via a configured ssh Host, with passwordless sudo
 #   - op CLI signed in (op signin), glab authenticated, jq installed
 #
-# Usage: ./provision_site.sh
+# Usage: bin/provision_site
 set -euo pipefail
 
 RED='\033[0;31m'
@@ -90,7 +90,7 @@ command -v glab >/dev/null 2>&1 || die "glab CLI not installed. See: https://git
 command -v jq   >/dev/null 2>&1 || die "jq not installed. Run: brew install jq"
 op account list >/dev/null 2>&1 || die "Not signed in to 1Password. Run: op signin"
 [[ -f "$SCRIPT_DIR/setup_server.sh" ]] || die "setup_server.sh not found in $SCRIPT_DIR"
-[[ -f "$SCRIPT_DIR/setup_gitlab_ci_vars.sh" ]] || die "setup_gitlab_ci_vars.sh not found in $SCRIPT_DIR"
+[[ -f "$SCRIPT_DIR/setup_gitlab_ci_vars" ]] || die "setup_gitlab_ci_vars not found in $SCRIPT_DIR"
 
 echo ""
 echo -e "${BOLD}${CYAN}New Site Setup${NC}"
@@ -325,13 +325,13 @@ fi
 
 heading "7/7 GitLab CI/CD variables"
 if [[ "$DO_GITLAB" == "y" ]]; then
-    "$SCRIPT_DIR/setup_gitlab_ci_vars.sh" "$GITLAB_PROJECT" \
+    "$SCRIPT_DIR/setup_gitlab_ci_vars" "$GITLAB_PROJECT" \
         --scope "$SCOPE" \
         --remote-base "$SITE_BASE" \
         --remote-server "$SERVER_HOST" \
         --remote-user "$SITE_USER" \
         --context-host "$DOMAIN" \
-        || warn "setup_gitlab_ci_vars.sh did not complete"
+        || warn "setup_gitlab_ci_vars did not complete"
 else
     echo "  Skipped."
 fi
