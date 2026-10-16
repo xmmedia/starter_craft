@@ -16,16 +16,14 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
    3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
    4. Install PHP packages/vendors: `php composer.phar install`
    5. Add `.env` (copy `.env.example` and update).
-   6. Run `. bin/node_setup.sh` (this will setup node & install the JS packages).
-   7. Run `yarn build` (for production) to compile JS & CSS files.
-   8. Give executable perms to bin dir: `chmod u+x craft`
-   9. Ensure you have lando running.
-   10. Within `lando ssh`, install craft: `./craft install/craft`
+   6. Give executable perms to bin dir: `chmod u+x craft`
+   7. Ensure you have lando running.
+   8. Within `lando ssh`, install craft: `./craft install/craft`
 5. Remove or update the `LICENSE` file.
 6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
 7. Composer install & update (locally): `composer install && composer update`
 8. Run `lando yarn && lando yarn up -R '**'` locally.
-9. Upload `composer.lock` and `yarn.lock` and on the server, run `php composer.phar install` and `. bin/node_setup.sh` again.
+9. Upload `composer.lock` and on the server, run `php composer.phar install`.
 10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Set the email Subject Text for contact form submissions in Settings > Contact Form (under Plugins).
