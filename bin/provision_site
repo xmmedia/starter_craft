@@ -6,9 +6,10 @@
 #   2. Create the SiteWorx account (InterWorx nodeworx CLI, over ssh)
 #   3. Create the database + database user
 #   4. Upload and run setup_server.sh as the site user
-#   5. Add the PHP restart sudoers entry for the site user
-#   6. (optional) Add the Craft queue cron job
-#   7. Run bin/setup_gitlab_ci_vars locally
+#   5. Write shared/.env from .env.example, filling in what's known
+#   6. Add the PHP restart sudoers entry for the site user
+#   7. (optional) Add the Craft queue cron job
+#   8. Run bin/setup_gitlab_ci_vars locally
 #
 # The SSL certificate is not generated here — the InterWorx CLI always includes
 # the www subdomain and gives no way to exclude it. Generate it in SiteWorx
@@ -29,6 +30,7 @@ BOLD='\033[1m'
 NC='\033[0m'
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ENV_TEMPLATE="$SCRIPT_DIR/../.env.example"
 NODEWORX='nodeworx'
 SITEWORX='siteworx'
 # Database name/user suffix — always craft for this starter.
@@ -91,6 +93,8 @@ command -v jq   >/dev/null 2>&1 || die "jq not installed. Run: brew install jq"
 op account list >/dev/null 2>&1 || die "Not signed in to 1Password. Run: op signin"
 [[ -f "$SCRIPT_DIR/setup_server.sh" ]] || die "setup_server.sh not found in $SCRIPT_DIR"
 [[ -f "$SCRIPT_DIR/setup_gitlab_ci_vars" ]] || die "setup_gitlab_ci_vars not found in $SCRIPT_DIR"
+[[ -f "$ENV_TEMPLATE" ]] || die ".env.example not found in $(dirname "$SCRIPT_DIR")"
+command -v openssl >/dev/null 2>&1 || die "openssl not installed"
 
 echo ""
 echo -e "${BOLD}${CYAN}New Site Setup${NC}"
@@ -175,7 +179,7 @@ confirm "Proceed? Everything after this point makes changes." n || { echo "Abort
 
 # --- 1. 1Password items ------------------------------------------------------
 
-heading "1/7 Creating 1Password items"
+heading "1/8 Creating 1Password items"
 OP_ARGS=(--category server --title "$DOMAIN" --vault "$OP_VAULT"
     "username=$SITE_USER"
     'port[text]=10022'
@@ -220,8 +224,9 @@ ok "passwords read from 1Password"
 
 # --- 2. SiteWorx account -----------------------------------------------------
 
-heading "2/7 Creating the SiteWorx account"
-warn "passwords are passed as CLI arguments and are briefly visible in the server's process list."
+heading "2/8 Creating the SiteWorx account"
+warn "the SiteWorx and database passwords are passed as CLI arguments — briefly visible in the"
+echo "    server's process list, and kept in sudo's log (/var/log/secure) until it rotates out."
 
 # Reproduce a package template by expanding its options into --OPT_* flags;
 # nodeworx's Siteworx add has no --package option.
@@ -262,7 +267,7 @@ ok "account created ($SITE_USER / $DOMAIN)"
 
 # --- 3. Database -------------------------------------------------------------
 
-heading "3/7 Creating the database and user"
+heading "3/8 Creating the database and user"
 # InterWorx prefixes both with the account username, so pass the suffix only.
 remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c MysqlDb -a add \
     --name "$SITE_TYPE" \
@@ -276,7 +281,7 @@ ok "database and user created ($DB_NAME)"
 
 # --- 4. setup_server.sh ------------------------------------------------------
 
-heading "4/7 Running setup_server.sh"
+heading "4/8 Running setup_server.sh"
 # The account's real path — /chroot/home/… on chrooted servers, /home/… otherwise.
 REAL_BASE=$(remote sudo -n "$NODEWORX" -u -n -c Siteworx -a listAccounts \
     | awk -F'\t' -v u="$SITE_USER" '$2==u {print $21}')
@@ -295,9 +300,48 @@ remote sudo -n su - "$SITE_USER" -c "cd $(printf '%q' "$DOMAIN") && echo Y | bas
     || die "setup_server.sh failed — fix and re-run it manually on the server"
 ok "site directory structure created"
 
-# --- 5. PHP restart sudoers --------------------------------------------------
+# --- 5. .env -----------------------------------------------------------------
 
-heading "5/7 Adding the PHP restart sudoers entry"
+heading "5/8 Writing shared/.env"
+REMOTE_ENV="$REAL_BASE/shared/.env"
+if remote sudo -n test -s "$REMOTE_ENV"; then
+    warn "$REMOTE_ENV already has content — left as is."
+else
+    [[ "$SCOPE" == "production" ]] && DISALLOW_ROBOTS=false || DISALLOW_ROBOTS=true
+    # Single quotes so phpdotenv takes the password literally — which can't hold a '.
+    if [[ "$DB_PASSWORD" == *"'"* ]]; then
+        warn "the database password contains a ' — set CRAFT_DB_PASSWORD in .env by hand."
+        ENV_DB_PASSWORD=''
+    else
+        ENV_DB_PASSWORD="'$DB_PASSWORD'"
+    fi
+
+    ENV_CONTENT=$(
+        CRAFT_ENVIRONMENT=production \
+        CRAFT_SECURITY_KEY="$(openssl rand -hex 16)" \
+        DISALLOW_ROBOTS="$DISALLOW_ROBOTS" \
+        CRAFT_DB_DATABASE="$DB_NAME" \
+        CRAFT_DB_USER="$DB_NAME" \
+        CRAFT_DB_PASSWORD="$ENV_DB_PASSWORD" \
+        PRIMARY_SITE_URL="\"https://$DOMAIN/\"" \
+        awk -v keys='CRAFT_ENVIRONMENT CRAFT_SECURITY_KEY DISALLOW_ROBOTS CRAFT_DB_DATABASE CRAFT_DB_USER CRAFT_DB_PASSWORD PRIMARY_SITE_URL' '
+            BEGIN { n = split(keys, k, " "); for (i = 1; i <= n; i++) set[k[i]] = 1 }
+            { key = $0; sub(/=.*/, "", key) }
+            /^[A-Z_]+=/ && (key in set) { print key "=" ENVIRON[key]; next }
+            { print }
+        ' "$ENV_TEMPLATE"
+    )
+
+    printf '%s\n' "$ENV_CONTENT" | remote sudo -n sh -c "cat > $(printf '%q' "$REMOTE_ENV") \
+        && chown $(printf '%q' "$SITE_USER:$SITE_USER") $(printf '%q' "$REMOTE_ENV") \
+        && chmod 600 $(printf '%q' "$REMOTE_ENV")" \
+        || die "failed to write $REMOTE_ENV"
+    ok "written: environment, security key, robots, database and site URL"
+fi
+
+# --- 6. PHP restart sudoers --------------------------------------------------
+
+heading "6/8 Adding the PHP restart sudoers entry"
 SUDOERS_LINE=$(printf '\n# %s\n%s ALL=NOPASSWD: %s' "$DOMAIN" "$SITE_USER" "$PHP_RESTART")
 if remote sudo -n grep -qE "^$SITE_USER ALL=NOPASSWD: $PHP_RESTART\$" /etc/sudoers.d/iworx-php-restart; then
     ok "entry already present"
@@ -307,9 +351,9 @@ else
     ok "added: $SITE_USER ALL=NOPASSWD: $PHP_RESTART"
 fi
 
-# --- 6. Craft queue cron -----------------------------------------------------
+# --- 7. Craft queue cron -----------------------------------------------------
 
-heading "6/7 Craft queue cron job ($CRON_MINUTE)"
+heading "7/8 Craft queue cron job ($CRON_MINUTE)"
 if [[ "$DO_CRON" == "y" ]]; then
     remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c Cron -a add \
         --interface simple \
@@ -321,9 +365,9 @@ else
     echo "  Skipped."
 fi
 
-# --- 7. GitLab CI variables --------------------------------------------------
+# --- 8. GitLab CI variables --------------------------------------------------
 
-heading "7/7 GitLab CI/CD variables"
+heading "8/8 GitLab CI/CD variables"
 if [[ "$DO_GITLAB" == "y" ]]; then
     "$SCRIPT_DIR/setup_gitlab_ci_vars" "$GITLAB_PROJECT" \
         --scope "$SCOPE" \
@@ -353,7 +397,7 @@ echo -e "     Log in as ${YELLOW}$SITE_USER${NC} at ${YELLOW}https://$SERVER_HOS
 echo -e "     Untick ${YELLOW}www.$DOMAIN${NC} unless it has its own DNS record"
 echo -e "  ${BOLD}3.${NC} Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
 echo -e "  ${BOLD}4.${NC} Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
-echo "     Copy .env.example, then set CRAFT_ENVIRONMENT=production"
+echo "     Fill in the app ID (if blank), email settings and API keys"
 echo -e "  ${BOLD}5.${NC} Deploy from GitLab (the first attempt often fails — fix and retry)"
 echo -e "  ${BOLD}6.${NC} Install or import the Craft database"
 echo ""
