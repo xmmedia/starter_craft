@@ -510,6 +510,18 @@ section handle, no query needed:
   display); `image` is the `logo-og.png` share image
 - Only mark up visible content. Add types (`Event`, `Product`, …) per project as needed
 
+## Development Workflow
+
+1. **Template changes**: edit files in `templates/`; Craft picks them up without a cache clear
+2. **JS/CSS changes**: `lando vite` for HMR; verify with `lando yarn build:check` (see
+   **Frontend** above)
+3. **Fields, sections & entry types**:
+   - Make the change in the Craft admin
+   - Project config auto-saves to `config/project/`; commit the YAML
+   - Other environments apply it with `lando craft up` (the deploy runs it too)
+4. **PHP module changes**: edit `modules/`, then `lando craft clear-caches/all` (and reload
+   PHP-FPM in production)
+
 ## Code Style and Patterns
 
 **Comments** (all languages):

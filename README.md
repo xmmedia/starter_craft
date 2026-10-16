@@ -74,9 +74,9 @@ Running them on the host with `yarn <command>` still works.
 
   - Install JS packages: `lando yarn install`
   - Run all checks & fixes: `bin/check_full`
-    - Runs Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
+    - Runs Composer Normalize, Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
-    - Runs linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
+    - Runs `composer normalize` (dry run), linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
   - Dev JS/CSS server with HMR: `lando vite` (runs `yarn install`, then `yarn dev`, in the `node` container)
     - Assets are proxied through the appserver at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `lando_apache_vite.conf`
     - Stop a server left running in the container: `lando vite-stop`
