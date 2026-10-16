@@ -60,13 +60,17 @@ class ImageTwigExtension extends AbstractExtension
             $attributes['alt'] = $this->resolveAlt($image);
         }
 
+        // only built when the caller hasn't passed one, as each size is its own transform
+        if (!\array_key_exists('srcset', $attributes)) {
+            // craft returns false (bool) when the image is an SVG, so srcset won't be added to the img tag
+            $attributes['srcset'] = $image->getSrcset(['1.5x', '2x', '3x'], $transform);
+        }
+
         $html = Html::tag(
             'img',
             '',
             array_merge([
                 'src'      => $image->getUrl($transform),
-                // craft returns false (bool) when the image is an SVG, so srcset won't be added to the img tag
-                'srcset'   => $image->getSrcset(['1.5x', '2x', '3x'], $transform),
                 'width'    => $image->getWidth($transform),
                 'height'   => $image->getHeight($transform),
                 'loading'  => 'lazy',
