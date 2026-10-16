@@ -16,7 +16,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
    3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
    4. Install PHP packages/vendors: `php composer.phar install`
    5. Add `.env` (copy `.env.example` and update).
-   6. Run `. ./node_setup.sh` (this will setup node & install the JS packages – requires yarn to be installed).
+   6. Run `. ./node_setup.sh` (this will setup node & install the JS packages).
    7. Run `yarn build` (for production) to compile JS & CSS files.
    8. Give executable perms to bin dir: `chmod u+x craft`
    9. Ensure you have lando running.
