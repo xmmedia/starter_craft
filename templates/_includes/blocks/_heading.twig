@@ -21,9 +21,10 @@
 {% set classes = classes | merge(block.classes | explodeClass) %}
 
 {% set heading = block.heading | heading_striptags %}
-{% if block.headingLink.getUrl(false) ?? false %}
+{% set headingUrl = linkUrl(block.headingLink) %}
+{% if headingUrl %}
     {% set heading %}
-        <a href="{{ block.headingLink.getUrl(false) }}">{{ heading }}</a>
+        <a href="{{ headingUrl }}">{{ heading }}</a>
     {% endset %}
 {% endif %}
 

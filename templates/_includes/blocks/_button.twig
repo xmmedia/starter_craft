@@ -12,9 +12,10 @@
 
 {% set wrapperClasses = wrapperClasses | merge(block.classes | explodeClass) %}
 
-{% if block.button.getUrl(false) %}
+{% set buttonUrl = linkUrl(block.button) %}
+{% if buttonUrl %}
     <div class="{{ wrapperClasses | join(' ') }}"{{ blockId(block) }}>
-        <a href="{{ block.button.getUrl(false) }}" class="button">
+        <a href="{{ buttonUrl }}" class="button">
             {{ block.button.label }}
         </a>
     </div>

@@ -13,6 +13,7 @@ declare(strict_types=1);
 namespace modules\xmmodule\twigextensions;
 
 use craft\elements\Entry;
+use craft\fields\data\LinkData;
 use craft\helpers\Html;
 use Twig\Extension\AbstractExtension;
 use Twig\Markup;
@@ -46,6 +47,7 @@ class XmTwigExtension extends AbstractExtension
         return [
             new TwigFunction('blockWidth', $this->blockWidth(...)),
             new TwigFunction('blockId', $this->blockId(...), ['is_safe' => ['html']]),
+            new TwigFunction('linkUrl', $this->linkUrl(...)),
             new TwigFunction('menu', $this->menu(...)),
             new TwigFunction('submenu', $this->submenu(...)),
         ];
@@ -97,11 +99,11 @@ class XmTwigExtension extends AbstractExtension
 
     public function menu(array $items): array
     {
-        $items = array_filter($items, static fn (Entry $item): bool => '' !== $item->menuLink->getUrl(false));
+        $items = array_filter($items, fn (Entry $item): bool => '' !== $this->linkUrl($item->menuLink));
 
         return array_values(array_map(
-            static fn (Entry $item): array => [
-                'url'   => $item->menuLink->getUrl(false),
+            fn (Entry $item): array => [
+                'url'   => $this->linkUrl($item->menuLink),
                 'label' => $item->menuLabel,
             ],
             $items,
@@ -144,22 +146,49 @@ class XmTwigExtension extends AbstractExtension
     }
 
     /**
+     * A Link field's URL for an href: `getUrl(false)`, with phone links through phoneStrip().
+     * Empty when there's no link.
+     */
+    public function linkUrl(?LinkData $link): string
+    {
+        $url = $link?->getUrl(false) ?? '';
+
+        if ('' !== $url && 'tel' === $link->getType()) {
+            return $this->phoneStrip($url);
+        }
+
+        return $url;
+    }
+
+    /**
      * Formats a phone number as E.164 (`+14035555555`), prefixed with `tel:` by default.
      * Pass an empty prefix for the bare number.
      *
      * A 10 digit number without a leading `+` is assumed to be North American and gets
-     * the default country code; anything else is assumed to already include one.
+     * the default country code. Numbers that can't be made E.164 (short codes, local
+     * numbers, pauses or extensions with `,` or `;`) are returned as they are.
      */
     public function phoneStrip(string $phone, ?string $prefix = 'tel', string $defaultCountryCode = '1'): string
     {
         $phone = preg_replace('/^[a-z]+:/i', '', trim($phone));
         $digits = preg_replace('/\D+/', '', $phone);
+        $prefix = $prefix ? $prefix.':' : '';
 
-        if (!str_starts_with($phone, '+') && 10 === \strlen($digits)) {
-            $digits = $defaultCountryCode.$digits;
+        if (!str_contains($phone, ',') && !str_contains($phone, ';')) {
+            if (str_starts_with($phone, '+')) {
+                return $prefix.'+'.$digits;
+            }
+
+            if (10 === \strlen($digits)) {
+                return $prefix.'+'.$defaultCountryCode.$digits;
+            }
+
+            if (\strlen($digits) === 10 + \strlen($defaultCountryCode) && str_starts_with($digits, $defaultCountryCode)) {
+                return $prefix.'+'.$digits;
+            }
         }
 
-        return ($prefix ? $prefix.':' : '').'+'.$digits;
+        return $prefix.$phone;
     }
 
     /**

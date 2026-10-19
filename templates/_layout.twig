@@ -41,7 +41,8 @@
 <div>
     {% block body %}
         {% block header %}
-            {% set menuItems = menus.menuHeader.all() | filter(menuItem => menuItem.menuLink.getUrl(false)) %}
+            {% set menuItems = menus.menuHeader.all() | filter(menuItem => linkUrl(menuItem.menuLink)) %}
+            {% set menuButtonUrl = linkUrl(menus.mainMenuButton) %}
 
             <header class="header">
                 <div class="flex flex-wrap justify-between items-center w-content">
@@ -53,14 +54,14 @@
                         <ul class="flex flex-nowrap gap-8 p-0 list-none">
                             {% for menuItem in menuItems %}
                                 <li class="m-0">
-                                    <a href="{{ menuItem.menuLink.getUrl(false) }}">{{ menuItem.menuLabel }}</a>
+                                    <a href="{{ linkUrl(menuItem.menuLink) }}">{{ menuItem.menuLabel }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
                     </nav>
 
-                    {% if menus.mainMenuButton.getUrl(false) ?? false %}
-                        <a href="{{ menus.mainMenuButton.getUrl(false) }}" class="button hidden md:inline-block">
+                    {% if menuButtonUrl %}
+                        <a href="{{ menuButtonUrl }}" class="button hidden md:inline-block">
                             {{ menus.mainMenuButtonLabel }}
                         </a>
                     {% endif %}
@@ -98,13 +99,13 @@
                     <ul class="flex flex-col gap-4 list-none">
                         {% for menuItem in menuItems %}
                             <li class="m-0">
-                                <a href="{{ menuItem.menuLink.getUrl(false) }}">{{ menuItem.menuLabel }}</a>
+                                <a href="{{ linkUrl(menuItem.menuLink) }}">{{ menuItem.menuLabel }}</a>
                             </li>
                         {% endfor %}
                     </ul>
 
-                    {% if menus.mainMenuButton.getUrl(false) ?? false %}
-                        <a href="{{ menus.mainMenuButton.getUrl(false) }}" class="button mt-8">{{ menus.mainMenuButtonLabel }}</a>
+                    {% if menuButtonUrl %}
+                        <a href="{{ menuButtonUrl }}" class="button mt-8">{{ menus.mainMenuButtonLabel }}</a>
                     {% endif %}
                 </nav>
             </dialog>

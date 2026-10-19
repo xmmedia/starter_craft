@@ -259,7 +259,7 @@ one, `lando craft clear-caches/all` (and a PHP-FPM reload in production).
 
 2. **XmModule** (`modules/xmmodule/XmModule.php`):
    - Twig extension (`twigextensions/XmTwigExtension.php`):
-     - functions — `blockWidth()`, `blockId()`, `menu()`, `submenu()`
+     - functions — `blockWidth()`, `blockId()`, `linkUrl()`, `menu()`, `submenu()`
      - filters — `heading_striptags`, `phone_strip`, `address_format`
    - Validates the shared `elementId` field on save — see **Block element IDs** below
    - `forceLowercaseFilenames()` — lowercases asset filenames and extensions on upload,
@@ -436,17 +436,22 @@ section handle, no query needed:
   covered automatically
 
 **Link fields**:
-- Render a Link field that allows entries/assets with `getUrl(false)`, and check that, not the
-  link itself: `{% if block.heroButton.getUrl(false) ?? false %}<a href="{{ block.heroButton.getUrl(false) }}">`
-- A link to a deleted entry stays a truthy `LinkData` with an empty URL — "required" is only
-  checked on the owner's next save — so `{% if block.link %}` passes and renders `href=""`.
-  `.url` (`getUrl()` with `$anyStatus = true`) also returns the URL of a disabled, pending or
-  expired entry; `getUrl(false)` returns `''` for those
-- `?? false` only on optional fields: devMode's `strict_variables` throws reading off a null
-  link. Required fields can only be empty on content that skipped validation
-- Use `getUrl()` rather than `.value` for the `href` — it appends the URL suffix advanced field
+- Render a Link field with `linkUrl()` (`XmTwigExtension`), set once and checked, not the link
+  itself: `{% set buttonUrl = linkUrl(block.heroButton) %}{% if buttonUrl %}<a href="{{ buttonUrl }}">`
+- It returns `getUrl(false)`, so `''` for a link to a deleted, disabled, pending or expired
+  entry. A null link (an optional field left empty, or an entry type without the field)
+  gives `''` too, so no `?? false` is needed
+- Phone links go through `phone_strip`, so they're E.164 (`tel:+14035555555`) however the
+  editor typed them. Numbers it can't make E.164 — short codes, local numbers, pauses or
+  extensions (`,` `;`) — are left as entered
+- Why not the link itself: a link to a deleted entry stays a truthy `LinkData` with an empty
+  URL — "required" is only checked on the owner's next save — so `{% if block.link %}`
+  passes and renders `href=""`. `.url` (`getUrl()` with `$anyStatus = true`) also returns the
+  URL of a disabled, pending or expired entry, and `.value` drops the URL suffix advanced field
 - Fields limited to url/email/tel (phone, email, directions, social) have no target to lose,
-  so `.url` and a check on the link are fine
+  so `.url` and a check on the link are fine — with `| phone_strip` on the phone ones
+- Phone numbers typed into CKEditor content can't be fixed up this way — enter them as
+  `tel:+1…`
 
 **Queued contact form emails**:
 - Contact form emails go through the queue (`modules/contactformmodule/jobs/SendEmail.php`)

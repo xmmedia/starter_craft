@@ -10,8 +10,9 @@
                 <h2>{{ block.heroSubheading | heading_striptags }}</h2>
             {% endif %}
 
-            {% if block.heroButton.getUrl(false) ?? false %}
-                <a href="{{ block.heroButton.getUrl(false) }}" class="button">
+            {% set buttonUrl = linkUrl(block.heroButton) %}
+            {% if buttonUrl %}
+                <a href="{{ buttonUrl }}" class="button">
                     {{ block.heroButton.label }}
                 </a>
             {% endif %}

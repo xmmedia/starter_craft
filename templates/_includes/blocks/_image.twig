@@ -52,13 +52,14 @@ flex {{ flexJustify }} {{ flexItems }} {{ blockWidth(block) }}
             <{{ headingTag }} class="{{ block.fullWidth ? 'w-full' }} my-0">
         {% endif %}
 
-        {% if block.imageLink.getUrl(false) ?? false %}
-            <a href="{{ block.imageLink.getUrl(false) }}">
+        {% set imageUrl = linkUrl(block.imageLink) %}
+        {% if imageUrl %}
+            <a href="{{ imageUrl }}">
         {% endif %}
 
         {{ image(block.image.one(), imageTransform, { class: (block.fullWidth ? 'w-full') }) }}
 
-        {% if block.imageLink.getUrl(false) ?? false %}
+        {% if imageUrl %}
             </a>
         {% endif %}
 
