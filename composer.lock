@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0b42f1bb4044dc7211f8199f70c49914",
+    "content-hash": "f4c8198f3da3b0a1c50f95a8ed5d84c9",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5569,11 +5569,11 @@
         },
         {
             "name": "stimmt/craft-mcp",
-            "version": "v1.6.3",
+            "version": "v1.7.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/bd2023e4121bd03dfa3b65028938d6ec27bc299f",
-                "reference": "bd2023e4121bd03dfa3b65028938d6ec27bc299f",
+                "url": "https://api.github.com/repos/stimmtdigital/craft-mcp/zipball/8cd369129617063f434a2d182b324d1435f5f5b4",
+                "reference": "8cd369129617063f434a2d182b324d1435f5f5b4",
                 "shasum": ""
             },
             "require": {
@@ -5630,7 +5630,7 @@
                 "issues": "https://github.com/stimmtdigital/craft-mcp/issues",
                 "source": "https://github.com/stimmtdigital/craft-mcp"
             },
-            "time": "2026-10-14T20:07:51+00:00"
+            "time": "2026-10-15T15:08:19+00:00"
         },
         {
             "name": "symfony/clock",
@@ -8531,11 +8531,16 @@
         },
         {
             "name": "symfony/var-dumper",
-            "version": "v5.4.48",
+            "version": "v5.4.54",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/var-dumper.git",
+                "reference": "616f4737ea3396bc09bf9c97a94083192c65af05"
+            },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/42f18f170aa86d612c3559cfb3bd11a375df32c8",
-                "reference": "42f18f170aa86d612c3559cfb3bd11a375df32c8",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/616f4737ea3396bc09bf9c97a94083192c65af05",
+                "reference": "616f4737ea3396bc09bf9c97a94083192c65af05",
                 "shasum": ""
             },
             "require": {
@@ -8545,6 +8550,14 @@
             },
             "conflict": {
                 "symfony/console": "<4.4"
+            },
+            "require-dev": {
+                "ext-iconv": "*",
+                "symfony/console": "^4.4|^5.0|^6.0",
+                "symfony/http-kernel": "^4.4|^5.0|^6.0",
+                "symfony/process": "^4.4|^5.0|^6.0",
+                "symfony/uid": "^5.1|^6.0",
+                "twig/twig": "^2.13|^3.0.4"
             },
             "suggest": {
                 "ext-iconv": "To convert non-UTF-8 strings to UTF-8 (or symfony/polyfill-iconv in case ext-iconv cannot be used).",
@@ -8566,6 +8579,7 @@
                     "/Tests/"
                 ]
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -8585,7 +8599,28 @@
                 "debug",
                 "dump"
             ],
-            "time": "2024-11-08T15:21:10+00:00"
+            "support": {
+                "source": "https://github.com/symfony/var-dumper/tree/v5.4.54"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-08-30T20:10:04+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -8828,11 +8863,11 @@
         },
         {
             "name": "verbb/field-manager",
-            "version": "4.0.9",
+            "version": "4.0.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/8bceeabe664504a178caf429ea8d890107688d92",
-                "reference": "8bceeabe664504a178caf429ea8d890107688d92",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/0393e9d9c8e4a0b8522de38191f2e6257ca4725d",
+                "reference": "0393e9d9c8e4a0b8522de38191f2e6257ca4725d",
                 "shasum": ""
             },
             "require": {
@@ -8876,7 +8911,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2026-10-07T09:03:33+00:00"
+            "time": "2026-10-22T04:27:52+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

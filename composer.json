@@ -14,8 +14,8 @@
         "ether/seo": "^5.0.0",
         "hybridinteractive/craft-contact-form-extensions": "^5.1.0",
         "nystudio107/craft-vite": "^5.0.2",
-        "stimmt/craft-mcp": "^1.6.3",
-        "verbb/field-manager": "^4.0.9",
+        "stimmt/craft-mcp": "^1.7.1",
+        "verbb/field-manager": "^4.0.10",
         "vlucas/phpdotenv": "^5.4",
         "wrav/oembed": "^3.2.2"
     },
