@@ -2,6 +2,7 @@ import { defineConfig, globalIgnores } from 'eslint/config';
 import globals from 'globals';
 import js from '@eslint/js';
 import pluginVue from 'eslint-plugin-vue';
+import stylistic from '@stylistic/eslint-plugin';
 
 export default defineConfig([
     globalIgnores([
@@ -38,18 +39,21 @@ export default defineConfig([
     },
 
     {
+        plugins: {
+            '@stylistic': stylistic,
+        },
         rules: {
             "no-console": "error",
             "no-debugger": "error",
 
-            "max-len": ["error", {
+            "@stylistic/max-len": ["error", {
                 "code": 120,
                 "ignoreComments": true,
                 "ignoreUrls": true,
                 "ignoreStrings": true,
             }],
 
-            "comma-dangle": ["error", {
+            "@stylistic/comma-dangle": ["error", {
                 "arrays": "always-multiline",
                 "objects": "always-multiline",
                 "imports": "always-multiline",
@@ -58,7 +62,7 @@ export default defineConfig([
             }],
 
             "vue/multi-word-component-names": "off",
-            "space-before-function-paren": ["error", "always"],
+            "@stylistic/space-before-function-paren": ["error", "always"],
 
             "vue/max-attributes-per-line": ["error", {
                 "singleline": 5,
