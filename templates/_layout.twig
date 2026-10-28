@@ -54,7 +54,7 @@
                         <ul class="flex flex-nowrap gap-8 p-0 list-none">
                             {% for menuItem in menuItems %}
                                 <li class="m-0">
-                                    <a href="{{ menuItem.url }}">{{ menuItem.label }}</a>
+                                    <a href="{{ menuItem.url }}"{% if menuItem.ariaCurrent %} aria-current="{{ menuItem.ariaCurrent }}"{% endif %}>{{ menuItem.label }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -99,7 +99,7 @@
                     <ul class="flex flex-col gap-4 list-none">
                         {% for menuItem in menuItems %}
                             <li class="m-0">
-                                <a href="{{ menuItem.url }}">{{ menuItem.label }}</a>
+                                <a href="{{ menuItem.url }}"{% if menuItem.ariaCurrent %} aria-current="{{ menuItem.ariaCurrent }}"{% endif %}>{{ menuItem.label }}</a>
                             </li>
                         {% endfor %}
                     </ul>

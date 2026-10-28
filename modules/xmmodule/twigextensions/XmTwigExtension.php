@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace modules\xmmodule\twigextensions;
 
+use craft\base\ElementInterface;
 use craft\elements\Entry;
 use craft\fields\data\LinkData;
 use craft\helpers\Html;
@@ -97,17 +98,67 @@ class XmTwigExtension extends AbstractExtension
         return Html::renderTagAttributes(['id' => $block->elementId]);
     }
 
+    /**
+     * @param Entry[] $items
+     */
     public function menu(array $items): array
     {
-        $items = array_filter($items, fn (Entry $item): bool => '' !== $this->linkUrl($item->menuLink));
+        $menu = [];
+        $current = $this->currentElement();
 
-        return array_values(array_map(
-            fn (Entry $item): array => [
-                'url'   => $this->linkUrl($item->menuLink),
-                'label' => $item->menuLabel,
-            ],
-            $items,
-        ));
+        foreach ($items as $item) {
+            $url = $this->linkUrl($item->menuLink);
+
+            if ('' === $url) {
+                continue;
+            }
+
+            $menu[] = [
+                'url'         => $url,
+                'label'       => $item->menuLabel,
+                'ariaCurrent' => $this->ariaCurrent($item->menuLink->getElement(), $current),
+            ];
+        }
+
+        return $menu;
+    }
+
+    /**
+     * Uses the canonical element, so a draft in live preview matches the entry the menu
+     * links to. Nothing is current on an error page, even when the request matched an
+     * element (eg. its template is missing).
+     */
+    private function currentElement(): ?ElementInterface
+    {
+        $element = \Craft::$app->getUrlManager()->getMatchedElement();
+
+        if (!$element) {
+            return null;
+        }
+
+        $response = \Craft::$app->getResponse();
+
+        if ($response->getIsClientError() || $response->getIsServerError()) {
+            return null;
+        }
+
+        return $element->getCanonical();
+    }
+
+    /**
+     * A link to an ancestor gets `true`: `page` would announce the section as the current page.
+     */
+    private function ariaCurrent(?ElementInterface $linked, ?ElementInterface $current): ?string
+    {
+        if (null === $linked || null === $current) {
+            return null;
+        }
+
+        if ($linked->id === $current->id) {
+            return 'page';
+        }
+
+        return $linked->isAncestorOf($current) ? 'true' : null;
     }
 
     public function submenu(array $subpages): array

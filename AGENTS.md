@@ -399,7 +399,23 @@ section handle, no query needed:
   `_includes/_meta.twig`)
 - `socialMedia` — Matrix of platform + profile URL (`_includes/_social_media.twig`)
 - `menus` — `menuHeader` / `menuFooter` Matrixes plus `mainMenuButton` /
-  `mainMenuButtonLabel`; the `menu()` and `submenu()` Twig functions render from these
+  `mainMenuButtonLabel`; `menu()` renders the Matrixes (see **Menus** below)
+
+**Menus**:
+- `menu(menus.menuHeader.all())` returns `{ url, label, ariaCurrent }` per item, dropping
+  items whose link has no URL (via `linkUrl()`). `_layout.twig` renders both the desktop nav
+  and the mobile dialog from it. Anything else a project needs from the item (the linked
+  element, a class) gets added to `menu()`'s array
+- `ariaCurrent` goes straight into the attribute:
+  `{% if menuItem.ariaCurrent %} aria-current="{{ menuItem.ariaCurrent }}"{% endif %}`.
+  It's `page` on the linked entry's own page, `true` on its descendants (so a section
+  stays marked on its sub-pages), otherwise null. Style with `[aria-current]` to cover both
+- Matched by element, not URL: the link's element against the request's matched element
+  (canonical, so live preview drafts match), with `isAncestorOf()` for sub-pages. So
+  **custom URL links are never marked current** — link to the entry instead. Nothing is
+  marked on a 4xx/5xx response, even when an element was matched
+- `submenu(pages)` returns `{ id, title, url }` per entry (`menuLabel` falling back to
+  the title), for a section sub-nav built from a structure; the starter doesn't call it
 
 **Blocks**:
 - Pages are built from a `blocks` Matrix field; `templates/_includes/_blocks.twig` loops
