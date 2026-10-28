@@ -1,8 +1,5 @@
 <?php
 
-use HTMLPurifier_Config;
-use HTMLPurifier_Filter;
-
 // Preserve soft hyphens (&shy;) which HTMLPurifier strips by default
 $softHyphenFilter = new class () extends HTMLPurifier_Filter {
     public $name = 'SoftHyphen';
