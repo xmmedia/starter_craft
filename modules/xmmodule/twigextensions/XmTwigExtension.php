@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace modules\xmmodule\twigextensions;
 
+use craft\base\Element;
 use craft\base\ElementInterface;
 use craft\elements\Entry;
 use craft\fields\data\LinkData;
@@ -154,7 +155,7 @@ class XmTwigExtension extends AbstractExtension
             return null;
         }
 
-        if ($linked->id === $current->id) {
+        if ($linked->getCanonicalId() === $current->id) {
             return 'page';
         }
 
@@ -204,11 +205,35 @@ class XmTwigExtension extends AbstractExtension
     {
         $url = $link?->getUrl(false) ?? '';
 
+        if ('' === $url && $this->isPreviewPlaceholderOfLiveEntry($link?->getElement())) {
+            $url = $link->getUrl();
+        }
+
         if ('' !== $url && 'tel' === $link->getType()) {
             return $this->phoneStrip($url);
         }
 
         return $url;
+    }
+
+    /**
+     * Live preview registers the previewed draft as a placeholder, which element queries
+     * (links included) return in place of its entry, and getUrl(false) drops a draft.
+     * Only this request's placeholder counts, and only while its entry is live.
+     */
+    private function isPreviewPlaceholderOfLiveEntry(?ElementInterface $element): bool
+    {
+        if (null === $element) {
+            return false;
+        }
+
+        $placeholder = \Craft::$app->getElements()->getPlaceholderElement($element->getCanonicalId(), $element->siteId);
+
+        if ($placeholder?->id !== $element->id) {
+            return false;
+        }
+
+        return \in_array($element->getCanonical()->getStatus(), [Element::STATUS_ENABLED, Entry::STATUS_LIVE], true);
     }
 
     /**

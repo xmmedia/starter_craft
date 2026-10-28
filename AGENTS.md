@@ -458,6 +458,10 @@ section handle, no query needed:
 - It returns `getUrl(false)`, so `''` for a link to a deleted, disabled, pending or expired
   entry. A null link (an optional field left empty, or an entry type without the field)
   gives `''` too, so no `?? false` is needed
+- Live preview registers the previewed draft as a placeholder, which element queries — link
+  fields included — return in place of its entry. `getUrl(false)` drops a draft, so links to
+  the previewed page would vanish; `linkUrl()` keeps them when the linked element is this
+  request's placeholder and its entry is live
 - Phone links go through `phone_strip`, so they're E.164 (`tel:+14035555555`) however the
   editor typed them. Numbers it can't make E.164 — short codes, local numbers, pauses or
   extensions (`,` `;`) — are left as entered
