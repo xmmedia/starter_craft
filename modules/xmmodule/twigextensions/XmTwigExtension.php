@@ -198,8 +198,8 @@ class XmTwigExtension extends AbstractExtension
     }
 
     /**
-     * A Link field's URL for an href: `getUrl(false)`, with phone links through phoneStrip().
-     * Empty when there's no link.
+     * A Link field's URL for an href: `getUrl(false)`, with phone links through phoneStrip(),
+     * keeping links to the previewed page in live preview. Empty when there's no link.
      */
     public function linkUrl(?LinkData $link): string
     {
@@ -217,19 +217,12 @@ class XmTwigExtension extends AbstractExtension
     }
 
     /**
-     * Live preview registers the previewed draft as a placeholder, which element queries
-     * (links included) return in place of its entry, and getUrl(false) drops a draft.
-     * Only this request's placeholder counts, and only while its entry is live.
+     * Live preview registers the previewed element as a placeholder, which element queries
+     * (links included) return in place of its entry, and getUrl(false) drops a saved draft.
      */
     private function isPreviewPlaceholderOfLiveEntry(?ElementInterface $element): bool
     {
-        if (null === $element) {
-            return false;
-        }
-
-        $placeholder = \Craft::$app->getElements()->getPlaceholderElement($element->getCanonicalId(), $element->siteId);
-
-        if ($placeholder?->id !== $element->id) {
+        if (!$element instanceof Element || !$element->previewing) {
             return false;
         }
 
