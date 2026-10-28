@@ -41,7 +41,7 @@
 <div>
     {% block body %}
         {% block header %}
-            {% set menuItems = menus.menuHeader.all() | filter(menuItem => linkUrl(menuItem.menuLink)) %}
+            {% set menuItems = menu(menus.menuHeader.all()) %}
             {% set menuButtonUrl = linkUrl(menus.mainMenuButton) %}
 
             <header class="header">
@@ -54,7 +54,7 @@
                         <ul class="flex flex-nowrap gap-8 p-0 list-none">
                             {% for menuItem in menuItems %}
                                 <li class="m-0">
-                                    <a href="{{ linkUrl(menuItem.menuLink) }}">{{ menuItem.menuLabel }}</a>
+                                    <a href="{{ menuItem.url }}">{{ menuItem.label }}</a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -99,7 +99,7 @@
                     <ul class="flex flex-col gap-4 list-none">
                         {% for menuItem in menuItems %}
                             <li class="m-0">
-                                <a href="{{ linkUrl(menuItem.menuLink) }}">{{ menuItem.menuLabel }}</a>
+                                <a href="{{ menuItem.url }}">{{ menuItem.label }}</a>
                             </li>
                         {% endfor %}
                     </ul>
