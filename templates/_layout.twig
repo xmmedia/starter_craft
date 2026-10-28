@@ -119,7 +119,21 @@
         {% endblock content_wrap %}
 
         {% block footer %}
+            {% set footerItems = menu(menus.menuFooter.all()) %}
+
             <footer class="footer">
+                {% if footerItems is not empty %}
+                    <nav aria-label="Footer">
+                        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2 p-0 list-none">
+                            {% for menuItem in footerItems %}
+                                <li class="m-0">
+                                    <a href="{{ menuItem.url }}">{{ menuItem.label }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </nav>
+                {% endif %}
+
                 {% include '_includes/_social_media.twig' %}
 
                 <address class="flex flex-col gap-1 my-4">

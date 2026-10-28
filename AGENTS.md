@@ -403,8 +403,9 @@ section handle, no query needed:
 
 **Menus**:
 - `menu(menus.menuHeader.all())` returns `{ url, label, ariaCurrent }` per item, dropping
-  items whose link has no URL (via `linkUrl()`). `_layout.twig` renders both the desktop nav
-  and the mobile dialog from it. Anything else a project needs from the item (the linked
+  items whose link has no URL (via `linkUrl()`). `_layout.twig` renders the desktop nav and
+  the mobile dialog from `menuHeader`, and the footer nav from `menuFooter` (without
+  `aria-current`). Anything else a project needs from the item (the linked
   element, a class) gets added to `menu()`'s array
 - `ariaCurrent` goes straight into the attribute:
   `{% if menuItem.ariaCurrent %} aria-current="{{ menuItem.ariaCurrent }}"{% endif %}`.
