@@ -76,7 +76,7 @@ project, read them from the files listed:
 
 - PHP 8.5+
 - MySQL 8.4
-- Node 24
+- Node 26
 - [Yarn v4](https://yarnpkg.com/en/docs/install)
 
 ## Development Commands
@@ -165,7 +165,7 @@ container dies on a missing `@rolldown/binding-linux-*`.
 - **Rebuild**: `lando rebuild` — needed after any change under `config:` or a service's
   `ports:`; `lando start` isn't enough. Rebuilding also recreates the appserver container,
   so run `lando start` afterwards or the app 404s
-- **Node/Vite**: the `node` service (`node:24`, `ssl: true`; publishes only 9528 for
+- **Node/Vite**: the `node` service (`node:26`, `ssl: true`; publishes only 9528 for
   `yarn preview`) — see **Frontend** above for `lando yarn` / `lando vite` / `lando vite-stop`
 
 ## Architecture Overview

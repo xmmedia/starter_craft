@@ -43,7 +43,7 @@ services:
     hosts:
       - database
   node:
-    type: node:24
+    type: node:26
     ssl: true
     sslExpose: false
     ports:

@@ -61,7 +61,7 @@ Related scripts:
 
   - PHP 8.5+
   - MySQL 8.4
-  - Node 24
+  - Node 26
   - [Yarn v4](https://yarnpkg.com/en/docs/install)
 
 ## Commands
