@@ -52,11 +52,6 @@ services:
       - '9528:9528'
     # note: the Vite port is deliberately NOT published — the appserver proxies to it over
     # the internal network, and publishing it would shadow a host-run `yarn dev`
-    build:
-      - corepack enable
-    overrides:
-      environment:
-        COREPACK_ENABLE_DOWNLOAD_PROMPT: '0'
 proxy:
   appserver:
     # @todo-craft update
