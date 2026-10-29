@@ -1,6 +1,6 @@
 columnSuffix: zezbhvxw
 handle: elementId
-instructions: 'Used for referencing the section so the page scrolls to that section.'
+instructions: 'Add this to a link (e.g. `/about#our-staff`) to jump to this section. Start with a letter, then use only letters, numbers, hyphens (-) and underscores (_), with no spaces.'
 name: 'Element ID'
 searchable: false
 settings:

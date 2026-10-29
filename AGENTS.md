@@ -261,7 +261,8 @@ one, `lando craft clear-caches/all` (and a PHP-FPM reload in production).
    - Twig extension (`twigextensions/XmTwigExtension.php`):
      - functions — `blockWidth()`, `blockId()`, `linkUrl()`, `menu()`, `submenu()`
      - filters — `heading_striptags`, `phone_strip`, `address_format`
-   - Validates the shared `elementId` field on save — see **Block element IDs** below
+   - Validates the shared `elementId` field on save, and shows the block's link under it
+     in the CP — see **Block element IDs** below
    - `forceLowercaseFilenames()` — lowercases asset filenames and extensions on upload,
      rename, move and replace, while the asset *title* keeps its original casing (the cased
      name is carried between the two events it hooks)
@@ -451,6 +452,10 @@ section handle, no query needed:
   hyphens, underscores) so the value always works in a URL fragment and a CSS selector
   unescaped. Applied to any entry whose layout has the field, so new block types are
   covered automatically
+- `XmModule::previewElementIdUrls()` shows the block's link (page URL + `#id`) under the
+  field, with Craft's copy button, once the ID is valid. It updates as the editor types
+  (`assetbundles/elementidpreview/`). The URL is the live page's; an unsaved page shows
+  only `#id`. The validation and the preview share `ELEMENT_ID_PATTERN`
 
 **Link fields**:
 - Render a Link field with `linkUrl()` (`XmTwigExtension`), set once and checked, not the link

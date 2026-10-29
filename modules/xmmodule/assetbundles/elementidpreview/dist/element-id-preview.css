@@ -1,0 +1,27 @@
+[data-element-id-preview] [data-url] {
+    margin-top: 4px;
+}
+
+/* .flex would otherwise override [hidden] */
+[data-element-id-preview] [data-url][hidden] {
+    display: none;
+}
+
+[data-element-id-preview] [data-url] > span {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+/* Craft fixes the button's height for a short ID; let a long URL wrap inside it */
+[data-element-id-preview] craft-copy-attribute {
+    min-width: 0;
+    height: auto;
+}
+
+/* the copy button centres its text; a long URL reads better left aligned */
+[data-element-id-preview] craft-copy-attribute button {
+    min-height: 1.375rem;
+    padding-block: 2px;
+    text-align: start;
+    overflow-wrap: anywhere;
+}

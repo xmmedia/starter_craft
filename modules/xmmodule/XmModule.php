@@ -13,19 +13,26 @@ declare(strict_types=1);
 namespace modules\xmmodule;
 
 use craft\base\Element;
+use craft\base\Field;
 use craft\base\Model;
+use craft\base\NestedElementInterface;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\AssetEvent;
 use craft\events\DefineAttributeHtmlEvent;
+use craft\events\DefineFieldHtmlEvent;
 use craft\events\DefineRulesEvent;
 use craft\events\RegisterElementSortOptionsEvent;
 use craft\events\RegisterElementTableAttributesEvent;
 use craft\events\SetAssetFilenameEvent;
+use craft\fields\PlainText;
 use craft\helpers\Assets as AssetsHelper;
+use craft\helpers\ElementHelper;
 use craft\helpers\Html;
 use craft\helpers\StringHelper;
 use craft\mail\Mailer;
+use craft\web\View;
+use modules\xmmodule\assetbundles\elementidpreview\ElementIdPreviewAsset;
 use modules\xmmodule\twigextensions\XmTwigExtension;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
@@ -51,6 +58,14 @@ class XmModule extends BaseModule
      */
     private array $assetBasenames = [];
 
+    /**
+     * What an Element ID may be: a letter, then letters/numbers/hyphens/underscores.
+     * Without delimiters so the CP's JS can use it as well.
+     *
+     * @see validateElementIds()
+     */
+    private const string ELEMENT_ID_PATTERN = '^[A-Za-z][A-Za-z0-9_-]*$';
+
     #[\Override]
     public function init(): void
     {
@@ -69,6 +84,7 @@ class XmModule extends BaseModule
         $this->forceLowercaseFilenames();
         $this->addAssetExtensionColumn();
         $this->validateElementIds();
+        $this->previewElementIdUrls();
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
@@ -150,7 +166,7 @@ class XmModule extends BaseModule
             $event->rules[] = [
                 ['elementId'],
                 'match',
-                'pattern' => '/^[A-Za-z][A-Za-z0-9_-]*$/',
+                'pattern' => '/'.self::ELEMENT_ID_PATTERN.'/',
                 'skipOnEmpty' => true,
                 // Not SCENARIO_ESSENTIALS: that's what the CP autosaves drafts under
                 // (ElementsController::actionCreate()), and Matrix passes the owner's scenario
@@ -160,6 +176,53 @@ class XmModule extends BaseModule
                 'message' => 'The Element ID must start with a letter and contain only letters, '
                     .'numbers, hyphens and underscores — no spaces.',
             ];
+        });
+    }
+
+    /**
+     * Shows the link to the block under the Element ID input, e.g. `https://…/about#staff`,
+     * with a copy button.
+     *
+     * The URL is the live page's, so a slug changed in an unsaved draft isn't reflected.
+     * When the page has no URL yet (unsaved, or a section without URLs) only the `#…` part
+     * is shown.
+     */
+    private function previewElementIdUrls(): void
+    {
+        Event::on(PlainText::class, Field::EVENT_DEFINE_INPUT_HTML, static function (DefineFieldHtmlEvent $event): void {
+            if ('elementId' !== $event->sender->handle || $event->inline) {
+                return;
+            }
+
+            $element = $event->element;
+            // a block that's just been added may not know its owner yet
+            $owner = $element instanceof NestedElementInterface ? $element->getOwner() : $element;
+            $owner = $owner?->getCanonical();
+
+            $url = '';
+
+            if ($owner && !ElementHelper::isTempSlug($owner->slug)) {
+                $url = $owner->getUrl() ?? '';
+            }
+
+            $id = trim((string) $event->value);
+
+            $view = \Craft::$app->getView();
+            $link = $url.'#'.$id;
+            $preview = Html::tag(
+                'div',
+                Html::tag('span', \Craft::t('app', 'Link to this section:'), ['class' => 'light'])
+                // the CP's own copy button, as used for IDs & URLs in the element sidebar
+                .$view->renderTemplate('_includes/forms/copytextbtn.twig', ['value' => $link], View::TEMPLATE_MODE_CP),
+                [
+                    'class' => ['flex', 'flex-nowrap', 'smalltext'],
+                    'data' => ['url' => $url, 'pattern' => self::ELEMENT_ID_PATTERN],
+                    'hidden' => 1 !== preg_match('/'.self::ELEMENT_ID_PATTERN.'/', $id),
+                ],
+            );
+            $event->html = Html::tag('div', $event->html.$preview, ['data-element-id-preview' => true]);
+
+            $view->registerAssetBundle(ElementIdPreviewAsset::class);
         });
     }
 
