@@ -2,7 +2,7 @@
 # Provisions a new dev/staging site end to end.
 #
 # Orchestrates the steps from the "New Dev/Staging Site" Notion doc:
-#   1. Create the 1Password server + database items (you fill in the passwords)
+#   1. Create the 1Password server + database items, with generated passwords
 #   2. Create the SiteWorx account (InterWorx nodeworx CLI, over ssh)
 #   3. Create the database + database user
 #   4. Upload and run setup_server.sh as the site user
@@ -17,7 +17,7 @@
 #
 # Prerequisites:
 #   - ssh access to the server via a configured ssh Host, with passwordless sudo
-#   - op CLI signed in (op signin), glab authenticated, jq installed
+#   - op CLI signed in (op signin), glab authenticated, jq & openssl installed
 #
 # Usage: bin/provision_site
 set -euo pipefail
@@ -85,6 +85,31 @@ rq() {
 # remote <command> [args…] — runs a single command on the server
 remote() { ssh "$SSH_HOST" "$(rq "$@")"; }
 
+# generate_password — 32 letters & digits
+generate_password() {
+    local value
+    value=$(openssl rand -base64 64 | tr -dc 'A-Za-z0-9' | cut -c1-32)
+    [[ ${#value} -eq 32 ]] || die "failed to generate a password"
+    printf '%s' "$value"
+}
+
+# create_op_item <password> <op item create args…> — prints the new item's id.
+# The password goes in through a piped edit, as op only generates passwords for
+# Login & Password items and assignment arguments show in the process list.
+create_op_item() {
+    local password="$1" item id
+    shift
+    item=$(op item create "$@" --format json) || die "failed to create the 1Password item"
+    id=$(jq -r '.id' <<<"$item")
+    if ! PASSWORD="$password" jq '(.fields[] | select(.id == "password")).value = env.PASSWORD' <<<"$item" \
+            | op item edit "$id" --vault "$OP_VAULT" >/dev/null \
+        || [[ "$(op item get "$id" --vault "$OP_VAULT" --fields password --reveal)" != "$password" ]]; then
+        op item delete "$id" --vault "$OP_VAULT" >/dev/null 2>&1 || true
+        die "failed to set the password on the 1Password item — item removed"
+    fi
+    printf '%s' "$id"
+}
+
 # --- Preflight ---------------------------------------------------------------
 
 command -v op   >/dev/null 2>&1 || die "op CLI not installed. Run: brew install 1password-cli"
@@ -130,8 +155,9 @@ DB_NAME="${SITE_USER}_${SITE_TYPE}"
 SITE_BASE="/home/$SITE_USER/$DOMAIN"
 
 # Verify the account doesn't already exist
-if remote sudo -n "$NODEWORX" -u -n -c Siteworx -a listAccounts \
-        | awk -F'\t' -v d="$DOMAIN" -v u="$SITE_USER" '$2==u || $10==d {found=1} END {exit !found}'; then
+ACCOUNTS=$(remote sudo -n "$NODEWORX" -u -n -c Siteworx -a listAccounts) \
+    || die "failed to list the SiteWorx accounts on $SSH_HOST"
+if awk -F'\t' -v d="$DOMAIN" -v u="$SITE_USER" '$2==u || $10==d {found=1} END {exit !found}' <<<"$ACCOUNTS"; then
     die "a SiteWorx account for '$DOMAIN' or user '$SITE_USER' already exists on $SSH_HOST"
 fi
 
@@ -180,6 +206,9 @@ confirm "Proceed? Everything after this point makes changes." n || { echo "Abort
 # --- 1. 1Password items ------------------------------------------------------
 
 heading "1/8 Creating 1Password items"
+SITE_PASSWORD=$(generate_password)
+DB_PASSWORD=$(generate_password)
+
 OP_ARGS=(--category server --title "$DOMAIN" --vault "$OP_VAULT"
     "username=$SITE_USER"
     'port[text]=10022'
@@ -187,7 +216,7 @@ OP_ARGS=(--category server --title "$DOMAIN" --vault "$OP_VAULT"
     "domain[text]=$DOMAIN"
     "url[text]=$SERVER_HOST")
 if [[ -n "$OP_TAG" ]]; then OP_ARGS+=(--tags "$OP_TAG"); fi
-OP_SERVER_ID=$(op item create "${OP_ARGS[@]}" --format json | jq -r '.id')
+OP_SERVER_ID=$(create_op_item "$SITE_PASSWORD" "${OP_ARGS[@]}")
 ok "server item: $OP_SERVER_ID"
 
 OP_ARGS=(--category database --title "$DOMAIN" --vault "$OP_VAULT"
@@ -197,30 +226,8 @@ OP_ARGS=(--category database --title "$DOMAIN" --vault "$OP_VAULT"
     'port[text]=3306'
     'database_type[text]=MySQL')
 if [[ -n "$OP_TAG" ]]; then OP_ARGS+=(--tags "$OP_TAG"); fi
-OP_DB_ID=$(op item create "${OP_ARGS[@]}" --format json | jq -r '.id')
+OP_DB_ID=$(create_op_item "$DB_PASSWORD" "${OP_ARGS[@]}")
 ok "database item: $OP_DB_ID"
-
-echo ""
-echo -e "${BOLD}${YELLOW}Set the passwords on both items in 1Password now.${NC}"
-echo "  Use ~30 characters. Symbols are fine for the SiteWorx account; for the"
-echo "  database, be careful — they can be awkward in the .env file."
-echo ""
-read -r -p "  Press Enter once both passwords are saved… "
-
-read_op_password() {
-    local id="$1" label="$2" value
-    while true; do
-        value=$(op item get "$id" --vault "$OP_VAULT" --fields password --reveal 2>/dev/null || true)
-        [[ -n "$value" ]] && break
-        warn "no password set on the $label item yet."
-        read -r -p "  Press Enter to check again… "
-    done
-    printf '%s' "$value"
-}
-
-SITE_PASSWORD=$(read_op_password "$OP_SERVER_ID" "server")
-DB_PASSWORD=$(read_op_password "$OP_DB_ID" "database")
-ok "passwords read from 1Password"
 
 # --- 2. SiteWorx account -----------------------------------------------------
 
@@ -246,6 +253,7 @@ done < <(tr ',' '\n' <<<"$PACKAGE_OPTS")
 
 IPV4=$(remote sudo -n "$NODEWORX" -u -n -c Siteworx -a add --help \
     | awk '/^--master_domain_ipv4/ {print $NF}' | cut -d'|' -f1)
+[[ -n "$IPV4" ]] || die "could not determine the IPv4 address for the account on $SSH_HOST"
 
 remote sudo -n "$NODEWORX" -u -n -c Siteworx -a add \
     --master_domain "$DOMAIN" \
@@ -288,7 +296,7 @@ REAL_BASE=$(remote sudo -n "$NODEWORX" -u -n -c Siteworx -a listAccounts \
 [[ -n "$REAL_BASE" ]] || die "could not determine the site path for '$SITE_USER' on $SSH_HOST"
 echo "  Site path on server: $REAL_BASE"
 
-REMOTE_TMP="/tmp/setup_server.$$.sh"
+REMOTE_TMP=$(remote mktemp) || die "failed to create a temp file on $SSH_HOST"
 scp -q "$SCRIPT_DIR/setup_server.sh" "$SSH_HOST:$REMOTE_TMP" || die "failed to copy setup_server.sh"
 remote sudo -n install -o "$SITE_USER" -g "$SITE_USER" -m 755 \
     "$REMOTE_TMP" "$REAL_BASE/setup_server.sh" \
@@ -308,13 +316,6 @@ if remote sudo -n test -s "$REMOTE_ENV"; then
     warn "$REMOTE_ENV already has content — left as is."
 else
     [[ "$SCOPE" == "production" ]] && DISALLOW_ROBOTS=false || DISALLOW_ROBOTS=true
-    # Single quotes so phpdotenv takes the password literally — which can't hold a '.
-    if [[ "$DB_PASSWORD" == *"'"* ]]; then
-        warn "the database password contains a ' — set CRAFT_DB_PASSWORD in .env by hand."
-        ENV_DB_PASSWORD=''
-    else
-        ENV_DB_PASSWORD="'$DB_PASSWORD'"
-    fi
 
     ENV_CONTENT=$(
         CRAFT_ENVIRONMENT=production \
@@ -322,7 +323,7 @@ else
         DISALLOW_ROBOTS="$DISALLOW_ROBOTS" \
         CRAFT_DB_DATABASE="$DB_NAME" \
         CRAFT_DB_USER="$DB_NAME" \
-        CRAFT_DB_PASSWORD="$ENV_DB_PASSWORD" \
+        CRAFT_DB_PASSWORD="'$DB_PASSWORD'" \
         PRIMARY_SITE_URL="\"https://$DOMAIN/\"" \
         awk -v keys='CRAFT_ENVIRONMENT CRAFT_SECURITY_KEY DISALLOW_ROBOTS CRAFT_DB_DATABASE CRAFT_DB_USER CRAFT_DB_PASSWORD PRIMARY_SITE_URL' '
             BEGIN { n = split(keys, k, " "); for (i = 1; i <= n; i++) set[k[i]] = 1 }
@@ -332,9 +333,14 @@ else
         ' "$ENV_TEMPLATE"
     )
 
-    printf '%s\n' "$ENV_CONTENT" | remote sudo -n sh -c "cat > $(printf '%q' "$REMOTE_ENV") \
-        && chown $(printf '%q' "$SITE_USER:$SITE_USER") $(printf '%q' "$REMOTE_ENV") \
-        && chmod 600 $(printf '%q' "$REMOTE_ENV")" \
+    # Written to a temp file beside it & moved into place, so a failed write can't leave a
+    # partial file (which the next run would skip)
+    printf '%s\n' "$ENV_CONTENT" | remote sudo -n sh -c "tmp=\$(mktemp $(printf '%q' "$REMOTE_ENV").XXXXXX) \
+        && chown $(printf '%q' "$SITE_USER:$SITE_USER") \"\$tmp\" \
+        && chmod 600 \"\$tmp\" \
+        && cat > \"\$tmp\" \
+        && mv \"\$tmp\" $(printf '%q' "$REMOTE_ENV") \
+        || { rm -f \"\$tmp\"; exit 1; }" \
         || die "failed to write $REMOTE_ENV"
     ok "written: environment, security key, robots, database and site URL"
 fi
@@ -355,12 +361,14 @@ fi
 
 heading "7/8 Craft queue cron job ($CRON_MINUTE)"
 if [[ "$DO_CRON" == "y" ]]; then
-    remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c Cron -a add \
+    if remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c Cron -a add \
         --interface simple \
         --minute "$CRON_MINUTE" --hour '*' --day '*' --month '*' --dayofweek '*' \
-        --script "cd $SITE_BASE/current && MAGICK_DISK_LIMIT=0 flock -n storage/queue.lock ./craft queue/run 2>&1" \
-        || warn "failed to add the cron job — add it in SiteWorx instead"
-    ok "cron job added"
+        --script "cd $SITE_BASE/current && MAGICK_DISK_LIMIT=0 flock -n storage/queue.lock ./craft queue/run 2>&1"; then
+        ok "cron job added"
+    else
+        warn "failed to add the cron job — add it in SiteWorx instead"
+    fi
 else
     echo "  Skipped."
 fi
@@ -384,6 +392,9 @@ fi
 
 echo ""
 echo -e "${GREEN}Done!${NC}"
+echo ""
+echo -e "  The SiteWorx and database passwords are in 1Password: vault ${YELLOW}$OP_VAULT${NC},"
+echo -e "  the server and database items titled ${YELLOW}$DOMAIN${NC}."
 echo ""
 echo ""
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
