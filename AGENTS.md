@@ -248,7 +248,7 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
 ### Custom Modules
 
 The application bootstraps four custom Yii2 modules in `config/app.php`. After editing
-one, `lando craft clear-caches/all` (and a PHP-FPM reload in production).
+one, `lando craft clear-caches/all`.
 
 1. **ContactFormModule** (`modules/contactformmodule/ContactFormModule.php`):
    - Sets from address to default mailer from
@@ -339,7 +339,7 @@ one, `lando craft clear-caches/all` (and a PHP-FPM reload in production).
 - **Deploy stages**: Staging and Production, both `when: manual`, and only on the
   `master` branch (`@todo-craft` — update if the project's main branch differs)
 - Deploy jobs rsync to a timestamped release, symlink the shared folders into it, flip
-  `current`, then `craft up` + clear caches + reload PHP-FPM, keeping the 2 most recent
+  `current`, then `craft up` + clear caches, keeping the 2 most recent
   releases. The job fails if the site doesn't return 200 afterwards. Read `.gitlab-ci.yml`
   for the exact steps
 
@@ -550,8 +550,7 @@ section handle, no query needed:
    - Make the change in the Craft admin
    - Project config auto-saves to `config/project/`; commit the YAML
    - Other environments apply it with `lando craft up` (the deploy runs it too)
-4. **PHP module changes**: edit `modules/`, then `lando craft clear-caches/all` (and reload
-   PHP-FPM in production)
+4. **PHP module changes**: edit `modules/`, then `lando craft clear-caches/all`
 
 ## Code Style and Patterns
 
@@ -622,7 +621,7 @@ When updating PHP (currently 8.5):
 2. Update in:
    - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, override appserver with `type: php:X.X`)
    - `bin/setup_server.sh` – 4 places
-   - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, `php-fpm` service name)
+   - `.gitlab-ci.yml` – 2 places (default image, `SERVER_PHP_PATH`)
    - Add the related migration to `php_cs.dist`
 3. Run `lando rebuild`
 4. Update `composer.lock` via `lando composer update`

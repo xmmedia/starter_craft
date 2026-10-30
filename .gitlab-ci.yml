@@ -122,8 +122,6 @@ static:
     - |
       craft $REMOTE_BASE/current up
       craft $REMOTE_BASE/current clear-caches/all
-    # reload php-fpm (to reset cache)
-    - remote "sudo /bin/systemctl reload php85-php-fpm"
     # remove >2 releases
     - remote "ls -1d $RELEASES/* | sort -rg | tail -n +3 | xargs /bin/rm -rf"
     # test if website is up

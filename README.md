@@ -39,8 +39,8 @@ Craft admin is located at `/admin`
 ## Provisioning a Site
 
 For sites on an InterWorx server, `bin/provision_site` (run locally) does the whole setup:
-1Password items, the SiteWorx account, the database, `setup_server.sh`, the PHP restart
-sudoers entry, the Craft queue cron job and the GitLab CI/CD variables.
+1Password items, the SiteWorx account, the database, `setup_server.sh`, the Craft queue
+cron job and the GitLab CI/CD variables.
 
   - Requires an ssh Host with passwordless sudo, [`op`](https://developer.1password.com/docs/cli/)
     signed in, [`glab`](https://gitlab.com/gitlab-org/cli) authenticated and `jq` installed.
@@ -131,7 +131,7 @@ Running them on the host with `yarn <command>` still works.
 1. Update the PHP version in the following files:
     - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, you must override the appserver service with `type: php:X.X`)
     - `bin/setup_server.sh` – 4 places
-    - `.gitlab-ci.yml` – 3 places (default image, `SERVER_PHP_PATH`, and `php-fpm` service name)
+    - `.gitlab-ci.yml` – 2 places (default image and `SERVER_PHP_PATH`)
     - `php_cs.dist` – add the new version or update the `@PHP8#Migration` version to match the current version.
 1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
 1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
