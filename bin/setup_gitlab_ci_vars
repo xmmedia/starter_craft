@@ -44,6 +44,15 @@ ask() {
     fi
 }
 
+# ask_secret <label> — like ask, but doesn't show what's typed & trims the spaces a paste can add
+ask_secret() {
+    local label="$1" result
+    read -r -s -p "$label: " result
+    echo "" >&2
+    result="${result#"${result%%[![:space:]]*}"}"
+    echo "${result%"${result##*[![:space:]]}"}"
+}
+
 # ask_required <label> [default] — re-prompts until non-empty
 ask_required() {
     local label="$1" default="${2:-}" result
@@ -111,10 +120,14 @@ var_exists_scope() {
 }
 
 # The value goes in on stdin, as arguments show in the process list.
+# set_var <name> <value> <scope> [secret] — a secret is masked & protected in every scope
 set_var() {
-    local name="$1" value="$2" scope="$3"
+    local name="$1" value="$2" scope="$3" secret="${4:-}"
     local args=(variable set "$name" --scope "$scope" --raw -R "$PROJECT")
-    [[ "$SCOPE" == "production" ]] && args+=(--protected)
+    if [[ "$SCOPE" == "production" || "$secret" == "secret" ]]; then
+        args+=(--protected)
+    fi
+    [[ "$secret" == "secret" ]] && args+=(--masked)
     local out
     if out=$(printf '%s' "$value" | glab "${args[@]}" 2>&1); then
         printf "  ${GREEN}✓${NC} %-35s scope: %s\n" "$name" "$scope"
