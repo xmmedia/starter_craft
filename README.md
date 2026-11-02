@@ -39,15 +39,16 @@ Craft admin is located at `/admin`
 ## Provisioning a Site
 
 For sites on an InterWorx server, `bin/provision_site` (run locally) does the whole setup:
-1Password items, the SiteWorx account, the database, `setup_server.sh`, the Craft queue
-cron job and the GitLab CI/CD variables.
+1Password items, the SiteWorx account, the database, `setup_server.sh`, `shared/.env`, the
+Craft queue cron job, the GitLab CI/CD variables and the CI public key in the site user's
+`~/.ssh/authorized_keys`.
 
   - Requires an ssh Host with passwordless sudo, [`op`](https://developer.1password.com/docs/cli/)
     signed in, [`glab`](https://gitlab.com/gitlab-org/cli) authenticated and `jq` installed.
   - It asks whether you're provisioning staging or production, then prompts for everything
     else and shows a summary before making any changes.
-  - The remaining manual steps (DNS record, SSL certificate, CI public key, `shared/.env`,
-    first deploy, Craft database) are printed at the end. The DNS record doesn't need to
+  - The remaining manual steps (DNS record, SSL certificate, completing `shared/.env`, first
+    deploy, Craft database) are printed at the end. The DNS record doesn't need to
     exist beforehand — it's only needed before generating the SSL certificate.
 
 Related scripts:

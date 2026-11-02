@@ -370,19 +370,43 @@ fi
 # --- 7. GitLab CI variables --------------------------------------------------
 
 heading "7/7 GitLab CI/CD variables"
+KEY_INSTALLED=n
 if [[ "$DO_GITLAB" == "y" ]]; then
-    "$SCRIPT_DIR/setup_gitlab_ci_vars" "$GITLAB_PROJECT" \
+    PUBLIC_KEY_FILE=$(mktemp)
+    trap 'rm -f "$PUBLIC_KEY_FILE"' EXIT
+    if "$SCRIPT_DIR/setup_gitlab_ci_vars" "$GITLAB_PROJECT" \
         --scope "$SCOPE" \
         --remote-base "$SITE_BASE" \
         --remote-server "$SERVER_HOST" \
         --remote-user "$SITE_USER" \
         --context-host "$DOMAIN" \
-        || warn "setup_gitlab_ci_vars did not complete"
+        --public-key-out "$PUBLIC_KEY_FILE"; then
+        PUBLIC_KEY=$(<"$PUBLIC_KEY_FILE")
+        QUOTED_KEY=$(printf '%q' "$PUBLIC_KEY")
+        # Added unless it's already there (an existing key can be reused across sites)
+        if [[ -z "$PUBLIC_KEY" ]]; then
+            warn "could not read the CI public key — add it to ~/.ssh/authorized_keys yourself"
+        elif remote sudo -n su - "$SITE_USER" -c "umask 077 && mkdir -p ~/.ssh \
+            && touch ~/.ssh/authorized_keys \
+            && { grep -qxF $QUOTED_KEY ~/.ssh/authorized_keys \
+                || printf '%s\n' $QUOTED_KEY >> ~/.ssh/authorized_keys; }"; then
+            KEY_INSTALLED=y
+            ok "CI public key added to ~/.ssh/authorized_keys for $SITE_USER"
+        else
+            warn "failed to add the CI public key — add it to ~/.ssh/authorized_keys yourself:"
+            echo "    $PUBLIC_KEY"
+        fi
+    else
+        warn "setup_gitlab_ci_vars did not complete"
+    fi
 else
     echo "  Skipped."
 fi
 
 # --- Done --------------------------------------------------------------------
+
+STEP=0
+manual_step() { STEP=$((STEP + 1)); echo -e "  ${BOLD}$STEP.${NC} $*"; }
 
 echo ""
 echo -e "${GREEN}Done!${NC}"
@@ -395,16 +419,18 @@ echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━�
 echo -e "${BOLD}  Remaining manual steps${NC}"
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
-echo -e "  ${BOLD}1.${NC} Add the DNS record for ${YELLOW}$DOMAIN${NC} if it isn't in place yet"
-echo -e "  ${BOLD}2.${NC} Generate the SSL certificate in SiteWorx, once DNS has propagated"
+manual_step "Add the DNS record for ${YELLOW}$DOMAIN${NC} if it isn't in place yet"
+manual_step "Generate the SSL certificate in SiteWorx, once DNS has propagated"
 echo -e "     (not scriptable — the CLI always includes www and cannot exclude it)"
 echo -e "     Log in as ${YELLOW}$SITE_USER${NC} at ${YELLOW}https://$SERVER_HOST:2443/${NC} → SSL/TLS → Let's Encrypt"
 echo -e "     Untick ${YELLOW}www.$DOMAIN${NC} unless it has its own DNS record"
-echo -e "  ${BOLD}3.${NC} Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
-echo -e "  ${BOLD}4.${NC} Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
+if [[ "$KEY_INSTALLED" != "y" ]]; then
+    manual_step "Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
+fi
+manual_step "Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
 echo "     Fill in the app ID (if blank), email settings and API keys"
-echo -e "  ${BOLD}5.${NC} Deploy from GitLab (the first attempt often fails — fix and retry)"
-echo -e "  ${BOLD}6.${NC} Install or import the Craft database"
+manual_step "Deploy from GitLab (the first attempt often fails — fix and retry)"
+manual_step "Install or import the Craft database"
 echo ""
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
