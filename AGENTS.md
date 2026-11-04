@@ -159,7 +159,11 @@ container dies on a missing `@rolldown/binding-linux-*`.
   with that user's full permissions, including project config and plugin changes while
   `allowAdminChanges` is on, so treat its write tools like the CP. Restart it after changing
   fields, sections or permissions outside it. Core's HTTP servers stay off unless enabled
-  under Settings → MCP
+  under Settings → MCP — that setting is project config, so enabling it locally enables it
+  on every environment
+  - The user must exist and be active, or the server refuses to start ("not permitted to
+    use Craft MCP"). If a project's admin has a different email, change `--user` in
+    `.mcp.json` (it takes an email, username or user ID)
 
 ### Local Development (Lando)
 
