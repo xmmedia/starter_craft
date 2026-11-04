@@ -72,6 +72,7 @@ fieldLayouts:
 fs: gallery
 handle: gallery
 name: Gallery
+propagationMethod: custom
 sortOrder: 2
 subpath: ''
 titleTranslationKeyFormat: null
