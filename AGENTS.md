@@ -208,6 +208,7 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
   app.php               # App/module registration
   general.php           # General Craft settings
   custom.php            # Custom settings (formNames, gaTrackingId)
+  oauth.php             # OAuth settings (MCP over HTTP) — no client redirects allowed by default
   vite.php              # Vite integration config
   routes.php            # Custom URL routes
 
