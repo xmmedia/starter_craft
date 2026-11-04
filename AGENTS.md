@@ -629,7 +629,7 @@ When updating PHP (currently 8.5):
    - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, override appserver with `type: php:X.X`)
    - `bin/setup_server.sh` – 4 places
    - `.gitlab-ci.yml` – 2 places (default image, `SERVER_PHP_PATH`)
-   - Add the related migration to `php_cs.dist`
+   - `php_cs.dist` – update the `@PHP8x5Migration` rule to match
 3. Run `lando rebuild`
 4. Update `composer.lock` via `lando composer update`
 5. Update the version in this file (and `README.md`, in the starter)
