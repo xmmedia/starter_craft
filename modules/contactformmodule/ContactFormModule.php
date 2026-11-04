@@ -178,6 +178,7 @@ class ContactFormModule extends BaseModule
         if (\is_string($message)) {
             $message = json_decode($message, true);
         }
+
         if (!\is_array($message)) {
             return '';
         }
