@@ -4,11 +4,16 @@ declare(strict_types=1);
 
 namespace modules\contactformmodule;
 
+use craft\base\Element;
 use craft\base\Model;
 use craft\contactform\events\SendEvent;
 use craft\contactform\Mailer;
 use craft\contactform\models\Submission;
+use craft\events\DefineAttributeHtmlEvent;
+use craft\helpers\Html;
+use craft\helpers\StringHelper;
 use craft\mail\Mailer as CraftMailer;
+use hybridinteractive\contactformextensions\elements\Submission as SubmissionElement;
 use modules\contactformmodule\jobs\SendEmail;
 use yii\base\Event;
 use yii\base\Module as BaseModule;
@@ -24,6 +29,20 @@ class ContactFormModule extends BaseModule
      * and so should be pushed to the queue rather than sent inline.
      */
     private bool $queueSends = false;
+
+    /**
+     * Message keys the Contact Form Extensions plugin leaves out of its submission view.
+     */
+    private const array SUBMISSION_SKIP_KEYS = [
+        'formName',
+        'toEmail',
+        'confirmationSubject',
+        'confirmationTemplate',
+        'notificationTemplate',
+        'disableRecaptcha',
+        'disableConfirmation',
+        'disableSaveSubmission',
+    ];
 
     #[\Override]
     public function init(): void
@@ -103,6 +122,22 @@ class ContactFormModule extends BaseModule
             }
         );
 
+        // the plugin's submissions index shows the raw message keys (eg "body"),
+        // so label them the same way as the submission view: capitalised & translated
+        Event::on(
+            SubmissionElement::class,
+            Element::EVENT_DEFINE_ATTRIBUTE_HTML,
+            static function (DefineAttributeHtmlEvent $e): void {
+                if ('message' !== $e->attribute) {
+                    return;
+                }
+
+                /** @var SubmissionElement $submission */
+                $submission = $e->sender;
+                $e->html = self::messagePreviewHtml($submission->message);
+            }
+        );
+
         // do some additional/different validation
         Event::on(
             Submission::class,
@@ -136,6 +171,35 @@ class ContactFormModule extends BaseModule
                 }
             }
         );
+    }
+
+    private static function messagePreviewHtml(mixed $message): string
+    {
+        if (\is_string($message)) {
+            $message = json_decode($message, true);
+        }
+        if (!\is_array($message)) {
+            return '';
+        }
+
+        $html = '';
+        foreach ($message as $key => $value) {
+            if (!\is_string($value) || \in_array($key, self::SUBMISSION_SKIP_KEYS, true)) {
+                continue;
+            }
+
+            $key = (string) $key;
+            // matches Twig's capitalize filter, used by the submission view
+            $label = mb_strtoupper(mb_substr($key, 0, 1)).mb_strtolower(mb_substr($key, 1));
+
+            $html .= Html::tag(
+                'li',
+                Html::tag('em', Html::encode(\Craft::t('contact-form-extensions', $label)))
+                .': '.Html::encode(StringHelper::truncate(trim($value), 30)),
+            );
+        }
+
+        return Html::tag('ul', $html);
     }
 
     private static function messageValue(Submission $submission, string $key): ?string
