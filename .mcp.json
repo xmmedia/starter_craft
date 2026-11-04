@@ -4,7 +4,7 @@
             "command": "bash",
             "args": [
                 "-c",
-                "lando ssh --command \"php vendor/stimmt/craft-mcp/bin/mcp-server\""
+                "lando ssh --command \"php craft mcp/serve --user=admin@xmmedia.com\""
             ]
         }
     },

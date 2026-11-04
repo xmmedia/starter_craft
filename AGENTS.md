@@ -154,9 +154,12 @@ container dies on a missing `@rolldown/binding-linux-*`.
 - **Run console**: `./craft` (executable) or `lando craft` within Lando
 - **Clear caches**: `lando craft clear-caches/all`
 - **Apply migrations**: `lando craft up`
-- **Craft MCP**: `.mcp.json` registers a `craft-cms` MCP server (runs
-  `vendor/stimmt/craft-mcp/bin/mcp-server` through `lando ssh`). Server-side settings in
-  `config/mcp.php` — off unless `MCP_ENABLED`, `tinker`/`run_query` disabled, localhost only
+- **Craft MCP**: `.mcp.json` registers a `craft-cms` MCP server — Craft's own stdio server
+  (`craft mcp/serve`, new in 5.12) run through `lando ssh` as `admin@xmmedia.com`. It acts
+  with that user's full permissions, including project config and plugin changes while
+  `allowAdminChanges` is on, so treat its write tools like the CP. Restart it after changing
+  fields, sections or permissions outside it. Core's HTTP servers stay off unless enabled
+  under Settings → MCP
 
 ### Local Development (Lando)
 
@@ -175,7 +178,7 @@ container dies on a missing `@rolldown/binding-linux-*`.
 **Backend:** Craft CMS 5, Twig, four custom Yii2 modules. Plugins the starter ships (a
 project may have added more — check `composer.json`): Contact Form (+ Honeypot, +
 Extensions), CKEditor, SEO (Ether), Field Manager (Verbb), Asset Usage (born05), oEmbed,
-Vite (nystudio107), Craft MCP (stimmt).
+Vite (nystudio107).
 
 **Frontend:** Vue 3, Vite, Tailwind CSS 4, ESLint + Stylelint. No PostCSS pipeline —
 Tailwind 4's Lightning CSS handles nesting and prefixing.
@@ -202,7 +205,6 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
   general.php           # General Craft settings
   custom.php            # Custom settings (formNames, gaTrackingId)
   vite.php              # Vite integration config
-  mcp.php               # Craft MCP plugin settings
   routes.php            # Custom URL routes
 
 /modules                # Custom Yii2 modules (PSR-4: modules\)
@@ -386,7 +388,7 @@ output style; keep them in sync when editing either one.
 **Entry Types and Sections**:
 - Organized in `config/project/sections/` and `config/project/entryTypes/`
 - The starter ships with (a project will have added to this — check
-  `config/project/sections/`, or `list_sections` over the Craft MCP):
+  `config/project/sections/`, or the Craft MCP):
   - `pages` — structure, entry type `pageBlocks`, `{parent.uri}/{slug}` → `_page.twig`
   - `homepage` — single, also `pageBlocks` → `_home.twig`
   - `siteInformation`, `socialMedia`, `menus` — URL-less singles (see below)

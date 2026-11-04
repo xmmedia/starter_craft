@@ -1,4 +1,4 @@
-dateModified: 1793808267
+dateModified: 1793808890
 elementSources:
   craft\elements\Asset:
     -
@@ -392,10 +392,6 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
-  mcp:
-    edition: standard
-    enabled: true
-    schemaVersion: 1.6.0
   oembed:
     edition: standard
     enabled: true
