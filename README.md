@@ -4,37 +4,54 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 
 ## Setting Up a New Site
 
-1. Create a new project:
+### Locally
+
+1. Create a new project ([install Composer](https://getcomposer.org/download/) on the host first, if it isn't already):
     ```sh
     composer create-project xm/starter_craft project-name --stability=dev --no-install --remove-vcs
     ```
 2. Update `composer.json`: `name`, `license` (likely `proprietary`) and `description`
-3. Update `package.json`: `name`, `version`, `git.url`, `license`, `private`
-4. Setup dev server:
-   1. If using InterWorx, run `bin/provision_site` locally — it provisions the whole site (see [Provisioning a Site](#provisioning-a-site) below) and runs `setup_server.sh` for you. To do it by hand instead, upload `bin/setup_server.sh` to the domain dir and run: `bash ./setup_server.sh`
-   2. Upload the files (exclude files that are OS dependent like `node_modules` & `.env` or that are only for editing like `.idea` and `.git` and a lot of what's in `.gitignore`).
-   3. [Install Composer](https://getcomposer.org/download/) (if not already installed)
-   4. Install PHP packages/vendors: `php composer.phar install`
-   5. Add `.env` (copy `.env.example` and update).
-   6. Give executable perms to bin dir: `chmod u+x craft`
-   7. Ensure you have lando running.
-   8. Within `lando ssh`, install craft: `./craft install/craft`
-5. Remove or update the `LICENSE` file.
-6. [Install Composer](https://getcomposer.org/download/) locally (if not installed globally).
-7. Composer install & update (locally): `composer install && composer update`
-8. Run `lando yarn && lando yarn up -R '**'` locally.
-9. Upload `composer.lock` and on the server, run `php composer.phar install`.
-10. Find and make changes near `@todo-craft` comments throughout the site. All changed files will need to uploaded to the server.
+3. Update `package.json`: `name`, `version`, `repository.url`, `license`, and uncomment `private`
+4. Remove or update the `LICENSE` file.
+5. Find and make changes near the `@todo-craft` comments throughout the site, removing each once it's resolved:
+    ```sh
+    grep -rn '@todo-craft' --exclude-dir={node_modules,vendor,.git} .
+    ```
+6. Copy `.env.example-local` to `.env` and update it.
+7. Start Lando: `lando start`
+8. Install & update PHP packages: `lando composer install && lando composer update`
+9. Install & update JS packages: `lando yarn && lando yarn up -R '**'`
+10. Install Craft: `lando craft install/craft`
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
-12. Set the email Subject Text for contact form submissions in Settings > Contact Form (under Plugins).
-13. Delete or update the starter's `README.md`.
-14. Update site name:
-    - In Settings -> General
-    - In Settings -> Sites
-    - Globals -> Site Information
+12. Delete or update the starter's `README.md`.
 
-**Dev site can be accessed at https://[domain]/**  
-Craft admin is located at `/admin`
+The local site is at the URL set in `.lando.yml` (`https://craftstarter.lndo.site/` in the starter).
+Craft admin is located at `/admin`.
+
+### In the Craft Admin
+
+These are saved to project config, so make them locally and commit the changes.
+
+1. Set the email Subject Text for contact form submissions in Settings > Plugins > Contact Form.
+2. Update the site name:
+    - In Settings > General
+    - In Settings > Sites
+    - In Entries > Site Information (content, so this one isn't in project config)
+
+### Server
+
+1. If using InterWorx, run `bin/provision_site` locally — it provisions the whole site (see
+   [Provisioning a Site](#provisioning-a-site) below) and prints the remaining manual steps.
+   To do it by hand instead:
+    1. Upload `bin/setup_server.sh` to the domain dir and, as the site user, run: `bash ./setup_server.sh`
+    2. Complete `shared/.env` (start from `.env.example`).
+    3. Set the GitLab CI/CD variables: `bin/setup_gitlab_ci_vars <group/project>`
+    4. Add the CI public key to the site user's `~/.ssh/authorized_keys`.
+    5. Add the every-minute Craft queue cron job — the queue doesn't run automatically outside dev.
+2. Deploy from GitLab (the Staging and Production jobs are manual, on the main branch).
+3. Install Craft (`php craft install/craft` in the `current` dir) or import the local database.
+
+The site can be accessed at `https://[domain]/`.
 
 ## Provisioning a Site
 
@@ -75,7 +92,7 @@ Running them on the host with `yarn <command>` still works.
   - Run all checks & fixes: `bin/check_full`
     - Runs Composer Normalize, Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
-    - Runs `composer normalize` (dry run), linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
+    - Runs `composer validate`, `composer normalize` (dry run), linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
   - Dev JS/CSS server with HMR: `lando vite` (runs `yarn install`, then `yarn dev`, in the `node` container)
     - Assets are proxied through the appserver at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `lando_apache_vite.conf`
     - Stop a server left running in the container: `lando vite-stop`
@@ -120,10 +137,11 @@ Running them on the host with `yarn <command>` still works.
     - [SEO (Ether)](https://github.com/ethercreative/seo) – SEO plugin for Craft
     - [Field Manager (Verbb)](https://verbb.io/craft-plugins/field-manager) – field management plugin for Craft
     - [oEmbed](https://github.com/wrav/oembed) – oEmbed support for Craft
+    - [Asset Usage](https://github.com/born05/craft-assetusage) – shows where assets are used
     - [Craft Vite](https://nystudio107.com/docs/vite/) – Vite integration for Craft CMS
-    - [PHPStan](https://github.com/phpstan/phpstan) – static analysis of PHP
   - [GitLab](https://gitlab.com/) – CI/CD and deployment
   - Dev Tools
+    - [PHPStan](https://github.com/phpstan/phpstan) – static analysis of PHP
     - [Vue Devtools](https://github.com/vuejs/vue-devtools)
 
 ## Updating PHP version
@@ -133,7 +151,7 @@ Running them on the host with `yarn <command>` still works.
     - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, you must override the appserver service with `type: php:X.X`)
     - `bin/setup_server.sh` – 4 places
     - `.gitlab-ci.yml` – 2 places (default image and `SERVER_PHP_PATH`)
-    - `php_cs.dist` – add the new version or update the `@PHP8#Migration` version to match the current version.
+    - `php_cs.dist` – update the `@PHP8x5Migration` rule to match the new version.
 1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
 1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
 1. Update version in `README.md` and `AGENTS.md`.
