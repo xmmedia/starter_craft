@@ -208,7 +208,6 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
 /config                 # Craft CMS configuration
   /project              # Project Config (YAML) - version controlled Craft settings
   /ckeditor             # CKEditor config (default.js)
-  /htmlpurifier         # HTML Purifier config (Default.php)
   /rebrand              # Craft admin logo customizations
   app.php               # App/module registration
   general.php           # General Craft settings
@@ -280,6 +279,11 @@ one, `lando craft clear-caches/all`.
    - `forceLowercaseFilenames()` — lowercases asset filenames and extensions on upload,
      rename, move and replace, while the asset *title* keeps its original casing (the cased
      name is carried between the two events it hooks)
+   - `allowMediaEmbedUrls()` — CKEditor fields use Craft's default HTML Purifier options
+     (there's deliberately no `config/htmlpurifier/`, which would replace them wholesale);
+     this only widens `URI.SafeIframeRegexp` so a YouTube/Vimeo page URL pasted into Media
+     embed isn't stripped from `<oembed url>`. Only set `URI.*` options in that event —
+     an `HTML.*`/`CSS.*` one resets the definition and drops CKEditor's additions
 
 3. **ImageModule** (`modules/imagemodule/ImageModule.php`):
    - Twig extension (`twigextensions/ImageTwigExtension.php`) — `image(asset, transform,

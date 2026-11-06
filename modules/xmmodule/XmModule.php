@@ -16,6 +16,7 @@ use craft\base\Element;
 use craft\base\Field;
 use craft\base\Model;
 use craft\base\NestedElementInterface;
+use craft\ckeditor\Field as CkeditorField;
 use craft\elements\Asset;
 use craft\elements\Entry;
 use craft\events\AssetEvent;
@@ -30,6 +31,7 @@ use craft\helpers\Assets as AssetsHelper;
 use craft\helpers\ElementHelper;
 use craft\helpers\Html;
 use craft\helpers\StringHelper;
+use craft\htmlfield\events\ModifyPurifierConfigEvent;
 use craft\mail\Mailer;
 use craft\web\View;
 use modules\xmmodule\assetbundles\elementidpreview\ElementIdPreviewAsset;
@@ -85,6 +87,7 @@ class XmModule extends BaseModule
         $this->addAssetExtensionColumn();
         $this->validateElementIds();
         $this->previewElementIdUrls();
+        $this->allowMediaEmbedUrls();
 
         // Any code that creates an element query or loads Twig should be deferred until
         // after Craft is fully initialized, to avoid conflicts with other plugins/modules
@@ -224,6 +227,29 @@ class XmModule extends BaseModule
 
             $view->registerAssetBundle(ElementIdPreviewAsset::class);
         });
+    }
+
+    /**
+     * Lets CKEditor's Media embed keep the URL as pasted (watch, youtu.be and vimeo.com
+     * URLs), as well as the embed URLs Craft allows. Its `<oembed url>` is checked
+     * against the same regex as iframes.
+     *
+     * There's no config/htmlpurifier/Default.json so Craft's default purifier options
+     * still apply. Only change URI.* here: setting an HTML.* or CSS.* option resets that
+     * definition, dropping the elements & attributes CKEditor has already added.
+     */
+    private function allowMediaEmbedUrls(): void
+    {
+        Event::on(
+            CkeditorField::class,
+            CkeditorField::EVENT_MODIFY_PURIFIER_CONFIG,
+            static function (ModifyPurifierConfigEvent $e): void {
+                $e->config->set(
+                    'URI.SafeIframeRegexp',
+                    '%^(https?:)?//(www\.youtube(-nocookie)?\.com/(embed/|watch\?)|youtu\.be/|player\.vimeo\.com/video/|vimeo\.com/\d)%',
+                );
+            },
+        );
     }
 
     /**
