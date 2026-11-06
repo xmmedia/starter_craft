@@ -164,6 +164,11 @@ container dies on a missing `@rolldown/binding-linux-*`.
   - The user must exist and be active, or the server refuses to start ("not permitted to
     use Craft MCP"). If a project's admin has a different email, change `--user` in
     `.mcp.json` (it takes an email, username or user ID)
+  - Lando must be running — the server is a `lando ssh` command, so with Lando stopped it
+    just fails to connect
+  - Schema changes (`configuration.*`, `project-config.*`) write `config/project/*.yaml`
+    like the CP does — commit them. Content (entries, assets, the singles) only goes into
+    the local database: it isn't committed and never reaches staging or production
 
 ### Local Development (Lando)
 
@@ -554,7 +559,7 @@ section handle, no query needed:
 2. **JS/CSS changes**: `lando vite` for HMR; verify with `lando yarn build:check` (see
    **Frontend** above)
 3. **Fields, sections & entry types**:
-   - Make the change in the Craft admin
+   - Make the change in the Craft admin or through the Craft MCP
    - Project config auto-saves to `config/project/`; commit the YAML
    - Other environments apply it with `lando craft up` (the deploy runs it too)
 4. **PHP module changes**: edit `modules/`, then `lando craft clear-caches/all`
