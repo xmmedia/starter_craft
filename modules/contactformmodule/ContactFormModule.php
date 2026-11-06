@@ -33,7 +33,7 @@ class ContactFormModule extends BaseModule
     /**
      * Message keys the Contact Form Extensions plugin leaves out of its submission view.
      */
-    private const array SUBMISSION_SKIP_KEYS = [
+    public const array SUBMISSION_SKIP_KEYS = [
         'formName',
         'toEmail',
         'confirmationSubject',
@@ -68,6 +68,18 @@ class ContactFormModule extends BaseModule
 
     private function attachEventHandlers(): void
     {
+        // registered before the plugins load, so this runs before Contact Form
+        // Extensions saves the submission, and the result is saved with it
+        Event::on(
+            Mailer::class,
+            Mailer::EVENT_BEFORE_SEND,
+            static function (SendEvent $e): void {
+                if (SpamCheck::check($e->submission)) {
+                    $e->isSpam = true;
+                }
+            }
+        );
+
         // flag every email sent for the rest of this request as a contact form email:
         // the submission action doesn't send anything else, and the Contact Form
         // Extensions confirmation email should be queued too
@@ -185,7 +197,9 @@ class ContactFormModule extends BaseModule
 
         $html = '';
         foreach ($message as $key => $value) {
-            if (!\is_string($value) || \in_array($key, self::SUBMISSION_SKIP_KEYS, true)) {
+            if (!\is_string($value)
+                || \in_array($key, self::SUBMISSION_SKIP_KEYS, true)
+                || SpamCheck::MESSAGE_KEY === $key) {
                 continue;
             }
 
@@ -203,7 +217,7 @@ class ContactFormModule extends BaseModule
         return Html::tag('ul', $html);
     }
 
-    private static function messageValue(Submission $submission, string $key): ?string
+    public static function messageValue(Submission $submission, string $key): ?string
     {
         if (!\is_array($submission->message) || !\array_key_exists($key, $submission->message)) {
             return null;

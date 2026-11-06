@@ -268,6 +268,8 @@ one, `lando craft clear-caches/all`.
    - Modifies subject line format
    - Queues the emails rather than sending them inline — see **Queued contact form
      emails** below
+   - Checks submissions with Akismet (`SpamCheck.php`) — see **Contact form spam
+     checks** below
 
 2. **XmModule** (`modules/xmmodule/XmModule.php`):
    - Twig extension (`twigextensions/XmTwigExtension.php`):
@@ -512,6 +514,41 @@ section handle, no query needed:
   prod/staging need the every-minute cron. If it stops, nothing sends. Submissions
   themselves aren't lost either way — Contact Form Extensions saves them to the DB
   (`enableDatabase`) before the send is attempted
+
+**Contact form spam checks**:
+- `SpamCheck::check()` runs every submission through Akismet (`automattic/akismet-sdk`)
+  on the Contact Form `EVENT_BEFORE_SEND`. Spam is flagged `isSpam`: Contact Form
+  Extensions saves it with the red "Spam" status (`enableSaveSpam`) and doesn't email it.
+  The Honeypot plugin flags its own spam the same way
+- Needs `AKISMET_API_KEY`; without it nothing is checked. In devMode requests go in test
+  mode (`is_test`), so they don't train Akismet
+- Fails open: if the check fails for any reason, including Akismet erroring or not
+  answering (3s timeout), the submission goes through and the error is logged
+- The result is recorded on the submission under the `Spam check` message key, so it
+  shows on the submission in the CP — the verdict, whatever else Akismet returned
+  (GUID, recheck, debug help, alerts), the honeypot result, and the IP, user agent and
+  referrer. Use it to work out why a message was marked spam. It's kept out of the CP
+  list preview and the notification email (`'Spam check'` is repeated in its `excluded`
+  list — keep the two in sync)
+- What's sent:
+  - the content is `body` plus every other text field the visitor filled in (`Phone`,
+    `Organization`…), so spam can't hide in a field Akismet doesn't see. The hidden
+    `Page Name` and `Page URL` aren't content (`SpamCheck::NOT_CONTENT_KEYS`)
+  - the IP is `getRemoteIP()` (`REMOTE_ADDR`), not `getUserIP()`: Craft trusts
+    `X-Forwarded-For` & co from any host by default, so a bot could choose the IP Akismet
+    scores. Our servers run Apache `mod_remoteip`, which sets `REMOTE_ADDR` to the
+    visitor's IP when the request comes through a proxy it trusts, so this is right
+    behind a proxy too
+  - an email PHP won't validate (e.g. `x@1.2.3.4`, which Craft accepts) is left out
+    rather than failing the check, and noted on the submission
+  - only a short allowlist of HTTP headers from `$_SERVER` (`SpamCheck::SENT_HEADERS`):
+    it also holds the `.env` values, and a proxy can add credential headers
+  - the form's `Page URL` as the permalink, only when it's on this site
+- Local tests come back as spam even for a normal message — a headless or dev browser,
+  a Docker IP and an example.com address all count against it. To test, use the docs'
+  `akismet-guaranteed-spam` as the name
+- Not built: rechecking when Akismet sends `X-akismet-recheck-after` (the result is only
+  recorded), and reporting missed spam / false positives back with submit-spam/submit-ham
 
 **Page SEO / hiding a page from search engines**:
 - Page meta comes from the `seo` Matrix field, *not* the Ether SEO plugin's own field

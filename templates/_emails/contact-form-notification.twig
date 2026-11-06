@@ -4,9 +4,9 @@
 {% set message = message is iterable ? message : { body: message } %}
 
 {# fields shown in the details table: everything except the message body, the page
-   context (shown in the footer) and the plugin's own control keys #}
+   context (shown in the footer), the spam check and the plugin's own control keys #}
 {% set excluded = [
-    'body', 'formName', 'Page Name', 'Page URL',
+    'body', 'formName', 'Page Name', 'Page URL', 'Spam check',
     'toEmail', 'notificationTemplate', 'confirmationTemplate', 'confirmationSubject',
     'disableRecaptcha', 'disableConfirmation', 'disableSaveSubmission',
 ] %}

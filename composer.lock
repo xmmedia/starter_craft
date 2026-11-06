@@ -4,8 +4,73 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c4518954ffb2e700787ed1031a398a0d",
+    "content-hash": "fc41d1a7b374dd826e556a6c4f6567cf",
     "packages": [
+        {
+            "name": "automattic/akismet-sdk",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Automattic/akismet-sdk-php.git",
+                "reference": "097f6b17b1b0ef565bcea7385f7f6e27e5d07477"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Automattic/akismet-sdk-php/zipball/097f6b17b1b0ef565bcea7385f7f6e27e5d07477",
+                "reference": "097f6b17b1b0ef565bcea7385f7f6e27e5d07477",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1",
+                "php-http/discovery": "^1.14",
+                "psr/http-client": "^1.0",
+                "psr/http-factory": "^1.0",
+                "psr/http-message": "^1.1 || ^2.0"
+            },
+            "require-dev": {
+                "automattic/jetpack-changelogger": "^4.0",
+                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+                "guzzlehttp/guzzle": "^7.0",
+                "guzzlehttp/psr7": "^2.0",
+                "phpcompatibility/php-compatibility": "^9.3",
+                "phpstan/phpstan": "^1.10 || ^2.0",
+                "phpunit/phpunit": "^10.0 || ^11.0",
+                "squizlabs/php_codesniffer": "^3.7",
+                "wp-coding-standards/wpcs": "^3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Automattic\\Akismet\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Automattic",
+                    "homepage": "https://automattic.com"
+                }
+            ],
+            "description": "Official PHP SDK for the Akismet spam protection service",
+            "homepage": "https://akismet.com",
+            "keywords": [
+                "Akismet",
+                "anti-spam",
+                "comment-spam",
+                "spam",
+                "spam-detection"
+            ],
+            "support": {
+                "docs": "https://akismet.com/developers/",
+                "issues": "https://github.com/Automattic/akismet-sdk-php/issues",
+                "source": "https://github.com/Automattic/akismet-sdk-php/tree/v1.5.0"
+            },
+            "time": "2026-06-10T17:39:40+00:00",
+            "published-time": "2026-06-10T18:03:03+00:00"
+        },
         {
             "name": "bacon/bacon-qr-code",
             "version": "v3.1.1",
