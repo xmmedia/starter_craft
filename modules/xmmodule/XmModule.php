@@ -230,13 +230,8 @@ class XmModule extends BaseModule
     }
 
     /**
-     * Lets CKEditor's Media embed keep the URL as pasted (watch, youtu.be and vimeo.com
-     * URLs), as well as the embed URLs Craft allows. Its `<oembed url>` is checked
-     * against the same regex as iframes.
-     *
-     * There's no config/htmlpurifier/Default.json so Craft's default purifier options
-     * still apply. Only change URI.* here: setting an HTML.* or CSS.* option resets that
-     * definition, dropping the elements & attributes CKEditor has already added.
+     * Only set URI.* options here: an HTML.* or CSS.* option resets that definition,
+     * dropping the elements & attributes CKEditor has already added.
      */
     private function allowMediaEmbedUrls(): void
     {
@@ -246,7 +241,7 @@ class XmModule extends BaseModule
             static function (ModifyPurifierConfigEvent $e): void {
                 $e->config->set(
                     'URI.SafeIframeRegexp',
-                    '%^(https?:)?//(www\.youtube(-nocookie)?\.com/(embed/|watch\?)|youtu\.be/|player\.vimeo\.com/video/|vimeo\.com/\d)%',
+                    '%^(https?:)?//((www\.|m\.)?youtube(-nocookie)?\.com/(embed/|watch\?)|youtu\.be/|player\.vimeo\.com/video/|vimeo\.com/\d)%i',
                 );
             },
         );

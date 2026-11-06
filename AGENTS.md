@@ -282,8 +282,10 @@ one, `lando craft clear-caches/all`.
    - `allowMediaEmbedUrls()` — CKEditor fields use Craft's default HTML Purifier options
      (there's deliberately no `config/htmlpurifier/`, which would replace them wholesale);
      this only widens `URI.SafeIframeRegexp` so a YouTube/Vimeo page URL pasted into Media
-     embed isn't stripped from `<oembed url>`. Only set `URI.*` options in that event —
-     an `HTML.*`/`CSS.*` one resets the definition and drops CKEditor's additions
+     embed isn't stripped from `<oembed url>`. The same regex is the iframe `src`
+     allowlist, so those page URLs are allowed as iframes too (only admins have source
+     editing to add one). Only set `URI.*` options in that event — an `HTML.*`/`CSS.*`
+     one resets the definition and drops CKEditor's additions
 
 3. **ImageModule** (`modules/imagemodule/ImageModule.php`):
    - Twig extension (`twigextensions/ImageTwigExtension.php`) — `image(asset, transform,
