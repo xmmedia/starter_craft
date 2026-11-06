@@ -21,7 +21,8 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 7. Start Lando: `lando start`
 8. Install & update PHP packages: `lando composer install && lando composer update`
 9. Install & update JS packages: `lando yarn && lando yarn up -R '**'`
-10. Install Craft: `lando craft install/craft`
+10. Install Craft: `lando craft install/craft` – use `admin@xmmedia.com` for the admin email, or change
+    `--user` in `.mcp.json` to match, otherwise the Craft MCP server won't start
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Delete or update the starter's `README.md`.
 
@@ -139,6 +140,7 @@ Running them on the host with `yarn <command>` still works.
     - [oEmbed](https://github.com/wrav/oembed) – oEmbed support for Craft
     - [Asset Usage](https://github.com/born05/craft-assetusage) – shows where assets are used
     - [Craft Vite](https://nystudio107.com/docs/vite/) – Vite integration for Craft CMS
+    - Craft MCP – Craft's built-in MCP server, registered for agents in `.mcp.json`
   - [GitLab](https://gitlab.com/) – CI/CD and deployment
   - Dev Tools
     - [PHPStan](https://github.com/phpstan/phpstan) – static analysis of PHP
