@@ -157,5 +157,3 @@ Running them on the host with `yarn <command>` still works.
 1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
 1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
 1. Update version in `README.md` and `AGENTS.md`.
-
-consider: https://plugins.craftcms.com/image-toolbox?craft4
