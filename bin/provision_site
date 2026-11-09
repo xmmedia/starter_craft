@@ -118,6 +118,19 @@ create_op_item() {
     printf '%s' "$id"
 }
 
+# add_cron <name> <minute> <hour> <dayofweek> <script> — adds a SiteWorx cron job, or warns
+add_cron() {
+    local name="$1" minute="$2" hour="$3" dayofweek="$4" script="$5"
+    if remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c Cron -a add \
+        --interface simple \
+        --minute "$minute" --hour "$hour" --day '*' --month '*' --dayofweek "$dayofweek" \
+        --script "$script"; then
+        ok "$name cron job added"
+    else
+        warn "failed to add the $name cron job — add it in SiteWorx instead"
+    fi
+}
+
 # --- Preflight ---------------------------------------------------------------
 
 command -v op   >/dev/null 2>&1 || die "op CLI not installed. Run: brew install 1password-cli"
@@ -355,14 +368,8 @@ fi
 
 heading "6/7 Craft queue cron job ($CRON_MINUTE)"
 if [[ "$DO_CRON" == "y" ]]; then
-    if remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c Cron -a add \
-        --interface simple \
-        --minute "$CRON_MINUTE" --hour '*' --day '*' --month '*' --dayofweek '*' \
-        --script "cd $SITE_BASE/current && MAGICK_DISK_LIMIT=0 flock -n storage/queue.lock ./craft queue/run 2>&1"; then
-        ok "cron job added"
-    else
-        warn "failed to add the cron job — add it in SiteWorx instead"
-    fi
+    add_cron "Craft queue" "$CRON_MINUTE" '*' '*' \
+        "cd $SITE_BASE/current && MAGICK_DISK_LIMIT=0 flock -n storage/queue.lock ./craft queue/run 2>&1"
 else
     echo "  Skipped."
 fi
