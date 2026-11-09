@@ -20,6 +20,9 @@ services:
   appserver:
     type: php:8.5
     build_as_root:
+      # PHP's bundled timezone database lags behind the zone rules (eg Alberta's move to permanent -06:00). The
+      # timezonedb extension is newer & takes precedence over the bundled one, so it's what PHP's date functions use
+      - pecl install timezonedb && docker-php-ext-enable timezonedb
       # LC_ALL: build steps inherit the host's locale, which the image doesn't have (perl
       # warnings); LC_ALL overrides the inherited LANG & LC_* vars in one go
       - LC_ALL=C.UTF-8 a2enmod headers
