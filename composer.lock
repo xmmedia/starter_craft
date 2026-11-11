@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f73968b8628d4e1d4bb39293b3a1593f",
+    "content-hash": "86af947600fb2ce32b2683eb26fd6c1b",
     "packages": [
         {
             "name": "automattic/akismet-sdk",
@@ -828,22 +828,25 @@
         },
         {
             "name": "craftcms/contact-form",
-            "version": "3.1.0",
+            "version": "3.2.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/1cfc5cfeb137e868d094ea15c90c6b9c4bf02ea5",
-                "reference": "1cfc5cfeb137e868d094ea15c90c6b9c4bf02ea5",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/8678678502865e0416262d6ee13f77c6c1020b15",
+                "reference": "8678678502865e0416262d6ee13f77c6c1020b15",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^4.0.0-beta.1|^5.0.0-beta.1",
+                "craftcms/cms": "^4.0.0-beta.1|^5.0.0-beta.1|^6.0.0-beta.1",
                 "php": "^8.0.2"
+            },
+            "suggest": {
+                "craftcms/yii2-adapter": "Required to use Contact Form with Craft CMS 6."
             },
             "type": "craft-plugin",
             "extra": {
                 "name": "Contact Form",
                 "handle": "contact-form",
-                "documentationUrl": "https://github.com/craftcms/contact-form/blob/v2/README.md",
+                "documentationUrl": "https://github.com/craftcms/contact-form/tree/master/README.md",
                 "components": {
                     "mailer": "craft\\contactform\\Mailer"
                 }
@@ -874,28 +877,31 @@
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/contact-form/issues?state=open",
                 "source": "https://github.com/craftcms/contact-form",
-                "docs": "https://github.com/craftcms/contact-form/blob/v2/README.md",
-                "rss": "https://github.com/craftcms/contact-form/commits/v2.atom"
+                "docs": "https://github.com/craftcms/contact-form",
+                "rss": "https://github.com/craftcms/contact-form/commits/3.x.atom"
             },
-            "time": "2024-03-11T22:40:47+00:00"
+            "time": "2026-11-10T16:32:37+00:00"
         },
         {
             "name": "craftcms/contact-form-honeypot",
-            "version": "2.1.0",
+            "version": "2.2.1",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form-honeypot/zipball/6f14f4ee20ae1f1cd2d6dfd4ef55be28c0e28426",
-                "reference": "6f14f4ee20ae1f1cd2d6dfd4ef55be28c0e28426",
+                "url": "https://api.github.com/repos/craftcms/contact-form-honeypot/zipball/ae9b42582b3a8b1b214f4a6e3393cf87a9948e11",
+                "reference": "ae9b42582b3a8b1b214f4a6e3393cf87a9948e11",
                 "shasum": ""
             },
             "require": {
-                "craftcms/cms": "^4.0.0-RC3|^5.0.0-beta.1"
+                "craftcms/cms": "^4.0.0-RC3|^5.0.0-beta.1|^6.0.0-beta.1"
+            },
+            "suggest": {
+                "craftcms/yii2-adapter": "Required to use Contact Form Honeypot with Craft CMS 6."
             },
             "type": "craft-plugin",
             "extra": {
                 "name": "Contact Form Honeypot",
                 "handle": "contact-form-honeypot",
-                "documentationUrl": "https://github.com/craftcms/contact-form-honeypot/blob/main/README.md"
+                "documentationUrl": "https://github.com/craftcms/contact-form-honeypot/blob/2.x/README.md"
             },
             "autoload": {
                 "psr-4": {
@@ -924,10 +930,10 @@
                 "email": "support@craftcms.com",
                 "issues": "https://github.com/craftcms/contact-form-honeypot/issues?state=open",
                 "source": "https://github.com/craftcms/contact-form-honeypot",
-                "docs": "https://github.com/craftcms/contact-form-honeypot/blob/main/README.md",
-                "rss": "https://github.com/craftcms/contact-form-honeypot/commits/main.atom"
+                "docs": "https://github.com/craftcms/contact-form-honeypot/blob/2.x/README.md",
+                "rss": "https://github.com/craftcms/contact-form-honeypot/commits/2.x.atom"
             },
-            "time": "2024-03-19T21:18:07+00:00"
+            "time": "2026-11-10T18:30:23+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -8881,11 +8887,11 @@
         },
         {
             "name": "verbb/field-manager",
-            "version": "4.0.11",
+            "version": "4.0.12",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/field-manager/zipball/d56ac82e1a3fc635490d761f34aa16c3afe47d62",
-                "reference": "d56ac82e1a3fc635490d761f34aa16c3afe47d62",
+                "url": "https://api.github.com/repos/verbb/field-manager/zipball/63389292aa1bf3468f161fe586ef3bdbf22aedd7",
+                "reference": "63389292aa1bf3468f161fe586ef3bdbf22aedd7",
                 "shasum": ""
             },
             "require": {
@@ -8929,7 +8935,7 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2026-11-01T10:58:54+00:00"
+            "time": "2026-11-05T12:14:56+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
