@@ -17,13 +17,13 @@
         &:focus-visible {
             @apply bg-zinc-200 ring-2 ring-zinc-200;
         }
+    }
 
-        &:disabled {
-            @apply opacity-75;
+    .button-link:disabled {
+        @apply opacity-75;
 
-            &:hover {
-                @apply no-underline cursor-default;
-            }
+        &:hover {
+            @apply no-underline cursor-default;
         }
     }
 
