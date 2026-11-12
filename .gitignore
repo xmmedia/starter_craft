@@ -13,6 +13,8 @@ sftp-config.json
 webpack-stats.json
 public/service-worker.js
 /.env
+# written by DDEV (`type: craftcms`) on start, with the local URL & DB credentials
+/.ddev/.env.web
 
 ###> craft cms ###
 public/assets

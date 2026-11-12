@@ -33,10 +33,10 @@ git diff starter/master -- vite.config.mjs  # or just compare one path
 ```
 
 **`@todo-craft` markers** are how the skeleton flags what a new project has to decide —
-across `.env.example*`, `.gitignore`, `.gitlab-ci.yml`, `.lando.yml`, `package.json`,
+across `.env.example*`, `.gitignore`, `.gitlab-ci.yml`, `.ddev/`, `package.json`,
 `vite.config.mjs`, `config/`, `public/css/` and `templates/`. List them with
 `grep -rn '@todo-craft' --exclude-dir={node_modules,vendor,.git} .`
-- Most mark a value to replace (site URL, ports, timezone, app ID, from-address, main branch
+- Most mark a value to replace (site URL, timezone, app ID, from-address, main branch
   name); some mark a decision (CSS to uncomment if the design needs it, favicons to
   regenerate, files to stop ignoring). Remove the marker once it's resolved — a project with
   none left is fully set up
@@ -50,7 +50,7 @@ project-specific behind a marker. One commit is the unit of porting: keep unrela
 project sees.
 
 **Starter-owned** (a change here often belongs on both sides): `bin/`, `modules/`,
-`.gitlab-ci.yml`, `.lando.yml`, `lando_apache_vite.conf`, `vite.config.mjs`, `.yarnrc.yml`,
+`.gitlab-ci.yml`, `.ddev/`, `vite.config.mjs`, `.yarnrc.yml`,
 `eslint.config.mjs`, `stylelint.config.mjs`, `.twig_cs.php`, `php_cs.dist`, `rector.php`,
 `phpstan.neon.dist`, and this file.
 
@@ -66,11 +66,8 @@ project, read them from the files listed:
 
 | Setting | Starter value | Where it lives |
 |---------|---------------|----------------|
-| Project slug | `craftstarter` | `.lando.yml` (`name`, `proxy`) |
-| Local URL | `https://craftstarter.lndo.site/` | `.lando.yml` `proxy`, `vite.config.mjs` `siteOrigin`, `config/vite.php` `devServerPublic`, `.env` `PRIMARY_SITE_URL` |
-| PHPMyAdmin URL | `https://pma.craftstarter.lndo.site/` | `.lando.yml` `proxy` |
-| Vite dev port | `9028` | `vite.config.mjs`, `lando_apache_vite.conf` (both `BalancerMember`s) |
-| Preview port | `9528` | `vite.config.mjs`, `.lando.yml` (published by the `node` service) |
+| Project slug | `craftstarter` | `.ddev/config.yaml` (`name`) |
+| Local URL | `https://craftstarter.ddev.site/` | Derived from the slug — DDEV sets `PRIMARY_SITE_URL` (`.ddev/.env.web`), and `config/vite.php` & `vite.config.mjs` build from it |
 
 ## System Requirements
 
@@ -83,48 +80,38 @@ project, read them from the files listed:
 
 ### Frontend (JavaScript/CSS)
 
-Node/yarn run in the Lando `node` service — `lando yarn <command>` for everything,
-`lando yarn install` to install — so the Node version matches `.nvmrc` rather than the
-host's. Running them on the host still works; one `node_modules` is shared over the Lando
-mount between host and container, which is why `.yarnrc.yml` widens
+Node/yarn run in the DDEV web container (Node from `.nvmrc`, `nodejs_version: auto`) —
+`ddev yarn <command>` for everything, `ddev yarn install` to install. `node_modules` is synced
+between host and container (Mutagen), which is why `.yarnrc.yml` widens
 `supportedArchitectures` (darwin/linux × arm64/x64 × glibc/musl) — without it the
 container dies on a missing `@rolldown/binding-linux-*`.
 
-- **Dev server with HMR**: `lando vite` (runs `yarn install` then `yarn dev` in the
-  container, so packages are always in sync before it starts). Assets are
-  served **through the appserver** at `https://{local URL}/vite-dev/`, not from the Vite
-  port directly — see **Vite through the appserver proxy** below. Run one dev server at a
-  time
-  - `vite.config.mjs` picks the certificate by checking for `/certs/cert.crt`: inside the
-    container it uses the one Lando issues the service (`ssl: true`) — signed by the CA Lando
-    installed on the host, with `localhost`/`127.0.0.1` in the SANs; on the host it falls back
-    to `vite-plugin-mkcert`. mkcert can't work in the container — it needs root, and a CA
-    generated there isn't trusted by the host browser, so the plugin is skipped when `inLando`
-  - **On the host instead**: `yarn dev` works with no config change — Apache falls back to
-    it (see the balancer below). Craft's URLs are identical either way
-  - The Vite port is deliberately **not** published by the `node` service: the appserver
-    reaches it over the internal network, and publishing it would shadow a host-run
-    `yarn dev` on `127.0.0.1`, which is what makes the fallback fail
-  - **Stop it**: `lando vite-stop` — killing `lando vite` on the host can leave the process
-    holding the port inside the container
+- **Dev server with HMR**: `ddev yarn dev` (run `ddev yarn install` first if packages
+  changed); stop it with Ctrl-C. Assets are served **through Apache** at
+  `https://{local URL}/vite-dev/`, not from the Vite port directly — see **Vite through
+  Apache's proxy** below. Run one dev server at a time
+  - It only runs in DDEV: `vite.config.mjs` throws without `DDEV_PRIMARY_URL`, which
+    `origin`, `allowedHosts` & `hmr` are built from. There's no host-run fallback
+  - If one's left running (`ddev yarn dev` fails on the port):
+    `ddev exec pkill -f '[v]ite/bin/vite.js'`
   - Toggle via `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env vars (see `config/vite.php`)
-- **Compile check**: `lando yarn build:check` — use this to verify JS/CSS compiles. Builds to
+- **Compile check**: `ddev yarn build:check` — use this to verify JS/CSS compiles. Builds to
   `node_modules/.build-check` (gitignored, and ignored by the dev server's watcher), so
-  it's safe to run while `lando vite` is running. A green build only proves it bundles —
+  it's safe to run while the dev server is running. A green build only proves it bundles —
   the browser is still the real check
-- **Preview a production build**: `lando yarn preview` — static server over `public/build` at
-  `https://localhost:9528/build/`, mirroring the production paths — `base` keys off
-  `isPreview` as well as `command`, since preview otherwise runs as `serve` and would
-  inherit the dev base. The `node` service publishes 9528 for it (its only published port)
-- **Production build**: `lando yarn build` — production/deploy only. Never run it to verify a
-  change: it empties and rewrites `public/build`, clobbering the manifest a running
-  `lando vite` relies on
+- **Preview a production build**: `ddev yarn preview` — static server over `public/build` at
+  `https://{local host}:4173/build/` (DDEV's router serves it over https), mirroring the
+  production paths — `base` keys off `isPreview` as well as `command`, since preview
+  otherwise runs as `serve` and would inherit the dev base
+- **Production build**: `ddev yarn build` — production/deploy only. Never run it to verify a
+  change: it empties and rewrites `public/build`, clobbering the manifest a running dev
+  server relies on
 - **Linting**:
-  - JS: `lando yarn lint:js` or `lando yarn lint:js:fix` (`eslint.config.mjs`)
-  - CSS: `lando yarn lint:css` or `lando yarn lint:css:fix` (`stylelint.config.mjs`)
-  - Twig: `lando composer lint:twig` (twigcs, config in `.twig_cs.php` — a custom
+  - JS: `ddev yarn lint:js` or `ddev yarn lint:js:fix` (`eslint.config.mjs`)
+  - CSS: `ddev yarn lint:css` or `ddev yarn lint:css:fix` (`stylelint.config.mjs`)
+  - Twig: `ddev composer lint:twig` (twigcs, config in `.twig_cs.php` — a custom
     ruleset, with a no-RegEngine variant for files where alignment spacing is intentional)
-  - YAML (project config): `lando composer lint:yaml`
+  - YAML (project config): `ddev composer lint:yaml`
 - **Security audits**:
   - Moderate: `yarn audit:moderate`
   - High: `yarn audit:high`
@@ -135,9 +122,9 @@ container dies on a missing `@rolldown/binding-linux-*`.
 
 ### PHP
 
-- **Static analysis**: `lando composer static` (PHPStan, config in `phpstan.neon.dist`)
-- **Code style**: `lando composer cs:fix` (PHP CS Fixer, config in `php_cs.dist`)
-- **Automated refactoring**: `lando composer rector` (dry-run) / `lando composer rector:fix` (applies changes) — Rector, config in `rector.php`
+- **Static analysis**: `ddev composer static` (PHPStan, config in `phpstan.neon.dist`)
+- **Code style**: `ddev composer cs:fix` (PHP CS Fixer, config in `php_cs.dist`)
+- **Automated refactoring**: `ddev composer rector` (dry-run) / `ddev composer rector:fix` (applies changes) — Rector, config in `rector.php`
 
 ### Full checks
 
@@ -147,15 +134,17 @@ container dies on a missing `@rolldown/binding-linux-*`.
   warns but never fails the check)
 - **Full check** (runs Composer Normalize, Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
-  - `bin/check` runs everything through Lando (`lando composer` / `lando yarn`), so it doesn't depend on the host's Node or PHP
+  - Both run everything in DDEV, so they don't depend on the host's Node or PHP. They use
+    `ddev exec`, not `ddev composer`/`yarn` (which sync Mutagen on every call, 3–6s each),
+    and run one `ddev mutagen sync` up front instead
 
 ### Craft CMS
 
-- **Run console**: `./craft` (executable) or `lando craft` within Lando
-- **Clear caches**: `lando craft clear-caches/all`
-- **Apply migrations**: `lando craft up`
+- **Run console**: `./craft` (executable) or `ddev craft` (built into DDEV's `craftcms` type)
+- **Clear caches**: `ddev craft clear-caches/all`
+- **Apply migrations**: `ddev craft up`
 - **Craft MCP**: `.mcp.json` registers a `craft-cms` MCP server — Craft's own stdio server
-  (`craft mcp/serve`, new in 5.12) run through `lando ssh` as `admin@xmmedia.com`. It acts
+  (`craft mcp/serve`, new in 5.12) run through `ddev exec` as `admin@xmmedia.com`. It acts
   with that user's full permissions, including project config and plugin changes while
   `allowAdminChanges` is on, so treat its write tools like the CP. Restart it after changing
   fields, sections or permissions outside it. Core's HTTP servers stay off unless enabled
@@ -164,21 +153,32 @@ container dies on a missing `@rolldown/binding-linux-*`.
   - The user must exist and be active, or the server refuses to start ("not permitted to
     use Craft MCP"). If a project's admin has a different email, change `--user` in
     `.mcp.json` (it takes an email, username or user ID)
-  - Lando must be running — the server is a `lando ssh` command, so with Lando stopped it
+  - DDEV must be running — the server is a `ddev exec` command, so with DDEV stopped it
     just fails to connect
   - Schema changes (`configuration.*`, `project-config.*`) write `config/project/*.yaml`
     like the CP does — commit them. Content (entries, assets, the singles) only goes into
     the local database: it isn't committed and never reaches staging or production
 
-### Local Development (Lando)
+### Local Development (DDEV)
 
-- **Database**: accessible at `database:3306` (credentials in `.lando.yml`)
-- **Xdebug**: `lando xdebug-on` / `lando xdebug-off`
-- **Rebuild**: `lando rebuild` — needed after any change under `config:` or a service's
-  `ports:`; `lando start` isn't enough. Rebuilding also recreates the appserver container,
-  so run `lando start` afterwards or the app 404s
-- **Node/Vite**: the `node` service (`node:26`, `ssl: true`; publishes only 9528 for
-  `yarn preview`) — see **Frontend** above for `lando yarn` / `lando vite` / `lando vite-stop`
+- **Start**: `ddev start`; `ddev describe` for the URLs (including phpMyAdmin, also
+  `ddev phpmyadmin`). `ddev restart` applies changes to `.ddev/` (config, `web-build/`)
+- **Database**: `db:3306`, user/password/database all `db`. The `craftcms` type writes these
+  & `PRIMARY_SITE_URL` to `.ddev/.env.web` (git-ignored) as real env vars on start — keep them
+  out of `.env`, which the bootstrap lets override env vars
+- **Import a database**: `ddev import-db --file=<file.sql[.gz]>` — replaces the database.
+  Export with `ddev export-db`, snapshot with `ddev snapshot`
+- **Uploads**: `public/assets` is an `upload_dirs` entry, so it's kept out of the Mutagen sync
+- **Xdebug**: `ddev xdebug on` / `ddev xdebug off` — off by default: with it on, every
+  request & command tries to connect to the IDE
+- **Startup warnings**: DDEV warns about every custom file in `.ddev/` on start unless it has a
+  `#ddev-silent-no-warn` comment — add one to new ones (`config.local.yaml`, & the git-ignored
+  `.env.web` the `craftcms` type writes, which keeps the line once added)
+- **Local-only overrides** go in the git-ignored `.ddev/config.local.yaml` — e.g.
+  `router_http_port: "8080"` / `router_https_port: "8443"` while Lando's proxy holds 80/443.
+  The site URL then includes the port, which everything derived from `PRIMARY_SITE_URL` /
+  `DDEV_PRIMARY_URL` picks up
+- **Moving a project from Lando**: `/xm:lando-to-ddev`. Run it after pulling a project's switch to DDEV too: it moves your local databases from Lando into DDEV
 
 ## Architecture Overview
 
@@ -259,7 +259,7 @@ Tailwind 4's Lightning CSS handles nesting and prefixing.
 ### Custom Modules
 
 The application bootstraps four custom Yii2 modules in `config/app.php`. After editing
-one, `lando craft clear-caches/all`.
+one, `ddev craft clear-caches/all`.
 
 1. **ContactFormModule** (`modules/contactformmodule/ContactFormModule.php`):
    - Sets from address to default mailer from
@@ -297,11 +297,11 @@ one, `lando craft clear-caches/all`.
 
 ### Frontend Build System
 
-**Vite through the appserver proxy**:
-- In dev, Apache proxies `/vite-dev/` to the node service (`lando_apache_vite.conf`,
-  symlinked into `conf-enabled` by a `build_as_root` step), so dev assets are same-origin
-  with the site. `base` in `vite.config.mjs` and `devServerPublic` in `config/vite.php`
-  both have to match that path
+**Vite through Apache's proxy**:
+- In dev, Apache proxies `/vite-dev/` to the dev server in the same container
+  (`.ddev/web-build/apache-vite.conf`, copied into the image by `.ddev/web-build/Dockerfile`,
+  so a change needs `ddev restart`), so dev assets are same-origin with the site. `base` in
+  `vite.config.mjs` and `devServerPublic` in `config/vite.php` both have to match that path
 - **Why**: SVG `<use href>` cannot cross origins — there is no CORS opt-in for it. That's
   what previously forced the svgxuse polyfill in dev; with the proxy the icon sprite
   resolves natively and the polyfill is gone. Scripts and CSS were never the problem
@@ -311,16 +311,16 @@ one, `lando craft clear-caches/all`.
 - `ProxyPreserveHost On` means Vite sees the site's host, so it must be in `allowedHosts`
   — Vite rejects HMR websocket upgrades from unknown hosts with a bare `400`, which looks
   like a proxy bug but isn't
-- `server.hmr.clientPort` is 443 and the protocol `wss`, because the HMR socket rides the
-  proxied path rather than the Vite port
-- The proxy is a **balancer**: the node container is the primary, a host-run `yarn dev`
-  (`host.docker.internal`) is a hot standby, so either works at the same URL. Editing a
-  `BalancerMember` needs a full Apache restart — the values live in shared memory, and a
-  graceful reload keeps the old ones without saying so
+- `server.origin`, `allowedHosts` and `server.hmr` come from DDEV's `DDEV_PRIMARY_URL`, which
+  includes the router's port when it isn't 443; the HMR socket is `wss` on that port, because
+  it rides the proxied path rather than the Vite port. The Vite port isn't exposed
+- **Ports**: Vite's defaults, 5173 (dev) & 4173 (preview), the same in every project — the dev
+  port is only reached inside the container, and DDEV's router routes the preview port by
+  hostname. `vite.config.mjs` sets them explicitly (with `strictPort`),
+  as `.ddev/web-build/apache-vite.conf` & `web_extra_exposed_ports` in `.ddev/config.yaml` rely
+  on them
 - **A `503` on any `/vite-dev/…` URL means the dev server isn't running** — Apache has
-  nothing to proxy to. Start it with `lando vite`. (Before the proxy the same situation
-  showed up as a connection refused.) Note `pgrep -f vite` in the container gives a false
-  positive by matching its own `sh -c` wrapper; check for a listener on the port instead
+  nothing to proxy to. Start it with `ddev yarn dev`
 
 **Vite Configuration** (`vite.config.mjs`):
 - Two entry points (`rolldownOptions` — Vite 8/Rolldown): `public.js` imports `public.css`
@@ -599,13 +599,13 @@ section handle, no query needed:
 ## Development Workflow
 
 1. **Template changes**: edit files in `templates/`; Craft picks them up without a cache clear
-2. **JS/CSS changes**: `lando vite` for HMR; verify with `lando yarn build:check` (see
+2. **JS/CSS changes**: `ddev yarn dev` for HMR; verify with `ddev yarn build:check` (see
    **Frontend** above)
 3. **Fields, sections & entry types**:
    - Make the change in the Craft admin or through the Craft MCP
    - Project config auto-saves to `config/project/`; commit the YAML
-   - Other environments apply it with `lando craft up` (the deploy runs it too)
-4. **PHP module changes**: edit `modules/`, then `lando craft clear-caches/all`
+   - Other environments apply it with `ddev craft up` (the deploy runs it too)
+4. **PHP module changes**: edit `modules/`, then `ddev craft clear-caches/all`
 
 ## Code Style and Patterns
 
@@ -656,7 +656,7 @@ section handle, no query needed:
 ## Environment Configuration
 
 - **Environment file**: `.env` (not in git). `.env.example` is the server template;
-  `.env.example-local` the local/Lando one
+  `.env.example-local` the local/DDEV one
 - **Environment detection**:
   - `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env var
   - Controls Vite dev server usage, error display, etc.
@@ -674,10 +674,10 @@ section handle, no query needed:
 When updating PHP (currently 8.5):
 1. Update `composer.json` require version
 2. Update in:
-   - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, override appserver with `type: php:X.X`)
+   - `.ddev/config.yaml` – `php_version`
    - `bin/setup_server.sh` – 4 places
    - `.gitlab-ci.yml` – 2 places (default image, `SERVER_PHP_PATH`)
    - `php_cs.dist` – update the `@PHP8x5Migration` rule to match
-3. Run `lando rebuild`
-4. Update `composer.lock` via `lando composer update`
+3. Run `ddev restart`
+4. Update `composer.lock` via `ddev composer update`
 5. Update the version in this file (and `README.md`, in the starter)

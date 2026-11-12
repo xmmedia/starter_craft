@@ -2583,7 +2583,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^8.3.0, undici@npm:^8.4.1":
+"undici@npm:^8.4.1":
   version: 8.12.3
   resolution: "undici@npm:8.12.3"
   checksum: 10/8a238fd928ec1791b76b6b1df512eb6b77bdf51eb609d5b2248c3d8545100e2bdeb4d1695cf1594456dd9d085a6a51069ed42be231e56b270f3ee2191bc6517a
@@ -2610,19 +2610,6 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 10/474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
-  languageName: node
-  linkType: hard
-
-"vite-plugin-mkcert@npm:^2.0.0":
-  version: 2.1.0
-  resolution: "vite-plugin-mkcert@npm:2.1.0"
-  dependencies:
-    debug: "npm:^4.4.3"
-    supports-color: "npm:^10.2.2"
-    undici: "npm:^8.3.0"
-  peerDependencies:
-    vite: ">=3"
-  checksum: 10/42884e47958f2d4ab67cc20992549d5e0f0966cd7d5eab4bdaacf274850d5b3140b681cea78eca41b7b1b7dd655f5493b00a4ca38cb1dfad36a8d11e07043350
   languageName: node
   linkType: hard
 
@@ -2783,7 +2770,6 @@ __metadata:
     stylelint-config-standard: "npm:^40.0.0"
     tailwindcss: "npm:^4.1.7"
     vite: "npm:^8.0.0"
-    vite-plugin-mkcert: "npm:^2.0.0"
     vue: "npm:^3.2.0"
     vue-eslint-parser: "npm:^10.0.0"
   languageName: unknown

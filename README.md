@@ -17,17 +17,34 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
     ```sh
     grep -rn '@todo-craft' --exclude-dir={node_modules,vendor,.git} .
     ```
-6. Copy `.env.example-local` to `.env` and update it.
-7. Start Lando: `lando start`
-8. Install & update PHP packages: `lando composer install && lando composer update`
-9. Install & update JS packages: `lando yarn && lando yarn up -R '**'`
-10. Install Craft: `lando craft install/craft` – use `admin@xmmedia.com` for the admin email, or change
+6. Copy `.env.example-local` to `.env` and update it. DDEV supplies the database settings
+   and `PRIMARY_SITE_URL`, so they aren't in it.
+7. Start DDEV: `ddev start` (if Lando is still running, see [Running alongside Lando](#running-alongside-lando))
+8. Install & update PHP packages: `ddev composer install && ddev composer update`
+9. Install & update JS packages: `ddev yarn && ddev yarn up -R '**'`
+10. Install Craft: `ddev craft install/craft` – use `admin@xmmedia.com` for the admin email, or change
     `--user` in `.mcp.json` to match, otherwise the Craft MCP server won't start
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
 12. Delete or update the starter's `README.md`.
 
-The local site is at the URL set in `.lando.yml` (`https://craftstarter.lndo.site/` in the starter).
+The local site is at `https://<name>.ddev.site/`, from `name` in `.ddev/config.yaml`
+(`https://craftstarter.ddev.site/` in the starter); `ddev describe` lists it and phpMyAdmin.
 Craft admin is located at `/admin`.
+
+### Running alongside Lando
+
+While Lando sites are running, Lando's proxy holds ports 80 & 443. Put DDEV's router on other
+ports with a git-ignored `.ddev/config.local.yaml`, then `ddev restart`:
+
+```yaml
+#ddev-silent-no-warn
+router_http_port: "8080"
+router_https_port: "8443"
+```
+
+The site is then at `https://<name>.ddev.site:8443/`. Delete the file once Lando is no longer
+running. To move an existing project from Lando, use the `/xm:lando-to-ddev` Claude skill. Run it after
+pulling a project's switch to DDEV too: it moves your local databases from Lando into DDEV.
 
 ### In the Craft Admin
 
@@ -85,36 +102,36 @@ Related scripts:
 
 ## Commands
 
-Yarn commands run inside the Lando `node` container via `lando yarn <command>`, so the
-Node version matches [`.nvmrc`](.nvmrc) rather than whatever the host happens to have.
-Running them on the host with `yarn <command>` still works.
+Everything runs in the DDEV web container — `ddev yarn`, `ddev composer`, `ddev craft` — so
+PHP and Node (from [`.nvmrc`](.nvmrc)) match the project rather than whatever the host has.
 
-  - Install JS packages: `lando yarn install`
+  - Install JS packages: `ddev yarn install`
   - Run all checks & fixes: `bin/check_full`
     - Runs Composer Normalize, Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs `composer validate`, `composer normalize` (dry run), linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
-  - Dev JS/CSS server with HMR: `lando vite` (runs `yarn install`, then `yarn dev`, in the `node` container)
-    - Assets are proxied through the appserver at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `lando_apache_vite.conf`
-    - Stop a server left running in the container: `lando vite-stop`
-    - A `503` on a `/vite-dev/…` asset means the dev server isn't running — start it with `lando vite`
-    - To run it on the host instead, just use `yarn dev` — Apache falls back to a host-run dev server, so the URLs and behaviour are the same
-  - Compile check: `lando yarn build:check`
-    - Builds to `node_modules/.build-check`, so it's safe to run while `lando vite` is running
-  - Production JS/CSS build: `lando yarn build`
-    - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running `lando vite` relies on
-  - Preview a production build: `lando yarn preview`
-    - Serves `public/build` at `https://localhost:9528/build/`, mirroring the production paths (9528 is the only port the `node` service publishes)
+  - Dev JS/CSS server with HMR: `ddev yarn dev` (stop with Ctrl-C)
+    - Assets are proxied through Apache at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `.ddev/web-build/apache-vite.conf`
+    - A `503` on a `/vite-dev/…` asset means the dev server isn't running — start it with `ddev yarn dev`
+    - Stop one left running: `ddev exec pkill -f '[v]ite/bin/vite.js'`
+  - Compile check: `ddev yarn build:check`
+    - Builds to `node_modules/.build-check`, so it's safe to run while the dev server is running
+  - Production JS/CSS build: `ddev yarn build`
+    - Don't use this to verify a change — it rewrites `public/build`, clobbering the manifest a running dev server relies on
+  - Preview a production build: `ddev yarn preview`
+    - Serves `public/build` at `https://[domain]:4173/build/`, mirroring the production paths
   - Linting:
-    - JS ([ESLint](https://eslint.org/)): `lando yarn lint:js` or `lando yarn lint:js:fix`
-    - CSS ([Stylelint](https://stylelint.io/)): `lando yarn lint:css` or `lando yarn lint:css:fix`
-    - Twig ([twigcs](https://github.com/friendsoftwig/twigcs)): `lando composer lint:twig`
-    - YAML: `lando composer lint:yaml`
-  - [PHP CS Fixer](https://cs.symfony.com/): `lando composer cs:fix`
-  - [Rector](https://getrector.com/): `lando composer rector` (dry run) or `lando composer rector:fix`
-  - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `lando composer static`
-  - Security audits: `lando yarn audit:moderate` or `lando yarn audit:high`
-  - Upgrade a JS package, ignoring the age gate: `lando yarn up:bypass <package>`
+    - JS ([ESLint](https://eslint.org/)): `ddev yarn lint:js` or `ddev yarn lint:js:fix`
+    - CSS ([Stylelint](https://stylelint.io/)): `ddev yarn lint:css` or `ddev yarn lint:css:fix`
+    - Twig ([twigcs](https://github.com/friendsoftwig/twigcs)): `ddev composer lint:twig`
+    - YAML: `ddev composer lint:yaml`
+  - [PHP CS Fixer](https://cs.symfony.com/): `ddev composer cs:fix`
+  - [Rector](https://getrector.com/): `ddev composer rector` (dry run) or `ddev composer rector:fix`
+  - PHP Static Analysis ([PHPStan](https://github.com/phpstan/phpstan)): `ddev composer static`
+  - Security audits: `ddev yarn audit:moderate` or `ddev yarn audit:high`
+  - Upgrade a JS package, ignoring the age gate: `ddev yarn up:bypass <package>`
+  - Import a database: `ddev import-db --file=<file.sql.gz>` (replaces the database)
+  - Xdebug: `ddev xdebug on` / `ddev xdebug off` (off by default)
 
   There are no tests in the starter — add them (and their scripts) as a project needs them.
 
@@ -143,6 +160,7 @@ Running them on the host with `yarn <command>` still works.
     - Craft MCP – Craft's built-in MCP server, registered for agents in `.mcp.json`
   - [GitLab](https://gitlab.com/) – CI/CD and deployment
   - Dev Tools
+    - [DDEV](https://ddev.com/) – Docker-based local dev environment
     - [PHPStan](https://github.com/phpstan/phpstan) – static analysis of PHP
     - [Vue Devtools](https://github.com/vuejs/vue-devtools)
 
@@ -150,10 +168,10 @@ Running them on the host with `yarn <command>` still works.
 
 1. Change version in `composer.json`.
 1. Update the PHP version in the following files:
-    - `.lando.yml` – `config.php` and `services.appserver.type` (if the Symfony recipe doesn't support the new version, you must override the appserver service with `type: php:X.X`)
+    - `.ddev/config.yaml` – `php_version`
     - `bin/setup_server.sh` – 4 places
     - `.gitlab-ci.yml` – 2 places (default image and `SERVER_PHP_PATH`)
     - `php_cs.dist` – update the `@PHP8x5Migration` rule to match the new version.
-1. Run `lando rebuild` to rebuild the Lando container with the new PHP version.
-1. Run `lando composer update` or `composer update` to update the PHP dependencies. If running locally without Lando, ensure your local PHP version matches the new version.
+1. Run `ddev restart` to rebuild the web container with the new PHP version.
+1. Run `ddev composer update` or `composer update` to update the PHP dependencies. If running locally without DDEV, ensure your local PHP version matches the new version.
 1. Update version in `README.md` and `AGENTS.md`.

@@ -1,29 +1,27 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath, URL } from 'node:url';
-import { existsSync, readFileSync } from 'node:fs';
-import mkcert from 'vite-plugin-mkcert';
 import vuePlugin from '@vitejs/plugin-vue';
 import tailwindcss from '@tailwindcss/vite';
 import dns from 'dns';
 
 dns.setDefaultResultOrder('verbatim');
 
-// in the Lando node service use the cert Lando issues it; mkcert can't run there
-// (needs root, & a CA made in the container isn't trusted by the host browser)
-const certPath = '/certs/cert.crt';
-const keyPath = '/certs/cert.key';
-const inLando = existsSync(certPath) && existsSync(keyPath);
-// @todo-craft update to match your local dev URL
-const siteOrigin = 'https://craftstarter.lndo.site';
-const https = inLando ? {
-    cert: readFileSync(certPath),
-    key: readFileSync(keyPath),
-} : true;
+// runs in the DDEV web container, behind https it doesn't serve itself: the dev server through
+// Apache's proxy at /vite-dev/ (.ddev/web-build/apache-vite.conf), so dev assets are same-origin
+// with the site (browsers won't load an SVG <use> from another origin), & the preview through
+// DDEV's router (web_extra_exposed_ports in .ddev/config.yaml). Both use Vite's default ports
+// (5173 & 4173), set explicitly as apache-vite.conf & .ddev/config.yaml rely on them: they're per
+// container & the router routes by hostname, so every project can use the same ones
+// includes the router's port, when it isn't 443; only the dev server uses it
+const siteUrl = new URL(process.env.DDEV_PRIMARY_URL || 'https://localhost');
 
 export default defineConfig(({ command, isPreview }) => {
+    if ('serve' === command && !isPreview && !process.env.DDEV_PRIMARY_URL) {
+        throw new Error('The dev server only runs in DDEV, behind its Apache proxy: use `ddev yarn dev`');
+    }
+
     return {
         plugins: [
-            ...(inLando ? [] : [mkcert()]),
             vuePlugin({
                 // leave absolute URLs (/images/…) in templates as-is: they're served from
                 // the webroot, not resolved as imports (which fail without a publicDir)
@@ -31,8 +29,8 @@ export default defineConfig(({ command, isPreview }) => {
             }),
             tailwindcss(),
         ],
-        // the dev base must match the proxied path in lando_apache_vite.conf;
-        // preview runs as `serve`, but should mirror the production paths
+        // the dev base must match the proxied path in apache-vite.conf; preview runs as `serve`,
+        // but should mirror the production paths
         base: command === 'build' || isPreview ? '/build/' : '/vite-dev/',
         // Craft's webroot is public/, not a Vite static dir: without this Vite treats
         // every source file under it as a public asset & warns on each import
@@ -60,24 +58,23 @@ export default defineConfig(({ command, isPreview }) => {
         },
         server: {
             host: true,
-            // @todo-craft change port number 2x (must match lando_apache_vite.conf)
-            port: 9028,
-            // always reached through the appserver proxy, in the container or on the host
-            origin: siteOrigin,
+            // Vite's default
+            port: 5173,
+            strictPort: true,
+            origin: siteUrl.origin,
             // the proxy passes the site's Host through; Vite 400s unknown hosts
-            allowedHosts: [new URL(siteOrigin).hostname],
+            allowedHosts: [siteUrl.hostname],
             // the HMR socket rides the proxied path, not the Vite port
             hmr: {
                 protocol: 'wss',
-                host: new URL(siteOrigin).hostname,
-                clientPort: 443,
+                host: siteUrl.hostname,
+                clientPort: Number(siteUrl.port || 443),
             },
-            strictPort: true,
-            https,
             watch: {
                 // matched against the absolute path, so they must start with **/
                 // node_modules, .git, the cache dir & build.outDir are already ignored by vite
                 ignored: [
+                    '**/.ddev/**',
                     '**/.idea/**',
                     '**/bin/**',
                     '**/docs/**',
@@ -89,8 +86,8 @@ export default defineConfig(({ command, isPreview }) => {
             },
         },
         preview: {
-            // @todo-craft change port number (must match .lando.yml)
-            port: 9528,
+            // Vite's default
+            port: 4173,
             strictPort: true,
         },
         appType: 'custom',

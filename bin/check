@@ -6,21 +6,25 @@ set -Ee
 . "$(dirname "$0")/_output.sh"
 trap report_failure ERR
 
-# check if composer.json & lock match
-step "Composer validate" lando composer validate --no-check-all --no-check-version --check-lock
-step "Composer normalize" lando composer normalize --dry-run
+# the steps use `ddev exec`, not `ddev composer`/`yarn`: those sync Mutagen on every call
+# (3–6s each). Sync once here instead, so the container has every change made on the host
+step "Sync files" ddev mutagen sync
 
-step "PHPStan (static analysis)" lando composer static
-step "ESLint (JS)" lando yarn lint:js
-step "Stylelint (CSS)" lando yarn lint:css
-step "YAML lint" lando composer lint:yaml
-step "Twig lint" lando composer lint:twig
+# check if composer.json & lock match
+step "Composer validate" ddev exec composer validate --no-check-all --no-check-version --check-lock
+step "Composer normalize" ddev exec composer normalize --dry-run
+
+step "PHPStan (static analysis)" ddev exec composer static
+step "ESLint (JS)" ddev exec yarn lint:js
+step "Stylelint (CSS)" ddev exec yarn lint:css
+step "YAML lint" ddev exec composer lint:yaml
+step "Twig lint" ddev exec composer lint:twig
 
 # security checks
 step "Symfony security check" symfony security:check
-step "Composer audit" lando composer audit --abandoned=report
-step "Yarn audit (high)" lando yarn audit:high
+step "Composer audit" ddev exec composer audit --abandoned=report
+step "Yarn audit (high)" ddev exec yarn audit:high
 # informational only: moderate issues are shown but don't fail the check
-step "Yarn audit (moderate)" lando yarn audit:moderate || report_warning
+step "Yarn audit (moderate)" ddev exec yarn audit:moderate || report_warning
 
 report_success "All checks passed"
