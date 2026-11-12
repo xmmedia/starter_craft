@@ -25,7 +25,7 @@ Used to create new projects using [Craft CMS](https://craftcms.com/) at [XM Medi
 10. Install Craft: `ddev craft install/craft` – use `admin@xmmedia.com` for the admin email, or change
     `--user` in `.mcp.json` to match, otherwise the Craft MCP server won't start
 11. Create new favicons: [realfavicongenerator.net](https://realfavicongenerator.net)
-12. Delete or update the starter's `README.md`.
+12. Update the starter's `README.md` for the project, keeping [Setting Up an Existing Project Locally](#setting-up-an-existing-project-locally).
 
 The local site is at `https://<name>.ddev.site/`, from `name` in `.ddev/config.yaml`
 (`https://craftstarter.ddev.site/` in the starter); `ddev describe` lists it and phpMyAdmin.
@@ -70,6 +70,17 @@ These are saved to project config, so make them locally and commit the changes.
 3. Install Craft (`php craft install/craft` in the `current` dir) or import the local database.
 
 The site can be accessed at `https://[domain]/`.
+
+## Setting Up an Existing Project Locally
+
+1. Copy `.env.example-local` to `.env` and update it. DDEV supplies the database settings
+   and `PRIMARY_SITE_URL`, so they aren't in it.
+2. Start DDEV: `ddev start` (`ddev describe` lists the URLs, including phpMyAdmin)
+3. Install packages: `ddev composer install && ddev yarn install`
+4. Import a database: `ddev import-db --file=<file.sql.gz>`, then `ddev craft up`
+
+If the project's local database is still in Lando, run the `/xm:lando-to-ddev` Claude skill
+instead of steps 2–4: it moves the database into DDEV.
 
 ## Provisioning a Site
 
