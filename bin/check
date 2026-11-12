@@ -20,11 +20,12 @@ step "Stylelint (CSS)" ddev exec yarn lint:css
 step "YAML lint" ddev exec composer lint:yaml
 step "Twig lint" ddev exec composer lint:twig
 
-# security checks
-step "Symfony security check" symfony security:check
-step "Composer audit" ddev exec composer audit --abandoned=report
-step "Yarn audit (high)" ddev exec yarn audit:high
+# security checks: all run, then the check fails if any did
+step_continue "Symfony security check" symfony security:check
+step_continue "Composer audit" ddev exec composer audit --abandoned=report
+step_continue "Yarn audit (high)" ddev exec yarn audit:high
 # informational only: moderate issues are shown but don't fail the check
 step "Yarn audit (moderate)" ddev exec yarn audit:moderate || report_warning
+fail_if_steps_failed
 
 report_success "All checks passed"

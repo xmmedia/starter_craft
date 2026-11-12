@@ -21,6 +21,26 @@ step() {
     "$@"
 }
 
+FAILED_STEPS=()
+
+# for steps that should all run even when one fails (e.g. the security checks, so one advisory
+# doesn't hide the rest): step_continue "Label" cmd..., then fail_if_steps_failed after the last
+step_continue() {
+    step "$@" || {
+        FAILED_STEPS+=("$CURRENT_STEP")
+        report_failure
+    }
+}
+
+fail_if_steps_failed() {
+    if [ ${#FAILED_STEPS[@]} -gt 0 ]; then
+        local list
+        printf -v list '%s, ' "${FAILED_STEPS[@]}"
+        printf '\n%s✖ Failed: %s%s\n' "$C_FAIL" "${list%, }" "$C_OFF"
+        exit 1
+    fi
+}
+
 # shellcheck disable=SC2317
 report_failure() {
     printf '\n%s✖ %s failed%s\n' "$C_FAIL" "${CURRENT_STEP:-command}" "$C_OFF"

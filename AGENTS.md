@@ -131,7 +131,9 @@ container dies on a missing `@rolldown/binding-linux-*`.
 - **Quick check** (no fixes): `bin/check` — `composer validate`, `composer normalize` (dry run), PHPStan, ESLint,
   Stylelint, YAML lint, Twig lint, then the security checks (`symfony security:check`,
   `composer audit`, `yarn audit:high`, and `yarn audit:moderate` — which
-  warns but never fails the check)
+  warns but never fails the check). The security checks all run even when one fails, so one
+  advisory doesn't hide the others; the check fails after them (`step_continue` &
+  `fail_if_steps_failed` in `bin/_output.sh`)
 - **Full check** (runs Composer Normalize, Rector and PHP CS Fixer to fix code first, then `bin/check`): `bin/check_full`
   - Run `bin/check_full` before opening a PR
   - Both run everything in DDEV, so they don't depend on the host's Node or PHP. They use
