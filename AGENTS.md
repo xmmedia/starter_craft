@@ -36,9 +36,9 @@ git diff starter/master -- vite.config.mjs  # or just compare one path
 across `.env.example*`, `.gitignore`, `.gitlab-ci.yml`, `.ddev/`, `package.json`,
 `vite.config.mjs`, `config/`, `public/css/` and `templates/`. List them with
 `grep -rn '@todo-craft' --exclude-dir={node_modules,vendor,.git} .`
-- Most mark a value to replace (site URL, timezone, app ID, from-address, main branch
-  name); some mark a decision (CSS to uncomment if the design needs it, favicons to
-  regenerate, files to stop ignoring). Remove the marker once it's resolved — a project with
+- Most mark a value to replace (site URL, timezone, app ID, from-address); some mark a
+  decision (CSS to uncomment if the design needs it, favicons to regenerate, files to stop
+  ignoring). Remove the marker once it's resolved — a project with
   none left is fully set up
 - Any project-specific value added to the starter needs a marker on it
 
@@ -358,8 +358,8 @@ one, `ddev craft clear-caches/all`.
 - **Static stage**: security checks (Symfony, Composer, yarn), `composer normalize --dry-run`,
   then linting — JS, CSS,
   Twig and project config YAML. PHPStan is *not* run in CI; it only runs via `bin/check`
-- **Deploy stages**: Staging and Production, both `when: manual`, and only on the
-  `master` branch (`@todo-craft` — update if the project's main branch differs)
+- **Deploy stages**: Staging and Production, both `when: manual`. Staging can be deployed
+  from any branch; Production only from the default branch (`$CI_DEFAULT_BRANCH`)
 - Deploy jobs rsync to a timestamped release, symlink the shared folders into it, flip
   `current`, then `craft up` + clear caches, keeping the 2 most recent
   releases. The job fails if the site doesn't return 200 afterwards. Read `.gitlab-ci.yml`

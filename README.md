@@ -66,7 +66,7 @@ These are saved to project config, so make them locally and commit the changes.
     3. Set the GitLab CI/CD variables: `bin/setup_gitlab_ci_vars <group/project>`
     4. Add the CI public key to the site user's `~/.ssh/authorized_keys`.
     5. Add the every-minute Craft queue cron job — the queue doesn't run automatically outside dev.
-2. Deploy from GitLab (the Staging and Production jobs are manual, on the main branch).
+2. Deploy from GitLab (both jobs are manual; Staging deploys from any branch, Production only from the default branch).
 3. Install Craft (`php craft install/craft` in the `current` dir) or import the local database.
 
 The site can be accessed at `https://[domain]/`.

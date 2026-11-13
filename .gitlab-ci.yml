@@ -70,9 +70,6 @@ static:
 .deploy template: &deploy
   stage: deploy
   allow_failure: false
-  only:
-    # @todo-craft update to match main branch name
-    - master
   variables:
     PHP_SECURITY_CHECK_FLAGS: --no-dev
   script:
@@ -138,6 +135,9 @@ deploy to staging:
 
 deploy to prod:
   <<: *deploy
+  only:
+    variables:
+      - $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
   environment:
     name: production
     url: $PROD_URL
