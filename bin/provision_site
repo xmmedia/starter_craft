@@ -6,13 +6,13 @@
 #   2. Create the SiteWorx account (InterWorx nodeworx CLI, over ssh)
 #   3. Create the database + database user
 #   4. Upload and run setup_server.sh as the site user
-#   5. Write shared/.env from .env.example, filling in what's known
-#   6. (optional) Add the Craft queue cron job
-#   7. Run bin/setup_gitlab_ci_vars locally
+#   5. (optional) Generate the Let's Encrypt SSL certificate
+#   6. Write shared/.env from .env.example, filling in what's known
+#   7. (optional) Add the Craft queue cron job
+#   8. Run bin/setup_gitlab_ci_vars locally
 #
-# The SSL certificate is not generated here — the InterWorx CLI always includes
-# the www subdomain and gives no way to exclude it. Generate it in SiteWorx
-# instead (see the manual steps at the end), once the DNS record is in place.
+# The SSL certificate needs DNS in place — if it fails, it's left as a manual step in
+# SiteWorx.
 #
 # Prerequisites:
 #   - ssh access to the server via a configured ssh Host, with passwordless sudo
@@ -198,6 +198,12 @@ GITLAB_PROJECT=""
 if [[ "$DO_GITLAB" == "y" ]]; then
     GITLAB_PROJECT=$(ask_required "GitLab project (e.g. xmmedia/my-client-site)")
 fi
+DO_SSL=n;    confirm "Generate the SSL certificate (DNS must already point at the server)?" y && DO_SSL=y || true
+SSL_WWW=n
+if [[ "$DO_SSL" == "y" ]]; then
+    [[ "$SCOPE" == "production" ]] && www_default=y || www_default=n
+    confirm "  Include www.$DOMAIN (needs its own DNS record)?" "$www_default" && SSL_WWW=y || true
+fi
 DO_CRON=n;   confirm "Add the Craft queue cron job ($CRON_MINUTE)?" y && DO_CRON=y || true
 
 # --- Summary -----------------------------------------------------------------
@@ -213,6 +219,11 @@ printf "  %-22s %s\n" "site base"     "$SITE_BASE"
 printf "  %-22s %s\n" "database/user" "$DB_NAME"
 printf "  %-22s %s\n" "PHP"           "$PHP_PATH"
 printf "  %-22s %s\n" "1P vault"      "$OP_VAULT${OP_TAG:+ (tag: $OP_TAG)}"
+if [[ "$DO_SSL" == "y" ]]; then
+    printf "  %-22s %s\n" "SSL certificate" "$DO_SSL (www: $SSL_WWW)"
+else
+    printf "  %-22s %s\n" "SSL certificate" "$DO_SSL"
+fi
 printf "  %-22s %s\n" "GitLab vars"   "$DO_GITLAB${GITLAB_PROJECT:+ ($GITLAB_PROJECT)}"
 if [[ "$DO_CRON" == "y" ]]; then
     printf "  %-22s %s\n" "queue cron"    "$DO_CRON ($CRON_MINUTE)"
@@ -224,7 +235,7 @@ confirm "Proceed? Everything after this point makes changes." n || { echo "Abort
 
 # --- 1. 1Password items ------------------------------------------------------
 
-heading "1/7 Creating 1Password items"
+heading "1/8 Creating 1Password items"
 SITE_PASSWORD=$(generate_password)
 DB_PASSWORD=$(generate_password)
 
@@ -250,7 +261,7 @@ ok "database item: $OP_DB_ID"
 
 # --- 2. SiteWorx account -----------------------------------------------------
 
-heading "2/7 Creating the SiteWorx account"
+heading "2/8 Creating the SiteWorx account"
 warn "the SiteWorx and database passwords are passed as CLI arguments — briefly visible in the"
 echo "    server's process list, and kept in sudo's log (/var/log/secure) until it rotates out."
 
@@ -294,7 +305,7 @@ ok "account created ($SITE_USER / $DOMAIN)"
 
 # --- 3. Database -------------------------------------------------------------
 
-heading "3/7 Creating the database and user"
+heading "3/8 Creating the database and user"
 # InterWorx prefixes both with the account username, so pass the suffix only.
 remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c MysqlDb -a add \
     --name "$SITE_TYPE" \
@@ -308,7 +319,7 @@ ok "database and user created ($DB_NAME)"
 
 # --- 4. setup_server.sh ------------------------------------------------------
 
-heading "4/7 Running setup_server.sh"
+heading "4/8 Running setup_server.sh"
 # The account's real path — /chroot/home/… on chrooted servers, /home/… otherwise.
 REAL_BASE=$(remote sudo -n "$NODEWORX" -u -n -c Siteworx -a listAccounts \
     | awk -F'\t' -v u="$SITE_USER" '$2==u {print $21}')
@@ -327,9 +338,38 @@ remote sudo -n su - "$SITE_USER" -c "cd $(printf '%q' "$DOMAIN") && echo Y | bas
     || die "setup_server.sh failed — fix and re-run it manually on the server"
 ok "site directory structure created"
 
-# --- 5. .env -----------------------------------------------------------------
+# --- 5. SSL certificate ------------------------------------------------------
 
-heading "5/7 Writing shared/.env"
+heading "5/8 SSL certificate"
+SSL_INSTALLED=n
+SSL_NOTE=""
+if [[ "$DO_SSL" == "y" ]]; then
+    while true; do
+        SSL_NAMES="$DOMAIN"
+        [[ "$SSL_WWW" == "y" ]] && SSL_NAMES+=",www.$DOMAIN"
+        # Without --subjectAltName the CLI adds www itself, & fails if it doesn't resolve
+        if remote sudo -n "$SITEWORX" -u -n --login_domain "$DOMAIN" -c Ssl -a generateLetsEncrypt \
+            --domain "$DOMAIN" --commonName "$DOMAIN" --subjectAltName "$SSL_NAMES"; then
+            SSL_INSTALLED=y
+            ok "certificate generated for ${SSL_NAMES//,/ & }"
+            break
+        fi
+        warn "failed to generate the certificate — the reason is in the LetsEncrypt log"
+        echo "    (SiteWorx → Administration → Logs)"
+        confirm "Retry? (e.g. once DNS has propagated)" n || break
+        confirm "  Include www.$DOMAIN?" "$SSL_WWW" && SSL_WWW=y || SSL_WWW=n
+    done
+    if [[ "$SSL_INSTALLED" != "y" ]]; then
+        SSL_NOTE="The CLI failed — the reason is in the LetsEncrypt log (Administration → Logs)"
+        warn "left as a manual step"
+    fi
+else
+    echo "  Skipped."
+fi
+
+# --- 6. .env -----------------------------------------------------------------
+
+heading "6/8 Writing shared/.env"
 REMOTE_ENV="$REAL_BASE/shared/.env"
 if remote sudo -n test -s "$REMOTE_ENV"; then
     warn "$REMOTE_ENV already has content — left as is."
@@ -364,9 +404,9 @@ else
     ok "written: environment, security key, robots, database and site URL"
 fi
 
-# --- 6. Craft queue cron -----------------------------------------------------
+# --- 7. Craft queue cron -----------------------------------------------------
 
-heading "6/7 Craft queue cron job ($CRON_MINUTE)"
+heading "7/8 Craft queue cron job ($CRON_MINUTE)"
 if [[ "$DO_CRON" == "y" ]]; then
     add_cron "Craft queue" "$CRON_MINUTE" '*' '*' \
         "cd $SITE_BASE/current && MAGICK_DISK_LIMIT=0 flock -n storage/queue.lock ./craft queue/run 2>&1"
@@ -374,9 +414,9 @@ else
     echo "  Skipped."
 fi
 
-# --- 7. GitLab CI variables --------------------------------------------------
+# --- 8. GitLab CI variables --------------------------------------------------
 
-heading "7/7 GitLab CI/CD variables"
+heading "8/8 GitLab CI/CD variables"
 KEY_INSTALLED=n
 if [[ "$DO_GITLAB" == "y" ]]; then
     PUBLIC_KEY_FILE=$(mktemp)
@@ -427,10 +467,12 @@ echo -e "${BOLD}  Remaining manual steps${NC}"
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
 manual_step "Add the DNS record for ${YELLOW}$DOMAIN${NC} if it isn't in place yet"
-manual_step "Generate the SSL certificate in SiteWorx, once DNS has propagated"
-echo -e "     (not scriptable — the CLI always includes www and cannot exclude it)"
-echo -e "     Log in as ${YELLOW}$SITE_USER${NC} at ${YELLOW}https://$SERVER_HOST:2443/${NC} → SSL/TLS → Let's Encrypt"
-echo -e "     Untick ${YELLOW}www.$DOMAIN${NC} unless it has its own DNS record"
+if [[ "$SSL_INSTALLED" != "y" ]]; then
+    manual_step "Generate the SSL certificate in SiteWorx, once DNS has propagated"
+    if [[ -n "$SSL_NOTE" ]]; then echo -e "     $SSL_NOTE"; fi
+    echo -e "     Log in as ${YELLOW}$SITE_USER${NC} at ${YELLOW}https://$SERVER_HOST:2443/${NC} → SSL/TLS → Let's Encrypt"
+    echo -e "     Untick ${YELLOW}www.$DOMAIN${NC} unless it has its own DNS record"
+fi
 if [[ "$KEY_INSTALLED" != "y" ]]; then
     manual_step "Add the CI public key to ~/.ssh/authorized_keys for ${YELLOW}$SITE_USER${NC} on ${YELLOW}$SSH_HOST${NC}"
 fi
