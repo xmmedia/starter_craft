@@ -478,8 +478,8 @@ if [[ "$KEY_INSTALLED" != "y" ]]; then
 fi
 manual_step "Complete ${YELLOW}$SITE_BASE/shared/.env${NC}"
 echo "     Fill in the app ID (if blank), email settings and API keys"
+manual_step "Upload the files to ${YELLOW}$SITE_BASE/shared/public/assets${NC} & import the Craft database"
 manual_step "Deploy from GitLab (the first attempt often fails — fix and retry)"
-manual_step "Install or import the Craft database"
 echo ""
 echo -e "${BOLD}${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo ""
