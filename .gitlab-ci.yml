@@ -39,11 +39,13 @@ before_script:
   - node --version
   - yarn --version
 
+# check for security issues in libs. They only read the lock files, so they run before installing to
+# fail faster. The deploys re-run them for advisories published since the static job, & set
+# PHP_SECURITY_CHECK_FLAGS to --no-dev so a dev only PHP advisory doesn't block a deploy
 .security-checks: &security-checks
-  # check for security issues in PHP libs
-  - symfony security:check
-  - php composer.phar audit --abandoned=report
-  # check for JS security issues in libs (cap timeout at 10s)
+  - symfony security:check $PHP_SECURITY_CHECK_FLAGS
+  - php composer.phar audit --locked --abandoned=report $PHP_SECURITY_CHECK_FLAGS
+  # cap timeout at 10s
   - YARN_HTTP_TIMEOUT=10000 yarn audit:high
 
 static:
@@ -52,12 +54,11 @@ static:
   interruptible: true
   script:
     - *versions-script
+    - *security-checks
     # install PHP dependencies
     - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs
     # Install node/JS dependencies
     - yarn install --immutable
-    # composer & yarn require packages to be installed before running security checks
-    - *security-checks
     - php composer.phar normalize --dry-run
     # lint JS & CSS
     - yarn lint:js
@@ -72,14 +73,15 @@ static:
   only:
     # @todo-craft update to match main branch name
     - master
+  variables:
+    PHP_SECURITY_CHECK_FLAGS: --no-dev
   script:
     - *versions-script
+    - *security-checks
     # install PHP dependencies
     - php composer.phar install --no-interaction --no-progress --ignore-platform-reqs --no-dev
     # Install node/JS dependencies
     - yarn install --immutable
-    # composer & yarn require packages to be installed before running security checks
-    - *security-checks
     # helpers for the rest of the job (its lines all run in one shell):
     # run a command on the server; run a craft console command in a release dir
     - remote () { ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_SERVER" "$@"; }
