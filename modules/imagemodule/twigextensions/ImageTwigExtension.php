@@ -5,7 +5,7 @@
  *
  * @see      https://www.xmmedia.com
  *
- * @copyright Copyright (c) 2022 XM Media Inc.
+ * @copyright Copyright (c) 2026 XM Media Inc.
  */
 
 declare(strict_types=1);
