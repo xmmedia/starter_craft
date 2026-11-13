@@ -55,7 +55,10 @@ h6, .h6 {
 :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4) a {
     @apply no-underline text-inherit;
 
-    &:hover,
+    @variant hover {
+        @apply underline text-inherit;
+    }
+
     &:active {
         @apply underline text-inherit;
     }

@@ -16,14 +16,16 @@
         }
     }
 
-    input:hover ~ label,
-    label:hover {
-        @apply bg-gray-200 border-gray-600;
-    }
+    @media (hover: hover) {
+        input:hover ~ label,
+        label:hover {
+            @apply bg-gray-200 border-gray-600;
+        }
 
-    input:hover ~ label::after,
-    label:hover::after {
-        @apply border-gray-600;
+        input:hover ~ label::after,
+        label:hover::after {
+            @apply border-gray-600;
+        }
     }
 
     input:checked + label,
@@ -42,10 +44,15 @@
 }
 
 .radio-pill-green {
-    input:hover ~ label,
-    input:hover ~ label::after,
-    label:hover,
-    label:hover::after,
+    @media (hover: hover) {
+        input:hover ~ label,
+        input:hover ~ label::after,
+        label:hover,
+        label:hover::after {
+            @apply border-green-700;
+        }
+    }
+
     input:focus-visible ~ label,
     input:focus-visible ~ label::after {
         @apply border-green-700;
@@ -62,10 +69,15 @@
 }
 
 .radio-pill-red {
-    input:hover ~ label,
-    input:hover ~ label::after,
-    label:hover,
-    label:hover::after,
+    @media (hover: hover) {
+        input:hover ~ label,
+        input:hover ~ label::after,
+        label:hover,
+        label:hover::after {
+            @apply border-red-700;
+        }
+    }
+
     input:focus-visible ~ label,
     input:focus-visible ~ label::after {
         @apply border-red-700;
