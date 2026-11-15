@@ -41,7 +41,7 @@ details {
 
         @variant open {
             > div {
-                @apply opacity-100 h-auto starting:opacity-0 starting:h-0;
+                @apply opacity-100 starting:opacity-0 h-auto starting:h-0;
             }
         }
     }
@@ -56,7 +56,7 @@ details {
 
         @variant open {
             &::details-content {
-                @apply opacity-100 h-auto starting:opacity-0 starting:h-0;
+                @apply opacity-100 starting:opacity-0 h-auto starting:h-0;
             }
         }
     }
