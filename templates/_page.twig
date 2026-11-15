@@ -5,9 +5,9 @@
 {# a template can set pageTitle before this to provide a default; the SEO page title wins when it's filled in #}
 {% set pageTitle = pageTitle ?? null %}
 
-{% if entry is defined and entry.seo is defined and entry.seo is not null %}
+{% if entry is defined and entry.seo is not null %}
     {%- set seo = entry.seo.one() %}
-    {%- if seo and seo.pageTitle %}
+    {%- if seo %}
         {%- set pageTitle = seo.pageTitle %}
     {%- endif %}
 {%- endif %}
@@ -17,7 +17,7 @@
     {% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif -%}
 {%- endblock %}
 
-{% set isLive = entry is not defined or entry.status is not defined or entry.status == 'live' %}
+{% set isLive = entry is not defined or entry.status == 'live' %}
 
 {# lightswitches in the SEO block; SeoModule also drops noindex pages from the sitemap.
    _meta.twig adds noindex/nofollow of its own when the entry isn't live #}

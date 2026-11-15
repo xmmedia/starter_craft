@@ -12,7 +12,7 @@
     {% set imageTransform = 'image' ~ block.imageAspectRatio | title ~ (blockWidth <= 720 ? 'Small' : 'Large') %}
 {% endif %}
 
-{% switch block.imageHorizontalAlignment | default('center') %}
+{% switch block.imageHorizontalAlignment %}
     {% case 'left' %}
         {% set flexJustify = 'justify-start' %}
     {% case 'right' %}
@@ -20,7 +20,7 @@
     {% default %}
         {% set flexJustify = 'justify-center' %}
 {% endswitch %}
-{% switch block.imageVerticalAlignment | default('center') %}
+{% switch block.imageVerticalAlignment %}
     {% case 'top' %}
         {% set flexItems = 'items-start' %}
     {% case 'bottom' %}

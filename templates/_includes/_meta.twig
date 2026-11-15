@@ -30,7 +30,7 @@ on its own for entries that aren't live, so every URL-ed template should include
 {# entries that aren't live (disabled, pending, expired) only reach the front end through a preview
    or share token, so keep those URLs out of the index if one gets passed around #}
 {% set matchedElement = craft.app.urlManager.matchedElement %}
-{% if matchedElement and matchedElement.status is defined and matchedElement.status != 'live' %}
+{% if matchedElement and matchedElement.status != 'live' %}
     {% set robots = ['noindex', 'nofollow'] %}
 {% endif %}
 
