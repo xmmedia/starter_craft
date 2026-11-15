@@ -47,14 +47,19 @@
             <header class="header">
                 <div class="flex flex-wrap justify-between items-center w-content">
                     <a href="/">
-                        <img src="/images/logo.svg" fetchPriority="high" width="150" height="154" alt="{{ siteInformation.companyName }}">
+                        <img src="/images/logo.svg" fetchPriority="high" width="150" height="154"
+                             alt="{{ siteInformation.companyName }}">
                     </a>
 
                     <nav class="hidden md:block" aria-label="Main">
                         <ul class="flex flex-nowrap gap-8 p-0 list-none">
                             {% for menuItem in menuItems %}
                                 <li class="m-0">
-                                    <a href="{{ menuItem.url }}"{% if menuItem.ariaCurrent %} aria-current="{{ menuItem.ariaCurrent }}"{% endif %}>{{ menuItem.label }}</a>
+                                    <a href="{{ menuItem.url }}"
+                                       {%- if menuItem.ariaCurrent %}
+                                           aria-current="{{ menuItem.ariaCurrent }}"{% endif %}>
+                                        {{- menuItem.label -}}
+                                    </a>
                                 </li>
                             {% endfor %}
                         </ul>
@@ -99,7 +104,11 @@
                     <ul class="flex flex-col gap-4 list-none">
                         {% for menuItem in menuItems %}
                             <li class="m-0">
-                                <a href="{{ menuItem.url }}"{% if menuItem.ariaCurrent %} aria-current="{{ menuItem.ariaCurrent }}"{% endif %}>{{ menuItem.label }}</a>
+                                <a href="{{ menuItem.url }}"
+                                   {%- if menuItem.ariaCurrent %}
+                                       aria-current="{{ menuItem.ariaCurrent }}"{% endif %}>
+                                    {{- menuItem.label -}}
+                                </a>
                             </li>
                         {% endfor %}
                     </ul>
@@ -150,7 +159,10 @@
                         <div>{{ siteInformation.address | address_format }}</div>
                     {% endif %}
                     {% if siteInformation.directionsLink %}
-                        <div><a href="{{ siteInformation.directionsLink.url }}" target="_blank" rel="noopener">Directions</a></div>
+                        <div>
+                            <a href="{{ siteInformation.directionsLink.url }}"
+                               target="_blank" rel="noopener">Directions</a>
+                        </div>
                     {% endif %}
                 </address>
 

@@ -51,7 +51,8 @@ details {
 @supports selector(details::details-content) {
     details {
         &::details-content {
-            @apply overflow-hidden opacity-0 h-0 transition-[height,opacity,content-visibility] transition-discrete duration-300 ease-[ease];
+            @apply overflow-hidden opacity-0 h-0;
+            @apply transition-[height,opacity,content-visibility] transition-discrete duration-300 ease-[ease];
         }
 
         @variant open {

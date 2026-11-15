@@ -5,7 +5,8 @@
 {% set classes = classes | merge(columnsBlock.classes | explodeClass) %}
 
 <div class="columns-two {{ classes | join(' ') }}"
-     style="--columns-two-left: {{ leftProportion }}fr; --columns-two-right: {{ 100 - leftProportion }}fr;"{{ blockId(columnsBlock) }}>
+     style="--columns-two-left: {{ leftProportion }}fr; --columns-two-right: {{ 100 - leftProportion }}fr;"
+     {{- blockId(columnsBlock) }}>
 
     {% for columnBlocks in [columnsBlock.blocksInsideLeft, columnsBlock.blocksInsideRight] %}
         {# min-w-0 so a wide block can't push a column past its share of the row #}
@@ -39,7 +40,9 @@
                     {% default %}
                         <!-- !! The "{{ block.type.handle }}" block isn't supported within a column !! -->
                         {% if devMode %}
-                            <div class="w-content py-4 text-center">Unsupported block within a column: {{ block.type.handle }}</div>
+                            <div class="w-content py-4 text-center">
+                                Unsupported block within a column: {{ block.type.handle }}
+                            </div>
                         {% endif %}
                 {% endswitch %}
 

@@ -12,7 +12,12 @@
 
         &::after {
             @apply absolute inset-0 border-2 border-gray-400 rounded-full content-[''];
-            transition: bottom 200ms ease-in-out, border-color 200ms ease-in-out, left 200ms ease-in-out, right 200ms ease-in-out, top 200ms ease-in-out;
+            transition:
+                bottom 200ms ease-in-out,
+                border-color 200ms ease-in-out,
+                left 200ms ease-in-out,
+                right 200ms ease-in-out,
+                top 200ms ease-in-out;
         }
     }
 

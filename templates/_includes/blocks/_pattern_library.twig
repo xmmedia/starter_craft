@@ -134,7 +134,8 @@
         }
 
         const fontSizeVars   = buildLookup(n => n.startsWith('--text-') && !n.slice(7).includes('--'));
-        const lineHeightVars = buildLookup(n => (n.startsWith('--text-') && n.includes('--line-height')) || n.startsWith('--leading-'));
+        const lineHeightVars = buildLookup(n =>
+            (n.startsWith('--text-') && n.includes('--line-height')) || n.startsWith('--leading-'));
         const spacingUnit    = toPx(rootStyles.getPropertyValue('--spacing'));
 
         function fmtWithVar(computedVal, lookup) {
@@ -168,7 +169,8 @@
 
         function populate(el, values) {
             const s = getComputedStyle(el);
-            values[0].textContent = fmtWithVar(s.fontSize, fontSizeVars) + '\n' + s.fontWeight + '\n' + fmtFontFamily(s.fontFamily);
+            values[0].textContent = fmtWithVar(s.fontSize, fontSizeVars) + '\n' + s.fontWeight
+                + '\n' + fmtFontFamily(s.fontFamily);
             values[1].textContent = fmtWithVar(s.lineHeight, lineHeightVars);
             values[2].textContent = fmtSpacing(s.marginTop, 'mt-') + '\n' + fmtSpacing(s.marginBottom, 'mb-');
         }
@@ -201,11 +203,26 @@
 {# ########## Text ############# #}
 {# ############################# #}
 <h2>Text</h2>
-<p>Paragraph text – 16px – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet tincidunt urna, ac molestie elit viverra sed. Maecenas rhoncus nisl purus, eget finibus mauris venenatis sit amet. Nunc tincidunt sed magna a tincidunt. Maecenas nunc ex, imperdiet in scelerisque in, sodales vel arcu. Pellentesque fringilla mattis est eget egestas. Mauris eu lorem quis nisl sagittis euismod. Sed ultricies, augue in condimentum venenatis, turpis lectus sagittis elit, vitae porttitor eros eros quis ipsum. Quisque sagittis enim quis nulla pretium, vel accumsan magna ullamcorper. Donec vitae sollicitudin libero.</p>
-<p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+<p>Paragraph text – 16px – Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut aliquet tincidunt urna, ac
+molestie elit viverra sed. Maecenas rhoncus nisl purus, eget finibus mauris venenatis sit amet. Nunc tincidunt sed
+magna a tincidunt. Maecenas nunc ex, imperdiet in scelerisque in, sodales vel arcu. Pellentesque fringilla mattis
+est eget egestas. Mauris eu lorem quis nisl sagittis euismod. Sed ultricies, augue in condimentum venenatis, turpis
+lectus sagittis elit, vitae porttitor eros eros quis ipsum. Quisque sagittis enim quis nulla pretium, vel accumsan
+magna ullamcorper. Donec vitae sollicitudin libero.</p>
+<p>Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi.
+Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc
+augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget
+justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra
+erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in
+faucibus.</p>
 
 <div class="w-content-copy">
-    <p>Content width – this should be ~70 characters wide. Donec facilisis egestas nulla vel condimentum. Praesent quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
+    <p>Content width – this should be ~70 characters wide. Donec facilisis egestas nulla vel condimentum. Praesent
+    quis lectus nec velit rhoncus ultricies ac quis mi. Mauris mattis lacus magna, venenatis faucibus nisi rhoncus
+    non. Aenean ut facilisis nisl. Nam ullamcorper nunc augue, at dignissim neque cursus nec. Nunc ut lorem at
+    tortor malesuada tempus ac sed felis. Mauris egestas leo eget justo vehicula iaculis. Cras rutrum malesuada
+    pulvinar. Fusce porta augue quis feugiat consectetur. Nam pharetra erat eu efficitur placerat. Phasellus non
+    placerat sapien. Interdum et malesuada fames ac ante ipsum primis in faucibus.</p>
 </div>
 
 <strong>Bold Text</strong><br>
@@ -241,31 +258,64 @@
 {# ############################# #}
 <div class="w-content w-content-narrow">
     <h1>Heading 1</h1>
-    <p class="text-base"><strong>Base font size.</strong> Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. <em>Quisque imperdiet</em> sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p class="text-base"><strong>Base font size.</strong> Lorem ipsum dolor sit amet, <a href="">Link in
+    Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget.
+    <em>Quisque imperdiet</em> sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac
+    ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet
+    fermentum diam dictum sed.
     </p>
-    <p class="text-lg"><strong>Large font size.</strong> Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. <em>Quisque imperdiet</em> sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p class="text-lg"><strong>Large font size.</strong> Lorem ipsum dolor sit amet, <a href="">Link in
+    Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget.
+    <em>Quisque imperdiet</em> sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac
+    ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet
+    fermentum diam dictum sed.
     </p>
-    <p class="text-xl"><strong>XL font size.</strong> Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. <em>Quisque imperdiet</em> sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p class="text-xl"><strong>XL font size.</strong> Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a>
+    consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. <em>Quisque
+    imperdiet</em> sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam.
+    Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam
+    dictum sed.
     </p>
 
     <h2>Heading 2</h2>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     </p>
 
     <h3>Heading 3</h3>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     </p>
     <h4>Heading 4</h4>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     </p>
     <h5>Heading 5</h5>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     </p>
 
     <h4>Paragraph (Below)</h4>
-    <p>Paragraph Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. <strong>Strong text.</strong> <span class="font-bold">Font Bold</span> Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed. Etiam purus massa, vestibulum a velit ac, facilisis suscipit tortor. Aenean non libero in elit commodo venenatis varius sed diam.</p>
+    <p>Paragraph Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit.
+    <strong>Strong text.</strong> <span class="font-bold">Font Bold</span> Curabitur sagittis molestie elit, in
+    maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida.
+    Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi,
+    sit amet fermentum diam dictum sed. Etiam purus massa, vestibulum a velit ac, facilisis suscipit tortor. Aenean
+    non libero in elit commodo venenatis varius sed diam.</p>
 
-    <p>Lorem ipsum dolor sit amet, <em>Em in Paragraph</em> consectetur <span class="italic">Italic Text</span> adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed. Etiam purus massa, vestibulum a velit ac, facilisis suscipit tortor. Aenean non libero in elit commodo venenatis varius sed diam.
+    <p>Lorem ipsum dolor sit amet, <em>Em in Paragraph</em> consectetur <span class="italic">Italic Text</span>
+    adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna
+    malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit,
+    commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed. Etiam purus massa,
+    vestibulum a velit ac, facilisis suscipit tortor. Aenean non libero in elit commodo venenatis varius sed diam.
     </p>
 
     <p>
@@ -286,14 +336,21 @@
         <li>Placeholder item three</li>
         <li>Placeholder item four</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     <ul>
         <li>Placeholder item one</li>
-        <li>Placeholder item two Placeholder item two Placeholder item two Placeholder item two Placeholder item two Placeholder item two Placeholder item two Placeholder item two Placeholder item two </li>
+        <li>Placeholder item two Placeholder item two Placeholder item two Placeholder item two Placeholder item two
+        Placeholder item two Placeholder item two Placeholder item two Placeholder item two </li>
         <li>Placeholder item three</li>
         <li>Placeholder item four</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     <h3>Ordered List</h3>
     <ol>
         <li>First placeholder step</li>
@@ -301,14 +358,20 @@
         <li>Third placeholder step</li>
         <li>Fourth placeholder step</li>
     </ol>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     <ol>
         <li>First placeholder step</li>
         <li>Second placeholder step</li>
         <li>Third placeholder step</li>
         <li>Fourth placeholder step</li>
     </ol>
-    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec mattis quam mi, sit amet fermentum diam dictum sed.
+    <p>Lorem ipsum dolor sit amet, <a href="">Link in Paragraph</a> consectetur adipiscing elit. Curabitur sagittis
+    molestie elit, in maximus quam mattis eget. Quisque imperdiet sed urna malesuada mollis. Sed volutpat malesuada
+    tellus ac gravida. Morbi ac ultricies quam. Aliquam sed lacus suscipit, commodo turpis in, volutpat massa. Donec
+    mattis quam mi, sit amet fermentum diam dictum sed.
     </p>
 </div>
 
@@ -392,10 +455,14 @@
     <div class="text-center">
         <div class="mb-1 text-xs font-mono">{{ name }}</div>
         <div class="flex justify-center text-xs font-mono {{ dark ? 'text-white' : '' }}">
-            <div class="flex flex-col justify-end items-center size-20 p-1 {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}" style="background-color: var({{ name }});">
+            <div class="flex flex-col justify-end items-center size-20 p-1
+                        {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}"
+                 style="background-color: var({{ name }});">
                 <span class="{{ alpha ? 'px-0.5 bg-white/70' }}">oklch</span>
             </div>
-            <div class="flex flex-col justify-end items-center size-20 p-1 {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}" style="background-color: rgba({{ rgba }});">
+            <div class="flex flex-col justify-end items-center size-20 p-1
+                        {{ alpha ? 'pl-swatch-alpha border border-gray-200' }}"
+                 style="background-color: rgba({{ rgba }});">
                 <span class="{{ alpha ? 'px-0.5 bg-white/70' }}">rgba</span>
             </div>
         </div>
@@ -692,14 +759,17 @@ Use the dashes in the Twig output tags, such as `{{- var -}}`
     <a href="" class="pl-4">×</a>
 </div>
 <div class="alert alert-danger">
-    <div>Danger Warning – You are going to break something. Donec ullamcorper nulla non metus auctor fringilla. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</div>
+    <div>Danger Warning – You are going to break something. Donec ullamcorper nulla non metus auctor fringilla. Cras
+    justo odio, dapibus ac facilisis in, egestas eget quam. Donec ullamcorper nulla non metus auctor fringilla.
+    Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</div>
     <a href="" class="pl-4">×</a>
 </div>
 
 {# ############################# #}
 {# ########## Icons ############ #}
 {# ############################# #}
-<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 justify-items-center gap-4 w-content my-16 fill-current text-indigo-600">
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 justify-items-center gap-4
+            w-content my-16 fill-current text-indigo-600">
     <svg class="size-24">
         <use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#social-facebook"></use>
     </svg>

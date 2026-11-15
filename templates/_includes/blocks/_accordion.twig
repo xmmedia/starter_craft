@@ -8,7 +8,9 @@
                    unrotating to a minus when the <details> is open #}
                 <span class="details-toggle">
                     <svg><use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#minus"></use></svg>
-                    <svg class="details-toggle-cross"><use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#minus"></use></svg>
+                    <svg class="details-toggle-cross">
+                        <use href="{{ craft.vite.asset('public/images/icons-public.svg') }}#minus"></use>
+                    </svg>
                 </span>
 
                 <span class="font-bold font-headings">{{ accordionItem.heading | heading_striptags }}</span>

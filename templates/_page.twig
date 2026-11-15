@@ -12,7 +12,10 @@
     {%- endif %}
 {%- endif %}
 
-{% block page_title %}{% if pageTitle %}{{ pageTitle }} | {% endif %}{% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif %}{% endblock %}
+{% block page_title -%}
+    {% if pageTitle %}{{ pageTitle }} | {% endif -%}
+    {% if parentPageTitle is defined %}{{ parentPageTitle }} | {% endif -%}
+{%- endblock %}
 
 {% set isLive = entry is not defined or entry.status is not defined or entry.status == 'live' %}
 

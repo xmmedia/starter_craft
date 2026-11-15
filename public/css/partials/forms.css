@@ -60,7 +60,9 @@ textarea {
 }
 
 select {
-    @apply w-full h-[2.14rem] appearance-none pl-1 pr-8 py-1 bg-gray-100 bg-no-repeat bg-size-[1.25rem] bg-position-[right_0.5rem_center] border border-gray-300 text-black transition-colors;
+    @apply w-full h-[2.14rem] appearance-none pl-1 pr-8 py-1;
+    @apply bg-gray-100 bg-no-repeat bg-size-[1.25rem] bg-position-[right_0.5rem_center];
+    @apply border border-gray-300 text-black transition-colors;
     background-image: var(--select-arrow);
     /* browsers skip background images when printing, which would drop the arrow */
     print-color-adjust: exact;

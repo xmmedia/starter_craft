@@ -2,7 +2,9 @@
 <div class="{{ blockWidth(block) }} {{ block.classes }}"{{ blockId(block) }}>
     {% set image = block.image.one() %}
     {% if image %}
-        <button type="button" class="embed-wrap block" onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none';">
+        <button type="button"
+                class="embed-wrap block"
+                onclick="this.nextElementSibling.style.display = 'block'; this.style.display = 'none';">
             {{ image(image, 'videoThumbnail', { class: 'w-full' }) }}
         </button>
     {% endif %}
@@ -19,7 +21,8 @@
         {% endif %}
 
         <div class="{% if image %}hidden {% endif %}embed-wrap">
-            <div class="embed-container"{% if aspectRatio is defined %} style="aspect-ratio: {{ aspectRatio }};"{% endif %}>
+            <div class="embed-container"{% if aspectRatio is defined %}
+                 style="aspect-ratio: {{ aspectRatio }};"{% endif %}>
                 {{ block.videoOembed.render() }}
             </div>
         </div>
