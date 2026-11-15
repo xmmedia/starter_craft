@@ -48,7 +48,7 @@ textarea {
 }
 
 textarea {
-    @apply align-top text-black;
+    @apply align-top;
 }
 
 /* our own select arrow: once a select has a border or background, Chrome draws its own thin chevron
