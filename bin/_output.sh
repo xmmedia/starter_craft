@@ -21,6 +21,14 @@ step() {
     "$@"
 }
 
+# `ddev mutagen sync` quietly does nothing while the project's stopped, and `ddev start` is slow
+# even when it's already running, so only start it when it isn't
+ensure_ddev_running() {
+    if ! ddev describe -j | grep -q '"status":"running","status_desc"'; then
+        step "Start DDEV" ddev start
+    fi
+}
+
 FAILED_STEPS=()
 
 # for steps that should all run even when one fails (e.g. the security checks, so one advisory
