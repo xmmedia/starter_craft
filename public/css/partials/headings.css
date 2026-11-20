@@ -62,4 +62,9 @@ h6, .h6 {
     &:active {
         @apply underline text-inherit;
     }
+
+    /* the heading colour is light on dark bgs, but the focus bg (base_content.css) is light on any bg */
+    &:focus-visible {
+        @apply text-primary-text;
+    }
 }

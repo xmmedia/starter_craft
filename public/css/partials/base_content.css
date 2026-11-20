@@ -18,8 +18,9 @@
             color: var(--link-hover-color, var(--color-blue-700));
         }
 
+        /* not the link colour: it's light on dark bgs, but the focus bg is light on any bg */
         &:focus-visible {
-            @apply bg-zinc-200 ring-2 ring-zinc-200;
+            @apply bg-zinc-200 ring-2 ring-zinc-200 text-blue-700;
         }
     }
 
