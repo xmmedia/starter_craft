@@ -17,7 +17,7 @@ const siteUrl = new URL(process.env.DDEV_PRIMARY_URL || 'https://localhost');
 
 export default defineConfig(({ command, isPreview }) => {
     if ('serve' === command && !isPreview && !process.env.DDEV_PRIMARY_URL) {
-        throw new Error('The dev server only runs in DDEV, behind its Apache proxy: use `ddev yarn dev`');
+        throw new Error('The dev server only runs in DDEV, behind its Apache proxy: use `ddev vite`');
     }
 
     return {
