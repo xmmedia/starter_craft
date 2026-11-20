@@ -36,6 +36,9 @@ return RectorConfig::configure()
         // keep @param tags even when redundant with type declarations
         Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector::class,
         Rector\TypeDeclaration\Rector\StmtsAwareInterface\SafeDeclareStrictTypesRector::class,
+        // quotes are left to PHP CS Fixer's single_quote: single quotes, unless the string has an
+        // apostrophe, a variable or an escape sequence
+        Rector\CodingStyle\Rector\String_\SimplifyQuoteEscapeRector::class,
         Rector\CodeQuality\Rector\Concat\DirnameDirConcatStringToDirectStringPathRector::class => [
             __DIR__ . '/config',
         ],
