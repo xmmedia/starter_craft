@@ -1,3 +1,5 @@
+{% do craft.vite.register('public/js/src/pattern_library.js') %}
+
 {# ############################# #}
 {# ####### Headings ######### #}
 {# ############################# #}
@@ -379,51 +381,68 @@ faucibus.</p>
 {# ######### Buttons ########### #}
 {# ############################# #}
 {% macro button_table() %}
-    <table class="w-full mt-4 border-collapse">
-        <thead>
-            <tr class="border-b-2 border-b-gray-200">
-                <th class="p-2 text-left">Description</th>
-                <th class="p-2 text-left">Classes</th>
-                <th class="p-2 text-left">Using &lt;button&gt;</th>
-                <th class="p-2 text-left">Using &lt;a&gt;</th>
-            </tr>
-        </thead>
-        <tbody>
-            {# this whole row should look like a BUTTON #}
-            <tr class="border-b border-b-gray-200">
-                <td class="p-2">Button</td>
-                <td class="p-2"><code>button</code></td>
-                <td class="p-2"><button class="button">Button</button></td>
-                <td class="p-2">
-                    {# button that looks like a link #}
-                    <a href="" class="button">Button</a>
-                </td>
-            </tr>
-            <tr class="border-b border-b-gray-200">
-                <td class="p-2">Button Disabled</td>
-                <td class="p-2"><code>button</code></td>
-                <td class="p-2"><button disabled class="button">Button</button></td>
-                <td class="p-2"></td>
-            </tr>
-            {# this whole row should look like a LINK #}
-            <tr class="border-b border-b-gray-200">
-                <td class="p-2">Button Link</td>
-                <td class="p-2"><code>button-link</code></td>
-                <td class="p-2">
-                    {# button that looks like a link #}
-                    <button class="button-link">Button Link</button>
-                </td>
-                <td class="p-2"><a href="" class="button-link">Button Link</a></td>
-            </tr>
-            {# this is just for comparison #}
-            <tr class="border-b border-b-gray-200">
-                <td class="p-2">Link</td>
-                <td class="p-2"></td>
-                <td class="p-2"></td>
-                <td class="p-2"><a href="">Link</a></td>
-            </tr>
-        </tbody>
-    </table>
+    {# data-pl-state shows the state without interacting (see public/js/src/pattern_library.js) #}
+    {% set states = {
+        '': 'Default',
+        hover: 'Hover',
+        'focus-visible': 'Focus',
+        active: 'Active',
+    } %}
+    {#
+    the Button rows should look like a BUTTON (the <a> is a link that looks like a button),
+    the Button Link rows like a LINK (the <button> is a button that looks like a link),
+    and the Link row is just for comparison
+    #}
+    {% set rows = [
+        { label: 'Button', class: 'button', tag: 'button' },
+        { label: 'Button', class: 'button', tag: 'a' },
+        { label: 'Button Disabled', class: 'button', tag: 'button', disabled: true },
+        { label: 'Button Link', class: 'button-link', tag: 'button' },
+        { label: 'Button Link', class: 'button-link', tag: 'a' },
+        { label: 'Link', class: null, tag: 'a' },
+    ] %}
+    <div class="overflow-x-auto">
+        <table class="w-full mt-4 border-collapse">
+            <thead>
+                <tr class="border-b-2 border-b-gray-200">
+                    <th class="p-2 text-left">Description</th>
+                    <th class="p-2 text-left">Classes</th>
+                    <th class="p-2 text-left">Element</th>
+                    {% for label in states %}
+                        <th class="p-2 text-left">{{ label }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr class="border-b border-b-gray-200">
+                        <td class="p-2">{{ row.label }}</td>
+                        <td class="p-2">{% if row.class %}<code>{{ row.class }}</code>{% endif %}</td>
+                        <td class="p-2"><code>&lt;{{ row.tag }}&gt;</code></td>
+                        {% for state, label in states %}
+                            <td class="p-2 whitespace-nowrap">
+                                {# a disabled button can't be focused or pressed #}
+                                {% if not (row.disabled ?? false) or state in ['', 'hover'] %}
+                                    {% set attributes = {
+                                        class: row.class,
+                                        tabindex: state ? -1 : false,
+                                        data: { 'pl-state': state ?: false },
+                                    } %}
+                                    {% if row.tag == 'a' %}
+                                        <a href=""{{ attr(attributes) }}>{{ row.label }}</a>
+                                    {% else %}
+                                        <button{{ attr({ disabled: row.disabled ?? false }|merge(attributes)) }}>
+                                            {{- row.label -}}
+                                        </button>
+                                    {% endif %}
+                                {% endif %}
+                            </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endmacro %}
 
 <div class="my-4 p-4">
@@ -564,6 +583,11 @@ Use the dashes in the Twig output tags, such as `{{- var -}}`
             <input type="text" readonly id="pattern-library-readonly">
         </div>
 
+        <div class="field-wrap">
+            <label for="pattern-library-focus">Focused field</label>
+            <input type="text" id="pattern-library-focus" value="Focused" tabindex="-1" data-pl-state="focus-visible">
+        </div>
+
         <div class="sm:flex">
             <div class="field-wrap w-1/2 mr-2">
                 <label for="pattern-library-full_width-1">First field</label>
@@ -651,6 +675,22 @@ Use the dashes in the Twig output tags, such as `{{- var -}}`
             </div>
             <div class="radio-pill radio-pill-red">
                 <input type="radio" id="pattern-library-radio-pill-09" name="pattern-library-radio-pill-3"><label for="pattern-library-radio-pill-09">Option 3</label>
+            </div>
+        </fieldset>
+
+        <fieldset class="field-wrap-radios">
+            <legend>Radio Pill States</legend>
+            <div class="radio-pill">
+                <input type="radio" id="pattern-library-radio-pill-10" name="pattern-library-radio-pill-4"
+                    tabindex="-1" data-pl-state="hover"><label for="pattern-library-radio-pill-10">Hover</label>
+            </div>
+            <div class="radio-pill">
+                <input type="radio" id="pattern-library-radio-pill-11" name="pattern-library-radio-pill-4"
+                    tabindex="-1" data-pl-state="focus-visible"><label for="pattern-library-radio-pill-11">Focus</label>
+            </div>
+            <div class="radio-pill">
+                <input type="radio" id="pattern-library-radio-pill-12" name="pattern-library-radio-pill-4" checked
+                    tabindex="-1" data-pl-state="focus-visible"><label for="pattern-library-radio-pill-12">Checked &amp; Focus</label>
             </div>
         </fieldset>
 

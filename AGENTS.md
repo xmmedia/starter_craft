@@ -331,9 +331,9 @@ one, `ddev craft clear-caches/all`.
   nothing to proxy to. Start it with `ddev vite`
 
 **Vite Configuration** (`vite.config.mjs`):
-- Two entry points (`rolldownOptions` — Vite 8/Rolldown): `public.js` imports `public.css`
+- Three entry points (`rolldownOptions` — Vite 8/Rolldown): `public.js` imports `public.css`
   and `images/icons-public.svg` then calls `initMenu()`/`initAjaxForms()`; `editor.js` is
-  the CKEditor bundle
+  the CKEditor bundle; `pattern_library.js` is registered by the pattern library block only
 - Builds to `public/build` in manifest mode (for the Craft Vite plugin), no inlined assets
 - Vue 3 + `@vitejs/plugin-vue` are installed; the starter mounts nothing — components and a
   `createApp()` call in an entry file get added per project
@@ -460,6 +460,12 @@ section handle, no query needed:
 - `patternLibrary` renders `_pattern_library.twig` — a living style reference (headings,
   buttons, forms, colour swatches, icons, etc.). Add new shared component styles there so
   they're visible in one place
+- Show an interaction state in the pattern library with `data-pl-state="hover"` (or
+  `focus-visible`, `active`, `focus`, `focus-within`) — never a state class in the CSS.
+  `pattern_library.js`, loaded only by the pattern library block, copies every rule using those
+  pseudo-classes with the attribute in their place, inserted after the original so it
+  cascades the same. Put it on the element the pseudo-class is on (the `input` for
+  `input:hover ~ label`) and add `tabindex="-1"` so it's skipped when tabbing
 - An entry with an empty `blocks` field renders `_page_placeholder.twig` ("Content coming
   soon"). Set `includePlaceholder = false` before including `_blocks.twig` to suppress it
 - Background images on `hero`/`banner` come from the `bg_style_block()` macro in

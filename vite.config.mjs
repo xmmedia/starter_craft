@@ -41,6 +41,7 @@ export default defineConfig(({ command, isPreview }) => {
                 input: {
                     public: './public/js/src/public.js',
                     editor: './public/js/src/editor.js',
+                    pattern_library: './public/js/src/pattern_library.js',
                 },
             },
             sourcemap: 'serve' === command,
