@@ -25,11 +25,7 @@
     }
 
     .button-link:disabled {
-        @apply opacity-75;
-
-        @variant hover {
-            @apply no-underline cursor-default;
-        }
+        @apply opacity-75 hover:no-underline hover:cursor-default;
     }
 
     a[href^="tel"], a[href^="mailto"] {

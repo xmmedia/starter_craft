@@ -53,18 +53,7 @@ h6, .h6 {
 }
 
 :is(h1, .h1, h2, .h2, h3, .h3, h4, .h4) a {
-    @apply no-underline text-inherit;
-
-    @variant hover {
-        @apply underline text-inherit;
-    }
-
-    &:active {
-        @apply underline text-inherit;
-    }
-
-    /* the heading colour is light on dark bgs, but the focus bg (base_content.css) is light on any bg */
-    &:focus-visible {
-        @apply text-primary-text;
-    }
+    /* focus: the heading colour is light on dark bgs, but the focus bg (base_content.css) is light on any bg */
+    @apply no-underline hover:underline active:underline;
+    @apply text-inherit hover:text-inherit focus-visible:text-primary-text;
 }
