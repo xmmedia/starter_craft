@@ -86,14 +86,20 @@ between host and container (Mutagen), which is why `.yarnrc.yml` widens
 `supportedArchitectures` (darwin/linux × arm64/x64 × glibc/musl) — without it the
 container dies on a missing `@rolldown/binding-linux-*`.
 
-- **Dev server with HMR**: `ddev yarn dev` (run `ddev yarn install` first if packages
-  changed); stop it with Ctrl-C. Assets are served **through Apache** at
-  `https://{local URL}/vite-dev/`, not from the Vite port directly — see **Vite through
-  Apache's proxy** below. Run one dev server at a time
+- **Dev server with HMR**: `ddev vite` installs packages, then runs `yarn dev`; stop it
+  with Ctrl-C or `ddev vite-stop` (`.ddev/commands/web/`). Assets are served **through
+  Apache** at `https://{local URL}/vite-dev/`, not from the Vite port directly — see
+  **Vite through Apache's proxy** below
+  - Only one can run (`strictPort`), so `ddev vite` stops one that's already running &
+    takes over — usually it's a forgotten one in another tab. `ddev yarn dev` fails on the
+    port instead
+  - **Agents**: don't take over a developer's dev server. Check first
+    (`ddev exec pgrep -f '[v]ite/bin/vite.js'`) & use the one that's running — it serves
+    the same files. Start one only when none is, say so, & stop it (`ddev vite-stop`) when
+    done, so it isn't left in the developer's way. If it stops while you're using it, the
+    developer stopped it: start it again only if you still need it
   - It only runs in DDEV: `vite.config.mjs` throws without `DDEV_PRIMARY_URL`, which
     `origin`, `allowedHosts` & `hmr` are built from. There's no host-run fallback
-  - If one's left running (`ddev yarn dev` fails on the port):
-    `ddev exec pkill -f '[v]ite/bin/vite.js'`
   - Toggle via `ENVIRONMENT` or `CRAFT_ENVIRONMENT` env vars (see `config/vite.php`)
 - **Compile check**: `ddev yarn build:check` — use this to verify JS/CSS compiles. Builds to
   `node_modules/.build-check` (gitignored, and ignored by the dev server's watcher), so
@@ -322,7 +328,7 @@ one, `ddev craft clear-caches/all`.
   as `.ddev/web-build/apache-vite.conf` & `web_extra_exposed_ports` in `.ddev/config.yaml` rely
   on them
 - **A `503` on any `/vite-dev/…` URL means the dev server isn't running** — Apache has
-  nothing to proxy to. Start it with `ddev yarn dev`
+  nothing to proxy to. Start it with `ddev vite`
 
 **Vite Configuration** (`vite.config.mjs`):
 - Two entry points (`rolldownOptions` — Vite 8/Rolldown): `public.js` imports `public.css`
@@ -601,7 +607,7 @@ section handle, no query needed:
 ## Development Workflow
 
 1. **Template changes**: edit files in `templates/`; Craft picks them up without a cache clear
-2. **JS/CSS changes**: `ddev yarn dev` for HMR; verify with `ddev yarn build:check` (see
+2. **JS/CSS changes**: `ddev vite` for HMR; verify with `ddev yarn build:check` (see
    **Frontend** above)
 3. **Fields, sections & entry types**:
    - Make the change in the Craft admin or through the Craft MCP

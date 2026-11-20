@@ -121,10 +121,9 @@ PHP and Node (from [`.nvmrc`](.nvmrc)) match the project rather than whatever th
     - Runs Composer Normalize, Rector & PHP CS Fixer (applying fixes), then `bin/check`; run before pushing
   - Check all code (no fixes): `bin/check`
     - Runs `composer validate`, `composer normalize` (dry run), linting (JS, CSS, YAML, Twig), PHP static analysis & security audits
-  - Dev JS/CSS server with HMR: `ddev yarn dev` (stop with Ctrl-C)
+  - Dev JS/CSS server with HMR: `ddev vite` (stop with Ctrl-C or `ddev vite-stop`; it stops one that's already running)
     - Assets are proxied through Apache at `https://[domain]/vite-dev/` so they're same-origin with the site — that's what lets the SVG icon sprite work without a polyfill (`<use href>` can't cross origins). See `.ddev/web-build/apache-vite.conf`
-    - A `503` on a `/vite-dev/…` asset means the dev server isn't running — start it with `ddev yarn dev`
-    - Stop one left running: `ddev exec pkill -f '[v]ite/bin/vite.js'`
+    - A `503` on a `/vite-dev/…` asset means the dev server isn't running — start it with `ddev vite`
   - Compile check: `ddev yarn build:check`
     - Builds to `node_modules/.build-check`, so it's safe to run while the dev server is running
   - Production JS/CSS build: `ddev yarn build`
