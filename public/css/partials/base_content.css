@@ -60,6 +60,12 @@
         }
     }
 
+    /* @todo-craft uncomment to stop paragraphs ending on a one-word line, though can cause extra line breaks (in Safari)
+    p, li, dd, blockquote, figcaption {
+        @apply text-pretty;
+    }
+    */
+
     address {
         @apply not-italic;
     }
