@@ -155,9 +155,7 @@ container dies on a missing `@rolldown/binding-linux-*`.
   (`craft mcp/serve`, new in 5.12) run through `ddev exec` as `admin@xmmedia.com`. It acts
   with that user's full permissions, including project config and plugin changes while
   `allowAdminChanges` is on, so treat its write tools like the CP. Restart it after changing
-  fields, sections or permissions outside it. Core's HTTP servers stay off unless enabled
-  under Settings → MCP — that setting is project config, so enabling it locally enables it
-  on every environment
+  fields, sections or permissions outside it
   - The user must exist and be active, or the server refuses to start ("not permitted to
     use Craft MCP"). If a project's admin has a different email, change `--user` in
     `.mcp.json` (it takes an email, username or user ID)
@@ -166,6 +164,23 @@ container dies on a missing `@rolldown/binding-linux-*`.
   - Schema changes (`configuration.*`, `project-config.*`) write `config/project/*.yaml`
     like the CP does — commit them. Content (entries, assets, the singles) only goes into
     the local database: it isn't committed and never reaches staging or production
+- **Craft MCP on staging & production**: Craft's authenticated HTTP server, at
+  `<site URL>/admin/mcp/auth`. Off in the starter: enable it under Settings → MCP when a
+  project wants it, and uncomment the "Claude Code & other local clients" redirects in
+  `config/oauth.php` with it. Settings → MCP is project config (`mcp.enabled` in
+  `project.yaml`), so it's then on in every environment, local included. Connect with
+  `claude mcp add -s local --transport http craft-cms-<environment> <url>`
+  - The first connection opens a browser to sign in to Craft and approve the client
+    (`/mcp` in Claude Code to re-authenticate). It acts as whoever signs in, with their
+    permissions. The consent screen picks the access level: read only (the default), write,
+    or full access (admins only). Tokens refresh for 30 days of disuse; the OAuth clients &
+    tokens are in the database, so a database import means signing in again
+  - Tokens are signed with `storage/oauth-private.key` & `oauth-public.key` (git-ignored).
+    Generate them once per server with `craft oauth/generate-keys`, which writes them to the
+    shared `storage/`. Without them the OAuth flow fails
+  - Clients may only register redirects listed in `redirectDomains` in `config/oauth.php`.
+    Keep it empty while MCP is off: Craft accepts client registrations whether or not the
+    server is enabled
 
 ### Local Development (DDEV)
 

@@ -36,6 +36,8 @@ return GeneralConfig::create()
     ->sendPoweredByHeader(false)
     // disable graphql
     ->enableGql(false)
+    // no front-end login, so the OAuth sign-in (MCP over HTTP) uses the control panel's
+    ->loginPath('admin/login')
     ->aliases([
         '@web'     => App::env('PRIMARY_SITE_URL'),
         '@webroot' => dirname(__DIR__).'/public',
