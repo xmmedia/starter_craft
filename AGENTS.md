@@ -46,8 +46,11 @@ across `.env.example*`, `.gitignore`, `.gitlab-ci.yml`, `.ddev/`, `package.json`
 only apply to new ones (setup scripts, scaffolding, defaults too disruptive to retrofit) —
 don't assume either way, and ask when it's unclear. Keep changes generic, with anything
 project-specific behind a marker. One commit is the unit of porting: keep unrelated changes in separate commits, and note
-"new projects only" in the message where it applies — the message is the only record a
-project sees.
+"new projects only" in the message where it applies. When existing projects need more than the diff to take a
+change (a manual step, data or config to move, a change that only works applied whole, a package major with traps),
+add an entry to `UPGRADING.md` in the same commit, under that commit's change: what a project has to do & what
+catches people out. Add one too for a trap found while upgrading a site. `/xm:sync-starter` reads the entries after a
+project's baseline; `/xm:new-project` deletes the file.
 
 **Starter-owned** (a change here often belongs on both sides): `bin/`, `modules/`,
 `.gitlab-ci.yml`, `.ddev/`, `vite.config.mjs`, `.yarnrc.yml`,
