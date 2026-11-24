@@ -8,6 +8,13 @@ Add an entry when a project has to do something the starter's diff & the package
 obvious, or you find a trap while upgrading a site that the next one will hit too. One line each: the trap & its fix.
 Rules that always apply go in `/xm:frontend-guidelines` & `/xm:craft-guidelines`, not here.
 
+## Deploy SSH connection (`f0587e29`, Nov 2026)
+
+- `bin/ci_ssh_connect` replaces `ssh_retry` & `ssh-agent`: the key is now a file, so anything that relied on the agent
+  (forwarding, another job using SSH) breaks. Any other job that connects calls the script itself
+- Call it after every step that runs package code, the project's own install & build steps included, so they never
+  have the key on disk
+
 ## Lando to DDEV (`624886b8`, Nov 2026)
 
 - One change spread over many files (`.ddev/`, the deleted `.lando.yml`, `config/vite.php`, `bin/check*`,
