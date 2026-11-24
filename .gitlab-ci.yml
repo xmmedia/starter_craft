@@ -80,31 +80,13 @@ static:
     # Install node/JS dependencies
     - yarn install --immutable
     # helpers for the rest of the job (its lines all run in one shell):
-    # retry a command when its ssh connection fails (255), as a busy server's sshd can drop
-    # new connections (MaxStartups); any other failure fails the job straight away
-    - |
-      ssh_retry () {
-        attempt=1
-        while :; do
-          status=0; "$@" || status=$?
-          if [ "$status" -ne 255 ] || [ "$attempt" -ge 4 ]; then return "$status"; fi
-          echo "ssh connection failed, retrying in $((attempt * 10))s ($attempt/4)…"
-          sleep $((attempt * 10))
-          attempt=$((attempt + 1))
-        done
-      }
     # run a command on the server; run a craft console command in a release dir
-    - remote () { ssh_retry ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_SERVER" "$@"; }
+    - remote () { ssh -p "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_SERVER" "$@"; }
     - craft () { dir=$1; shift; remote "cd $dir && $SERVER_PHP_PATH craft $*"; }
     # setup vars for paths
     - TIMESTAMP=$(date +%s); RELEASE="$RELEASES/$TIMESTAMP"
     - echo "Paths:"; echo $REMOTE_BASE; echo $RELEASE; echo $SHARED
     - echo "Remote:"; echo $REMOTE_USER@$REMOTE_SERVER:$REMOTE_PORT
-    # setup SSH & private key
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-    - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-    - chmod 644 ~/.ssh/known_hosts
     # add .revision file
     - git rev-parse --verify --short HEAD > .revision
     # create partial .env file (empty as yarn doesn't need anything)
@@ -112,10 +94,13 @@ static:
     - yarn build
     # remove temp .env file just in case
     - rm .env
+    # set up SSH & open the connection the rest of the job shares, retrying only that (see the script).
+    # Done after the installs & build, so the packages they run never have the key on disk
+    - bin/ci_ssh_connect "$REMOTE_PORT" "$REMOTE_USER@$REMOTE_SERVER"
     # ensure based paths exist
     - remote "mkdir -p $RELEASES $SHARED $SHARED/storage $SHARED/public/assets"
     # sync files to release directory
-    - ssh_retry rsync --archive --stats --human-readable --no-perms --exclude ".git/" --exclude ".idea/" --exclude "node_modules/" --exclude ".yarn/cache/" --exclude "vendor/" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$RELEASE
+    - rsync --archive --stats --human-readable --no-perms --exclude ".git/" --exclude ".idea/" --exclude "node_modules/" --exclude ".yarn/cache/" --exclude "vendor/" -e "ssh -p $REMOTE_PORT" . $REMOTE_USER@$REMOTE_SERVER:$RELEASE
     # make craft console file executable
     - remote "chmod u+x $RELEASE/craft"
     # ensure platform has all requirements & install packages on the server
