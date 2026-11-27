@@ -722,7 +722,8 @@
                 "docs": "https://github.com/craftcms/ckeditor/blob/5.x/README.md",
                 "rss": "https://github.com/craftcms/ckeditor/commits/5.x.atom"
             },
-            "time": "2026-11-24T19:00:25+00:00"
+            "time": "2026-11-24T19:00:25+00:00",
+            "published-time": "2026-11-24T19:01:17+00:00"
         },
         {
             "name": "craftcms/cms",
@@ -890,7 +891,8 @@
                 "docs": "https://github.com/craftcms/contact-form",
                 "rss": "https://github.com/craftcms/contact-form/commits/3.x.atom"
             },
-            "time": "2026-11-10T16:32:37+00:00"
+            "time": "2026-11-10T16:32:37+00:00",
+            "published-time": "2026-11-10T16:33:30+00:00"
         },
         {
             "name": "craftcms/contact-form-honeypot",
@@ -943,7 +945,8 @@
                 "docs": "https://github.com/craftcms/contact-form-honeypot/blob/2.x/README.md",
                 "rss": "https://github.com/craftcms/contact-form-honeypot/commits/2.x.atom"
             },
-            "time": "2026-11-10T18:30:23+00:00"
+            "time": "2026-11-10T18:30:23+00:00",
+            "published-time": "2026-11-10T18:31:37+00:00"
         },
         {
             "name": "craftcms/html-field",
@@ -984,7 +987,8 @@
                 "docs": "https://github.com/craftcms/html-field/blob/main/README.md",
                 "rss": "https://github.com/craftcms/html-field/commits/main.atom"
             },
-            "time": "2026-10-06T13:37:55+00:00"
+            "time": "2026-10-06T13:37:55+00:00",
+            "published-time": "2026-10-06T13:39:00+00:00"
         },
         {
             "name": "craftcms/plugin-installer",
@@ -1666,16 +1670,16 @@
         },
         {
             "name": "embed/embed",
-            "version": "v4.7.0",
+            "version": "v4.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-embed/Embed.git",
-                "reference": "82f62ff26bc1a2f5f2a370aa5fd0f31febbbcf92"
+                "reference": "eaf9592037ccf59dd1b7320a082da6c2bf1f0a94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-embed/Embed/zipball/82f62ff26bc1a2f5f2a370aa5fd0f31febbbcf92",
-                "reference": "82f62ff26bc1a2f5f2a370aa5fd0f31febbbcf92",
+                "url": "https://api.github.com/repos/php-embed/Embed/zipball/eaf9592037ccf59dd1b7320a082da6c2bf1f0a94",
+                "reference": "eaf9592037ccf59dd1b7320a082da6c2bf1f0a94",
                 "shasum": ""
             },
             "require": {
@@ -1684,7 +1688,6 @@
                 "ext-dom": "*",
                 "ext-json": "*",
                 "ext-mbstring": "*",
-                "ml/json-ld": "^1.1",
                 "oscarotero/html-parser": "^0.1.6",
                 "php": "^7.4|^8",
                 "psr/http-client": "^1.0",
@@ -1754,8 +1757,8 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2026-11-23T21:30:01+00:00",
-            "published-time": "2026-11-23T21:32:32+00:00"
+            "time": "2026-11-26T22:29:57+00:00",
+            "published-time": "2026-11-26T22:30:24+00:00"
         },
         {
             "name": "enshrined/svg-sanitize",
@@ -1837,7 +1840,8 @@
                 "issues": "https://github.com/ethercreative/seo",
                 "docs": "https://github.com/ethercreative/seo/blob/v3/README.md"
             },
-            "time": "2024-10-09T10:52:49+00:00"
+            "time": "2024-10-09T10:52:49+00:00",
+            "published-time": "2024-10-09T10:53:10+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -2349,7 +2353,8 @@
                 "docs": "https://github.com/hybridinteractive/craft-contact-form-extensions/blob/v5/README.md",
                 "issues": "https://github.com/hybridinteractive/craft-contact-form-extensions/issues"
             },
-            "time": "2026-11-13T22:58:00+00:00"
+            "time": "2026-11-13T22:58:00+00:00",
+            "published-time": "2026-11-13T23:01:28+00:00"
         },
         {
             "name": "illuminate/collections",
@@ -3477,86 +3482,6 @@
             "time": "2023-04-19T08:25:22+00:00"
         },
         {
-            "name": "ml/iri",
-            "version": "1.1.4",
-            "target-dir": "ML/IRI",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lanthaler/IRI/zipball/cbd44fa913e00ea624241b38cefaa99da8d71341",
-                "reference": "cbd44fa913e00ea624241b38cefaa99da8d71341",
-                "shasum": ""
-            },
-            "require": {
-                "lib-pcre": ">=4.0",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ML\\IRI": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Markus Lanthaler",
-                    "email": "mail@markus-lanthaler.com",
-                    "homepage": "http://www.markus-lanthaler.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "IRI handling for PHP",
-            "homepage": "http://www.markus-lanthaler.com",
-            "keywords": [
-                "URN",
-                "iri",
-                "uri",
-                "url"
-            ],
-            "time": "2014-01-21T13:43:39+00:00"
-        },
-        {
-            "name": "ml/json-ld",
-            "version": "1.2.1",
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lanthaler/JsonLD/zipball/537e68e87a6bce23e57c575cd5dcac1f67ce25d8",
-                "reference": "537e68e87a6bce23e57c575cd5dcac1f67ce25d8",
-                "shasum": ""
-            },
-            "require": {
-                "ext-json": "*",
-                "ml/iri": "^1.1.1",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ML\\JsonLD\\": ""
-                }
-            },
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Markus Lanthaler",
-                    "email": "mail@markus-lanthaler.com",
-                    "homepage": "http://www.markus-lanthaler.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "JSON-LD Processor for PHP",
-            "homepage": "http://www.markus-lanthaler.com",
-            "keywords": [
-                "JSON-LD",
-                "jsonld"
-            ],
-            "time": "2022-09-29T08:45:17+00:00"
-        },
-        {
             "name": "moneyphp/money",
             "version": "v4.10.0",
             "source": {
@@ -3966,7 +3891,8 @@
                 "docs": "https://github.com/nystudio107/craft-plugin-vite/blob/v5/README.md",
                 "issues": "https://github.com/nystudio107/craft-plugin-vite/issues"
             },
-            "time": "2026-08-01T20:20:58+00:00"
+            "time": "2026-08-01T20:20:58+00:00",
+            "published-time": "2026-08-01T20:21:07+00:00"
         },
         {
             "name": "nystudio107/craft-vite",
@@ -4016,7 +3942,8 @@
                 "issues": "https://nystudio107.com/plugins/vite/support",
                 "source": "https://github.com/nystudio107/craft-vite"
             },
-            "time": "2026-08-01T20:38:21+00:00"
+            "time": "2026-08-01T20:38:21+00:00",
+            "published-time": "2026-08-01T20:38:29+00:00"
         },
         {
             "name": "opis/json-schema",
@@ -8932,16 +8859,16 @@
         },
         {
             "name": "verbb/base",
-            "version": "3.0.22",
+            "version": "3.0.23",
             "source": {
                 "type": "git",
                 "url": "https://github.com/verbb/verbb-base.git",
-                "reference": "1a944ee1a123b3e4ed4f0e702af78d9da80b3b24"
+                "reference": "7d4dbb3eb3e380cc3576ab8932dcc8daab12b67c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/1a944ee1a123b3e4ed4f0e702af78d9da80b3b24",
-                "reference": "1a944ee1a123b3e4ed4f0e702af78d9da80b3b24",
+                "url": "https://api.github.com/repos/verbb/verbb-base/zipball/7d4dbb3eb3e380cc3576ab8932dcc8daab12b67c",
+                "reference": "7d4dbb3eb3e380cc3576ab8932dcc8daab12b67c",
                 "shasum": ""
             },
             "require": {
@@ -8978,8 +8905,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-17T04:55:18+00:00",
-            "published-time": "2026-11-17T04:55:54+00:00"
+            "time": "2026-11-27T12:37:31+00:00",
+            "published-time": "2026-11-27T12:37:37+00:00"
         },
         {
             "name": "verbb/field-manager",
@@ -9031,7 +8958,8 @@
                 "docs": "https://github.com/verbb/field-manager",
                 "rss": "https://github.com/verbb/field-manager/commits/v2.atom"
             },
-            "time": "2026-11-24T11:30:04+00:00"
+            "time": "2026-11-24T11:30:04+00:00",
+            "published-time": "2026-11-24T11:30:58+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -9485,7 +9413,8 @@
                 "docs": "https://github.com/wrav/oembed/blob/master/README.md",
                 "issues": "https://github.com/wrav/oembed/issues"
             },
-            "time": "2026-05-01T01:26:57+00:00"
+            "time": "2026-05-01T01:26:57+00:00",
+            "published-time": "2026-05-01T01:29:05+00:00"
         },
         {
             "name": "yiisoft/yii2",
@@ -10097,7 +10026,8 @@
                 "source": "https://github.com/craftcms/generator",
                 "rss": "https://github.com/craftcms/generator/releases.atom"
             },
-            "time": "2025-05-29T18:12:44+00:00"
+            "time": "2025-05-29T18:12:44+00:00",
+            "published-time": "2025-05-29T18:12:57+00:00"
         },
         {
             "name": "ergebnis/agent-detector",
@@ -10978,16 +10908,16 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "6.15.1",
+            "version": "6.16.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jsonrainbow/json-schema.git",
-                "reference": "24021a898c17193ed7c2111b5fbf1c6486ae85ff"
+                "reference": "17a3a7903640817c1a4878d7c71c0221f9b5de97"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/24021a898c17193ed7c2111b5fbf1c6486ae85ff",
-                "reference": "24021a898c17193ed7c2111b5fbf1c6486ae85ff",
+                "url": "https://api.github.com/repos/jsonrainbow/json-schema/zipball/17a3a7903640817c1a4878d7c71c0221f9b5de97",
+                "reference": "17a3a7903640817c1a4878d7c71c0221f9b5de97",
                 "shasum": ""
             },
             "require": {
@@ -11003,6 +10933,9 @@
                 "phpspec/prophecy": "^1.19",
                 "phpstan/phpstan": "^1.12",
                 "phpunit/phpunit": "^8.5"
+            },
+            "suggest": {
+                "ext-intl": "Required to validate the idn-hostname format in Draft-07 and Draft 2019-09"
             },
             "bin": [
                 "bin/validate-json"
@@ -11037,7 +10970,7 @@
             ],
             "support": {
                 "issues": "https://github.com/jsonrainbow/json-schema/issues",
-                "source": "https://github.com/jsonrainbow/json-schema/tree/6.15.1"
+                "source": "https://github.com/jsonrainbow/json-schema/tree/6.16.0"
             },
             "funding": [
                 {
@@ -11045,8 +10978,8 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-11-24T20:35:12+00:00",
-            "published-time": "2026-11-24T20:35:18+00:00"
+            "time": "2026-11-27T15:41:07+00:00",
+            "published-time": "2026-11-27T15:41:12+00:00"
         },
         {
             "name": "marc-mabe/php-enum",
@@ -12375,16 +12308,16 @@
         },
         {
             "name": "symfony/stopwatch",
-            "version": "v8.1.0",
+            "version": "v8.1.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/stopwatch.git",
-                "reference": "21c07b026905d596e8379caeb115d87aa479499d"
+                "reference": "68b2fb16c40f6f4b103966aaa7c5c52c033a4620"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/21c07b026905d596e8379caeb115d87aa479499d",
-                "reference": "21c07b026905d596e8379caeb115d87aa479499d",
+                "url": "https://api.github.com/repos/symfony/stopwatch/zipball/68b2fb16c40f6f4b103966aaa7c5c52c033a4620",
+                "reference": "68b2fb16c40f6f4b103966aaa7c5c52c033a4620",
                 "shasum": ""
             },
             "require": {
@@ -12417,7 +12350,7 @@
             "description": "Provides a way to profile code",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/stopwatch/tree/v8.1.0"
+                "source": "https://github.com/symfony/stopwatch/tree/v8.1.13"
             },
             "funding": [
                 {
@@ -12437,8 +12370,8 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-29T05:06:50+00:00",
-            "published-time": "2026-05-29T08:53:18+00:00"
+            "time": "2026-11-27T13:27:33+00:00",
+            "published-time": "2026-11-27T14:50:44+00:00"
         },
         {
             "name": "yiisoft/yii2-shell",
